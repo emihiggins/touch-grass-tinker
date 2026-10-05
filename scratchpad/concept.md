@@ -1,4 +1,6 @@
-# Provisional direction: Pocket Field Missions
+# Archived alternative: Pocket Field Missions
+
+Not selected. Emi chose [Lift-Lap Planner](../product/brief.md) on October 5, 2026. Retained only as brainstorming history.
 
 **Hypothesis, not a selected or implemented product.** A small model turns a person's time, mobility preferences and a supplied description of nearby outdoor space into one short, feasible observation mission. Read it, pocket the phone, spend 10–20 minutes outside, then optionally record what you noticed.
 

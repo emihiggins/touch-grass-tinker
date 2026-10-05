@@ -1,17 +1,19 @@
-# Touch Grass × Tinker
+# Lift-Lap Planner
 
 Private project workspace for Emi's Hacktoberfest Week 1 entry, targeting **Best Use of Tinker**.
 
-**Status:** initialized on October 5, 2026. Research and starting brief only; no application, training run, or benchmark results yet. Product name and concept remain provisional.
+**Status:** project initialized and concept selected October 5, 2026. Data-source research and a candidate graph audit completed. No application, training run, or benchmark results yet.
 
 ## Source of truth
 
+- [Selected product direction](product/brief.md)
+- [Data sources, access checks and recommendation](research/data-sources.md)
 - [Challenge requirements and sources](research/challenge.md)
 - [Execution gates and evidence plan](delivery/plan.md)
-- [Provisional product direction](scratchpad/concept.md)
+- [Archived alternative](scratchpad/concept.md)
 
 ## Next step
 
-Choose a narrow outdoor task with a measurable fine-tuning benefit, then freeze its evaluation before training. Start from the official Tinker SDK and Cookbook rather than building a training framework.
+Audit a bounded one-resort graph, then freeze the language-to-constraints benchmark before training. Reuse existing open data and Tinker Cookbook tooling.
 
 Keep this repository private as requested. Publishing code, a demo, or the DEV entry is a separate release step. No paid compute has been authorized or started.
