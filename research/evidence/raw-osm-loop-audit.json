@@ -1,0 +1,85 @@
+{
+  "osm_sha256": "19f5e76f53e54c7c6c64f28eeed2ba1fb9c83e3fa12b53a310de706e12bb9ccd",
+  "method": "Native shared node IDs only; explicit downhill novice/easy ways, excluding areas/closed ways; source order assumed lift-up/piste-down; no transfers, snapping, relation inheritance or operating status.",
+  "results": [
+    {
+      "lift_name": "Stegbachlift",
+      "osm_way_id": "22912868",
+      "type": "t-bar",
+      "bottom_node_id": "1348121522",
+      "top_node_id": "1348121478",
+      "exact_node_easy_downhill_return": false,
+      "piste_way_ids": [],
+      "node_pair_count": 0
+    },
+    {
+      "lift_name": "Hirschkogelbahn",
+      "osm_way_id": "49225057",
+      "type": "chair_lift",
+      "bottom_node_id": "624748382",
+      "top_node_id": "624748322",
+      "exact_node_easy_downhill_return": false,
+      "piste_way_ids": [],
+      "node_pair_count": 0
+    },
+    {
+      "lift_name": "Tellerlift Obergassalm",
+      "osm_way_id": "118144053",
+      "type": "platter",
+      "bottom_node_id": "3567320847",
+      "top_node_id": "3567320494",
+      "exact_node_easy_downhill_return": false,
+      "piste_way_ids": [],
+      "node_pair_count": 0
+    },
+    {
+      "lift_name": "Übungslift Obergassalm",
+      "osm_way_id": "125064134",
+      "type": "rope_tow",
+      "bottom_node_id": "1389957286",
+      "top_node_id": "3567320496",
+      "exact_node_easy_downhill_return": true,
+      "piste_way_ids": [
+        "1157486077"
+      ],
+      "node_pair_count": 3
+    },
+    {
+      "lift_name": "Buchaubahn",
+      "osm_way_id": "143370523",
+      "type": "gondola",
+      "bottom_node_id": "246684198",
+      "top_node_id": "246684197",
+      "exact_node_easy_downhill_return": false,
+      "piste_way_ids": [],
+      "node_pair_count": 0
+    },
+    {
+      "lift_name": "Obergassalmbahn",
+      "osm_way_id": "253232925",
+      "type": "chair_lift",
+      "bottom_node_id": "2591901158",
+      "top_node_id": "2591901143",
+      "exact_node_easy_downhill_return": true,
+      "piste_way_ids": [
+        "449539706",
+        "547259393",
+        "49225049",
+        "547259386",
+        "253232939",
+        "49225053"
+      ],
+      "node_pair_count": 34
+    },
+    {
+      "lift_name": "Straßalmbahn",
+      "osm_way_id": "253232926",
+      "type": "chair_lift",
+      "bottom_node_id": "246684409",
+      "top_node_id": "2591901130",
+      "exact_node_easy_downhill_return": false,
+      "piste_way_ids": [],
+      "node_pair_count": 0
+    }
+  ]
+}

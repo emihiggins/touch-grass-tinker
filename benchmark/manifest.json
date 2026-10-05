@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "file": "development-seed.jsonl",
+  "sha256": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+  "count": 32,
+  "split": "development_seed",
+  "frozen_test": false,
+  "human_reviewed": false,
+  "route_feasibility_labeled": false,
+  "family_count": 25
+}

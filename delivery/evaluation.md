@@ -1,6 +1,6 @@
 # Fine-tuning and evaluation protocol
 
-Status: proposed, no examples authored or model calls run. Freeze version 1 before baseline measurement. This file owns numeric experiment targets; [requirements](../product/requirements.md) owns acceptance traceability.
+Status: [32-case development seed and offline intent scorer](../benchmark/README.md) implemented; no final training/test splits, graph-backed benchmark or model calls yet. Freeze version 1 before baseline measurement. This file owns numeric experiment targets; [requirements](../product/requirements.md) owns acceptance traceability.
 
 ## Hypothesis and task
 

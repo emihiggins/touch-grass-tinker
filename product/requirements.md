@@ -1,10 +1,10 @@
 # MVP requirements and acceptance ownership
 
-Status: all product capabilities **planned**, none implemented. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.
+Status: product capabilities remain **planned**; offline intent scoring and seed tooling are implemented but do not complete a product requirement. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.
 
 | ID | Requirement / user story | Testable acceptance criterion | Evidence status |
 |---|---|---|---|
-| R01 | Skier sees trustworthy sector data | Pinned source/hash/license manifest; every exposed routing edge reviewed; zero missing node refs; at least three reviewed lift/descent loops and two distinct route choices; unverified walking links excluded | Planned; structural audit only |
+| R01 | Skier sees trustworthy sector data | Pinned source/hash/license manifest; every exposed routing edge reviewed; zero missing node refs; at least three reviewed lift/descent loops and two distinct route choices; unverified walking links excluded | Blocked on source-backed review; derivative loop geometry failed |
 | R02 | Skier expresses constraints naturally | Strict Intent contract accepts ready outputs; malformed JSON/unknown IDs cannot reach planner; only-blues versus mostly-blues and no-drag versus no-surface-lifts fixtures pass | Planned |
 | R03 | Skier resolves ambiguity | Missing maximum difficulty/start/finish/time or conflicting constraints produces named clarification fields; no route until supplied; hard constraints visibly editable | Planned |
 | R04 | Skier gets a valid outing | Independent validator passes every returned route for direction, connectivity, lift/piste presence, difficulty, exclusions, windows and return deadline; closed/unknown edges never used | Planned |

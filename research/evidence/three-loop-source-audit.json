@@ -1,0 +1,464 @@
+{
+  "terrain_sha256": "6e6201d12a0ba7f6eb7df6c2a4f0dd64008d3b2394dc8e46f0a3bbaaa73fae0b",
+  "osm_extract_sha256": "19f5e76f53e54c7c6c64f28eeed2ba1fb9c83e3fa12b53a310de706e12bb9ccd",
+  "osm_bounds": {
+    "minlat": "47.3030000",
+    "minlon": "13.2240000",
+    "maxlat": "47.3140000",
+    "maxlon": "13.2500000"
+  },
+  "method": "7-decimal XY coordinate-pair matching; reversed pairs count as geometry corroboration only. No topology fixes or status inference.",
+  "loops": [
+    {
+      "lift": "Hirschkogelbahn",
+      "lift_id": "lift:flachau:osd-020fa533ea1e",
+      "lift_source_check": {
+        "exact_coordinate_segments": 9,
+        "total_coordinate_segments": 9,
+        "source_ways": [
+          {
+            "osm_way_id": "49225057",
+            "version": "8",
+            "name": "Hirschkogelbahn",
+            "piste_type": null,
+            "difficulty": null,
+            "aerialway": "chair_lift",
+            "ref": null
+          }
+        ]
+      },
+      "piste_segments": [
+        {
+          "id": "trail:flachau:osd-1a3ac421a784-0",
+          "name": "Hirschkogel, Stegbach, Hirschkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "55a, 31",
+          "source_check": {
+            "exact_coordinate_segments": 16,
+            "total_coordinate_segments": 16,
+            "source_ways": [
+              {
+                "osm_way_id": "1189233052",
+                "version": "2",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              },
+              {
+                "osm_way_id": "125073196",
+                "version": "5",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              },
+              {
+                "osm_way_id": "99673098",
+                "version": "11",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-4eecdf8a630e-1",
+          "name": "Gipfelbahn Buchau, Hirschkogel, Hirschkogel-Zufahrt",
+          "difficulty": "blue",
+          "ref": "33",
+          "source_check": {
+            "exact_coordinate_segments": 8,
+            "total_coordinate_segments": 8,
+            "source_ways": [
+              {
+                "osm_way_id": "547259392",
+                "version": "3",
+                "name": "Hirschkogel-Zufahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "33"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-229befa2f879-4",
+          "name": "Hirschkogel, Hirschkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "51, 51b, 31",
+          "source_check": {
+            "exact_coordinate_segments": 5,
+            "total_coordinate_segments": 5,
+            "source_ways": [
+              {
+                "osm_way_id": "125069847",
+                "version": "7",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-229befa2f879-5",
+          "name": "Hirschkogel, Hirschkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "51, 51b, 31",
+          "source_check": {
+            "exact_coordinate_segments": 1,
+            "total_coordinate_segments": 2,
+            "source_ways": [
+              {
+                "osm_way_id": "125069847",
+                "version": "7",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-3fdcedd212c0-1",
+          "name": "Hirschkogel, Sonntagskogel",
+          "difficulty": "blue",
+          "ref": "51, 51b, 50, 50a, 30",
+          "source_check": {
+            "exact_coordinate_segments": 3,
+            "total_coordinate_segments": 3,
+            "source_ways": [
+              {
+                "osm_way_id": "49225058",
+                "version": "5",
+                "name": "Sonntagskogel",
+                "piste_type": "downhill",
+                "difficulty": "intermediate",
+                "aerialway": null,
+                "ref": "30"
+              }
+            ]
+          }
+        }
+      ],
+      "piste_distance_m": 1387,
+      "junction_gaps_m": [
+        62.39,
+        54.99,
+        0.0,
+        0.0,
+        19.89,
+        18.27
+      ],
+      "max_junction_gap_m": 62.39,
+      "review_status": "candidate_not_terrain_verified"
+    },
+    {
+      "lift": "Straßalmbahn",
+      "lift_id": "lift:flachau:osd-08b5c4dad2bb",
+      "lift_source_check": {
+        "exact_coordinate_segments": 11,
+        "total_coordinate_segments": 11,
+        "source_ways": [
+          {
+            "osm_way_id": "253232926",
+            "version": "3",
+            "name": "Straßalmbahn",
+            "piste_type": null,
+            "difficulty": null,
+            "aerialway": "chair_lift",
+            "ref": null
+          }
+        ]
+      },
+      "piste_segments": [
+        {
+          "id": "trail:flachau:osd-2345072628cd-0",
+          "name": "Gernkogel 2. Sektion, Hirschkogel-Zufahrt",
+          "difficulty": "blue",
+          "ref": "33",
+          "source_check": {
+            "exact_coordinate_segments": 5,
+            "total_coordinate_segments": 5,
+            "source_ways": [
+              {
+                "osm_way_id": "299863172",
+                "version": "4",
+                "name": "Hirschkogel-Zufahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "33"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-278e4dc29ac5-3",
+          "name": "Gipfelbahn Buchau, Hirschkogel, Hirschkogel-Zufahrt",
+          "difficulty": "blue",
+          "ref": "33",
+          "source_check": {
+            "exact_coordinate_segments": 17,
+            "total_coordinate_segments": 17,
+            "source_ways": [
+              {
+                "osm_way_id": "258442174",
+                "version": "9",
+                "name": "Hirschkogel-Zufahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "33"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-4eecdf8a630e-1",
+          "name": "Gipfelbahn Buchau, Hirschkogel, Hirschkogel-Zufahrt",
+          "difficulty": "blue",
+          "ref": "33",
+          "source_check": {
+            "exact_coordinate_segments": 8,
+            "total_coordinate_segments": 8,
+            "source_ways": [
+              {
+                "osm_way_id": "547259392",
+                "version": "3",
+                "name": "Hirschkogel-Zufahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "33"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-229befa2f879-4",
+          "name": "Hirschkogel, Hirschkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "51, 51b, 31",
+          "source_check": {
+            "exact_coordinate_segments": 5,
+            "total_coordinate_segments": 5,
+            "source_ways": [
+              {
+                "osm_way_id": "125069847",
+                "version": "7",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-229befa2f879-5",
+          "name": "Hirschkogel, Hirschkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "51, 51b, 31",
+          "source_check": {
+            "exact_coordinate_segments": 1,
+            "total_coordinate_segments": 2,
+            "source_ways": [
+              {
+                "osm_way_id": "125069847",
+                "version": "7",
+                "name": "Hirschkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "31"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-3fdcedd212c0-1",
+          "name": "Hirschkogel, Sonntagskogel",
+          "difficulty": "blue",
+          "ref": "51, 51b, 50, 50a, 30",
+          "source_check": {
+            "exact_coordinate_segments": 3,
+            "total_coordinate_segments": 3,
+            "source_ways": [
+              {
+                "osm_way_id": "49225058",
+                "version": "5",
+                "name": "Sonntagskogel",
+                "piste_type": "downhill",
+                "difficulty": "intermediate",
+                "aerialway": null,
+                "ref": "30"
+              }
+            ]
+          }
+        }
+      ],
+      "piste_distance_m": 1363,
+      "junction_gaps_m": [
+        85.02,
+        107.09,
+        54.99,
+        0.0,
+        0.0,
+        19.89,
+        0.0
+      ],
+      "max_junction_gap_m": 107.09,
+      "review_status": "candidate_not_terrain_verified"
+    },
+    {
+      "lift": "Obergassalmbahn",
+      "lift_id": "lift:flachau:osd-d5acd2c88aca",
+      "lift_source_check": {
+        "exact_coordinate_segments": 10,
+        "total_coordinate_segments": 10,
+        "source_ways": [
+          {
+            "osm_way_id": "253232925",
+            "version": "8",
+            "name": "Obergassalmbahn",
+            "piste_type": null,
+            "difficulty": null,
+            "aerialway": "chair_lift",
+            "ref": "35"
+          }
+        ]
+      },
+      "piste_segments": [
+        {
+          "id": "trail:flachau:osd-46e41d846c9c-1",
+          "name": "Gernkogel 2. Sektion, Gipfelbahn Buchau, Skitour Gernkogel, Gernkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "35",
+          "source_check": {
+            "exact_coordinate_segments": 2,
+            "total_coordinate_segments": 2,
+            "source_ways": [
+              {
+                "osm_way_id": "49225049",
+                "version": "9",
+                "name": "Gernkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "35"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-46e41d846c9c-2",
+          "name": "Gernkogel 2. Sektion, Gipfelbahn Buchau, Skitour Gernkogel, Gernkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "35",
+          "source_check": {
+            "exact_coordinate_segments": 3,
+            "total_coordinate_segments": 3,
+            "source_ways": [
+              {
+                "osm_way_id": "49225049",
+                "version": "9",
+                "name": "Gernkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "35"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-46e41d846c9c-3",
+          "name": "Gernkogel 2. Sektion, Gipfelbahn Buchau, Skitour Gernkogel, Gernkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "35",
+          "source_check": {
+            "exact_coordinate_segments": 5,
+            "total_coordinate_segments": 5,
+            "source_ways": [
+              {
+                "osm_way_id": "49225049",
+                "version": "9",
+                "name": "Gernkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "35"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-753e6192836b-0",
+          "name": "Gernkogel 2. Sektion, Gipfelbahn Buchau, Gernkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "35",
+          "source_check": {
+            "exact_coordinate_segments": 2,
+            "total_coordinate_segments": 2,
+            "source_ways": [
+              {
+                "osm_way_id": "547259386",
+                "version": "3",
+                "name": "Gernkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "35"
+              }
+            ]
+          }
+        },
+        {
+          "id": "trail:flachau:osd-3bdcfe55cf63-0",
+          "name": "Gernkogel 2. Sektion, Gernkogel - blaue Abfahrt",
+          "difficulty": "blue",
+          "ref": "35",
+          "source_check": {
+            "exact_coordinate_segments": 5,
+            "total_coordinate_segments": 5,
+            "source_ways": [
+              {
+                "osm_way_id": "253232939",
+                "version": "5",
+                "name": "Gernkogel - blaue Abfahrt",
+                "piste_type": "downhill",
+                "difficulty": "easy",
+                "aerialway": null,
+                "ref": "35"
+              }
+            ]
+          }
+        }
+      ],
+      "piste_distance_m": 1007,
+      "junction_gaps_m": [
+        80.04,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        43.29
+      ],
+      "max_junction_gap_m": 80.04,
+      "review_status": "candidate_not_terrain_verified"
+    }
+  ]
+}

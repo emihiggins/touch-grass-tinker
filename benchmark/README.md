@@ -1,0 +1,25 @@
+# Development seed v1
+
+32 individually authored, AI-assisted original requests across 25 families, with explicit UI context and a fictional place catalog. No external user data or resort records. Gold labels were reviewed during authoring by the agent; **not human-reviewed**. They are not an untouched held-out test, training dataset or measured model result.
+
+## Scope and label rules
+
+This is an executable first slice of the [evaluation protocol](../delivery/evaluation.md): intent semantics only. No scenario graph is attached and route feasibility is deliberately unlabeled (`expected_action: interpret_only` for ready cases). Do not score these cases as successful ski outings. A future graph-backed benchmark must add independent route feasibility and validation.
+
+Explicit user corrections override prior utterances/UI values. Otherwise the selected UI context fills unspecified fields. A deadline may shorten but does not automatically extend the selected duration: with 60 minutes selected at 10:00, “back by noon” still means a 60-minute outing; “two hours, back by 11:15” explicitly requests 120 minutes but the deadline caps it to 75. Unsupported preferences require a choice to drop them, not silent fallback. Unknown destination names and out-of-range durations trigger clarification. These conventions must appear in the baseline prompt too.
+
+The seed contains hard/soft difficulty, exclusions/negation, correction, durations/deadlines, aliases, variety, absent fields, contradictory requests and unsupported live-condition requests. All current examples belong to development. New test examples must be split by family/template provenance before expansion; do not promote this visible seed to an untouched test set.
+
+## Run without installing dependencies
+
+From repository root, Python 3.10+:
+
+```bash
+python3 scripts/benchmark.py benchmark/development-seed.jsonl
+python3 -m unittest discover -s tests -v
+python3 scripts/benchmark.py benchmark/development-seed.jsonl --predictions /path/to/predictions.jsonl
+```
+
+Prediction format: one JSON object per line with `id` and `intent`. Missing/malformed intents count as failures; duplicate/unknown IDs abort rather than silently drop records. Metric is strict normalized intent match, with order-insensitive lists and equivalent timestamp normalization. It is **not** route success. The gold round-trip test checks the scorer, not a model. No model results exist yet.
+
+[Manifest](manifest.json) records the current content hash; this is a reproducibility hash, not a claim that final evaluation is frozen. Code is standard-library-only. No training/sample calls or dependencies are needed for local checks.

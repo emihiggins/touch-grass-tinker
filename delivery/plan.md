@@ -1,6 +1,6 @@
 # Delivery plan and evidence gates
 
-Status: research/planning with executed structural audit only. No app/training implemented. Contest facts and exact deadline: [challenge research](../research/challenge.md).
+Status: structural/source audits and offline seed/scorer implemented. The three-loop derivative-graph gate failed; [source checkpoint](../research/loop-verification.md) records the replacement path. No app/training implemented. Contest facts and exact deadline: [challenge research](../research/challenge.md).
 
 ## Canonical map
 
