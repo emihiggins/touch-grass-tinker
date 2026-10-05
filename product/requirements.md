@@ -1,0 +1,20 @@
+# MVP requirements and acceptance ownership
+
+Status: all product capabilities **planned**, none implemented. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.
+
+| ID | Requirement / user story | Testable acceptance criterion | Evidence status |
+|---|---|---|---|
+| R01 | Skier sees trustworthy sector data | Pinned source/hash/license manifest; every exposed routing edge reviewed; zero missing node refs; at least three reviewed lift/descent loops and two distinct route choices; unverified walking links excluded | Planned; structural audit only |
+| R02 | Skier expresses constraints naturally | Strict Intent contract accepts ready outputs; malformed JSON/unknown IDs cannot reach planner; only-blues versus mostly-blues and no-drag versus no-surface-lifts fixtures pass | Planned |
+| R03 | Skier resolves ambiguity | Missing maximum difficulty/start/finish/time or conflicting constraints produces named clarification fields; no route until supplied; hard constraints visibly editable | Planned |
+| R04 | Skier gets a valid outing | Independent validator passes every returned route for direction, connectivity, lift/piste presence, difficulty, exclusions, windows and return deadline; closed/unknown edges never used | Planned |
+| R05 | Skier understands limitations | Scenario simulation label on map, list, print and compare; duration assumptions visible; no live-status or on-snow field-test claim without evidence | Planned |
+| R06 | Skier handles failure | Exhaustive infeasibility differs from search-limit; model timeout offers retry/form editing without a fabricated route or silent replay; 30s model and 2s planner deadlines exercised | Planned |
+| R07 | Skier uses a compact accessible UI | Complete request→clarify→plan→card flow at 360px/1280px; keyboard-only flow; text alternative to map; no horizontal page overflow; labels distinguish colors; print preserves provenance | Planned |
+| R08 | Tinker materially improves the task | Reproducible real fine-tuning checkpoint plus frozen held-out comparison against prompted same-base and rules parser; raw predictions and honest uncertainty report; protocol target in evaluation file is assessed, not invented | Planned |
+| R09 | App uses the trained model | One end-to-end request trace identifies tuned checkpoint and independent route validation; replacing adapter with replay changes visible mode; no claim based solely on training loss | Planned |
+| R10 | Visitor data and compute are bounded | No client API keys, raw-prompt logging or GPS collection; oversized text and invalid IDs rejected; duplicate submit bounded; no unlimited provider retries; public-use quota/rate limits demonstrated before deployment | Planned |
+| R11 | Another builder reproduces results | Locked dependencies, dataset split hashes, renderer/config/checkpoint reference, evaluation command and attribution provided; saved predictions replay through identical scorer with identical results | Planned |
+| R12 | Judges can assess the submission | English DEV draft follows template with working demo/video and code-access path, sourced open-innovation argument, category and real metrics; release review before publication; deadline from challenge research | Planned |
+
+Out of scope: autonomous navigation, backcountry/avalanche recommendations, live queues, automatic resort-wide repairs, restaurant access inference, social accounts, payments, multi-resort production coverage, voice input and native mobile apps.

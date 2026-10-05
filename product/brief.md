@@ -1,6 +1,6 @@
 # Lift-Lap Planner: selected direction
 
-Emi selected this concept on October 5, 2026. Resort, stack and training method remain open.
+Emi selected this concept on October 5, 2026. Recommended implementation choices and remaining gates are recorded in the [delivery plan](../delivery/plan.md); none are claimed as implemented.
 
 ## User outcome
 

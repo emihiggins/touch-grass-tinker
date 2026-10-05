@@ -1,0 +1,37 @@
+{
+  "retrieved_on": "2026-10-05",
+  "source": "https://tinker-docs.thinkingmachines.ai/tinker/models.json",
+  "prices_unit": "USD per million tokens; indicative, not a quote or authorization",
+  "models": [
+    {
+      "name": "Qwen3.5-4B",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+      "tinker_id": "Qwen/Qwen3.5-4B",
+      "type": "Hybrid + Vision",
+      "arch": "Dense",
+      "size": "Compact",
+      "params": 4000000000,
+      "active_params": 4000000000,
+      "context": "64K",
+      "prefill": "$0.33",
+      "cached_prefill": "$0.066",
+      "sample": "$1.005",
+      "train": "$0.737"
+    },
+    {
+      "name": "Qwen3-8B",
+      "url": "https://huggingface.co/Qwen/Qwen3-8B",
+      "tinker_id": "Qwen/Qwen3-8B",
+      "type": "Hybrid",
+      "arch": "Dense",
+      "size": "Small",
+      "params": 8200000000,
+      "active_params": 8200000000,
+      "context": "32K",
+      "prefill": "$0.195",
+      "cached_prefill": "$0.039",
+      "sample": "$0.60",
+      "train": "$0.44"
+    }
+  ]
+}

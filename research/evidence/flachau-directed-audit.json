@@ -1,0 +1,609 @@
+{
+  "source_sha256": "6e6201d12a0ba7f6eb7df6c2a4f0dd64008d3b2394dc8e46f0a3bbaaa73fae0b",
+  "source_revision": "ce3b2a11b782c17f9f58fae3cea7008e09d4d55f",
+  "method": "Piste from/to direction; lift station order; no walking links; no status/time validation. Geometric evidence only.",
+  "results": {
+    "all": {
+      "strong_component_sizes": [
+        66,
+        57,
+        8,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "largest_component_node_ids": [
+        "node:flachau:osd-n10",
+        "node:flachau:osd-n100",
+        "node:flachau:osd-n101",
+        "node:flachau:osd-n102",
+        "node:flachau:osd-n107",
+        "node:flachau:osd-n11",
+        "node:flachau:osd-n110",
+        "node:flachau:osd-n111",
+        "node:flachau:osd-n112",
+        "node:flachau:osd-n113",
+        "node:flachau:osd-n114",
+        "node:flachau:osd-n115",
+        "node:flachau:osd-n116",
+        "node:flachau:osd-n117",
+        "node:flachau:osd-n120",
+        "node:flachau:osd-n121",
+        "node:flachau:osd-n122",
+        "node:flachau:osd-n134",
+        "node:flachau:osd-n135",
+        "node:flachau:osd-n136",
+        "node:flachau:osd-n137",
+        "node:flachau:osd-n150",
+        "node:flachau:osd-n159",
+        "node:flachau:osd-n160",
+        "node:flachau:osd-n163",
+        "node:flachau:osd-n164",
+        "node:flachau:osd-n175",
+        "node:flachau:osd-n26",
+        "node:flachau:osd-n27",
+        "node:flachau:osd-n28",
+        "node:flachau:osd-n29",
+        "node:flachau:osd-n30",
+        "node:flachau:osd-n31",
+        "node:flachau:osd-n32",
+        "node:flachau:osd-n33",
+        "node:flachau:osd-n37",
+        "node:flachau:osd-n38",
+        "node:flachau:osd-n46",
+        "node:flachau:osd-n47",
+        "node:flachau:osd-n48",
+        "node:flachau:osd-n49",
+        "node:flachau:osd-n59",
+        "node:flachau:osd-n60",
+        "node:flachau:osd-n61",
+        "node:flachau:osd-n62",
+        "node:flachau:osd-n63",
+        "node:flachau:osd-n64",
+        "node:flachau:osd-n65",
+        "node:flachau:osd-n66",
+        "node:flachau:osd-n73",
+        "node:flachau:osd-n75",
+        "node:flachau:osd-n8",
+        "node:flachau:osd-n83",
+        "node:flachau:osd-n84",
+        "node:flachau:osd-n85",
+        "node:flachau:osd-n9",
+        "node:flachau:osd-n90",
+        "node:flachau:osd-n91",
+        "node:flachau:osd-n92",
+        "node:flachau:osd-n93",
+        "node:flachau:osd-n94",
+        "node:flachau:osd-n95",
+        "node:flachau:osd-n96",
+        "node:flachau:osd-n97",
+        "node:flachau:osd-n98",
+        "node:flachau:osd-n99"
+      ],
+      "lift_then_piste_only_return_candidates": [
+        {
+          "id": "lift:flachau:osd-020fa533ea1e",
+          "name": "Hirschkogelbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-03b599fc1811",
+          "name": "Buchaubahn",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-08b5c4dad2bb",
+          "name": "Straßalmbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-0ae09eb507c6",
+          "name": "Tellerlift Obergassalm",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-115e0a939710",
+          "name": "Grafenbergbahn 1",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-15201baf9535",
+          "name": "Spacejet 1",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-1a484d55a031",
+          "name": "Hofleitenjet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-1c17bad59f97",
+          "name": "Achterjet",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-218d628e1a5e",
+          "name": "WAGRAINi's Übungslift",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-294ba644edeb",
+          "name": "Alpendorf Gondelbahn",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-33104b23f5be",
+          "name": "Piggyjet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-340262168ba8",
+          "name": "Spacejet 2",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-389a90aa1272",
+          "name": "Lacknerlift",
+          "type": "t-bar"
+        },
+        {
+          "id": "lift:flachau:osd-445e0c9cce60",
+          "name": "Übungslift Obergassalm",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-4a988002d0d7",
+          "name": "Dinojet",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-5f772f1a0f92",
+          "name": "Starjet 3",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-6956148bb187",
+          "name": "Kogelalmbahn",
+          "type": "cable-car"
+        },
+        {
+          "id": "lift:flachau:osd-7224cfd4965f",
+          "name": "Top Liner",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-7a71bd0fecfc",
+          "name": "Sonntagskogelbahn I",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-82cdc0c3b39c",
+          "name": "Flying Mozart II",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-88429c29979a",
+          "name": "Starjet 1",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-89b8fb5c8019",
+          "name": "Sonntagskogelbahn II",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-8bed2c52b48a",
+          "name": "Hachau-Bahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-940414865bb9",
+          "name": "WAGRAINI's Zauberteppich",
+          "type": "magic-carpet"
+        },
+        {
+          "id": "lift:flachau:osd-9b0ea449a9a6",
+          "name": "Stegbachlift",
+          "type": "t-bar"
+        },
+        {
+          "id": "lift:flachau:osd-9b11729b79f7",
+          "name": "Gernkogelbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-9f8639c3a34b",
+          "name": "Tellerlift Hetzenbichl",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-a2d48f8293fe",
+          "name": "Bergschlepplift",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-bed5b63ef17b",
+          "name": "Speedyjet",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-bfcf57c5ae10",
+          "name": "Spacejet 3",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-c33d24405b6a",
+          "name": "Flying Mozart I",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-c7a32d6b8c4a",
+          "name": "Rote 8er II",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-ca93743aae2d",
+          "name": "Übungslift Grafenberg",
+          "type": "magic-carpet"
+        },
+        {
+          "id": "lift:flachau:osd-d566959703e1",
+          "name": "Grafenbergbahn 2",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-d5acd2c88aca",
+          "name": "Obergassalmbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-e47f3d663af7",
+          "name": "Hahnbaumlift",
+          "type": "t-bar"
+        },
+        {
+          "id": "lift:flachau:osd-eead1897a52f",
+          "name": "Bingojet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-f1e88872bb1f",
+          "name": "Starjet 2",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-f54336d0a195",
+          "name": "Rote 8er I",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-fafbfe2909a6",
+          "name": "Egglift",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-fe01451c6bbe",
+          "name": "Tellerlift Kreisten",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-ffcff9325b93",
+          "name": "Sonntagskogelbahn III",
+          "type": "chairlift"
+        }
+      ],
+      "missing_node_references": [],
+      "pistes_ending_over_5m_above_start": [
+        "trail:flachau:osd-7e329d2e1472-1"
+      ]
+    },
+    "blue_only": {
+      "strong_component_sizes": [
+        35,
+        6,
+        6,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "largest_component_node_ids": [
+        "node:flachau:osd-n100",
+        "node:flachau:osd-n101",
+        "node:flachau:osd-n107",
+        "node:flachau:osd-n11",
+        "node:flachau:osd-n110",
+        "node:flachau:osd-n111",
+        "node:flachau:osd-n112",
+        "node:flachau:osd-n115",
+        "node:flachau:osd-n117",
+        "node:flachau:osd-n134",
+        "node:flachau:osd-n135",
+        "node:flachau:osd-n136",
+        "node:flachau:osd-n160",
+        "node:flachau:osd-n164",
+        "node:flachau:osd-n175",
+        "node:flachau:osd-n32",
+        "node:flachau:osd-n33",
+        "node:flachau:osd-n37",
+        "node:flachau:osd-n38",
+        "node:flachau:osd-n59",
+        "node:flachau:osd-n60",
+        "node:flachau:osd-n61",
+        "node:flachau:osd-n62",
+        "node:flachau:osd-n63",
+        "node:flachau:osd-n64",
+        "node:flachau:osd-n66",
+        "node:flachau:osd-n73",
+        "node:flachau:osd-n85",
+        "node:flachau:osd-n90",
+        "node:flachau:osd-n91",
+        "node:flachau:osd-n92",
+        "node:flachau:osd-n93",
+        "node:flachau:osd-n94",
+        "node:flachau:osd-n97",
+        "node:flachau:osd-n98"
+      ],
+      "lift_then_piste_only_return_candidates": [
+        {
+          "id": "lift:flachau:osd-020fa533ea1e",
+          "name": "Hirschkogelbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-03b599fc1811",
+          "name": "Buchaubahn",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-08b5c4dad2bb",
+          "name": "Straßalmbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-0ae09eb507c6",
+          "name": "Tellerlift Obergassalm",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-1a484d55a031",
+          "name": "Hofleitenjet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-218d628e1a5e",
+          "name": "WAGRAINi's Übungslift",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-294ba644edeb",
+          "name": "Alpendorf Gondelbahn",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-33104b23f5be",
+          "name": "Piggyjet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-445e0c9cce60",
+          "name": "Übungslift Obergassalm",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-4a988002d0d7",
+          "name": "Dinojet",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-7a71bd0fecfc",
+          "name": "Sonntagskogelbahn I",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-8bed2c52b48a",
+          "name": "Hachau-Bahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-940414865bb9",
+          "name": "WAGRAINI's Zauberteppich",
+          "type": "magic-carpet"
+        },
+        {
+          "id": "lift:flachau:osd-9b11729b79f7",
+          "name": "Gernkogelbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-9f8639c3a34b",
+          "name": "Tellerlift Hetzenbichl",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-a2d48f8293fe",
+          "name": "Bergschlepplift",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-bed5b63ef17b",
+          "name": "Speedyjet",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-ca93743aae2d",
+          "name": "Übungslift Grafenberg",
+          "type": "magic-carpet"
+        },
+        {
+          "id": "lift:flachau:osd-d5acd2c88aca",
+          "name": "Obergassalmbahn",
+          "type": "chairlift"
+        },
+        {
+          "id": "lift:flachau:osd-eead1897a52f",
+          "name": "Bingojet",
+          "type": "rope-tow"
+        },
+        {
+          "id": "lift:flachau:osd-f54336d0a195",
+          "name": "Rote 8er I",
+          "type": "gondola"
+        },
+        {
+          "id": "lift:flachau:osd-fafbfe2909a6",
+          "name": "Egglift",
+          "type": "platter"
+        },
+        {
+          "id": "lift:flachau:osd-fe01451c6bbe",
+          "name": "Tellerlift Kreisten",
+          "type": "platter"
+        }
+      ],
+      "missing_node_references": [],
+      "pistes_ending_over_5m_above_start": [
+        "trail:flachau:osd-7e329d2e1472-1"
+      ]
+    }
+  }
+}

@@ -2,12 +2,16 @@
 
 Private project workspace for Emi's Hacktoberfest Week 1 entry, targeting **Best Use of Tinker**.
 
-**Status:** project initialized and concept selected October 5, 2026. Data-source research and a candidate graph audit completed. No application, training run, or benchmark results yet.
+**Status:** project initialized and concept selected October 5, 2026. Data-source research, directed graph audit, and implementation/evaluation plans completed. No application, training run, or benchmark results yet.
 
 ## Source of truth
 
 - [Selected product direction](product/brief.md)
 - [Data sources, access checks and recommendation](research/data-sources.md)
+- [Follow-up feasibility and audit evidence](research/feasibility.md)
+- [Requirements and acceptance criteria](product/requirements.md)
+- [Architecture and API contracts](technical/architecture.md)
+- [Training and evaluation protocol](delivery/evaluation.md)
 - [Challenge requirements and sources](research/challenge.md)
 - [Execution gates and evidence plan](delivery/plan.md)
 - [Archived alternative](scratchpad/concept.md)

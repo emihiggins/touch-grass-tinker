@@ -1,25 +1,70 @@
-# Starting execution plan
+# Delivery plan and evidence gates
 
-This is a setup-stage handoff, not a complete implementation specification. [Research](../research/challenge.md) owns contest facts; the [product brief](../product/brief.md) owns the selected Lift-Lap Planner direction; [data research](../research/data-sources.md) owns source findings.
+Status: research/planning with executed structural audit only. No app/training implemented. Contest facts and exact deadline: [challenge research](../research/challenge.md).
 
-## Ordered milestones
+## Canonical map
 
-1. **Task and access:** refine the selected skier language-to-constraints task; confirm Tinker access, available free credits, a suitable open-weight model/license, and the training budget. Do not incur paid usage without authorization. Run a tiny sampling/training/checkpoint smoke test before a full study.
-2. **Benchmark first:** author licensed or original examples with provenance. Split by scenario family before training; freeze a held-out test set and deterministic scorer. Evaluate a competently prompted base model, not an artificially weak baseline. Keep test data out of training and model selection.
-3. **Fine-tune:** adapt an official Cookbook recipe. Start with SFT/LoRA; introduce RL only if a reliable reward and time justify it. Record versions, model ID, dataset hashes, hyperparameters, seed, checkpoint, run duration and actual usage.
-4. **Compare:** run baseline and tuned models on identical test inputs, prompt/rendering policy, decoding limits, hardware/service and measurement conditions. Save raw responses and scorer output. Report task success and failure breakdowns, sample size and uncertainty; repeat latency measurements and separate training cost from inference cost. Include a deterministic non-model comparator where applicable. A gain over the base model alone does not prove the task needs AI.
-5. **Outdoor demo:** implement the smallest experience that uses the tuned model and minimizes screen time. Demonstrate actual use outside and document failures. Until validated, describe all capabilities as planned.
-6. **Submission:** write a clear evidence-led story, supply reproducible instructions and benchmark artifacts, credit dependencies, settle code access/license, verify eligibility and publish before the deadline. Public release and submission are not authorized by the initial private-repo setup request.
+- [Product brief](../product/brief.md): selected outcome and original contribution.
+- [Requirements](../product/requirements.md): complete R01–R12 acceptance ownership/status.
+- [Data research](../research/data-sources.md): sources, permissions and initial audit.
+- [Feasibility](../research/feasibility.md): official resort references, directed audit and model/library preflight.
+- [Architecture](../technical/architecture.md): contracts, API, planner, UI and operation.
+- [Evaluation](evaluation.md): dataset, training, comparators and numeric targets.
 
-## Evidence gates (not yet passed)
+## Dependency lanes and milestones
 
-- [ ] A real Tinker fine-tuning run and its checkpoint are traceable to versioned training data and configuration.
-- [ ] Held-out results demonstrate a clear performance, latency or cost improvement over the disclosed baseline; no invented numbers or cherry-picked-only evidence.
-- [ ] Tests exercise task constraints, invalid inputs and degraded behavior; product requirements and measurable thresholds are fixed before implementation.
-- [ ] The application actually uses the tuned model, with a reproducible end-to-end demo.
-- [ ] An outdoor trial supports the screen-time and usability story; any offline claim is tested in airplane mode.
-- [ ] Publication artifacts satisfy the linked contest requirements and are accessible to judges.
+Dates are planning targets in UTC, not automation schedules. No polling jobs will be created.
 
-## Open decisions and risks
+| Phase | Target | Dependencies | Reviewable output | Requirements |
+|---|---|---|---|---|
+| A: data audit + contracts | Oct 6 | pinned terrain and official references | reviewed bounded sector, source manifest, normalized schema, at least 3 loops; synthetic graph fixtures | R01 |
+| B: intent corpus + baseline | Oct 6–7 | Intent contract; Tinker access for baseline only | original split/frozen corpus, scorer, prompt/rules comparators, baseline report | R02, R03, R08, R11 |
+| C: deterministic planner | Oct 7 | A; can proceed while B awaits model access | bounded planner, separate validator, feasibility/search-limit tests | R04, R06 |
+| D: SFT + comparison | Oct 8 | B passing; verified credits/budget | real run/checkpoint, saved predictions and honest held-out result | R08, R09, R11 |
+| E: interface + integration | Oct 8–9 | A/C; can start with labeled fixtures before D | mobile planner, constraint confirmation, map/card, explicit model/replay modes | R05, R07, R09, R10 |
+| F: demo + reproducibility | Oct 10 | C/D/E | end-to-end traces, repeatable results, video, usability notes | R06, R07, R11 |
+| G: write-up + release review | Oct 11 | F | English submission draft, code access/license, working demo/video links | R12 |
 
-Product concept is selected; model, final dataset/resort, stack, application license and hosting remain open. Tinker credentials/credits are an execution gate, not a blocker to repository setup. Primary risks are negligible fine-tuning gains, data leakage, weak AI necessity, limited time, and an underdeveloped write-up. Reserve the final day for evidence and writing; cut features before cutting evaluation.
+Parallel lanes mean independent work ordering, not authorization to spawn agents. If late, cut RL, live feeds, restaurant destinations, multi-resort coverage and visual polish. Do not cut baseline quality, graph validation or honest result reporting. Draft the story while experiments run, leaving metrics explicitly unfilled until measured.
+
+## First implementation handoff
+
+1. Read the requirements/contracts and pinned-source audit; initialize locked Python/frontend projects only when implementation starts.
+2. Audit Alpendorf candidate: geometry-to-node alignment, source type/difficulty, lift direction, station access, duration provenance and closed-loop feasibility. Do not force-connect disconnected components. If sector fails after half a day, select a smaller OSM resort/sector rather than repair the whole region.
+3. Implement pure contracts/scorer/graph validation before UI integration. Use original tiny fixtures to expose cycles, parallel edges, deadlines, closures and heuristic limits.
+4. Author small development corpus; benchmark rules and competently prompted base; use this to verify task value before expanding training data.
+5. Confirm Tinker login/credits/model availability and explicit allowable spending cap. A tiny checkpoint→sample smoke precedes full training. No API credential should be sent in chat or committed.
+6. Follow dependency lanes and preserve measured evidence at each material commit.
+
+## Verification suite (planned, not passing evidence)
+
+- Import rejects missing IDs/durations, flags uphill anomalies, preserves parallel edges and excludes unreviewed links.
+- Planner tests: directed return path, no-route, only-blues versus preference, no-drag exclusions, closed/unknown edge, missed closing time, time zone/date, start=finish nonempty outing, no teleportation, search cap distinct from infeasible.
+- Independent validator adversarial fixtures: reverse edge, incorrect aggregates, absent edge, changed scenario hash, over-budget, forbidden piste and fabricated ID.
+- Tiny exhaustive reference demonstrates bounded-search correctness; heuristic may miss routes but must not emit invalid ones or claim proven impossibility.
+- Scorer uses gold labels independent of extraction; development/test provenance, family splits and dedup checks pass. Saved-response replay is byte-stable for deterministic per-case output.
+- Browser: complete flow at 360px and 1280px, keyboard/text alternative, loading/cancel, clarification, provider failure and print labels.
+- Operational: keys absent from client bundles/logs; input/rate/global-budget limits; startup rejects corrupt graph; rollback selects previous graph/model config.
+
+## Claim-to-capability ledger
+
+| Proposed claim | Necessary evidence | Current status |
+|---|---|---|
+| Finds constraint-compliant ski outings | R01/R04 plus graph audit and independent validation | Planned |
+| Fine-tuning improves request understanding | R08 with frozen test and comparator metrics | Planned |
+| Uses a real Tinker-trained model | R09 checkpoint-linked end-to-end trace | Planned |
+| Uses real terrain with simulated winter conditions | R01/R05 provenance and visible scenario labels | Candidate terrain inspected; app planned |
+| Helps reduce screen time | Timed usability comparison against manual map planning | Hypothesis, no claim allowed yet |
+| Works offline / knows live lift status / field-tested skiing | Separate demonstrated capability | Out of scope; must not claim |
+
+## Decisions and execution gates
+
+Selected: Lift-Lap Planner; narrow language-to-constraints fine-tuning; deterministic route validation; private repo. Recommended: Alpendorf audited sector, Python/NetworkX + React/MapLibre, Qwen3-8B SFT. These recommendations can proceed to implementation within the user's future build scope, but are not evidence of working integrations.
+
+Unresolved: audited sector acceptance, Tinker access and credits, spending allowance, final dependency versions, license choice for original code, deployment location, final data-publication arrangement and entrant eligibility. These do not block local planning/corpus design. Public repository visibility changes, deployment publication and DEV submission remain separate release actions.
+
+Main risks: corrupted topology, shallow language task already solved by prompting, synthetic language leakage, no measured gain, remote latency, time pressure, and October not permitting a Flachau ski field test. Use a clearly described planning/usability trial; do not rebrand an outdoor laptop demo as an on-snow test.
+
+## Completion policy
+
+Each requirement row has exactly one owner in the requirements file. Mark implemented/verified only when linked evidence exists. Initial structural graph evidence does not satisfy R01's real-world audit. Before submission, verify accessible code/demo, attributions, record late changes as required, and obtain release authority without changing private visibility implicitly.
