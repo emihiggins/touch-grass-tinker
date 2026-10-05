@@ -1,10 +1,10 @@
 # Proposed implementation architecture
 
-Status: design, not running software. Data findings live in [research](../research/feasibility.md). Implement the [requirements](../product/requirements.md) and [evaluation protocol](../delivery/evaluation.md).
+Status: production design; a limited [offline reference implementation](../delivery/offline-checkpoint.md) now runs. Data findings live in [research](../research/feasibility.md). Implement the [requirements](../product/requirements.md) and [evaluation protocol](../delivery/evaluation.md).
 
 ## Choices
 
-Python backend (FastAPI, Pydantic, NetworkX) plus a small React/TypeScript/Vite frontend with MapLibre. Tinker training/evaluation stays in Python. Use local versioned JSON/JSONL artifacts, not a database, accounts, agent framework or vector store. At implementation start pin compatible stable versions and lock Python with uv and frontend with npm/package-lock. No dependencies have yet been installed.
+Python backend (FastAPI, Pydantic, NetworkX) plus a small React/TypeScript/Vite frontend with MapLibre. Tinker training/evaluation stays in Python. Use local versioned JSON/JSONL artifacts, not a database, accounts, agent framework or vector store. At implementation start pin compatible stable versions and lock Python with uv and frontend with npm/package-lock. No third-party dependencies have yet been installed. The current reference planner is standard-library-only; this does not claim the production API/UI or NetworkX adapter is implemented.
 
 One CPU server can serve the built frontend and API. Training and live interpretation use remote Tinker SDK clients. Local laptop plus video is the zero-hosting-spend fallback; a public deployment remains a release decision. No offline inference promise. An explicitly selected cached replay mode may work without model access but must be visibly labeled and cannot be presented as a live tuned-model run.
 

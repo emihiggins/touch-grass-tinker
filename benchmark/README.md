@@ -23,3 +23,9 @@ python3 scripts/benchmark.py benchmark/development-seed.jsonl --predictions /pat
 Prediction format: one JSON object per line with `id` and `intent`. Missing/malformed intents count as failures; duplicate/unknown IDs abort rather than silently drop records. Metric is strict normalized intent match, with order-insensitive lists and equivalent timestamp normalization. It is **not** route success. The gold round-trip test checks the scorer, not a model. No model results exist yet.
 
 [Manifest](manifest.json) records the current content hash; this is a reproducibility hash, not a claim that final evaluation is frozen. Code is standard-library-only. No training/sample calls or dependencies are needed for local checks.
+
+## Graph-backed development scenarios
+
+[route-development.json](route-development.json) adds 8 original synthetic scenarios referencing the seed: feasible outings, closure/exclusion conflicts, unknown status, queue-induced infeasibility and a changed finish node. `python3 -m liftlap.evaluate --predictions /path/to/predictions.jsonl` scores predictions keyed by **route scenario ID**, not seed ID. It combines normalized gold-intent agreement with planner status and independently checks a returned route against gold constraints. Cases remain development-only and not human-reviewed.
+
+Tests passing gold intents through this pipeline are fixture self-checks, never base/tuned model accuracy. A deliberately weakened difficulty constraint yields a route that the planner can execute, but the gold validator and scorer reject it.

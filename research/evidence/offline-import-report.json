@@ -1,0 +1,16 @@
+{
+  "graph_hash": "0f8659b9cba47dee5e30e7ccf10ce893d48f74bded0258579991ea0728a25678",
+  "source_sha256": "19f5e76f53e54c7c6c64f28eeed2ba1fb9c83e3fa12b53a310de706e12bb9ccd",
+  "audit": {
+    "skipped_ways": [],
+    "node_count": 469,
+    "edge_count": 495,
+    "assumptions": [
+      "Way order used as directed travel; lift terminals unreviewed.",
+      "Durations assume lift 3m/s, piste 4m/s, minimum 1s; no measured timing.",
+      "All edges unreviewed; no operational route approval.",
+      "Relations and permission/time restrictions are not fully interpreted."
+    ]
+  },
+  "stage": "unreviewed_lab_only"
+}

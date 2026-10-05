@@ -1,0 +1,98 @@
+[
+  {
+    "id": "route-01",
+    "seed_case_id": "dev-seed-002",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-02",
+    "seed_case_id": "dev-seed-005",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-03",
+    "seed_case_id": "dev-seed-005",
+    "edge_overrides": {
+      "chair": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-04",
+    "seed_case_id": "dev-seed-002",
+    "edge_overrides": {
+      "blue": {
+        "status": "closed"
+      },
+      "practice": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-05",
+    "seed_case_id": "dev-seed-003",
+    "edge_overrides": {
+      "blue": {
+        "status": "closed"
+      },
+      "practice": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-06",
+    "seed_case_id": "dev-seed-001",
+    "edge_overrides": {
+      "chair": {
+        "status": "unknown"
+      },
+      "tow": {
+        "status": "unknown"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-07",
+    "seed_case_id": "dev-seed-001",
+    "edge_overrides": {
+      "chair": {
+        "queue_s": 4000
+      },
+      "tow": {
+        "queue_s": 4000
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-08",
+    "seed_case_id": "dev-seed-017",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  }
+]

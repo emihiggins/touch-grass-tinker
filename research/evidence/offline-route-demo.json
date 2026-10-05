@@ -1,0 +1,74 @@
+{
+  "mode": "SIMULATION ONLY",
+  "terrain_review": "unreviewed",
+  "import_audit": {
+    "skipped_ways": [],
+    "node_count": 469,
+    "edge_count": 495,
+    "assumptions": [
+      "Way order used as directed travel; lift terminals unreviewed.",
+      "Durations assume lift 3m/s, piste 4m/s, minimum 1s; no measured timing.",
+      "All edges unreviewed; no operational route approval.",
+      "Relations and permission/time restrictions are not fully interpreted."
+    ]
+  },
+  "result": {
+    "status": "ok",
+    "route": {
+      "edge_ids": [
+        "osm:way:253232925:0",
+        "osm:way:449539706:0",
+        "osm:way:449539706:1",
+        "osm:way:449539706:2",
+        "osm:way:547259393:5",
+        "osm:way:547259393:6",
+        "osm:way:547259393:7",
+        "osm:way:547259393:8",
+        "osm:way:547259393:9",
+        "osm:way:49225049:0",
+        "osm:way:49225049:1",
+        "osm:way:49225049:2",
+        "osm:way:49225049:3",
+        "osm:way:49225049:4",
+        "osm:way:49225049:5",
+        "osm:way:49225049:6",
+        "osm:way:49225049:7",
+        "osm:way:49225049:8",
+        "osm:way:49225049:9",
+        "osm:way:49225049:10",
+        "osm:way:49225049:11",
+        "osm:way:547259386:0",
+        "osm:way:547259386:1",
+        "osm:way:547259386:2",
+        "osm:way:547259386:3",
+        "osm:way:49225053:1",
+        "osm:way:49225053:2",
+        "osm:way:49225053:3",
+        "osm:way:49225053:4",
+        "osm:way:49225053:5",
+        "osm:way:49225053:6",
+        "osm:way:49225053:7",
+        "osm:way:49225053:8",
+        "osm:way:49225053:9",
+        "osm:way:49225053:10",
+        "osm:way:49225053:11",
+        "osm:way:49225053:12",
+        "osm:way:49225053:13",
+        "osm:way:49225053:14"
+      ],
+      "total_seconds": 623.313,
+      "graph_hash": "bb4d5c99748f1a049e6112008e2c600176b828b458b5d306256e9906f6a638b1",
+      "scenario_hash": "2b10b2af3210c76ffcb6c5c33816d38fc026410f51b6121f2f84594fae33a767"
+    },
+    "simulated": true,
+    "lab": true,
+    "search_complete": false,
+    "expanded_states": 371,
+    "optimality_claim": false,
+    "validation": {
+      "valid": true,
+      "reason": "valid_simulated_outing",
+      "total_seconds": 623.313
+    }
+  }
+}

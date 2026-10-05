@@ -1,6 +1,6 @@
 # Delivery plan and evidence gates
 
-Status: structural/source audits and offline seed/scorer implemented. The three-loop derivative-graph gate failed; [source checkpoint](../research/loop-verification.md) records the replacement path. No app/training implemented. Contest facts and exact deadline: [challenge research](../research/challenge.md).
+Status: structural/source audits and offline seed/scorer implemented. The three-loop derivative-graph gate failed; [source checkpoint](../research/loop-verification.md) records the replacement path. A dependency-free offline importer/planner/validator and synthetic graph-backed evaluation now run; see [checkpoint](offline-checkpoint.md). No UI/API/model training implemented. Contest facts and exact deadline: [challenge research](../research/challenge.md).
 
 ## Canonical map
 

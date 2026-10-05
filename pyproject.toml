@@ -1,0 +1,6 @@
+[project]
+name = "lift-lap-planner"
+version = "0.1.0"
+description = "Offline reference routing and evaluation for Lift-Lap Planner"
+requires-python = ">=3.11"
+dependencies = []

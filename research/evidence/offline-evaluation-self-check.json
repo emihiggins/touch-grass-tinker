@@ -1,0 +1,64 @@
+{
+  "scope": "synthetic_graph_development_cases_not_model_benchmark",
+  "cases": [
+    {
+      "id": "route-01",
+      "intent_exact_match": true,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": true
+    },
+    {
+      "id": "route-02",
+      "intent_exact_match": true,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": true
+    },
+    {
+      "id": "route-03",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-04",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-05",
+      "intent_exact_match": true,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": true
+    },
+    {
+      "id": "route-06",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-07",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-08",
+      "intent_exact_match": true,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": true
+    }
+  ],
+  "count": 8,
+  "successes": 8,
+  "prediction_source": "GOLD FIXTURE SELF-CHECK; NOT MODEL OUTPUT"
+}
