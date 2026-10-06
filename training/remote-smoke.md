@@ -24,7 +24,7 @@ These tests do **not** prove a remote training update, checkpoint restore equiva
 
 ## Remaining before the live smoke
 
-1. Verify available account credits and auto-top-up status; retain the authorized $10 total cap.
+1. Available account credits confirmed by Emi: $10 at 21:55 UTC. Auto-top-up status remains unknown; do not enable or rely on top-ups. Retain the authorized $10 total project cap, including prior usage.
 2. Reconcile historic/ambiguous sampling charges. The October 6 read-only account window returned six priced sampling events totaling $0.004948914 with `cost_data_through=null`. That is provisional account-wide usage, not a project invoice. The previous conservative completed-call estimate is $0.00988101; neither proves that rejected submissions were free.
 3. Verify current training/checkpoint/storage prices and a conservative checkpoint-size bound. TTL limits duration, not byte size or operation charges.
 4. Add the launch wrapper that validates data/config evidence, reserves the entire smoke cost in the shared ledger **before session creation**, checks configuration/run counts and writes result/checkpoint artifacts. This adapter must not be invoked as an unmetered shortcut.

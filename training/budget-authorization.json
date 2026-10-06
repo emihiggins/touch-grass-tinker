@@ -31,9 +31,9 @@
   "known_prior_inference_estimate_usd": 0.00988101,
   "prior_usage_evidence": "../research/evidence/inference-ledger.json",
   "prior_invoice_and_rejected_request_charges_verified": false,
-  "account_credits_verified": false,
+  "account_credits_verified": true,
   "provider_enforced_cap": false,
-  "enforcement_status": "Authorization record, not executable global budget enforcement. Existing inference runner bounds one run only.",
+  "enforcement_status": "Persistent local project/stage ledger integrated into sampling. Training launch wrapper and prior-charge reconciliation remain incomplete; not a provider cap.",
   "requirements_before_execution": [
     "Implement agreed contract and label corrections",
     "Resolve training eligibility and required independent evaluation gates",
@@ -54,5 +54,13 @@
     "output": 0.6
   },
   "checkpoint_storage_usd_per_gb_month": 0.1,
-  "policy": "Hard authorization ceiling, not a spending target. Count usage before credit discounts conservatively; account credits do not expand scope. Stop before commitments exceed a stage or total remaining cap. Reconcile uncertain billed work rather than assuming it was free. No reapproval needed within this authorized scope once execution checks pass."
+  "policy": "Hard authorization ceiling, not a spending target. Count usage before credit discounts conservatively; account credits do not expand scope. Stop before commitments exceed a stage or total remaining cap. Reconcile uncertain billed work rather than assuming it was free. No reapproval needed within this authorized scope once execution checks pass.",
+  "account_credit_evidence": {
+    "source": "Emi direct report, Telegram message2392",
+    "reported_at": "2026-10-06T21:55:53Z",
+    "available_credit_usd": 10,
+    "verification_method": "user_report_not_api",
+    "automatic_top_up_status": "unknown",
+    "does_not_expand_project_cap": true
+  }
 }
