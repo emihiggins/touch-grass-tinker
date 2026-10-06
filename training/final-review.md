@@ -1,3 +1,5 @@
+> All 16 cases approved by Emi on 2026-10-06 at22:42:57UTC (message2415). Cases and graphs are now hash-bound and frozen. The original review instructions below are retained for provenance.
+
 # Fresh evaluation review —16 cases
 
 These are new fictional scenarios, not a repeat review. No model predictions have been run on them. Reply with case numbers and approve/correct/uncertain; no commands required. Review the intended meaning first, then open the proposed label.
@@ -77,7 +79,7 @@ Example route: access, green-home, access, green-home
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-002
 
@@ -123,7 +125,7 @@ Example route: access, upper, blue-ridge, green-connector, access, upper, blue-r
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-003
 
@@ -169,7 +171,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-004
 
@@ -215,7 +217,7 @@ Example route: access, upper, blue-ridge, green-connector
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-005
 
@@ -264,7 +266,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-006
 
@@ -310,7 +312,7 @@ Example route: chair, carpet, blue-home, chair, carpet, blue-home
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-007
 
@@ -354,7 +356,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-008
 
@@ -398,7 +400,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-009
 
@@ -442,7 +444,7 @@ Example route: chair, blue-home
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-010
 
@@ -486,7 +488,7 @@ Example route: chair, blue-home
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-011
 
@@ -532,7 +534,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-012
 
@@ -578,7 +580,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-013
 
@@ -624,7 +626,7 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-014
 
@@ -673,7 +675,7 @@ Example route: carpet, practice, carpet, practice, chair, home-run, chair, home-
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-015
 
@@ -717,7 +719,7 @@ Example route: carpet, practice, carpet, practice, chair, home-run, chair, villa
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)
 
 ## final-review-016
 
@@ -762,4 +764,4 @@ Example route: None
 
 </details>
 
-Decision: pending
+Decision: approved by Emi (message 2415)

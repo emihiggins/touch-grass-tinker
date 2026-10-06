@@ -1,0 +1,13 @@
+{
+  "status": "frozen",
+  "scope": "16_case_fresh_human_reviewed_evaluation_same_agent_authorship",
+  "cases_sha256": "b69f0a67d602b4dc0cf04cd423effe37ffd43c5b9c0237ffdcc50b4547e1c367",
+  "graph_bundle_sha256": "9dd8740c085bc7e395ddc72a5febc6ca70584206d95707b8bb1c5007d5e9a9d7",
+  "model_runs_before_freeze": 0,
+  "review_source_message_id": "2415",
+  "limitations": [
+    "Same agent authored fixtures and implementation",
+    "Small fictional set; not statistically representative or field safety evidence",
+    "Retained base model and prompt fixed before model predictions"
+  ]
+}

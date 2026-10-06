@@ -1,0 +1,26 @@
+{
+  "run_key": "fresh-base-evaluation-01",
+  "model": "Qwen/Qwen3-8B",
+  "model_path": null,
+  "count": 16,
+  "temperature": 0,
+  "seed": 20261006,
+  "max_output_tokens": 512,
+  "max_context_tokens": 4096,
+  "reservation_usd": 0.05,
+  "upper_estimate_usd": 0.00985728,
+  "hashes": {
+    "benchmark/v2/final-review/cases.jsonl": "c4b840e9e6dfd0110d4061e4c5128a030d7cff2e953d1e6867d5d438cdf20ffd",
+    "benchmark/v2/final-review/graphs.json": "7ffd35b1ef8711927ee064e56a1c363310ec26f1bb3714d60d568a73ff89f786",
+    "benchmark/v2/final-review/freeze.json": "9e606fdf966065744b5763fdb058af3171aafbfdbf320e3b4d88a8cb065fe41e",
+    "benchmark/v2/baseline-prompt.txt": "970495afba417156b6e02d7278901eb32069e4b31ae1f68659f48f4c74e73b5d",
+    "training/tokenizer-manifest.json": "16c75114421ae557b7a697afaa87698ceba3ec10f581337cc223a1b441ecd54f",
+    "training/budget-authorization.json": "5d631550027a8b382115925861a6ce9d5c6739113c6d6f6a5322719433a97b21",
+    "liftlap/final_evaluation.py": "7db1b0af0bd3573dfbf275b7d026a9e5f2599c72d8573a6fd74c71f61e17eb7c",
+    "liftlap/sample_runner.py": "79f412f0dd1dd14fd6946b73f858309384768732dc23341269f29f5fa994c3c8",
+    "liftlap/evaluation_v2.py": "f9200400be7a7ef8294a3dad1ed22c5c95ed18c5187ee0b6569234a799e6f627"
+  },
+  "status": "prepared",
+  "policy": "No tuning or reruns based on final outputs; retain every failure in denominator",
+  "plan_sha256": "ed2e2b022e85eec00e50f8ada8aab655c2b13cb334d5f9d337a74cd4ee1b49b1"
+}

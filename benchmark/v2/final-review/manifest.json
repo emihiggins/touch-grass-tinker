@@ -1,10 +1,10 @@
 {
-  "status": "human_review_required_not_frozen",
+  "status": "human_approved_frozen",
   "count": 16,
   "model_predictions": 0,
   "scope": "compact_fresh_confirmatory_set_not_original_100_to_200_case_protocol",
   "limitations": [
-    "Same agent authorship; human review needed",
+    "Same agent authorship; independently reviewed by Emi",
     "Small set, not statistically representative",
     "Do not modify model/prompt after seeing final model outputs"
   ],
@@ -21,7 +21,9 @@
     "scope": "structural_audit_not_independent_label_review_or_test_freeze"
   },
   "sha256": {
-    "cases.jsonl": "432349d078b2caa6fe76462653540da2dc74e42c111eaa0e05c58ab0d6fe0d92",
-    "graphs.json": "7ffd35b1ef8711927ee064e56a1c363310ec26f1bb3714d60d568a73ff89f786"
-  }
+    "cases.jsonl": "c4b840e9e6dfd0110d4061e4c5128a030d7cff2e953d1e6867d5d438cdf20ffd",
+    "graphs.json": "7ffd35b1ef8711927ee064e56a1c363310ec26f1bb3714d60d568a73ff89f786",
+    "freeze.json": "9e606fdf966065744b5763fdb058af3171aafbfdbf320e3b4d88a8cb065fe41e"
+  },
+  "review_source_message_id": "2415"
 }
