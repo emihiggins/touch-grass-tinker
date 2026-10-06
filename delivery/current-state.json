@@ -5,7 +5,9 @@
     "Green-grade v2 support and blue-target interpretation tested",
     "Frozen reviewed pilot with case/graph hashes; limitations disclosed",
     "47 training rows rendered without truncation or prompt loss",
-    "Atomic project budget reservations integrated into live sampling"
+    "Atomic project budget reservations integrated into live sampling",
+    "Read sanitized provisional account billing totals; not reconciled",
+    "Protected training transport wire-tested offline including expiring state/sampler checkpoints and optimizer restore"
   ],
   "remaining": [
     "Reconcile prior/ambiguous Tinker charges and verify account credits",
@@ -17,9 +19,13 @@
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": 0,
-  "tests_passed": 126,
+  "tests_passed": 131,
   "browser_verification": "Not repeated for green selector; API tests and JavaScript syntax pass",
   "background_worker_active": false,
-  "next_action": "Complete remote training integration and billing evidence; no new budget authorization required",
-  "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap"
+  "next_action": "Complete metered smoke launch wrapper after account/billing/storage evidence; no live training yet",
+  "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
+  "human_account_input_needed": [
+    "Available Tinker credit balance",
+    "Whether automatic top-up is enabled"
+  ]
 }

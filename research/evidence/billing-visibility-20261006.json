@@ -1,0 +1,19 @@
+{
+  "scope": "read_only_account_window_not_project_invoice",
+  "window": [
+    "2026-10-05T00:00:00Z",
+    "2026-10-07T00:00:00Z"
+  ],
+  "event_count": 6,
+  "priced_events": 6,
+  "unpriced_events": 0,
+  "event_kinds": {
+    "sampling_prefill": 4,
+    "sampling_sample": 2
+  },
+  "estimated_gross_usd": 0.004948914,
+  "cost_data_through": null,
+  "account_credits_verified": false,
+  "project_reconciled": false,
+  "provider_calls_creating_compute": 0
+}

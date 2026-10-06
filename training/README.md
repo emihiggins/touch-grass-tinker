@@ -239,3 +239,8 @@ Emi clarified the two requested blue preferences at 21:16 UTC. All 16 pilot labe
 V2 supports normalized green < blue < red < black. Real resort colors must be mapped explicitly and reviewed; this ordering does not establish equivalence across countries. No real green terrain has been added. A blue maximum permits green; a blue target additionally prefers blue. A maximum alone still does not imply a preference or variety.
 
 `liftlap.spend.Ledger` stores atomic persistent project/stage commitments using standard-library SQLite. Prior usage must be reconciled first. New sampling runs require `--project-ledger` and reserve the full estimated token cost before provider submission; ambiguous/finished calls retain reservations until verified billing settlement. Never delete or copy the ledger to regain headroom. Existing historic calls have not been imported as verified charges. This is local control, not a provider hard cap. Reserve-stage justification, two-configuration experiment counting, checkpoint storage bounds, and remote training/checkpoint integration remain outstanding; the ledger alone does not make training launchable.
+
+
+### Remote training transport
+
+[Remote smoke checkpoint](remote-smoke.md) documents the implemented SDK transport, offline wire tests and remaining metered-launch/billing gates. No real training or checkpoint calls have run.
