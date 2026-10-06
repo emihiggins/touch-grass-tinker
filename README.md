@@ -2,7 +2,13 @@
 
 Private project workspace for Emi's Hacktoberfest Week 1 entry, targeting **Best Use of Tinker**.
 
-**Status:** offline reference implementation working. Includes conservative OSM import, a bounded simulation planner, independent route validator, 32 intent-development cases and 8 graph-backed scenarios. A local browser demo and rules baseline now run; no Tinker inference, fine-tuning or field-verified navigation yet.
+**Status:** working local simulation and live Tinker baseline experiments; no fine-tuned model yet. The UI uses rules, while Qwen3-8B inference is evaluated separately. No public demo or field-verified navigation is claimed.
+
+## Submission materials
+
+- [DEV article draft and release gates](submission/README.md)
+- [Two-minute demo storyboard](submission/demo-storyboard.md)
+- [Training batch/cursor rehearsal](training/batch-rehearsal.md)
 
 ## Run locally (Python 3.11+, no dependencies)
 
@@ -30,14 +36,12 @@ The first command uses an original synthetic graph. The server command opens the
 - [Execution gates and evidence plan](delivery/plan.md)
 - [Archived alternative](scratchpad/concept.md)
 
-## Next step
+## Current checkpoint and next step
 
-[Sampling runner](training/sampling-runner.md): SDK submission/polling is mock-tested and a 20-case local dry run is ready. Prompt v2 improves the live base model from 6/20 to 13/20 strict development request successes; rules-v1 scores 14/20. This is prompt development, not fine-tuning or held-out improvement.
+Prompt v2 scores **13/20** strict development request successes, versus **6/20** for prompt v1 and **14/20** for rules-v1. These are visible development cases, not held-out results or fine-tuning gains. Raw outputs and regressions are preserved in the [training checkpoint](training/README.md).
 
-Latest: 90 tests pass in the optional training environment (ten optional tests skip in the dependency-free environment); paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. A pinned Tinker SDK read-only smoke passes; all 80 current candidate/development examples pass Cookbook token/mask checks. 48 training candidates and a review packet are ready. The first inference smoke is recorded; no fine-tuning has run. See [training checkpoint](training/README.md).
+There are **48 unapproved training candidates** and **32 development examples**. All 80 pass local Cookbook token/mask checks. The new [offline batch rehearsal](training/batch-rehearsal.md) verifies all 48 candidates in three batches with an explicit batch-size-16 override and hash-bound resume cursors. It rejects the canonical batch-size-32 tail loss; the canonical plan is not changed. No remote checkpoint is loaded and no training is launched.
 
-[Offline training readiness](training/README.md) now includes 16 training candidates, split/leakage audit, Cookbook conversation preview export and saved paired intent comparison. No final test set or model runs yet.
+Next: human label review, independent evaluation data, protected training/checkpoint integration and separately authorized training. The [submission readiness page](submission/README.md) tracks the article, actual tuned-model evidence, accessible demo/video and code-release gaps. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
 
-Review native OSM terminal access/direction and route choices; the three-field-reviewed-loop gate remains open. Extend the current local UI/API and improve the rules baseline while Tinker access is pending. Expand/review development examples and freeze a separate held-out benchmark before training. Reuse existing open data and Tinker Cookbook tooling.
-
-Keep this repository private as requested. Publishing code, a demo, or the DEV entry is a separate release step. No paid compute has been authorized or started.
+Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Earlier inference-only authorization does not authorize training.

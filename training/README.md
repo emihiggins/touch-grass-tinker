@@ -200,3 +200,8 @@ python3 -m liftlap.request_compare research/evidence/base-dev-smoke/predictions.
 ```
 
 Next useful work: review the known ambiguous labels, create an independent evaluation set with new graph/template families, and implement the training/checkpoint path. Do not keep spending on this same tiny development set to manufacture a success headline. Human review and training authorization are still pending. Heartbeat settings were not changed.
+
+
+## Offline batching rehearsal — 2026-10-06
+
+The [Cookbook batch/cursor rehearsal](batch-rehearsal.md) exercises the installed loader using real locally rendered SDK Datums. It refuses the 48/32 tail loss, verifies an explicit 16-row rehearsal override with complete coverage, and binds continuation to data/config/token hashes. It also documents that the installed trainer shuffles by epoch index, not the plan's shuffle-seed field. No remote checkpoint restoration, training authorization or human review is implied. Submission writing and its remaining gates are now in [submission/README.md](../submission/README.md).

@@ -1,6 +1,6 @@
 # MVP requirements and acceptance ownership
 
-Status: product capabilities remain **planned**; offline importer, planner, validator and development benchmark tooling are implemented but do not complete the product delivery gates. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.
+Status: full product acceptance remains **open**; offline importer, planner, validator and development benchmark tooling are implemented but do not complete the product delivery gates. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.
 
 | ID | Requirement / user story | Testable acceptance criterion | Evidence status |
 |---|---|---|---|
@@ -15,6 +15,6 @@ Status: product capabilities remain **planned**; offline importer, planner, vali
 | R09 | App uses the trained model | One end-to-end request trace identifies tuned checkpoint and independent route validation; replacing adapter with replay changes visible mode; no claim based solely on training loss | Planned |
 | R10 | Visitor data and compute are bounded | No client API keys, raw-prompt logging or GPS collection; oversized text and invalid IDs rejected; duplicate submit bounded; no unlimited provider retries; public-use quota/rate limits demonstrated before deployment | Planned |
 | R11 | Another builder reproduces results | Locked dependencies, dataset split hashes, renderer/config/checkpoint reference, evaluation command and attribution provided; saved predictions replay through identical scorer with identical results | Planned |
-| R12 | Judges can assess the submission | English DEV draft follows template with working demo/video and code-access path, sourced open-innovation argument, category and real metrics; release review before publication; deadline from challenge research | Planned |
+| R12 | Judges can assess the submission | English DEV draft follows template with working demo/video and code-access path, sourced open-innovation argument, category and real metrics; release review before publication; deadline from challenge research | Partial: [article and storyboard](../submission/README.md) prepared; accessible demo/code, trained-model results and release remain open |
 
 Out of scope: autonomous navigation, backcountry/avalanche recommendations, live queues, automatic resort-wide repairs, restaurant access inference, social accounts, payments, multi-resort production coverage, voice input and native mobile apps.

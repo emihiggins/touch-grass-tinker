@@ -46,7 +46,9 @@ Parallel lanes mean independent work ordering, not authorization to spawn agents
 - Browser: complete flow at 360px and 1280px, keyboard/text alternative, loading/cancel, clarification, provider failure and print labels.
 - Operational: keys absent from client bundles/logs; input/rate/global-budget limits; startup rejects corrupt graph; rollback selects previous graph/model config.
 
-## Claim-to-capability ledger
+## Historical planning claim ledger
+
+Current submission evidence and remaining release gates are in [submission readiness](../submission/README.md). Rows below describe the original planning checkpoint, not current capabilities.
 
 | Proposed claim | Necessary evidence | Current status |
 |---|---|---|
