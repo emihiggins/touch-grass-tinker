@@ -1,3 +1,5 @@
+> Current status: [app integration and recorded demo](../delivery/app-integration.md). Older checkpoint sections below are historical, not remaining execution gates.
+
 # Submission readiness — October 6, 2026
 
 **Private preparation checkpoint, not submitted or ready to claim Best Use of Tinker.** Deadline: October 11, 11:59 PM PDT / October 12, 06:59 UTC. [Official requirements and sources](../research/challenge.md).
@@ -48,4 +50,4 @@ On October 6, all **97 tests passed** in the pinned optional training environmen
 
 Preregistered experiment01 completed: base9/16 vs trained7/16 end-to-end successes, schema validity15/16 vs10/16. Two paired wins, four losses; screening failed. Do not promote the trained candidate or claim Best Use of Tinker improvement. Evidence: [paired results](../research/evidence/experiment-01/README.md). Earlier tables/next-sequence statements describe prior checkpoints.
 
-Fresh16-case review is complete: all approved by Emi. Frozen base evaluation passed13/16 tasks,16/16 schemas; see [evidence](../research/evidence/fresh-base-evaluation/README.md). No further label review needed. This compact set replaces the original100–200-case protocol for this iteration and cannot support broad statistical generalization. Retain the base candidate fixed before final evaluation. The app remains rules-based; AI integration/demo/code access and publication remain open. No further model configuration ran. Total held commitments$1.65, not a bill; existing01:00UTC accounting follow-up remains scheduled.
+Fresh16-case review is complete: all approved by Emi. Frozen base evaluation passed13/16 tasks,16/16 schemas; see [evidence](../research/evidence/fresh-base-evaluation/README.md). No further label review needed. This compact set replaces the original100–200-case protocol for this iteration and cannot support broad statistical generalization. Retain the base candidate fixed before final evaluation. The app now supports opt-in live base AI and an exact recorded example; recorded demo and isolated local package are complete. Code/video access and publication remain open. No further model configuration ran. Total held commitments$1.75, not a bill; existing01:00UTC accounting follow-up remains scheduled.

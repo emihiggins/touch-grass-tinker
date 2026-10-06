@@ -6,7 +6,7 @@ tags: devchallenge, hf26challenge
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)*
 
-> Private working draft, October 6. Not ready to publish: demo/video access, code access and app AI integration remain open; the first fine-tuning trial did not improve the pilot. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
+> Private working draft, October 6. Not ready to publish: public video/code access and the final release decision remain open; the first fine-tuning trial did not improve the pilot. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
 
 ## What I Built
 <!-- What does it do, and how does it get people off the screen and into the world?  Who is it for? -->
@@ -19,14 +19,14 @@ Lift-Lap Planner is a ski-outing planning experiment built around that distincti
 
 The local prototype can interpret a limited vocabulary, ask the user to confirm constraints, search a bounded graph, and produce a printable simulated itinerary. It includes fictional terrain and an explicitly unreviewed OpenStreetMap terrain lab. It is not live lift information or on-mountain navigation, and it has not been field-tested on skis.
 
-The current browser uses a deterministic rules parser. Open-weight-model interpretation is working separately in the evaluation pipeline; the browser is not yet connected to a trained model.
+The browser offers Rules, a clearly labelled recorded AI example, and opt-in live Qwen3-8B base-model interpretation. Live inference stays server-side; schema-invalid responses cannot create routes. The user reviews the interpretation and can correct hard lift exclusions locally before confirming. The rejected fine-tuned checkpoint is not used.
 
 ## Demo
 <!-- Share a deployed link or a video demo. -->
 
-**Pending: a judge-accessible video or deployed demo link.** The current interface runs locally, not at a public URL.
+**Recorded demonstration ready; public video URL pending release approval.** The interface runs locally, not at a public URL. The [screen recording](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/walkthrough.webm) currently requires private-repository access. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
 
-The [recording storyboard](https://github.com/emihiggins/touch-grass-tinker/blob/main/submission/demo-storyboard.md) covers a successful simulated outing, closed lifts and an unsupported request. Existing [desktop](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-desktop.png) and [mobile](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-mobile.png) images are development captures, not evidence of a public deployment.
+The [recording storyboard](https://github.com/emihiggins/touch-grass-tinker/blob/main/submission/demo-storyboard.md) covers a successful simulated outing, closed lifts and an unsupported request. Earlier [desktop](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-desktop.png) and [mobile](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-mobile.png) images are development captures, not evidence of a public deployment.
 
 ## Code
 <!-- Show us the code!  You can embed a GitHub repo directly into your post. -->
@@ -98,7 +98,7 @@ Optional; not exported for this submission yet. Any shared export must be projec
 ## Prize Categories
 <!-- Which partner categories are you entering?  List every one that applies, or remove this section. -->
 
-**Best Use of Tinker — not currently supported by the measured result.** The category requires actual fine-tuning and a clear improvement over a baseline. Hosted base-model inference and prompt improvements alone do not satisfy it. Before claiming this category, add the real checkpoint, independently evaluated result and in-app tuned-model trace. If there is no defensible improvement, report that outcome honestly and reassess the category claim.
+No partner category is currently claimed. The Tinker trial did not demonstrate a fine-tuning improvement, so I am not entering Best Use of Tinker on the strength of hosted inference or prompt changes. Final category selection remains part of release review.
 
 <!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
 

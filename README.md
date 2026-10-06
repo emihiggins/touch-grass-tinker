@@ -1,8 +1,8 @@
 # Lift-Lap Planner
 
-Private project workspace for Emi's Hacktoberfest Week 1 entry, targeting **Best Use of Tinker**.
+Private project workspace for Emi's Hacktoberfest Week 1 entry, for the Touch Grass challenge. Best Use of Tinker is not claimed: no measured fine-tuning gain.
 
-**Status:** working local simulation and live Tinker baseline experiments; no fine-tuned model yet. The UI uses rules, while Qwen3-8B inference is evaluated separately. No public demo or field-verified navigation is claimed.
+**Status:** local simulation with Rules, recorded-AI and opt-in live Qwen3-8B interpretation. A real app call is verified, with its semantic error preserved and a local correction step demonstrated. The fine-tuned trial did not improve the matched pilot (base9/16, tuned7/16). Retained base:13/16 on a separate frozen fresh set. No public demo or field-verified navigation is claimed.
 
 ## Submission materials
 
@@ -38,14 +38,11 @@ The first command uses an original synthetic graph. The server command opens the
 
 ## Current checkpoint and next step
 
-Prompt v2 scores **13/20** strict development request successes, versus **6/20** for prompt v1 and **14/20** for rules-v1. These are visible development cases, not held-out results or fine-tuning gains. Raw outputs and regressions are preserved in the [training checkpoint](training/README.md).
+- [Integration, recorded demo and reproducible local package](delivery/app-integration.md)
+- [Fresh base evaluation:13/16](research/evidence/fresh-base-evaluation/README.md)
+- [Matched pilot:base9/16 vs trained7/16](research/evidence/experiment-01/README.md)
+- [Release decisions for Emi](submission/release-decision.md)
 
-**V2 implementation is ready locally:** explicit 10/300-minute durations, soft lift avoidance distinct from hard exclusions, and visible route tradeoffs. [Current checkpoint and verification](delivery/v2-checkpoint.md).
+All training/pilot/fresh label reviews are complete. The app requires explicit confirmation and supports hard-lift-exclusion correction before planning. Its recorded example preserves a real model mistake. Rules and exact-input recorded mode work offline; live inference is disabled by default. The real terrain lab remains unreviewed simulation.
 
-The [v2 corpus](benchmark/v2/README.md) contains **47 human-reviewed, deterministically migrated training rows** (009 excluded) and 32 development rows. Original v1 records/results remain intact. The [16-case evaluation review packet](training/evaluation-review-v2.md) has 14 approvals and two open preferred-blue corrections; it is a pilot, not a frozen final benchmark. No new model inference or training has run.
-
-Next: resolve the two pilot corrections, prepare/freeze a genuinely independent final benchmark, and finish protected training/checkpoint integration and global budget accounting. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
-
-Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Emi authorized a **$10 total Tinker cap** (including prior project usage), staged as $1 smoke + $4 experiments + $5 justified reserve. [Budget scope and execution gates](training/budget-authorization.json). This is not permission to publish or evidence that training has run.
-
-Current review checkpoint: all 16 evaluation pilot labels are resolved, including the blue-preference corrections. See `benchmark/v2/evaluation-pilot-freeze.json`. V2 now accepts normalized green grades; no universal resort color mapping is claimed. Paid training has not run.
+Keep the repository private until release is approved. Current holds total$1.75 within the authorized$10 Tinker cap, not an invoice. No budget reapproval is needed for the approved scope. Billing reconciliation remains separate from model quality and publication.

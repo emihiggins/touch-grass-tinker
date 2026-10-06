@@ -1,0 +1,27 @@
+{
+  "liveHttpStatus": 200,
+  "adapter": "qwen3-8b-base-live",
+  "intent": {
+    "schema_version": 2,
+    "status": "ready",
+    "start_place_id": "base",
+    "finish_place_id": "base",
+    "start_time": "2027-01-15T10:00:00+01:00",
+    "duration_minutes": 45,
+    "hard_max_difficulty": "blue",
+    "excluded_lift_types": [],
+    "avoided_lift_types": [
+      "platter",
+      "rope-tow",
+      "t-bar"
+    ],
+    "preferred_difficulties": [],
+    "prefer_variety": false,
+    "clarification_fields": [],
+    "unsupported_preferences": []
+  },
+  "confirmationRequired": true,
+  "routePassed": true,
+  "pageErrors": [],
+  "semantic_failure": "Request no drag lifts was incorrectly interpreted as soft avoidance, not hard exclusions. Route validation against model intent does not establish intent correctness."
+}

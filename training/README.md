@@ -1,3 +1,5 @@
+> Current status: [app integration and recorded demo](../delivery/app-integration.md). Older checkpoint sections below are historical, not remaining execution gates.
+
 # Offline training-readiness checkpoint — 2026-10-06
 
 No model has been called or trained. This is dataset/export and saved-prediction tooling, **not an authenticated Tinker runner**. Production training and inference adapters remain to implement and smoke against a locked SDK/Cookbook environment. Runtime stays dependency-free for now.

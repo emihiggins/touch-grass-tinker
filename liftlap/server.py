@@ -1,4 +1,4 @@
-"""Loopback-only offline demo. Not a production web server or hosted model endpoint."""
+"""Loopback-only simulation with opt-in, budgeted model interpretation."""
 import argparse,json
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
@@ -27,10 +27,20 @@ def context(mode,minutes=60,difficulty='blue'):
     ui={'start_place_id':start,'finish_place_id':start,'start_time':'2027-01-15T10:00:00+01:00','duration_minutes':minutes,'hard_max_difficulty':difficulty}
     return g,ui,catalog
 
-def handle_api(path,payload):
+def handle_api(path,payload,model=None):
     g,ui,catalog=context(payload.get('terrain','synthetic'),payload.get('minutes',60),payload.get('difficulty','blue'))
     if path=='/api/interpret':
-        return interpret(payload.get('text',''),ui,catalog,schema_version=2)
+        text=payload.get('text','')
+        if not isinstance(text,str) or len(text)>2000:raise ValueError('Invalid text')
+        adapter=payload.get('adapter','rules')
+        if adapter=='live':
+            if model is None:raise ValueError('Live model disabled. Choose Rules or Recorded example.')
+            return model.interpret(text,ui,catalog)
+        if adapter=='replay':
+            from .app_model import replay
+            return replay(ROOT,text,ui,catalog)
+        if adapter!='rules':raise ValueError('Unknown interpreter')
+        return {**interpret(text,ui,catalog,schema_version=2),'adapter':'rules-v2','notice':'Deterministic rules interpretation; not a model response.'}
     if path!='/api/plan':raise ValueError('Unknown endpoint')
     i=payload['intent'];validate_intent(i,{p['id'] for p in catalog})
     if i['status']!='ready':return {'status':i['status'],'route':None}
@@ -56,7 +66,7 @@ def handle_api(path,payload):
             if r['steps'] and tuple(r['steps'][-1][k] for k in ('name','kind','difficulty'))==key:
                 r['steps'][-1]['seconds']+=e['duration_s']
             else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s']})
-    r['terrain_review']=g['review_status'];r['adapter']='rules-v'+str(i['schema_version']);r['disclosure']='Simulation only. No Tinker model, live conditions or field verification. Durations are assumptions.'
+    r['terrain_review']=g['review_status'];r['disclosure']='Simulation only. No live conditions or field verification. Durations are assumptions.'
     return r
 
 class Handler(BaseHTTPRequestHandler):
@@ -75,7 +85,7 @@ class Handler(BaseHTTPRequestHandler):
         if url.path=='/api/context':
             try:
                 mode=parse_qs(url.query).get('terrain',['synthetic'])[0];g,ui,catalog=context(mode)
-                return self.send(200,{'graph':g,'ui_context':ui,'catalog':catalog})
+                return self.send(200,{'graph':g,'ui_context':ui,'catalog':catalog,'live_model_enabled':getattr(self.server,'model',None) is not None,'recorded_model_available':(ROOT/'demo/model-replay.json').exists()})
             except ValueError:return self.send(422,{'error':'Invalid terrain'})
         allowed={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
         if url.path not in allowed:return self.send(404,{'error':'Not found'})
@@ -90,13 +100,18 @@ class Handler(BaseHTTPRequestHandler):
             if not 0<size<=16384:return self.send(413,{'error':'Request too large or empty'})
             payload=json.loads(self.rfile.read(size))
             if not isinstance(payload,dict):raise ValueError('Expected JSON object')
-            result=handle_api(self.path,payload);self.send(200,result)
-        except (ValueError,KeyError,TypeError):self.send(422,{'error':'Invalid request; check fields and supported grammar.'})
+            result=handle_api(self.path,payload,getattr(self.server,'model',None));self.send(200,result)
+        except (ValueError,KeyError,TypeError) as e:
+            from .app_model import ModelUnavailable
+            self.send(422,{'error':str(e) if isinstance(e,ModelUnavailable) else 'Invalid request; check fields and interpreter availability.'})
         except Exception:self.send(500,{'error':'Local planner error; inspect tests before continuing.'})
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,default=8767);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,default=8767);p.add_argument('--live-model',action='store_true');a=p.parse_args()
     server=ThreadingHTTPServer(('127.0.0.1',a.port),Handler);server.timeout=5
+    if a.live_model:
+        from .app_model import LiveModel
+        server.model=LiveModel(ROOT)
     print(f'Local simulation: http://127.0.0.1:{a.port}',flush=True)
     try:server.serve_forever()
     except KeyboardInterrupt:pass

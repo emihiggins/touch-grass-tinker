@@ -1,0 +1,15 @@
+{
+  "recordedAI": true,
+  "exactInputMismatchRejected": true,
+  "hardExclusionsManuallyCorrected": true,
+  "confirmationRequired": true,
+  "closedLiftsNoRoute": true,
+  "unsupportedBlocked": true,
+  "staleConfirmationInvalidated": true,
+  "mobile360NoOverflow": true,
+  "printPdfGenerated": true,
+  "pageErrors": [],
+  "video": "demo/walkthrough.webm",
+  "liveCallsDuringRecording": 0,
+  "latePlanResponseAfterManualCorrectionRejected": true
+}

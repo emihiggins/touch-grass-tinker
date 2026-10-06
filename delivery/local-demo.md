@@ -1,3 +1,5 @@
+> Current status: [app integration and recorded demo](../delivery/app-integration.md). Older checkpoint sections below are historical, not remaining execution gates.
+
 # Local demo checkpoint — 2026-10-06
 
 ## Delivered

@@ -1,3 +1,5 @@
+> Superseded by the recorded walkthrough in [demo/README.md](../demo/README.md). The original storyboard below is retained as planning history; its unimplemented/no-training statements are not current status.
+
 # Two-minute demo recording plan
 
 Status: executable storyboard, not a recorded video. Use the current rules/simulation build; do not narrate it as tuned inference. No public host is required if a judge-accessible video is supplied.

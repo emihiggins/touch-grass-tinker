@@ -1,0 +1,26 @@
+# Lift-Lap demonstration
+
+`walkthrough.webm` is a real Chromium screen recording of the app. It is silent; the on-screen labels and the chapter guide below explain the actions. The recording uses an **exact-input replay of one real Qwen3-8B base-model app call**, then Rules mode. It is not continuous live inference or a fine-tuned model demonstration.
+
+## What to look for
+
+1. Load the example and select Recorded AI. No provider calls are needed.
+2. Inspect the interpretation: the model incorrectly softened “no drag lifts” into avoidance.
+3. Check t-bar, platter and rope-tow under hard exclusions. This correction happens locally, without secretly rerunning the model.
+4. Confirm and plan. The simulated route and printable itinerary carry the recorded-AI/user-correction label.
+5. All lifts closed produces no route. Editing the recorded request cannot fabricate a new model response. Rules mode demonstrates an unsupported request.
+6. Mobile layout and print output are checked separately as well.
+
+The real live browser request was verified before recording: see `research/evidence/app-integration/live-browser.json`. Its semantic failure is preserved. The independent route validator checks supplied constraints—not whether the model interpreted the original sentence correctly, and not real-world terrain safety.
+
+## Run without credentials
+
+From the repository or unpacked demo bundle, with Python3.11+:
+
+```sh
+python3 -m liftlap.server --port 8767
+```
+
+Open http://127.0.0.1:8767 on the same machine. Choose Load example request, then Recorded AI. Rules works on other supported requests. The bundle does not enable paid inference. Stop with Ctrl-C. Do not expose this local prototype publicly unchanged.
+
+Video playback: open `walkthrough.webm` in a compatible browser/player. A public judge-accessible link still requires release approval and upload; this private file is not a public deployment.

@@ -1,0 +1,51 @@
+{
+  "request_text": "Only blues, no drag lifts, 45 minutes",
+  "ui_context": {
+    "start_place_id": "base",
+    "finish_place_id": "base",
+    "start_time": "2027-01-15T10:00:00+01:00",
+    "duration_minutes": 60,
+    "hard_max_difficulty": "blue"
+  },
+  "catalog": [
+    {
+      "id": "base",
+      "label": "Pine Base",
+      "aliases": [
+        "the base",
+        "Pine"
+      ]
+    },
+    {
+      "id": "summit",
+      "label": "Cedar Summit",
+      "aliases": [
+        "Cedar",
+        "the summit"
+      ]
+    }
+  ],
+  "request_sha256": "cd1cdad0cc0d849ae4ee14cd21ab11a39837344b2333639f33bf455e70e72e25",
+  "intent": {
+    "avoided_lift_types": [
+      "platter",
+      "rope-tow",
+      "t-bar"
+    ],
+    "clarification_fields": [],
+    "duration_minutes": 45,
+    "excluded_lift_types": [],
+    "finish_place_id": "base",
+    "hard_max_difficulty": "blue",
+    "prefer_variety": false,
+    "preferred_difficulties": [],
+    "schema_version": 2,
+    "start_place_id": "base",
+    "start_time": "2027-01-15T10:00:00+01:00",
+    "status": "ready",
+    "unsupported_preferences": []
+  },
+  "model": "Qwen/Qwen3-8B",
+  "source": "One live app interpretation, 2026-10-06; real output, not a hand-authored response",
+  "limitations": "Exact input replay only; not a new inference or accuracy benchmark"
+}
