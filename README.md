@@ -32,7 +32,7 @@ The first command uses an original synthetic graph. The server command opens the
 
 ## Next step
 
-[Sampling runner](training/sampling-runner.md): SDK submission/polling is mock-tested and a 20-case local dry run is ready. The approved live smoke completed: 6/20 strict request successes versus rules-v1 14/20 on visible development fixtures; this is not a final or held-out baseline.
+[Sampling runner](training/sampling-runner.md): SDK submission/polling is mock-tested and a 20-case local dry run is ready. Prompt v2 improves the live base model from 6/20 to 13/20 strict development request successes; rules-v1 scores 14/20. This is prompt development, not fine-tuning or held-out improvement.
 
 Latest: 90 tests pass in the optional training environment (ten optional tests skip in the dependency-free environment); paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. A pinned Tinker SDK read-only smoke passes; all 80 current candidate/development examples pass Cookbook token/mask checks. 48 training candidates and a review packet are ready. The first inference smoke is recorded; no fine-tuning has run. See [training checkpoint](training/README.md).
 

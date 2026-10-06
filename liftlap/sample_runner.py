@@ -108,6 +108,7 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--prompt',default='benchmark/baseline-prompt.txt')
     p.add_argument('cases');p.add_argument('--run-dir',required=True);p.add_argument('--live',action='store_true')
     p.add_argument('--budget-usd',type=float);p.add_argument('--input-usd-per-million',type=float);p.add_argument('--output-usd-per-million',type=float)
     p.add_argument('--credits-confirmed',action='store_true');p.add_argument('--model-path')
@@ -119,7 +120,7 @@ def main():
         cases=[{**lookup[s['seed_case_id']],'id':s['id']} for s in specs]
     if not cases or len(cases)>a.max_requests or len({c['id'] for c in cases})!=len(cases):p.error('Empty, duplicate or over-limit case set')
     config=json.loads(Path('training/sft-plan.json').read_text())
-    prompt=Path('benchmark/baseline-prompt.txt').read_text()
+    prompt=Path(a.prompt).read_text()
     tokenizer,renderer=load_renderer('.tokenizer-qwen3','training/tokenizer-manifest.json')
     prompts=[renderer.build_generation_prompt(conversation(c,prompt,target=False)['messages']).to_ints() for c in cases]
     max_output=config['sampling']['max_tokens']
@@ -139,7 +140,8 @@ def main():
               'sampling_seed':20261006,'input_tokens':sum(map(len,prompts)),'upper_estimate_usd':projected,
               'budget_usd':a.budget_usd,'input_usd_per_million':a.input_usd_per_million,'output_usd_per_million':a.output_usd_per_million,
               'budget_caveat':'Estimate from supplied rates, not a provider-enforced spending cap or invoice.',
-              'hashes':{f:sha(f) for f in [a.cases,'training/sft-plan.json','benchmark/baseline-prompt.txt','training/tokenizer-manifest.json','training/render-requirements.lock']},
+              'runner_sha256':sha(__file__),'prompt_file':a.prompt,
+              'hashes':{f:sha(f) for f in [a.cases,'training/sft-plan.json',a.prompt,'training/tokenizer-manifest.json','training/render-requirements.lock']},
               'status':'prepared','model_calls':0}
     if a.scenarios:manifest['hashes'][a.scenarios]=sha(a.scenarios)
     (directory/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

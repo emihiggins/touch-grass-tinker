@@ -1,0 +1,78 @@
+[
+  {
+    "id": "route-09",
+    "differences": {
+      "clarification_fields": {
+        "gold": [
+          "hard_max_difficulty"
+        ],
+        "predicted": []
+      },
+      "status": {
+        "gold": "clarify",
+        "predicted": "ready"
+      }
+    }
+  },
+  {
+    "id": "route-10",
+    "differences": {
+      "invalid_json": true
+    }
+  },
+  {
+    "id": "route-13",
+    "differences": {
+      "finish_place_id": {
+        "gold": null,
+        "predicted": "base"
+      }
+    }
+  },
+  {
+    "id": "route-14",
+    "differences": {
+      "hard_max_difficulty": {
+        "gold": null,
+        "predicted": "black"
+      }
+    }
+  },
+  {
+    "id": "route-17",
+    "differences": {
+      "status": {
+        "gold": "unsupported",
+        "predicted": "ready"
+      }
+    }
+  },
+  {
+    "id": "route-19",
+    "differences": {
+      "clarification_fields": {
+        "gold": [
+          "duration_minutes"
+        ],
+        "predicted": []
+      },
+      "duration_minutes": {
+        "gold": null,
+        "predicted": 5
+      },
+      "status": {
+        "gold": "clarify",
+        "predicted": "ready"
+      }
+    }
+  },
+  {
+    "id": "route-20",
+    "differences": {
+      "status": {
+        "gold": "clarify",
+        "predicted": "ready"
+      }
+    }
+  }
+]

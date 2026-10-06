@@ -1,0 +1,8 @@
+{
+  "status": "provisional_development_choice_not_frozen_final_baseline",
+  "prompt": "benchmark/baseline-prompt-v2.txt",
+  "reason": "13/20 versus 6/20 strict development request success; 2 regressions retained",
+  "heldout_test_exists": false,
+  "training_started": false,
+  "next": "Investigate clarification failures on separately authored examples; keep strong rules baseline (14/20); require independent test before model selection claims."
+}

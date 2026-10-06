@@ -1,0 +1,542 @@
+{
+  "metric": "strict_gold_intent_and_request_outcome_success",
+  "scope": "synthetic_development_only_not_held_out",
+  "count": 20,
+  "baseline_successes": 6,
+  "tuned_successes": 13,
+  "delta_percentage_points": 35.0,
+  "paired_family_bootstrap": {
+    "draws": 5000,
+    "seed": 0,
+    "clusters": 17,
+    "interval_95_percentage_points": [
+      0.0,
+      65.21739130434783
+    ],
+    "caveat": "Shared synthetic graph and visible labels; this interval is not evidence of held-out generalization."
+  },
+  "gold_route_rejections": {
+    "baseline": 1,
+    "tuned": 0
+  },
+  "search_limit_counts": {
+    "baseline": 0,
+    "tuned": 0
+  },
+  "transitions": {
+    "both_success": 4,
+    "improved": 9,
+    "regressed": 2,
+    "both_failed": 5
+  },
+  "by_expected_outcome": {
+    "ok": {
+      "count": 4,
+      "baseline_successes": 1,
+      "tuned_successes": 4
+    },
+    "no_route": {
+      "count": 4,
+      "baseline_successes": 2,
+      "tuned_successes": 4
+    },
+    "clarify": {
+      "count": 8,
+      "baseline_successes": 2,
+      "tuned_successes": 2
+    },
+    "unsupported": {
+      "count": 4,
+      "baseline_successes": 1,
+      "tuned_successes": 3
+    }
+  },
+  "cases": [
+    {
+      "id": "route-01",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-01",
+        "family_id": "hard_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": false,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-01",
+        "family_id": "hard_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": true,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": true
+      }
+    },
+    {
+      "id": "route-02",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-02",
+        "family_id": "drag_exclusion",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-02",
+        "family_id": "drag_exclusion",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": true,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": true
+      }
+    },
+    {
+      "id": "route-03",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-03",
+        "family_id": "drag_exclusion",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-03",
+        "family_id": "drag_exclusion",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-04",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-04",
+        "family_id": "hard_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": false,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-04",
+        "family_id": "hard_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-05",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-05",
+        "family_id": "soft_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": false,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-05",
+        "family_id": "soft_difficulty",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": true,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": true
+      }
+    },
+    {
+      "id": "route-06",
+      "transition": "both_success",
+      "baseline": {
+        "id": "route-06",
+        "family_id": "simple",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-06",
+        "family_id": "simple",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-07",
+      "transition": "both_success",
+      "baseline": {
+        "id": "route-07",
+        "family_id": "simple",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-07",
+        "family_id": "simple",
+        "expected_action": "plan",
+        "expected_outcome": "no_route",
+        "intent_exact_match": true,
+        "planner_status": "no_route",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-08",
+      "transition": "both_success",
+      "baseline": {
+        "id": "route-08",
+        "family_id": "place_alias",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": true,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-08",
+        "family_id": "place_alias",
+        "expected_action": "plan",
+        "expected_outcome": "ok",
+        "intent_exact_match": true,
+        "planner_status": "ok",
+        "route_valid_against_gold": true,
+        "success": true
+      }
+    },
+    {
+      "id": "route-09",
+      "transition": "both_failed",
+      "baseline": {
+        "id": "route-09",
+        "family_id": "missing_difficulty",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "ok",
+        "route_valid_against_gold": false,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-09",
+        "family_id": "missing_difficulty",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-10",
+      "transition": "both_failed",
+      "baseline": {
+        "id": "route-10",
+        "family_id": "ambiguous_ability",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-10",
+        "family_id": "ambiguous_ability",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-11",
+      "transition": "both_success",
+      "baseline": {
+        "id": "route-11",
+        "family_id": "missing_start",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": true,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-11",
+        "family_id": "missing_start",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": true,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-12",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-12",
+        "family_id": "missing_duration",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-12",
+        "family_id": "missing_duration",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": true,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-13",
+      "transition": "regressed",
+      "baseline": {
+        "id": "route-13",
+        "family_id": "unknown_place",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": true,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-13",
+        "family_id": "unknown_place",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-14",
+      "transition": "both_failed",
+      "baseline": {
+        "id": "route-14",
+        "family_id": "conflict",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-14",
+        "family_id": "conflict",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "clarify",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-15",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-15",
+        "family_id": "unsupported_live",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-15",
+        "family_id": "unsupported_live",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": true,
+        "planner_status": "unsupported",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-16",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-16",
+        "family_id": "unsupported_snow",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-16",
+        "family_id": "unsupported_snow",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": true,
+        "planner_status": "unsupported",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-17",
+      "transition": "regressed",
+      "baseline": {
+        "id": "route-17",
+        "family_id": "unsupported_offpiste",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": true,
+        "planner_status": "unsupported",
+        "route_valid_against_gold": null,
+        "success": true
+      },
+      "tuned": {
+        "id": "route-17",
+        "family_id": "unsupported_offpiste",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-18",
+      "transition": "improved",
+      "baseline": {
+        "id": "route-18",
+        "family_id": "unsupported_quiet",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-18",
+        "family_id": "unsupported_quiet",
+        "expected_action": "unsupported",
+        "expected_outcome": "unsupported",
+        "intent_exact_match": true,
+        "planner_status": "unsupported",
+        "route_valid_against_gold": null,
+        "success": true
+      }
+    },
+    {
+      "id": "route-19",
+      "transition": "both_failed",
+      "baseline": {
+        "id": "route-19",
+        "family_id": "bounds",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-19",
+        "family_id": "bounds",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    },
+    {
+      "id": "route-20",
+      "transition": "both_failed",
+      "baseline": {
+        "id": "route-20",
+        "family_id": "missing_clock",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      },
+      "tuned": {
+        "id": "route-20",
+        "family_id": "missing_clock",
+        "expected_action": "clarify",
+        "expected_outcome": "clarify",
+        "intent_exact_match": false,
+        "planner_status": "invalid_intent",
+        "route_valid_against_gold": null,
+        "success": false
+      }
+    }
+  ],
+  "fixture_hashes": {
+    "graph": "329aceb33781374f69d665beb1d06cf2a6c3b2d3e8894a90b34e9d6141a65de2",
+    "scenario_specs": "99b687385c73d670854ef3215999f3b8801d057aac896551bb47cd9be03c2402"
+  },
+  "comparison": "prompt_v1_vs_prompt_v2_same_base_model_NOT_finetuning",
+  "warning": "Prompt v2 was developed after inspecting these same development labels/errors. Not independent generalization evidence."
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "inference_only_authorization_no_training",
+  "approved_budget_usd": 1,
+  "approval_message_id": "2288",
+  "continuation_message_id": "2298",
+  "currency": "USD",
+  "rates_per_million": {
+    "input": 0.195,
+    "output": 0.6
+  },
+  "price_source": "https://tinker-docs.thinkingmachines.ai/tinker/models.json",
+  "completed_runs": [
+    {
+      "name": "base-dev-smoke-003",
+      "estimated_non_cached_usd": 0.003877605,
+      "requests": 20
+    },
+    {
+      "name": "base-v2-development-001",
+      "estimated_non_cached_usd": 0.006003405,
+      "requests": 20
+    }
+  ],
+  "completed_run_estimated_total_usd": 0.00988101,
+  "invoice_verified": false,
+  "rejected_submission_billing": "unknown; two runner rejections and one diagnostic replay, no future IDs returned",
+  "training_calls": 0,
+  "policy": "No automatic experiment loop. Further runs must remain within authorized purpose/budget and retain failures."
+}

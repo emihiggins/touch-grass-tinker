@@ -176,3 +176,27 @@ The [bounded sampling runner](sampling-runner.md) is now implemented and mock-te
 ## Approved live baseline smoke completed
 
 The first [live sampling smoke](sampling-runner.md) completed after session/backpressure integration fixes: 6/20 strict request successes, 11/20 schema-valid outputs; estimated completed-run token charges $0.00388 before cache discounts, invoice unverified. No training ran. This weak development-only prompt must be improved before freezing the formal comparator; no final baseline or held-out result is claimed. Raw outputs and setup failures are retained under `research/evidence/base-dev-smoke/`.
+
+
+## Prompt-v2 development checkpoint — 2026-10-06
+
+Following Emi's request to update and continue (message 2298), performed one additional 20-case inference-only development run within the $1 budget. No training or unattended experiment loop. `benchmark/baseline-prompt-v2.txt` reorganizes the existing rules into UI-default/explicit-override precedence, complete output schema, enum restrictions and final consistency checks, with one fictional full example. It was written after inspecting v1 errors and gold labels. Original prompt and all v1 results are preserved unchanged.
+
+The runner now accepts `--prompt` and records its selected file/hash plus the runner code hash. Its default remains the original prompt for historical command compatibility; explicitly pass `--prompt benchmark/baseline-prompt-v2.txt` for v2. No answer postprocessing changed. Model, tokenizer, renderer, temperature, seed, max output, graph and gold labels remained fixed. Only prompt changed.
+
+**Result:** 13/20 full-request successes versus v1 6/20; schema-valid outputs 15/20 versus 11/20. Nine cases improved, two regressed, four stayed successful and five stayed unsuccessful. All eight routing outcomes pass; clarification 2/8, unsupported capabilities 3/4. Rules-v1 remains 14/20. Remaining errors include missing clarification flags, unknown-finish handling, conflicting grades and out-of-range duration. The prompt is only a provisional development choice, not a frozen final comparator.
+
+Artifacts: `research/evidence/base-v2-development/` retains raw outputs, event IDs, hashes, outcome report, paired comparison and field differences. Paired bootstrap output is descriptive only because the exact cases informed prompt development. It is **not evidence of generalization, statistical significance for a final experiment, or a Tinker fine-tuning gain**. We did not rerun to remove regressions or reach a desired score.
+
+Cost estimate: v2 inputs 24,959 tokens, outputs 1,894 tokens; $0.006003405 at uncached rates. The two completed inference runs total about **$0.00988101** before cache discounts. Invoice and rejected-submission charges remain unverified. See `research/evidence/inference-ledger.json` for budget/provenance. No training spend was incurred by these calls.
+
+The 48 candidate records also pass rendering with prompt v2, including zero prompt loss and no truncation (`render-audit-candidates-v2.json`). Prompt v1 rendering evidence remains. Gold labels, training eligibility and the independent-test gate are unchanged.
+
+Reproduce without API calls:
+
+```bash
+python3 -m liftlap.evaluate --scenarios benchmark/request-development.json --predictions research/evidence/base-v2-development/predictions.jsonl
+python3 -m liftlap.request_compare research/evidence/base-dev-smoke/predictions.jsonl research/evidence/base-v2-development/predictions.jsonl
+```
+
+Next useful work: review the known ambiguous labels, create an independent evaluation set with new graph/template families, and implement the training/checkpoint path. Do not keep spending on this same tiny development set to manufacture a success headline. Human review and training authorization are still pending. Heartbeat settings were not changed.
