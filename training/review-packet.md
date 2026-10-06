@@ -1,18 +1,22 @@
 # Training candidate review packet
 
-All rows are AI-assisted candidates. Human review is pending. Editing this packet does not update labels or mark rows approved.
+All rows are AI-assisted candidates. Human review decisions are recorded below; reviewed does not mean approved. Editing this packet does not update labels or mark rows approved.
 
 For each case check: explicit request versus UI defaults; hard/soft difficulty; lift exclusions; deadline math; clarification/unsupported codes. Record corrections in the canonical JSONL and re-run corpus audit.
 
-**Quarantine:** candidate 009 overlaps development wording; exclude or revise with fresh lineage before approval.
+**Quarantine:** candidate 009 overlaps development wording; label approved by Emi, but training eligibility remains blocked until leakage is resolved.
 
 No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-001 — hard_soft_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Keep every descent blue, and give me some variety over 90 minutes.
 
@@ -49,9 +53,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-002 — drag_grade_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Reds are my limit. For the next 45 minutes, skip all drag lifts.
 
@@ -92,9 +100,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-003 — surface_soft_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** I prefer blue runs but can manage reds; no surface lifts, including carpets.
 
@@ -138,9 +150,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-004 — correction_budget_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: discussion_pending
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: I think that someone who's max difficulty is blue, probably also wouldn't be experienced enough to do a t-bar lift, as those are usually pretty difficult.
+- Agent response (not human approval): Recommendation: keep lift-handling comfort separate from piste difficulty. Do not infer a t-bar exclusion from blue-only; ask explicitly or add a separate user preference. Current label retained pending resolution.
+- Quarantine: None
 
 **Request:** Make it two hours—actually, 75 minutes. Nothing harder than blue.
 
@@ -177,9 +193,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-005 — deadline_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: discussion_pending
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: avoid gondolas, i think should be honored, but perhaps not for the very first lift of the day as many resorts have a gondola at the base, that gives skiers access to the majority of the runs on the mountain, and given the time constraint this skier has, they might waste a lot of time initially trying to get to all the runs by avoiding the first gondola. also avoid gondolas is different from "no" gondolas
+- Agent response (not human approval): Soft avoidance versus prohibition needs a distinct contract. Do not silently waive a gondola exclusion for the first lift. A future soft preference may offer a clearly disclosed access-lift tradeoff; no exception is inferred here. Current label disputed and held.
+- Quarantine: None
 
 **Request:** Give me two hours from the selected start, but I must finish by 11:20. Avoid gondolas.
 
@@ -218,9 +238,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-006 — deadline_no_extend_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Stay on blues and have me back by noon; keep my selected outing length.
 
@@ -257,9 +281,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-007 — alias_finish_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Set off from Juniper and end at Aspen after 45 minutes, on blue runs only.
 
@@ -296,9 +324,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-008 — reverse_places_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Start at the ridge, finish in the valley, and avoid chairlifts.
 
@@ -337,9 +369,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-009 — negative_scope_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: Cross-split near-duplicate wording with development; human label approval does not clear leakage.
 
 **Request:** I do not need you to avoid gondolas. I do need you to avoid t-bars.
 
@@ -378,9 +414,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-010 — correction_grade_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Blacks would be fine—no, make red the maximum, with mostly blues.
 
@@ -419,9 +459,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-011 — missing_grade_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved, but curious if hard_max_difficultly should default to the hardest level on the mountain? or if null is just as sufficient.
+- Agent response (not human approval): Retain null plus hard_max_difficulty clarification. Never infer the hardest permitted grade from missing ability information. Explicit approval recorded; question does not revoke approval.
+- Quarantine: None
 
 **Request:** An hour with lots of different runs, please.
 
@@ -460,9 +504,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-012 — unknown_finish_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Take blue runs and finish at Birch Lodge, which is not in the place list.
 
@@ -501,9 +549,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-013 — range_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: change_requested
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: duration minutes should be 300 (5 hours to minutes conversion), but it should also cap out if its going to exceed the results close time for last lifts.
+- Agent response (not human approval): Requested correction accepted as product direction: preserve 300 minutes, then evaluate actual edge operating windows separately. Schema v1 allows only 15..240; do not write invalid v1 gold or invent closing times absent from this catalog. Hold until versioned contract/planner/prompt migration.
+- Quarantine: None
 
 **Request:** Only blue descents, and make the outing five hours.
 
@@ -542,9 +594,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-014 — unsupported_queue_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Avoid drag lifts and choose lifts using their live queue times.
 
@@ -587,9 +643,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-015 — unsupported_terrain_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Give me 90 minutes with off-piste sections between lifts.
 
@@ -628,9 +688,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-016 — unsupported_grooming_combo
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Blue runs only, selecting the ones groomed this morning.
 
@@ -669,9 +733,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-017 — ceiling_preference
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Black is my ceiling, but favor red descents and change things up.
 
@@ -710,9 +778,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-018 — long_surface
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** For 150 minutes, use only blue pistes and skip every surface lift.
 
@@ -754,9 +826,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-019 — carpet_only_exclusion
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Chairlifts and drag lifts are fine; just leave out magic carpets.
 
@@ -795,9 +871,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-020 — two_lift_exclusions
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Make a 35-minute outing without gondolas or cable cars.
 
@@ -837,9 +917,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-021 — exclusion_correction
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Skip chairs—correction, chairs are okay. Exclude gondolas instead.
 
@@ -878,9 +962,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-022 — start_alias
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Depart from Aspen Ridge and come back there after 40 minutes.
 
@@ -917,9 +1005,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-023 — destination_correction
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Finish at Aspen. Wait, finish back at Juniper Valley instead. Blue runs only.
 
@@ -956,9 +1048,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-024 — shorter_explicit
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** The form says an hour, but I want just 20 minutes and lots of different runs.
 
@@ -995,9 +1091,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-025 — four_hours_boundary
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** I want exactly four hours, with red as the maximum grade.
 
@@ -1034,9 +1134,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-026 — fifteen_boundary
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** A quarter of an hour on blue pistes, please.
 
@@ -1073,9 +1177,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-027 — deadline_floor
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** An hour would be nice, but I must return by 10:15 from the selected 10:00 start.
 
@@ -1112,9 +1220,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-028 — deadline_out_of_range
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: change_requested
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: duration minutes should be set to 10 minutes not null.
+- Agent response (not human approval): Requested correction accepted as product direction: preserve 10 minutes. Schema v1 rejects values below 15; short-budget infeasibility belongs to the planner, not an invented missing-value label. Hold until versioned contract migration.
+- Quarantine: None
 
 **Request:** Set out at the selected 10:00 and be done by 10:10.
 
@@ -1153,9 +1265,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-029 — long_deadline_cap
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Book 180 minutes, but finish no later than 12:30 from the selected start.
 
@@ -1192,9 +1308,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-030 — override_ui_grade
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Ignore the black maximum on the form; blue is my actual limit.
 
@@ -1231,9 +1351,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-031 — soft_keep_ceiling
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Prefer blue pistes while retaining my selected black maximum.
 
@@ -1272,9 +1396,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-032 — two_preferences
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: discussion_pending
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: if theres multiple preferred difficulties, should prefer variety be true?
+- Agent response (not human approval): Recommendation: retain preferred_difficulties blue/red and prefer_variety false. Equal grade preferences do not request distinct runs or less repetition; variety is a separate objective. No explicit approval inferred.
+- Quarantine: None
 
 **Request:** Favor blue and red pistes equally; black runs are permitted.
 
@@ -1314,9 +1442,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-033 — variety_no_grade
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Mix up the runs over 50 minutes. I have not selected a maximum grade.
 
@@ -1355,9 +1487,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-034 — missing_start_place
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Take me to Aspen Ridge in 45 minutes, but my departure point is unset.
 
@@ -1396,9 +1532,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-035 — missing_finish_place
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Begin at Juniper Valley, keep it blue, and ask me where to finish.
 
@@ -1437,9 +1577,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-036 — missing_time_with_exclusion
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: discussion_pending
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: maybe start_place_id should be null since user specified in request they have not decided where to start yet.
+- Agent response (not human approval): Original request says WHEN, not WHERE: "No gondolas. I have not decided when to start." Retain selected valley and start_time null. No label change or human approval inferred from this question.
+- Quarantine: None
 
 **Request:** No gondolas. I have not decided when to start.
 
@@ -1480,9 +1624,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-037 — missing_budget_with_grade
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** All blue, but I have not picked an outing length yet.
 
@@ -1521,9 +1669,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-038 — two_missing_fields
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Avoid chairs; both my start time and outing duration are still undecided.
 
@@ -1565,9 +1717,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-039 — conflicting_budget
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** It must last exactly 45 minutes and exactly 90 minutes. Neither is a correction.
 
@@ -1606,9 +1762,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-040 — conflicting_finish
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** End at both Juniper Valley and Aspen Ridge as the single finish point.
 
@@ -1647,9 +1807,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-041 — unknown_start
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Begin at Fox Hollow, not one of the listed places, and end at Juniper.
 
@@ -1688,9 +1852,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-042 — unknown_both_places
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Start at Otter Lodge and finish at Elk Hut; neither appears in the catalog.
 
@@ -1730,9 +1898,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-043 — crowding_and_budget
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: discussion_pending
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: 'red or easier' I think implies they are open to variety easier than red as well as red.
+- Agent response (not human approval): Recommendation: red-or-easier is a hard ceiling permitting blue/red; it does not request distinct runs or grade mixing. Keep prefer_variety false. Crowding remains unsupported. No explicit approval inferred.
+- Quarantine: None
 
 **Request:** Ninety minutes on red or easier pistes, selecting only uncrowded runs.
 
@@ -1771,9 +1943,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-044 — two_live_features
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Use current queue times and today’s grooming reports to choose my laps.
 
@@ -1813,9 +1989,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-045 — offpiste_and_variety
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** For 45 minutes, mix marked runs with off-piste descents for variety.
 
@@ -1854,9 +2034,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-046 — negated_live_request
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** I do not need live queue information. Use my selected settings and avoid rope tows.
 
@@ -1895,9 +2079,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-047 — negated_offpiste
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** No off-piste skiing: keep me on marked blue runs for 55 minutes.
 
@@ -1934,9 +2122,13 @@ No held-out examples appear here. No route feasibility is labeled.
 
 ## train-candidate-048 — grade_correction_with_drag
 
-- [ ] Human reviewed
-- Decision: pending
-- Reviewer/corrections:
+- [x] Human reviewed
+- Decision: approved
+- Reviewer: Emi Higgins
+- Reviewed at: 2026-10-06T20:21:27Z
+- Human note: approved
+- Agent response (not human approval): None
+- Quarantine: None
 
 **Request:** Use black runs—actually, nothing above red. Avoid drag lifts for 80 minutes.
 

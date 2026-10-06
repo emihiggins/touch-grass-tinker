@@ -15,7 +15,7 @@ class CorpusTests(unittest.TestCase):
         cases=copy.deepcopy(self.cases); cases[1]['split']='development'
         self.assertTrue(any('cross-split graph' in e for e in audit(cases)['errors']))
     def test_no_unreviewed_test(self):
-        c=copy.deepcopy(self.cases[0]);c['split']='test'
+        c=copy.deepcopy(self.cases[0]);c['split']='test';c['review']['human_reviewed']=False
         self.assertTrue(audit([c])['errors'])
     def test_normalized_duplicate(self):
         c=copy.deepcopy(self.cases[0]);c['id']='copy';c['request_text']=c['request_text'].upper()+'!!!'
@@ -23,7 +23,7 @@ class CorpusTests(unittest.TestCase):
     def test_no_dev_training_export(self):
         with self.assertRaises(ValueError):export(read('benchmark/development-seed.jsonl'),'prompt')
     def test_no_unreviewed_training_export(self):
-        c=copy.deepcopy(self.cases[0]);c['split']='train'
+        c=copy.deepcopy(self.cases[0]);c['split']='train';c['review']['human_reviewed']=False
         with self.assertRaises(ValueError):export([c],'prompt')
     def test_preview_and_inference_separation(self):
         rows=export(self.cases,'prompt',preview=True)

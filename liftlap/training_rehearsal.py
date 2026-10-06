@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from .corpus import read
+from .corpus import read, label_approved
 from .render_audit import COOKBOOK_COMMIT, load_renderer, prepare, sha
 
 
@@ -81,7 +81,7 @@ def rehearse(cases, datums, config, provenance, *, start_step=0, expected_plan_s
             'steps': len(batches), 'dropped_rows': 0, 'epoch_seed_policy': 'Cookbook epoch index',
             'configured_shuffle_seed_used': False,
             'candidate_labels_human_approved': all(
-                c['split'] == 'train' and c.get('review', {}).get('human_reviewed') is True for c in cases),
+                c['split'] == 'train' and label_approved(c) for c in cases),
             'batches': batches, 'resume_from_step': start_step,
             'remaining_steps': len(batches) - start_step,
             'remaining_ids': [cid for b in batches[start_step:] for cid in b['ids']]}

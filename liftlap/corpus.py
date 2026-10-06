@@ -15,6 +15,17 @@ def read(path):
 def fingerprint(text):
     return ' '.join(re.findall(r'\w+', text.casefold()))
 
+def review_hash(case):
+    payload = {key: case[key] for key in ('id', 'request_text', 'ui_context', 'catalog', 'gold_intent')}
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+def label_approved(case):
+    """Approval binds to the request, context, catalog and exact reviewed label."""
+    review = case.get('review', {})
+    return (review.get('human_reviewed') is True and review.get('decision') == 'approved'
+            and review.get('reviewed_content_sha256') == review_hash(case)
+            and not review.get('quarantine_reason'))
+
 def audit(cases):
     errors, warnings = [], []
     seen, texts, groups = set(), {}, {}
@@ -25,6 +36,8 @@ def audit(cases):
         if split not in SPLITS: errors.append(f'invalid split: {cid}')
         try: validate_intent(c['gold_intent'], {p['id'] for p in c['catalog']})
         except (ValueError, TypeError, KeyError): errors.append(f'invalid intent: {cid}')
+        if split == 'train' and not label_approved(c):
+            errors.append(f'training requires current approved, non-quarantined label: {cid}')
         text = fingerprint(c['request_text'])
         if not text: errors.append(f'empty request: {cid}')
         if text in texts: errors.append(f'duplicate text: {texts[text]} / {cid}')
@@ -38,7 +51,7 @@ def audit(cases):
             if key in groups and groups[key] != partition: errors.append(f'cross-split {field}: {value}')
             groups[key] = partition
         if not c.get('provenance'): errors.append(f'missing provenance: {cid}')
-        if split == 'test' and c.get('review', {}).get('human_reviewed') is not True:
+        if split == 'test' and not label_approved(c):
             errors.append(f'test requires human review: {cid}')
     # Surface overlap for review, not a claim of semantic deduplication.
     for i, a in enumerate(cases):
@@ -63,7 +76,7 @@ def export(cases, prompt, preview=False):
     if report['warnings'] and not preview: raise ValueError('Resolve near-duplicate warnings before training export')
     selected = [c for c in cases if c['split'] == ('train_candidate' if preview else 'train')]
     if not selected: raise ValueError('No eligible training rows; development/test rows cannot be exported for training')
-    if not preview and any(c.get('review', {}).get('human_reviewed') is not True for c in selected):
+    if not preview and any(not label_approved(c) for c in selected):
         raise ValueError('Training export requires reviewed labels; use candidate preview for inspection')
     return [conversation(c, prompt) for c in selected]
 

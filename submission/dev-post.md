@@ -61,7 +61,7 @@ These are development results, not held-out accuracy. Prompt v2 improved nine ca
 
 The [raw outputs and reports](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/base-v2-development) retain the failures. Forty completed inference requests across both prompts have an estimated uncached token cost of $0.00988101; this is not a verified invoice, excludes uncertain rejected-request billing, and is not a training or cost-reduction result.
 
-There are 48 AI-assisted training candidates, not 48 human-approved labels. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
+All 48 AI-assisted training candidates have now been reviewed by the project owner: 41 explicit label approvals (one remains quarantined for overlap) and seven held for clarification or contract changes. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
 
 ## Why Does Open Innovation Matter?
 

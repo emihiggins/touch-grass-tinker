@@ -3,7 +3,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-from .corpus import audit,read
+from .corpus import audit,read,label_approved
 
 GATES={'corpus_review_complete','independent_test_frozen','rendered_masks_and_no_truncation_verified',
        'dependency_versions_locked_and_smoked','baseline_recorded','account_access_verified','credits_and_spend_cap_verified'}
@@ -12,7 +12,7 @@ def check(cases,config):
     report=audit(cases);blockers=list(report['errors'])+list(report['warnings'])
     train=[c for c in cases if c['split']=='train'];candidates=[c for c in cases if c['split']=='train_candidate']
     if not train:blockers.append('No approved training rows')
-    if any(c.get('review',{}).get('human_reviewed') is not True for c in train):blockers.append('Training labels need human review')
+    if any(not label_approved(c) for c in train):blockers.append('Training labels need current explicit approval without quarantine')
     if not any(c['split']=='test' for c in cases):blockers.append('Independent test partition absent')
     if not any(c['split'] in {'development','development_seed'} for c in cases):blockers.append('Development partition absent')
     gates=config.get('launch_gates',{})
