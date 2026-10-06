@@ -1,0 +1,28 @@
+{
+  "run_id": "5d6c65e2-dc22-43d3-801b-4bb7bc043485",
+  "mode": "live",
+  "model": "Qwen/Qwen3-8B",
+  "model_path": null,
+  "renderer": "qwen3_disable_thinking",
+  "count": 20,
+  "max_output_tokens": 512,
+  "temperature": 0,
+  "sampling_seed": 20261006,
+  "input_tokens": 12319,
+  "upper_estimate_usd": 0.008546205,
+  "budget_usd": 1.0,
+  "input_usd_per_million": 0.195,
+  "output_usd_per_million": 0.6,
+  "budget_caveat": "Estimate from supplied rates, not a provider-enforced spending cap or invoice.",
+  "hashes": {
+    "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+    "training/sft-plan.json": "75be43fa0133c169c63d8681309591973a1ed6baef1f0da008edefdcb6dd75c8",
+    "benchmark/baseline-prompt.txt": "1f818771b8d41eb3736ffb07fb5cfc47ad7a57a0fe2c5582af6241a8db9efd22",
+    "training/tokenizer-manifest.json": "16c75114421ae557b7a697afaa87698ceba3ec10f581337cc223a1b441ecd54f",
+    "training/render-requirements.lock": "7d9696ca123f2882902af194528006aed58e06db6ffd83340ad6bb989215592b",
+    "benchmark/request-development.json": "19cabdea74c4f757dd3f88ca8259916569e569921e941cea9554dbfe5a3c7b57"
+  },
+  "status": "completed_with_failures",
+  "model_calls": null,
+  "submission_attempts": 1
+}

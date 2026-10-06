@@ -41,15 +41,25 @@ class SDKSampler:
     def __init__(self,client,model,model_path,stop,max_output,polls=12,poll_interval=1):
         self.client=client;self.model=model;self.model_path=model_path;self.stop=stop
         self.max_output=max_output;self.polls=polls;self.poll_interval=poll_interval
+        self.session_id=None;self.sampling_session_id=None;self.seq_id=0
     async def sample(self,tokens,request_key,on_submitted):
         import tinker
         from tinker.types.sample_request import SampleRequest
         from tinker.types.future_retrieve_request import FutureRetrieveRequest
         from tinker.proto.response_conv import deserialize_proto_response
+        if self.sampling_session_id is None:
+            from tinker.types.create_session_request import CreateSessionRequest
+            from tinker.types.create_sampling_session_request import CreateSamplingSessionRequest
+            session=await self.client.service.create_session(request=CreateSessionRequest(tags=['liftlap-baseline-smoke'],user_metadata=None,sdk_version=tinker.__version__))
+            self.session_id=session.session_id
+            sampling=await self.client.service.create_sampling_session(request=CreateSamplingSessionRequest(session_id=self.session_id,sampling_session_seq_id=0,base_model=self.model,model_path=self.model_path))
+            self.sampling_session_id=sampling.sampling_session_id
+        await self.client.service.session_heartbeat(session_id=self.session_id,max_retries=0)
+        sequence_id=self.seq_id;self.seq_id+=1
         request=SampleRequest(prompt=tinker.ModelInput.from_ints(tokens),num_samples=1,
-            base_model=self.model,model_path=self.model_path,
+            sampling_session_id=self.sampling_session_id,seq_id=sequence_id,
             sampling_params=tinker.SamplingParams(max_tokens=self.max_output,temperature=0,seed=20261006,stop=self.stop))
-        future=await self.client.sampling.asample(request=request,extra_headers={'X-Idempotency-Key':request_key},max_retries=0)
+        future=await self.client.sampling.asample(request=request,extra_headers={'X-Idempotency-Key':request_key,'X-Tinker-Sampling-Backpressure':'1'},max_retries=0)
         on_submitted(future.request_id)
         for iteration in range(self.polls):
             response=await self.client.futures.with_raw_response.retrieve(
@@ -88,6 +98,9 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
             except Exception as error:
                 code=getattr(error,'status_code',None)
                 row.update(status='transport_or_provider_failure',http_status=code if type(code) is int else None)
+                response=getattr(error,'response',None)
+                if response is not None:row['failed_endpoint']=response.request.url.path
+                if isinstance(sampler,SDKSampler):row['sampling_session_id']=sampler.sampling_session_id
                 halt=True
             row['elapsed_seconds']=time.monotonic()-started
         append(directory/'predictions.jsonl',row);rows.append(row)

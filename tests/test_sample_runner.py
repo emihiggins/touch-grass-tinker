@@ -58,8 +58,11 @@ class SDKSamplingTests(unittest.TestCase):
         calls=[]
         def respond(req):
             calls.append(req)
+            if req.url.path.endswith('/create_session'):return httpx.Response(200,json={'session_id':'session-1'})
+            if req.url.path.endswith('/create_sampling_session'):return httpx.Response(200,json={'sampling_session_id':'sampling-1'})
+            if req.url.path.endswith('/session_heartbeat'):return httpx.Response(200,json={})
             if req.url.path.endswith('/asample'):return httpx.Response(200,json={'request_id':'future-1'})
-            if len(calls)==2:return httpx.Response(200,json={'type':'try_again','request_id':'future-1','queue_state':'active'})
+            if len(calls)==5:return httpx.Response(200,json={'type':'try_again','request_id':'future-1','queue_state':'active'})
             return httpx.Response(200,content=wire.SerializeToString(),headers={'Content-Type':'application/x-protobuf'})
         async def execute():
             submitted=[]
@@ -67,10 +70,12 @@ class SDKSamplingTests(unittest.TestCase):
                 r=await SDKSampler(client,'Qwen/Qwen3-8B',None,[151645],512,poll_interval=0).sample([1,2],'run-1',submitted.append)
             self.assertEqual(r['tokens'],[10,20]);self.assertEqual(submitted,['future-1'])
         asyncio.run(execute())
-        body=json.loads(calls[0].content)
+        body=json.loads(calls[3].content)
+        self.assertEqual(body['sampling_session_id'],'sampling-1');self.assertEqual(body['seq_id'],0)
         self.assertEqual(body['num_samples'],1);self.assertEqual(body['sampling_params']['max_tokens'],512)
-        self.assertEqual(calls[0].headers['X-Idempotency-Key'],'run-1')
-        self.assertEqual(len(calls),3)
+        self.assertEqual(calls[3].headers['X-Idempotency-Key'],'run-1')
+        self.assertEqual(calls[3].headers['X-Tinker-Sampling-Backpressure'],'1')
+        self.assertEqual(len(calls),6)
     @patch.dict(os.environ,{'TINKER_API_KEY':'oc-sent-v2.fixture.end','HTTPS_PROXY':'http://127.0.0.1:1'})
     def test_pending_poll_bound(self):
         import httpx
@@ -78,9 +83,12 @@ class SDKSamplingTests(unittest.TestCase):
         calls=[]
         def respond(req):
             calls.append(req)
+            if req.url.path.endswith('/create_session'):return httpx.Response(200,json={'session_id':'session-2'})
+            if req.url.path.endswith('/create_sampling_session'):return httpx.Response(200,json={'sampling_session_id':'sampling-2'})
+            if req.url.path.endswith('/session_heartbeat'):return httpx.Response(200,json={})
             return httpx.Response(200,json={'request_id':'future-2'} if req.url.path.endswith('/asample') else {'type':'try_again'})
         async def execute():
             async with make_client(httpx.MockTransport(respond)) as client:
                 with self.assertRaises(TimeoutError):
                     await SDKSampler(client,'Qwen/Qwen3-8B',None,[151645],512,polls=2,poll_interval=0).sample([1],'run-2',lambda _:None)
-        asyncio.run(execute());self.assertEqual(len(calls),3)
+        asyncio.run(execute());self.assertEqual(len(calls),6)

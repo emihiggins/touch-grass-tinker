@@ -171,3 +171,8 @@ This closes **current-corpus token rendering and dry-run payload preparation**, 
 ## Sampling runner checkpoint
 
 The [bounded sampling runner](sampling-runner.md) is now implemented and mock-tested, with a real local 20-case dry-run manifest. No live inference or training was executed. A concrete baseline-smoke cost estimate and proposed inference-only budget are documented there. Training and checkpoint/resume remain unimplemented.
+
+
+## Approved live baseline smoke completed
+
+The first [live sampling smoke](sampling-runner.md) completed after session/backpressure integration fixes: 6/20 strict request successes, 11/20 schema-valid outputs; estimated completed-run token charges $0.00388 before cache discounts, invoice unverified. No training ran. This weak development-only prompt must be improved before freezing the formal comparator; no final baseline or held-out result is claimed. Raw outputs and setup failures are retained under `research/evidence/base-dev-smoke/`.

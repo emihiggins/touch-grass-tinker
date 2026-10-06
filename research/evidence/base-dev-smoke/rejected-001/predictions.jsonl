@@ -1,0 +1,20 @@
+{"billable_usage_verified": false, "elapsed_seconds": 1.532354447990656, "http_status": 400, "id": "route-01", "input_tokens": 617, "intent": null, "status": "transport_or_provider_failure"}
+{"billable_usage_verified": false, "id": "route-02", "input_tokens": 614, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-03", "input_tokens": 614, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-04", "input_tokens": 617, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-05", "input_tokens": 620, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-06", "input_tokens": 619, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-07", "input_tokens": 619, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-08", "input_tokens": 618, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-09", "input_tokens": 615, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-10", "input_tokens": 616, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-11", "input_tokens": 615, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-12", "input_tokens": 613, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-13", "input_tokens": 616, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-14", "input_tokens": 622, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-15", "input_tokens": 620, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-16", "input_tokens": 618, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-17", "input_tokens": 617, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-18", "input_tokens": 620, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-19", "input_tokens": 616, "intent": null, "status": "not_attempted_after_transport_failure"}
+{"billable_usage_verified": false, "id": "route-20", "input_tokens": 593, "intent": null, "status": "not_attempted_after_transport_failure"}

@@ -1,0 +1,255 @@
+{
+  "fixture_hashes": {
+    "graph": "329aceb33781374f69d665beb1d06cf2a6c3b2d3e8894a90b34e9d6141a65de2",
+    "scenario_specs": "99b687385c73d670854ef3215999f3b8801d057aac896551bb47cd9be03c2402"
+  },
+  "by_expected_outcome": {
+    "ok": {
+      "count": 4,
+      "successes": 1
+    },
+    "no_route": {
+      "count": 4,
+      "successes": 2
+    },
+    "clarify": {
+      "count": 8,
+      "successes": 2
+    },
+    "unsupported": {
+      "count": 4,
+      "successes": 1
+    }
+  },
+  "scope": "live_base_model_development_smoke_NOT_heldout_or_tuned",
+  "cases": [
+    {
+      "id": "route-01",
+      "family_id": "hard_difficulty",
+      "expected_action": "plan",
+      "expected_outcome": "ok",
+      "intent_exact_match": false,
+      "planner_status": "clarify",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-02",
+      "family_id": "drag_exclusion",
+      "expected_action": "plan",
+      "expected_outcome": "ok",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-03",
+      "family_id": "drag_exclusion",
+      "expected_action": "plan",
+      "expected_outcome": "no_route",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-04",
+      "family_id": "hard_difficulty",
+      "expected_action": "plan",
+      "expected_outcome": "no_route",
+      "intent_exact_match": false,
+      "planner_status": "clarify",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-05",
+      "family_id": "soft_difficulty",
+      "expected_action": "plan",
+      "expected_outcome": "ok",
+      "intent_exact_match": false,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": false
+    },
+    {
+      "id": "route-06",
+      "family_id": "simple",
+      "expected_action": "plan",
+      "expected_outcome": "no_route",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-07",
+      "family_id": "simple",
+      "expected_action": "plan",
+      "expected_outcome": "no_route",
+      "intent_exact_match": true,
+      "planner_status": "no_route",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-08",
+      "family_id": "place_alias",
+      "expected_action": "plan",
+      "expected_outcome": "ok",
+      "intent_exact_match": true,
+      "planner_status": "ok",
+      "route_valid_against_gold": true,
+      "success": true
+    },
+    {
+      "id": "route-09",
+      "family_id": "missing_difficulty",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "ok",
+      "route_valid_against_gold": false,
+      "success": false
+    },
+    {
+      "id": "route-10",
+      "family_id": "ambiguous_ability",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-11",
+      "family_id": "missing_start",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": true,
+      "planner_status": "clarify",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-12",
+      "family_id": "missing_duration",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-13",
+      "family_id": "unknown_place",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": true,
+      "planner_status": "clarify",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-14",
+      "family_id": "conflict",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "clarify",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-15",
+      "family_id": "unsupported_live",
+      "expected_action": "unsupported",
+      "expected_outcome": "unsupported",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-16",
+      "family_id": "unsupported_snow",
+      "expected_action": "unsupported",
+      "expected_outcome": "unsupported",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-17",
+      "family_id": "unsupported_offpiste",
+      "expected_action": "unsupported",
+      "expected_outcome": "unsupported",
+      "intent_exact_match": true,
+      "planner_status": "unsupported",
+      "route_valid_against_gold": null,
+      "success": true
+    },
+    {
+      "id": "route-18",
+      "family_id": "unsupported_quiet",
+      "expected_action": "unsupported",
+      "expected_outcome": "unsupported",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-19",
+      "family_id": "bounds",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    },
+    {
+      "id": "route-20",
+      "family_id": "missing_clock",
+      "expected_action": "clarify",
+      "expected_outcome": "clarify",
+      "intent_exact_match": false,
+      "planner_status": "invalid_intent",
+      "route_valid_against_gold": null,
+      "success": false
+    }
+  ],
+  "count": 20,
+  "successes": 6,
+  "model": "Qwen/Qwen3-8B",
+  "valid_outputs": 11,
+  "usage": {
+    "observed_input_tokens": 12319,
+    "observed_output_tokens": 2459,
+    "estimated_usd_without_cache_discount": 0.0038776049999999997,
+    "invoice_verified": false,
+    "approved_inference_budget_usd": 1,
+    "training_calls": 0,
+    "cache_hit_tokens_reported": 9728
+  },
+  "pilot_latency_seconds": {
+    "p50": 1.8580638247076422,
+    "p95_nearest_rank": 2.3301144330762327,
+    "count": 20,
+    "scope": "serial_smoke_including_polling_not_controlled_latency_benchmark"
+  },
+  "setup_failures": {
+    "runner_attempts_rejected": 2,
+    "diagnostic_replay_rejected": 1,
+    "http_status": 400,
+    "future_ids_returned": 0,
+    "message": "Tinker SDK is outdated. Please update to the latest version.",
+    "repair": "SDK session + sampling session + backpressure header",
+    "cost_for_rejections_unverified": true
+  }
+}
