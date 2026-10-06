@@ -32,6 +32,8 @@ The first command uses an original synthetic graph. The server command opens the
 
 ## Next step
 
+Latest: 68 tests pass; the complete-action development evaluator covers 20 scenarios. Protected Tinker access is configured, but the read-only endpoint returns HTTP 401; authentication remains blocked. See [training checkpoint](training/README.md).
+
 [Offline training readiness](training/README.md) now includes 16 training candidates, split/leakage audit, Cookbook conversation preview export and saved paired intent comparison. No final test set or model runs yet.
 
 Review native OSM terminal access/direction and route choices; the three-field-reviewed-loop gate remains open. Extend the current local UI/API and improve the rules baseline while Tinker access is pending. Expand/review development examples and freeze a separate held-out benchmark before training. Reuse existing open data and Tinker Cookbook tooling.

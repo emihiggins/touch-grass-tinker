@@ -1,8 +1,9 @@
 """Offline graph-backed development harness; no model provider calls."""
 import argparse
-import copy
 import json
 from pathlib import Path
+from collections import defaultdict
+from .core import digest
 from scripts.benchmark import load_cases,score
 from . import fixtures
 from .core import plan,validate_route
@@ -10,6 +11,11 @@ from .core import plan,validate_route
 def evaluate(seed_path,scenario_path,predictions):
     seeds,_=load_cases(seed_path);by_id={c['id']:c for c in seeds}
     specs=json.loads(Path(scenario_path).read_text())
+    if len({s['id'] for s in specs}) != len(specs): raise ValueError('Duplicate scenario id')
+    for spec in specs:
+        gold_status=by_id[spec['seed_case_id']]['gold_intent']['status']
+        allowed={'ok','no_route'} if gold_status=='ready' else {gold_status}
+        if spec['expected_planner_status'] not in allowed: raise ValueError('Expected outcome conflicts with gold action')
     lookup={}
     for p in predictions:
         if p['id'] in lookup:raise ValueError('Duplicate prediction')
@@ -25,10 +31,15 @@ def evaluate(seed_path,scenario_path,predictions):
         if semantic['valid'] and pred['status']=='ready':
             actual=plan(g,pred,s)
             if actual['status']=='ok':gold_valid=validate_route(g,gold,s,actual['route'])['valid']
+        elif semantic['valid']:
+            actual={'status':pred['status']}
         success=semantic['exact_match'] and actual is not None and actual['status']==spec['expected_planner_status'] and (actual['status']!='ok' or gold_valid)
-        reports.append({'id':spec['id'],'intent_exact_match':semantic['exact_match'],'planner_status':actual['status'] if actual else 'invalid_intent',
+        reports.append({'id':spec['id'],'family_id':c['family_id'],'expected_action':('plan' if gold['status']=='ready' else gold['status']),'expected_outcome':spec['expected_planner_status'],'intent_exact_match':semantic['exact_match'],'planner_status':actual['status'] if actual else 'invalid_intent',
                         'route_valid_against_gold':gold_valid if actual and actual['status']=='ok' else None,'success':success})
-    return {'scope':'synthetic_graph_development_cases_not_model_benchmark','cases':reports,'count':len(reports),'successes':sum(r['success'] for r in reports)}
+    slices=defaultdict(lambda: {'count':0,'successes':0})
+    for row in reports:
+        group=slices[row['expected_outcome']];group['count']+=1;group['successes']+=int(row['success'])
+    return {'fixture_hashes': {'graph':digest(fixtures.graph()),'scenario_specs':digest(specs)},'by_expected_outcome':dict(slices),'scope':'synthetic_graph_development_cases_not_model_benchmark','cases':reports,'count':len(reports),'successes':sum(r['success'] for r in reports)}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)

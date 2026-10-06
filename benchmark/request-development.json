@@ -1,0 +1,194 @@
+[
+  {
+    "id": "route-01",
+    "seed_case_id": "dev-seed-002",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-02",
+    "seed_case_id": "dev-seed-005",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-03",
+    "seed_case_id": "dev-seed-005",
+    "edge_overrides": {
+      "chair": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-04",
+    "seed_case_id": "dev-seed-002",
+    "edge_overrides": {
+      "blue": {
+        "status": "closed"
+      },
+      "practice": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-05",
+    "seed_case_id": "dev-seed-003",
+    "edge_overrides": {
+      "blue": {
+        "status": "closed"
+      },
+      "practice": {
+        "status": "closed"
+      }
+    },
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-06",
+    "seed_case_id": "dev-seed-001",
+    "edge_overrides": {
+      "chair": {
+        "status": "unknown"
+      },
+      "tow": {
+        "status": "unknown"
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-07",
+    "seed_case_id": "dev-seed-001",
+    "edge_overrides": {
+      "chair": {
+        "queue_s": 4000
+      },
+      "tow": {
+        "queue_s": 4000
+      }
+    },
+    "expected_planner_status": "no_route",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-08",
+    "seed_case_id": "dev-seed-017",
+    "edge_overrides": {},
+    "expected_planner_status": "ok",
+    "provenance": "Original synthetic graph fixture; agent-authored development expectation, not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-09",
+    "seed_case_id": "dev-seed-021",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-10",
+    "seed_case_id": "dev-seed-022",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-11",
+    "seed_case_id": "dev-seed-023",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-12",
+    "seed_case_id": "dev-seed-024",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-13",
+    "seed_case_id": "dev-seed-025",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-14",
+    "seed_case_id": "dev-seed-026",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-15",
+    "seed_case_id": "dev-seed-027",
+    "edge_overrides": {},
+    "expected_planner_status": "unsupported",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-16",
+    "seed_case_id": "dev-seed-028",
+    "edge_overrides": {},
+    "expected_planner_status": "unsupported",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-17",
+    "seed_case_id": "dev-seed-029",
+    "edge_overrides": {},
+    "expected_planner_status": "unsupported",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-18",
+    "seed_case_id": "dev-seed-030",
+    "edge_overrides": {},
+    "expected_planner_status": "unsupported",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-19",
+    "seed_case_id": "dev-seed-031",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  },
+  {
+    "id": "route-20",
+    "seed_case_id": "dev-seed-032",
+    "edge_overrides": {},
+    "expected_planner_status": "clarify",
+    "provenance": "Original synthetic development fixture; not human-reviewed",
+    "split": "development_seed"
+  }
+]

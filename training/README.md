@@ -46,3 +46,20 @@ Both files contain `{id, intent}` rows, same IDs and frozen inputs. Missing/inva
 5. Score base/tuned identically through the fixed graph validator and gold constraints. Add graph-backed paired request-success reporting before claiming contest improvement.
 
 Terrain review, a third credible loop and competition presentation remain separate pending workstreams. No public deployment or on-snow validation has happened.
+
+
+## Access and complete-action evaluation checkpoint — 2026-10-06
+
+The Tinker key is now in OpenClaw's protected store, restricted to `tinker.thinkingmachines.dev`, and protected egress is enabled. Read-only capabilities checks returned **HTTP 401**, including the repeatable `python3 -m liftlap.access_check` probe run through Gateway exec. Access is not verified; no billable model calls occurred. The probe has a fixed HTTPS endpoint, refuses redirects, uses inherited proxy/CA settings, and never prints credentials, raw response bodies or exception strings. Native shell does not inherit the protected key; use Gateway exec. No key is in this repository.
+
+Tinker SDK's current `ApiKeyAuthProvider` validates a `tml-` or JWT prefix locally, whereas protected egress supplies an opaque sentinel. Before implementing the authenticated SDK runner, verify a supported auth-provider integration that preserves the sentinel until HTTPS egress. Do not extract the real key, weaken TLS, or put it in plaintext to work around this. Source inspected: https://github.com/thinking-machines-lab/tinker/blob/main/src/tinker/lib/_auth_token_provider.py (2026-10-06; mutable upstream). Exact SDK versions still need locking.
+
+`benchmark/request-development.json` extends the original eight route scenarios with eight clarification and four unsupported requests. Use:
+
+```bash
+python3 -m liftlap.evaluate --scenarios benchmark/request-development.json --predictions /path/to/request-predictions.jsonl
+```
+
+Predictions are keyed by scenario ID. Correct nonplanning intents are scored without calling the planner; route outcomes still require exact gold semantics and independent gold route validation. Invalid/missing outputs remain failures. Reports include outcome slices and graph/scenario hashes. Malformed duplicate scenario IDs or expectations inconsistent with gold status fail closed. This intentionally conservative success definition requires full normalized intent agreement, including preferences; it does not accept semantically equivalent alternative labels.
+
+[Self-check](../research/evidence/request-evaluator-self-check.json): 20/20 gold-label fixture replay; **not model accuracy, human-reviewed test results or terrain verification**. Original eight-case fixture is preserved. Paired route-success uncertainty, new graph families, independently reviewed holdout and the actual provider runner remain pending. The existing paired comparison CLI still measures intent exact match only.
