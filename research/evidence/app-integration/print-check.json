@@ -1,0 +1,8 @@
+{
+  "pages": 1,
+  "approved_constraints_present": true,
+  "hard_exclusions_present": true,
+  "recorded_source_and_simulation_notice_present": true,
+  "renderer": "PyMuPDF1.26.7, isolated Python3.11 inspection environment",
+  "scope": "rendered_PDF_review_not_full_accessibility_audit"
+}

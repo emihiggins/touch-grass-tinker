@@ -41,8 +41,10 @@ The first command uses an original synthetic graph. The server command opens the
 - [Integration, recorded demo and reproducible local package](delivery/app-integration.md)
 - [Fresh base evaluation:13/16](research/evidence/fresh-base-evaluation/README.md)
 - [Matched pilot:base9/16 vs trained7/16](research/evidence/experiment-01/README.md)
-- [Release decisions for Emi](submission/release-decision.md)
+- [Final posting checklist for Emi](submission/dev-posting-checklist.md)
+- [Release-focused followup plan and results](delivery/high-value-followups.md)
+- Run all offline release checks: `python3 scripts/check_release.py`
 
 All training/pilot/fresh label reviews are complete. The app requires explicit confirmation and supports hard-lift-exclusion correction before planning. Its recorded example preserves a real model mistake. Rules and exact-input recorded mode work offline; live inference is disabled by default. The real terrain lab remains unreviewed simulation.
 
-Keep the repository private until release is approved. Current holds total$1.75 within the authorized$10 Tinker cap, not an invoice. No budget reapproval is needed for the approved scope. Billing reconciliation remains separate from model quality and publication.
+Original code is [MIT](LICENSE); terrain and upstream components have [separate notices](THIRD_PARTY_NOTICES.md). Emi will personally change repository visibility and post to DEV. The agent does not perform those actions. Current holds total$1.75 within the authorized$10 Tinker cap, not an invoice. No budget reapproval is needed for the approved scope. Billing reconciliation remains separate from model quality and publication.

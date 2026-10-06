@@ -1,0 +1,14 @@
+{
+  "scope": "post_hoc_unchanged_rules_comparator_not_preregistered_selection",
+  "base_successes": 13,
+  "rules_successes": 0,
+  "count": 16,
+  "provider_calls": 0,
+  "model_selection_changed": false,
+  "tuning_after_final_outputs": false,
+  "limitations": [
+    "Same frozen final set",
+    "Small fictional set and same agent authorship",
+    "Rules comparator evaluated after model outputs; not a preregistered paired trial"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "status": "app_integrated_recorded_demo_ready_release_decisions_needed",
+  "status": "mit_applied_public_release_preparation_in_progress_emi_owns_publication",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -19,19 +19,24 @@
     "Fixed base fresh evaluation completed:13/16 successes,16/16 schemas, all failures preserved",
     "Opt-in live base-model app request verified in Chromium; semantic error explicitly retained",
     "Local hard-exclusion correction and exact-input recorded AI mode implemented",
-    "Recorded demo and desktop/mobile/print generation checks; isolated no-credential demo package built"
+    "Recorded demo and desktop/mobile/print generation checks; isolated no-credential demo package built",
+    "Emi approved MIT; LICENSE applied with separate ODbL/upstream notices",
+    "Emi will personally change GitHub visibility and publish on DEV",
+    "Deterministic licensed offline package and public-only CI prepared",
+    "Unchanged rules post-hoc comparator0/16; saved base13/16 reproduced without calls",
+    "Original request/settings visible; approved constraints preserved in one-page visually reviewed print; keyboard focus fixed"
   ],
   "remaining": [
-    "Approve original-code license and code/video visibility; final history review before public exposure",
-    "Confirm DEV account/credits and final publication",
-    "Reconcile delayed billing without releasing unverified holds"
+    "Complete fresh-worktree release rehearsal and final print/keyboard verification",
+    "Emi changes repository visibility and posts DEV using supplied checklist",
+    "Delayed billing reconciliation"
   ],
   "human_label_input_needed": false,
-  "paid_calls_this_checkpoint": "One live app inference; no training/checkpoints. Full $0.10 demonstration reservation retained.",
+  "paid_calls_this_checkpoint": "None",
   "tests_passed": 149,
-  "browser_verification": "Real live browser connection plus recorded correction/confirmation/closures,360px mobile,print generation; no field safety claim",
+  "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
-  "next_action": "Emi review release-decision.md: proposed MIT for original code, public code/video access and DEV publication route",
+  "next_action": "Finish local release checks; do not change visibility or post to DEV",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {

@@ -1,7 +1,7 @@
 {
   "scope": "isolated_offline_package_not_hosted_deployment",
-  "file_count": 38,
-  "archive_sha256": "e11f7ffa164a36c95590300f68d605ccff4f07651836f2fb7978e81850987584",
+  "file_count": 40,
+  "archive_sha256": "02859a5959390c38ea48befd0a8d179060aefb71538e553744e31f08170ea12e",
   "replay_correction_route_closure_passed": true,
   "live_disabled": true,
   "contains_credentials": false,
@@ -40,6 +40,8 @@
     "web/app.js",
     "web/index.html",
     "web/style.css",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
     "scripts/benchmark.py",
     "data/terrain/alpendorf-lab.json",
     "data/terrain/README.md",

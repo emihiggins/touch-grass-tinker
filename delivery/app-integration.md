@@ -39,3 +39,9 @@ Credentials stay server-side via the existing protected SDK path. Live request a
 ## Remaining release decisions
 
 [Concrete publication choices](../submission/release-decision.md): code visibility, original-code license, video upload and DEV account/publication. The server remains loopback-only; no authentication/public quotas/real-world terrain verification are implied. Public hosting would need a separately designed deployment, not changing the bind address. A downloadable demo/video is sufficient for the proposed release path, subject to challenge review.
+
+## Release-focused followups
+
+MIT is approved and applied; the demo archive includes the license and terrain notices and builds deterministically. The original request/settings are visible in confirmation, and approved constraints remain on the itinerary. A keyboard focus-loss bug was fixed. Targeted keyboard activation/correction, visible focus and320px reflow pass; this is not a full accessibility certification. The regenerated A4 PDF is one page; its raster was visually inspected and all approved limits, hard exclusions, recorded source and simulation notices are legible. [Print preview](../research/evidence/app-integration/print-preview.png).
+
+Emi alone will change GitHub visibility and publish to DEV. [Posting checklist](../submission/dev-posting-checklist.md). No public host or new inference was created for these improvements.

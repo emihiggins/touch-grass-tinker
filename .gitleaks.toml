@@ -1,0 +1,24 @@
+title = "Lift-Lap narrowly scoped non-secret fixture exclusions"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Pinned tokenizer SHA256 evidence, not an access token"
+condition = "AND"
+paths = ['''^research/evidence/''']
+regexTarget = "match"
+regexes = ['''tokenizer(?:-manifest\.json|_manifest)"\s*:\s*"[a-f0-9]{64}"''']
+
+[[allowlists]]
+description = "Client-generated request deduplication UUID plus case ordinal, not an API key"
+condition = "AND"
+paths = ['''^research/evidence/base-(?:dev-smoke|v2-development)/.*events\.jsonl$''']
+regexTarget = "match"
+regexes = ['''request_key"\s*:\s*"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}-[0-9]+"''']
+
+[[allowlists]]
+description = "Exact mock-only protected-egress placeholder"
+condition = "AND"
+paths = ['''^tests/test_(?:training_transport|sample_runner|tinker_sdk)\.py$''']
+regexTarget = "match"
+regexes = ['''TINKER_API_KEY'\s*:\s*'oc-sent-v2\.fixture\.end'''']

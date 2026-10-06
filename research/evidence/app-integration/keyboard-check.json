@@ -1,0 +1,7 @@
+{
+  "keyboardActivate": true,
+  "keyboardToggle": true,
+  "focusVisible": true,
+  "reflow320": true,
+  "scope": "targeted_keyboard_checks_not_full_accessibility_audit"
+}

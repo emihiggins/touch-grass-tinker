@@ -8,6 +8,8 @@
   "staleConfirmationInvalidated": true,
   "mobile360NoOverflow": true,
   "printPdfGenerated": true,
+  "approvedConstraintsInPrint": true,
+  "originalRequestVisible": true,
   "pageErrors": [],
   "video": "demo/walkthrough.webm",
   "liveCallsDuringRecording": 0,

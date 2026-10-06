@@ -6,7 +6,7 @@ tags: devchallenge, hf26challenge
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)*
 
-> Private working draft, October 6. Not ready to publish: public video/code access and the final release decision remain open; the first fine-tuning trial did not improve the pilot. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
+<!-- Emi: publish after making the repository public and checking the linked video/code while signed out. See dev-posting-checklist.md; this note is not part of the public article. -->
 
 ## What I Built
 <!-- What does it do, and how does it get people off the screen and into the world?  Who is it for? -->
@@ -19,19 +19,19 @@ Lift-Lap Planner is a ski-outing planning experiment built around that distincti
 
 The local prototype can interpret a limited vocabulary, ask the user to confirm constraints, search a bounded graph, and produce a printable simulated itinerary. It includes fictional terrain and an explicitly unreviewed OpenStreetMap terrain lab. It is not live lift information or on-mountain navigation, and it has not been field-tested on skis.
 
-The browser offers Rules, a clearly labelled recorded AI example, and opt-in live Qwen3-8B base-model interpretation. Live inference stays server-side; schema-invalid responses cannot create routes. The user reviews the interpretation and can correct hard lift exclusions locally before confirming. The rejected fine-tuned checkpoint is not used.
+The browser offers Rules, a clearly labelled recorded AI example, and opt-in live Qwen3-8B base-model interpretation. Live inference stays server-side; schema-invalid responses cannot create routes. The user sees the original request and selected settings, reviews the interpretation, and can correct hard lift exclusions locally before confirming. The printed itinerary retains the approved constraints and interpretation source. The rejected fine-tuned checkpoint is not used.
 
 ## Demo
 <!-- Share a deployed link or a video demo. -->
 
-**Recorded demonstration ready; public video URL pending release approval.** The interface runs locally, not at a public URL. The [screen recording](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/walkthrough.webm) currently requires private-repository access. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
+[Watch/download the 49-second demo](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm). The app itself runs locally; this is a recorded demonstration, not a hosted planning service. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
 
-The [recording storyboard](https://github.com/emihiggins/touch-grass-tinker/blob/main/submission/demo-storyboard.md) covers a successful simulated outing, closed lifts and an unsupported request. Earlier [desktop](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-desktop.png) and [mobile](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-mobile.png) images are development captures, not evidence of a public deployment.
+The recording covers corrected simulated planning, closed lifts, an unsupported request and mobile layout. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
 
 ## Code
 <!-- Show us the code!  You can embed a GitHub repo directly into your post. -->
 
-[Project repository](https://github.com/emihiggins/touch-grass-tinker) — currently private. Reviewer access and the license for original code must be resolved before publication. I am not presenting a private link as accessible source code.
+[Project repository](https://github.com/emihiggins/touch-grass-tinker). Original code is MIT-licensed; OpenStreetMap terrain data remains under ODbL with attribution. Run the offline demo with Python3.11+ using the README instructions.
 
 The dependency-free planner and saved-result scoring run on Python 3.11 or newer. The optional Tinker/Cookbook environment has separate version locks and a pinned tokenizer. Model weights are not bundled; training and baseline inference use Tinker's hosted service.
 
@@ -42,7 +42,7 @@ The dependency-free planner and saved-result scoring run on Python 3.11 or newer
 
 The model's job is to turn words into a small, strict intent object. Python owns the graph search and checks the route against the interpreted constraints. Unknown place IDs and invalid intents do not get a best-effort route.
 
-There is a second distinction in evaluation: a route must satisfy the independently authored **gold request**, not merely the model's own interpretation. Otherwise, a model could drop “no drag lifts,” find a route that uses one, and congratulate itself for solving an easier problem.
+There is a second distinction in evaluation: a route must satisfy the human-reviewed **reference request (gold label)**, not merely the model's own interpretation. Otherwise, a model could drop “no drag lifts,” find a route that uses one, and congratulate itself for solving an easier problem.
 
 The planner distinguishes an exhausted bounded search from a search limit. Returned routes pass a separate validator checking connectivity, edge direction, difficulty, closures and time. This establishes consistency with the supplied graph and scenario—not that a real piste is safe or open.
 
@@ -77,7 +77,7 @@ The trial failed its screening rule. I retained the base as the candidate rather
 
 After independent owner approval, I froze a new16-case set on four fictional graph layouts and evaluated the unchanged base model once. It passed **13/16 end-to-end tasks**, with **16/16 schema-valid outputs**. Failures involved incomplete surface-lift exclusions, unnecessary duration clarification, and a retained duration where none should be set. All failures remain in the denominator. [Outputs, protocol and report](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/fresh-base-evaluation) are preserved.
 
-This is a small, same-agent-authored, human-reviewed set—not representative field validation. It is not a base-versus-trained comparison, and13/16 here must not be compared with9/16 on different pilot cases as a gain. No model or prompt was tuned using these final outputs.
+This is a small, same-agent-authored, human-reviewed set—not representative field validation. It is not a base-versus-trained comparison, and13/16 here must not be compared with9/16 on different pilot cases as a gain. No model or prompt was tuned using these final outputs. A later, explicitly post-hoc check of the unchanged narrow rules parser scored0/16 on this compositional wording; that comparison was not used to select a new model and does not describe performance on the parser’s supported grammar.
 
 ## Why Does Open Innovation Matter?
 <!-- Why does open innovation matter for what you built?  What did it make possible that a closed API wouldn't? -->
@@ -88,17 +88,17 @@ OpenStreetMap also makes the terrain experiment inspectable: another builder can
 
 These are concrete benefits, but not claims that only open models can solve the task. Some closed providers also offer fine-tuning. I have not demonstrated offline model inference, device deployment, a closed-model comparison, or lower cost. The planner runs locally; the measured model calls ran on Tinker.
 
-Nontrivial foundations: [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), [Tinker SDK](https://github.com/thinking-machines-lab/tinker), [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and [OpenStreetMap](https://www.openstreetmap.org/copyright). AI coding assistance was used. Model/software license terms and terrain notices remain separate release checks.
+Nontrivial foundations: [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), [Tinker SDK](https://github.com/thinking-machines-lab/tinker), [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and [OpenStreetMap](https://www.openstreetmap.org/copyright). AI coding assistance was used. Licenses and attribution are documented in [THIRD_PARTY_NOTICES.md](https://github.com/emihiggins/touch-grass-tinker/blob/main/THIRD_PARTY_NOTICES.md). No model weights are bundled.
 
 ## My Agent Session
 <!-- Optional, but judges love it.  Save your session with DevRelay and embed it with the agent_session tag (see the challenge page), or link to it. -->
 
-Optional; not exported for this submission yet. Any shared export must be project-scoped and reviewed for private workspace content. No public session link is claimed.
+I used an AI coding agent to build and test the project. I am not sharing a session transcript; the repository instead contains the experiment plans, failures, raw model outputs and reproducible evaluation evidence.
 
 ## Prize Categories
 <!-- Which partner categories are you entering?  List every one that applies, or remove this section. -->
 
-No partner category is currently claimed. The Tinker trial did not demonstrate a fine-tuning improvement, so I am not entering Best Use of Tinker on the strength of hosted inference or prompt changes. Final category selection remains part of release review.
+No partner category is currently claimed. The Tinker trial did not demonstrate a fine-tuning improvement, so I am not entering Best Use of Tinker on the strength of hosted inference or prompt changes. This submission is for the overall Touch Grass challenge.
 
 <!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
 
