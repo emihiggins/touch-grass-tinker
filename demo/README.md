@@ -23,4 +23,8 @@ python3 -m liftlap.server --port 8767
 
 Open http://127.0.0.1:8767 on the same machine. Choose Load example request, then Recorded AI. Rules works on other supported requests. The bundle does not enable paid inference. Stop with Ctrl-C. Do not expose this local prototype publicly unchanged.
 
-Video playback: open `walkthrough.webm` in a compatible browser/player. A public judge-accessible link still requires release approval and upload; this private file is not a public deployment.
+Video playback: open `walkthrough.webm` in a compatible browser/player. Repository visibility controls access to the video. It becomes downloadable with the repository; no separate host is required. It is not a public deployment of the app.
+
+## Current visuals
+
+[Desktop](../research/evidence/app-integration/recorded-corrected-desktop.png), [mobile](../research/evidence/app-integration/mobile.png), [one-page print preview](../research/evidence/app-integration/print-preview.png) and [PDF](../research/evidence/app-integration/corrected-itinerary.pdf) reflect the latest UI. The recording was regenerated after adding original-request/selected-settings review and printed approved constraints. It is about49seconds, silent, with on-screen source labels. Older `research/evidence/ui-*` images and the initial live-call screenshot are historical evidence, not current marketing captures.

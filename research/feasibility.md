@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Feasibility and implementation preflight
 
 Research date: 2026-10-05. This file owns follow-up source findings; [data sources](data-sources.md) owns initial sources and [architecture](../technical/architecture.md) owns design decisions.

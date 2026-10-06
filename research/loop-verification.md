@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Next-priority checkpoint: source topology and access
 
 Checked 2026-10-05. This report supersedes any interpretation that the processed graph's blue-only cycles are ready for routing. Earlier results remain correct as structural graph checks only.

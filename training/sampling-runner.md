@@ -1,3 +1,5 @@
+> **Historical workflow/checkpoint.** These instructions document the original research run. For completed results, current setup boundaries and safe offline reproduction, use the [training index](README.md) and [developer guide](../docs/development.md). Do not treat old pending gates as current status or rerun paid steps automatically.
+
 # Sampling runner: live development smoke completed
 
 > Current spending authority: [the $10 staged project budget](budget-authorization.json) supersedes the earlier inference-only cap below. Existing per-run estimation is not project-wide enforcement; shared accounting and prior-charge reconciliation remain required.

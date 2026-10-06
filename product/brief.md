@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Lift-Lap Planner: selected direction
 
 Emi selected this concept on October 5, 2026. Recommended implementation choices and remaining gates are recorded in the [delivery plan](../delivery/plan.md); none are claimed as implemented.

@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 > Current status: [app integration and recorded demo](../delivery/app-integration.md). Older checkpoint sections below are historical, not remaining execution gates.
 
 # Local demo checkpoint — 2026-10-06

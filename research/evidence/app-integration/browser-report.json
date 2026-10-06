@@ -12,6 +12,5 @@
   "originalRequestVisible": true,
   "pageErrors": [],
   "video": "demo/walkthrough.webm",
-  "liveCallsDuringRecording": 0,
-  "latePlanResponseAfterManualCorrectionRejected": true
+  "liveCallsDuringRecording": 0
 }

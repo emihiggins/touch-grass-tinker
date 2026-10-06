@@ -1,3 +1,5 @@
+> **Historical workflow/checkpoint.** These instructions document the original research run. For completed results, current setup boundaries and safe offline reproduction, use the [training index](README.md) and [developer guide](../docs/development.md). Do not treat old pending gates as current status or rerun paid steps automatically.
+
 # Human review checkpoint — 2026-10-06
 
 > Follow-through: the agreed changes are now implemented in the [separate v2 corpus](../benchmark/v2/README.md), with 47 reviewed/migrated training rows and 009 excluded. The v1 approvals and requested-change states below are preserved as the original review record.

@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # V2 implementation checkpoint — 2026-10-06
 
 ## Delivered

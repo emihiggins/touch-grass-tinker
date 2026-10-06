@@ -25,7 +25,8 @@
     "Deterministic licensed offline package and public-only CI prepared",
     "Unchanged rules post-hoc comparator0/16; saved base13/16 reproduced without calls",
     "Original request/settings visible; approved constraints preserved in one-page visually reviewed print; keyboard focus fixed",
-    "Clean detached worktree on Python3.11 passed offline checks and produced identical archive; final print visually verified"
+    "Clean detached worktree on Python3.11 passed offline checks and produced identical archive; final print visually verified",
+    "Public-audience README/current guides rewritten; historical docs separated; current media regenerated and fingerprint-checked; package guide assets included"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
@@ -37,7 +38,7 @@
   "tests_passed": 149,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
-  "next_action": "Emi-owned release; no further label review or implementation input needed",
+  "next_action": "Emi-owned visibility switch and DEV posting; current user/developer docs and media verified",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {

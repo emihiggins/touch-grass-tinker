@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # MVP requirements and acceptance ownership
 
 Status: full product acceptance remains **open**; offline importer, planner, validator and development benchmark tooling are implemented but do not complete the product delivery gates. The [brief](brief.md) owns purpose; this file owns requirement IDs and acceptance criteria. [Architecture](../technical/architecture.md) supplies contracts, not additional requirement IDs.

@@ -1,53 +1,19 @@
-> Current status: [app integration and recorded demo](../delivery/app-integration.md). Older checkpoint sections below are historical, not remaining execution gates.
+# Touch Grass submission materials
 
-# Submission readiness — October 6, 2026
+This directory is for the challenge submission and maintainer handoff. Users and developers should start with the [project README](../README.md) and [documentation](../docs/README.md).
 
-**Private preparation checkpoint, not submitted or ready to claim Best Use of Tinker.** Deadline: October 11, 11:59 PM PDT / October 12, 06:59 UTC. [Official requirements and sources](../research/challenge.md).
+## Current package
 
-## Reviewer package
+- [DEV article](dev-post.md): the supplied seven-section template, current results and limitations; not automatically published.
+- [Posting checklist](dev-posting-checklist.md): Emi controls repository visibility and posts to DEV herself.
+- [Recorded demo and reproduction guide](../demo/README.md), [video](../demo/walkthrough.webm), [current captures](../research/evidence/app-integration/recorded-corrected-desktop.png).
+- [MIT license](../LICENSE) and [separate notices](../THIRD_PARTY_NOTICES.md).
+- [Verified release followups](../delivery/high-value-followups.md) and [fresh-checkout evidence](../research/evidence/app-integration/fresh-checkout.json).
 
-- [DEV article draft](dev-post.md): exact official template headings, actual development metrics and limitations; `published: false`.
-- [Two-minute demo storyboard](demo-storyboard.md): steps matching current UI; no video produced yet.
-- [Local run instructions](../README.md#run-locally-python-311-no-dependencies).
-- [Saved live baseline evidence](../research/evidence/base-v2-development/report.json), [raw predictions](../research/evidence/base-v2-development/predictions.jsonl), [paired prompt development comparison](../research/evidence/base-v2-development/prompt-comparison.json).
-- [Training candidate review packet](../training/review-packet.md) and [offline batch rehearsal](../training/batch-rehearsal.md).
+## Claims and remaining actions
 
-## Release gates
+The app, recording, offline package and local verification are complete. The matched fine-tuning trial regressed, so no Best Use of Tinker improvement claim is made. The separate fresh base-model result is13/16, not field validation. The video visibly replays a real model mistake and local correction; it is not continuous live inference.
 
-| Gate | Evidence / exact remaining work | State |
-|---|---|---|
-| Article follows official template | All seven headings and both required tags verified against the October 6 challenge page; article written in English | Draft complete |
-| Honest development result | Rules 14/20, base v1 6/20, base v2 13/20; denominator/failures retained | Recorded, not held-out |
-| Approved corpus | 47 source-reviewed rows migrated to v2 under the agreed changes; 009 excluded. [V2 corpus](../benchmark/v2/README.md) | Partial |
-| Independent test | 16-case pilot reviewed: 16 resolved and approved; frozen pilot available; final untouched set/freeze still missing | Partial |
-| Real Tinker fine-tuning | Two-example training, checkpoint, restore and sample completed; sample schema-valid but semantically wrong | Integration smoke only; no quality gain |
-| Baseline improvement | Same-base, same-renderer independent comparison; report failure if the gain is absent | Missing |
-| Trained model in app | Actual checkpoint-linked request → intent → validated route, explicit live/replay mode | Missing; browser uses rules |
-| Judge-accessible demo | Record and review video or deploy an appropriately bounded demo; verify access without owner login | Storyboard only |
-| Judge-accessible code | Resolve private-repo judging access and original-code license; preserve third-party/model/data obligations | Open; repo stays private |
-| Terrain claims | Three reviewed loops/access/direction still unresolved; simulation-only scope is explicit | Open; no field-ready claim |
-| Entrant/release | Confirm DEV account/eligibility, teammate credits if applicable, and final publication authority | Open |
+Public accessibility requires Emi's visibility switch and signed-out link checks; DEV publication is also hers. Billing reconciliation is separate. No new label review or automatic training run is pending.
 
-Agent-session sharing is optional, not a mandatory blocker. Do not delay required evaluation/video work for a full transcript export. Do not publish an unrelated workspace session.
-
-## Next sequence
-
-1. The [16-case pilot](../training/evaluation-review-v2.md) is resolved and frozen; prepare the stronger final independent benchmark separately. Contract changes and reviewed training migration are implemented.
-2. Integrate protected Tinker training with the existing Cookbook checkpoint lifecycle, bounded spend and uncertain-call recovery. The [local rehearsal](../training/batch-rehearsal.md) is not this integration.
-3. Use the [authorized $10 staged budget](../training/budget-authorization.json) after data/config, account billing/credits and bounded accounting checks pass. Authorization is recorded; do not ask again for the same scope. Include prior usage and checkpoint storage.
-4. Run a bounded training/checkpoint/sample smoke, then the preregistered comparison; integrate a real model path in the demo.
-5. Record the demo, finish result-based writing, resolve code/demo access, and seek final publication approval.
-
-If fine-tuning does not show a defensible gain, do not substitute the 6/20→13/20 prompt change as the category result. Reassess the category honestly; the overall challenge still needs meaningful open-AI integration and an accessible finished submission.
-
-
-## Checkpoint verification
-
-On October 6, all **97 tests passed** in the pinned optional training environment. The dependency-free run passed 83 tests with 14 optional skips. The real rendered rehearsal covered 48 candidates in three batches; restarting the local cursor after batch one reproduced the remaining 32 rows. The default 32-row configuration was refused. Saved-output scoring reproduced 14/20, 6/20 and 13/20 without provider calls. Local documentation links and the seven official template headings passed checks. No UI code changed; browser/print evidence remains the earlier checkpoint, not a new accessibility audit.
-
-
-## Current full-data experiment checkpoint
-
-Preregistered experiment01 completed: base9/16 vs trained7/16 end-to-end successes, schema validity15/16 vs10/16. Two paired wins, four losses; screening failed. Do not promote the trained candidate or claim Best Use of Tinker improvement. Evidence: [paired results](../research/evidence/experiment-01/README.md). Earlier tables/next-sequence statements describe prior checkpoints.
-
-Fresh16-case review is complete: all approved by Emi. Frozen base evaluation passed13/16 tasks,16/16 schemas; see [evidence](../research/evidence/fresh-base-evaluation/README.md). No further label review needed. This compact set replaces the original100–200-case protocol for this iteration and cannot support broad statistical generalization. Retain the base candidate fixed before final evaluation. The app now supports opt-in live base AI and an exact recorded example; recorded demo and isolated local package are complete. Code/video access and publication remain open. No further model configuration ran. Total held commitments$1.75, not a bill; existing01:00UTC accounting follow-up remains scheduled.
+[Challenge requirements](../research/challenge.md) were recorded on October6; verify the official challenge page's current deadline/eligibility before posting. The [original storyboard](demo-storyboard.md) is historical planning, superseded by the recorded demo.

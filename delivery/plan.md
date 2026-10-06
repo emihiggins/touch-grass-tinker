@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Delivery plan and evidence gates
 
 Status: structural/source audits and offline seed/scorer implemented. The three-loop derivative-graph gate failed; [source checkpoint](../research/loop-verification.md) records the replacement path. A dependency-free offline importer/planner/validator and synthetic graph-backed evaluation now run; see [checkpoint](offline-checkpoint.md). A loopback demo UI/API, rules baseline and reversible compaction are now implemented; see [local demo](local-demo.md). No trained model integration. Contest facts and exact deadline: [challenge research](../research/challenge.md).

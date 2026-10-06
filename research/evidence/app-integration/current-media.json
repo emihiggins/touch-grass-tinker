@@ -1,0 +1,26 @@
+{
+  "scope": "current_offline_replay_UI_capture_provenance",
+  "captured_on": "2026-10-06",
+  "live_calls_for_refresh": 0,
+  "source": "scripts/browser-ai-demo.cjs; Chromium offline recorded mode",
+  "sha256": {
+    "web/index.html": "3c9189fa782212fcad82fa7c5577ade02f9c522a7a79c868e74db7da2b4b58de",
+    "web/app.js": "ddaa6930fe39f28497b23ad2e8069884bf0e2fd2a188daab823882ab7386e539",
+    "web/style.css": "406e0077d8eadf62adefb69fa44c0e38605bafa312a7156ffbee01808f0dab8c",
+    "liftlap/server.py": "e9b195cffb998c2277c878d6aa69345338caf3a31f24d92cbf85cfef28f7e5e9",
+    "liftlap/app_model.py": "b47c0427e43399c40fff73fa7e77fccddfa1ea74b56a44c4d674153af5bc57b5",
+    "scripts/browser-ai-demo.cjs": "6187aaad842124f2e3a4941e052ab5ec7389560dd0052ae5017e7554e0661113",
+    "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
+    "demo/walkthrough.webm": "173b0e4c6144ee50af39a1f422d69e43b920d3a0fa7ae4de54637f9a359837cb",
+    "research/evidence/app-integration/recorded-corrected-desktop.png": "32a5267c68ea42051eb8b6bb98511de5ad94919eb1602a7d8ce0a2fa403cd9d8",
+    "research/evidence/app-integration/mobile.png": "6930bfaddafb1f57ae70d650a144f29511e72da84006c2483526fc3d1b0417a6",
+    "research/evidence/app-integration/corrected-itinerary.pdf": "01db443d28a036da884da517d3f3a8a222c7f7079fd870c3f1b575cd034ea910",
+    "research/evidence/app-integration/print-preview.png": "6b66780cc11c4682f2d5d5307c0c13eca7101c45c0f1566bb8f91abc857fff04"
+  },
+  "historical_media": [
+    "research/evidence/ui-desktop.png",
+    "research/evidence/ui-mobile.png",
+    "research/evidence/app-integration/live-desktop.png"
+  ],
+  "notes": "Historical media is retained as evidence and is not used by the current README. A source change requires fresh capture/review, not silently updating hashes."
+}

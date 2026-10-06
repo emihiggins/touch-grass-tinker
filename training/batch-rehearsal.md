@@ -1,3 +1,5 @@
+> **Historical workflow/checkpoint.** These instructions document the original research run. For completed results, current setup boundaries and safe offline reproduction, use the [training index](README.md) and [developer guide](../docs/development.md). Do not treat old pending gates as current status or rerun paid steps automatically.
+
 # Offline Cookbook batching and resume-cursor rehearsal
 
 This milestone reuses `SupervisedDatasetFromHFDataset` from the pinned official Cookbook. It adds no training service and makes no provider calls. Candidate labels remain unapproved, including quarantined candidate 009. This is an inspection of local data flow, not a training export.

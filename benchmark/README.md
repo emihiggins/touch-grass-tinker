@@ -4,7 +4,7 @@
 
 ## Scope and label rules
 
-This is an executable first slice of the [evaluation protocol](../delivery/evaluation.md): intent semantics only. No scenario graph is attached and route feasibility is deliberately unlabeled (`expected_action: interpret_only` for ready cases). Do not score these cases as successful ski outings. A future graph-backed benchmark must add independent route feasibility and validation.
+This is an executable first slice of the [evaluation protocol](../delivery/evaluation.md): intent semantics only. No scenario graph is attached and route feasibility is deliberately unlabeled (`expected_action: interpret_only` for ready cases). Do not score these cases as successful ski outings. Graph-backed v2 evaluation now exists separately; see the [v2 index](v2/README.md).
 
 Explicit user corrections override prior utterances/UI values. Otherwise the selected UI context fills unspecified fields. A deadline may shorten but does not automatically extend the selected duration: with 60 minutes selected at 10:00, “back by noon” still means a 60-minute outing; “two hours, back by 11:15” explicitly requests 120 minutes but the deadline caps it to 75. Unsupported preferences require a choice to drop them, not silent fallback. Unknown destination names and out-of-range durations trigger clarification. These conventions must appear in the baseline prompt too.
 
@@ -12,7 +12,7 @@ The seed contains hard/soft difficulty, exclusions/negation, correction, duratio
 
 ## Run without installing dependencies
 
-From repository root, Python 3.10+:
+From repository root, Python 3.11+:
 
 ```bash
 python3 scripts/benchmark.py benchmark/development-seed.jsonl
@@ -20,7 +20,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/benchmark.py benchmark/development-seed.jsonl --predictions /path/to/predictions.jsonl
 ```
 
-Prediction format: one JSON object per line with `id` and `intent`. Missing/malformed intents count as failures; duplicate/unknown IDs abort rather than silently drop records. Metric is strict normalized intent match, with order-insensitive lists and equivalent timestamp normalization. It is **not** route success. The gold round-trip test checks the scorer, not a model. No model results exist yet.
+Prediction format: one JSON object per line with `id` and `intent`. Missing/malformed intents count as failures; duplicate/unknown IDs abort rather than silently drop records. Metric is strict normalized intent match, with order-insensitive lists and equivalent timestamp normalization. It is **not** route success. The gold round-trip test checks the scorer, not a model. This seed predates model execution; completed results are indexed in the [current evaluation guide](../docs/evaluation.md).
 
 [Manifest](manifest.json) records the current content hash; this is a reproducibility hash, not a claim that final evaluation is frozen. Code is standard-library-only. No training/sample calls or dependencies are needed for local checks.
 

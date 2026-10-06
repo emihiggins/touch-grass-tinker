@@ -1,3 +1,5 @@
+> **Historical workflow/checkpoint.** These instructions document the original research run. For completed results, current setup boundaries and safe offline reproduction, use the [training index](README.md) and [developer guide](../docs/development.md). Do not treat old pending gates as current status or rerun paid steps automatically.
+
 # Protected remote smoke — implementation checkpoint
 
 ## What is implemented

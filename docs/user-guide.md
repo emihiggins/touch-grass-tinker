@@ -1,0 +1,44 @@
+# User guide
+
+## Start and stop
+
+From the repository root, run `python3 -m liftlap.server --port 8767` with Python3.11+. Open http://127.0.0.1:8767 on the same computer. Ctrl-C stops it. If the port is occupied, choose another port with `--port`. This is not a hosted service or a phone-accessible URL from another computer.
+
+## Choose an interpretation mode
+
+| Mode | What it does | Network/model requirement |
+|---|---|---|
+| Rules | Recognizes a deliberately narrow set of phrases and otherwise stops for review | None |
+| Recorded AI example | Replays the saved response for exactly the example request and selected time/difficulty/terrain | None |
+| Live AI | Sends text, selected context and the place catalog to Qwen3-8B via Tinker | Advanced protected research setup; disabled by default |
+
+Use **Load example request** to restore the recorded example’s settings, then select Recorded AI. The example intentionally includes a model error: “no drag lifts” was interpreted as soft avoidance. Correct the hard exclusions before confirming. This is a demonstration of review, not evidence that models always obey restrictions.
+
+Rules examples: “only blues”, “no drag lifts”, “mostly blues”, “45 minutes”. An empty request uses selected form values. Rules does not understand arbitrary prose. Recorded mode refuses changed requests rather than inventing a new answer.
+
+## Review before planning
+
+The review shows your original request, selected settings and interpreted constraints. Check the maximum difficulty, duration, start/finish, excluded lifts, soft preferences and variety flag. A maximum grade is not necessarily a preferred grade. “Avoid gondolas” is a preference; “no gondolas” is a hard exclusion.
+
+Hard-exclusion checkboxes edit the intent locally without another inference call. Checking a type also removes an overlapping soft avoidance preference. Other interpretation problems require editing the request/form and reviewing again. Clarification or unsupported intent keeps planning disabled.
+
+**Confirm & plan outing** starts the search. Changing inputs or correcting exclusions invalidates old results; late responses from the old request are ignored.
+
+## Understand the result
+
+- **Itinerary:** route validation passed against the confirmed intent and supplied graph/scenario. That does not establish that the original sentence was interpreted correctly or that real terrain is safe.
+- **No outing:** no feasible route was found within the implemented bounds/scenario.
+- **Search limit:** the search exhausted a resource limit; it does not prove that no route exists.
+- **Preference notice:** an outing uses a softly avoided lift. Hard exclusions are not relaxed.
+
+An outing may be shorter than the budget; the search does not promise to fill all available time. The fixed demo starts January15,2027 at10:00 local. All-lifts-closed is a synthetic scenario. The map is a schematic, not a navigational basemap.
+
+## Print and mobile
+
+The print button creates a simulation itinerary with approved constraints, model/rules provenance, corrections, route steps and disclosures. The recorded example has a verified one-page A4 PDF. Other routes/printer settings may paginate differently. The layout was checked at320px and360px widths; targeted keyboard checks are not a full accessibility certification.
+
+## Privacy and troubleshooting
+
+Rules/recorded mode performs no provider calls. Opt-in live mode sends input to Tinker and retains private local run records; do not enter sensitive personal data. No analytics or external map tiles are loaded.
+
+If recorded mode reports a mismatch, load the example again or choose Rules. If live mode is disabled, that is expected in the default installation. If live provider results become uncertain, the adapter pauses rather than retrying paid work. If a route is unavailable, inspect your confirmed constraints and simulated operations; never treat the prototype as on-mountain guidance.

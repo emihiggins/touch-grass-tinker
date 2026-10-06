@@ -1,50 +1,83 @@
 # Lift-Lap Planner
 
-A local ski-outing planning experiment for the Hacktoberfest Week1 Touch Grass challenge. Best Use of Tinker is not claimed: no measured fine-tuning gain.
+**Turn a short ski-outing request into constraints you can inspect, correct, and use to plan a simulated itinerary.**
 
-**Status:** local simulation with Rules, recorded-AI and opt-in live Qwen3-8B interpretation. A real app call is verified, with its semantic error preserved and a local correction step demonstrated. The fine-tuned trial did not improve the matched pilot (base9/16, tuned7/16). Retained base:13/16 on a separate frozen fresh set. No hosted app or field-verified navigation is claimed.
+Lift-Lap explores a simple division of responsibility: a language model interprets the request; a deterministic graph planner finds an outing; you confirm the constraints before a route is created. It is useful for developers exploring structured AI output and constrained planning, and for anyone who wants to try an interactive ski-planning prototype.
 
-## Submission materials
+> **Simulation, not ski navigation.** Terrain, timings and lift operations are fictional or explicitly unreviewed. There is no live resort status, avalanche advice or field-verified routing.
 
-- [DEV article draft and release gates](submission/README.md)
-- [Two-minute demo storyboard](submission/demo-storyboard.md)
-- [Training batch/cursor rehearsal](training/batch-rehearsal.md)
+[Watch the 49-second demo](demo/walkthrough.webm) · [User guide](docs/user-guide.md) · [Developer guide](docs/development.md) · [Architecture](technical/architecture.md)
 
-## Run locally (Python 3.11+, no dependencies)
+![Lift-Lap desktop: recorded interpretation, corrected hard exclusions, schematic mountain and confirmed itinerary](research/evidence/app-integration/recorded-corrected-desktop.png)
+
+## Try it locally
+
+Requires **Python 3.11+**. The default app needs no package installation, API key, model download or paid service.
 
 ```bash
-python3 -m liftlap
+git clone https://github.com/emihiggins/touch-grass-tinker.git
+cd touch-grass-tinker
 python3 -m liftlap.server --port 8767
-python3 -m unittest discover -s tests -v
-python3 -m liftlap --osm data/terrain/alpendorf-source.osm --start-node 2591901158 --lab
 ```
 
-The first command uses an original synthetic graph. The server command opens the local-only demo at http://127.0.0.1:8767 (not accessible from another device without separately arranging access). The last explicitly opts into **unreviewed-terrain simulation**, with assumed speeds/queues/closures; it is not a usable on-mountain navigation instruction. Without `--lab`, imported unreviewed terrain is refused. See [offline checkpoint](delivery/offline-checkpoint.md) and [data provenance/license](data/terrain/README.md).
+Open **http://127.0.0.1:8767** on the same computer. Stop the server with Ctrl-C.
 
-## Source of truth
+1. Choose **Load example request** and **Recorded AI example · offline**.
+2. Select **Review my constraints**. The saved model response incorrectly treats “no drag lifts” as a soft preference.
+3. Check **t-bar**, **platter**, and **rope-tow** under hard exclusions to correct that interpretation locally.
+4. Select **Confirm & plan outing**. Inspect the itinerary or print its one-page summary.
+5. Try **All lifts closed**, or switch to **Rules · offline** to enter other supported phrases.
 
-- [Selected product direction](product/brief.md)
-- [Data sources, access checks and recommendation](research/data-sources.md)
-- [Follow-up feasibility and audit evidence](research/feasibility.md)
-- [Source-loop verification and Tinker access checkpoint](research/loop-verification.md)
-- [Executable benchmark seed](benchmark/README.md)
-- [Local UI, rules baseline and compaction checkpoint](delivery/local-demo.md)
-- [Requirements and acceptance criteria](product/requirements.md)
-- [Architecture and API contracts](technical/architecture.md)
-- [Training and evaluation protocol](delivery/evaluation.md)
-- [Challenge requirements and sources](research/challenge.md)
-- [Execution gates and evidence plan](delivery/plan.md)
-- [Archived alternative](scratchpad/concept.md)
+The recorded mode replays one real model output only when the text and selected settings match. It does **not** generate answers for arbitrary requests or secretly call a model. See [modes and troubleshooting](docs/user-guide.md).
 
-## Current checkpoint and next step
+## What works
 
-- [Integration, recorded demo and reproducible local package](delivery/app-integration.md)
-- [Fresh base evaluation:13/16](research/evidence/fresh-base-evaluation/README.md)
-- [Matched pilot:base9/16 vs trained7/16](research/evidence/experiment-01/README.md)
-- [Final posting checklist for Emi](submission/dev-posting-checklist.md)
-- [Release-focused followup plan and results](delivery/high-value-followups.md)
-- Run all offline release checks: `python3 scripts/check_release.py`
+- Hard difficulty/lift restrictions, soft lift avoidance, time budgets and start/finish constraints.
+- Visible interpretation review and local hard-exclusion corrections before confirmation.
+- Bounded graph search, closure checks, and an independent validator for returned routes.
+- Fictional Pine Mountain and an explicitly unreviewed OpenStreetMap terrain lab.
+- Responsive browser UI and printable approved constraints, itinerary and source disclosure.
+- Offline Rules and exact-input recorded modes; an opt-in server-side Qwen3-8B adapter verified in the research environment.
 
-All training/pilot/fresh label reviews are complete. The app requires explicit confirmation and supports hard-lift-exclusion correction before planning. Its recorded example preserves a real model mistake. Rules and exact-input recorded mode work offline; live inference is disabled by default. The real terrain lab remains unreviewed simulation.
+**Live AI is not enabled by the quick start.** It requires the pinned optional environment, protected provider access and a separately configured budget ledger. This repository is a local prototype, not a ready-to-host public inference API. See [developer setup and boundaries](docs/development.md).
 
-Original code is [MIT](LICENSE); terrain and upstream components have [separate notices](THIRD_PARTY_NOTICES.md). Emi will personally change repository visibility and post to DEV. The agent does not perform those actions. Current holds total$1.75 within the authorized$10 Tinker cap, not an invoice. No budget reapproval is needed for the approved scope. Billing reconciliation remains separate from model quality and publication.
+## What the experiments showed
+
+| Evaluation | Result | Interpretation |
+|---|---:|---|
+| Matched 16-case pilot: base → fine-tuned | 9/16 → 7/16 | The fine-tuned checkpoint was rejected |
+| Separate frozen, human-reviewed set: base | 13/16 | 16/16 schema-valid outputs; three semantic/task failures |
+| Later unchanged-rules comparator on that fresh set | 0/16 | Post-hoc; the wording exceeded the parser’s narrow grammar |
+
+These small, fictional sets are not statistically representative or field validation. The 9/16 and 13/16 results use **different cases**, not a measured improvement. No fine-tuning gain is claimed. [Protocols, outputs and limitations](docs/evaluation.md).
+
+## For developers
+
+```bash
+# Dependency-free tests, saved-result scoring and deterministic demo packaging
+python3 scripts/check_release.py
+
+# Just the unit/integration tests
+python3 -m unittest discover -s tests -v
+
+# Build the credential-free local-demo archive
+python3 scripts/package_demo.py
+```
+
+The last command produces `dist/liftlap-local-demo.zip`; unzip it and follow `demo/README.md`. Optional model tests skip when their dependencies are absent. Offline checks make no provider calls. Public-repository CI runs the same release checks; the workflow intentionally skips while the repository is private.
+
+See [development and testing](docs/development.md), [contribution guidelines](CONTRIBUTING.md), and the [documentation index](docs/README.md).
+
+## Screenshots and demo
+
+The [recording and reproduction guide](demo/README.md) distinguishes the recorded example from verified live inference. Current captures show the same app state and features:
+
+- [Desktop with corrected constraints](research/evidence/app-integration/recorded-corrected-desktop.png)
+- [Mobile layout](research/evidence/app-integration/mobile.png)
+- [One-page print preview](research/evidence/app-integration/print-preview.png) and [PDF](research/evidence/app-integration/corrected-itinerary.pdf)
+
+## License and attribution
+
+Original code is [MIT licensed](LICENSE). OpenStreetMap-derived terrain is © OpenStreetMap contributors under [ODbL](data/terrain/LICENSE-ODbL.md), not MIT. Model weights are not bundled. [Third-party notices](THIRD_PARTY_NOTICES.md).
+
+Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](submission/README.md) are separate from the user/developer documentation.

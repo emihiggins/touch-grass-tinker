@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Offline implementation checkpoint
 
 Implemented 2026-10-05; no Tinker calls or paid compute. This file owns implemented scope and reproduction instructions. Product requirements remain in [requirements](../product/requirements.md).

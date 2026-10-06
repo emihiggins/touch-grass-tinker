@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Fine-tuning and evaluation protocol
 
 Status: [32-case development seed and offline intent scorer](../benchmark/README.md) implemented; 8 synthetic graph-backed development scenarios now exercise planner outcomes and gold-route validation; no final training/test splits or model calls yet. Freeze version 1 before baseline measurement. This file owns numeric experiment targets; [requirements](../product/requirements.md) owns acceptance traceability.

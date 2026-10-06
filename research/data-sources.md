@@ -1,3 +1,5 @@
+> **Historical planning/checkpoint document.** Retained for provenance, not a current feature or task list. Use the [current documentation](../docs/README.md) for the implemented app, completed experiments and supported setup.
+
 # Lift-Lap Planner data-source investigation
 
 Checked 2026-10-05. Distinguish directly inspected data from documented capabilities and unverified possibilities.
