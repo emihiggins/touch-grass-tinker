@@ -11,17 +11,17 @@
   "scope": "structural_audit_not_independent_label_review_or_test_freeze",
   "input_sha256": {
     "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
-    "benchmark/training-candidates.jsonl": "53ebf1b7c4bdfc58148a9d8655e06e251401e35a37aec1e6077ff31de9b4f1f2"
+    "benchmark/training-candidates.jsonl": "ddb30cc1134e67039946577f3c5d7137a239f65efd2ec2f1eeba97385f18cdf4"
   },
   "human_reviewed_count": 48,
   "decisions": {
-    "approved": 41,
-    "discussion_pending": 5,
-    "change_requested": 2
+    "approved": 45,
+    "change_requested": 3
   },
-  "non_quarantined_current_approvals": 40,
+  "non_quarantined_current_approvals": 44,
   "gold_labels_changed": 0,
   "training_started": false,
+  "followup_agreement_at": "2026-10-06T20:27:42Z",
   "tests": {
     "optional_environment": {
       "passed": 102,

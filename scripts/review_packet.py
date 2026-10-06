@@ -17,7 +17,8 @@ def main():
                   '- Reviewed at: '+c.get('review',{}).get('reviewed_at','pending'),
                   '- Human note: '+c.get('review',{}).get('human_note',''),
                   '- Agent response (not human approval): '+c.get('review',{}).get('agent_response','None'),
-                  '- Quarantine: '+c.get('review',{}).get('quarantine_reason','None'), '',
+                  '- Quarantine: '+c.get('review',{}).get('quarantine_reason','None'),
+                  '- Follow-up: '+json.dumps(c.get('review',{}).get('followup'),ensure_ascii=False), '',
                   '**Request:** '+c['request_text'], '', '**UI context:**', '```json', json.dumps(c['ui_context'],indent=2), '```',
                   '', '**Catalog:** '+ '; '.join(f'{p["id"]}: {p["label"]} (aliases: {", ".join(p["aliases"])})' for p in c['catalog']),
                   '', '**Proposed label:**', '```json',json.dumps(c['gold_intent'],indent=2),'```']

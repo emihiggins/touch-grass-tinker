@@ -210,3 +210,8 @@ The [Cookbook batch/cursor rehearsal](batch-rehearsal.md) exercises the installe
 ## Human review received — 2026-10-06
 
 All 48 rows were reviewed by Emi: 41 explicit approvals (including quarantined 009), 40 non-quarantined approvals and 7 held labels. [Adjudication and contract implications](human-review.md) are current; earlier unreviewed-corpus statements above are historical. Exact notes are retained in canonical JSONL and the generated packet. No gold labels, development labels, model results or canonical split assignments changed. Explicit duration corrections (300 and 10 minutes) require a versioned migration beyond v1's 15–240 constraint. Review/export now binds approval to request/context/catalog/gold and rejects disputed, changed or quarantined records.
+
+
+### Review follow-up resolved — 20:27 UTC
+
+Emi agreed to the proposed interpretations for 004/005/032/036/043. Current total: 45 approved v1 labels, including quarantined 009; 44 non-quarantined approvals. Cases 005/013/028 require the agreed soft-avoidance/duration migration; no more clarification is needed from Emi for this batch. Earlier review counts are historical.

@@ -11,14 +11,14 @@ class HumanReviewTests(unittest.TestCase):
 
     def test_review_is_not_blanket_approval(self):
         self.assertEqual(sum(c['review']['human_reviewed'] for c in self.cases),48)
-        self.assertEqual(sum(c['review']['decision']=='approved' for c in self.cases),41)
-        self.assertEqual(sum(label_approved(c) for c in self.cases),40)
-        for n in (4,5,9,13,28,32,36,43):
+        self.assertEqual(sum(c['review']['decision']=='approved' for c in self.cases),45)
+        self.assertEqual(sum(label_approved(c) for c in self.cases),44)
+        for n in (5,9,13,28):
             self.assertFalse(label_approved(self.cases[n-1]))
 
     def test_quarantine_and_disputes_cannot_be_promoted(self):
         config=json.loads(Path('training/sft-plan.json').read_text())
-        for n in (4,5,9,13,28,32,36,43):
+        for n in (5,9,13,28):
             row=copy.deepcopy(self.cases[n-1]);row['split']='train'
             with self.subTest(case=n):
                 with self.assertRaises(ValueError):export([row],'prompt')
