@@ -13,10 +13,10 @@ status: "ready" | "clarify" | "unsupported"
 start_place_id, finish_place_id: catalog ID or null
 start_time: supplied/explicit timezone-aware ISO timestamp or null
 duration_minutes: positive integer minutes or null; preserve explicit 5, 10 and 300
-hard_max_difficulty: "blue" | "red" | "black" | null
+hard_max_difficulty: "green" | "blue" | "red" | "black" | null
 avoided_lift_types: array of soft-preference lift types, using the same enum as excluded_lift_types; disjoint from exclusions
 excluded_lift_types: array of unique values from "chairlift", "gondola", "cable-car", "t-bar", "platter", "rope-tow", "magic-carpet"
-preferred_difficulties: array of unique values from "blue", "red", "black"
+preferred_difficulties: array of unique values from "green", "blue", "red", "black"
 prefer_variety: boolean
 clarification_fields: array drawn ONLY from "start_place_id", "finish_place_id", "start_time", "duration_minutes", "hard_max_difficulty"
 unsupported_preferences: array drawn ONLY from "live_queue_times", "live_grooming", "off_piste", "crowding"
@@ -40,3 +40,5 @@ Output: {"schema_version":2,"status":"ready","start_place_id":"harbor","finish_p
 Before emitting: verify all 14 keys; every enum belongs to its own list; no ready object contains a null required field; retain input dates; output no text outside JSON.
 
 Multiple permitted/preferred grades do not imply prefer_variety. Blue-only does not imply a lift exclusion. "When to start" concerns start_time, not start_place_id. The planner may refuse its bounded operational horizon, but that is not missing language information.
+
+The supported normalized ordering is green < blue < red < black. This is not a universal resort-color mapping; use only a reviewed mapping for a real resort. A blue ceiling permits green. "Stay on blue descents" and "keep it blue" express a blue target as well as a blue ceiling: set preferred_difficulties=["blue"] and hard_max_difficulty="blue"; easier connecting runs remain permitted. A ceiling alone ("nothing above blue") does not imply a preference.

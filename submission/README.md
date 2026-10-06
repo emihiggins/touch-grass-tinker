@@ -17,7 +17,7 @@
 | Article follows official template | All seven headings and both required tags verified against the October 6 challenge page; article written in English | Draft complete |
 | Honest development result | Rules 14/20, base v1 6/20, base v2 13/20; denominator/failures retained | Recorded, not held-out |
 | Approved corpus | 47 source-reviewed rows migrated to v2 under the agreed changes; 009 excluded. [V2 corpus](../benchmark/v2/README.md) | Partial |
-| Independent test | 16-case pilot reviewed: 14 approved, two preferred-blue corrections open; final untouched set/freeze still missing | Partial |
+| Independent test | 16-case pilot reviewed: 16 resolved and approved; frozen pilot available; final untouched set/freeze still missing | Partial |
 | Real Tinker fine-tuning | Budget authorized: $10 total; account billing/credits, protected-auth integration, guarded execution and actual checkpoint remain pending | Not run |
 | Baseline improvement | Same-base, same-renderer independent comparison; report failure if the gain is absent | Missing |
 | Trained model in app | Actual checkpoint-linked request → intent → validated route, explicit live/replay mode | Missing; browser uses rules |
@@ -30,7 +30,7 @@ Agent-session sharing is optional, not a mandatory blocker. Do not delay require
 
 ## Next sequence
 
-1. Resolve the two preferred-blue field corrections in the [reviewed 16-case pilot](../training/evaluation-review-v2.md); then prepare/freeze the final independent benchmark. Contract changes and reviewed training migration are implemented.
+1. The [16-case pilot](../training/evaluation-review-v2.md) is resolved and frozen; prepare the stronger final independent benchmark separately. Contract changes and reviewed training migration are implemented.
 2. Integrate protected Tinker training with the existing Cookbook checkpoint lifecycle, bounded spend and uncertain-call recovery. The [local rehearsal](../training/batch-rehearsal.md) is not this integration.
 3. Use the [authorized $10 staged budget](../training/budget-authorization.json) after data/config, account billing/credits and bounded accounting checks pass. Authorization is recorded; do not ask again for the same scope. Include prior usage and checkpoint storage.
 4. Run a bounded training/checkpoint/sample smoke, then the preregistered comparison; integrate a real model path in the demo.

@@ -18,6 +18,7 @@ def validate_intent(x, place_ids):
     if not isinstance(x, dict) or type(x.get('schema_version')) is not int or x['schema_version'] not in (1,2):
         raise ValueError('Invalid schema version')
     version=x['schema_version']
+    difficulties=DIFFICULTIES | {'green'} if version==2 else DIFFICULTIES
     if set(x) != (FIELDS if version==1 else FIELDS_V2):
         raise ValueError('Intent fields do not match contract')
     if x['status'] not in {'ready', 'clarify', 'unsupported'}:
@@ -35,7 +36,7 @@ def validate_intent(x, place_ids):
     minutes = x['duration_minutes']
     if minutes is not None and (type(minutes) is not int or (not 15 <= minutes <= 240 if version==1 else minutes<=0)):
         raise ValueError('Invalid duration')
-    if x['hard_max_difficulty'] is not None and x['hard_max_difficulty'] not in DIFFICULTIES:
+    if x['hard_max_difficulty'] is not None and x['hard_max_difficulty'] not in difficulties:
         raise ValueError('Invalid difficulty')
     if type(x['prefer_variety']) is not bool:
         raise ValueError('Invalid variety flag')
@@ -47,7 +48,7 @@ def validate_intent(x, place_ids):
         raise ValueError('Unknown lift type')
     if version==2 and (not set(x['avoided_lift_types']) <= LIFTS or set(x['avoided_lift_types']) & set(x['excluded_lift_types'])):
         raise ValueError('Invalid or conflicting soft lift preferences')
-    if not set(x['preferred_difficulties']) <= DIFFICULTIES:
+    if not set(x['preferred_difficulties']) <= difficulties:
         raise ValueError('Invalid preference')
     if not set(x['clarification_fields']) <= REQUIRED:
         raise ValueError('Unknown clarification field')

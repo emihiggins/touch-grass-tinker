@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def context(mode,minutes=60,difficulty='blue'):
     if mode not in {'synthetic','alpendorf'}:raise ValueError('Unknown terrain')
     if type(minutes) is not int or not 1<=minutes<=1440:raise ValueError('Demo planning horizon is 1–1440 minutes')
-    if difficulty not in {'blue','red','black'}:raise ValueError('Unknown difficulty')
+    if difficulty not in {'green','blue','red','black'}:raise ValueError('Unknown difficulty')
     g=fixtures.graph() if mode=='synthetic' else json.loads((ROOT/'data/terrain/alpendorf-lab.json').read_text())
     if mode=='synthetic':
         positions={'base':(0,0),'summit':(1,1),'mid':(-0.4,0.3)}

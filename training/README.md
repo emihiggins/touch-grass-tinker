@@ -230,3 +230,12 @@ Agreed semantics are implemented across the local app/planner/scorer, and 47 sou
 ## Evaluation pilot review received — 21:09 UTC
 
 Emi reviewed all 16 cases: 14 approved, preferred_difficulties=["blue"] requested for 009/010. Notes are stored verbatim in the evaluation rows and packet. Current gold remains unchanged while reconciling hard-vs-soft field semantics; no freeze or model scoring. The two requested changes can alter the planner unique-distance objective, not only display. No second review of the other 14 is needed.
+
+
+## Current checkpoint — green/blue clarification resolved
+
+Emi clarified the two requested blue preferences at 21:16 UTC. All 16 pilot labels are resolved; immutable scoring inputs are `benchmark/v2/evaluation-pilot-frozen.jsonl` and `evaluation-pilot-freeze.json`. This is a small human-reviewed pilot, not an untouched final benchmark. Original case 035's v2 migration now follows the same “keep it blue” interpretation; its v1 source is unchanged.
+
+V2 supports normalized green < blue < red < black. Real resort colors must be mapped explicitly and reviewed; this ordering does not establish equivalence across countries. No real green terrain has been added. A blue maximum permits green; a blue target additionally prefers blue. A maximum alone still does not imply a preference or variety.
+
+`liftlap.spend.Ledger` stores atomic persistent project/stage commitments using standard-library SQLite. Prior usage must be reconciled first. New sampling runs require `--project-ledger` and reserve the full estimated token cost before provider submission; ambiguous/finished calls retain reservations until verified billing settlement. Never delete or copy the ledger to regain headroom. Existing historic calls have not been imported as verified charges. This is local control, not a provider hard cap. Reserve-stage justification, two-configuration experiment counting, checkpoint storage bounds, and remote training/checkpoint integration remain outstanding; the ledger alone does not make training launchable.

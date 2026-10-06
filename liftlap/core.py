@@ -8,7 +8,7 @@ import json
 import math
 import time
 
-RANK={'blue':1,'red':2,'black':3}
+RANK={'green':0,'blue':1,'red':2,'black':3}
 LIFTS={'chairlift','gondola','cable-car','t-bar','platter','rope-tow','magic-carpet'}
 
 def digest(value):

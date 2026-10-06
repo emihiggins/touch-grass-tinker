@@ -2,9 +2,9 @@
 
 These are new fictional scenarios and graph topologies, authored by the same project agent and now reviewed by Emi. This is not a frozen or statistically representative test set. No model predictions have been generated.
 
-**Review received:** 14 approved; preferred-blue corrections requested for 009/010 remain open pending a consistent field convention. No repeat review needed for the other 14.
+**Review received:** 16 resolved and approved, including the requested blue preferences for 009/010. No repeat review needed for the other 14.
 
-For each case, read the request/context first. Open the proposed answer after deciding what it means. Reply with the case number and approve/correct/uncertain. No commands needed. Route outcomes are simulation-only; the supplied topology is the entire available network.
+Review is complete; the following instructions describe the original review procedure. For each case, read the request/context first. Open the proposed answer after deciding what it means. Reply with the case number and approve/correct/uncertain. No commands needed. Route outcomes are simulation-only; the supplied topology is the entire available network.
 
 Soft avoidance is a preference, not a prohibition. Distinct grades do not imply variety. Durations remain literal; infeasible routes are separate from missing information.
 
@@ -456,7 +456,7 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
   "hard_max_difficulty": "blue",
   "excluded_lift_types": [],
   "avoided_lift_types": [],
-  "preferred_difficulties": [],
+  "preferred_difficulties": ["blue"],
   "prefer_variety": false,
   "clarification_fields": [],
   "unsupported_preferences": []
@@ -468,11 +468,11 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: change_requested
+- Decision: approved after requested correction
 - Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
 - Human note: i think in addition to hard_max_difficulty being blue, the preferred_difficulties should also include blue
 
-- Requested correction: `preferred_difficulties: ["blue"]`. The JSON above remains the current v2 label until the field convention is resolved.
+- Requested correction: `preferred_difficulties: ["blue"]`. Applied after Emi clarified that easier green runs remain permitted (21:16 UTC).
 
 ## eval-review-010
 
@@ -509,7 +509,7 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
     "t-bar"
   ],
   "avoided_lift_types": [],
-  "preferred_difficulties": [],
+  "preferred_difficulties": ["blue"],
   "prefer_variety": false,
   "clarification_fields": [],
   "unsupported_preferences": []
@@ -521,11 +521,11 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: change_requested
+- Decision: approved after requested correction
 - Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
 - Human note: preferred_difficulties should also include blue
 
-- Requested correction: `preferred_difficulties: ["blue"]`. The JSON above remains the current v2 label until the field convention is resolved.
+- Requested correction: `preferred_difficulties: ["blue"]`. Applied after Emi clarified that easier green runs remain permitted (21:16 UTC).
 
 ## eval-review-011
 

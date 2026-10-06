@@ -47,3 +47,5 @@ The [v2 corpus](benchmark/v2/README.md) contains **47 human-reviewed, determinis
 Next: resolve the two pilot corrections, prepare/freeze a genuinely independent final benchmark, and finish protected training/checkpoint integration and global budget accounting. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
 
 Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Emi authorized a **$10 total Tinker cap** (including prior project usage), staged as $1 smoke + $4 experiments + $5 justified reserve. [Budget scope and execution gates](training/budget-authorization.json). This is not permission to publish or evidence that training has run.
+
+Current review checkpoint: all 16 evaluation pilot labels are resolved, including the blue-preference corrections. See `benchmark/v2/evaluation-pilot-freeze.json`. V2 now accepts normalized green grades; no universal resort color mapping is claimed. Paid training has not run.

@@ -32,13 +32,18 @@ def interpret(text,context,catalog,*,schema_version=1):
         consume(r'\b(?:no|skip|avoid|without) '+phrase+r'\b',lambda m,t=typ:lift_rule(m,[t]))
     if schema_version==2:x['avoided_lift_types']=sorted(set(x['avoided_lift_types'])-set(x['excluded_lift_types']))
     hard=[]
-    consume(r'\b(?:only|just) (blue|red|black)(?: pistes| runs|s)?\b',lambda m:hard.append(m.group(1)))
-    consume(r'\b(blue|red|black)(?: pistes| runs|s)? only\b',lambda m:hard.append(m.group(1)))
+    grades='green|blue|red|black' if schema_version==2 else 'blue|red|black'
+    if schema_version==2:
+        def target_grade(m):
+            hard.append(m.group(1));x['preferred_difficulties'].append(m.group(1))
+        consume(r'\b(?:stay on|keep it) ('+grades+r')(?: descents| runs| pistes)?\b',target_grade)
+    consume(r'\b(?:only|just) ('+grades+r')(?: pistes| runs|s)?\b',lambda m:hard.append(m.group(1)))
+    consume(r'\b('+grades+r')(?: pistes| runs|s)? only\b',lambda m:hard.append(m.group(1)))
     if hard:
         x['hard_max_difficulty']=hard[-1]
         if len(set(hard))>1:x['hard_max_difficulty']=None;x['clarification_fields'].append('hard_max_difficulty')
-    consume(r'\b(?:mostly|prefer|would prefer) (blue|red|black)(?: pistes| runs|s)?\b',lambda m:x['preferred_difficulties'].append(m.group(1)))
-    consume(r'\b(blue|red|black)s? (?:are|is) (?:okay|ok|fine)(?: too)?\b',lambda m:setfield('hard_max_difficulty',m.group(1)) if not hard else None)
+    consume(r'\b(?:mostly|prefer|would prefer) ('+grades+r')(?: pistes| runs|s)?\b',lambda m:x['preferred_difficulties'].append(m.group(1)))
+    consume(r'\b('+grades+r')s? (?:are|is) (?:okay|ok|fine)(?: too)?\b',lambda m:setfield('hard_max_difficulty',m.group(1)) if not hard else None)
     consume(r'\b(?:different|varied) pistes(?: rather than repeat them)?\b',lambda m:setfield('prefer_variety',True))
     consume(r'\b(?:variety|avoid repeats)\b',lambda m:setfield('prefer_variety',True))
     consume(r'\b(?:an?|one) hour and a half\b',lambda m:setfield('duration_minutes',90))

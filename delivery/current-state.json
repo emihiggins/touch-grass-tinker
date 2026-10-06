@@ -1,0 +1,25 @@
+{
+  "status": "local_checkpoint_verified_remote_training_not_started",
+  "completed": [
+    "Human review corrections applied; 16 pilot labels resolved",
+    "Green-grade v2 support and blue-target interpretation tested",
+    "Frozen reviewed pilot with case/graph hashes; limitations disclosed",
+    "47 training rows rendered without truncation or prompt loss",
+    "Atomic project budget reservations integrated into live sampling"
+  ],
+  "remaining": [
+    "Reconcile prior/ambiguous Tinker charges and verify account credits",
+    "Complete protected remote training/checkpoint/restore integration with storage bounds",
+    "Prepare stronger untouched evaluation separately from reviewed pilot",
+    "Run budgeted smoke and bounded model comparison",
+    "Integrate real checkpoint into app and record accessible demo",
+    "Resolve code access and obtain final publication approval"
+  ],
+  "human_label_input_needed": false,
+  "paid_calls_this_checkpoint": 0,
+  "tests_passed": 126,
+  "browser_verification": "Not repeated for green selector; API tests and JavaScript syntax pass",
+  "background_worker_active": false,
+  "next_action": "Complete remote training integration and billing evidence; no new budget authorization required",
+  "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap"
+}

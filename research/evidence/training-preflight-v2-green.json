@@ -1,0 +1,23 @@
+{
+  "status": "blocked",
+  "launch_authorized": false,
+  "scope": "offline_structural_preflight_not_evidence_verification_or_spend_permission",
+  "approved_train_count": 47,
+  "candidate_count": 0,
+  "complete_batches_per_epoch": 47,
+  "dropped_rows_per_epoch": 0,
+  "blockers": [
+    "Unmet gate: baseline_recorded",
+    "Unmet gate: credits_and_spend_cap_verified",
+    "Unmet gate: dependency_versions_locked_and_smoked",
+    "Unmet gate: independent_test_frozen",
+    "Unmet gate: rendered_masks_and_no_truncation_verified"
+  ],
+  "note": "Boolean gates are declarations, not proof. Verify linked evidence, tokenizer/masks, holdout provenance and budget before a runner is enabled.",
+  "input_sha256": {
+    "benchmark/v2/training-reviewed.jsonl": "f5d5f645b2d18f60be3fbce71dc36042054a4bd56a89713a8382e36ed2f55424",
+    "benchmark/v2/development.jsonl": "98df94255461a3e22e14699dc4d0076e27624f898827f8d0f9497e762a0a51fa",
+    "benchmark/v2/evaluation-pilot-frozen.jsonl": "6bb96954ee52a5cf58206cf17c3828817b274e7e90bfe69b76a92e2480220fa8",
+    "training/sft-plan-v2.json": "3a70147722a431ef7be03e3f96a1f270c8806d4c6bb42304f1384da1c883e4dd"
+  }
+}

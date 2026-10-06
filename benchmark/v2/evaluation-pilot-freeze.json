@@ -1,0 +1,13 @@
+{
+  "status": "frozen",
+  "scope": "16_case_human_reviewed_pilot_not_final_untouched_benchmark",
+  "cases_sha256": "608ee75c113a65682ddb4cb09bee75e5a602940a9189da71c2b80354ee3380dd",
+  "graph_bundle_sha256": "dde9a1f5e2975f37df96aaf706eb45e60a05398d69cc99d9c4e00afc0be5dd1a",
+  "limitations": [
+    "Same agent authored fixtures and implementation",
+    "Case construction informed reachability implementation",
+    "Human correction informed grade interpretation before freeze",
+    "No statistical representativeness or field safety claim"
+  ],
+  "model_runs_before_freeze": 0
+}

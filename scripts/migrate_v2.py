@@ -22,7 +22,11 @@ def migrate(case,training=False):
         gold['status']='unsupported' if gold['unsupported_preferences'] else 'clarify' if gold['clarification_fields'] else 'ready'
         row['gold_required_fields']=list(gold['clarification_fields'])
         row['expected_action']='interpret_only' if gold['status']=='ready' else gold['status']
+    if training and number==35:
+        gold['preferred_difficulties']=['blue']
     row['migration']={'from_schema':1,'source_review_hash':original_hash,'basis':'Emi approved duration preservation and avoid-vs-no semantics on 2026-10-06; deterministic migration, not a fresh independent label review'}
+    if training and number==35:
+        row['migration']['grade_target_basis']='Emi clarified blue target with easier green connections at 21:16 UTC'
     if training:
         row['split']='train'
         row['review']['decision']='approved'

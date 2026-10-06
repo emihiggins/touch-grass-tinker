@@ -64,3 +64,43 @@ class ContractV2Tests(unittest.TestCase):
             self.assertEqual(intent['schema_version'],2)
             result=handle_api('/api/plan',{'intent':intent})
             self.assertEqual(result['status'],'ok');self.assertTrue(result['validation']['valid'])
+
+    def test_green_v2_and_v1_contract_preservation(self):
+        intent=self.parse('only green');self.assertEqual(intent['status'],'ready')
+        validate_intent(intent,{'base','summit'})
+        old=copy.deepcopy(intent);old['schema_version']=1;del old['avoided_lift_types']
+        with self.assertRaises(ValueError):validate_intent(old,{'base','summit'})
+        self.assertEqual(handle_api('/api/interpret',{'difficulty':'green','text':''})['intent']['hard_max_difficulty'],'green')
+
+    def test_grade_target_is_not_just_a_ceiling(self):
+        for text in ('stay on blue descents','keep it blue'):
+            intent=self.parse(text)
+            self.assertEqual(intent['hard_max_difficulty'],'blue')
+            self.assertEqual(intent['preferred_difficulties'],['blue'])
+            self.assertFalse(intent['prefer_variety'])
+        self.assertEqual(self.parse('only blue')['preferred_difficulties'],[])
+
+    def test_blue_preference_allows_green_connection_but_blocks_red(self):
+        g=fixtures.graph();g['difficulty_convention']='synthetic-normalized-green-blue-red-black'
+        g['edges']=[e for e in g['edges'] if e['id'] in ('chair','blue','practice')]
+        for e in g['edges']:
+            if e['id']=='blue':e['to']='mid'
+            if e['id']=='practice':e['difficulty']='green'
+        intent=self.parse('keep it blue, 15 minutes');s=fixtures.scenario(g)
+        result=plan(g,intent,s)
+        self.assertEqual(result['status'],'ok')
+        self.assertIn('practice',result['route']['edge_ids'])
+        self.assertTrue(validate_route(g,intent,s,result['route'])['valid'])
+        g['edges'][-1]['difficulty']='red';s=fixtures.scenario(g)
+        self.assertEqual(plan(g,intent,s)['status'],'no_route')
+
+    def test_blue_target_outranks_longer_green_run(self):
+        g=fixtures.graph();g['difficulty_convention']='synthetic-normalized-green-blue-red-black'
+        g['edges']=[e for e in g['edges'] if e['id'] in ('chair','blue','red')]
+        for e in g['edges']:
+            if e['id']=='red':e.update(difficulty='green',length_m=3000,duration_s=300)
+        s=fixtures.scenario(g)
+        ceiling=plan(g,self.parse('only blue, 10 minutes'),s)
+        target=plan(g,self.parse('keep it blue, 10 minutes'),s)
+        self.assertIn('red',ceiling['route']['edge_ids'])
+        self.assertIn('blue',target['route']['edge_ids'])

@@ -1,6 +1,6 @@
 {
   "scope": "16_case_review_pilot_not_frozen_or_model_evaluated",
-  "author_independence": "Same project agent authored candidates; Emi reviewed all 16. Fourteen approved, two corrections open. Not frozen or wholly untouched.",
+  "author_independence": "Same project agent authored candidates. All 16 reviewed by Emi, including two explicit corrections. Pilot is not wholly untouched or statistically representative.",
   "count": 16,
   "graph_families": [
     "fork",
@@ -13,7 +13,7 @@
   "gold_selfcheck": "Authored example routes pass independent validator; ready cases match bounded planner outcomes. This is fixture consistency, not model performance.",
   "sha256": {
     "evaluation-graphs.json": "5d9cf5cda8175c0b2346ae1f303596ea68e7e2dc52511775c68075a128dd28dd",
-    "evaluation-candidates.jsonl": "b5399f4dcb6f8f1b20a84fca480f7e1dcc0066212fe93bb3f555491645a9f4dc"
+    "evaluation-candidates.jsonl": "93fdcd7163e8f62a42b86ce55aff55c0ff647ba766b49d4b31a55e75610d99e6"
   },
   "corpus_audit": {
     "count": 95,
@@ -27,13 +27,11 @@
     "scope": "structural_audit_not_independent_label_review_or_test_freeze"
   },
   "review_status": {
-    "approved": 14,
-    "change_requested": 2,
-    "open_ids": [
-      "eval-review-009",
-      "eval-review-010"
-    ],
+    "approved": 16,
+    "change_requested": 0,
+    "open_ids": [],
     "received_at": "2026-10-06T21:09:40Z",
-    "frozen": false
+    "frozen": false,
+    "resolved_at": "2026-10-06T21:16:16Z"
   }
 }

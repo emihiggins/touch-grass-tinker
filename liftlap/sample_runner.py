@@ -111,6 +111,8 @@ def main():
     p.add_argument('--prompt',default='benchmark/baseline-prompt.txt')
     p.add_argument('cases');p.add_argument('--run-dir',required=True);p.add_argument('--live',action='store_true')
     p.add_argument('--budget-usd',type=float);p.add_argument('--input-usd-per-million',type=float);p.add_argument('--output-usd-per-million',type=float)
+    p.add_argument('--project-ledger',help='Shared project SQLite ledger; prior billing must already be reconciled')
+    p.add_argument('--budget-stage',choices=['smoke','experiments'],default='smoke')
     p.add_argument('--credits-confirmed',action='store_true');p.add_argument('--model-path')
     p.add_argument('--max-requests',type=int,default=100);p.add_argument('--scenarios',help='Optional development scenario map; predictions keyed by scenario IDs')
     a=p.parse_args();cases=read(a.cases)
@@ -127,6 +129,7 @@ def main():
     if any(len(x)+max_output>config['max_length'] for x in prompts):p.error('Prompt plus output reservation exceeds context')
     projected=None
     if a.live:
+        if not a.project_ledger:p.error('Live requires a shared project spend ledger')
         if not a.credits_confirmed or any(x is None for x in (a.budget_usd,a.input_usd_per_million,a.output_usd_per_million)):
             p.error('Live requires verified credits, budget and current token rates')
         if not math.isfinite(a.budget_usd) or a.budget_usd<=0:p.error('Invalid budget')
@@ -152,6 +155,12 @@ def main():
         async with make_client() as client:
             sampler=SDKSampler(client,config['model_name'],a.model_path,renderer.get_stop_sequences(),max_output)
             return await run_cases(cases,prompts,tokenizer,renderer.get_stop_sequences(),sampler,directory,run_id)
+    from .spend import Ledger
+    authorization=json.loads(Path('training/budget-authorization.json').read_text())
+    ledger=Ledger(a.project_ledger,authorization)
+    ledger.reserve(run_id,a.budget_stage,projected,'Sampling upper token bound; manifest: '+str(directory/'manifest.json'))
+    manifest['project_budget_reservation']=run_id
+    manifest['reservation_settlement']='Retained until provider billing reconciled; output token estimates do not release funds'
     manifest.update(status='running',model_calls=None)
     (directory/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     rows=asyncio.run(execute())
