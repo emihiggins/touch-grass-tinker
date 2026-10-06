@@ -4,18 +4,19 @@
   "live_calls_for_refresh": 0,
   "source": "scripts/browser-ai-demo.cjs; Chromium offline recorded mode",
   "sha256": {
-    "web/index.html": "3c9189fa782212fcad82fa7c5577ade02f9c522a7a79c868e74db7da2b4b58de",
-    "web/app.js": "ddaa6930fe39f28497b23ad2e8069884bf0e2fd2a188daab823882ab7386e539",
-    "web/style.css": "406e0077d8eadf62adefb69fa44c0e38605bafa312a7156ffbee01808f0dab8c",
+    "web/index.html": "540eb68b46602ea5ed0642c549138c52ee0835e9dabbaa81bd325e4af50008ec",
+    "web/app.js": "0a4a379a49e2f8f6c1fdfb88724269759df0bd81b152240f8980676019d2c4ae",
+    "web/style.css": "0b7f2c05cf95822e06af104581def65a5e95c5d6d28d2f070b0f45f594ac4ed1",
     "liftlap/server.py": "e9b195cffb998c2277c878d6aa69345338caf3a31f24d92cbf85cfef28f7e5e9",
     "liftlap/app_model.py": "b47c0427e43399c40fff73fa7e77fccddfa1ea74b56a44c4d674153af5bc57b5",
-    "scripts/browser-ai-demo.cjs": "6187aaad842124f2e3a4941e052ab5ec7389560dd0052ae5017e7554e0661113",
+    "scripts/browser-ai-demo.cjs": "d8822682cc2acdc6f110fdd7c7790aecb7e2ce5e8c2cbb6ba857bc01a6405ce0",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
-    "demo/walkthrough.webm": "173b0e4c6144ee50af39a1f422d69e43b920d3a0fa7ae4de54637f9a359837cb",
-    "research/evidence/app-integration/recorded-corrected-desktop.png": "32a5267c68ea42051eb8b6bb98511de5ad94919eb1602a7d8ce0a2fa403cd9d8",
-    "research/evidence/app-integration/mobile.png": "6930bfaddafb1f57ae70d650a144f29511e72da84006c2483526fc3d1b0417a6",
-    "research/evidence/app-integration/corrected-itinerary.pdf": "01db443d28a036da884da517d3f3a8a222c7f7079fd870c3f1b575cd034ea910",
-    "research/evidence/app-integration/print-preview.png": "6b66780cc11c4682f2d5d5307c0c13eca7101c45c0f1566bb8f91abc857fff04"
+    "demo/walkthrough.webm": "ccb1a4b8136c89d3812bcc1980489c41ed57eb6d0c0818acca79c53bc03731f8",
+    "research/evidence/app-integration/recorded-corrected-desktop.png": "1c946267f79ba38d989a56c436539518e32b176d37a854ac1d25b75a4213cea0",
+    "research/evidence/app-integration/mobile.png": "10eeefba3bf769064ee56b3f8aa04b296c6959e6f85ec4469ddbd8dbba916f66",
+    "research/evidence/app-integration/corrected-itinerary.pdf": "23550dd1989620d546286949005e34bcb1d9ae3330a76d6878c2256034dc80ba",
+    "research/evidence/app-integration/print-preview.png": "e90b6167b4d45d6782d738be27bce6b4e195fb86f301548785f6583be4f00619",
+    "research/evidence/app-integration/alpendorf-map-mobile.png": "43e1fc4e364514c3f5c12ee930fbbc2d6c175e0652d16bad3023305e87f9aee0"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",

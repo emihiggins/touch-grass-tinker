@@ -42,3 +42,7 @@ The print button creates a simulation itinerary with approved constraints, model
 Rules/recorded mode performs no provider calls. Opt-in live mode sends input to Tinker and retains private local run records; do not enter sensitive personal data. No analytics or external map tiles are loaded.
 
 If recorded mode reports a mismatch, load the example again or choose Rules. If live mode is disabled, that is expected in the default installation. If live provider results become uncertain, the adapter pauses rather than retrying paid work. If a route is unavailable, inspect your confirmed constraints and simulated operations; never treat the prototype as on-mountain guidance.
+
+## Reading the mountain sketch
+
+Use +/− and Fit map to inspect the sketch. Zoom is centered; Fit map restores the whole area. Orange arrows show route direction, numbered circles mark each edge’s first itinerary visit, and Start/Finish mark endpoints. Repeated traversals remain listed in the itinerary. Alpendorf uses an aspect-preserving local geographic projection with an approximate scale at fit view; Pine Mountain remains fictional. Printing fits the full map automatically. No basemap, hillshade or live status is implied.

@@ -87,3 +87,7 @@ M1 can proceed independently. M2/M3 can be prototyped without paid services or a
 - [OpenSnowMap reuse policy](https://www.opensnowmap.org/iframes/about.eng.html)
 
 OpenSkiData publishes the combined attribution: “Data from OpenSkiData / OpenSkiMap.org, © OpenStreetMap contributors (ODbL), Skimap.org, Who's On First, © Mapterhorn.” Carry the applicable source notices with imported data; do not replace them with the application's MIT notice.
+
+## First implementation checkpoint
+
+Aspect-preserving projection, zoom/fit controls, selected-route casing/arrows, first-visit step numbers, start/finish labels, geographic north/approximate scale and print-fit behavior are implemented. Offline browser checks cover 495 Alpendorf edges, 320px reflow and keyboard zoom. This is a partial M1 delivery: full station-name labeling, linked itinerary selection and panning remain open. MapLibre, terrain shading and additional resort imports remain planned.
