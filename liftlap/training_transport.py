@@ -32,12 +32,13 @@ class TrainingTransport:
             from tinker.types.future_retrieve_request import FutureRetrieveRequest
             from tinker.proto.response_conv import deserialize_proto_response,PROTO_SUPPORTED_TYPES
             for attempt in range(self.polls):
-                from tinker import APITimeoutError
+                from tinker import APITimeoutError,APIStatusError
                 try:
                     response=await self.client.futures.with_raw_response.retrieve(
-                        request=FutureRetrieveRequest(request_id=future.request_id),timeout=30,max_retries=0,
+                        request=FutureRetrieveRequest(request_id=future.request_id),timeout=45,max_retries=0,
                         extra_headers={'Accept':'application/x-protobuf' if response_type in PROTO_SUPPORTED_TYPES else 'application/json'})
-                except APITimeoutError:
+                except (APITimeoutError,APIStatusError) as error:
+                    if isinstance(error,APIStatusError) and error.status_code!=408:raise
                     self.record('read_timeout',operation=name,request_id=future.request_id)
                     if attempt+1==self.polls:raise
                     continue
@@ -47,7 +48,7 @@ class TrainingTransport:
                     return result
                 body=await response.json()
                 if body.get('type')!='try_again':
-                    if body.get('type') in ('request_failed','error'):raise RuntimeError('Provider future failed')
+                    if 'error' in body or body.get('type') in ('request_failed','error'):raise RuntimeError('Provider future failed')
                     result=response_type.model_validate(body)
                     self.record('completed',operation=name,request_id=future.request_id)
                     return result

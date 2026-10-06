@@ -1,0 +1,37 @@
+{
+  "experiment_id": "pilot-sft-01",
+  "scope": "preregistered_exploratory_reviewed_pilot_not_untouched_final_benchmark",
+  "model_name": "Qwen/Qwen3-8B",
+  "renderer_name": "qwen3_disable_thinking",
+  "lora_rank": 16,
+  "batch_size": 47,
+  "epochs": 3,
+  "learning_rate": 0.0001,
+  "max_length": 4096,
+  "train_on_what": "last_assistant_message",
+  "test_size": 0,
+  "sampling": {
+    "temperature": 0,
+    "seed": 20261006,
+    "max_tokens": 512
+  },
+  "checkpoint_ttl_seconds": 21600,
+  "checkpoint_count": 2,
+  "checkpoint_upper_gb_each": 512,
+  "reservation_usd": 1.25,
+  "max_model_configurations": 1,
+  "selection": "Single predeclared configuration. No automatic followup or pilot-driven tuning.",
+  "training_cases": "benchmark/v2/training-reviewed.jsonl",
+  "evaluation_cases": "benchmark/v2/evaluation-pilot-frozen.jsonl",
+  "evaluation_freeze": "benchmark/v2/evaluation-pilot-freeze.json",
+  "graph_bundle": "benchmark/v2/evaluation-graphs.json",
+  "prompt": "benchmark/v2/baseline-prompt.txt",
+  "metrics": [
+    "paired intent exact match",
+    "paired route/task success",
+    "invalid schema and transport failures"
+  ],
+  "retain_trained_candidate_rule": "At least two additional pilot task successes and no regression in gold-constrained route validity. This is exploratory screening, not final superiority evidence.",
+  "failure_policy": "Keep every case in denominator. Stop subsequent mutations on transport failure; inspect recorded future before any continuation. Never retry a training configuration to obtain a better headline.",
+  "rationale": "Full batch uses all47 reviewed rows without dropped tail; three passes are a modest initial SFT trial. Reuse model/renderer/learning rate from checked configuration; measure base before training and trained afterward with identical prompt, cases and decoding."
+}
