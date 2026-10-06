@@ -48,7 +48,7 @@ Both files contain `{id, intent}` rows, same IDs and frozen inputs. Missing/inva
 Terrain review, a third credible loop and competition presentation remain separate pending workstreams. No public deployment or on-snow validation has happened.
 
 
-## Access and complete-action evaluation checkpoint — 2026-10-06
+## Earlier access and complete-action evaluation checkpoint — 2026-10-06 (401 superseded below)
 
 The Tinker key is now in OpenClaw's protected store, restricted to `tinker.thinkingmachines.dev`, and protected egress is enabled. Read-only capabilities checks returned **HTTP 401**, including the repeatable `python3 -m liftlap.access_check` probe run through Gateway exec. Access is not verified; no billable model calls occurred. The probe has a fixed HTTPS endpoint, refuses redirects, uses inherited proxy/CA settings, and never prints credentials, raw response bodies or exception strings. Native shell does not inherit the protected key; use Gateway exec. No key is in this repository.
 
@@ -63,3 +63,41 @@ python3 -m liftlap.evaluate --scenarios benchmark/request-development.json --pre
 Predictions are keyed by scenario ID. Correct nonplanning intents are scored without calling the planner; route outcomes still require exact gold semantics and independent gold route validation. Invalid/missing outputs remain failures. Reports include outcome slices and graph/scenario hashes. Malformed duplicate scenario IDs or expectations inconsistent with gold status fail closed. This intentionally conservative success definition requires full normalized intent agreement, including preferences; it does not accept semantically equivalent alternative labels.
 
 [Self-check](../research/evidence/request-evaluator-self-check.json): 20/20 gold-label fixture replay; **not model accuracy, human-reviewed test results or terrain verification**. Original eight-case fixture is preserved. Paired route-success uncertainty, new graph families, independently reviewed holdout and the actual provider runner remain pending. The existing paired comparison CLI still measures intent exact match only.
+
+
+## Current readiness checkpoint — 2026-10-06
+
+**Authenticated capabilities check succeeded: HTTP 200, 31 listed models, including Qwen/Qwen3-8B.** Protected credential replacement resolved the earlier 401. No training/inference or billing check was performed. The checked-in access evidence now reflects success, and only `account_access_verified` was changed in the training plan.
+
+Credential replacement lesson: `openclaw secrets store set NAME --allow-host HOST` on an existing secret changes host policy only, even if `--kind secret` is supplied. To replace interactively, first run `openclaw secrets store set TINKER_API_KEY --kind secret` and enter at the no-echo prompt, then set the allowed host separately. Never place values in a command argument or tracked file. Gateway exec snapshots refresh on a new turn.
+
+### Full-request baseline and paired comparison
+
+The untouched rules-v1 adapter now has saved predictions for all 20 scenarios:
+
+- Feasible routes: 4/4 successful.
+- Infeasible scenarios: 4/4 successful.
+- Clarification: 4/8 successful.
+- Unsupported features: 2/4 successful.
+- Total: **14/20 on visible development fixtures**, not held-out accuracy. Labels were visible during parser development, and these fixtures all share one synthetic graph. No base-model or tuned-model result exists.
+
+Artifacts: `benchmark/rules-v1-request-predictions.jsonl` and `research/evidence/rules-v1-request-development.json`. Reproduce:
+
+```bash
+python3 -m liftlap.evaluate --scenarios benchmark/request-development.json --predictions benchmark/rules-v1-request-predictions.jsonl
+python3 -m liftlap.request_compare /path/to/base-request-predictions.jsonl /path/to/tuned-request-predictions.jsonl
+```
+
+The paired CLI independently runs both prediction sets against fixed gold semantics and graph fixtures, retains improvements/regressions, slices by expected outcome, reports gold-route rejections and search-limit counts, and computes a deterministic paired family-cluster bootstrap interval. Shared-graph dependence and development exposure are explicit caveats; do not use this small fixture set to claim generalization or a contest-winning gain. Missing predictions fail. No cherry-picking or automatic significance-based reruns.
+
+### Offline preflight
+
+```bash
+python3 -m liftlap.training_preflight benchmark/development-seed.jsonl benchmark/training-candidates.jsonl
+```
+
+Exit 1 means blocked (the expected current result). Checks corpus audit, required partitions, reviewed training labels, explicit launch gates, positive integer batching/epoch/length settings, assistant-only supervision and disabled Cookbook row-splitting. Zero batches and silently dropped final-batch rows block. Input hashes make the report reproducible.
+
+This checker **never authorizes spend or launches training**, even if every declaration is true. Boolean gates are not evidence: independently inspect linked test-freeze provenance, rendered token masks, dependency smoke, baseline run and credit/spend records. Current blockers include the near-duplicate candidate, no approved training rows/test partition, unverified rendering/environment and no approved budget. See `research/evidence/training-preflight.json`.
+
+Next: expand/review original training families and create new independently reviewed evaluation graph families; install and lock a supported SDK/rendering environment; validate sentinel-compatible SDK auth before any billable call. Training data readiness—not access—is now the main project bottleneck.

@@ -1,8 +1,11 @@
 {
   "checked_on": "2026-10-06",
-  "http_status": 401,
-  "status": "authentication_rejected",
-  "verified": false,
+  "http_status": 200,
+  "status": "capabilities_access_ok",
+  "verified": true,
+  "supported_model_count": 31,
+  "qwen3_8b_listed": true,
+  "billing_verified": false,
   "credential_source": "protected_gateway_egress",
   "billable_model_calls": 0
 }

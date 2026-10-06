@@ -39,3 +39,7 @@ Reproduce predictions by calling `interpret(request_text, ui_context, catalog)['
 ## Training preparation
 
 See [training readiness](../training/README.md) for the separate 16-case candidate batch, split audit, conversation exporter and paired comparison CLI. Candidates are not held-out data. One cross-partition near-duplicate warning remains quarantined for review; no production training export is ready.
+
+## Complete-action development comparison
+
+`request-development.json` includes all eight route fixtures plus 12 clarification/unsupported cases. Rules-v1 scores **14/20** on these visible development cases; saved predictions are in `rules-v1-request-predictions.jsonl`. `python3 -m liftlap.request_compare BASELINE TUNED` compares saved scenario-keyed predictions using gold-route validation and outcome slices. No tuned results exist. See [current readiness](../training/README.md).

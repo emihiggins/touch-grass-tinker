@@ -1,0 +1,27 @@
+{
+  "status": "blocked",
+  "launch_authorized": false,
+  "scope": "offline_structural_preflight_not_evidence_verification_or_spend_permission",
+  "approved_train_count": 0,
+  "candidate_count": 16,
+  "complete_batches_per_epoch": 0,
+  "dropped_rows_per_epoch": 0,
+  "blockers": [
+    "Independent test partition absent",
+    "No approved training rows",
+    "Training would execute zero complete batches",
+    "Unmet gate: baseline_recorded",
+    "Unmet gate: corpus_review_complete",
+    "Unmet gate: credits_and_spend_cap_verified",
+    "Unmet gate: dependency_versions_locked_and_smoked",
+    "Unmet gate: independent_test_frozen",
+    "Unmet gate: rendered_masks_and_no_truncation_verified",
+    "near duplicate review: dev-seed-008 / train-candidate-009"
+  ],
+  "note": "Boolean gates are declarations, not proof. Verify linked evidence, tokenizer/masks, holdout provenance and budget before a runner is enabled.",
+  "input_sha256": {
+    "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+    "benchmark/training-candidates.jsonl": "25146d8bdf5907fa3938dac81a5164882da07445dbc9a49ac2d2558eea6a5ccc",
+    "training/sft-plan.json": "0ad0ef111bba8d74b34b8859bf1d3e63c9b4e28b4971f9c83c01213855607e3f"
+  }
+}
