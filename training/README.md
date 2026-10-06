@@ -249,3 +249,7 @@ V2 supports normalized green < blue < red < black. Real resort colors must be ma
 ## Full-data trial01 complete
 
 [Preregistration](experiment-01.md) and [all paired evidence](../research/evidence/experiment-01/README.md): base9/16, trained7/16. Single configuration,47rows per batch,3steps, no tuning loop. Candidate selection remains base. [Fresh16-case review](final-review.md) is the next human gate, not a repeat pilot review. Total commitments$1.60 against$10cap; invoices unresolved.
+
+## Fresh evaluation completed
+
+All16 labels approved by Emi and frozen before a single fixed-base run:13/16 task successes,16/16 schemas. No tuning on final outputs. [Evidence](../research/evidence/fresh-base-evaluation/README.md). Total held commitments$1.65; billing pending.
