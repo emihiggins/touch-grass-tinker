@@ -225,3 +225,8 @@ Emi approved the recommended **$10 total project Tinker cap**: $1 smoke, $4 for 
 ## V2 implementation checkpoint
 
 Agreed semantics are implemented across the local app/planner/scorer, and 47 source-reviewed records are deterministically migrated to v2 (009 excluded). See [current checkpoint](../delivery/v2-checkpoint.md) and [evaluation review packet](evaluation-review-v2.md). Older gate/count statements above describe prior checkpoints. No trained model exists.
+
+
+## Evaluation pilot review received — 21:09 UTC
+
+Emi reviewed all 16 cases: 14 approved, preferred_difficulties=["blue"] requested for 009/010. Notes are stored verbatim in the evaluation rows and packet. Current gold remains unchanged while reconciling hard-vs-soft field semantics; no freeze or model scoring. The two requested changes can alter the planner unique-distance objective, not only display. No second review of the other 14 is needed.

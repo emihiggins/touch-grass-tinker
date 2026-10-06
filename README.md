@@ -42,8 +42,8 @@ Prompt v2 scores **13/20** strict development request successes, versus **6/20**
 
 **V2 implementation is ready locally:** explicit 10/300-minute durations, soft lift avoidance distinct from hard exclusions, and visible route tradeoffs. [Current checkpoint and verification](delivery/v2-checkpoint.md).
 
-The [v2 corpus](benchmark/v2/README.md) contains **47 human-reviewed, deterministically migrated training rows** (009 excluded) and 32 development rows. Original v1 records/results remain intact. The [16-case evaluation review packet](training/evaluation-review-v2.md) is ready for Emi; it is a pilot, not a frozen final benchmark. No new model inference or training has run.
+The [v2 corpus](benchmark/v2/README.md) contains **47 human-reviewed, deterministically migrated training rows** (009 excluded) and 32 development rows. Original v1 records/results remain intact. The [16-case evaluation review packet](training/evaluation-review-v2.md) has 14 approvals and two open preferred-blue corrections; it is a pilot, not a frozen final benchmark. No new model inference or training has run.
 
-Next: review the evaluation pilot, prepare/freeze a genuinely independent final benchmark, and finish protected training/checkpoint integration and global budget accounting. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
+Next: resolve the two pilot corrections, prepare/freeze a genuinely independent final benchmark, and finish protected training/checkpoint integration and global budget accounting. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
 
 Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Emi authorized a **$10 total Tinker cap** (including prior project usage), staged as $1 smoke + $4 experiments + $5 justified reserve. [Budget scope and execution gates](training/budget-authorization.json). This is not permission to publish or evidence that training has run.

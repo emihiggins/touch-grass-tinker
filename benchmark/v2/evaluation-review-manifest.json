@@ -1,6 +1,6 @@
 {
   "scope": "16_case_review_pilot_not_frozen_or_model_evaluated",
-  "author_independence": "Same project agent authored candidates; independent human review pending. Different wording/topologies alone do not establish statistical independence.",
+  "author_independence": "Same project agent authored candidates; Emi reviewed all 16. Fourteen approved, two corrections open. Not frozen or wholly untouched.",
   "count": 16,
   "graph_families": [
     "fork",
@@ -8,12 +8,12 @@
     "oneway",
     "islands"
   ],
-  "human_review_complete": false,
+  "human_review_complete": true,
   "model_runs": 0,
   "gold_selfcheck": "Authored example routes pass independent validator; ready cases match bounded planner outcomes. This is fixture consistency, not model performance.",
   "sha256": {
     "evaluation-graphs.json": "5d9cf5cda8175c0b2346ae1f303596ea68e7e2dc52511775c68075a128dd28dd",
-    "evaluation-candidates.jsonl": "6aa21b84fb3c90a0c586b2a656dcd24100b9a3fd9dd9732ad93200c88342c354"
+    "evaluation-candidates.jsonl": "b5399f4dcb6f8f1b20a84fca480f7e1dcc0066212fe93bb3f555491645a9f4dc"
   },
   "corpus_audit": {
     "count": 95,
@@ -25,5 +25,15 @@
     "errors": [],
     "warnings": [],
     "scope": "structural_audit_not_independent_label_review_or_test_freeze"
+  },
+  "review_status": {
+    "approved": 14,
+    "change_requested": 2,
+    "open_ids": [
+      "eval-review-009",
+      "eval-review-010"
+    ],
+    "received_at": "2026-10-06T21:09:40Z",
+    "frozen": false
   }
 }

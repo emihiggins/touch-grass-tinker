@@ -1,6 +1,8 @@
 # Independent evaluation review — 16-case pilot
 
-These are new fictional scenarios and graph topologies, authored by the same project agent and pending your independent review. This is not a frozen or statistically representative test set. No model predictions have been generated.
+These are new fictional scenarios and graph topologies, authored by the same project agent and now reviewed by Emi. This is not a frozen or statistically representative test set. No model predictions have been generated.
+
+**Review received:** 14 approved; preferred-blue corrections requested for 009/010 remain open pending a consistent field convention. No repeat review needed for the other 14.
 
 For each case, read the request/context first. Open the proposed answer after deciding what it means. Reply with the case number and approve/correct/uncertain. No commands needed. Route outcomes are simulation-only; the supplied topology is the entire available network.
 
@@ -87,8 +89,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-002
 
@@ -135,8 +138,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-003
 
@@ -180,8 +184,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-004
 
@@ -227,8 +232,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-005
 
@@ -274,8 +280,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-006
 
@@ -321,8 +328,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-007
 
@@ -366,8 +374,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-008
 
@@ -413,8 +422,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-009
 
@@ -458,8 +468,11 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: change_requested
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: i think in addition to hard_max_difficulty being blue, the preferred_difficulties should also include blue
+
+- Requested correction: `preferred_difficulties: ["blue"]`. The JSON above remains the current v2 label until the field convention is resolved.
 
 ## eval-review-010
 
@@ -508,8 +521,11 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: change_requested
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: preferred_difficulties should also include blue
+
+- Requested correction: `preferred_difficulties: ["blue"]`. The JSON above remains the current v2 label until the field convention is resolved.
 
 ## eval-review-011
 
@@ -553,8 +569,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-012
 
@@ -600,8 +617,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-013
 
@@ -645,8 +663,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-014
 
@@ -690,8 +709,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-015
 
@@ -737,8 +757,9 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
 
 ## eval-review-016
 
@@ -784,5 +805,6 @@ All edges are directed. All are open 08:00–16:00 local, with no queues; durati
 
 </details>
 
-- Decision: pending
-- Corrections:
+- Decision: approved
+- Reviewer: Emi Higgins, 2026-10-06 21:09 UTC
+- Human note: approved
