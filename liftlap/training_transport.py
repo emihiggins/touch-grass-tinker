@@ -17,7 +17,7 @@ class TrainingTransport:
         self.journal=Path(journal)
         # An existing journal may describe completed or ambiguous mutations.
         with self.journal.open('x'):pass
-        self.session=None;self.model=None;self.sequence=0;self.failed=False
+        self.session=None;self.model=None;self.sequence=0;self.failed=False;self.model_sequence=0
 
     def record(self,event,**fields):
         with self.journal.open('a') as f:
@@ -32,9 +32,15 @@ class TrainingTransport:
             from tinker.types.future_retrieve_request import FutureRetrieveRequest
             from tinker.proto.response_conv import deserialize_proto_response,PROTO_SUPPORTED_TYPES
             for attempt in range(self.polls):
-                response=await self.client.futures.with_raw_response.retrieve(
-                    request=FutureRetrieveRequest(request_id=future.request_id),timeout=5,max_retries=0,
-                    extra_headers={'Accept':'application/x-protobuf' if response_type in PROTO_SUPPORTED_TYPES else 'application/json'})
+                from tinker import APITimeoutError
+                try:
+                    response=await self.client.futures.with_raw_response.retrieve(
+                        request=FutureRetrieveRequest(request_id=future.request_id),timeout=30,max_retries=0,
+                        extra_headers={'Accept':'application/x-protobuf' if response_type in PROTO_SUPPORTED_TYPES else 'application/json'})
+                except APITimeoutError:
+                    self.record('read_timeout',operation=name,request_id=future.request_id)
+                    if attempt+1==self.polls:raise
+                    continue
                 if 'application/x-protobuf' in response.http_response.headers.get('content-type',''):
                     result=deserialize_proto_response(response.http_response.content,response_type)
                     self.record('completed',operation=name,request_id=future.request_id)
@@ -104,7 +110,13 @@ class TrainingTransport:
     async def restore(self,path):
         from tinker import types
         if not self.model or not path.startswith('tinker://'):raise ValueError('Model and checkpoint URI required')
-        request=types.LoadWeightsRequest(model_id=self.model,seq_id=self.next_sequence(),path=path,optimizer=True)
+        if not self.session:raise ValueError('Session required for fresh-model restore')
+        self.model_sequence+=1
+        request=types.LoadWeightsRequest(session_id=self.session,model_seq_id=self.model_sequence,path=path,optimizer=True)
         result=await self.operation('restore_state',lambda:self.client.weights.load(request=request),types.LoadWeightsResponse)
+        expected=f'{self.session}:train:{self.model_sequence}'
+        if result.model_id not in (None,expected):
+            self.failed=True;raise ValueError('Unexpected restored model identity')
+        self.model=expected;self.sequence=0
         self.record('optimizer_restore_completed',path=path)
         return result

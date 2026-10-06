@@ -1,0 +1,32 @@
+{
+  "scope": "conservative_commitments_not_invoice_reconciliation",
+  "prior_live_run_bounds": [
+    {
+      "run": "base-dev-smoke-001",
+      "whole_run_upper_usd": 0.008546205
+    },
+    {
+      "run": "base-dev-smoke-002",
+      "whole_run_upper_usd": 0.008546205
+    },
+    {
+      "run": "base-dev-smoke-003",
+      "whole_run_upper_usd": 0.008546205
+    },
+    {
+      "run": "base-v2-development-001",
+      "whole_run_upper_usd": 0.011011005
+    }
+  ],
+  "diagnostic_request_allowance_tokens": {
+    "input": 2048,
+    "output": 512
+  },
+  "combined_upper_estimate_usd": 0.03735618,
+  "held_usd": 0.1,
+  "billing_still_provisional": true,
+  "smoke_reservation_usd": 0.25,
+  "storage_bound_basis": "Two1h checkpoint objects,512GB each; exceeds full10B parameter model state at32bytes/parameter with margin; actual LoRA is smaller. $0.10/GB-month (720h). Not measured storage.",
+  "price_checked_at": "2026-10-06T21:59:59Z",
+  "price_source": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/"
+}

@@ -18,7 +18,7 @@ class TrainingTransportTests(unittest.TestCase):
             body=json.loads(req.content);path=req.url.path.rsplit('/',1)[-1];requests.append((path,body))
             if path=='create_session':return httpx.Response(200,json={'session_id':'session-fixture'})
             if path=='retrieve_future':return httpx.Response(200,json=pending[body['request_id']])
-            result={'create_model':{'model_id':'model-fixture','type':'create_model'},'save_weights':{'path':'tinker://model-fixture/weights/smoke'},'load_weights':{'model_id':'model-fixture'},'save_weights_for_sampler':{'path':'tinker://model-fixture/sampler_weights/smoke'}}[path]
+            result={'create_model':{'model_id':'model-fixture','type':'create_model'},'save_weights':{'path':'tinker://model-fixture/weights/smoke'},'load_weights':{'model_id':'session-fixture:train:1'},'save_weights_for_sampler':{'path':'tinker://model-fixture/sampler_weights/smoke'}}[path]
             index+=1;key=str(index);pending[key]=result
             return httpx.Response(200,json={'request_id':key})
         async def run():
@@ -29,7 +29,12 @@ class TrainingTransportTests(unittest.TestCase):
                 await t.checkpoint('smoke',sampler=True)
         asyncio.run(run())
         changes=[(p,b) for p,b in requests if p in ('save_weights','load_weights','save_weights_for_sampler')]
-        self.assertEqual([b['seq_id'] for _,b in changes],[1,2,3])
+        self.assertEqual(changes[0][1]['seq_id'],1)
+        self.assertNotIn('seq_id',changes[1][1])
+        self.assertEqual(changes[1][1]['model_seq_id'],1)
+        self.assertEqual(changes[1][1]['session_id'],'session-fixture')
+        self.assertEqual(changes[2][1]['seq_id'],1)
+        self.assertEqual(changes[2][1]['model_id'],'session-fixture:train:1')
         self.assertEqual(changes[0][1]['ttl_seconds'],3600)
         self.assertFalse(changes[0][1]['overwrite'])
         self.assertTrue(changes[1][1]['optimizer'])
@@ -93,3 +98,24 @@ class TrainingTransportTests(unittest.TestCase):
         asyncio.run(run())
         self.assertEqual(calls.count('forward_backward'),1)
         self.assertEqual(calls.count('optim_step'),1);self.assertEqual(retrievals,2)
+
+    @patch.dict(os.environ,{'TINKER_API_KEY':'oc-sent-v2.fixture.end','HTTPS_PROXY':'http://127.0.0.1:1'})
+    def test_read_timeout_retries_only_future_retrieval(self):
+        import httpx
+        from liftlap.tinker_sdk import make_client
+        from liftlap.training_transport import TrainingTransport
+        calls=[];reads=0
+        def respond(req):
+            nonlocal reads
+            path=req.url.path.rsplit('/',1)[-1];calls.append(path)
+            if path=='create_session':return httpx.Response(200,json={'session_id':'fixture'})
+            if path=='create_model':return httpx.Response(200,json={'request_id':'known'})
+            reads+=1
+            if reads==1:raise httpx.ReadTimeout('temporary',request=req)
+            return httpx.Response(200,json={'model_id':'fixture-model','type':'create_model'})
+        async def run():
+            async with make_client(httpx.MockTransport(respond)) as c:
+                t=TrainingTransport(c,self.journal,polls=2,poll_interval=0)
+                self.assertEqual(await t.create('Qwen/Qwen3-8B'),'fixture-model')
+        asyncio.run(run())
+        self.assertEqual(calls.count('create_model'),1);self.assertEqual(reads,2)

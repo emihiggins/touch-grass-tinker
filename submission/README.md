@@ -18,7 +18,7 @@
 | Honest development result | Rules 14/20, base v1 6/20, base v2 13/20; denominator/failures retained | Recorded, not held-out |
 | Approved corpus | 47 source-reviewed rows migrated to v2 under the agreed changes; 009 excluded. [V2 corpus](../benchmark/v2/README.md) | Partial |
 | Independent test | 16-case pilot reviewed: 16 resolved and approved; frozen pilot available; final untouched set/freeze still missing | Partial |
-| Real Tinker fine-tuning | Budget authorized: $10 total; account billing/credits, protected-auth integration, guarded execution and actual checkpoint remain pending | Not run |
+| Real Tinker fine-tuning | Two-example training/optimizer and state checkpoint completed; fresh-model restore unresolved, no sampler or quality result | Incomplete integration smoke |
 | Baseline improvement | Same-base, same-renderer independent comparison; report failure if the gain is absent | Missing |
 | Trained model in app | Actual checkpoint-linked request → intent → validated route, explicit live/replay mode | Missing; browser uses rules |
 | Judge-accessible demo | Record and review video or deploy an appropriately bounded demo; verify access without owner login | Storyboard only |

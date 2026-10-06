@@ -1,5 +1,5 @@
 {
-  "status": "local_checkpoint_verified_remote_training_not_started",
+  "status": "smoke_incomplete_existing_restore_future_unresolved",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -8,7 +8,9 @@
     "Atomic project budget reservations integrated into live sampling",
     "Read sanitized provisional account billing totals; not reconciled",
     "Protected training transport wire-tested offline including expiring state/sampler checkpoints and optimizer restore",
-    "Emi reported $10 available Tinker credits at21:55 UTC; project cap unchanged"
+    "Emi reported $10 available Tinker credits at21:55 UTC; project cap unchanged",
+    "Metered two-example smoke launcher and conservative prior usage hold",
+    "Real forward/backward, optimizer step and expiring state checkpoint"
   ],
   "remaining": [
     "Reconcile prior/ambiguous Tinker charges; $10 available credits confirmed by Emi",
@@ -19,13 +21,11 @@
     "Resolve code access and obtain final publication approval"
   ],
   "human_label_input_needed": false,
-  "paid_calls_this_checkpoint": 0,
-  "tests_passed": 131,
+  "paid_calls_this_checkpoint": "Training and state checkpoint submitted; exact billing pending",
+  "tests_passed": 135,
   "browser_verification": "Not repeated for green selector; API tests and JavaScript syntax pass",
   "background_worker_active": false,
-  "next_action": "Complete metered smoke launch wrapper after account/billing/storage evidence; no live training yet",
+  "next_action": "Inspect the existing fresh-model restore future before any new mutation. No rerun or new training authorized by this failure. If checkpoint expired, record that outcome and plan a separately bounded replacement smoke.",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
-  "human_account_input_needed": [
-    "Automatic top-up status remains unknown; do not enable or rely on top-ups"
-  ]
+  "human_account_input_needed": []
 }

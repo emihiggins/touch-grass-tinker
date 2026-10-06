@@ -50,6 +50,17 @@ class Ledger:
             if n>self.total:raise ValueError('Prior usage exceeds cap')
             db.execute("INSERT OR REPLACE INTO commitments VALUES ('prior','prior',?,'reconciled',?)",(n,evidence))
 
+    def reserve_prior(self,amount,evidence):
+        """Account for ambiguous historical work at a documented conservative bound.
+        This is explicitly NOT invoice reconciliation; preserve the hold until verified.
+        """
+        if not evidence:raise ValueError('Prior upper-bound evidence required')
+        n=units(amount)
+        if n<=0 or n>self.total:raise ValueError('Invalid prior hold')
+        with self.transaction() as db:
+            if db.execute('SELECT 1 FROM commitments').fetchone():raise ValueError('Ledger already initialized')
+            db.execute("INSERT INTO commitments VALUES ('prior','prior',?,'reserved',?)",(n,evidence))
+
     def reserve(self,key,stage,amount,evidence):
         n=units(amount)
         if stage not in self.stages or not key or not evidence or n<=0:raise ValueError('Invalid reservation')

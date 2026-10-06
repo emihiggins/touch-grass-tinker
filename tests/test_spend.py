@@ -36,3 +36,9 @@ class SpendTests(unittest.TestCase):
         self.ledger.reserve('one','smoke',.1,'bounded')
         with self.assertRaises(ValueError):self.ledger.settle('one',.2,'invoice')
         self.assertEqual(self.ledger.snapshot()['unresolved'],1)
+    def test_prior_hold_is_unresolved_but_counts_against_project(self):
+        self.ledger.reserve_prior(.1,'all historical request upper bounds with margin')
+        self.ledger.reserve('smoke','smoke',.25,'bounded smoke')
+        self.assertEqual(self.ledger.snapshot()['committed_usd'],.35)
+        self.assertEqual(self.ledger.snapshot()['unresolved'],2)
+        with self.assertRaises(ValueError):self.ledger.reserve_prior(.01,'cannot overwrite prior hold')
