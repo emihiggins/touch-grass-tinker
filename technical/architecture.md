@@ -1,6 +1,6 @@
 # As-built architecture
 
-The current application uses **Python’s standard library HTTP server and graph planner, plus vanilla browser HTML/CSS/JavaScript**. It does not use FastAPI, NetworkX, React, Vite or MapLibre. Those were proposed in the [original architecture](architecture-proposal.md), not implemented.
+The current application uses **Python’s standard library HTTP server and graph planner, plus vanilla browser HTML/CSS/JavaScript and an optional bundled MapLibre geographic renderer**. It does not use FastAPI, NetworkX, React or Vite. Those were proposed in the [original architecture](architecture-proposal.md), not implemented.
 
 ## Request flow
 

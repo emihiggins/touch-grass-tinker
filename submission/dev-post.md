@@ -24,7 +24,7 @@ The browser offers Rules, a clearly labelled recorded AI example, and opt-in liv
 ## Demo
 <!-- Share a deployed link or a video demo. -->
 
-[Watch/download the 49-second demo](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm). The app itself runs locally; this is a recorded demonstration, not a hosted planning service. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
+[Watch/download the demo](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm). The app itself runs locally; this is a recorded demonstration, not a hosted planning service. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
 
 The recording covers corrected simulated planning, closed lifts, an unsupported request and mobile layout. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
 

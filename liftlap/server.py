@@ -64,8 +64,8 @@ def handle_api(path,payload,model=None):
         for eid in expanded['edge_ids']:
             e=edges[eid];name=e.get('name',labels.get(eid,eid));key=(name,e['kind'],e.get('difficulty'))
             if r['steps'] and tuple(r['steps'][-1][k] for k in ('name','kind','difficulty'))==key:
-                r['steps'][-1]['seconds']+=e['duration_s']
-            else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s']})
+                r['steps'][-1]['seconds']+=e['duration_s'];r['steps'][-1]['edge_ids'].append(eid)
+            else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s'],'edge_ids':[eid]})
     r['terrain_review']=g['review_status'];r['disclosure']='Simulation only. No live conditions or field verification. Durations are assumptions.'
     return r
 
@@ -75,7 +75,7 @@ class Handler(BaseHTTPRequestHandler):
         raw=json.dumps(data,ensure_ascii=False).encode() if mime=='application/json' else data
         self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(raw)))
         self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
-        self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'")
+        self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; frame-ancestors 'none'")
         self.end_headers();self.wfile.write(raw)
     def allowed_host(self):
         return self.headers.get('Host') in {f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}'}
@@ -88,6 +88,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(200,{'graph':g,'ui_context':ui,'catalog':catalog,'live_model_enabled':getattr(self.server,'model',None) is not None,'recorded_model_available':(ROOT/'demo/model-replay.json').exists()})
             except ValueError:return self.send(422,{'error':'Invalid terrain'})
         allowed={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
+        for asset,mime in [('maplibre-gl-csp.js','text/javascript'),('maplibre-gl-csp-worker.js','text/javascript'),('maplibre-gl.css','text/css')]:allowed['/'+asset]=(asset,mime)
         if url.path not in allowed:return self.send(404,{'error':'Not found'})
         name,mime=allowed[url.path];self.send(200,(ROOT/'web'/name).read_bytes(),mime)
     def do_POST(self):

@@ -1,0 +1,10 @@
+{
+  "stepSelection": true,
+  "keyboardPan": true,
+  "pointerPan": true,
+  "geojsonFeatures": 495,
+  "mobile320NoOverflow": true,
+  "webglFallback": true,
+  "externalRequests": [],
+  "pageErrors": []
+}

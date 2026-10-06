@@ -2,7 +2,7 @@
 
 ## Runtime and layout
 
-Python3.11+ standard library plus vanilla HTML/CSS/JavaScript. No npm install or Python dependencies are required for the default app. Use `python3 -m liftlap.server`; the server binds only to loopback. [As-built architecture](../technical/architecture.md).
+Python3.11+ standard library plus vanilla HTML/CSS/JavaScript and vendored MapLibre GL JS 5.6.2 for the optional Alpendorf geographic view. No npm install or Python dependencies are required for the default app. Use `python3 -m liftlap.server`; the server binds only to loopback. [As-built architecture](../technical/architecture.md).
 
 | Path | Purpose |
 |---|---|
@@ -48,3 +48,5 @@ Historical budget authorization belongs to the original experiment, not to contr
 Do not modify frozen data/prompt files to improve a reported score. Add a new version and declare a new experiment instead. Keep failures in the denominator; a schema-valid output is not necessarily a correct intent. If UI code changes, regenerate the current captures/video and verify source labels, keyboard focus, stale-result rejection and printed constraints. Historical evidence must remain clearly labelled as historical.
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) and [evaluation](evaluation.md).
+
+Map interaction checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-map.cjs`. They require rendered geographic features, no external requests, 320px reflow and a simulated renderer-failure fallback. CSP permits same-origin workers and inline styles required by map positioning; script execution and network connections remain same-origin only. Vendored source checksums: `research/maplibre-assets.json`.

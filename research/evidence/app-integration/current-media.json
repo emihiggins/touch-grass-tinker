@@ -4,24 +4,30 @@
   "live_calls_for_refresh": 0,
   "source": "scripts/browser-ai-demo.cjs; Chromium offline recorded mode",
   "sha256": {
-    "web/index.html": "540eb68b46602ea5ed0642c549138c52ee0835e9dabbaa81bd325e4af50008ec",
-    "web/app.js": "0a4a379a49e2f8f6c1fdfb88724269759df0bd81b152240f8980676019d2c4ae",
-    "web/style.css": "0b7f2c05cf95822e06af104581def65a5e95c5d6d28d2f070b0f45f594ac4ed1",
-    "liftlap/server.py": "e9b195cffb998c2277c878d6aa69345338caf3a31f24d92cbf85cfef28f7e5e9",
+    "web/index.html": "81d647b46331c0285dffc37ba43816bd0513e89211a76e4dab457bee36d43840",
+    "web/app.js": "b7355f9883de7ab6b8ed82b5e6738a89489cc27152e4103811571c9bd6d3a2a7",
+    "web/style.css": "f32071ad772f78280590b49d3ef0cb89f85f429e8a43760fc188d189f758134a",
+    "liftlap/server.py": "a6510eb99a75b5c57be3df39658b0cf0e50fbe903bbd468fe96101528acf0712",
     "liftlap/app_model.py": "b47c0427e43399c40fff73fa7e77fccddfa1ea74b56a44c4d674153af5bc57b5",
-    "scripts/browser-ai-demo.cjs": "d8822682cc2acdc6f110fdd7c7790aecb7e2ce5e8c2cbb6ba857bc01a6405ce0",
+    "scripts/browser-ai-demo.cjs": "d2e1d480b0c7c637eaf04c9eaa16daa8895598bb2ea9f8b4d4c7001b17cfa9f9",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
-    "demo/walkthrough.webm": "ccb1a4b8136c89d3812bcc1980489c41ed57eb6d0c0818acca79c53bc03731f8",
-    "research/evidence/app-integration/recorded-corrected-desktop.png": "1c946267f79ba38d989a56c436539518e32b176d37a854ac1d25b75a4213cea0",
-    "research/evidence/app-integration/mobile.png": "10eeefba3bf769064ee56b3f8aa04b296c6959e6f85ec4469ddbd8dbba916f66",
-    "research/evidence/app-integration/corrected-itinerary.pdf": "23550dd1989620d546286949005e34bcb1d9ae3330a76d6878c2256034dc80ba",
-    "research/evidence/app-integration/print-preview.png": "e90b6167b4d45d6782d738be27bce6b4e195fb86f301548785f6583be4f00619",
-    "research/evidence/app-integration/alpendorf-map-mobile.png": "43e1fc4e364514c3f5c12ee930fbbc2d6c175e0652d16bad3023305e87f9aee0"
+    "demo/walkthrough.webm": "a48680b07a3626129b8d8f4dc3fd79ac7935eb5498e2ed252949dafdd7b98e36",
+    "research/evidence/app-integration/recorded-corrected-desktop.png": "b61de577ce52584fa75c0ad51190e1d5c597fde51a07bf7a1dca753969d5d9ce",
+    "research/evidence/app-integration/mobile.png": "6a5eeb71a26a2bd2d4595e1666bf4750263b08efce0b487c07b1912349e4ee98",
+    "research/evidence/app-integration/corrected-itinerary.pdf": "7b0a18dbf658d41439be6d2403956d096d97f54fea91ba6f764fc902915dc7fe",
+    "research/evidence/app-integration/print-preview.png": "7aca17f6f1257ac50363cb5caf96c6a5598519cd8c9934c61fa8f290967cacb6",
+    "scripts/browser-map.cjs": "c05b8da522d80d576f974277cd615d3f69c243d2f48d23afb1bc0bd74476a3b1",
+    "research/evidence/app-integration/geographic-desktop.png": "514a9f44cecb370436bd239d072ee996ee17279ca09a2ebee5046427ae073616",
+    "research/evidence/app-integration/geographic-mobile.png": "1e58cfd9d6e8880a900719b35d993497581d15d37806f0b8920c7a0f4adf77d3",
+    "web/maplibre-gl-csp.js": "c36bad236222122f0a8564406955d5876db4ab1011c82f7da80d51028d731a70",
+    "web/maplibre-gl-csp-worker.js": "ce6b0e8a27a1041a43116ad58f1e9755188b04de3e663e93144e7f596b9c79a8",
+    "web/maplibre-gl.css": "43c1d886b5fdf0aac4e7135bd6f84b823d9f48283a648012665f9be52c01389f"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",
     "research/evidence/ui-mobile.png",
-    "research/evidence/app-integration/live-desktop.png"
+    "research/evidence/app-integration/live-desktop.png",
+    "research/evidence/app-integration/alpendorf-map-mobile.png"
   ],
   "notes": "Historical media is retained as evidence and is not used by the current README. A source change requires fresh capture/review, not silently updating hashes."
 }

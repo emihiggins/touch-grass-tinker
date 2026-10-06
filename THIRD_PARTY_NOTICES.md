@@ -7,3 +7,5 @@
 - Development browser checks use Playwright/Chromium, not bundled as runtime dependencies. Screen recording is an original capture of this app, with the recorded-model limitation disclosed in `demo/README.md`.
 
 AI coding assistance was used. Original fictional terrain and synthetic request examples are not real resort or skier data. No model weights, API keys, browser cookies, or private run directories belong in a public release.
+
+- Bundled MapLibre GL JS 5.6.2 CSP build, worker and CSS: BSD-3-Clause and included dependency notices in [the upstream license](web/maplibre-LICENSE.txt). Download URLs and SHA256 hashes are in [the asset manifest](research/maplibre-assets.json). No upstream tiles, model weights or hosted map service are bundled.

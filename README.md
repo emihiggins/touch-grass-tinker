@@ -6,7 +6,7 @@ Lift-Lap explores a simple division of responsibility: a language model interpre
 
 > **Simulation, not ski navigation.** Terrain, timings and lift operations are fictional or explicitly unreviewed. There is no live resort status, avalanche advice or field-verified routing.
 
-[Watch the 49-second demo](demo/walkthrough.webm) · [User guide](docs/user-guide.md) · [Developer guide](docs/development.md) · [Architecture](technical/architecture.md)
+[Watch the demo](demo/walkthrough.webm) · [User guide](docs/user-guide.md) · [Developer guide](docs/development.md) · [Architecture](technical/architecture.md)
 
 ![Lift-Lap desktop: recorded interpretation, corrected hard exclusions, schematic mountain and confirmed itinerary](research/evidence/app-integration/recorded-corrected-desktop.png)
 
@@ -81,3 +81,7 @@ The [recording and reproduction guide](demo/README.md) distinguishes the recorde
 Original code is [MIT licensed](LICENSE). OpenStreetMap-derived terrain is © OpenStreetMap contributors under [ODbL](data/terrain/LICENSE-ODbL.md), not MIT. Model weights are not bundled. [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](submission/README.md) are separate from the user/developer documentation.
+
+### Explore the real-geometry lab
+
+Select Alpendorf, then **Open geographic map** for a local MapLibre view. No tile subscription or API key is required. The SVG sketch supports pan/zoom, known station labels and itinerary-linked highlighting. Alpendorf remains an unreviewed partial OSM extract—not live resort navigation. See the [map research and next steps](research/mountain-map-upgrade.md).

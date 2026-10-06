@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    files=sorted([*ROOT.glob('liftlap/*.py'),*ROOT.glob('web/*'),*ROOT.glob('demo/*')])+[ROOT/'LICENSE',ROOT/'THIRD_PARTY_NOTICES.md',ROOT/'data/terrain/alpendorf-source.osm',*[ROOT/'research/evidence/app-integration'/n for n in ['recorded-corrected-desktop.png','mobile.png','print-preview.png','corrected-itinerary.pdf','live-browser.json']],ROOT/'scripts/benchmark.py',ROOT/'data/terrain/alpendorf-lab.json',ROOT/'data/terrain/README.md',ROOT/'data/terrain/LICENSE-ODbL.md']
+    files=sorted([*ROOT.glob('liftlap/*.py'),*ROOT.glob('web/*'),*ROOT.glob('demo/*')])+[ROOT/'LICENSE',ROOT/'THIRD_PARTY_NOTICES.md',ROOT/'research/maplibre-assets.json',ROOT/'data/terrain/alpendorf-source.osm',*[ROOT/'research/evidence/app-integration'/n for n in ['recorded-corrected-desktop.png','mobile.png','print-preview.png','corrected-itinerary.pdf','live-browser.json']],ROOT/'scripts/benchmark.py',ROOT/'data/terrain/alpendorf-lab.json',ROOT/'data/terrain/README.md',ROOT/'data/terrain/LICENSE-ODbL.md']
     files=[p for p in files if p.is_file()]
     assert all(not any(x in p.parts for x in ['runs','.venv-tinker','.tokenizer-qwen3','.git']) for p in files)
     out=ROOT/'dist';out.mkdir(exist_ok=True)

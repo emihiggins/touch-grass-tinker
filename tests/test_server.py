@@ -12,7 +12,7 @@ class ServerTests(unittest.TestCase):
  def test_flow_and_closure(self):
   i=json.load(self.post('/api/interpret',{'text':'only blues, no drag lifts, 45 minutes'}))['intent']
   self.assertEqual(i['status'],'ready')
-  r=json.load(self.post('/api/plan',{'intent':i}));self.assertEqual(r['status'],'ok');self.assertTrue(r['validation']['valid'])
+  r=json.load(self.post('/api/plan',{'intent':i}));self.assertEqual(r['status'],'ok');self.assertTrue(r['validation']['valid']);self.assertEqual([eid for step in r['steps'] for eid in step['edge_ids']],r['route']['edge_ids'])
   r=json.load(self.post('/api/plan',{'intent':i,'closures':'all_lifts'}));self.assertEqual(r['status'],'no_route')
  def test_unknown_input_abstains(self):
   r=json.load(self.post('/api/interpret',{'text':'fly me to Mars'}));self.assertEqual(r['intent']['status'],'unsupported')
