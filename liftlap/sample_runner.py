@@ -15,6 +15,10 @@ from .corpus import read,conversation,audit
 from .render_audit import load_renderer,sha
 from scripts.benchmark import validate_intent
 
+def decode_sample(tokenizer,ids,stop):
+    """Remove only a terminal renderer stop token, never arbitrary response text."""
+    return tokenizer.decode(ids[:-1] if ids and ids[-1] in stop else ids)
+
 def parse_output(text,stop_reason,catalog):
     if stop_reason!='stop':return None,'truncated_or_unknown_stop'
     try:
@@ -89,8 +93,8 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
             try:
                 def submitted(request_id):append(directory/'events.jsonl',{'id':case['id'],'event':'submitted','request_id':request_id})
                 result=await asyncio.wait_for(sampler.sample(prompt,request_key,submitted),timeout=90)
-                ids=result['tokens'];payload=ids[:-1] if ids and ids[-1] in stop else ids
-                text=tokenizer.decode(payload)
+                ids=result['tokens']
+                text=decode_sample(tokenizer,ids,stop)
                 intent,status=parse_output(text,result['stop_reason'],case['catalog'])
                 row.update(intent=intent,status=status,raw_output=text,output_tokens=len(ids),
                            stop_reason=result['stop_reason'],request_id=result['request_id'],

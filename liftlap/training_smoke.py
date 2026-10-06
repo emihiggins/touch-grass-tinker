@@ -32,7 +32,7 @@ def prepare_smoke():
 
 async def execute(client,directory,config,datums,prompt_tokens,renderer,tokenizer,manifest):
     from .training_transport import TrainingTransport
-    from .sample_runner import SDKSampler,parse_output
+    from .sample_runner import SDKSampler,parse_output,decode_sample
     transport=TrainingTransport(client,directory/'training-events.jsonl',polls=60)
     await transport.create(config['model_name'],config['lora_rank'])
     await transport.train_step(datums,config['learning_rate'])
@@ -44,7 +44,7 @@ async def execute(client,directory,config,datums,prompt_tokens,renderer,tokenize
     save(directory/'manifest.json',manifest)
     sampler=SDKSampler(client,config['model_name'],sampler_path,renderer.get_stop_sequences(),512,polls=60)
     result=await sampler.sample(prompt_tokens,directory.name+'-sample',lambda rid:transport.record('sample_submitted',request_id=rid))
-    text=tokenizer.decode(result['tokens']);case=read(FILES[0])[0]
+    text=decode_sample(tokenizer,result['tokens'],renderer.get_stop_sequences());case=read(FILES[0])[0]
     intent,status=parse_output(text,result['stop_reason'],case['catalog'])
     save(directory/'sample.json',{'text':text,'intent':intent,'status':status,'stop_reason':result['stop_reason'],'output_tokens':len(result['tokens'])})
     return {'status':'completed' if status=='valid' else 'completed_sample_invalid','sample_status':status,'state_checkpoint':state,'sampler_checkpoint':sampler_path,

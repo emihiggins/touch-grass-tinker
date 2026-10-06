@@ -1,0 +1,28 @@
+{
+  "scope": "saved_smoke_output_reparsed_without_new_inference",
+  "status": "valid_schema",
+  "terminal_stop_marker_removed": true,
+  "token_roundtrip_verified": true,
+  "intent": {
+    "schema_version": 2,
+    "status": "ready",
+    "start_place_id": "valley",
+    "finish_place_id": "valley",
+    "start_time": "2027-01-15T10:00:00+01:00",
+    "duration_minutes": 60,
+    "hard_max_difficulty": "blue",
+    "excluded_lift_types": [],
+    "avoided_lift_types": [],
+    "preferred_difficulties": [
+      "blue"
+    ],
+    "prefer_variety": true,
+    "clarification_fields": [],
+    "unsupported_preferences": []
+  },
+  "exact_match": false,
+  "mismatched_fields": [
+    "duration_minutes",
+    "preferred_difficulties"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "status": "incomplete_remote_restore_unresolved",
+  "status": "integration_complete_semantic_sample_failed",
   "scope": "two_example_remote_integration_smoke_not_model_quality",
   "training_examples": 2,
   "forward_backward_completed": true,
@@ -8,9 +8,9 @@
   "state_checkpoint_ttl_seconds": 3600,
   "old_model_restore_rejected_http": 400,
   "fresh_model_restore_submitted": true,
-  "fresh_model_restore_completion_verified": false,
-  "sampler_checkpoint_saved": false,
-  "sample_generated": false,
+  "fresh_model_restore_completion_verified": true,
+  "sampler_checkpoint_saved": true,
+  "sample_generated": true,
   "mutations_replayed": false,
   "costs": {
     "prior_usage_hold_usd": 0.1,
@@ -18,8 +18,22 @@
     "total_committed_usd": 0.35,
     "invoice_reconciled": false
   },
-  "failure": "Future result retrieval timed out; saved request IDs and checkpoint URI remain in ignored private run directory",
-  "next_action": "Inspect the existing fresh-model restore future before any new mutation. No rerun or new training authorized by this failure. If checkpoint expired, record that outcome and plan a separately bounded replacement smoke.",
+  "failure": null,
+  "next_action": "Do not claim quality improvement. Keep billing reservations pending delayed usage; preregister substantive training/evaluation separately. Ephemeral smoke checkpoints expire after one hour.",
   "private_evidence": "runs/training-smoke-live-001/",
-  "provider_future_error_bodies_logged": false
+  "provider_future_error_bodies_logged": false,
+  "final_schema_valid": true,
+  "semantic_exact_match": false,
+  "mismatched_fields": [
+    "duration_minutes",
+    "preferred_difficulties"
+  ],
+  "reconciliation": {
+    "restore_receipt_verified": true,
+    "existing_session_heartbeat_accepted": true,
+    "billing_status": "provisional_no_training_events_visible_yet",
+    "storage_snapshot": "account_wide_lagging_zero_not_proof_of_no_storage",
+    "sample_decode_fix": "Terminal renderer stop token removed; token roundtrip and output token count verified offline",
+    "additional_inference_for_decode_fix": 0
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "scope": "read_only_existing_future_and_provisional_billing",
+  "compute_mutations": 0,
+  "restore": {
+    "status": "completed",
+    "model_identity_recorded_privately": true
+  },
+  "billing": {
+    "scope": "account_window_not_project_attribution_or_invoice",
+    "event_count": 6,
+    "event_kinds": {
+      "sampling_prefill": 4,
+      "sampling_sample": 2
+    },
+    "priced_events": 6,
+    "unpriced_events": 0,
+    "estimated_gross_usd": 0.0049489140000000004,
+    "cost_data_through": null,
+    "project_reconciled": false
+  },
+  "existing_session_heartbeat_maintenance": true
+}

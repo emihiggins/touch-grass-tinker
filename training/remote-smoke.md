@@ -62,3 +62,14 @@ The old-model restore endpoint returned HTTP400 before a future ID. The installe
 `research/evidence/training-smoke-result.json` is the sanitized record. Private request IDs, checkpoint URI, journals, exact original source snapshot and narrowly scoped one-time recovery scripts remain in ignored `runs/training-smoke-live-001/`. Mutations were not replayed. The $0.25 reservation remains held, alongside the $0.10 prior-usage hold. These are commitments, not verified charges.
 
 The reusable transport now uses the SDK's fresh-model restore addressing and30second bounded future reads; it retries only reads, never mutation submission. Offline tests cover both corrections. The original smoke input/source hashes are retained in the private snapshot. Do not rerun an expired dry plan: changed code invalidates it. The next action is to inspect the existing restore future, not begin another training run.
+
+
+## Reconciled outcome — supersedes incomplete first-attempt status above
+
+The existing fresh-model restore future returned a valid response after reinspection with45second SDK-standard reads and existing-session heartbeat maintenance. The exact future and model IDs matched. This does not establish that heartbeats caused completion. No restore or training mutation was replayed. The restored model exported a one-hour sampler checkpoint and produced one102-token response.
+
+The response included a terminal renderer stop token. Shared decoding now removes only that terminal token, as the baseline runner already did. Offline re-decoding of the saved response verified exact token roundtrip/count and a schema-valid intent, with no new inference. **Semantic exact match failed:** duration60 instead of90 and preferred blue instead of no explicit preference. This tiny one-step smoke is not evidence of model quality or fine-tuning improvement.
+
+Sanitized evidence: `research/evidence/training-smoke-result.json`, `smoke-sample-reconciled.json`, `smoke-reconciliation.json`. All139tests pass. `complete_reconciled_smoke` refuses mismatched restore receipts, changed data/config, any prior sampler submission or reused completion journal.
+
+Billing still shows only provisional historical sampling. The lagging storage snapshot reports zero but is not evidence the saved checkpoints cost nothing. The total$0.35 holds remain untouched. A one-time bounded accounting follow-up is scheduled for October7at01:00UTC; it may not create compute or release funds without attribution/billing evidence. No recurring polling loop exists. Smoke checkpoints are ephemeral and expire one hour after their saves; preserve the evidence, not a permanent-model claim.

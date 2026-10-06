@@ -92,3 +92,12 @@ class SDKSamplingTests(unittest.TestCase):
                 with self.assertRaises(TimeoutError):
                     await SDKSampler(client,'Qwen/Qwen3-8B',None,[151645],512,polls=2,poll_interval=0).sample([1],'run-2',lambda _:None)
         asyncio.run(execute());self.assertEqual(len(calls),6)
+
+class DecodeStopTests(unittest.TestCase):
+    def test_only_terminal_stop_token_is_removed(self):
+        from liftlap.sample_runner import decode_sample
+        class Tokens:
+            def decode(self,ids):return repr(ids)
+        self.assertEqual(decode_sample(Tokens(),[1,9],[9]),'[1]')
+        self.assertEqual(decode_sample(Tokens(),[9,1],[9]),'[9, 1]')
+        self.assertEqual(decode_sample(Tokens(),[1],[]),'[1]')
