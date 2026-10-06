@@ -19,7 +19,7 @@ class ReadinessTests(unittest.TestCase):
         for row in c:row['split']='train';row['review']['human_reviewed']=True
         self.config['batch_size']=10
         r=check(c,self.config)
-        self.assertEqual(r['dropped_rows_per_epoch'],6);self.assertEqual(r['complete_batches_per_epoch'],1)
+        self.assertEqual(r['dropped_rows_per_epoch'],len(c)%10);self.assertEqual(r['complete_batches_per_epoch'],len(c)//10)
     def test_invalid_batch_no_crash(self):
         for batch in (0,True,-1,'32'):
             self.config['batch_size']=batch

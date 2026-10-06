@@ -11,3 +11,5 @@ node_modules/
 data/private/
 checkpoints/
 runs/
+
+.venv-tinker/

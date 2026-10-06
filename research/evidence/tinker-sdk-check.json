@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-10-06",
+  "sdk_version": "0.32.0",
+  "python_version": "3.14.4",
+  "verified": true,
+  "supported_model_count": 31,
+  "qwen3_8b_listed": true,
+  "scope": "read_only_sdk_capabilities",
+  "billing_verified": false,
+  "model_calls": 0,
+  "requirements_sha256": "5e164ded6b952ba110770fa62eba24906b7d1113dc7c0ac34513ecf3165f4987",
+  "integration": "version_guarded_private_AsyncTinker_auth_hook",
+  "initial_adapter_issue": "nested model records were dicts; normalized dict/model response before final success"
+}

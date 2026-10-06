@@ -27,7 +27,7 @@ class CorpusTests(unittest.TestCase):
         with self.assertRaises(ValueError):export([c],'prompt')
     def test_preview_and_inference_separation(self):
         rows=export(self.cases,'prompt',preview=True)
-        self.assertEqual(len(rows),16)
+        self.assertEqual(len(rows),len(self.cases))
         self.assertEqual([m['role'] for m in rows[0]['messages']],['system','user','assistant'])
         self.assertNotIn('gold_intent',rows[0]['messages'][1]['content'])
         self.assertEqual(len(conversation(self.cases[0],'prompt',target=False)['messages']),2)

@@ -32,7 +32,7 @@ The first command uses an original synthetic graph. The server command opens the
 
 ## Next step
 
-Latest: 76 tests pass; paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. Credits/spending and actual model runs remain pending. See [training checkpoint](training/README.md).
+Latest: 79 tests pass in the optional SDK environment (three SDK tests skip in the dependency-free environment); paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. A pinned Tinker SDK read-only smoke also passes; 48 training candidates and a review packet are ready. Credits/spending and actual model runs remain pending. See [training checkpoint](training/README.md).
 
 [Offline training readiness](training/README.md) now includes 16 training candidates, split/leakage audit, Cookbook conversation preview export and saved paired intent comparison. No final test set or model runs yet.
 

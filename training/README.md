@@ -101,3 +101,32 @@ Exit 1 means blocked (the expected current result). Checks corpus audit, require
 This checker **never authorizes spend or launches training**, even if every declaration is true. Boolean gates are not evidence: independently inspect linked test-freeze provenance, rendered token masks, dependency smoke, baseline run and credit/spend records. Current blockers include the near-duplicate candidate, no approved training rows/test partition, unverified rendering/environment and no approved budget. See `research/evidence/training-preflight.json`.
 
 Next: expand/review original training families and create new independently reviewed evaluation graph families; install and lock a supported SDK/rendering environment; validate sentinel-compatible SDK auth before any billable call. Training data readiness—not access—is now the main project bottleneck.
+
+
+## SDK and candidate-review milestone — 2026-10-06
+
+Current corpus: **48 original AI-assisted training candidates** (32 added this checkpoint) plus the unchanged 32 development seeds. Still no approved training split or frozen independent test set. The new cases cover compositional ceilings/preferences, negative scope, corrections, known/unknown place IDs, 15/240-minute boundaries, deadline caps, missing fields and conflicting instructions. They are not duplicated paraphrases to reach a count target; 48 remains well below the planned corpus size. Agent review is not human review.
+
+[Review packet](review-packet.md) includes each request, full context/catalog, proposed label and pending reviewer decision. Regenerate with `python3 -m scripts.review_packet`; changing checkboxes is not an approval importer. Candidate 009 remains quarantined for cross-split similarity. Review decisions/corrections must be recorded in canonical JSONL before approval and export. Corpus/evidence hashes were regenerated.
+
+### Installed SDK environment
+
+A separate ignored `.venv-tinker` uses Python 3.14.4 with `tinker==0.32.0`. Full installed package versions are in [sdk-requirements.lock](sdk-requirements.lock); this is a version lock for the verified Linux environment, not a cross-platform or distribution-hash lock. No global Python changes or model weights were installed. Core application still has no third-party runtime dependencies.
+
+Bootstrap used uv 0.12.23's PyPI Linux wheel, verified against SHA-256 `565c6e2874dbeae86c02f3dea97255e878fec672659a73d4930c6b93fcab2fff`. The temporary executable is `/tmp/liftlap-uv`, not a required checked-in artifact. With that uv version available, reproduce:
+
+```bash
+uv venv .venv-tinker --python python3.14
+uv pip sync --python .venv-tinker/bin/python training/sdk-requirements.lock
+.venv-tinker/bin/python -m unittest discover -s tests -v
+```
+
+`liftlap.tinker_sdk` performs only the SDK capabilities read. **Live smoke passed**, lists 31 models including Qwen3-8B. It accepts only an opaque Gateway sentinel and configured egress proxy; it refuses plaintext credentials, fixes the Tinker HTTPS origin, preserves CA verification, disables redirects and automatic retries, and suppresses exception bodies. Run through OpenClaw Gateway exec, not native shell:
+
+```bash
+.venv-tinker/bin/python -m liftlap.tinker_sdk
+```
+
+The integration intentionally uses pinned SDK internals (`AsyncTinker._auth` / `AuthTokenProvider`) because its normal API-key constructor rejects opaque sentinels. This is a **private compatibility seam**, not an upstream-stable API. It fails on SDK version changes; revalidate before upgrading. It does not patch the installed SDK or retrieve/decrypt the real key. Live nested model entries arrived as dictionaries despite type annotations; the adapter supports dictionaries and model objects. Unit tests cover credential mode, destination and redirect refusal; live capability proof is stored separately. Pydantic deprecation warnings may still arise inside SDK mock tests.
+
+This does **not** yet implement high-level `ServiceClient`, sampling-session creation, token rendering/masking, LoRA training, checkpoints or usage accounting. The Cookbook training environment is not installed. The broad `dependency_versions_locked_and_smoked` training gate therefore stays false. Next work is an isolated Cookbook/rendering environment and full provider runner, followed by baseline measurement only when data and spend gates are satisfied.
