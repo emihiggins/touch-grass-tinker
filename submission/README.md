@@ -42,3 +42,10 @@ If fine-tuning does not show a defensible gain, do not substitute the 6/20→13/
 ## Checkpoint verification
 
 On October 6, all **97 tests passed** in the pinned optional training environment. The dependency-free run passed 83 tests with 14 optional skips. The real rendered rehearsal covered 48 candidates in three batches; restarting the local cursor after batch one reproduced the remaining 32 rows. The default 32-row configuration was refused. Saved-output scoring reproduced 14/20, 6/20 and 13/20 without provider calls. Local documentation links and the seven official template headings passed checks. No UI code changed; browser/print evidence remains the earlier checkpoint, not a new accessibility audit.
+
+
+## Current full-data experiment checkpoint
+
+Preregistered experiment01 completed: base9/16 vs trained7/16 end-to-end successes, schema validity15/16 vs10/16. Two paired wins, four losses; screening failed. Do not promote the trained candidate or claim Best Use of Tinker improvement. Evidence: [paired results](../research/evidence/experiment-01/README.md). Earlier tables/next-sequence statements describe prior checkpoints.
+
+Next human input: [fresh16-case review](../training/final-review.md). Four new topologies, no model predictions; not a repeat of the pilot. This compact set replaces the original100–200-case protocol for this iteration and cannot support broad statistical generalization. Retain the base candidate fixed before final evaluation. The app remains rules-based; AI integration/demo/code access and publication remain open. No further model configuration ran. Total held commitments$1.60, not a bill; existing01:00UTC accounting follow-up remains scheduled.

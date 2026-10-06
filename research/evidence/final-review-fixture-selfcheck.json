@@ -1,0 +1,163 @@
+{
+  "scope": "fixture_self_check_not_model_performance",
+  "count": 16,
+  "successes": 16,
+  "cases": [
+    {
+      "id": "final-review-001",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-002",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-003",
+      "intent_exact_match": true,
+      "outcome": "no_route",
+      "expected_outcome": "no_route",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-004",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [
+        {
+          "kind": "soft_lift_avoidance",
+          "edge_ids": [
+            "access"
+          ],
+          "lift_types": [
+            "gondola"
+          ],
+          "message": "This outing uses a lift you preferred to avoid. Hard exclusions remain enforced; alternatives may exist outside this bounded search."
+        }
+      ],
+      "success": true
+    },
+    {
+      "id": "final-review-005",
+      "intent_exact_match": true,
+      "outcome": "no_route",
+      "expected_outcome": "no_route",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-006",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-007",
+      "intent_exact_match": true,
+      "outcome": "no_route",
+      "expected_outcome": "no_route",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-008",
+      "intent_exact_match": true,
+      "outcome": "no_route",
+      "expected_outcome": "no_route",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-009",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-010",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-011",
+      "intent_exact_match": true,
+      "outcome": "unsupported",
+      "expected_outcome": "unsupported",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-012",
+      "intent_exact_match": true,
+      "outcome": "clarify",
+      "expected_outcome": "clarify",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-013",
+      "intent_exact_match": true,
+      "outcome": "clarify",
+      "expected_outcome": "clarify",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-014",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-015",
+      "intent_exact_match": true,
+      "outcome": "ok",
+      "expected_outcome": "ok",
+      "gold_route_valid": true,
+      "preference_tradeoffs": [],
+      "success": true
+    },
+    {
+      "id": "final-review-016",
+      "intent_exact_match": true,
+      "outcome": "no_route",
+      "expected_outcome": "no_route",
+      "gold_route_valid": null,
+      "preference_tradeoffs": [],
+      "success": true
+    }
+  ],
+  "graph_bundle_sha256": "9dd8740c085bc7e395ddc72a5febc6ca70584206d95707b8bb1c5007d5e9a9d7"
+}

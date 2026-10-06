@@ -244,3 +244,8 @@ V2 supports normalized green < blue < red < black. Real resort colors must be ma
 ### Remote training transport
 
 [Remote smoke checkpoint](remote-smoke.md) documents the implemented SDK transport, offline wire tests and remaining metered-launch/billing gates. No real training or checkpoint calls have run.
+
+
+## Full-data trial01 complete
+
+[Preregistration](experiment-01.md) and [all paired evidence](../research/evidence/experiment-01/README.md): base9/16, trained7/16. Single configuration,47rows per batch,3steps, no tuning loop. Candidate selection remains base. [Fresh16-case review](final-review.md) is the next human gate, not a repeat pilot review. Total commitments$1.60 against$10cap; invoices unresolved.

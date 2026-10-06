@@ -1,0 +1,27 @@
+{
+  "status": "human_review_required_not_frozen",
+  "count": 16,
+  "model_predictions": 0,
+  "scope": "compact_fresh_confirmatory_set_not_original_100_to_200_case_protocol",
+  "limitations": [
+    "Same agent authorship; human review needed",
+    "Small set, not statistically representative",
+    "Do not modify model/prompt after seeing final model outputs"
+  ],
+  "audit": {
+    "count": 111,
+    "splits": {
+      "train": 47,
+      "development_seed": 32,
+      "test": 16,
+      "evaluation_candidate": 16
+    },
+    "errors": [],
+    "warnings": [],
+    "scope": "structural_audit_not_independent_label_review_or_test_freeze"
+  },
+  "sha256": {
+    "cases.jsonl": "432349d078b2caa6fe76462653540da2dc74e42c111eaa0e05c58ab0d6fe0d92",
+    "graphs.json": "7ffd35b1ef8711927ee064e56a1c363310ec26f1bb3714d60d568a73ff89f786"
+  }
+}

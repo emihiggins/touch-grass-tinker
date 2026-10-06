@@ -1,0 +1,59 @@
+{
+  "experiment_id": "pilot-sft-01",
+  "scope": "preregistered_exploratory_reviewed_pilot_not_untouched_final_benchmark",
+  "hashes": {
+    "training/experiment-01.json": "a0032c8d526509917731c1c3db9c50340d68b7901f079252904c5b8f8e90a01d",
+    "training/experiment-01.md": "760020e7f447346ce37ac306c086def6afc1a48c1577bff4070f861a9d4b00d9",
+    "benchmark/v2/training-reviewed.jsonl": "f5d5f645b2d18f60be3fbce71dc36042054a4bd56a89713a8382e36ed2f55424",
+    "benchmark/v2/evaluation-pilot-frozen.jsonl": "6bb96954ee52a5cf58206cf17c3828817b274e7e90bfe69b76a92e2480220fa8",
+    "benchmark/v2/evaluation-pilot-freeze.json": "30d341369598a1d55052827679b7ffbf0831b651320ae2615c353f6fb1328609",
+    "benchmark/v2/evaluation-graphs.json": "5d9cf5cda8175c0b2346ae1f303596ea68e7e2dc52511775c68075a128dd28dd",
+    "benchmark/v2/baseline-prompt.txt": "970495afba417156b6e02d7278901eb32069e4b31ae1f68659f48f4c74e73b5d",
+    "training/tokenizer-manifest.json": "16c75114421ae557b7a697afaa87698ceba3ec10f581337cc223a1b441ecd54f",
+    "training/budget-authorization.json": "5d631550027a8b382115925861a6ce9d5c6739113c6d6f6a5322719433a97b21",
+    "training/render-requirements.lock": "7d9696ca123f2882902af194528006aed58e06db6ffd83340ad6bb989215592b",
+    "liftlap/experiment.py": "955f316d99d608b6e15a52797e2695910079629a4c4f2f43a865e4dbcda0a325",
+    "liftlap/training_transport.py": "ac563ea6a1ca7cb396806aa475d903e694ed4c3cfb35e37e4646ebb2cbd3083e",
+    "liftlap/sample_runner.py": "79f412f0dd1dd14fd6946b73f858309384768732dc23341269f29f5fa994c3c8",
+    "liftlap/tinker_sdk.py": "52bdafe786b58c4ca20b0ac451d86670226f6f7cf603a00c44e4b5b2eb461b20",
+    "liftlap/spend.py": "2455b5d2315e260f012b891724563852eeccaccfb24395d8734e15c1eb3eed0f"
+  },
+  "train_count": 47,
+  "evaluation_count": 16,
+  "epochs": 3,
+  "batch_size": 47,
+  "optimizer_steps": 3,
+  "train_tokens": 239106,
+  "max_sampling_requests": 32,
+  "cost_upper_estimate_usd": 0.9782716933333333,
+  "reservation_usd": 1.25,
+  "checkpoint_ttl_seconds": 21600,
+  "status": "completed",
+  "plan_sha256": "6bd1d7f5d648282522d7ae8f10d4839251acbae0f88f4225eaf6c1a6d45da885",
+  "comparison": {
+    "scope": "exploratory_reviewed_pilot_not_untouched_final_benchmark",
+    "count": 16,
+    "base_successes": 9,
+    "trained_successes": 7,
+    "paired_wins": [
+      "eval-review-007",
+      "eval-review-011"
+    ],
+    "paired_losses": [
+      "eval-review-004",
+      "eval-review-005",
+      "eval-review-009",
+      "eval-review-016"
+    ],
+    "gold_route_validity_regressions": [],
+    "screening_pass": false,
+    "statistical_superiority_claim": false,
+    "selection_rule": "At least2 additional successes and no gold-route validity regression"
+  },
+  "billing_status": "Full reservation retained pending reconciled usage",
+  "checkpoint_fingerprints": {
+    "state_checkpoint": "46848ccefb0e42832b50f2b757e33757cc2fbdd2189d063d660a59e8483d1ca6",
+    "sampler_checkpoint": "8928358bdef0ab63dea476ef85e230c64f8765407b9fef472239539ac46ab4ff"
+  },
+  "checkpoint_paths": "Private run directory; checkpoints expire6hours after saving"
+}

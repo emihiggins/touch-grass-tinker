@@ -6,7 +6,7 @@ tags: devchallenge, hf26challenge
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)*
 
-> Private working draft, October 6. Not ready to publish: demo/video access, code access and the Tinker fine-tuning result remain open. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
+> Private working draft, October 6. Not ready to publish: demo/video access, code access and fresh evaluation remain open; the first fine-tuning trial did not improve the pilot. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
 
 ## What I Built
 <!-- What does it do, and how does it get people off the screen and into the world?  Who is it for? -->
@@ -65,7 +65,13 @@ These are development results, not held-out accuracy. Prompt v2 improved nine ca
 
 The [raw outputs and reports](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/base-v2-development) retain the failures. Forty completed inference requests across both prompts have an estimated uncached token cost of $0.00988101; this is not a verified invoice, excludes uncertain rejected-request billing, and is not a training or cost-reduction result.
 
-All 48 AI-assisted training candidates were reviewed by the project owner. The agreed corrections are implemented in a separate v2 corpus of 47 source-reviewed, deterministically migrated rows; the overlapping case is excluded. Sixteen new evaluation pilot cases await human review. They are not a frozen, untouched final benchmark. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
+All 48 AI-assisted training candidates were reviewed by the project owner. The agreed corrections are implemented in a separate v2 corpus of 47 source-reviewed, deterministically migrated rows; the overlapping case is excluded. All16 pilot cases were reviewed and frozen before predictions. They were not an untouched final benchmark. Local rendering verifies that prompts receive no training loss and targets fit without truncation. A separate fresh16-case review packet is now pending; neither model has answered those cases.
+
+### What the full-data trial showed
+
+After the integration smoke, I preregistered one full-data trial:47 human-reviewed examples, rank16 LoRA, learning rate0.0001 and three full-batch training passes. On the same16-case reviewed pilot, the base model passed9 tasks and the trained model passed7. Training improved two cases and regressed on four. Schema validity was15/16 for the base and10/16 for the trained model. Valid JSON alone was not enough, and the trained model also regressed on schema compliance.
+
+The trial failed its screening rule. I retained the base as the candidate rather than presenting the tuned checkpoint as an improvement. These pilot cases were not untouched final evidence; a fresh16-case human-review packet is prepared but has no model predictions yet. See the [complete paired evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/experiment-01).
 
 ## Why Does Open Innovation Matter?
 <!-- Why does open innovation matter for what you built?  What did it make possible that a closed API wouldn't? -->
@@ -86,7 +92,7 @@ Optional; not exported for this submission yet. Any shared export must be projec
 ## Prize Categories
 <!-- Which partner categories are you entering?  List every one that applies, or remove this section. -->
 
-**Intended category: Best Use of Tinker — not yet demonstrated.** The category requires actual fine-tuning and a clear improvement over a baseline. Hosted base-model inference and prompt improvements alone do not satisfy it. Before claiming this category, add the real checkpoint, independently evaluated result and in-app tuned-model trace. If there is no defensible improvement, report that outcome honestly and reassess the category claim.
+**Best Use of Tinker — not currently supported by the measured result.** The category requires actual fine-tuning and a clear improvement over a baseline. Hosted base-model inference and prompt improvements alone do not satisfy it. Before claiming this category, add the real checkpoint, independently evaluated result and in-app tuned-model trace. If there is no defensible improvement, report that outcome honestly and reassess the category claim.
 
 <!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
 

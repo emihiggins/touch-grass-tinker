@@ -1,0 +1,492 @@
+{
+  "access": {
+    "graph": {
+      "schema_version": 1,
+      "id": "fresh-access",
+      "timezone": "Europe/Paris",
+      "difficulty_convention": "fictional-normalized-green-blue-red-black",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "hub"
+        },
+        {
+          "id": "mid"
+        },
+        {
+          "id": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "access",
+          "name": "access",
+          "from": "base",
+          "to": "hub",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "gondola",
+          "duration_s": 240,
+          "length_m": 700,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "upper",
+          "name": "upper",
+          "from": "hub",
+          "to": "top",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 240,
+          "length_m": 900,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "blue-ridge",
+          "name": "blue-ridge",
+          "from": "top",
+          "to": "mid",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 300,
+          "length_m": 1000,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "green-connector",
+          "name": "green-connector",
+          "from": "mid",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "green",
+          "lift_type": null,
+          "duration_s": 180,
+          "length_m": 500,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "green-home",
+          "name": "green-home",
+          "from": "hub",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "green",
+          "lift_type": null,
+          "duration_s": 360,
+          "length_m": 800,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "red-direct",
+          "name": "red-direct",
+          "from": "top",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "red",
+          "lift_type": null,
+          "duration_s": 240,
+          "length_m": 1500,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "fresh-access-scenario",
+      "simulated": true,
+      "date": "2027-03-15",
+      "graph_hash": "0ebf37f43679fda3f7984c580cbeab3ef1d14b62fc60300a99524a1094351490",
+      "edges": {
+        "access": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "upper": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "blue-ridge": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "green-connector": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "green-home": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "red-direct": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        }
+      }
+    }
+  },
+  "surface": {
+    "graph": {
+      "schema_version": 1,
+      "id": "fresh-surface",
+      "timezone": "Europe/Paris",
+      "difficulty_convention": "fictional-normalized-green-blue-red-black",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "high"
+        },
+        {
+          "id": "remote"
+        },
+        {
+          "id": "shelter"
+        }
+      ],
+      "edges": [
+        {
+          "id": "chair",
+          "name": "chair",
+          "from": "base",
+          "to": "shelter",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 180,
+          "length_m": 600,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "carpet",
+          "name": "carpet",
+          "from": "shelter",
+          "to": "high",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "magic-carpet",
+          "duration_s": 120,
+          "length_m": 80,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "blue-home",
+          "name": "blue-home",
+          "from": "high",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 300,
+          "length_m": 1000,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "red-home",
+          "name": "red-home",
+          "from": "shelter",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "red",
+          "lift_type": null,
+          "duration_s": 240,
+          "length_m": 1200,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "fresh-surface-scenario",
+      "simulated": true,
+      "date": "2027-03-15",
+      "graph_hash": "0b1fab598e36f0f4440b1ccdcdd4418267eef86560b5a2c60e6f9c5611b0a731",
+      "edges": {
+        "chair": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "carpet": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "blue-home": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "red-home": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        }
+      }
+    }
+  },
+  "closing": {
+    "graph": {
+      "schema_version": 1,
+      "id": "fresh-closing",
+      "timezone": "Europe/Paris",
+      "difficulty_convention": "fictional-normalized-green-blue-red-black",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "high"
+        },
+        {
+          "id": "ridge"
+        }
+      ],
+      "edges": [
+        {
+          "id": "chair",
+          "name": "chair",
+          "from": "base",
+          "to": "high",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 180,
+          "length_m": 700,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "blue-home",
+          "name": "blue-home",
+          "from": "high",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 240,
+          "length_m": 1200,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "gondola",
+          "name": "gondola",
+          "from": "base",
+          "to": "ridge",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "gondola",
+          "duration_s": 300,
+          "length_m": 1000,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "green-home",
+          "name": "green-home",
+          "from": "ridge",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "green",
+          "lift_type": null,
+          "duration_s": 240,
+          "length_m": 900,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "fresh-closing-scenario",
+      "simulated": true,
+      "date": "2027-03-15",
+      "graph_hash": "084f17e52d10756c70a659899c8cd7901c500f0d2873546ff785538304715154",
+      "edges": {
+        "chair": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T13:00:00+01:00"
+        },
+        "blue-home": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T13:00:00+01:00"
+        },
+        "gondola": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T13:00:00+01:00"
+        },
+        "green-home": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T13:00:00+01:00"
+        }
+      }
+    }
+  },
+  "village": {
+    "graph": {
+      "schema_version": 1,
+      "id": "fresh-village",
+      "timezone": "Europe/Paris",
+      "difficulty_convention": "fictional-normalized-green-blue-red-black",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "bench"
+        },
+        {
+          "id": "top"
+        },
+        {
+          "id": "village"
+        }
+      ],
+      "edges": [
+        {
+          "id": "chair",
+          "name": "chair",
+          "from": "base",
+          "to": "top",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 300,
+          "length_m": 900,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "village-run",
+          "name": "village-run",
+          "from": "top",
+          "to": "village",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 240,
+          "length_m": 1400,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "home-run",
+          "name": "home-run",
+          "from": "top",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "green",
+          "lift_type": null,
+          "duration_s": 360,
+          "length_m": 1200,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "carpet",
+          "name": "carpet",
+          "from": "base",
+          "to": "bench",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "magic-carpet",
+          "duration_s": 60,
+          "length_m": 60,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "practice",
+          "name": "practice",
+          "from": "bench",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "green",
+          "lift_type": null,
+          "duration_s": 60,
+          "length_m": 120,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "fresh-village-scenario",
+      "simulated": true,
+      "date": "2027-03-15",
+      "graph_hash": "cc43e018af449bd84865f2e2d9512fafe7bd7fc3dbb29e3fe00006f77e6361b5",
+      "edges": {
+        "chair": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "village-run": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "home-run": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "carpet": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        },
+        "practice": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-03-15T09:00:00+01:00",
+          "closes_at": "2027-03-15T16:00:00+01:00"
+        }
+      }
+    }
+  }
+}

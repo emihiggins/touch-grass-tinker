@@ -1,5 +1,5 @@
 {
-  "status": "integration_smoke_complete_billing_pending_sample_not_semantically_correct",
+  "status": "first_full_data_experiment_complete_screening_failed_fresh_review_needed",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -12,22 +12,23 @@
     "Metered two-example smoke launcher and conservative prior usage hold",
     "Real forward/backward, optimizer step and expiring state checkpoint",
     "Exact restore future reconciled and restored sampler exported",
-    "One restored-model output generated; schema valid after terminal EOS removal; semantic mismatch retained"
+    "One restored-model output generated; schema valid after terminal EOS removal; semantic mismatch retained",
+    "Preregistered full-data trial: base9/16 vs trained7/16; do not promote tuned candidate",
+    "Fresh16-case human-review packet on4new fictional topologies, no model predictions"
   ],
   "remaining": [
-    "Reconcile prior/ambiguous Tinker charges; $10 available credits confirmed by Emi",
-    "Complete protected remote training/checkpoint/restore integration with storage bounds",
-    "Prepare stronger untouched evaluation separately from reviewed pilot",
-    "Run budgeted smoke and bounded model comparison",
-    "Integrate real checkpoint into app and record accessible demo",
-    "Resolve code access and obtain final publication approval"
+    "Human review of training/final-review.md before fresh evaluation",
+    "Evaluate retained base candidate on frozen fresh set; do not tune on final predictions",
+    "Integrate chosen model into app and record accessible demo",
+    "Reconcile delayed billing without releasing unverified holds",
+    "Resolve judge code/demo access and final publication approval"
   ],
-  "human_label_input_needed": false,
+  "human_label_input_needed": true,
   "paid_calls_this_checkpoint": "Training and state checkpoint submitted; exact billing pending",
-  "tests_passed": 139,
+  "tests_passed": 143,
   "browser_verification": "Not repeated for green selector; API tests and JavaScript syntax pass",
   "background_worker_active": false,
-  "next_action": "One-time billing reconciliation scheduled for2026-10-07T01:00Z; substantive training/evaluation plan remains separate",
+  "next_action": "Emi review fresh16cases in training/final-review.md; no budget reapproval needed",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {
@@ -35,5 +36,6 @@
     "at": "2026-10-07T01:00:00Z",
     "recurring": false,
     "timeout_seconds": 180
-  }
+  },
+  "project_commitments_usd": 1.6
 }

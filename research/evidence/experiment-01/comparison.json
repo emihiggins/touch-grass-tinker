@@ -1,0 +1,24 @@
+{
+  "scope": "exploratory_reviewed_pilot_not_untouched_final_benchmark",
+  "count": 16,
+  "base_successes": 9,
+  "trained_successes": 7,
+  "paired_wins": [
+    "eval-review-007",
+    "eval-review-011"
+  ],
+  "paired_losses": [
+    "eval-review-004",
+    "eval-review-005",
+    "eval-review-009",
+    "eval-review-016"
+  ],
+  "gold_route_validity_regressions": [],
+  "screening_pass": false,
+  "statistical_superiority_claim": false,
+  "selection_rule": "At least2 additional successes and no gold-route validity regression",
+  "base_intent_exact_matches": 9,
+  "base_valid_schemas": 15,
+  "trained_intent_exact_matches": 7,
+  "trained_valid_schemas": 10
+}
