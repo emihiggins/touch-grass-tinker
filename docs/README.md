@@ -10,6 +10,10 @@
 - [Demo/capture guide](../demo/README.md) and [licenses](../THIRD_PARTY_NOTICES.md).
 - [Contributing](../CONTRIBUTING.md).
 
+## Proposed upgrades
+
+[Mountain map and real-resort research](../research/mountain-map-upgrade.md): source/licensing checks, renderer recommendation and staged acceptance criteria. These upgrades are planned, not current features.
+
 ## Historical planning and evidence
 
 `product/`, `delivery/`, `scratchpad/`, the original architecture proposal, v1 benchmark documentation and dated research reports explain decisions and past checkpoints. Their proposed scope is not an assertion that every feature shipped. Frozen experiment protocols and review packets are preserved rather than rewritten after results.
