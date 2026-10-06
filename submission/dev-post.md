@@ -4,11 +4,12 @@ published: false
 tags: devchallenge, hf26challenge
 ---
 
-*This is a submission draft for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05).*
+*This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)*
 
 > Private working draft, October 6. Not ready to publish: demo/video access, code access and the Tinker fine-tuning result remain open. This note must not disappear until those gaps are resolved. Links below currently point into a private repository.
 
 ## What I Built
+<!-- What does it do, and how does it get people off the screen and into the world?  Who is it for? -->
 
 “Only blue runs, no drag lifts, and get me back in 45 minutes.”
 
@@ -21,18 +22,21 @@ The local prototype can interpret a limited vocabulary, ask the user to confirm 
 The current browser uses a deterministic rules parser. Open-weight-model interpretation is working separately in the evaluation pipeline; the browser is not yet connected to a trained model.
 
 ## Demo
+<!-- Share a deployed link or a video demo. -->
 
 **Pending: a judge-accessible video or deployed demo link.** The current interface runs locally, not at a public URL.
 
 The [recording storyboard](https://github.com/emihiggins/touch-grass-tinker/blob/main/submission/demo-storyboard.md) covers a successful simulated outing, closed lifts and an unsupported request. Existing [desktop](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-desktop.png) and [mobile](https://github.com/emihiggins/touch-grass-tinker/blob/main/research/evidence/ui-mobile.png) images are development captures, not evidence of a public deployment.
 
 ## Code
+<!-- Show us the code!  You can embed a GitHub repo directly into your post. -->
 
 [Project repository](https://github.com/emihiggins/touch-grass-tinker) — currently private. Reviewer access and the license for original code must be resolved before publication. I am not presenting a private link as accessible source code.
 
 The dependency-free planner and saved-result scoring run on Python 3.11 or newer. The optional Tinker/Cookbook environment has separate version locks and a pinned tokenizer. Model weights are not bundled; training and baseline inference use Tinker's hosted service.
 
 ## How I Built It
+<!-- Which open-source AI did you use (open-weight models, agent harnesses, frameworks, local inference), and how is your project built around it? -->
 
 ### Separate language from geometry
 
@@ -64,6 +68,7 @@ The [raw outputs and reports](https://github.com/emihiggins/touch-grass-tinker/t
 All 48 AI-assisted training candidates have now been reviewed by the project owner: 45 explicit label approvals (one remains quarantined for overlap) and three agreed changes awaiting contract implementation. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
 
 ## Why Does Open Innovation Matter?
+<!-- Why does open innovation matter for what you built?  What did it make possible that a closed API wouldn't? -->
 
 The useful freedom here is the ability to inspect and adapt the language component while keeping the planner and evaluator fixed. An open-weight base model makes a task-specific fine-tuning experiment possible; the open-source Cookbook exposes the rendering and loss-mask details that can otherwise hide behind a training API. Inspecting those masks caught supervision on prompt framing, which I corrected before any training.
 
@@ -74,9 +79,15 @@ These are concrete benefits, but not claims that only open models can solve the 
 Nontrivial foundations: [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), [Tinker SDK](https://github.com/thinking-machines-lab/tinker), [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and [OpenStreetMap](https://www.openstreetmap.org/copyright). AI coding assistance was used. Model/software license terms and terrain notices remain separate release checks.
 
 ## My Agent Session
+<!-- Optional, but judges love it.  Save your session with DevRelay and embed it with the agent_session tag (see the challenge page), or link to it. -->
 
 Optional; not exported for this submission yet. Any shared export must be project-scoped and reviewed for private workspace content. No public session link is claimed.
 
 ## Prize Categories
+<!-- Which partner categories are you entering?  List every one that applies, or remove this section. -->
 
 **Intended category: Best Use of Tinker — not yet demonstrated.** The category requires actual fine-tuning and a clear improvement over a baseline. Hosted base-model inference and prompt improvements alone do not satisfy it. Before claiming this category, add the real checkpoint, independently evaluated result and in-app tuned-model trace. If there is no defensible improvement, report that outcome honestly and reassess the category claim.
+
+<!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
+
+<!-- Thanks for participating! -->

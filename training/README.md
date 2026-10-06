@@ -215,3 +215,8 @@ All 48 rows were reviewed by Emi: 41 explicit approvals (including quarantined 0
 ### Review follow-up resolved — 20:27 UTC
 
 Emi agreed to the proposed interpretations for 004/005/032/036/043. Current total: 45 approved v1 labels, including quarantined 009; 44 non-quarantined approvals. Cases 005/013/028 require the agreed soft-avoidance/duration migration; no more clarification is needed from Emi for this batch. Earlier review counts are historical.
+
+
+## Staged spending authorized — 20:31 UTC
+
+Emi approved the recommended **$10 total project Tinker cap**: $1 smoke, $4 for up to two planned configurations plus evaluation, $5 reserve only for a documented justified follow-up. See [canonical authorization](budget-authorization.json); includes prior usage and checkpoint storage, not $10 on top of the old $1. Historical inference-only restrictions above describe earlier checkpoints and are superseded for authorized training scope. Account balance/credits, uncertain earlier charges, data/contract gates and guarded training integration remain unresolved; the combined credits-and-cap preflight gate stays false. No model calls were made to record this authorization. No new approval is needed merely because training is billable within this scope.

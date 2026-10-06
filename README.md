@@ -44,4 +44,4 @@ There are **48 human-reviewed training candidates** and **32 development example
 
 Next: implement the three agreed label changes and version the duration/soft-avoidance contract, then independent evaluation data, protected training/checkpoint integration and separately authorized training. The [submission readiness page](submission/README.md) tracks the article, actual tuned-model evidence, accessible demo/video and code-release gaps. Source-terrain review and the three-reviewed-loop gate also remain open; all real-terrain use is explicitly unreviewed simulation.
 
-Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Earlier inference-only authorization does not authorize training.
+Keep this repository private as requested. Publishing code, a demo or the DEV entry is a separate release step. Emi authorized a **$10 total Tinker cap** (including prior project usage), staged as $1 smoke + $4 experiments + $5 justified reserve. [Budget scope and execution gates](training/budget-authorization.json). This is not permission to publish or evidence that training has run.

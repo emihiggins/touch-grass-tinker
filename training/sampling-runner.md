@@ -1,5 +1,7 @@
 # Sampling runner: live development smoke completed
 
+> Current spending authority: [the $10 staged project budget](budget-authorization.json) supersedes the earlier inference-only cap below. Existing per-run estimation is not project-wide enforcement; shared accounting and prior-charge reconciliation remain required.
+
 `liftlap.sample_runner` uses the pinned SDK adapter and the checksum-verified Cookbook renderer. It never trains a model. It supports base model sampling or an explicit saved model path, uses one sample per request, temperature 0, fixed seed, 512 output tokens, and the same prompt/rendering contract for both adapters.
 
 ## Completed verification

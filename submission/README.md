@@ -18,7 +18,7 @@
 | Honest development result | Rules 14/20, base v1 6/20, base v2 13/20; denominator/failures retained | Recorded, not held-out |
 | Approved corpus | All 48 reviewed by Emi: 45 approvals, one quarantined; 3 agreed changes awaiting implementation. [Review outcomes](../training/human-review.md) | Partial |
 | Independent test | New graph/template families, human review and frozen hashes before model selection | Missing |
-| Real Tinker fine-tuning | Training authorization/credit cap, protected-auth integration, guarded execution and actual checkpoint | Not run |
+| Real Tinker fine-tuning | Budget authorized: $10 total; account billing/credits, protected-auth integration, guarded execution and actual checkpoint remain pending | Not run |
 | Baseline improvement | Same-base, same-renderer independent comparison; report failure if the gain is absent | Missing |
 | Trained model in app | Actual checkpoint-linked request → intent → validated route, explicit live/replay mode | Missing; browser uses rules |
 | Judge-accessible demo | Record and review video or deploy an appropriately bounded demo; verify access without owner login | Storyboard only |
@@ -32,7 +32,7 @@ Agent-session sharing is optional, not a mandatory blocker. Do not delay require
 
 1. Implement the three agreed label changes and version the duration/soft-lift-preference contract; prepare independent evaluation families. Human review is recorded, not pending for all rows.
 2. Integrate protected Tinker training with the existing Cookbook checkpoint lifecycle, bounded spend and uncertain-call recovery. The [local rehearsal](../training/batch-rehearsal.md) is not this integration.
-3. Obtain concrete training authorization only once approved data/config, call limits and current price/budget estimates are reviewable. Existing $1 authorization is inference-only.
+3. Use the [authorized $10 staged budget](../training/budget-authorization.json) after data/config, account billing/credits and bounded accounting checks pass. Authorization is recorded; do not ask again for the same scope. Include prior usage and checkpoint storage.
 4. Run a bounded training/checkpoint/sample smoke, then the preregistered comparison; integrate a real model path in the demo.
 5. Record the demo, finish result-based writing, resolve code/demo access, and seek final publication approval.
 

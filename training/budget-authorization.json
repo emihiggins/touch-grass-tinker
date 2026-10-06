@@ -1,0 +1,58 @@
+{
+  "status": "user_authorized_execution_still_gated",
+  "authorized_by": "Emi Higgins",
+  "authorized_at": "2026-10-06T20:31:13Z",
+  "authorization_text": "okay lets go with that recommendation you just gave me for spending.",
+  "currency": "USD",
+  "total_project_cap_usd": 10,
+  "scope": "Touch Grass Lift-Lap Tinker training, evaluation/inference and checkpoint storage",
+  "includes_prior_project_usage": true,
+  "stages": [
+    {
+      "name": "smoke",
+      "cap_usd": 1,
+      "purpose": "Bounded training, checkpoint, restore and sample smoke; inspect results before experiments"
+    },
+    {
+      "name": "experiments",
+      "cap_usd": 4,
+      "purpose": "Up to two planned training configurations plus evaluation"
+    },
+    {
+      "name": "reserve",
+      "cap_usd": 5,
+      "purpose": "Only a justified follow-up documented before execution; no automatic retries or repeat-until-success experiments"
+    }
+  ],
+  "expected_usage_usd": [
+    2,
+    5
+  ],
+  "known_prior_inference_estimate_usd": 0.00988101,
+  "prior_usage_evidence": "../research/evidence/inference-ledger.json",
+  "prior_invoice_and_rejected_request_charges_verified": false,
+  "account_credits_verified": false,
+  "provider_enforced_cap": false,
+  "enforcement_status": "Authorization record, not executable global budget enforcement. Existing inference runner bounds one run only.",
+  "requirements_before_execution": [
+    "Implement agreed contract and label corrections",
+    "Resolve training eligibility and required independent evaluation gates",
+    "Verify current prices and account billing/credits",
+    "Reconcile prior and ambiguous charges; reserve estimated worst-case pending work before submitting",
+    "Integrate project-wide accounting and bounded training/checkpoint execution"
+  ],
+  "no_authorization_for": [
+    "Paid hosting or domains",
+    "Automatic top-ups or a minimum purchase exceeding the total cap",
+    "Public deployment, repository visibility change or DEV publication"
+  ],
+  "prices_checked_on": "2026-10-06",
+  "price_source": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+  "qwen3_8b_usd_per_million_tokens": {
+    "train": 0.44,
+    "input": 0.195,
+    "output": 0.6
+  },
+  "checkpoint_storage_usd_per_gb_month": 0.1,
+  "policy": "Hard authorization ceiling, not a spending target. Count usage before credit discounts conservatively; account credits do not expand scope. Stop before commitments exceed a stage or total remaining cap. Reconcile uncertain billed work rather than assuming it was free. No reapproval needed within this authorized scope once execution checks pass."
+}
