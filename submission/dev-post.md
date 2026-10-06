@@ -65,7 +65,7 @@ These are development results, not held-out accuracy. Prompt v2 improved nine ca
 
 The [raw outputs and reports](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/base-v2-development) retain the failures. Forty completed inference requests across both prompts have an estimated uncached token cost of $0.00988101; this is not a verified invoice, excludes uncertain rejected-request billing, and is not a training or cost-reduction result.
 
-All 48 AI-assisted training candidates have now been reviewed by the project owner: 45 explicit label approvals (one remains quarantined for overlap) and three agreed changes awaiting contract implementation. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
+All 48 AI-assisted training candidates were reviewed by the project owner. The agreed corrections are implemented in a separate v2 corpus of 47 source-reviewed, deterministically migrated rows; the overlapping case is excluded. Sixteen new evaluation pilot cases await human review. They are not a frozen, untouched final benchmark. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Independent human-reviewed test data, approved training data, actual fine-tuning and a same-base comparison are still required.
 
 ## Why Does Open Innovation Matter?
 <!-- Why does open innovation matter for what you built?  What did it make possible that a closed API wouldn't? -->

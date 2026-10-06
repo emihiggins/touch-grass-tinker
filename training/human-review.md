@@ -1,5 +1,7 @@
 # Human review checkpoint — 2026-10-06
 
+> Follow-through: the agreed changes are now implemented in the [separate v2 corpus](../benchmark/v2/README.md), with 47 reviewed/migrated training rows and 009 excluded. The v1 approvals and requested-change states below are preserved as the original review record.
+
 Emi reviewed all 48 candidates. Exact human notes, timestamp, explicit decision, reviewed-content hash and separately identified agent responses are stored in the canonical `benchmark/training-candidates.jsonl`. The [generated packet](review-packet.md) displays them; regenerating it no longer resets decisions to pending.
 
 - **45 explicit label approvals**, including 011's approval with a question.

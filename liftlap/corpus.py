@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 from scripts.benchmark import validate_intent
 
-SPLITS = {'train_candidate', 'train', 'development', 'development_seed', 'test'}
+SPLITS = {'train_candidate', 'train', 'development', 'development_seed', 'evaluation_candidate', 'test'}
 
 def read(path):
     return [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
@@ -42,7 +42,7 @@ def audit(cases):
         if not text: errors.append(f'empty request: {cid}')
         if text in texts: errors.append(f'duplicate text: {texts[text]} / {cid}')
         texts[text] = cid
-        partition = 'development' if split == 'development_seed' else 'train' if split == 'train_candidate' else split
+        partition = 'test' if split == 'evaluation_candidate' else 'development' if split == 'development_seed' else 'train' if split == 'train_candidate' else split
         for field in ('template_family_id', 'graph_family_id'):
             # Legacy seeds predate template lineage; keep each semantic family together.
             value = c.get(field, c.get('family_id') if field == 'template_family_id' else None)

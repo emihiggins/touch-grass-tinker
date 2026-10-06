@@ -1,0 +1,29 @@
+{
+  "scope": "16_case_review_pilot_not_frozen_or_model_evaluated",
+  "author_independence": "Same project agent authored candidates; independent human review pending. Different wording/topologies alone do not establish statistical independence.",
+  "count": 16,
+  "graph_families": [
+    "fork",
+    "transfer",
+    "oneway",
+    "islands"
+  ],
+  "human_review_complete": false,
+  "model_runs": 0,
+  "gold_selfcheck": "Authored example routes pass independent validator; ready cases match bounded planner outcomes. This is fixture consistency, not model performance.",
+  "sha256": {
+    "evaluation-graphs.json": "5d9cf5cda8175c0b2346ae1f303596ea68e7e2dc52511775c68075a128dd28dd",
+    "evaluation-candidates.jsonl": "6aa21b84fb3c90a0c586b2a656dcd24100b9a3fd9dd9732ad93200c88342c354"
+  },
+  "corpus_audit": {
+    "count": 95,
+    "splits": {
+      "train": 47,
+      "development_seed": 32,
+      "evaluation_candidate": 16
+    },
+    "errors": [],
+    "warnings": [],
+    "scope": "structural_audit_not_independent_label_review_or_test_freeze"
+  }
+}

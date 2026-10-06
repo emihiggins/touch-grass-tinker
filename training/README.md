@@ -220,3 +220,8 @@ Emi agreed to the proposed interpretations for 004/005/032/036/043. Current tota
 ## Staged spending authorized — 20:31 UTC
 
 Emi approved the recommended **$10 total project Tinker cap**: $1 smoke, $4 for up to two planned configurations plus evaluation, $5 reserve only for a documented justified follow-up. See [canonical authorization](budget-authorization.json); includes prior usage and checkpoint storage, not $10 on top of the old $1. Historical inference-only restrictions above describe earlier checkpoints and are superseded for authorized training scope. Account balance/credits, uncertain earlier charges, data/contract gates and guarded training integration remain unresolved; the combined credits-and-cap preflight gate stays false. No model calls were made to record this authorization. No new approval is needed merely because training is billable within this scope.
+
+
+## V2 implementation checkpoint
+
+Agreed semantics are implemented across the local app/planner/scorer, and 47 source-reviewed records are deterministically migrated to v2 (009 excluded). See [current checkpoint](../delivery/v2-checkpoint.md) and [evaluation review packet](evaluation-review-v2.md). Older gate/count statements above describe prior checkpoints. No trained model exists.

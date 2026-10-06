@@ -1,0 +1,29 @@
+{
+  "status": "v2_offline_plan_not_launchable",
+  "model_name": "Qwen/Qwen3-8B",
+  "renderer_name": "qwen3_disable_thinking",
+  "cookbook_candidate_commit": "1c03a20fdda98156ccbec15728c0e2764b5a0bc3",
+  "lora_rank": 16,
+  "batch_size": 1,
+  "epochs": 1,
+  "learning_rate": 0.0001,
+  "max_length": 2048,
+  "train_on_what": "last_assistant_message",
+  "test_size": 0,
+  "shuffle_seed": 20261006,
+  "sampling": {
+    "temperature": 0,
+    "max_tokens": 512
+  },
+  "launch_gates": {
+    "corpus_review_complete": true,
+    "independent_test_frozen": false,
+    "rendered_masks_and_no_truncation_verified": false,
+    "dependency_versions_locked_and_smoked": false,
+    "baseline_recorded": false,
+    "account_access_verified": true,
+    "credits_and_spend_cap_verified": false
+  },
+  "intent_schema_version": 2,
+  "scope": "batch_size_1_for_small_integration_smoke_not_final_training_configuration"
+}

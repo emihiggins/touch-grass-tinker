@@ -44,7 +44,12 @@ def check_request(graph,intent,scenario):
     if not isinstance(intent.get('preferred_difficulties'),list) or not set(intent['preferred_difficulties'])<=set(RANK):raise ValueError('Invalid difficulty preferences')
     if type(intent.get('prefer_variety')) is not bool:raise ValueError('Missing variety preference')
     minutes=intent.get('duration_minutes')
-    if type(minutes) is not int or not 15<=minutes<=240:raise ValueError('Duration out of range')
+    version=intent.get('schema_version',1)
+    if type(version) is not int or version not in (1,2):raise ValueError('Unsupported intent version')
+    if version==2:
+        from scripts.benchmark import validate_intent
+        validate_intent(intent,{n['id'] for n in graph['nodes']})
+    if type(minutes) is not int or not (15<=minutes<=240 if version==1 else 1<=minutes<=1440):raise ValueError('Planner horizon exceeded: v2 supports 1–1440 minutes')
     start=stamp(intent['start_time'])
     nodes={n['id'] for n in graph['nodes']}
     if intent.get('start_place_id') not in nodes or intent.get('finish_place_id') not in nodes:raise ValueError('Unknown place/node')
@@ -90,6 +95,15 @@ def validate_route(graph,intent,scenario,result,*,lab=False):
     if not isinstance(result.get('total_seconds'),(int,float)) or not math.isclose(result['total_seconds'],elapsed,abs_tol=1e-6):return {'valid':False,'reason':'incorrect_total'}
     return {'valid':True,'reason':'valid_simulated_outing','total_seconds':elapsed}
 
+def preference_tradeoffs(graph,intent,result):
+    """Disclose actual soft-preference misses, never claim unavoidable/optimal."""
+    edges={e['id']:e for e in graph['edges']}
+    used=[eid for eid in result['edge_ids'] if edges[eid]['kind']=='lift'
+          and edges[eid]['lift_type'] in intent.get('avoided_lift_types',[])]
+    return [{'kind':'soft_lift_avoidance','edge_ids':used,
+             'lift_types':sorted({edges[eid]['lift_type'] for eid in used}),
+             'message':'This outing uses a lift you preferred to avoid. Hard exclusions remain enforced; alternatives may exist outside this bounded search.'}] if used else []
+
 def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edges=40,max_visits=2):
     edges,start,budget=check_request(graph,intent,scenario)
     if graph.get('review_status')!='synthetic' and not lab:
@@ -98,6 +112,12 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
     adj=collections.defaultdict(list)
     for e in edges.values():adj[e['from']].append(e)
     for values in adj.values():values.sort(key=lambda e:e['id'])
+    reachable={intent['start_place_id']};frontier=list(reachable)
+    while frontier:
+        for edge in adj[frontier.pop()]:
+            if edge['to'] not in reachable:reachable.add(edge['to']);frontier.append(edge['to'])
+    if intent['finish_place_id'] not in reachable:
+        return {'status':'no_route','route':None,'simulated':True,'expanded_states':0,'scope':'finish_unreachable_in_supplied_directed_graph'}
     todo=collections.deque([(intent['start_place_id'],0,[],frozenset(),{})])
     began=time.monotonic();expanded=0;best=None;best_score=None;limited=False;depth_pruned=False
     while todo:
@@ -107,7 +127,8 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
             unique=[edges[eid] for eid in sorted(set(path)) if edges[eid]['kind']=='piste']
             preferred=sum(e['length_m'] for e in unique if e['difficulty'] in intent['preferred_difficulties'])
             ski_distance = sum(e['length_m'] for e in unique) if intent['prefer_variety'] else sum(edges[eid]['length_m'] for eid in path if edges[eid]['kind']=='piste')
-            score=(preferred,ski_distance,-elapsed)
+            avoided=sum(1 for eid in path if edges[eid]['kind']=='lift' and edges[eid]['lift_type'] in intent.get('avoided_lift_types',[]))
+            score=(-avoided,preferred,ski_distance,-elapsed) if intent.get('schema_version')==2 else (preferred,ski_distance,-elapsed)
             if best_score is None or score>best_score:
                 best_score=score;best={'edge_ids':path,'total_seconds':elapsed,'graph_hash':digest(graph),'scenario_hash':digest(scenario)}
         source_count=sum(len(edges[eid].get('source_edge_ids',[eid])) for eid in path)
@@ -128,5 +149,5 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
     if best is not None:
         verification=validate_route(graph,intent,scenario,best,lab=lab)
         if not verification['valid']:raise RuntimeError('Planner produced invalid candidate: '+verification['reason'])
-        return {'status':'ok','route':best,'simulated':True,'lab':lab,'search_complete':not limited and not depth_pruned,'expanded_states':expanded,'optimality_claim':False,'validation':verification}
+        return {'status':'ok','route':best,'simulated':True,'lab':lab,'search_complete':not limited and not depth_pruned,'expanded_states':expanded,'optimality_claim':False,'validation':verification,'preference_tradeoffs':preference_tradeoffs(graph,intent,best)}
     return {'status':'search_limit' if limited or depth_pruned else 'no_route','route':None,'simulated':True,'expanded_states':expanded,'scope':'bounded_reference_search'}

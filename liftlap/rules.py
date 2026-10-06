@@ -4,10 +4,12 @@ from scripts.benchmark import REQUIRED
 
 NUM={'one':1,'two':2,'three':3,'five':5,'fifteen':15,'thirty':30,'forty-five':45,'sixty':60,'ninety':90,'an':1,'a':1}
 
-def interpret(text,context,catalog):
+def interpret(text,context,catalog,*,schema_version=1):
+    if type(schema_version) is not int or schema_version not in (1,2):raise ValueError("Unknown intent version")
     if not isinstance(text,str) or len(text)>2000:raise ValueError('Request must be at most 2000 characters')
-    x={'schema_version':1,'status':'ready',**{f:context.get(f) for f in REQUIRED},'excluded_lift_types':[],
+    x={'schema_version':schema_version,'status':'ready',**{f:context.get(f) for f in REQUIRED},'excluded_lift_types':[],
        'preferred_difficulties':[],'prefer_variety':False,'clarification_fields':[],'unsupported_preferences':[]}
+    if schema_version==2:x['avoided_lift_types']=[]
     working=text.lower().strip();recognized=[]
     def consume(pattern,action):
         nonlocal working
@@ -19,11 +21,16 @@ def interpret(text,context,catalog):
     # Unsupported domain capabilities are explicit, including extra unfamiliar wording.
     for pattern,code in [(r'\b(?:shortest|live|current) queues(?: right now)?\b','live_queue_times'),(r'\bfreshly groomed(?: pistes)?(?: today)?\b','live_grooming'),(r'\boff[- ]piste(?: descent)?\b','off_piste'),(r'\b(?:quiet|uncrowded)(?: pistes)?\b','crowding')]:
         consume(pattern,lambda m,c=code:x['unsupported_preferences'].append(c))
-    consume(r'\b(?:do not|don\x27t) need to avoid (?:gondolas|drag lifts)\b',lambda m:None)
-    consume(r'\b(?:no|avoid(?: all)?|without) surface lifts(?:,? including carpets)?\b',lambda m:exclude(['platter','rope-tow','t-bar','magic-carpet']))
-    consume(r'\b(?:no|avoid|without) drag lifts\b',lambda m:exclude(['platter','rope-tow','t-bar']))
-    for phrase,typ in [('t-bars','t-bar'),('gondolas','gondola'),('cable cars','cable-car'),('chairlifts','chairlift'),('carpets','magic-carpet')]:
-        consume(r'\b(?:no|skip|avoid|without) '+phrase+r'\b',lambda m,t=typ:exclude([t]))
+    consume(r"\b(?:do not|don't) need (?:you )?to avoid (?:gondolas|drag lifts)\b",lambda m:None)
+    def lift_rule(m,values):
+        if schema_version==2 and m.group(0).lower().startswith('avoid'):
+            x['avoided_lift_types']=sorted(set(x['avoided_lift_types'])|set(values))
+        else:exclude(values)
+    consume(r'\b(?:no|avoid(?: all)?|without) surface lifts(?:,? including carpets)?\b',lambda m:lift_rule(m,['platter','rope-tow','t-bar','magic-carpet']))
+    consume(r'\b(?:no|avoid|without|skip all) drag lifts\b',lambda m:lift_rule(m,['platter','rope-tow','t-bar']))
+    for phrase,typ in [('t-bars','t-bar'),('gondolas','gondola'),('cable cars','cable-car'),('chairlifts','chairlift'),('chairs','chairlift'),('rope tows','rope-tow'),('carpets','magic-carpet')]:
+        consume(r'\b(?:no|skip|avoid|without) '+phrase+r'\b',lambda m,t=typ:lift_rule(m,[t]))
+    if schema_version==2:x['avoided_lift_types']=sorted(set(x['avoided_lift_types'])-set(x['excluded_lift_types']))
     hard=[]
     consume(r'\b(?:only|just) (blue|red|black)(?: pistes| runs|s)?\b',lambda m:hard.append(m.group(1)))
     consume(r'\b(blue|red|black)(?: pistes| runs|s)? only\b',lambda m:hard.append(m.group(1)))
@@ -55,7 +62,7 @@ def interpret(text,context,catalog):
         if label in aliases:x[field]=aliases[label]
         else:x[field]=None;x['clarification_fields'].append(field)
     consume(r'\b(start|finish) at ([\w -]+?)(?=\s+and\s+|[.,;]|$)',place)
-    if x['duration_minutes'] is not None and not 15<=x['duration_minutes']<=240:x['duration_minutes']=None
+    if x['duration_minutes'] is not None and (not 15<=x['duration_minutes']<=240 if schema_version==1 else x['duration_minutes']<=0):x['duration_minutes']=None
     for field in REQUIRED:
         if x[field] is None:x['clarification_fields'].append(field)
     # Only generic politeness/framing can be ignored. Other residuals force abstention.
@@ -64,4 +71,4 @@ def interpret(text,context,catalog):
     if residue:x['unsupported_preferences'].append('unparsed_request')
     for k in ['excluded_lift_types','preferred_difficulties','clarification_fields','unsupported_preferences']:x[k]=sorted(set(x[k]))
     x['status']='unsupported' if x['unsupported_preferences'] else 'clarify' if x['clarification_fields'] else 'ready'
-    return {'intent':x,'adapter':'rules-v1','recognized':recognized,'unparsed':residue}
+    return {'intent':x,'adapter':'rules-v'+str(schema_version),'recognized':recognized,'unparsed':residue}

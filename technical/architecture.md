@@ -1,5 +1,7 @@
 # Proposed implementation architecture
 
+> Current intent changes: [version 2 contract](intent-v2.md). The original v1 design below is retained for provenance; implementation status is in [v2 checkpoint](../delivery/v2-checkpoint.md).
+
 Status: production design; a limited [offline reference implementation](../delivery/offline-checkpoint.md) now runs. Data findings live in [research](../research/feasibility.md). Implement the [requirements](../product/requirements.md) and [evaluation protocol](../delivery/evaluation.md).
 
 ## Choices

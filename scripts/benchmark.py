@@ -8,16 +8,18 @@ from pathlib import Path
 FIELDS = {'schema_version', 'status', 'start_place_id', 'finish_place_id', 'start_time',
           'duration_minutes', 'hard_max_difficulty', 'excluded_lift_types',
           'preferred_difficulties', 'prefer_variety', 'clarification_fields', 'unsupported_preferences'}
-LISTS = {'excluded_lift_types', 'preferred_difficulties', 'clarification_fields', 'unsupported_preferences'}
+FIELDS_V2 = FIELDS | {'avoided_lift_types'}
+LISTS = {'avoided_lift_types', 'excluded_lift_types', 'preferred_difficulties', 'clarification_fields', 'unsupported_preferences'}
 LIFTS = {'chairlift', 'gondola', 'cable-car', 't-bar', 'platter', 'rope-tow', 'magic-carpet'}
 DIFFICULTIES = {'blue', 'red', 'black'}
 REQUIRED = {'start_place_id', 'finish_place_id', 'start_time', 'duration_minutes', 'hard_max_difficulty'}
 
 def validate_intent(x, place_ids):
-    if not isinstance(x, dict) or set(x) != FIELDS:
-        raise ValueError('Intent fields do not match contract')
-    if type(x['schema_version']) is not int or x['schema_version'] != 1:
+    if not isinstance(x, dict) or type(x.get('schema_version')) is not int or x['schema_version'] not in (1,2):
         raise ValueError('Invalid schema version')
+    version=x['schema_version']
+    if set(x) != (FIELDS if version==1 else FIELDS_V2):
+        raise ValueError('Intent fields do not match contract')
     if x['status'] not in {'ready', 'clarify', 'unsupported'}:
         raise ValueError('Invalid status')
     for f in ['start_place_id', 'finish_place_id']:
@@ -31,18 +33,20 @@ def validate_intent(x, place_ids):
         except (ValueError, TypeError):
             raise ValueError('Invalid start time')
     minutes = x['duration_minutes']
-    if minutes is not None and (type(minutes) is not int or not 15 <= minutes <= 240):
+    if minutes is not None and (type(minutes) is not int or (not 15 <= minutes <= 240 if version==1 else minutes<=0)):
         raise ValueError('Invalid duration')
     if x['hard_max_difficulty'] is not None and x['hard_max_difficulty'] not in DIFFICULTIES:
         raise ValueError('Invalid difficulty')
     if type(x['prefer_variety']) is not bool:
         raise ValueError('Invalid variety flag')
-    for f in LISTS:
+    for f in LISTS & set(x):
         v = x[f]
         if not isinstance(v, list) or any(not isinstance(t, str) for t in v) or len(v) != len(set(v)):
             raise ValueError('Invalid unique string list')
     if not set(x['excluded_lift_types']) <= LIFTS:
         raise ValueError('Unknown lift type')
+    if version==2 and (not set(x['avoided_lift_types']) <= LIFTS or set(x['avoided_lift_types']) & set(x['excluded_lift_types'])):
+        raise ValueError('Invalid or conflicting soft lift preferences')
     if not set(x['preferred_difficulties']) <= DIFFICULTIES:
         raise ValueError('Invalid preference')
     if not set(x['clarification_fields']) <= REQUIRED:
@@ -87,7 +91,7 @@ def score(cases, predictions):
         try:
             predicted = validate_intent(lookup.get(c['id']), {p['id'] for p in c['catalog']})
             a, b = normalize(predicted), normalize(c['gold_intent'])
-            mismatch = sorted(k for k in FIELDS if a[k] != b[k])
+            mismatch = sorted(k for k in set(a)|set(b) if a.get(k) != b.get(k))
             rows.append({'id': c['id'], 'valid': True, 'exact_match': not mismatch, 'mismatched_fields': mismatch})
         except (ValueError, TypeError, KeyError):
             rows.append({'id': c['id'], 'valid': False, 'exact_match': False, 'mismatched_fields': ['invalid_or_missing_output']})

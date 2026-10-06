@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-06",
+  "scope": "offline_v2_implementation_no_new_inference_or_training",
+  "tests": {
+    "optional_passed": 117,
+    "core_passed": 103,
+    "core_optional_skipped": 14
+  },
+  "browser": {
+    "desktop_width": 1280,
+    "mobile_width": 360,
+    "original_smoke_passed": true,
+    "v2_durations": [
+      10,
+      300
+    ],
+    "soft_ranking": true,
+    "tradeoff_visible": true,
+    "tradeoff_print_visible": true,
+    "hard_exclusions": true,
+    "mobile_overflow": false,
+    "page_errors": [],
+    "mobile_screenshot_visually_inspected": true,
+    "full_print_legibility_audit": false
+  },
+  "billing": {
+    "endpoint_accessible": true,
+    "account_credits_verified": false,
+    "same_day_project_cost_reconciled": false,
+    "scope": "read_only_visibility"
+  },
+  "hashes": {
+    "liftlap/core.py": "8a1063f9c01a2c244725c567c30bf3e9bfa621dc62282b1e0e97d9fa64c04bc4",
+    "liftlap/rules.py": "2604b60d814e3d9f702a995813f69e3f975a8557f71ede11f0af46417887100d",
+    "scripts/benchmark.py": "31c8b8cbf3c77b97b6ae8e701afce1e78d9c81eb72df2437f3ce477cb6996182",
+    "liftlap/server.py": "f062c8f68eb5593795c56fc17308c45ec4562bf5dce20bafaa8af3c671a11752",
+    "liftlap/evaluation_v2.py": "f9200400be7a7ef8294a3dad1ed22c5c95ed18c5187ee0b6569234a799e6f627",
+    "web/app.js": "84ee659fbe2fae2a4b5ac361ed5e83a253453aeee3d95e3b0ba2858f0eaf44e9",
+    "web/index.html": "39bc91ed4c4a97dc249e475977ca6123f905122f03bfb1ae5e97f5d2b68606ca",
+    "benchmark/v2/training-reviewed.jsonl": "d33aa6d298cbcc931785643456acb0330228b4251b3379c46327979da3c692f4",
+    "benchmark/v2/evaluation-candidates.jsonl": "6aa21b84fb3c90a0c586b2a656dcd24100b9a3fd9dd9732ad93200c88342c354",
+    "benchmark/v2/evaluation-graphs.json": "5d9cf5cda8175c0b2346ae1f303596ea68e7e2dc52511775c68075a128dd28dd"
+  }
+}

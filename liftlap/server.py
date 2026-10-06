@@ -6,14 +6,14 @@ from urllib.parse import urlsplit,parse_qs
 from scripts.benchmark import validate_intent
 from . import fixtures
 from .compact import compact,expand_route
-from .core import plan,validate_route
+from .core import plan,validate_route,preference_tradeoffs
 from .rules import interpret
 
 ROOT=Path(__file__).resolve().parents[1]
 
 def context(mode,minutes=60,difficulty='blue'):
     if mode not in {'synthetic','alpendorf'}:raise ValueError('Unknown terrain')
-    if type(minutes) is not int or not 15<=minutes<=240:raise ValueError('Minutes must be 15–240')
+    if type(minutes) is not int or not 1<=minutes<=1440:raise ValueError('Demo planning horizon is 1–1440 minutes')
     if difficulty not in {'blue','red','black'}:raise ValueError('Unknown difficulty')
     g=fixtures.graph() if mode=='synthetic' else json.loads((ROOT/'data/terrain/alpendorf-lab.json').read_text())
     if mode=='synthetic':
@@ -30,7 +30,7 @@ def context(mode,minutes=60,difficulty='blue'):
 def handle_api(path,payload):
     g,ui,catalog=context(payload.get('terrain','synthetic'),payload.get('minutes',60),payload.get('difficulty','blue'))
     if path=='/api/interpret':
-        return interpret(payload.get('text',''),ui,catalog)
+        return interpret(payload.get('text',''),ui,catalog,schema_version=2)
     if path!='/api/plan':raise ValueError('Unknown endpoint')
     i=payload['intent'];validate_intent(i,{p['id'] for p in catalog})
     if i['status']!='ready':return {'status':i['status'],'route':None}
@@ -47,7 +47,7 @@ def handle_api(path,payload):
     r=plan(cg,i,cs,lab=lab)
     if r['status']=='ok':
         expanded=expand_route(g,s,cg,r['route'],i,lab=lab)
-        r['route']=expanded;r['validation']=validate_route(g,i,s,expanded,lab=lab)
+        r['route']=expanded;r['preference_tradeoffs']=preference_tradeoffs(g,i,expanded);r['validation']=validate_route(g,i,s,expanded,lab=lab)
         edges={e['id']:e for e in g['edges']}
         r['steps']=[]
         labels={'chair':'Summit chairlift','tow':'Practice rope tow','blue':'Blue descent','red':'Red descent','practice':'Practice piste'}
@@ -56,7 +56,7 @@ def handle_api(path,payload):
             if r['steps'] and tuple(r['steps'][-1][k] for k in ('name','kind','difficulty'))==key:
                 r['steps'][-1]['seconds']+=e['duration_s']
             else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s']})
-    r['terrain_review']=g['review_status'];r['adapter']='rules-v1';r['disclosure']='Simulation only. No Tinker model, live conditions or field verification. Durations are assumptions.'
+    r['terrain_review']=g['review_status'];r['adapter']='rules-v'+str(i['schema_version']);r['disclosure']='Simulation only. No Tinker model, live conditions or field verification. Durations are assumptions.'
     return r
 
 class Handler(BaseHTTPRequestHandler):

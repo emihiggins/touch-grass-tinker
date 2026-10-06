@@ -1,0 +1,594 @@
+{
+  "scope": "offline_candidate_batch_and_cursor_rehearsal_not_training",
+  "launch_authorized": false,
+  "provider_calls": 0,
+  "checkpoint_loaded": false,
+  "plan_sha256": "c39a7d193642727742e7a75aa5ad4dae8093a46264d87df18b96598dce67fb14",
+  "provenance": {
+    "cases": "d33aa6d298cbcc931785643456acb0330228b4251b3379c46327979da3c692f4",
+    "config": "3a70147722a431ef7be03e3f96a1f270c8806d4c6bb42304f1384da1c883e4dd",
+    "prompt": "bcd6a7daca8b11b90f410d27a7f68fa62e8cbd10563aaeea963ec6dcc3e3b400",
+    "tokenizer_manifest": "16c75114421ae557b7a697afaa87698ceba3ec10f581337cc223a1b441ecd54f",
+    "environment_lock": "7d9696ca123f2882902af194528006aed58e06db6ffd83340ad6bb989215592b",
+    "rehearsal_code": "3c1a6087ec5c16ceed7222919d5379a20477f0bdf960c850066854f308b84dab",
+    "render_code": "0f1d21c6bf8d10538a5b1c2e86680617f1413fa3fcfd341f98911ff7baecef6e"
+  },
+  "case_count": 47,
+  "batch_size": 1,
+  "epochs": 1,
+  "steps": 47,
+  "dropped_rows": 0,
+  "epoch_seed_policy": "Cookbook epoch index",
+  "configured_shuffle_seed_used": false,
+  "candidate_labels_human_approved": true,
+  "batches": [
+    {
+      "step": 0,
+      "epoch": 0,
+      "batch": 0,
+      "ids": [
+        "train-candidate-005"
+      ],
+      "datum_sha256": [
+        "3dd31d8983478a64880397aefc20f815800bb46813e35cf02fc14baad44a0d25"
+      ]
+    },
+    {
+      "step": 1,
+      "epoch": 0,
+      "batch": 1,
+      "ids": [
+        "train-candidate-020"
+      ],
+      "datum_sha256": [
+        "12098e9f738e731e731659d51a43a14d8b9af2424e2f51061bd3133c68528413"
+      ]
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "batch": 2,
+      "ids": [
+        "train-candidate-003"
+      ],
+      "datum_sha256": [
+        "d6706f7136396a208e367efdd19b5e9864cacc3ccbbe286ed59c497dfb7b4874"
+      ]
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "batch": 3,
+      "ids": [
+        "train-candidate-044"
+      ],
+      "datum_sha256": [
+        "c8cb6451e562f578f2e2c3c8d78633a81a55464a0aa09cee2e4d091f039020fc"
+      ]
+    },
+    {
+      "step": 4,
+      "epoch": 0,
+      "batch": 4,
+      "ids": [
+        "train-candidate-023"
+      ],
+      "datum_sha256": [
+        "53bfedc06c28a9254d121ba62402b1ddff7f17c44983b73b981c3ebe19b581ba"
+      ]
+    },
+    {
+      "step": 5,
+      "epoch": 0,
+      "batch": 5,
+      "ids": [
+        "train-candidate-036"
+      ],
+      "datum_sha256": [
+        "482492cdfb132718cf577733998c5ee48e1305a72c02c837f69ad821b1105d2c"
+      ]
+    },
+    {
+      "step": 6,
+      "epoch": 0,
+      "batch": 6,
+      "ids": [
+        "train-candidate-022"
+      ],
+      "datum_sha256": [
+        "b52dcc3dcd1c7d7d17652d6862aa9af369ffad0b8c1a8f7d1c57a278b63faedb"
+      ]
+    },
+    {
+      "step": 7,
+      "epoch": 0,
+      "batch": 7,
+      "ids": [
+        "train-candidate-013"
+      ],
+      "datum_sha256": [
+        "36c05d9639400a822161723b8273df1df5e42b712efa28387eb25abff878ec60"
+      ]
+    },
+    {
+      "step": 8,
+      "epoch": 0,
+      "batch": 8,
+      "ids": [
+        "train-candidate-002"
+      ],
+      "datum_sha256": [
+        "51e24e4a11e07e1d5543399c0de332356f612f7c099081d2d08b5ce31e7b8ddc"
+      ]
+    },
+    {
+      "step": 9,
+      "epoch": 0,
+      "batch": 9,
+      "ids": [
+        "train-candidate-021"
+      ],
+      "datum_sha256": [
+        "f4bc2ef226971f8fabd43b1f04334fcfe24604ca772f8641f138fda05b194801"
+      ]
+    },
+    {
+      "step": 10,
+      "epoch": 0,
+      "batch": 10,
+      "ids": [
+        "train-candidate-012"
+      ],
+      "datum_sha256": [
+        "039dcbe4f1ff92af55710002c083e5012e0797ae08480848ae8c77de14a1e780"
+      ]
+    },
+    {
+      "step": 11,
+      "epoch": 0,
+      "batch": 11,
+      "ids": [
+        "train-candidate-024"
+      ],
+      "datum_sha256": [
+        "67a9906b6a52b0c84021de207b2ba67e7b56e3f63c44e90f22bf673efbe3c412"
+      ]
+    },
+    {
+      "step": 12,
+      "epoch": 0,
+      "batch": 12,
+      "ids": [
+        "train-candidate-030"
+      ],
+      "datum_sha256": [
+        "a9cbebf6abc863f210deb06c1f06db004b5a6a9778bedb446500d7722d14e138"
+      ]
+    },
+    {
+      "step": 13,
+      "epoch": 0,
+      "batch": 13,
+      "ids": [
+        "train-candidate-007"
+      ],
+      "datum_sha256": [
+        "e964807553d783385b0925ade94eb34f0606ee8cee826f527ea44b4ca36e2393"
+      ]
+    },
+    {
+      "step": 14,
+      "epoch": 0,
+      "batch": 14,
+      "ids": [
+        "train-candidate-032"
+      ],
+      "datum_sha256": [
+        "fa79c1b772461c812a9dd6ba3e71dcb5ada24667d44e616b59fc4d555a6f881c"
+      ]
+    },
+    {
+      "step": 15,
+      "epoch": 0,
+      "batch": 15,
+      "ids": [
+        "train-candidate-004"
+      ],
+      "datum_sha256": [
+        "c807d67d1ed4972d6792a2a6c1aa2e07e0dfbd951bcba0ff0c1d7cd5274615d8"
+      ]
+    },
+    {
+      "step": 16,
+      "epoch": 0,
+      "batch": 16,
+      "ids": [
+        "train-candidate-038"
+      ],
+      "datum_sha256": [
+        "a286b8de9f008d7aaad1fd7b468967bf2c19eb00dab071d7769d39bedfcd9bab"
+      ]
+    },
+    {
+      "step": 17,
+      "epoch": 0,
+      "batch": 17,
+      "ids": [
+        "train-candidate-042"
+      ],
+      "datum_sha256": [
+        "a271bfbded21634eab829da70fa07f334f7f6a4437cb33fa38cba90fa3b66961"
+      ]
+    },
+    {
+      "step": 18,
+      "epoch": 0,
+      "batch": 18,
+      "ids": [
+        "train-candidate-018"
+      ],
+      "datum_sha256": [
+        "86bd910c348b1a32531b81db2f99873f3db635d53f41bb38b59e506fbebb03f7"
+      ]
+    },
+    {
+      "step": 19,
+      "epoch": 0,
+      "batch": 19,
+      "ids": [
+        "train-candidate-037"
+      ],
+      "datum_sha256": [
+        "9dbdb3063e08932778103407f8ec5ff9d21e409a6d4aa4f83b7a6540bc6c114b"
+      ]
+    },
+    {
+      "step": 20,
+      "epoch": 0,
+      "batch": 20,
+      "ids": [
+        "train-candidate-046"
+      ],
+      "datum_sha256": [
+        "8b5d973397b246eb60adc101328364d00fa44ddb89752784443a78ab473463e0"
+      ]
+    },
+    {
+      "step": 21,
+      "epoch": 0,
+      "batch": 21,
+      "ids": [
+        "train-candidate-025"
+      ],
+      "datum_sha256": [
+        "5157a4ca8938ada9cc87f9934a641e84695b51b483301667ed4562b8d6a94ace"
+      ]
+    },
+    {
+      "step": 22,
+      "epoch": 0,
+      "batch": 22,
+      "ids": [
+        "train-candidate-029"
+      ],
+      "datum_sha256": [
+        "afcbff185b7825cbab45dbcad2f6b46d07a94aa5350009ed2fd1cf760f0e700c"
+      ]
+    },
+    {
+      "step": 23,
+      "epoch": 0,
+      "batch": 23,
+      "ids": [
+        "train-candidate-010"
+      ],
+      "datum_sha256": [
+        "38348b55963b08140943ebbf4329d4eaa1bf723bc3212a1a06e8327649c8cf75"
+      ]
+    },
+    {
+      "step": 24,
+      "epoch": 0,
+      "batch": 24,
+      "ids": [
+        "train-candidate-039"
+      ],
+      "datum_sha256": [
+        "7d36cb3e2c070477703e99173111f5ca25a48d57884423fbe976cb5fda812fd5"
+      ]
+    },
+    {
+      "step": 25,
+      "epoch": 0,
+      "batch": 25,
+      "ids": [
+        "train-candidate-047"
+      ],
+      "datum_sha256": [
+        "45ea6516bd939c7ab1ee3657042fa97674f88c38366ba94050e8871af2d0d290"
+      ]
+    },
+    {
+      "step": 26,
+      "epoch": 0,
+      "batch": 26,
+      "ids": [
+        "train-candidate-019"
+      ],
+      "datum_sha256": [
+        "55d8c59eb61c37e40ff909d0b2476b119c501081689ee2dff1aefb60fba1979e"
+      ]
+    },
+    {
+      "step": 27,
+      "epoch": 0,
+      "batch": 27,
+      "ids": [
+        "train-candidate-001"
+      ],
+      "datum_sha256": [
+        "43d6796abced45865a829eb99c2408a0bf58c1355463a97252515a6ec02d990f"
+      ]
+    },
+    {
+      "step": 28,
+      "epoch": 0,
+      "batch": 28,
+      "ids": [
+        "train-candidate-026"
+      ],
+      "datum_sha256": [
+        "7b37d620d98b3d31327e19e47143cf29bf79f39e39a62fcaf800d15a0d06cb3d"
+      ]
+    },
+    {
+      "step": 29,
+      "epoch": 0,
+      "batch": 29,
+      "ids": [
+        "train-candidate-027"
+      ],
+      "datum_sha256": [
+        "d54da3c04de0c5516a88cb226813d59651da55a7ecd3fd1b31c3868146168547"
+      ]
+    },
+    {
+      "step": 30,
+      "epoch": 0,
+      "batch": 30,
+      "ids": [
+        "train-candidate-034"
+      ],
+      "datum_sha256": [
+        "0a6ef1f8a84508c417749779b1d6788c28a25843c3c722626ea3ffbb789da909"
+      ]
+    },
+    {
+      "step": 31,
+      "epoch": 0,
+      "batch": 31,
+      "ids": [
+        "train-candidate-028"
+      ],
+      "datum_sha256": [
+        "02bf4f948c50a0035c8f92f0b501d0a887d765b4921479c542186dabda50df02"
+      ]
+    },
+    {
+      "step": 32,
+      "epoch": 0,
+      "batch": 32,
+      "ids": [
+        "train-candidate-045"
+      ],
+      "datum_sha256": [
+        "351c8c584197ef0e0b50fee5f1bc0705078a2d8ef2e24fce461ce8593178e3b2"
+      ]
+    },
+    {
+      "step": 33,
+      "epoch": 0,
+      "batch": 33,
+      "ids": [
+        "train-candidate-011"
+      ],
+      "datum_sha256": [
+        "6b57eb770f671786567de4790e5861ce85c6a5e61cce6535f4d3aa644ea99ee2"
+      ]
+    },
+    {
+      "step": 34,
+      "epoch": 0,
+      "batch": 34,
+      "ids": [
+        "train-candidate-040"
+      ],
+      "datum_sha256": [
+        "fb064ee40350af28d04a2458a496a54d01fce9778296a692e2aea38b7bfd968b"
+      ]
+    },
+    {
+      "step": 35,
+      "epoch": 0,
+      "batch": 35,
+      "ids": [
+        "train-candidate-041"
+      ],
+      "datum_sha256": [
+        "9a90963d3c12fad6f20e4fa37e7b7445a2f946b2cd5d65627229219f183a337b"
+      ]
+    },
+    {
+      "step": 36,
+      "epoch": 0,
+      "batch": 36,
+      "ids": [
+        "train-candidate-015"
+      ],
+      "datum_sha256": [
+        "b0b73d886edafd4e8c3e6a8ec1fe6389c4ad0d76695521a695b1646f89b305f7"
+      ]
+    },
+    {
+      "step": 37,
+      "epoch": 0,
+      "batch": 37,
+      "ids": [
+        "train-candidate-014"
+      ],
+      "datum_sha256": [
+        "e4496c05e2ec323a5a696cd82adcf00482beb5b7e36472b2dfd37485aa16e3c0"
+      ]
+    },
+    {
+      "step": 38,
+      "epoch": 0,
+      "batch": 38,
+      "ids": [
+        "train-candidate-008"
+      ],
+      "datum_sha256": [
+        "99069aa587cfb62cd29d68c4f9dad65fb454af50663616b4c6c82d7f2461197d"
+      ]
+    },
+    {
+      "step": 39,
+      "epoch": 0,
+      "batch": 39,
+      "ids": [
+        "train-candidate-048"
+      ],
+      "datum_sha256": [
+        "eb6535e6214e3179ec5986cf1a9139cb2728bf7bffa5b1403d60db553fce0fec"
+      ]
+    },
+    {
+      "step": 40,
+      "epoch": 0,
+      "batch": 40,
+      "ids": [
+        "train-candidate-006"
+      ],
+      "datum_sha256": [
+        "43c627718e4e4cde00021b6c35997d08a1d298a3f7662aed2b171ed7f093b266"
+      ]
+    },
+    {
+      "step": 41,
+      "epoch": 0,
+      "batch": 41,
+      "ids": [
+        "train-candidate-016"
+      ],
+      "datum_sha256": [
+        "cf2ef40a44c3bec6941119848eb295235c12b9d79cecd8a058553cbdca85e04c"
+      ]
+    },
+    {
+      "step": 42,
+      "epoch": 0,
+      "batch": 42,
+      "ids": [
+        "train-candidate-031"
+      ],
+      "datum_sha256": [
+        "84f92d849b55de3169cef76e2576f0499dfa416e575065dc5c09c4bff7a8bf0f"
+      ]
+    },
+    {
+      "step": 43,
+      "epoch": 0,
+      "batch": 43,
+      "ids": [
+        "train-candidate-043"
+      ],
+      "datum_sha256": [
+        "69c0908fde0aac83aeceedc3feb166fd1621efb61bf0a881e7136d381c7ad40d"
+      ]
+    },
+    {
+      "step": 44,
+      "epoch": 0,
+      "batch": 44,
+      "ids": [
+        "train-candidate-035"
+      ],
+      "datum_sha256": [
+        "06d246391e27a5af13880fa6dc7896a04c66571c4512b77769e8cd8d0ea03a6b"
+      ]
+    },
+    {
+      "step": 45,
+      "epoch": 0,
+      "batch": 45,
+      "ids": [
+        "train-candidate-017"
+      ],
+      "datum_sha256": [
+        "e41ab401cdf973215fd7e542071d1aee3dd2b07285213e5e99c6440c087e432b"
+      ]
+    },
+    {
+      "step": 46,
+      "epoch": 0,
+      "batch": 46,
+      "ids": [
+        "train-candidate-033"
+      ],
+      "datum_sha256": [
+        "83e8defbe027d828bf66fe93e3331836a23ef9dca1911aad9b1f5802270937e9"
+      ]
+    }
+  ],
+  "resume_from_step": 0,
+  "remaining_steps": 47,
+  "remaining_ids": [
+    "train-candidate-005",
+    "train-candidate-020",
+    "train-candidate-003",
+    "train-candidate-044",
+    "train-candidate-023",
+    "train-candidate-036",
+    "train-candidate-022",
+    "train-candidate-013",
+    "train-candidate-002",
+    "train-candidate-021",
+    "train-candidate-012",
+    "train-candidate-024",
+    "train-candidate-030",
+    "train-candidate-007",
+    "train-candidate-032",
+    "train-candidate-004",
+    "train-candidate-038",
+    "train-candidate-042",
+    "train-candidate-018",
+    "train-candidate-037",
+    "train-candidate-046",
+    "train-candidate-025",
+    "train-candidate-029",
+    "train-candidate-010",
+    "train-candidate-039",
+    "train-candidate-047",
+    "train-candidate-019",
+    "train-candidate-001",
+    "train-candidate-026",
+    "train-candidate-027",
+    "train-candidate-034",
+    "train-candidate-028",
+    "train-candidate-045",
+    "train-candidate-011",
+    "train-candidate-040",
+    "train-candidate-041",
+    "train-candidate-015",
+    "train-candidate-014",
+    "train-candidate-008",
+    "train-candidate-048",
+    "train-candidate-006",
+    "train-candidate-016",
+    "train-candidate-031",
+    "train-candidate-043",
+    "train-candidate-035",
+    "train-candidate-017",
+    "train-candidate-033"
+  ]
+}

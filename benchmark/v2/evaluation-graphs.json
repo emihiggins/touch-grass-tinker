@@ -1,0 +1,455 @@
+{
+  "fork": {
+    "graph": {
+      "schema_version": 1,
+      "id": "evaluation-fork-v2",
+      "timezone": "Europe/Vienna",
+      "difficulty_convention": "AT",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "east"
+        },
+        {
+          "id": "hub"
+        },
+        {
+          "id": "west"
+        }
+      ],
+      "edges": [
+        {
+          "id": "gate",
+          "from": "base",
+          "to": "hub",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "gondola",
+          "duration_s": 180,
+          "length_m": 360,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "chair",
+          "from": "base",
+          "to": "hub",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 300,
+          "length_m": 600,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "left",
+          "from": "hub",
+          "to": "west",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 180,
+          "length_m": 360,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "right",
+          "from": "hub",
+          "to": "east",
+          "kind": "piste",
+          "difficulty": "red",
+          "lift_type": null,
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "return-west",
+          "from": "west",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "return-east",
+          "from": "east",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "review-fork",
+      "simulated": true,
+      "date": "2027-02-20",
+      "graph_hash": "d291c5ce1202a4b236e047e5c8869f28f474c912e6d695402b38194563463f11",
+      "edges": {
+        "gate": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "chair": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "left": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "right": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "return-west": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "return-east": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        }
+      }
+    }
+  },
+  "transfer": {
+    "graph": {
+      "schema_version": 1,
+      "id": "evaluation-transfer-v2",
+      "timezone": "Europe/Vienna",
+      "difficulty_convention": "AT",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "foot"
+        },
+        {
+          "id": "mid"
+        },
+        {
+          "id": "peak"
+        }
+      ],
+      "edges": [
+        {
+          "id": "entry",
+          "from": "base",
+          "to": "mid",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "gondola",
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "connector",
+          "from": "mid",
+          "to": "foot",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 60,
+          "length_m": 120,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "upper",
+          "from": "foot",
+          "to": "peak",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "t-bar",
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "return",
+          "from": "peak",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "red",
+          "lift_type": null,
+          "duration_s": 180,
+          "length_m": 360,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "review-transfer",
+      "simulated": true,
+      "date": "2027-02-20",
+      "graph_hash": "1aa9029e409c0bbc34ed3fa327b5b7c8a1c4d2e058cb523027c69e147c14d396",
+      "edges": {
+        "entry": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "connector": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "upper": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "return": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        }
+      }
+    }
+  },
+  "oneway": {
+    "graph": {
+      "schema_version": 1,
+      "id": "evaluation-oneway-v2",
+      "timezone": "Europe/Vienna",
+      "difficulty_convention": "AT",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "low"
+        },
+        {
+          "id": "peak"
+        }
+      ],
+      "edges": [
+        {
+          "id": "ascend",
+          "from": "base",
+          "to": "peak",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "lower",
+          "from": "peak",
+          "to": "low",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 180,
+          "length_m": 360,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "restore",
+          "from": "low",
+          "to": "base",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "platter",
+          "duration_s": 120,
+          "length_m": 240,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "shortcut",
+          "from": "peak",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "black",
+          "lift_type": null,
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "review-oneway",
+      "simulated": true,
+      "date": "2027-02-20",
+      "graph_hash": "8acdd736198ac7037d7a77bc14b9b0557d78bc551a43dc20f3d288887d7a76c4",
+      "edges": {
+        "ascend": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "lower": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "restore": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "shortcut": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        }
+      }
+    }
+  },
+  "islands": {
+    "graph": {
+      "schema_version": 1,
+      "id": "evaluation-islands-v2",
+      "timezone": "Europe/Vienna",
+      "difficulty_convention": "AT",
+      "review_status": "synthetic",
+      "nodes": [
+        {
+          "id": "base"
+        },
+        {
+          "id": "east"
+        },
+        {
+          "id": "east-top"
+        },
+        {
+          "id": "west-top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "west-up",
+          "from": "base",
+          "to": "west-top",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "chairlift",
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "west-down",
+          "from": "west-top",
+          "to": "base",
+          "kind": "piste",
+          "difficulty": "blue",
+          "lift_type": null,
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "east-up",
+          "from": "east",
+          "to": "east-top",
+          "kind": "lift",
+          "difficulty": null,
+          "lift_type": "gondola",
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        },
+        {
+          "id": "east-down",
+          "from": "east-top",
+          "to": "east",
+          "kind": "piste",
+          "difficulty": "red",
+          "lift_type": null,
+          "duration_s": 90,
+          "length_m": 180,
+          "review_status": "synthetic",
+          "duration_basis": "assumed"
+        }
+      ]
+    },
+    "scenario": {
+      "id": "review-islands",
+      "simulated": true,
+      "date": "2027-02-20",
+      "graph_hash": "e5727d82f24f4abb81127c0d38e7d5409d50e2669d96c10790163ca23217b8c3",
+      "edges": {
+        "west-up": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "west-down": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "east-up": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        },
+        "east-down": {
+          "status": "open",
+          "queue_s": 0,
+          "opens_at": "2027-02-20T08:00:00+01:00",
+          "closes_at": "2027-02-20T16:00:00+01:00"
+        }
+      }
+    }
+  }
+}
