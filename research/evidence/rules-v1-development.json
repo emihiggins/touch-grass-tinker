@@ -1,0 +1,235 @@
+{
+  "metric": "intent_exact_match_only_not_route_success",
+  "count": 32,
+  "correct": 22,
+  "invalid": 0,
+  "cases": [
+    {
+      "id": "dev-seed-001",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-002",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-003",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-004",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-005",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-006",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-007",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-008",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-009",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "excluded_lift_types",
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-010",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "hard_max_difficulty",
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-011",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-012",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-013",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-014",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-015",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-016",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-017",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-018",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-019",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-020",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-021",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-022",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-023",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-024",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-025",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-026",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "clarification_fields",
+        "hard_max_difficulty",
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-027",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-028",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-029",
+      "valid": true,
+      "exact_match": true,
+      "mismatched_fields": []
+    },
+    {
+      "id": "dev-seed-030",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-031",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "status",
+        "unsupported_preferences"
+      ]
+    },
+    {
+      "id": "dev-seed-032",
+      "valid": true,
+      "exact_match": false,
+      "mismatched_fields": [
+        "status",
+        "unsupported_preferences"
+      ]
+    }
+  ],
+  "adapter": "rules-v1",
+  "corpus_sha256": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+  "scope": "development seed, parser developed with visibility; NOT held-out performance"
+}

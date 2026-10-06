@@ -86,7 +86,7 @@ def validate_route(graph,intent,scenario,result,*,lab=False):
         visits[eid]+=1;position=e['to'];kinds.add(e['kind'])
     if position!=intent['finish_place_id']:return {'valid':False,'reason':'wrong_finish'}
     if kinds!={'lift','piste'}:return {'valid':False,'reason':'not_ski_outing'}
-    if len(path)>40 or max(visits.values())>2:return {'valid':False,'reason':'path_bound'}
+    if sum(len(edges[eid].get('source_edge_ids',[eid])) for eid in path)>40 or max(visits.values())>2:return {'valid':False,'reason':'path_bound'}
     if not isinstance(result.get('total_seconds'),(int,float)) or not math.isclose(result['total_seconds'],elapsed,abs_tol=1e-6):return {'valid':False,'reason':'incorrect_total'}
     return {'valid':True,'reason':'valid_simulated_outing','total_seconds':elapsed}
 
@@ -110,8 +110,10 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
             score=(preferred,ski_distance,-elapsed)
             if best_score is None or score>best_score:
                 best_score=score;best={'edge_ids':path,'total_seconds':elapsed,'graph_hash':digest(graph),'scenario_hash':digest(scenario)}
-        if len(path)>=max_edges:depth_pruned=True;continue
+        source_count=sum(len(edges[eid].get('source_edge_ids',[eid])) for eid in path)
+        if source_count>=max_edges:depth_pruned=True;continue
         for e in adj[position]:
+            if source_count+len(e.get('source_edge_ids',[e['id']]))>max_edges:depth_pruned=True;continue
             if not lab and e.get('review_status') not in {'synthetic','verified'}:continue
             if visits.get(e['id'],0)>=max_visits:depth_pruned=True;continue
             if e['kind']=='piste' and RANK[e['difficulty']]>RANK[intent['hard_max_difficulty']]:continue

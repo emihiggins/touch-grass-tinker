@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-10-06",
+  "browser": "headless Chromium via installed Playwright Core",
+  "desktop_width": 1280,
+  "mobile_width": 360,
+  "synthetic_route": true,
+  "closure_no_route": true,
+  "unsupported_request_blocked": true,
+  "alpendorf_lab_route": true,
+  "mobile_overflow": false,
+  "page_errors": [],
+  "print_pdf_generated": true,
+  "pdf_explicit_page_objects": 1,
+  "limitations": [
+    "No full accessibility audit",
+    "No automated pixel comparison",
+    "PDF page count inspected from explicit page objects; no PDF raster/legibility audit",
+    "Only current loopback demo screens exercised; no deployed app"
+  ]
+}

@@ -29,3 +29,9 @@ Prediction format: one JSON object per line with `id` and `intent`. Missing/malf
 [route-development.json](route-development.json) adds 8 original synthetic scenarios referencing the seed: feasible outings, closure/exclusion conflicts, unknown status, queue-induced infeasibility and a changed finish node. `python3 -m liftlap.evaluate --predictions /path/to/predictions.jsonl` scores predictions keyed by **route scenario ID**, not seed ID. It combines normalized gold-intent agreement with planner status and independently checks a returned route against gold constraints. Cases remain development-only and not human-reviewed.
 
 Tests passing gold intents through this pipeline are fixture self-checks, never base/tuned model accuracy. A deliberately weakened difficulty constraint yields a route that the planner can execute, but the gold validator and scorer reject it.
+
+## Rules baseline v1
+
+`liftlap/rules.py` is an explicit grammar baseline, independent of any model or prediction file. It handles basic grade/time/exclusion/alias/deadline patterns and abstains on unparsed language. [Saved predictions](rules-v1-predictions.jsonl) replay through the existing scorer. [Report](../research/evidence/rules-v1-development.json): **22/32 exact matches**, on this visible development set used during parser development. This is NOT held-out generalization or a trained-model comparison. No cases were removed to improve the headline.
+
+Reproduce predictions by calling `interpret(request_text, ui_context, catalog)['intent']` for each JSONL row, then pass `{id, intent}` records to `scripts/benchmark.py --predictions`. Do not mutate or weaken this comparator after observing model scores; improve and freeze it with the other baselines before held-out evaluation.
