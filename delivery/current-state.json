@@ -1,5 +1,5 @@
 {
-  "status": "mit_applied_public_release_preparation_in_progress_emi_owns_publication",
+  "status": "public_release_files_ready_emi_controls_visibility_and_dev",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -24,19 +24,20 @@
     "Emi will personally change GitHub visibility and publish on DEV",
     "Deterministic licensed offline package and public-only CI prepared",
     "Unchanged rules post-hoc comparator0/16; saved base13/16 reproduced without calls",
-    "Original request/settings visible; approved constraints preserved in one-page visually reviewed print; keyboard focus fixed"
+    "Original request/settings visible; approved constraints preserved in one-page visually reviewed print; keyboard focus fixed",
+    "Clean detached worktree on Python3.11 passed offline checks and produced identical archive; final print visually verified"
   ],
   "remaining": [
-    "Complete fresh-worktree release rehearsal and final print/keyboard verification",
-    "Emi changes repository visibility and posts DEV using supplied checklist",
-    "Delayed billing reconciliation"
+    "Emi changes GitHub repository visibility when ready",
+    "Emi checks code/video signed out and publishes DEV using supplied checklist",
+    "Delayed billing reconciliation at01:00UTC"
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
   "tests_passed": 149,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
-  "next_action": "Finish local release checks; do not change visibility or post to DEV",
+  "next_action": "Emi-owned release; no further label review or implementation input needed",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {
@@ -45,5 +46,11 @@
     "recurring": false,
     "timeout_seconds": 180
   },
-  "project_commitments_usd": 1.75
+  "project_commitments_usd": 1.75,
+  "release_authority": {
+    "mit_approved": true,
+    "github_visibility_actor": "Emi only",
+    "dev_publication_actor": "Emi only",
+    "source_message_id": "2437"
+  }
 }

@@ -1,8 +1,8 @@
 # Lift-Lap Planner
 
-Private project workspace for Emi's Hacktoberfest Week 1 entry, for the Touch Grass challenge. Best Use of Tinker is not claimed: no measured fine-tuning gain.
+A local ski-outing planning experiment for the Hacktoberfest Week1 Touch Grass challenge. Best Use of Tinker is not claimed: no measured fine-tuning gain.
 
-**Status:** local simulation with Rules, recorded-AI and opt-in live Qwen3-8B interpretation. A real app call is verified, with its semantic error preserved and a local correction step demonstrated. The fine-tuned trial did not improve the matched pilot (base9/16, tuned7/16). Retained base:13/16 on a separate frozen fresh set. No public demo or field-verified navigation is claimed.
+**Status:** local simulation with Rules, recorded-AI and opt-in live Qwen3-8B interpretation. A real app call is verified, with its semantic error preserved and a local correction step demonstrated. The fine-tuned trial did not improve the matched pilot (base9/16, tuned7/16). Retained base:13/16 on a separate frozen fresh set. No hosted app or field-verified navigation is claimed.
 
 ## Submission materials
 

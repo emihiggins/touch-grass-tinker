@@ -1,0 +1,13 @@
+{
+  "revision": "26b53bc",
+  "checkout": "detached_git_worktree",
+  "python": "3.11.17",
+  "optional_packages_installed": false,
+  "unit_tests_total": 149,
+  "optional_skips": 22,
+  "provider_calls": 0,
+  "saved_base_score": "13/16",
+  "deterministic_archive_sha256": "02859a5959390c38ea48befd0a8d179060aefb71538e553744e31f08170ea12e",
+  "matches_main_checkout_archive": true,
+  "scope": "fresh_git_worktree_and_isolated_package_not_hosted_CI"
+}
