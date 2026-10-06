@@ -1,0 +1,20 @@
+{
+  "count": 48,
+  "splits": {
+    "development_seed": 32,
+    "train_candidate": 16
+  },
+  "errors": [],
+  "warnings": [
+    "near duplicate review: dev-seed-008 / train-candidate-009"
+  ],
+  "scope": "structural_audit_not_independent_label_review_or_test_freeze",
+  "input_sha256": {
+    "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+    "benchmark/training-candidates.jsonl": "25146d8bdf5907fa3938dac81a5164882da07445dbc9a49ac2d2558eea6a5ccc"
+  },
+  "export_count": 16,
+  "export_sha256": "b7a811e2f8d8089954d05f7a1dd10847221c77f51e549ac49c07b5e4b6da5e66",
+  "prompt_sha256": "1f818771b8d41eb3736ffb07fb5cfc47ad7a57a0fe2c5582af6241a8db9efd22",
+  "preview_only": true
+}

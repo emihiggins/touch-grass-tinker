@@ -35,3 +35,7 @@ Tests passing gold intents through this pipeline are fixture self-checks, never 
 `liftlap/rules.py` is an explicit grammar baseline, independent of any model or prediction file. It handles basic grade/time/exclusion/alias/deadline patterns and abstains on unparsed language. [Saved predictions](rules-v1-predictions.jsonl) replay through the existing scorer. [Report](../research/evidence/rules-v1-development.json): **22/32 exact matches**, on this visible development set used during parser development. This is NOT held-out generalization or a trained-model comparison. No cases were removed to improve the headline.
 
 Reproduce predictions by calling `interpret(request_text, ui_context, catalog)['intent']` for each JSONL row, then pass `{id, intent}` records to `scripts/benchmark.py --predictions`. Do not mutate or weaken this comparator after observing model scores; improve and freeze it with the other baselines before held-out evaluation.
+
+## Training preparation
+
+See [training readiness](../training/README.md) for the separate 16-case candidate batch, split audit, conversation exporter and paired comparison CLI. Candidates are not held-out data. One cross-partition near-duplicate warning remains quarantined for review; no production training export is ready.
