@@ -24,7 +24,7 @@ def check(cases,config):
     if full==0:blockers.append('Training would execute zero complete batches')
     if dropped:blockers.append('Incomplete final batch would silently drop training rows')
     if config.get('test_size')!=0:blockers.append('Cookbook random row splitting must remain disabled')
-    if config.get('train_on_what')!='all_assistant_messages':blockers.append('Assistant-only supervision required')
+    if config.get('train_on_what') not in {'all_assistant_messages','last_assistant_message'}:blockers.append('Assistant-only supervision required')
     if type(config.get('max_length')) is not int or config['max_length']<=0:blockers.append('Invalid max_length')
     if type(config.get('epochs')) is not int or config['epochs']<=0:blockers.append('Invalid epochs')
     return {'status':'blocked' if blockers else 'declarations_complete_evidence_review_required',

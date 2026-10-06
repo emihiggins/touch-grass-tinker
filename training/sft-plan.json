@@ -8,7 +8,7 @@
   "epochs": 1,
   "learning_rate": 0.0001,
   "max_length": 2048,
-  "train_on_what": "all_assistant_messages",
+  "train_on_what": "last_assistant_message",
   "test_size": 0,
   "shuffle_seed": 20261006,
   "sampling": {

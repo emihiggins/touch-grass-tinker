@@ -22,6 +22,6 @@
   "input_sha256": {
     "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
     "benchmark/training-candidates.jsonl": "ae5b1d4a36208aeb260beb80e2c6e48acbd88e2baee26f7bbdb44afc1753eee4",
-    "training/sft-plan.json": "0ad0ef111bba8d74b34b8859bf1d3e63c9b4e28b4971f9c83c01213855607e3f"
+    "training/sft-plan.json": "75be43fa0133c169c63d8681309591973a1ed6baef1f0da008edefdcb6dd75c8"
   }
 }

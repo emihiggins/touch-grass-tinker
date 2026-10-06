@@ -130,3 +130,39 @@ uv pip sync --python .venv-tinker/bin/python training/sdk-requirements.lock
 The integration intentionally uses pinned SDK internals (`AsyncTinker._auth` / `AuthTokenProvider`) because its normal API-key constructor rejects opaque sentinels. This is a **private compatibility seam**, not an upstream-stable API. It fails on SDK version changes; revalidate before upgrading. It does not patch the installed SDK or retrieve/decrypt the real key. Live nested model entries arrived as dictionaries despite type annotations; the adapter supports dictionaries and model objects. Unit tests cover credential mode, destination and redirect refusal; live capability proof is stored separately. Pydantic deprecation warnings may still arise inside SDK mock tests.
 
 This does **not** yet implement high-level `ServiceClient`, sampling-session creation, token rendering/masking, LoRA training, checkpoints or usage accounting. The Cookbook training environment is not installed. The broad `dependency_versions_locked_and_smoked` training gate therefore stays false. Next work is an isolated Cookbook/rendering environment and full provider runner, followed by baseline measurement only when data and spend gates are satisfied.
+
+
+## Renderer / dry-run payload milestone — 2026-10-06
+
+Pinned Cookbook commit `1c03a20fdda98156ccbec15728c0e2764b5a0bc3` is now installed in `.venv-tinker`, with CPU-only PyTorch 2.10.0 and compatible Transformers 5.5.4 (downgraded from the SDK-only environment's 5.18.0). Use **render-requirements.lock** for this expanded environment; sdk-requirements.lock describes the earlier SDK-only checkpoint. `uv pip check` passes. Expanded venv is about 1.3 GB; tokenizer assets are about 16 MB, both ignored. No model weights were downloaded.
+
+Qwen3-8B tokenizer revision: `b968826d9c46dd6066d109eabc6255188de91218`, with every asset's size and SHA-256 in `tokenizer-manifest.json`. No remote tokenizer code is executed. The rendering audit uses only local checksum-verified assets and verifies the installed Cookbook commit.
+
+```bash
+# Linux x86_64 / CPython 3.14: CPU torch wheel is platform-specific.
+uv pip sync --python .venv-tinker/bin/python training/render-requirements.lock
+python3 -m scripts.fetch_tokenizer
+.venv-tinker/bin/python -m liftlap.render_audit benchmark/training-candidates.jsonl --preview-datums runs/dry-run/candidate-datums.jsonl
+.venv-tinker/bin/python -m liftlap.render_audit benchmark/development-seed.jsonl
+```
+
+The lock contains an exact CPU wheel URL/hash and a pinned Cookbook Git commit; other packages are version-pinned, not artifact-hash-locked. Resolution was dry-run checked against the installed environment; clean-machine reproduction remains untested.
+
+### Measured local rendering results
+
+| Corpus | Cases | Maximum full sequence | Maximum answer | Total sequence tokens |
+| --- | ---: | ---: | ---: | ---: |
+| Training candidates | 48 | 763 | 134 | 35,755 |
+| Visible development | 32 | 748 | 130 | 23,441 |
+
+All 80 pass the 2,048-token sequence and 512-token answer limits without truncation. Each passes exact train/inference prompt-prefix equality, JSON-plus-stop-token round trip, zero prompt-token loss, correct next-token input/target shift and normalized loss weights. These are **token/mask tests**, not trained-model quality or cost measurements.
+
+**Important mode correction:** The initial `all_assistant_messages` mode also supervised four tokens belonging to the assistant's supplied empty-thinking marker. For our one-assistant-turn format, Cookbook `last_assistant_message` excludes that prompt framing and trains only the JSON plus stop token. The plan now uses this mode. This is an intentional training-contract change; keep it identical across future rendering and training. Our preflight accepts either assistant-only mode generally, but the pinned render-audit CLI requires `last_assistant_message` to match this verified path.
+
+Dry-run payloads contain input token IDs, target token IDs and normalized weights for all candidate rows. They are local **preview data**, not a serialized SDK wire request or an approved training export. Candidate labels are still unreviewed, and no provider submission occurs. The reports retain exact corpus/prompt/config/tokenizer hashes; any change requires rerendering. Reported batch size 32 leaves 16 candidate rows over after one full batch; actual launch must resolve batching after the approved dataset is finalized, never silently drop these rows.
+
+Evidence: `research/evidence/render-audit-candidates.json` and `render-audit-development.json`. All 84 tests pass in the expanded environment; the dependency-free suite passes with eight optional tests skipped. A known upstream Pydantic deprecation warning remains in SDK tests.
+
+### Remaining milestone boundary
+
+This closes **current-corpus token rendering and dry-run payload preparation**, not the production training/sampling runner. The final training gate remains false until approved data and its exact hashes pass the same checks. Human label review, a new independent held-out corpus, budget/credits, high-level SDK session integration, checkpoint/resume, bounded job execution and usage accounting remain. No paid API operations were invoked.
