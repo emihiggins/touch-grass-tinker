@@ -166,3 +166,8 @@ Evidence: `research/evidence/render-audit-candidates.json` and `render-audit-dev
 ### Remaining milestone boundary
 
 This closes **current-corpus token rendering and dry-run payload preparation**, not the production training/sampling runner. The final training gate remains false until approved data and its exact hashes pass the same checks. Human label review, a new independent held-out corpus, budget/credits, high-level SDK session integration, checkpoint/resume, bounded job execution and usage accounting remain. No paid API operations were invoked.
+
+
+## Sampling runner checkpoint
+
+The [bounded sampling runner](sampling-runner.md) is now implemented and mock-tested, with a real local 20-case dry-run manifest. No live inference or training was executed. A concrete baseline-smoke cost estimate and proposed inference-only budget are documented there. Training and checkpoint/resume remain unimplemented.

@@ -32,7 +32,9 @@ The first command uses an original synthetic graph. The server command opens the
 
 ## Next step
 
-Latest: 84 tests pass in the optional training environment (eight optional tests skip in the dependency-free environment); paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. A pinned Tinker SDK read-only smoke passes; all 80 current candidate/development examples pass Cookbook token/mask checks. 48 training candidates and a review packet are ready. Credits/spending and actual model runs remain pending. See [training checkpoint](training/README.md).
+[Sampling runner](training/sampling-runner.md): SDK submission/polling is mock-tested and a 20-case local dry run is ready. Live inference awaits budget/credit confirmation.
+
+Latest: 90 tests pass in the optional training environment (ten optional tests skip in the dependency-free environment); paired full-request evaluation covers 20 development scenarios. Rules-v1 succeeds on 14/20 (visible development data, not held-out accuracy). Protected Tinker access is verified with HTTP 200; Qwen3-8B is listed. A pinned Tinker SDK read-only smoke passes; all 80 current candidate/development examples pass Cookbook token/mask checks. 48 training candidates and a review packet are ready. Credits/spending and actual model runs remain pending. See [training checkpoint](training/README.md).
 
 [Offline training readiness](training/README.md) now includes 16 training candidates, split/leakage audit, Cookbook conversation preview export and saved paired intent comparison. No final test set or model runs yet.
 
