@@ -37,7 +37,8 @@
     "Standalone ZIP has root START-HERE instructions; actual extracted archive HTTP assets and offline planner verified",
     "DEV article updated for geographic hillshade; official deadline/template rechecked October7",
     "Map-first UI refresh: separated named fictional runs, geographic station labels, single-canvas switching, responsive/axe checks and enlarged one-page print",
-    "Route inspector with queue-inclusive leg timelines, Previous/Next and focus controls, repeated-visit geographic selection and invalidation checks"
+    "Route inspector with queue-inclusive leg timelines, Previous/Next and focus controls, repeated-visit geographic selection and invalidation checks",
+    "Local plain-text itinerary export retains approved constraints, repeated steps, estimated queues and simulation/source disclosures"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",

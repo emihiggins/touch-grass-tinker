@@ -34,3 +34,5 @@ Video playback: open `walkthrough.webm` in a compatible browser/player. Reposito
 The generated ZIP includes `START-HERE.txt` at its root, with Python/Windows launch commands and troubleshooting. The packager extracts the finished archive and verifies its real HTTP UI, worker, CSS, terrain tile and Alpendorf context, plus offline interpretation/planning. No model service is used by this check.
 
 The current walkthrough also selects itinerary visits and demonstrates the step-focus control. Per-leg times include the scenario’s assumed queue time; they are not current resort estimates.
+
+The reproduction check also downloads the plain-text itinerary and verifies that confirmed hard exclusions and simulation/timing disclosures are retained.

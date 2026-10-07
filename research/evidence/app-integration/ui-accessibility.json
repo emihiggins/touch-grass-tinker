@@ -279,9 +279,6 @@
             ],
             [
               "text[x=\"24\"]"
-            ],
-            [
-              "li:nth-child(8) > .step-select"
             ]
           ]
         }
@@ -340,9 +337,6 @@
             ],
             [
               "text[x=\"24\"]"
-            ],
-            [
-              "li:nth-child(8) > .step-select"
             ]
           ]
         }

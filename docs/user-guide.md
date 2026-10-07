@@ -52,3 +52,5 @@ For Alpendorf, **Open geographic map** enables a locally bundled MapLibre view w
 ## Inspecting an outing
 
 Choose a numbered itinerary step, then use **Previous**, **Next** or **Focus step** above the map. Repeated passes remain separate visits; clicking a shared route segment cycles through them in either map. Each leg shows estimated minutes. The inspector shows elapsed time into the outing and its assumed queue allowance—not a live queue or arrival prediction. Changing settings clears the old selection and requires confirmation again.
+
+Use **Save itinerary (.txt)** to download the confirmed constraints and all steps, estimates and source disclosures. The file is created locally; it does not call a model or publish your plan. Keep its simulation warning with it when sharing.

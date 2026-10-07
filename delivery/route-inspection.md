@@ -12,6 +12,7 @@ The existing API already groups itinerary legs and supplies travel seconds. Reus
 - Geographic clicks cycle repeated visits just like SVG clicks.
 - Settings/terrain/reinterpretation invalidate old inspection state.
 - Non-itinerary geographic features show source information without retaining an unrelated leg's timing.
+- Local plain-text itinerary download retains approved constraints, every repeated visit, assumed timing and source disclosures; browser verifies actual file contents.
 - Printed and on-screen step labels show estimated minutes; no current-queue or live-arrival claims.
 
 ## Acceptance
