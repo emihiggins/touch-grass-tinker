@@ -1,0 +1,26 @@
+{
+  "source_url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/12/2198/1435.png",
+  "fetched_at": "2026-10-07T00:36:28.282522+00:00",
+  "sha256": "8c9a7bd49f8f86f16d9183efc691fa418a195f62fc2fd9f1c0fdf964d7a0dc63",
+  "bytes": 137384,
+  "dimensions": [
+    256,
+    256
+  ],
+  "encoding": "terrarium",
+  "zxy": [
+    12,
+    2198,
+    1435
+  ],
+  "bounds": [
+    13.18359375,
+    47.27922900257082,
+    13.271484375,
+    47.338822694822
+  ],
+  "purpose": "visual hillshade only, no routing elevation or live snow claims",
+  "attribution_source": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+  "source_details": "https://github.com/tilezen/joerd/blob/master/docs/data-sources.md",
+  "changes": "Downloaded PNG unchanged; client derives hillshade. Exact per-pixel source mixture not asserted."
+}

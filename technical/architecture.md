@@ -33,3 +33,5 @@ The recorded example is a real saved output and includes a semantic mistake. Its
 The UI’s supported normalized grade order does not establish universal resort grading. OSM connectivity and illustrative timing do not establish permission or safe access. The route validator checks a supplied intent, not the correctness of language interpretation. Explicit human review remains important.
 
 No hosted app, permanent fine-tuned model deployment, unrestricted paid endpoint, or real-world terrain validation is claimed. [Current guides](../docs/README.md) describe the supported installation and checks.
+
+The Alpendorf geographic view serves one local Terrarium raster DEM tile through an exact allowlisted URL, derives hillshade client-side, and preserves the SVG fallback. Elevation is not used by the planner. Tile metadata and source-specific licensing remain separate from MIT application code.

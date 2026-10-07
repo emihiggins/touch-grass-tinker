@@ -11,3 +11,5 @@ AI coding assistance was used. Original fictional terrain and synthetic request 
 - Bundled MapLibre GL JS 5.6.2 CSP build, worker and CSS: BSD-3-Clause and included dependency notices in [the upstream license](web/maplibre-LICENSE.txt). Download URLs and SHA256 hashes are in [the asset manifest](research/maplibre-assets.json). No upstream tiles, model weights or hosted map service are bundled.
 
 - The repository’s `data/terrain/plose-research/` and `data/terrain/plose-expanded-research/` snapshots are also © OpenStreetMap contributors under ODbL 1.0. They are bounded research fixtures, not supported app resorts, and are not included in the local demo archive.
+
+- Bundled Alpendorf terrain tile: Mapzen Terrain Tiles; Austrian DGM under CC BY 3.0 AT, with regional/fallback Copernicus EU-DEM and USGS credits. See [terrain notices](web/terrain-notices.txt) and [download/hash manifest](research/elevation-tile.json). PNG unchanged; hillshade derived at runtime. Original-code MIT does not override terrain data terms.

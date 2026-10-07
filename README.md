@@ -85,3 +85,5 @@ Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](
 ### Explore the real-geometry lab
 
 Select Alpendorf, then **Open geographic map** for a local MapLibre view. No tile subscription or API key is required. The SVG sketch supports pan/zoom, known station labels and itinerary-linked highlighting. Alpendorf remains an unreviewed partial OSM extract—not live resort navigation. See the [map research and next steps](research/mountain-map-upgrade.md).
+
+The geographic view includes a small, locally bundled hillshade tile with visible source attribution. [View the current geographic screenshot](research/evidence/app-integration/geographic-desktop.png). Elevation is visual context only, not a routing input or safety assessment.

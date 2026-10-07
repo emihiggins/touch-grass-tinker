@@ -1,0 +1,15 @@
+Alpendorf visual terrain context
+
+Terrain Tiles (Mapzen, a Linux Foundation project) accessed 2026-10-07 from https://registry.opendata.aws/terrain-tiles/.
+Source PNG: https://s3.amazonaws.com/elevation-tiles-prod/terrarium/12/2198/1435.png
+The PNG is unmodified; hillshade is derived by MapLibre in the browser. One 256x256 zoom-12 tile only. Not live, not snow depth, not slope-safety or navigation data. No endorsement by data providers. Dataset source ages vary and regular updates are not promised.
+
+Austria terrain data © offene Daten Österreichs – Digitales Geländemodell (DGM) Österreich.
+Creative Commons Attribution 3.0 Austria: https://creativecommons.org/licenses/by/3.0/at/
+Source listing: https://www.data.gv.at/katalog/dataset/b5de6975-417b-4320-afdb-eb2a9e2a1dbf
+Europe terrain data produced using Copernicus data and information funded by the European Union - EU-DEM layers.
+SRTM and GMTED2010 terrain data courtesy of the U.S. Geological Survey.
+
+Provider attribution/terms: https://github.com/tilezen/joerd/blob/master/docs/attribution.md
+Source composition/resolution notes: https://github.com/tilezen/joerd/blob/master/docs/data-sources.md
+The provider documents Austrian DGM and possible global/regional source mosaics. We retain regional/fallback credits rather than assert an exact per-pixel source mixture or native resolution. MIT for original application code does not replace these data terms.

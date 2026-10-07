@@ -109,3 +109,7 @@ A bounded [Plose OSM fixture](../data/terrain/plose-research/README.md) now exer
 ## Coverage investigation
 
 A [wider Plose sample](../data/terrain/plose-expanded-research/README.md) retains 247 nodes/251 edges but still no directed cycle. Four excluded `piste:type=connection` ways provide a concrete review lead: allowing their source direction hypothetically creates 20 cyclic nodes. Saved routing graphs remain unchanged. Sanitization now retains unsupported piste types for review rather than discarding the evidence; such types remain non-routable. Qualified transfer/access evidence is the next gate.
+
+## Offline hillshade checkpoint
+
+One unmodified 256×256 Terrarium tile (137,384 bytes, zoom 12) from Mapzen Terrain Tiles on AWS covers the Alpendorf extract. [Manifest](elevation-tile.json) records URL/time/hash/bounds; [notices](../web/terrain-notices.txt) retain Austrian CC BY 3.0 AT and regional/global fallback credits. Primary checks: [AWS registry](https://registry.opendata.aws/terrain-tiles/), [provider attribution](https://github.com/tilezen/joerd/blob/master/docs/attribution.md), [CC BY 3.0 AT reuse terms](https://creativecommons.org/licenses/by/3.0/at/deed.en). The MapLibre view now derives hillshade locally. No external runtime requests, paid tile service, live terrain updates, per-pixel source precision claim or route-elevation calculations. Beyond the bounded tile the background has no shading; failure leaves trail geometry available. The print fallback remains SVG.

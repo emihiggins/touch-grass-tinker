@@ -89,6 +89,8 @@ class Handler(BaseHTTPRequestHandler):
             except ValueError:return self.send(422,{'error':'Invalid terrain'})
         allowed={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
         for asset,mime in [('maplibre-gl-csp.js','text/javascript'),('maplibre-gl-csp-worker.js','text/javascript'),('maplibre-gl.css','text/css')]:allowed['/'+asset]=(asset,mime)
+        allowed['/terrain/12/2198/1435.png']=('terrain-12-2198-1435.png','image/png')
+        allowed['/terrain-notices.txt']=('terrain-notices.txt','text/plain; charset=utf-8')
         if url.path not in allowed:return self.send(404,{'error':'Not found'})
         name,mime=allowed[url.path];self.send(200,(ROOT/'web'/name).read_bytes(),mime)
     def do_POST(self):
