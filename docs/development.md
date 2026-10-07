@@ -62,3 +62,5 @@ Map interaction checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts
 `liftlap.billing_check.summarize` reports `estimated_gross_usd: null` when events are missing or any event lacks a valid price. `priced_subtotal_usd` is only the sum of priced rows; it is not the total charge. Even fully priced event rows remain an account-window estimate, not a project-attributed invoice. This helper never releases ledger holds.
 
 UI accessibility checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core AXE_SCRIPT=/path/to/axe-core/axe.min.js node scripts/browser-ui.cjs`. The test uses development-only axe-core 4.11.0, injected through browser automation without weakening production CSP. It checks initial/planned states at three widths, text resizing and focus. Incomplete findings are retained for visual review; automated success is not an accessibility certification.
+
+Request recovery checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-recovery.cjs`. They inject terrain failures and hold actual API responses to verify retry recovery and stale terrain/interpretation/plan suppression. They use the offline rules adapter only.

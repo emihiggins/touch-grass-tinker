@@ -1,0 +1,9 @@
+{
+  "failedTerrainClearsMap": true,
+  "retryRecovers": true,
+  "oldInterpretationCannotUnlockTerrain": true,
+  "staleTerrainDiscarded": true,
+  "stalePlanDiscarded": true,
+  "pageErrors": [],
+  "providerCalls": 0
+}
