@@ -10,7 +10,7 @@ def sanitize(raw):
   ET.SubElement(root,'node',{k:n.attrib[k] for k in ('id','lat','lon')})
  for way in source.findall('way'):
   tags={t.attrib['k']:t.attrib['v'] for t in way.findall('tag')}
-  if tags.get('piste:type')!='downhill' and 'aerialway' not in tags:continue
+  if 'piste:type' not in tags and 'aerialway' not in tags:continue
   w=ET.SubElement(root,'way',{k:way.attrib[k] for k in ('id','version') if k in way.attrib})
   for child in way:
    if child.tag in {'nd','tag'}:ET.SubElement(w,child.tag,dict(sorted(child.attrib.items())))
@@ -30,6 +30,6 @@ def main():
  (a.out/'source.osm').write_bytes(clean)
  (a.out/'graph.json').write_text(json.dumps(graph,indent=2)+'\n')
  (a.out/'import-audit.json').write_text(json.dumps(report,indent=2)+'\n')
- manifest={**config,'input_sha256':hashlib.sha256(raw).hexdigest(),'sanitized_sha256':hashlib.sha256(clean).hexdigest(),'graph_sha256':hashlib.sha256((a.out/'graph.json').read_bytes()).hexdigest(),'attribution':'© OpenStreetMap contributors; ODbL 1.0','license':'https://www.openstreetmap.org/copyright','sanitization':'Contributor identity/history and relations omitted; only nodes and piste/aerialway ways retained. Not original response bytes.','review_status':'unreviewed','source_hash_semantics':'Graph source_sha256 identifies sanitized importer input; original response hash is separate.'}
+ manifest={**config,'input_sha256':hashlib.sha256(raw).hexdigest(),'sanitized_sha256':hashlib.sha256(clean).hexdigest(),'graph_sha256':hashlib.sha256((a.out/'graph.json').read_bytes()).hexdigest(),'attribution':'© OpenStreetMap contributors; ODbL 1.0','license':'https://www.openstreetmap.org/copyright','sanitization':'Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.','review_status':'unreviewed','source_hash_semantics':'Graph source_sha256 identifies sanitized importer input; original response hash is separate.'}
  (a.out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps({'nodes':len(graph['nodes']),'edges':len(graph['edges']),'review_status':'unreviewed'}))
 if __name__=='__main__':main()

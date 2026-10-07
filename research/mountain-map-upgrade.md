@@ -105,3 +105,7 @@ A bounded [Plose OSM fixture](../data/terrain/plose-research/README.md) now exer
 ## Directed-connectivity follow-up
 
 [Source review packets](evidence/resort-review/README.md) now cover 70 Alpendorf and 8 Plose ways. The directed audit finds no cycle in the Plose fixture despite weak connectivity, so it cannot support lap planning as imported. Alpendorf has a 204-node strongly connected component; other nodes do not belong to a nontrivial directed cycle. Resolve source direction/coverage gaps with evidence rather than synthetic connections. This is a concrete adoption blocker, not a failure of the model benchmark.
+
+## Coverage investigation
+
+A [wider Plose sample](../data/terrain/plose-expanded-research/README.md) retains 247 nodes/251 edges but still no directed cycle. Four excluded `piste:type=connection` ways provide a concrete review lead: allowing their source direction hypothetically creates 20 cyclic nodes. Saved routing graphs remain unchanged. Sanitization now retains unsupported piste types for review rather than discarding the evidence; such types remain non-routable. Qualified transfer/access evidence is the next gate.

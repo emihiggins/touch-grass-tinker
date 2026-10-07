@@ -29,7 +29,8 @@
     "Public-audience README/current guides rewritten; historical docs separated; current media regenerated and fingerprint-checked; package guide assets included",
     "Offline interactive SVG and bundled MapLibre Alpendorf view verified; media refreshed",
     "Explicit regional importer and bounded Plose research fixture with reproducible provenance",
-    "Directed connectivity audit and source-linked resort review packets; no source data promoted"
+    "Directed connectivity audit and source-linked resort review packets; no source data promoted",
+    "Expanded Plose coverage investigation identified source connection-way gap; retained evidence without enabling transfers"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
@@ -41,7 +42,7 @@
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
-  "tests_passed": 156,
+  "tests_passed": 158,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
   "next_action": "Resolve real-resort evidence gaps using source-linked packets; publication remains Emi-owned",

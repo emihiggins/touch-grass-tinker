@@ -1,0 +1,32 @@
+{
+  "import_options": {
+    "graph_id": "plose-expanded-osm-research",
+    "timezone": "Europe/Rome",
+    "difficulty_convention": "IT",
+    "difficulty_mapping": {
+      "novice": "blue",
+      "easy": "blue",
+      "intermediate": "red",
+      "advanced": "black"
+    }
+  },
+  "mapping_status": "Provisional Italian lab convention; native OSM difficulty retained; not operator validated.",
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.700,46.677,11.734,46.694",
+  "fetched_at": "2026-10-07T00:33:11.068891+00:00",
+  "original_response_sha256": "ffd1c18448228b9c84b3c0c7c61458f36f5ffc9d81d703b84fa0cd3e6e6c28f4",
+  "original_bytes": 1869802,
+  "requested_bbox": [
+    11.7,
+    46.677,
+    11.734,
+    46.694
+  ],
+  "input_sha256": "ffd1c18448228b9c84b3c0c7c61458f36f5ffc9d81d703b84fa0cd3e6e6c28f4",
+  "sanitized_sha256": "e9eee92ef0722177cab81901d865f8e386199a08e7489ad697bffc8ced19a065",
+  "graph_sha256": "0cebeedea82943ba89e8c498e0035e2cc815af538fb1a67aaba69ded7a182104",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "sanitization": "Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.",
+  "review_status": "unreviewed",
+  "source_hash_semantics": "Graph source_sha256 identifies sanitized importer input; original response hash is separate."
+}

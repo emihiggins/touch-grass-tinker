@@ -23,7 +23,7 @@ python3 scripts/check_release.py
 node --check web/app.js
 ```
 
-The release check validates local documentation links and current media/source fingerprints, then runs tests, reproduces13/16 from saved base outputs, builds the demo in an isolated directory, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs156 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
+The release check validates local documentation links and current media/source fingerprints, then runs tests, reproduces13/16 from saved base outputs, builds the demo in an isolated directory, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs158 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
 
 ## Browser checks
 

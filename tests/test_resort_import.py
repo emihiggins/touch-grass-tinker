@@ -19,3 +19,9 @@ class ResortImportTests(unittest.TestCase):
   self.assertEqual(graph,json.loads((folder/'graph.json').read_text()));self.assertEqual(report,json.loads((folder/'import-audit.json').read_text()))
  def test_historical_alpendorf_unchanged(self):
   graph,_=import_osm((ROOT/'data/terrain/alpendorf-source.osm').read_bytes());old=json.loads((ROOT/'data/terrain/alpendorf-lab.json').read_text());graph['source_sha256']=old['source_sha256'];self.assertEqual(graph,old)
+
+ def test_connection_evidence_preserved_but_not_routed(self):
+  raw=b'<osm><node id="a" lat="0" lon="0"/><node id="b" lat="0.001" lon="0"/><way id="1"><nd ref="a"/><nd ref="b"/><tag k="piste:type" v="connection"/><tag k="piste:difficulty" v="easy"/></way></osm>'
+  clean=sanitize(raw);self.assertIn(b'connection',clean);graph,_=import_osm(clean);self.assertEqual(graph['edges'],[])
+ def test_expanded_plose_reproduces(self):
+  folder=ROOT/'data/terrain/plose-expanded-research';m=json.loads((folder/'manifest.json').read_text());g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options']);self.assertEqual(g,json.loads((folder/'graph.json').read_text()));self.assertEqual(a,json.loads((folder/'import-audit.json').read_text()))

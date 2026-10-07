@@ -1,0 +1,68 @@
+{
+  "scope": "counterfactual_topology_only_not_route_approval",
+  "connections_not_imported": [
+    {
+      "source_ref": "way/27544910",
+      "nodes": [
+        "439528920",
+        "1943423908",
+        "8301398434",
+        "8301398435",
+        "2116542422"
+      ],
+      "tags": {
+        "highway": "track",
+        "piste:type": "connection",
+        "surface": "compacted",
+        "tracktype": "grade2"
+      }
+    },
+    {
+      "source_ref": "way/37532973",
+      "nodes": [
+        "1780444832",
+        "439528920"
+      ],
+      "tags": {
+        "bicycle": "yes",
+        "highway": "track",
+        "incline": "-3%",
+        "mtb:scale:uphill": "1",
+        "name": "Brixner H\u00f6henweg 30",
+        "piste:type": "connection",
+        "sac_scale": "hiking",
+        "surface": "compacted",
+        "tracktype": "grade2",
+        "width": "1"
+      }
+    },
+    {
+      "source_ref": "way/50061560",
+      "nodes": [
+        "635778767",
+        "11230733212",
+        "615897065"
+      ],
+      "tags": {
+        "piste:difficulty": "easy",
+        "piste:type": "connection"
+      }
+    },
+    {
+      "source_ref": "way/1212200081",
+      "nodes": [
+        "9917170790",
+        "1780444832"
+      ],
+      "tags": {
+        "highway": "path",
+        "piste:type": "connection",
+        "surface": "gravel"
+      }
+    }
+  ],
+  "imported_nodes_on_cycles": 0,
+  "if_source_connection_way_order_were_allowed_nodes_on_cycles": 20,
+  "assumption": "Hypothetical directed transfer along source way order, with no permission, schedule, timing or safety verification. No connections added to saved graph.",
+  "source_tags_reference": "https://wiki.openstreetmap.org/wiki/Key:piste:type"
+}
