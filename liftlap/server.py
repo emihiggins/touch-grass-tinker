@@ -1,10 +1,11 @@
 """Loopback-only simulation with opt-in, budgeted model interpretation."""
-import argparse,json
+import argparse,json,errno,sys
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
 from scripts.benchmark import validate_intent
 from . import fixtures
+from . import __version__
 from .compact import compact,expand_route
 from .core import plan,validate_route,preference_tradeoffs
 from .rules import interpret
@@ -115,14 +116,30 @@ class Handler(BaseHTTPRequestHandler):
             self.send(422,{'error':str(e) if isinstance(e,ModelUnavailable) else 'Invalid request; check fields and interpreter availability.'})
         except Exception:self.send(500,{'error':'Local planner error; inspect tests before continuing.'})
 
+def port_number(value):
+    try: port=int(value)
+    except ValueError: raise argparse.ArgumentTypeError("PORT must be a number from 1 to 65535")
+    if not 1<=port<=65535: raise argparse.ArgumentTypeError("PORT must be a number from 1 to 65535")
+    return port
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--port',type=int,default=8767);p.add_argument('--live-model',action='store_true');a=p.parse_args()
-    server=ThreadingHTTPServer(('127.0.0.1',a.port),Handler);server.timeout=5
+    p=argparse.ArgumentParser(description="Start the dependency-free, loopback-only Lift-Lap demo server.")
+    p.add_argument("--version",action="version",version=f"%(prog)s {__version__} (offline demo)")
+    p.add_argument("--port",type=port_number,default=8767,metavar="PORT",help="loopback port (default: 8767)")
+    p.add_argument("--live-model",action="store_true",help=argparse.SUPPRESS);a=p.parse_args()
+    try: server=ThreadingHTTPServer(("127.0.0.1",a.port),Handler)
+    except OSError as error:
+        if error.errno==errno.EADDRINUSE: print(f"Cannot start Lift-Lap: port {a.port} is already in use. Choose another port, for example --port {a.port + 1}.",file=sys.stderr)
+        else: print(f"Cannot start Lift-Lap on 127.0.0.1:{a.port}: {error}",file=sys.stderr)
+        return 2
+    server.timeout=5
     if a.live_model:
         from .app_model import LiveModel
         server.model=LiveModel(ROOT)
-    print(f'Local simulation: http://127.0.0.1:{a.port}',flush=True)
+    print(f"Lift-Lap {__version__} — offline demo ready",flush=True)
+    print(f"Open http://127.0.0.1:{a.port} in a browser on this computer. Press Ctrl-C to stop.",flush=True)
     try:server.serve_forever()
     except KeyboardInterrupt:pass
     finally:server.server_close()
-if __name__=='__main__':main()
+    return 0
+if __name__=="__main__":raise SystemExit(main())

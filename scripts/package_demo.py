@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    files=sorted([*ROOT.glob('liftlap/*.py'),*ROOT.glob('web/*'),*ROOT.glob('demo/*')])+[ROOT/'LICENSE',ROOT/'THIRD_PARTY_NOTICES.md',ROOT/'research/maplibre-assets.json',ROOT/'research/elevation-tile.json',ROOT/'data/terrain/alpendorf-source.osm',*[ROOT/'research/evidence/app-integration'/n for n in ['recorded-corrected-desktop.png','mobile.png','print-preview.png','corrected-itinerary.pdf','live-browser.json']],ROOT/'scripts/benchmark.py',ROOT/'data/terrain/alpendorf-lab.json',ROOT/'data/terrain/README.md',ROOT/'data/terrain/LICENSE-ODbL.md']
+    files=sorted([*ROOT.glob('liftlap/*.py'),*ROOT.glob('web/*'),*ROOT.glob('demo/*')])+[ROOT/'LICENSE',ROOT/'THIRD_PARTY_NOTICES.md',ROOT/'research/maplibre-assets.json',ROOT/'research/elevation-tile.json',ROOT/'data/terrain/alpendorf-source.osm',*[ROOT/'research/evidence/app-integration'/n for n in ['recorded-corrected-desktop.png','mobile.png','print-preview.png','corrected-itinerary.pdf','live-browser.json']],ROOT/'launch-demo.sh',ROOT/'launch-demo.bat',ROOT/'scripts/benchmark.py',ROOT/'data/terrain/alpendorf-lab.json',ROOT/'data/terrain/README.md',ROOT/'data/terrain/LICENSE-ODbL.md']
     files=[p for p in files if p.is_file()]
     assert all(not any(x in p.parts for x in ['runs','.venv-tinker','.tokenizer-qwen3','.git']) for p in files)
     out=ROOT/'dist';out.mkdir(exist_ok=True)
@@ -45,7 +45,7 @@ print('Isolated offline replay/correction/route/closure and packaged HTTP assets
         with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
             for relative in archive_paths:
                 info=zipfile.ZipInfo(str(relative),date_time=(2026,1,1,0,0,0))
-                info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;info.create_system=3
+                info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=(0o100755 if relative.name=='launch-demo.sh' else 0o100644)<<16;info.create_system=3
                 z.writestr(info,(d/relative).read_bytes())
         unpacked=d/'unpacked';unpacked.mkdir()
         with zipfile.ZipFile(archive) as z:

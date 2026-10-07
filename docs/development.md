@@ -3,6 +3,7 @@
 ## Runtime and layout
 
 Python3.11+ standard library plus vanilla HTML/CSS/JavaScript and vendored MapLibre GL JS 5.6.2 for the optional Alpendorf geographic view. No npm install or Python dependencies are required for the default app. Use `python3 -m liftlap.server`; the server binds only to loopback. [As-built architecture](../technical/architecture.md).
+For an extracted ZIP, launch-demo.sh (macOS/Linux) and launch-demo.bat (Windows) provide the same dependency-free startup. Both forward arguments such as --port 8768; neither installs packages or stops an existing process. --version reports the demo version without opening a port, and startup prints the exact loopback URL.
 
 | Path | Purpose |
 |---|---|
