@@ -15,11 +15,11 @@ def geometry_segments(nodes, coords):
  if current:segments.append(current)
  return segments
 
-def verify_snapshot(folder, manifest, diagnostics):
+def verify_snapshot(folder, manifest, diagnostics=None):
  actual_graph=digest(folder/"graph.json");actual_source=digest(folder/"source.osm")
  if manifest["graph_sha256"]!=actual_graph or manifest["sanitized_sha256"]!=actual_source:
   raise ValueError("Snapshot bytes do not match manifest")
- if diagnostics["graph_sha256"]!=actual_graph or diagnostics["source_sha256"]!=actual_source:
+ if diagnostics is not None and (diagnostics["graph_sha256"]!=actual_graph or diagnostics["source_sha256"]!=actual_source):
   raise ValueError("Stale diagnostics")
  return actual_graph,actual_source
 
@@ -34,6 +34,7 @@ def main():
  d={}
  for k,(label,n) in S.items():
   x=R/"data/terrain"/n;d[k]={"label":label,"graph":json.loads((x/"graph.json").read_text()),"manifest":json.loads((x/"manifest.json").read_text())}
+  verify_snapshot(x,d[k]["manifest"])
   if (x/"connectivity-diagnostics.json").exists():
    diag=json.loads((x/"connectivity-diagnostics.json").read_text());m=d[k]['manifest']
    actual_graph,actual_source=verify_snapshot(x,m,diag)

@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+  "method": "Directed breadth-first search using piste edges only; fewest segments, not fastest or recommended route.",
+  "routing_approved": false,
+  "limitations": "Assumes imported direction; ignores access, grades, closures and timing. Absence means no path in this extract, not no real-world descent.",
+  "lifts": [
+    {
+      "lift_edge_id": "osm:way:1160222337:0",
+      "name": "Spirit",
+      "source_refs": [
+        "way/1160222337"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:1214436867:0",
+      "name": "Tubing",
+      "source_refs": [
+        "way/1214436867"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:17058553:0",
+      "name": "Explorer Express",
+      "source_refs": [
+        "way/17058553"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:17058716:0",
+      "name": "Arrow",
+      "source_refs": [
+        "way/17058716"
+      ],
+      "piste_only_return_edge_ids": [
+        "osm:way:377599453:0",
+        "osm:way:377599453:1",
+        "osm:way:377599453:2",
+        "osm:way:377599453:3",
+        "osm:way:377599477:0",
+        "osm:way:377599477:1",
+        "osm:way:377599477:2",
+        "osm:way:377599477:3",
+        "osm:way:377599477:4",
+        "osm:way:377599477:5",
+        "osm:way:377599477:6",
+        "osm:way:377599477:7",
+        "osm:way:377599477:8",
+        "osm:way:377599477:9",
+        "osm:way:377599477:10",
+        "osm:way:377599477:11",
+        "osm:way:377599477:12",
+        "osm:way:377599477:13",
+        "osm:way:377599477:14",
+        "osm:way:377599477:15",
+        "osm:way:377599477:16",
+        "osm:way:377599477:17",
+        "osm:way:377599477:18",
+        "osm:way:377599477:19",
+        "osm:way:377599477:20",
+        "osm:way:377599477:21"
+      ],
+      "structural_return_found": true,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:17058732:0",
+      "name": "Prospector Express",
+      "source_refs": [
+        "way/17058732"
+      ],
+      "piste_only_return_edge_ids": [
+        "osm:way:377599476:0",
+        "osm:way:377599476:1",
+        "osm:way:377599476:2",
+        "osm:way:377599476:3",
+        "osm:way:377599476:4",
+        "osm:way:377599476:5",
+        "osm:way:377599476:6",
+        "osm:way:377599476:7",
+        "osm:way:377599476:8",
+        "osm:way:377599476:9",
+        "osm:way:377599476:10",
+        "osm:way:377599476:11",
+        "osm:way:377599476:12",
+        "osm:way:377599476:13",
+        "osm:way:377599476:14",
+        "osm:way:377599476:15",
+        "osm:way:377599476:16",
+        "osm:way:377599476:17",
+        "osm:way:377599476:18",
+        "osm:way:377599476:19",
+        "osm:way:377599476:20",
+        "osm:way:377599476:21",
+        "osm:way:377599476:22",
+        "osm:way:377599476:23",
+        "osm:way:377599476:24",
+        "osm:way:377599476:25",
+        "osm:way:377599476:26",
+        "osm:way:377599476:27",
+        "osm:way:377599476:28",
+        "osm:way:377599476:29",
+        "osm:way:377599476:30",
+        "osm:way:377599476:31",
+        "osm:way:377599476:32",
+        "osm:way:377599476:33",
+        "osm:way:377599476:34",
+        "osm:way:377599476:35",
+        "osm:way:377599457:15",
+        "osm:way:377599457:16"
+      ],
+      "structural_return_found": true,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:258676524:0",
+      "name": "Gemini Express",
+      "source_refs": [
+        "way/258676524"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:258676845:0",
+      "name": "Comet",
+      "source_refs": [
+        "way/258676845"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:258676846:0",
+      "name": "Meteor",
+      "source_refs": [
+        "way/258676846"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:258676847:0",
+      "name": "Endeavor",
+      "source_refs": [
+        "way/258676847"
+      ],
+      "piste_only_return_edge_ids": [
+        "osm:way:377599449:0",
+        "osm:way:377599449:1",
+        "osm:way:377599449:2",
+        "osm:way:377599449:3",
+        "osm:way:377599449:4",
+        "osm:way:377599449:5",
+        "osm:way:377599449:6",
+        "osm:way:377599449:7",
+        "osm:way:377599449:8",
+        "osm:way:377599449:9",
+        "osm:way:377599449:10",
+        "osm:way:377599449:11",
+        "osm:way:377599449:12",
+        "osm:way:377599449:13",
+        "osm:way:377599449:14",
+        "osm:way:377599449:15",
+        "osm:way:377599449:16"
+      ],
+      "structural_return_found": true,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:31145982:0",
+      "name": "The Gondola",
+      "source_refs": [
+        "way/31145982"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:72608831:0",
+      "name": "Village Cabriolet",
+      "source_refs": [
+        "way/72608831"
+      ],
+      "piste_only_return_edge_ids": null,
+      "structural_return_found": false,
+      "review_status": "unreviewed"
+    },
+    {
+      "lift_edge_id": "osm:way:86248729:0",
+      "name": "Discovery",
+      "source_refs": [
+        "way/86248729"
+      ],
+      "piste_only_return_edge_ids": [
+        "osm:way:377599455:0",
+        "osm:way:377599455:1",
+        "osm:way:377599455:2",
+        "osm:way:377599455:3",
+        "osm:way:377599455:4",
+        "osm:way:377599455:5",
+        "osm:way:377599455:6",
+        "osm:way:377599455:7"
+      ],
+      "structural_return_found": true,
+      "review_status": "unreviewed"
+    }
+  ]
+}

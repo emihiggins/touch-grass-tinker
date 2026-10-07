@@ -41,3 +41,15 @@ class T(unittest.TestCase):
     (folder/'graph.json').write_bytes((folder/'graph.json').read_bytes()+b'\n tampered')
     with self.assertRaisesRegex(ValueError,'Snapshot bytes'):
      verify_snapshot(folder,manifest,diagnostics)
+
+ def test_source_tamper_without_diagnostics_fails(self):
+   import tempfile, shutil
+   with tempfile.TemporaryDirectory() as td:
+    folder=Path(td)
+    source=R/'data/terrain/wachusett-research'
+    for name in ('graph.json','source.osm'): shutil.copy(source/name,folder/name)
+    manifest=json.loads((source/'manifest.json').read_text())
+    verify_snapshot(folder,manifest)
+    (folder/'source.osm').write_bytes((folder/'source.osm').read_bytes()+b'\n')
+    with self.assertRaisesRegex(ValueError,'Snapshot bytes'):
+     verify_snapshot(folder,manifest)

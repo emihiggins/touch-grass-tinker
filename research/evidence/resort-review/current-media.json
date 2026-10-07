@@ -2,10 +2,10 @@
   "scope": "four_resort_browse_only_preview_source_lift_endpoint_review_and_excluded_geometry",
   "captured_on": "2026-10-07",
   "sha256": {
-    "scripts/build_resort_review.py": "0e9b8fd7acdd7ff9ca88e2a1c7d5e45ff876164db0cf7bc47e135e553aaa8955",
+    "scripts/build_resort_review.py": "4b06fe67c1dd5184d03a990a3efecfab83bb61f8bbcf882f2aceb4e3950b7837",
     "scripts/browser-resort-review.cjs": "51e1ee94509a7d7c41bce8203ac3d0b5c81402c8a42c84ef24a32e69e7b609de",
     "web/resort-review.html": "d35299dc0066d1424fff0209c63eb0f627ffacddcce4f4390a2a133cf3db204d",
-    "web/resort-review.js": "2d65479b95f0d3ba155d0150ffc3d8a8c230d34ee78eac120afe53a7b8320f18",
+    "web/resort-review.js": "06d882cc4d9734b8dc62bda7f6ce0abf75008c450cf0d81cbbdef65af6f714f1",
     "research/evidence/resort-review/browser-check.json": "6ce753ff9901151929483132e08c7fa54f825bc3438976fdbbfabeab2adf74f1",
     "research/evidence/resort-review/axe.json": "2b8688dab86a86f7eca3b70dde9b15e7dd4b5ac5470fd3a3e32de395aed385b1",
     "research/evidence/resort-review/winter-park-390.png": "681d55021a638d39f60ac592daa7c78971ae345e919785faaa4a02cb10506a78",
