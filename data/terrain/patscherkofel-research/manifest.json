@@ -1,0 +1,33 @@
+{
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.435,47.195,11.475,47.225",
+  "fetched_at": "2026-10-07T17:30:01.729758+00:00",
+  "original_response_sha256": "6a17d5b2dc0e03b83ad6a72b36fce00ef0f7d86cfb460a6f696bdaca617d94cd",
+  "original_bytes": 2792308,
+  "requested_bbox": [
+    11.435,
+    47.195,
+    11.475,
+    47.225
+  ],
+  "import_options": {
+    "graph_id": "patscherkofel-bounded-osm-research",
+    "timezone": "Europe/Vienna",
+    "difficulty_convention": "AT",
+    "difficulty_mapping": {
+      "novice": "blue",
+      "easy": "blue",
+      "intermediate": "red",
+      "advanced": "black"
+    }
+  },
+  "mapping_status": "Provisional regional mapping; native grades retained. Expert/freeride/unknown remain excluded. Not operator-validated.",
+  "coverage_status": "Bounded research extract, not whole-resort coverage; OSM map API may include complete ways extending beyond requested bounds.",
+  "input_sha256": "6a17d5b2dc0e03b83ad6a72b36fce00ef0f7d86cfb460a6f696bdaca617d94cd",
+  "sanitized_sha256": "38d23f10c77dbe5b4a9756ee79f9b524f6153ed5bfa8b066a3e3cd7cedfe49cc",
+  "graph_sha256": "f5eb4a8f27a5ced27e2bf5eeb04253e005af77d4c588c3287590bf9be5daba3c",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "sanitization": "Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.",
+  "review_status": "unreviewed",
+  "source_hash_semantics": "Graph source_sha256 identifies sanitized importer input; original response hash is separate."
+}
