@@ -13,6 +13,10 @@ def main():
             if target.startswith(('http:','https:','mailto:','#')):continue
             target=target.split('#')[0].split(' "')[0]
             if target and not (path.parent/target).exists():errors.append(f'{relative}: missing {target}')
+    article=(ROOT/'submission/dev-post.md').read_text()
+    expected=['What I Built','Demo','Code','How I Built It','Why Does Open Innovation Matter?','My Agent Session','Prize Categories']
+    if re.findall(r'^## (.+)$',article,re.M)!=expected:errors.append('Submission template headings/order changed')
+    if 'published: false' not in article:errors.append('Submission draft must remain unpublished')
     manifest=json.loads((ROOT/'research/evidence/app-integration/current-media.json').read_text())
     for name,expected in manifest['sha256'].items():
         path=ROOT/name

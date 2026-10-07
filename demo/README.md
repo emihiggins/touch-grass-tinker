@@ -28,3 +28,7 @@ Video playback: open `walkthrough.webm` in a compatible browser/player. Reposito
 ## Current visuals
 
 [Desktop](../research/evidence/app-integration/recorded-corrected-desktop.png), [mobile](../research/evidence/app-integration/mobile.png), [one-page print preview](../research/evidence/app-integration/print-preview.png) and [PDF](../research/evidence/app-integration/corrected-itinerary.pdf) reflect the latest UI. The recording was regenerated after adding map zoom/fit, route arrows and numbers, alongside original-request/selected-settings review and printed approved constraints. It is silent, with on-screen source labels, and ends with the local Alpendorf geographic view and attributed hillshade. Older `research/evidence/ui-*` images and the initial live-call screenshot are historical evidence, not current marketing captures.
+
+## Standalone ZIP entry point
+
+The generated ZIP includes `START-HERE.txt` at its root, with Python/Windows launch commands and troubleshooting. The packager extracts the finished archive and verifies its real HTTP UI, worker, CSS, terrain tile and Alpendorf context, plus offline interpretation/planning. No model service is used by this check.

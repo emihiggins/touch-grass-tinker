@@ -21,12 +21,14 @@ The local prototype can interpret a limited vocabulary, ask the user to confirm 
 
 The browser offers Rules, a clearly labelled recorded AI example, and opt-in live Qwen3-8B base-model interpretation. Live inference stays server-side; schema-invalid responses cannot create routes. The user sees the original request and selected settings, reviews the interpretation, and can correct hard lift exclusions locally before confirming. The printed itinerary retains the approved constraints and interpretation source. The rejected fine-tuned checkpoint is not used.
 
+The map now supports panning, known station labels and itinerary-linked highlighting. An optional MapLibre view uses local Alpendorf geometry and a bundled, attributed hillshade tile, so it works without a tile-service account. The SVG sketch remains available when WebGL fails and for printing. Elevation provides visual context only; it does not establish safe slopes or change the route calculations.
+
 ## Demo
 <!-- Share a deployed link or a video demo. -->
 
 [Watch/download the demo](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm). The app itself runs locally; this is a recorded demonstration, not a hosted planning service. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
 
-The recording covers corrected simulated planning, closed lifts, an unsupported request and mobile layout. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
+The recording covers corrected simulated planning, closed lifts, an unsupported request, mobile layout and the offline Alpendorf geographic view. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
 
 ## Code
 <!-- Show us the code!  You can embed a GitHub repo directly into your post. -->
@@ -88,7 +90,7 @@ OpenStreetMap also makes the terrain experiment inspectable: another builder can
 
 These are concrete benefits, but not claims that only open models can solve the task. Some closed providers also offer fine-tuning. I have not demonstrated offline model inference, device deployment, a closed-model comparison, or lower cost. The planner runs locally; the measured model calls ran on Tinker.
 
-Nontrivial foundations: [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), [Tinker SDK](https://github.com/thinking-machines-lab/tinker), [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and [OpenStreetMap](https://www.openstreetmap.org/copyright). AI coding assistance was used. Licenses and attribution are documented in [THIRD_PARTY_NOTICES.md](https://github.com/emihiggins/touch-grass-tinker/blob/main/THIRD_PARTY_NOTICES.md). No model weights are bundled.
+Nontrivial foundations: [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), [Tinker SDK](https://github.com/thinking-machines-lab/tinker), [Tinker Cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), [OpenStreetMap](https://www.openstreetmap.org/copyright), [MapLibre GL JS](https://maplibre.org/), and [Mapzen Terrain Tiles](https://registry.opendata.aws/terrain-tiles/). AI coding assistance was used. Licenses and attribution are documented in [THIRD_PARTY_NOTICES.md](https://github.com/emihiggins/touch-grass-tinker/blob/main/THIRD_PARTY_NOTICES.md). No model weights are bundled.
 
 ## My Agent Session
 <!-- Optional, but judges love it.  Save your session with DevRelay and embed it with the agent_session tag (see the challenge page), or link to it. -->

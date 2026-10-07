@@ -23,7 +23,7 @@ python3 scripts/check_release.py
 node --check web/app.js
 ```
 
-The release check validates local documentation links, current media/source fingerprints, upstream MapLibre/license hashes, terrain-tile hash and geographic coverage, and source/graph manifest hashes, then runs tests, reproduces13/16 from saved base outputs, builds the demo in an isolated directory, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs161 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
+The release check validates local documentation links, current media/source fingerprints, upstream MapLibre/license hashes, terrain-tile hash and geographic coverage, and source/graph manifest hashes, then runs tests, reproduces13/16 from saved base outputs, builds and extracts the demo into an isolated directory, runs offline planning plus real HTTP asset/context checks there, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs161 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
 
 ## Browser checks
 

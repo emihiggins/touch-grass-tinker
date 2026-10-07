@@ -33,7 +33,9 @@
     "Expanded Plose coverage investigation identified source connection-way gap; retained evidence without enabling transfers",
     "Bounded licensed Alpendorf elevation tile bundled for offline hillshade; attribution and failure fallback browser-checked",
     "Billing summaries distinguish unknown/partial totals from explicit zero; budget holds unchanged",
-    "Release check enforces vendored license/library fingerprints, elevation bounds and resort source/graph manifests"
+    "Release check enforces vendored license/library fingerprints, elevation bounds and resort source/graph manifests",
+    "Standalone ZIP has root START-HERE instructions; actual extracted archive HTTP assets and offline planner verified",
+    "DEV article updated for geographic hillshade; official deadline/template rechecked October7"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
