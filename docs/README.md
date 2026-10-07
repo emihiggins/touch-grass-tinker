@@ -12,7 +12,7 @@
 
 ## Proposed upgrades
 
-[Mountain map and real-resort research](../research/mountain-map-upgrade.md): source/licensing checks, renderer recommendation and staged acceptance criteria. These upgrades are planned, not current features.
+[Mountain map and real-resort research](../research/mountain-map-upgrade.md): source/licensing checks, renderer recommendation and staged acceptance criteria. The offline sketch, local geographic view and attributed hillshade are implemented; the document also identifies later data-review work.
 
 ## Historical planning and evidence
 
