@@ -331,6 +331,67 @@ window.addEventListener('afterprint', () => {
 function syncInterpret() {
   $('interpret').disabled = interpreting || terrainLoading || !graph;
 }
+function clearNoRouteHelp() {
+  $('no-route-help').hidden = true;
+  $('no-route-reasons').replaceChildren();
+  for (const id of [
+    'recovery-operations',
+    'recovery-time',
+    'recovery-difficulty',
+    'recovery-lifts',
+  ])
+    $(id).hidden = true;
+}
+function showNoRouteHelp(r) {
+  const messages = {
+    closed: 'A required edge is closed in this simulated operations scenario.',
+    unknown_status: 'A required edge has unknown simulated status, so it is not used.',
+    not_yet_open: 'A required edge is not open at the selected simulated start time.',
+    closed_before_completion: 'A required edge closes before the outing could complete.',
+    deadline: 'The available time budget is too short for the remaining legal edges.',
+    difficulty: 'The current maximum difficulty excludes edges needed by this bounded search.',
+    excluded_lift: 'The hard lift exclusions remove edges needed by this bounded search.',
+    finish_unreachable:
+      'The selected finish is unreachable in the supplied directed terrain graph.',
+    missing_state: 'The scenario has no status for an edge the planner would need.',
+    unreviewed_edge: 'Unreviewed terrain edges are excluded from this planning mode.',
+  };
+  const reasons = r.reasons && r.reasons.length ? r.reasons : ['bounded_search'];
+  $('no-route-summary').textContent =
+    r.scope === 'finish_unreachable_in_supplied_directed_graph'
+      ? 'The planner checked the supplied terrain graph and could not reach the selected finish.'
+      : 'The deterministic planner checked the current constraints and scenario; it did not find a legal simulated outing.';
+  $('no-route-reasons').replaceChildren(
+    ...reasons.map((reason) => {
+      const li = document.createElement('li');
+      li.textContent = messages[reason] || 'Planner reported: ' + reason + '.';
+      return li;
+    }),
+  );
+  $('recovery-operations').hidden = !reasons.some((x) =>
+    ['closed', 'unknown_status', 'not_yet_open', 'closed_before_completion'].includes(x),
+  );
+  $('recovery-time').hidden = !reasons.some((x) =>
+    ['deadline', 'closed_before_completion'].includes(x),
+  );
+  $('recovery-difficulty').hidden = !reasons.includes('difficulty');
+  $('recovery-lifts').hidden = !reasons.includes('excluded_lift');
+  $('no-route-help').hidden = false;
+}
+for (const [id, target] of [
+  ['recovery-time', 'minutes'],
+  ['recovery-difficulty', 'difficulty'],
+  ['recovery-lifts', 'hard-exclusions'],
+])
+  $(id).addEventListener('click', () =>
+    $(target).scrollIntoView({ behavior: 'smooth', block: 'center' }),
+  );
+$('recovery-operations').addEventListener('click', () => {
+  $('closures').value = 'none';
+  invalidate();
+  clearNoRouteHelp();
+  $('status').textContent = 'Using normal simulated operations. Confirm again to search.';
+});
 async function loadTerrain() {
   closeGeo();
   $('geo-toggle').hidden = mode() !== 'alpendorf';
@@ -408,6 +469,7 @@ $('request-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   if (interpreting || terrainLoading || !graph) return;
   interpreting = true;
+  clearNoRouteHelp();
   invalidate();
   const gen = generation,
     restoreFocus = document.activeElement === $('interpret');
@@ -577,6 +639,7 @@ $('make-plan').addEventListener('click', async () => {
   const gen = generation,
     restoreFocus = document.activeElement === $('make-plan');
   $('make-plan').disabled = true;
+  clearNoRouteHelp();
   $('status').textContent = 'Searching a simulated outing…';
   try {
     const r = await api('/api/plan', { terrain: mode(), intent, closures: $('closures').value });
@@ -590,6 +653,7 @@ $('make-plan').addEventListener('click', async () => {
           : r.status === 'search_limit'
             ? 'Search reached its limit; this does not prove no route exists.'
             : `Planner: ${r.status}`;
+      if (r.status === 'no_route') showNoRouteHelp(r);
       return;
     }
     mapSteps = r.steps;
