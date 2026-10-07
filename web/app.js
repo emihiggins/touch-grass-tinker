@@ -7,11 +7,15 @@ let terrainLoading = false,
   generation = 0,
   terrainGeneration = 0,
   placeLabels = {},
-  interpretationSource = '';
+  interpretationSource = '',
+  interpretationBase = '',
+  correctionKinds = new Set(),
+  reviewEditsPending = false;
 const mode = () => $('terrain').value;
 function invalidate() {
   generation++;
   intent = null;
+  reviewEditsPending = false;
   $('make-plan').disabled = true;
   $('review').hidden = true;
   $('itinerary').hidden = true;
@@ -426,11 +430,19 @@ $('request-form').addEventListener('submit', async (e) => {
       'Your request: ' + ($('request').value || '(form settings only)');
     $('review-settings').textContent =
       `Selected settings: ${$('minutes').value} minutes · maximum ${$('difficulty').value}. Check for any differences below.`;
-    interpretationSource = data.notice || data.adapter;
+    interpretationBase = data.notice || data.adapter;
+    interpretationSource = interpretationBase;
+    correctionKinds.clear();
+    reviewEditsPending = false;
+    $('discard-corrections').disabled = true;
+    $('correct-minutes').value = intent.duration_minutes ?? '';
+    $('correct-difficulty').value = intent.hard_max_difficulty ?? '';
+    for (const id of ['correct-minutes', 'correct-difficulty', 'apply-corrections'])
+      $(id).disabled = intent.status !== 'ready';
     $('model-note').textContent = interpretationSource;
     $('constraints').replaceChildren();
     for (const [label, value] of [
-      ['Maximum difficulty', intent.hard_max_difficulty],
+      ['Maximum difficulty', intent.hard_max_difficulty ?? 'No stated maximum'],
       ['Minutes', intent.duration_minutes],
       ['Start time', intent.start_time],
       ['Vary runs', intent.prefer_variety ? 'Yes' : 'No'],
@@ -466,14 +478,14 @@ $('request-form').addEventListener('submit', async (e) => {
       check.disabled = intent.status !== 'ready';
       check.addEventListener('change', () => {
         generation++;
-        $('make-plan').disabled = false;
+        $('make-plan').disabled = reviewEditsPending;
         intent.excluded_lift_types = [...$('lift-checks').querySelectorAll('input:checked')]
           .map((x) => x.value)
           .sort();
         intent.avoided_lift_types = intent.avoided_lift_types.filter(
           (x) => !intent.excluded_lift_types.includes(x),
         );
-        interpretationSource = data.notice + ' Hard exclusions corrected by the user.';
+        recordCorrection('hard lift exclusions');
         $('model-note').textContent = interpretationSource;
         const terms = [...$('constraints').querySelectorAll('dt')];
         terms.find((x) => x.textContent === 'Excluded lifts').nextElementSibling.textContent =
@@ -483,7 +495,9 @@ $('request-form').addEventListener('submit', async (e) => {
         ).nextElementSibling.textContent = intent.avoided_lift_types.join(', ') || 'None';
         $('itinerary').hidden = true;
         draw();
-        $('status').textContent = 'Correction applied locally. Confirm the updated constraints.';
+        $('status').textContent = reviewEditsPending
+          ? 'Apply the pending time/difficulty edits before confirming.'
+          : 'Correction applied locally. Confirm the updated constraints.';
       });
       label.append(check, document.createTextNode(' ' + type));
       $('lift-checks').append(label);
@@ -508,8 +522,58 @@ $('request-form').addEventListener('submit', async (e) => {
     if (gen === generation && restoreFocus) $('interpret').focus({ preventScroll: true });
   }
 });
+function recordCorrection(kind) {
+  correctionKinds.add(kind);
+  interpretationSource = `${interpretationBase} User corrections: ${[...correctionKinds].join(', ')}.`;
+  $('model-note').textContent = interpretationSource;
+}
+for (const id of ['correct-minutes', 'correct-difficulty'])
+  $(id).addEventListener('input', () => {
+    if (!intent || intent.status !== 'ready') return;
+    generation++;
+    reviewEditsPending = true;
+    $('discard-corrections').disabled = false;
+    $('make-plan').disabled = true;
+    $('itinerary').hidden = true;
+    draw();
+    $('status').textContent =
+      'Time/difficulty edits are not applied yet. Apply them before confirming.';
+  });
+$('discard-corrections').addEventListener('click', () => {
+  if (!intent || intent.status !== 'ready') return;
+  generation++;
+  $('correct-minutes').value = intent.duration_minutes ?? '';
+  $('correct-difficulty').value = intent.hard_max_difficulty ?? '';
+  reviewEditsPending = false;
+  $('discard-corrections').disabled = true;
+  $('make-plan').disabled = false;
+  $('status').textContent =
+    'Draft time/difficulty edits discarded. Confirm the current constraints again.';
+});
+$('correction-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!intent || intent.status !== 'ready' || !$('correction-form').reportValidity()) return;
+  const minutes = Number($('correct-minutes').value);
+  if (!Number.isInteger(minutes) || minutes < 1 || minutes > 1440) return;
+  generation++;
+  const difficulty = $('correct-difficulty').value || null;
+  if (intent.duration_minutes !== minutes) recordCorrection('time budget');
+  if (intent.hard_max_difficulty !== difficulty) recordCorrection('maximum difficulty');
+  intent.duration_minutes = minutes;
+  intent.hard_max_difficulty = difficulty;
+  reviewEditsPending = false;
+  $('discard-corrections').disabled = true;
+  const terms = [...$('constraints').querySelectorAll('dt')];
+  terms.find((x) => x.textContent === 'Minutes').nextElementSibling.textContent = String(minutes);
+  terms.find((x) => x.textContent === 'Maximum difficulty').nextElementSibling.textContent =
+    intent.hard_max_difficulty || 'No stated maximum';
+  $('itinerary').hidden = true;
+  draw();
+  $('make-plan').disabled = false;
+  $('status').textContent = 'Correction applied locally. Confirm the updated constraints.';
+});
 $('make-plan').addEventListener('click', async () => {
-  if (!intent) return;
+  if (!intent || reviewEditsPending) return;
   const gen = generation,
     restoreFocus = document.activeElement === $('make-plan');
   $('make-plan').disabled = true;

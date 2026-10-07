@@ -41,7 +41,8 @@
     "Local plain-text itinerary export retains approved constraints, repeated steps, estimated queues and simulation/source disclosures",
     "Terrain failure recovery clears stale maps, adds retry, and guards interpretation availability against pending/out-of-order requests",
     "Submission feature claims refreshed, browser sources formatted with pinned Prettier, and review-later boundaries consolidated",
-    "Recorded example availability is limited to Pine Mountain; unavailable selected modes reset explicitly to offline rules on terrain change"
+    "Recorded example availability is limited to Pine Mountain; unavailable selected modes reset explicitly to offline rules on terrain change",
+    "Local duration/maximum-grade correction form validates drafts, invalidates old routes, preserves original settings and combines user-correction provenance without extra inference"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
