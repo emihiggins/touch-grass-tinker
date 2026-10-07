@@ -19,6 +19,26 @@ class RoutingTests(unittest.TestCase):
             with self.subTest(status=status):
                 self.s['edges']['chair']['status']=status;self.s['edges']['tow']['status']=status
                 self.assertEqual(plan(self.g,self.i,self.s)['status'],'no_route')
+    def test_no_route_reports_actual_closure_reason(self):
+        for eid in ['chair','tow']: self.s['edges'][eid]['status']='closed'
+        result=plan(self.g,self.i,self.s)
+        self.assertEqual(result['status'],'no_route')
+        self.assertEqual(result['reasons'],['closed'])
+
+    def test_no_route_reports_disconnected_finish_reason(self):
+        self.g['edges']=[e for e in self.g['edges'] if e['to']!='summit']
+        self.i['finish_place_id']='summit'
+        self.s=f.scenario(self.g)
+        result=plan(self.g,self.i,self.s)
+        self.assertEqual(result['reasons'],['finish_unreachable'])
+
+    def test_no_route_reports_actual_time_reason(self):
+        self.i['duration_minutes']=15
+        for eid in ['chair','tow']: self.s['edges'][eid]['queue_s']=1000
+        result=plan(self.g,self.i,self.s)
+        self.assertEqual(result['status'],'no_route')
+        self.assertIn('deadline',result['reasons'])
+
     def test_time_and_queue_make_route_infeasible(self):
         for eid in ['chair','tow']:self.s['edges'][eid]['queue_s']=2000
         self.assertEqual(plan(self.g,self.i,self.s)['status'],'no_route')

@@ -117,9 +117,10 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
         for edge in adj[frontier.pop()]:
             if edge['to'] not in reachable:reachable.add(edge['to']);frontier.append(edge['to'])
     if intent['finish_place_id'] not in reachable:
-        return {'status':'no_route','route':None,'simulated':True,'expanded_states':0,'scope':'finish_unreachable_in_supplied_directed_graph'}
+        return {'status':'no_route','route':None,'simulated':True,'expanded_states':0,
+                'scope':'finish_unreachable_in_supplied_directed_graph','reasons':['finish_unreachable']}
     todo=collections.deque([(intent['start_place_id'],0,[],frozenset(),{})])
-    began=time.monotonic();expanded=0;best=None;best_score=None;limited=False;depth_pruned=False
+    began=time.monotonic();expanded=0;best=None;best_score=None;limited=False;depth_pruned=False;blocked=set()
     while todo:
         if expanded>=max_states or time.monotonic()-began>=timeout_s:limited=True;break
         position,elapsed,path,kinds,visits=todo.popleft();expanded+=1
@@ -135,19 +136,33 @@ def plan(graph,intent,scenario,*,lab=False,max_states=20000,timeout_s=2,max_edge
         if source_count>=max_edges:depth_pruned=True;continue
         for e in adj[position]:
             if source_count+len(e.get('source_edge_ids',[e['id']]))>max_edges:depth_pruned=True;continue
-            if not lab and e.get('review_status') not in {'synthetic','verified'}:continue
+            if not lab and e.get('review_status') not in {'synthetic','verified'}:
+                blocked.add('unreviewed_edge');continue
             if visits.get(e['id'],0)>=max_visits:depth_pruned=True;continue
-            if e['kind']=='piste' and RANK[e['difficulty']]>RANK[intent['hard_max_difficulty']]:continue
-            if e['kind']=='lift' and e['lift_type'] in intent['excluded_lift_types']:continue
+            if e['kind']=='piste' and RANK[e['difficulty']]>RANK[intent['hard_max_difficulty']]:
+                blocked.add('difficulty');continue
+            if e['kind']=='lift' and e['lift_type'] in intent['excluded_lift_types']:
+                blocked.add('excluded_lift');continue
             state=scenario['edges'].get(e['id'])
-            if not state or state['status']!='open':continue
+            if not state:
+                blocked.add('missing_state');continue
+            if state['status']!='open':
+                blocked.add('closed' if state['status']=='closed' else 'unknown_status');continue
             arrival=start+dt.timedelta(seconds=elapsed)
             end=elapsed+state['queue_s']+e['duration_s']
-            if arrival<stamp(state['opens_at']) or end>budget or start+dt.timedelta(seconds=end)>stamp(state['closes_at']):continue
+            if arrival<stamp(state['opens_at']):
+                blocked.add('not_yet_open');continue
+            if end>budget:
+                blocked.add('deadline');continue
+            if start+dt.timedelta(seconds=end)>stamp(state['closes_at']):
+                blocked.add('closed_before_completion');continue
             v=visits.copy();v[e['id']]=v.get(e['id'],0)+1
             todo.append((e['to'],end,path+[e['id']],kinds|{e['kind']},v))
     if best is not None:
         verification=validate_route(graph,intent,scenario,best,lab=lab)
         if not verification['valid']:raise RuntimeError('Planner produced invalid candidate: '+verification['reason'])
         return {'status':'ok','route':best,'simulated':True,'lab':lab,'search_complete':not limited and not depth_pruned,'expanded_states':expanded,'optimality_claim':False,'validation':verification,'preference_tradeoffs':preference_tradeoffs(graph,intent,best)}
-    return {'status':'search_limit' if limited or depth_pruned else 'no_route','route':None,'simulated':True,'expanded_states':expanded,'scope':'bounded_reference_search'}
+    status='search_limit' if limited or depth_pruned else 'no_route'
+    result={'status':status,'route':None,'simulated':True,'expanded_states':expanded,'scope':'bounded_reference_search'}
+    if status=='no_route':result['reasons']=sorted(blocked)
+    return result

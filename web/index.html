@@ -121,6 +121,28 @@
             <button id="make-plan" disabled>Confirm &amp; plan outing</button>
           </section>
           <p id="status" role="status" aria-live="polite">Choose a terrain to begin.</p>
+          <section
+            id="no-route-help"
+            class="recovery-panel"
+            hidden
+            aria-labelledby="no-route-heading"
+          >
+            <h3 id="no-route-heading">Why no outing was found</h3>
+            <p id="no-route-summary"></p>
+            <ul id="no-route-reasons"></ul>
+            <div class="recovery-actions">
+              <button id="recovery-operations" class="secondary" hidden>
+                Use normal simulated operations
+              </button>
+              <button id="recovery-time" class="secondary" hidden>Review time budget</button>
+              <button id="recovery-difficulty" class="secondary" hidden>
+                Review maximum difficulty
+              </button>
+              <button id="recovery-lifts" class="secondary" hidden>
+                Review hard lift exclusions
+              </button>
+            </div>
+          </section>
           <button id="retry-terrain" class="secondary" hidden>Retry terrain loading</button>
         </section>
         <section class="map-panel" aria-labelledby="map-heading">
