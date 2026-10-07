@@ -94,4 +94,4 @@ Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](
 
 ## Real-resort data research
 
-New bounded [Wachusett and Patscherkofel snapshots](research/real-resort-expansion.md) broaden regional data coverage. They are research-only, not selectable destinations or navigation-ready terrain. The [catalog](research/evidence/resort-catalog.json) records provenance, connectivity gaps, assumed timing and unknown operating status.
+Bounded [Wachusett, Patscherkofel, Winter Park and Breckenridge snapshots](research/real-resort-expansion.md) broaden regional data coverage. They are research-only, not selectable destinations or navigation-ready terrain. The [catalog](research/evidence/resort-catalog.json) records provenance, connectivity gaps, assumed timing and unknown operating status.

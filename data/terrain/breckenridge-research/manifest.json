@@ -1,0 +1,38 @@
+{
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-106.095,39.465,-106.065,39.488",
+  "fetched_at": "2026-10-07T20:40:11.035392+00:00",
+  "original_response_sha256": "3911cbd34b5f2937b8816b9ebb3ef517dec8387b1a0f827921e6625dadccd054",
+  "original_bytes": 2492948,
+  "requested_bbox": [
+    -106.095,
+    39.465,
+    -106.065,
+    39.488
+  ],
+  "import_options": {
+    "graph_id": "breckenridge-bounded-osm-research",
+    "timezone": "America/Denver",
+    "difficulty_convention": "US",
+    "difficulty_mapping": {
+      "novice": "green",
+      "easy": "green",
+      "intermediate": "blue",
+      "advanced": "black"
+    }
+  },
+  "mapping_status": "Provisional US grades; native tags preserved; expert/double-black/unknown NOT mapped to black. No operator validation.",
+  "coverage_status": "Partial base-area research extract; not complete resort coverage. Complete OSM ways may extend outside bounds.",
+  "pass_research": {
+    "candidate": "Epic",
+    "access_entitlement": "unknown; no season/tier/day entitlement encoded",
+    "listing_status": "Epic candidate; official automated fetch blocked; current terms not verified"
+  },
+  "input_sha256": "3911cbd34b5f2937b8816b9ebb3ef517dec8387b1a0f827921e6625dadccd054",
+  "sanitized_sha256": "2e9b8d3100e81ea8afaaf66d2a1b739723b65de911be33147b9664d80c9f0ec8",
+  "graph_sha256": "6f3583cfa1187d3d7c8e38bed05d1e0d2eefa6fc39bffb80f11acce133dc93f9",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "sanitization": "Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.",
+  "review_status": "unreviewed",
+  "source_hash_semantics": "Graph source_sha256 identifies sanitized importer input; original response hash is separate."
+}

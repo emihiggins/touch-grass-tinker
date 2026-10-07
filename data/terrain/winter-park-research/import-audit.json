@@ -1,0 +1,16 @@
+{
+  "skipped_ways": [
+    {
+      "way_id": "778411774",
+      "reason": "area_or_closed_way"
+    }
+  ],
+  "node_count": 523,
+  "edge_count": 520,
+  "assumptions": [
+    "Way order used as directed travel; lift terminals unreviewed.",
+    "Durations assume lift 3m/s, piste 4m/s, minimum 1s; no measured timing.",
+    "All edges unreviewed; no operational route approval.",
+    "Relations and permission/time restrictions are not fully interpreted."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-105.777,39.878,-105.758,39.891",
+  "fetched_at": "2026-10-07T20:40:10.596653+00:00",
+  "original_response_sha256": "fd61509f753493adec0d94b11d5660727088f52366ac256be907b172f8610938",
+  "original_bytes": 2154282,
+  "requested_bbox": [
+    -105.777,
+    39.878,
+    -105.758,
+    39.891
+  ],
+  "import_options": {
+    "graph_id": "winter-park-bounded-osm-research",
+    "timezone": "America/Denver",
+    "difficulty_convention": "US",
+    "difficulty_mapping": {
+      "novice": "green",
+      "easy": "green",
+      "intermediate": "blue",
+      "advanced": "black"
+    }
+  },
+  "mapping_status": "Provisional US grades; native tags preserved; expert/double-black/unknown NOT mapped to black. No operator validation.",
+  "coverage_status": "Partial base-area research extract; not complete resort coverage. Complete OSM ways may extend outside bounds.",
+  "pass_research": {
+    "candidate": "Ikon",
+    "access_entitlement": "unknown; no season/tier/day entitlement encoded",
+    "listing_status": "Official Ikon destination page verified 2026-10-07; access terms not extracted"
+  },
+  "input_sha256": "fd61509f753493adec0d94b11d5660727088f52366ac256be907b172f8610938",
+  "sanitized_sha256": "f2a77cfbfd15cedfd1705c9d13ce0e282069ad1cc586a24aa2cc27831f031318",
+  "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "sanitization": "Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.",
+  "review_status": "unreviewed",
+  "source_hash_semantics": "Graph source_sha256 identifies sanitized importer input; original response hash is separate."
+}

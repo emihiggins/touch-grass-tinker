@@ -4,6 +4,39 @@
   "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0. Application code is separately MIT.",
   "snapshots": [
     {
+      "id": "breckenridge-bounded-osm-research",
+      "directory": "data/terrain/breckenridge-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-106.095,39.465,-106.065,39.488",
+      "fetched_at": "2026-10-07T20:40:11.035392+00:00",
+      "graph_sha256": "6f3583cfa1187d3d7c8e38bed05d1e0d2eefa6fc39bffb80f11acce133dc93f9",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "US",
+      "timezone": "America/Denver",
+      "nodes": 1136,
+      "edges": 1146,
+      "edge_kinds": {
+        "lift": 21,
+        "piste": 1125
+      },
+      "weak_components": 29,
+      "nodes_on_directed_cycles": 5,
+      "source_ways": 150,
+      "native_piste_grades": {
+        "advanced": 39,
+        "easy": 15,
+        "expert": 31,
+        "intermediate": 34
+      },
+      "ways_with_opening_hours": 0,
+      "duration_basis": {
+        "assumed": 1146
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    },
+    {
       "id": "patscherkofel-bounded-osm-research",
       "directory": "data/terrain/patscherkofel-research",
       "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.435,47.195,11.475,47.225",
@@ -126,6 +159,38 @@
         "unknown": 1
       },
       "ways_with_opening_hours": 1,
+      "duration_basis": {
+        "assumed": 520
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    },
+    {
+      "id": "winter-park-bounded-osm-research",
+      "directory": "data/terrain/winter-park-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-105.777,39.878,-105.758,39.891",
+      "fetched_at": "2026-10-07T20:40:10.596653+00:00",
+      "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "US",
+      "timezone": "America/Denver",
+      "nodes": 523,
+      "edges": 520,
+      "edge_kinds": {
+        "lift": 12,
+        "piste": 508
+      },
+      "weak_components": 13,
+      "nodes_on_directed_cycles": 93,
+      "source_ways": 49,
+      "native_piste_grades": {
+        "advanced": 9,
+        "easy": 17,
+        "intermediate": 6
+      },
+      "ways_with_opening_hours": 0,
       "duration_basis": {
         "assumed": 520
       },
