@@ -101,3 +101,7 @@ The deterministic `python3 scripts/audit_resort_snapshot.py` audit now records e
 ## Second-region import checkpoint — October 7
 
 A bounded [Plose OSM fixture](../data/terrain/plose-research/README.md) now exercises explicit regional configuration, privacy sanitization, source/derived hashes and exact offline reconstruction. It retains 61 nodes/62 edges and is not enabled in the app. The importer refuses implicit non-Austrian grade mappings. Regression checks preserve the historical Alpendorf graph. This advances M3 tooling/provenance; qualified access review, live operations, elevation and a complete second-resort product integration remain open.
+
+## Directed-connectivity follow-up
+
+[Source review packets](evidence/resort-review/README.md) now cover 70 Alpendorf and 8 Plose ways. The directed audit finds no cycle in the Plose fixture despite weak connectivity, so it cannot support lap planning as imported. Alpendorf has a 204-node strongly connected component; other nodes do not belong to a nontrivial directed cycle. Resolve source direction/coverage gaps with evidence rather than synthetic connections. This is a concrete adoption blocker, not a failure of the model benchmark.

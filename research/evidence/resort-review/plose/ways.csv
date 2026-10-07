@@ -1,0 +1,9 @@
+source_ref,source_url,name,kind,edge_count,native_grade,normalized_grades,source_restrictions,review_status,review_questions,reviewer_notes
+way/103429371,https://www.openstreetmap.org/way/103429371,Skiweg,piste,18,easy,blue,"{""oneway"": ""yes""}",pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/103429722,https://www.openstreetmap.org/way/103429722,OSM way 103429722,piste,13,easy,blue,{},pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/103430648,https://www.openstreetmap.org/way/103430648,Schönjöchel,piste,4,easy,blue,"{""oneway"": ""yes""}",pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/48468601,https://www.openstreetmap.org/way/48468601,Plose 3,piste,12,easy,blue,"{""oneway"": ""yes""}",pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/48468609,https://www.openstreetmap.org/way/48468609,Querfahrt - Attraversamento,piste,6,easy,blue,"{""oneway"": ""yes""}",pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/48468610,https://www.openstreetmap.org/way/48468610,Schönbodenbahn,lift,1,unknown,,{},pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/48602744,https://www.openstreetmap.org/way/48602744,Schönboden - Giogo Bello,piste,2,easy,blue,"{""oneway"": ""yes""}",pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
+way/678145049,https://www.openstreetmap.org/way/678145049,Plose 2,piste,6,intermediate,red,{},pending,"Confirm direction, grade, access, boarding/transfers and coverage; supply dated operating-source evidence.",
