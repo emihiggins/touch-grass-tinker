@@ -1,14 +1,21 @@
 {
-  "scope": "four_resort_browse_only_preview_not_navigation",
+  "scope": "four_resort_browse_only_preview_and_source_lift_endpoint_review",
   "captured_on": "2026-10-07",
   "sha256": {
-    "scripts/build_resort_review.py": "1fd13d7de864a0a50da0cc109f72a07628669f35f3f7556eec25b5b7c5eaf661",
-    "scripts/browser-resort-review.cjs": "71d3b33cd893e1b3d11a7db6820977ba6f82f6264c87b3ae56e91a7d5799e500",
-    "web/resort-review.html": "6743178214bd52d9dbf7068c72e86f1ad2e9ff871799928d987d5c71546355c2",
-    "web/resort-review.js": "a4ee977f8eb7ddb1d2e426f021ca7228d629248fadca738592698658a5f76b7a",
+    "scripts/build_resort_review.py": "5946672c23b9cb2d235ca2921649ed68f9e1f14a8d34383407cf96a461022c88",
+    "scripts/browser-resort-review.cjs": "cf41fe224ae0eaf4faab94c90b3eaf729e226d6c43e41dd4cb8cbe65e0ae9f76",
+    "web/resort-review.html": "3c226004b1fbe2175c12f1910d82db32dd9fafaaab696a15360c4ee7c1711bac",
+    "web/resort-review.js": "ad4d412bde380245ac580675326a58ca91f500071a2b8b0e25550241dd7dd6b2",
     "research/evidence/resort-review/browser-check.json": "d17942d6156f5b0c1c2c34bdebff3eb1d11226a5ac3f47a06dc11feae0289d35",
     "research/evidence/resort-review/axe.json": "2b8688dab86a86f7eca3b70dde9b15e7dd4b5ac5470fd3a3e32de395aed385b1",
-    "research/evidence/resort-review/winter-park-390.png": "93a2949958b424af9efedc860ede8561e0bc096027e24f5c84715055032ac763",
-    "research/evidence/resort-review/breckenridge-1440.png": "2e10fecaf54e97d0610573af55ecae54dfad7716debd49dd71d61dd975df4318"
+    "research/evidence/resort-review/winter-park-390.png": "0f3d0b5964e47dc3276c437ce88893254c6acda04c353151d7ab71d683f3a6fd",
+    "research/evidence/resort-review/breckenridge-1440.png": "c8f93185a3ca0dac4fc87dc8a9def863b8e02a14e207c488622056dd6a2c62cb",
+    "research/evidence/resort-review/station-axe.json": "8fb56a66c47249abd5f6a09698deaeb57876dec8d0bcba442e076a1c4948d500",
+    "research/evidence/resort-review/lift-winter-park-768.png": "dc01d0808cae35b46631daa9b97e340edf338dd726191bcf4a850520401c0fe4",
+    "research/evidence/resort-review/lift-breckenridge-390.png": "91418cdae4ce7fe25df0839d6c07f7f70c3240f5a2dcd04defde4d9a33b859ec",
+    "research/evidence/resort-review/lift-breckenridge-1440.png": "a8bf6f50fda8e7d6c1bef99a198daebe735ada77e5d19f4fdf9368ac31160a9a",
+    "research/evidence/resort-review/lift-breckenridge-768.png": "2d1599708aa1bfbf1bc5c8c3fc65541a68f8501e4d9bcafa4338560caf26a691",
+    "research/evidence/resort-review/lift-winter-park-1440.png": "32ad4fd661eeac3b28ca6c9c099e139e4db2c6ae8df49e4c2e15cf9d3662fd09",
+    "research/evidence/resort-review/lift-winter-park-390.png": "8dae4c1ac07c805083c8066a4dd02abcda3dbfd0a1274e1819292c92d44d4923"
   }
 }

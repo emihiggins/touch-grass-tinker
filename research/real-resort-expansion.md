@@ -54,13 +54,21 @@ The four-sample review viewer now uses an external same-origin script compatible
 
 The deterministic diagnose_connectivity.py report links source OSM ways to imported graph edges without changing either graph. It records both directed endpoint incidence and a bounded 30 m proximity search as review evidence only; it does not add connectors or enable routing.
 
-| Sample | Source aerialways | Imported aerialways | Source lift endpoints | Endpoints with no exact incoming/outgoing piste incidence | Excluded source ways | Proximity candidates |
+| Sample | Source passenger aerialways | Imported aerialways | Passenger lift endpoints | Endpoints with no exact incoming/outgoing piste incidence | Excluded source ways | Proximity candidates |
 |---|---:|---:|---:|---:|---:|---:|
-| Winter Park | 13 | 12 | 26 | 17 | 2 | 3 |
-| Breckenridge | 24 | 21 | 48 | 46 | 35 | 17 |
+| Winter Park | 12 | 12 | 24 | 15 | 2 | 1 |
+| Breckenridge | 21 | 21 | 42 | 40 | 35 | 10 |
 
-The source/import mismatch is itself a review item: one Winter Park aerialway and three Breckenridge aerialways are present in the retained source but not represented by imported lift edges. Breckenridge has 31 excluded unknown-difficulty ways (the source tags are expert); Winter Park has one intermediate downhill way absent from the graph. This report does not assume those are safe or usable connections.
+A follow-up classification audit corrected the original source-lift counts: station outlines and freight aerialways are not passenger lifts. Winter Park's extra aerialway was a station polygon; Breckenridge had two station ways and one goods aerialway. These remain source evidence but are excluded from passenger endpoint counts. The earlier17/26 and46/48 endpoint figures included those non-passenger objects and are superseded by15/24 and40/42. All imported graphs are unchanged. Winter Park's Dogpatch exclusion is a closed/area way, not an ordinary missing directed trail. Breckenridge's31 expert-tagged excluded ways remain unpromoted.
 
 Prioritized questions are: identify each lift's actual boarding and alighting terminals; verify whether a permitted, directionally valid descent reaches each terminal; inspect the excluded source ways and any station relations; and determine whether the bounded extract omits connecting coverage. Exact shared nodes and nearby geometry are evidence for that review, not inferred incidence. The saved graph.json files remain byte-for-byte unchanged by diagnostics.
 
 The output packets are data/terrain/winter-park-research/connectivity-diagnostics.json and data/terrain/breckenridge-research/connectivity-diagnostics.json. Their limitations remain: OSM relations, current operations, access permissions, closures, safety and measured timing were not resolved.
+
+## Station evidence and map inspection
+
+The hash-matched original Winter Park response was still available locally. A bounded, allowlisted extraction now retains station-node coordinates/tags and directly matching relation members, without contributor identities. Fifteen passenger-lift endpoint entries carry `aerialway=station`. No directly matching lift/endpoint relations occur in this bounded response; that does not establish upstream absence. The raw-byte hash, graph hash and original fetch date bind the supplement to its source.
+
+The review preview's lift selector shows source-start/end markers, exact incoming/outgoing piste counts and links to source nodes. These markers are not verified boarding/alighting directions. Breckenridge uses saved sanitized coordinates and explicitly reports raw station tags as not recovered. Other resorts with no endpoint diagnostic have that selector disabled. Nothing adds connectors, modifies graph bytes or enables routing.
+
+Next useful evidence is focused source review of the15 Winter Park passenger endpoints without exact piste incidence, followed by independently verified boarding/transfer/access observations. More automatic snapping would hide rather than resolve that gap.

@@ -17,7 +17,9 @@ class ConnectivityDiagnosticsTests(unittest.TestCase):
                 '<tag k="name" v="Lift"/></way><way id="2" version="1"><nd ref="c"/><nd ref="d"/>'
                 '<tag k="piste:type" v="connection"/><tag k="name" v="Connector"/></way>'
                 '<way id="3" version="1"><nd ref="b"/><nd ref="c"/><tag k="piste:type" v="downhill"/>'
-                '<tag k="piste:difficulty" v="expert"/></way></osm>'
+                '<tag k="piste:difficulty" v="expert"/></way>'
+                '<way id="4"><nd ref="a"/><nd ref="b"/><tag k="aerialway" v="station"/></way>'
+                '<way id="5"><nd ref="c"/><nd ref="d"/><tag k="aerialway" v="goods"/></way></osm>'
             )
             graph = {
                 "nodes": [{"id": node, "lon": -105, "lat": 39 + index * 0.0001}
@@ -28,7 +30,8 @@ class ConnectivityDiagnosticsTests(unittest.TestCase):
             (folder / "graph.json").write_text(json.dumps(graph))
             result = diagnose(folder)
             self.assertEqual(result["lift_count"], 1)
-            self.assertEqual(result["excluded_source_way_count"], 2)
+            self.assertEqual(len(result["excluded_non_passenger_aerialways"]),2)
+            self.assertEqual(result["excluded_source_way_count"], 4)
             self.assertEqual(result["automatic_connections_added"], 0)
             self.assertFalse(result["routing_enabled"])
             self.assertEqual(graph, json.loads((folder / "graph.json").read_text()))

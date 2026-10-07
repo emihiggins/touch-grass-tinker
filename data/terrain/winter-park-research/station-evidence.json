@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "scope": "station_review_evidence_not_routing",
+  "raw_source_sha256": "fd61509f753493adec0d94b11d5660727088f52366ac256be907b172f8610938",
+  "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-105.777,39.878,-105.758,39.891",
+  "fetched_at": "2026-10-07T20:40:10.596653+00:00",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "endpoints": [
+    {
+      "lift_source_ref": "way/1160222337",
+      "source_node": "10790366850",
+      "coordinate": [
+        -105.7654745,
+        39.888951
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/1160222337",
+      "source_node": "10790366851",
+      "coordinate": [
+        -105.7668219,
+        39.8903869
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/1214436867",
+      "source_node": "11252044150",
+      "coordinate": [
+        -105.7590222,
+        39.8832486
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/1214436867",
+      "source_node": "11252044151",
+      "coordinate": [
+        -105.7591693,
+        39.8824065
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058553",
+      "source_node": "177103666",
+      "coordinate": [
+        -105.7759413,
+        39.8878847
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058553",
+      "source_node": "177057939",
+      "coordinate": [
+        -105.7752333,
+        39.8755864
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058716",
+      "source_node": "177105529",
+      "coordinate": [
+        -105.7638269,
+        39.8865599
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058716",
+      "source_node": "177103630",
+      "coordinate": [
+        -105.7705093,
+        39.8829459
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058732",
+      "source_node": "177105782",
+      "coordinate": [
+        -105.7763265,
+        39.8875185
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/17058732",
+      "source_node": "177105787",
+      "coordinate": [
+        -105.78273,
+        39.8816761
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676524",
+      "source_node": "2640039862",
+      "coordinate": [
+        -105.7648568,
+        39.8880222
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676524",
+      "source_node": "2640039863",
+      "coordinate": [
+        -105.7716734,
+        39.8847288
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676845",
+      "source_node": "2640041917",
+      "coordinate": [
+        -105.7649985,
+        39.8882888
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676845",
+      "source_node": "2640041918",
+      "coordinate": [
+        -105.7653987,
+        39.8880817
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676846",
+      "source_node": "2640041919",
+      "coordinate": [
+        -105.7652989,
+        39.8886702
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676846",
+      "source_node": "2640041920",
+      "coordinate": [
+        -105.7656689,
+        39.8885062
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676847",
+      "source_node": "2640041921",
+      "coordinate": [
+        -105.7695013,
+        39.8892525
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/258676847",
+      "source_node": "2640041922",
+      "coordinate": [
+        -105.7718678,
+        39.8849604
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/31145982",
+      "source_node": "346447081",
+      "coordinate": [
+        -105.7630786,
+        39.8859059
+      ],
+      "tags": {},
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/31145982",
+      "source_node": "346447082",
+      "coordinate": [
+        -105.7752167,
+        39.8745534
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/72608831",
+      "source_node": "861735808",
+      "coordinate": [
+        -105.7574256,
+        39.882349
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/72608831",
+      "source_node": "861735809",
+      "coordinate": [
+        -105.7622351,
+        39.8837628
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/86248729",
+      "source_node": "1001081226",
+      "coordinate": [
+        -105.7747227,
+        39.8879755
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    },
+    {
+      "lift_source_ref": "way/86248729",
+      "source_node": "1001081228",
+      "coordinate": [
+        -105.7732682,
+        39.8854182
+      ],
+      "tags": {
+        "aerialway": "station"
+      },
+      "present_in_raw_snapshot": true
+    }
+  ],
+  "matching_relations": [],
+  "routing_enabled": false,
+  "limitations": [
+    "Only allowlisted tags and directly matching relation members retained; contributor identity removed.",
+    "No matching relation in this bounded response does not mean none exists upstream.",
+    "Station tags do not establish boarding direction, permitted access or operational status."
+  ]
+}

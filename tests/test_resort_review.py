@@ -11,3 +11,9 @@ class T(unittest.TestCase):
   main();h=(R/'web/resort-review.html').read_text();d=json.loads(h.split('<script id="data" type="application/json">')[1].split('</script>')[0])
   self.assertEqual(len(d['winter-park']['graph']['edges']),520);self.assertEqual(len(d['breckenridge']['graph']['edges']),1146);self.assertEqual(len(d['wachusett']['graph']['nodes']),506);self.assertEqual(len(d['patscherkofel']['graph']['nodes']),139)
   for x in d.values():self.assertTrue(x['manifest']['fetched_at']);self.assertEqual(x['graph']['review_status'],'unreviewed')
+
+ def test_current_preview_evidence_fingerprints(self):
+  import hashlib
+  m=json.loads((R/'research/evidence/resort-review/current-media.json').read_text())
+  for name,expected in m['sha256'].items():
+   self.assertEqual(hashlib.sha256((R/name).read_bytes()).hexdigest(),expected,name)
