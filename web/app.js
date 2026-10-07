@@ -356,6 +356,11 @@ async function loadTerrain() {
     panY = 0;
     $('adapter').querySelector('[value=live]').disabled = !data.live_model_enabled;
     $('adapter').querySelector('[value=replay]').disabled = !data.recorded_model_available;
+    if ($('adapter').selectedOptions[0]?.disabled) {
+      $('adapter').value = 'rules';
+      $('model-note').textContent =
+        'The previous interpretation mode is unavailable for this terrain. Switched to offline rules; review your constraints again.';
+    }
     placeLabels = Object.fromEntries(data.catalog.map((p) => [p.id, p.label]));
     draw();
     $('map-label').textContent =
