@@ -23,3 +23,5 @@ All imported edge times remain estimates. A qualified resort/domain reviewer sho
 4. Re-run structural audits, constraints and route validation before any app integration. Human review of these CSVs alone does not create a production-navigation capability.
 
 Generate a new packet offline with `python3 scripts/resort_review_packet.py --graph GRAPH.json --source SOURCE.osm --out NEW_DIRECTORY`. Existing output directories are refused so decisions cannot be overwritten by regeneration. The packet is a review aid; approval-state enforcement is not implemented.
+
+The standalone resort preview builder verifies the manifest, diagnostic, and station-evidence hashes against the current `source.osm` and `graph.json` bytes before rendering. Excluded ways with missing source nodes are rendered as separate known-node segments (or omitted when the source way itself is absent); the preview never joins across an unknown gap.
