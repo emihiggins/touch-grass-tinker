@@ -17,6 +17,12 @@ jobs:
         with:
           python-version: '3.11'
       - name: Dependency-free tests, saved scoring, isolated package and reproducibility
+        # Offline checks must never depend on a corporate proxy's localhost policy.
+        env:
+          HTTP_PROXY: http://127.0.0.1:9
+          http_proxy: http://127.0.0.1:9
+          NO_PROXY: ''
+          no_proxy: ''
         run: python scripts/check_release.py
   windows-package:
     # Validate the batch helper when Emi makes the repository public.

@@ -77,3 +77,7 @@ npx --yes --package prettier@3.6.2 prettier --check web/app.js web/index.html we
 Use `--write` instead of `--check` for intentional formatting changes. After any browser source change, rerun browser checks and refresh the current media evidence before updating its fingerprints.
 
 Local-correction regression: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-corrections.cjs`. Checks draft invalidation, integer/horizon bounds, combined correction provenance, planner payload, exported constraints and no extra interpreter call.
+
+### Proxy-independent offline checks
+
+Server tests and extracted-package HTTP checks use explicit direct urllib openers only for their loopback test URLs. They do not depend on NO_PROXY and do not modify machine proxy settings or provider clients. To verify isolation, run the offline release suite with HTTP_PROXY/http_proxy set to an unreachable local endpoint and NO_PROXY/no_proxy empty; all offline checks should still pass.

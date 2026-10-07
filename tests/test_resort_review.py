@@ -17,3 +17,12 @@ class T(unittest.TestCase):
   m=json.loads((R/'research/evidence/resort-review/current-media.json').read_text())
   for name,expected in m['sha256'].items():
    self.assertEqual(hashlib.sha256((R/name).read_bytes()).hexdigest(),expected,name)
+
+ def test_exclusion_reasons_and_area_are_source_backed(self):
+  main();h=(R/'web/resort-review.html').read_text();d=json.loads(h.split('<script id="data" type="application/json">')[1].split('</script>')[0])
+  dog=next(e for e in d['winter-park']['excluded_source'] if e['name']=='Dogpatch')
+  self.assertEqual(dog['reason'],'area_or_closed_way');self.assertEqual(dog['classification'],'closed-area')
+  self.assertEqual(dog['native_tags']['area'],'yes')
+  experts=[e for e in d['breckenridge']['excluded_source'] if e.get('difficulty')=='expert']
+  self.assertEqual(len(experts),31)
+  self.assertTrue(all(e['status']=='excluded from sanitized graph' for e in experts))

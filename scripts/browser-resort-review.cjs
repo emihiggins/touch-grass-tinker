@@ -21,10 +21,7 @@ const fs = require('fs');
       ['patscherkofel', 144],
     ]) {
       await page.selectOption('#s', resort);
-      await page.waitForFunction(
-        (n) => document.querySelectorAll('#map polyline').length === n,
-        count,
-      );
+      await page.waitForFunction((n) => document.querySelectorAll('#map .e').length === n, count);
       const bounds = await page.locator('#map').evaluate((m) => {
         const b = m.getBBox();
         return { x: b.x, y: b.y, w: b.width, h: b.height };
@@ -33,12 +30,12 @@ const fs = require('fs');
         throw Error('Clipped ' + resort + JSON.stringify(bounds));
       if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
         throw Error('Horizontal overflow');
-      await page.locator('#map polyline').first().focus();
+      await page.locator('#map .e').first().focus();
       await page.keyboard.press('Enter');
       if (!(await page.locator('#detail').innerText()).includes('Source way'))
         throw Error('Missing details');
       await page.uncheck('#d');
-      const subset = await page.locator('#map polyline').count();
+      const subset = await page.locator('#map .e').count();
       if (subset >= count) throw Error('Component filter ineffective');
       if (await page.locator('#detail').innerText()) throw Error('Stale detail after filtering');
       await page.check('#d');
@@ -65,6 +62,40 @@ const fs = require('fs');
         if (await page.locator('#map .endpoint').count()) throw Error('Stale endpoint markers');
       } else if (!(await page.locator('#lift-review').isDisabled()))
         throw Error('Missing diagnostics offered');
+      if (resort === 'winter-park' || resort === 'breckenridge') {
+        const excludedCount = await page.locator('#map .excluded').count();
+        if (excludedCount !== (resort === 'winter-park' ? 2 : 35))
+          throw Error('Wrong excluded count');
+        await page.uncheck('#x');
+        if (await page.locator('#map .excluded').count()) throw Error('Excluded toggle');
+        await page.locator('#excluded-list button').first().click();
+        if (
+          !(await page.isChecked('#x')) ||
+          (await page.locator('#map .excluded.selected').count()) !== 1
+        )
+          throw Error('Selected excluded not visible');
+        const text = await page.locator('#detail').innerText();
+        if (!text.includes('excluded from sanitized graph')) throw Error('Missing excluded status');
+        await page.locator('#map .e').first().focus();
+        await page.keyboard.press('Enter');
+        if (await page.locator('#map .excluded.selected').count())
+          throw Error('Stale excluded highlight');
+        if (resort === 'winter-park') {
+          await page.getByRole('button', { name: /Dogpatch —/ }).click();
+          if (!(await page.locator('#detail').innerText()).includes('closed-area'))
+            throw Error('Dogpatch is not labeled area');
+          if ((await page.locator('#map polygon.excluded').count()) !== 1)
+            throw Error('Dogpatch missing polygon');
+        } else {
+          const edge = page.locator('#map polyline.excluded').first();
+          if ((await edge.evaluate((e) => getComputedStyle(e).fill)) !== 'none')
+            throw Error('Open geometry filled as area');
+        }
+        await page.screenshot({
+          path: `research/evidence/resort-review/excluded-${resort}-${width}.png`,
+          fullPage: true,
+        });
+      }
       evidence.push({ resort, width, edges: count, largest_component_edges: subset, bounds });
       if (
         (width === 390 && resort === 'winter-park') ||

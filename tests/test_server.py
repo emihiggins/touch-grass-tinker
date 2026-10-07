@@ -4,11 +4,11 @@ from liftlap.server import Handler,handle_api
 class ServerTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.server=ThreadingHTTPServer(('127.0.0.1',0),Handler);cls.thread=threading.Thread(target=cls.server.serve_forever,daemon=True);cls.thread.start();cls.base=f'http://127.0.0.1:{cls.server.server_port}'
+  cls.server=ThreadingHTTPServer(('127.0.0.1',0),Handler);cls.thread=threading.Thread(target=cls.server.serve_forever,daemon=True);cls.thread.start();cls.base=f'http://127.0.0.1:{cls.server.server_port}';cls.local_open=staticmethod(urllib.request.build_opener(urllib.request.ProxyHandler({})).open)
  @classmethod
  def tearDownClass(cls):cls.server.shutdown();cls.server.server_close();cls.thread.join()
  def post(self,path,data,**headers):
-  req=urllib.request.Request(self.base+path,data=json.dumps(data).encode(),headers={'Content-Type':'application/json',**headers});return urllib.request.urlopen(req,timeout=5)
+  req=urllib.request.Request(self.base+path,data=json.dumps(data).encode(),headers={'Content-Type':'application/json',**headers});return self.local_open(req,timeout=5)
  def test_flow_and_closure(self):
   i=json.load(self.post('/api/interpret',{'text':'only blues, no drag lifts, 45 minutes'}))['intent']
   self.assertEqual(i['status'],'ready')
@@ -20,7 +20,7 @@ class ServerTests(unittest.TestCase):
   with self.assertRaises(urllib.error.HTTPError) as e:self.post('/api/interpret',{},Origin='https://evil.example')
   self.assertEqual(e.exception.code,403);e.exception.close()
  def test_path_and_input(self):
-  with self.assertRaises(urllib.error.HTTPError) as e:urllib.request.urlopen(self.base+'/../../README.md')
+  with self.assertRaises(urllib.error.HTTPError) as e:self.local_open(self.base+'/../../README.md')
   self.assertEqual(e.exception.code,404);e.exception.close()
   with self.assertRaises(urllib.error.HTTPError) as e:self.post('/api/interpret',{'minutes':-1})
   self.assertEqual(e.exception.code,422);e.exception.close()
@@ -28,7 +28,7 @@ class ServerTests(unittest.TestCase):
   with self.assertRaises(urllib.error.HTTPError) as e:self.post('/api/interpret',{'text':'x'*17000})
   self.assertEqual(e.exception.code,413);e.exception.close()
  def test_security_headers(self):
-  r=urllib.request.urlopen(self.base+'/');self.assertIn("default-src 'self'",r.headers['Content-Security-Policy'])
+  r=self.local_open(self.base+'/');self.assertIn("default-src 'self'",r.headers['Content-Security-Policy'])
 
  def test_step_timeline_includes_queue_and_repeated_visits(self):
   from unittest.mock import patch
@@ -51,8 +51,8 @@ class ServerTests(unittest.TestCase):
   self.assertTrue(all('assumed' in s['duration_basis'] for s in steps))
 
  def test_recorded_mode_is_terrain_specific(self):
-  pine=json.load(urllib.request.urlopen(self.base+'/api/context?terrain=synthetic'))
-  resort=json.load(urllib.request.urlopen(self.base+'/api/context?terrain=alpendorf'))
+  pine=json.load(self.local_open(self.base+'/api/context?terrain=synthetic'))
+  resort=json.load(self.local_open(self.base+'/api/context?terrain=alpendorf'))
   self.assertTrue(pine['recorded_model_available'])
   self.assertFalse(resort['recorded_model_available'])
   self.assertFalse(resort['live_model_enabled'])
