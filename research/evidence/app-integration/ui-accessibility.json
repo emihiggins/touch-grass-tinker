@@ -1,0 +1,357 @@
+{
+  "axeVersion": "4.11.0",
+  "notes": "Automated checks are not accessibility certification. Incomplete contrast findings require visual review. Light-only authored theme; forced-colors and reduced-motion checked.",
+  "results": [
+    {
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "planned",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "geographic",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "state": "initial",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "state": "planned",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "state": "geographic",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "planned",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "geographic",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

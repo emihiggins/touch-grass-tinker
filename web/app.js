@@ -12,24 +12,30 @@ function draw(selected=[]){
  const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
  const geographic=mode()!=='synthetic',factor=geographic?Math.cos((ymin+ymax)*Math.PI/360):1;
  const scale=Math.min(580/((xmax-xmin)*factor||1),350/(ymax-ymin||1));
- const project=([x,y])=>[350+(x-(xmin+xmax)/2)*factor*scale,240-(y-(ymin+ymax)/2)*scale];
+ const project=([x,y])=>!geographic? (x===1?[440,85]:x===0?[350,395]:[120,275]):[350+(x-(xmin+xmax)/2)*factor*scale,240-(y-(ymin+ymax)/2)*scale];
  const ns='http://www.w3.org/2000/svg';
  const element=(tag,attrs,parent=svg,text)=>{const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;parent.append(n);return n;};
  const defs=element('defs',{});const marker=element('marker',{id:'route-arrow',viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:5,markerHeight:5,orient:'auto-start-reverse'},defs);element('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:'#b54112'},marker);
  const layer=element('g',{transform:`translate(${350+panX} ${240+panY}) scale(${mapZoom}) translate(-350 -240)`});
+ if(!geographic){
+  // Illustration only: no elevation or additional routing edges are implied.
+  element('path',{d:'M 45 420 L 110 250 L 200 285 L 435 45 L 655 365 L 675 445 Z',fill:'#f7faf4',stroke:'#c8d8cd','stroke-width':1},layer);
+  for(const d of ['M 100 360 Q 220 340 330 210 Q 405 130 470 160','M 90 390 Q 250 385 375 270 Q 440 215 525 255','M 230 430 Q 390 345 580 345'])element('path',{d,fill:'none',stroke:'#d3e0d5','stroke-width':1.5},layer);
+ }
  const ids=new Set(selected);
  for(const e of [...graph.edges].sort((a,b)=>Number(ids.has(a.id))-Number(ids.has(b.id)))){
-  if(!e.geometry?.length)continue;const coords=e.geometry.map(project);const active=ids.has(e.id),focused=mapSteps[activeStep]?.edge_ids.includes(e.id);
-  const attrs={points:coords.map(p=>p.join(',')).join(' '),fill:'none','stroke-linecap':'round','stroke-linejoin':'round'};
+  if(!e.geometry?.length)continue;let coords=e.geometry.map(project);if(!geographic&&coords.length===2){const bends={chair:[315,220],blue:[455,250],red:[555,215],tow:[205,330],practice:[155,390]};coords=[coords[0],bends[e.id]||[(coords[0][0]+coords[1][0])/2,(coords[0][1]+coords[1][1])/2],coords[1]];}const active=ids.has(e.id),focused=mapSteps[activeStep]?.edge_ids.includes(e.id);
+  e.displayCoords=coords;const attrs={points:coords.map(p=>p.join(',')).join(' '),fill:'none','stroke-linecap':'round','stroke-linejoin':'round'};
   if(active)element('polyline',{...attrs,stroke:'#fff','stroke-width':9},layer);
-  const p=element('polyline',{...attrs,stroke:focused?'#77218c':active?'#b54112':e.kind==='lift'?'#203f3f':e.difficulty==='green'?'#237748':e.difficulty==='red'?'#97424a':e.difficulty==='black'?'#152b2c':'#326f9c','stroke-width':active?4:2,...(e.kind==='lift'?{'stroke-dasharray':'6 4'}:{}),...(active?{'marker-end':'url(#route-arrow)'}:{})},layer);
-  p.dataset.edgeId=e.id;if(active)p.style.cursor='pointer';element('title',{},p,`${e.name||e.id}: ${e.kind}, ${e.difficulty||e.lift_type}`);
+  const p=element('polyline',{...attrs,stroke:focused?'#77218c':active?'#b54112':e.kind==='lift'?'#203f3f':e.difficulty==='green'?'#237748':e.difficulty==='red'?'#97424a':e.difficulty==='black'?'#152b2c':'#326f9c','stroke-width':active?5:3,...(e.kind==='lift'?{'stroke-dasharray':'6 4'}:{}),...(active?{'marker-end':'url(#route-arrow)'}:{})},layer);
+  p.dataset.edgeId=e.id;if(active)p.style.cursor='pointer';if(!geographic){const m=coords[Math.floor(coords.length/2)];element('text',{x:m[0]+10,y:m[1]-10,class:'trail-label'},layer,`${e.name||({chair:'Chairlift',blue:'Blue run',red:'Red run',tow:'Rope tow',practice:'Practice run'}[e.id])||e.id}`);}element('title',{},p,`${e.name||e.id}: ${e.kind}, ${e.difficulty||e.lift_type}`);
  }
  const edges=selected.map(id=>graph.edges.find(e=>e.id===id)).filter(Boolean);
  // Grouped itinerary steps retain their actual source-edge membership.
- const seen=new Set();mapSteps.forEach((step,i)=>{const eid=step.edge_ids[0];if(seen.has(eid))return;seen.add(eid);const e=graph.edges.find(e=>e.id===eid);if(!e?.geometry?.length)return;const [x,y]=project(e.geometry[Math.floor(e.geometry.length/2)]);element('circle',{cx:x,cy:y,r:10,fill:'#fff',stroke:'#b54112'},layer);element('text',{x,y:y+4,'text-anchor':'middle',class:'map-number'},layer,String(i+1));});
- for(const [id,label] of Object.entries(placeLabels)){const node=graph.nodes.find(n=>n.id===id);if(!node)continue;const [x,y]=project([node.lon,node.lat]);element('circle',{cx:x,cy:y,r:4,fill:'#123b3c'},layer);element('text',{x:x+10,y:y-22,class:'map-label'},layer,label);}
- if(edges.length){for(const [e,last,label] of [[edges[0],false,'Start'],[edges.at(-1),true,'Finish']]){const p=e.geometry[last?e.geometry.length-1:0],[x,y]=project(p);element('circle',{cx:x,cy:y,r:5,fill:'#123b3c'},layer);element('text',{x:x+9,y:y+(last?20:-12),class:'map-label'},layer,label);}}
+ const seen=new Set();mapSteps.forEach((step,i)=>{const eid=step.edge_ids[0];if(seen.has(eid))return;seen.add(eid);const e=graph.edges.find(e=>e.id===eid);if(!e?.geometry?.length)return;const [x,y]=e.displayCoords[Math.floor(e.displayCoords.length/2)];element('circle',{cx:x,cy:y,r:12,fill:'#fff',stroke:'#b54112'},layer);element('text',{x,y:y+4,'text-anchor':'middle',class:'map-number'},layer,String(i+1));});
+ for(const [id,label] of Object.entries(placeLabels)){const node=graph.nodes.find(n=>n.id===id);if(!node)continue;const [x,y]=project([node.lon,node.lat]);element('circle',{cx:x,cy:y,r:4,fill:'#123b3c'},layer);element('text',{x:x+10,y:y-22,class:'map-label','text-anchor':x>400?'end':'start'},layer,label);}
+ if(edges.length){const start=edges[0].geometry[0],finish=edges.at(-1).geometry.at(-1);const same=start[0]===finish[0]&&start[1]===finish[1];for(const [p,label] of same?[[start,'Start / finish']]:[[start,'Start'],[finish,'Finish']]){const [x,y]=project(p);element('circle',{cx:x,cy:y,r:5,fill:'#123b3c'},layer);element('text',{x:x+9,y:y+30,class:'map-label'},layer,label);}}
+
  element('text',{x:24,y:30,class:'map-label'},svg,geographic?'↑ N':'Fictional schematic');
  if(geographic&&mapZoom===1){const metresPerPixel=111320/scale;const distance=10**Math.floor(Math.log10(metresPerPixel*100));const width=distance/metresPerPixel;element('path',{d:`M 25 435 v 6 h ${width} v -6`,stroke:'#123b3c',fill:'none'},svg);element('text',{x:25,y:459,class:'map-label'},svg,`≈ ${distance>=1000?distance/1000+' km':distance+' m'} at fit view`);}
  updateGeoRoute();$('map-zoom-label').textContent=`${Math.round(mapZoom*100)}%`;
@@ -52,7 +58,7 @@ $('map').addEventListener('pointercancel',()=>{drag=null;});
 $('map').addEventListener('keydown',e=>{const delta={ArrowLeft:[40,0],ArrowRight:[-40,0],ArrowUp:[0,40],ArrowDown:[0,-40]}[e.key];if(!delta)return;e.preventDefault();panX=Math.max(-700,Math.min(700,panX+delta[0]));panY=Math.max(-480,Math.min(480,panY+delta[1]));draw(mapRoute);});
 let geoMap=null,geoReady=false;
 function updateGeoRoute(){if(!geoReady)return;geoMap.setFilter('outing',['in',['get','id'],['literal',mapRoute]]);geoMap.setFilter('focused',['in',['get','id'],['literal',mapSteps[activeStep]?.edge_ids||[]]]);}
-function closeGeo(){if(geoMap)geoMap.remove();geoMap=null;geoReady=false;$('geo-map').hidden=true;$('geo-toggle').textContent='Open geographic map';}
+function closeGeo(){$('map-heading').textContent='Mountain sketch';document.querySelector('.map-panel').classList.remove('geographic-active');$('geo-toggle').setAttribute('aria-pressed','false');if(geoMap)geoMap.remove();geoMap=null;geoReady=false;$('geo-map').hidden=true;$('geo-toggle').textContent='Open geographic map';}
 $('geo-toggle').addEventListener('click',()=>{
  if(geoMap){closeGeo();return;}if(mode()!=='alpendorf'||!graph)return;
  try{
@@ -67,10 +73,12 @@ $('geo-toggle').addEventListener('click',()=>{
    geoMap.addLayer({id:'lifts',type:'line',source:'terrain',filter:['==',['get','kind'],'lift'],paint:{'line-color':'#203f3f','line-width':3,'line-dasharray':[2,2]}});
    for(const [id,color,width] of [['outing','#b54112',6],['focused','#77218c',8]])geoMap.addLayer({id,type:'line',source:'terrain',filter:['in',['get','id'],['literal',[]]],paint:{'line-color':color,'line-width':width}});
    const bounds=new maplibregl.LngLatBounds();features.forEach(f=>f.geometry.coordinates.forEach(c=>bounds.extend(c)));geoMap.fitBounds(bounds,{padding:35,duration:0});geoReady=true;updateGeoRoute();
+   for(const [id,label] of Object.entries(placeLabels)){const node=graph.nodes.find(n=>n.id===id);if(!node)continue;const el=document.createElement('span');el.className='station-marker';el.setAttribute('role','img');el.setAttribute('aria-label',label);el.textContent=label;new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat([node.lon,node.lat]).addTo(geoMap);}
+
    geoMap.on('click',e=>{const f=geoMap.queryRenderedFeatures(e.point,{layers:['focused','outing','lifts','pistes']})[0];if(!f)return;const i=mapSteps.findIndex(s=>s.edge_ids.includes(f.properties.id));if(i>=0)selectStep(i);$('map-detail').textContent=`${f.properties.name} · ${f.properties.kind} · unreviewed OSM geometry`;});
   });
   geoMap.on('error',e=>{if(e.sourceId==='elevation'){if(geoMap.getLayer('hillshade'))geoMap.removeLayer('hillshade');$('geo-status').textContent='Elevation unavailable; trail geometry remains visible.';return;}$('geo-status').textContent='Geographic renderer failed; use the offline sketch below.';closeGeo();});
-  $('geo-toggle').textContent='Close geographic map';$('geo-status').textContent='Local Alpendorf geometry · © OpenStreetMap contributors, ODbL · local hillshade for orientation only · no live conditions.';
+  $('map-heading').textContent='Geographic mountain view';document.querySelector('.map-panel').classList.add('geographic-active');$('geo-toggle').setAttribute('aria-pressed','true');geoMap.resize();$('geo-toggle').textContent='Switch to sketch';$('geo-status').textContent='Local Alpendorf geometry · © OpenStreetMap contributors, ODbL · local hillshade for orientation only · no live conditions.';
  }catch(e){closeGeo();$('geo-status').textContent='Geographic renderer unavailable; the offline sketch remains available.';}
 });
 

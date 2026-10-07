@@ -76,14 +76,18 @@ The [recording and reproduction guide](demo/README.md) distinguishes the recorde
 - [Mobile layout](research/evidence/app-integration/mobile.png)
 - [One-page print preview](research/evidence/app-integration/print-preview.png) and [PDF](research/evidence/app-integration/corrected-itinerary.pdf)
 
-## License and attribution
-
-Original code is [MIT licensed](LICENSE). OpenStreetMap-derived terrain is © OpenStreetMap contributors under [ODbL](data/terrain/LICENSE-ODbL.md), not MIT. Model weights are not bundled. [Third-party notices](THIRD_PARTY_NOTICES.md).
-
-Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](submission/README.md) are separate from the user/developer documentation.
-
 ### Explore the real-geometry lab
 
 Select Alpendorf, then **Open geographic map** for a local MapLibre view. No tile subscription or API key is required. The SVG sketch supports pan/zoom, known station labels and itinerary-linked highlighting. Alpendorf remains an unreviewed partial OSM extract—not live resort navigation. See the [map research and next steps](research/mountain-map-upgrade.md).
 
 The geographic view includes a small, locally bundled hillshade tile with visible source attribution. [View the current geographic screenshot](research/evidence/app-integration/geographic-desktop.png). Elevation is visual context only, not a routing input or safety assessment.
+
+### Map-first interface
+
+The offline sketch separates fictional lift and piste lines and labels each run. On phones the map appears first, with links to jump to the planning form. Alpendorf can switch between the sketch and a local geographic view with hillshade; only one canvas is shown at a time. The sketch remains available for printing and renderer failures. Fictional mountain artwork is illustrative, not elevation data.
+
+## License and attribution
+
+Original code is [MIT licensed](LICENSE). OpenStreetMap-derived terrain is © OpenStreetMap contributors under [ODbL](data/terrain/LICENSE-ODbL.md), not MIT. Model weights are not bundled. [Third-party notices](THIRD_PARTY_NOTICES.md).
+
+Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](submission/README.md) are separate from the user/developer documentation.
