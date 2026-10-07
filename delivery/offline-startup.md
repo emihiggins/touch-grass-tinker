@@ -14,3 +14,10 @@ Verification:
 - Server tests passed with loopback proxy bypass; gitleaks binary was unavailable in this runtime, so the previously recorded secret scan remains the latest available scan.
 
 No provider calls, spend, visibility change, or public publication.
+
+## Follow-up portability audit
+
+- Shell and Windows helpers now select their own package directory, including paths containing spaces, rather than depending on the caller's current folder.
+- Both helpers check Python 3.11 before importing the application. Windows uses label-based control flow so server exit status is not expanded before execution.
+- Release packaging now automatically invokes the **extracted helper from another folder**, checking version, invalid port, and occupied-port failure status. These checks passed on Linux; Windows execution remains unverified locally.
+- Existing UI sources are unchanged; no screenshot refresh is needed for launcher-only changes.

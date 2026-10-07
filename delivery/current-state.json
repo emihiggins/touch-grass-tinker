@@ -42,7 +42,8 @@
     "Terrain failure recovery clears stale maps, adds retry, and guards interpretation availability against pending/out-of-order requests",
     "Submission feature claims refreshed, browser sources formatted with pinned Prettier, and review-later boundaries consolidated",
     "Recorded example availability is limited to Pine Mountain; unavailable selected modes reset explicitly to offline rules on terrain change",
-    "Local duration/maximum-grade correction form validates drafts, invalidates old routes, preserves original settings and combines user-correction provenance without extra inference"
+    "Local duration/maximum-grade correction form validates drafts, invalidates old routes, preserves original settings and combines user-correction provenance without extra inference",
+    "Portable offline launch helpers locate their package, check Python version and preserve failure exit codes; extracted helper tested from external working directory"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
