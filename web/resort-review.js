@@ -1,6 +1,6 @@
 const D = JSON.parse(document.querySelector('#data').textContent),
   $ = (x) => document.getElementById(x);
-let C, E;
+let C, E, L;
 function comps(g) {
   let a = new Map(g.nodes.map((n) => [n.id, new Set()]));
   g.edges.forEach((e) => {
@@ -65,8 +65,9 @@ function draw() {
     m = C.manifest,
     v = $('map');
   v.replaceChildren();
-  let X = g.nodes.map((n) => n.lon),
-    Y = g.nodes.map((n) => n.lat),
+  let extra = (L?.endpoint_incidence || []).map((e) => e.coordinate).filter(Boolean);
+  let X = [...g.nodes.map((n) => n.lon), ...extra.map((c) => c[0])],
+    Y = [...g.nodes.map((n) => n.lat), ...extra.map((c) => c[1])],
     a = Math.min(...X),
     b = Math.max(...X),
     c = Math.min(...Y),
@@ -110,6 +111,22 @@ function draw() {
     };
     v.append(q);
   }
+  for (const [i, endpoint] of (L?.endpoint_incidence || []).entries()) {
+    if (!endpoint.coordinate) continue;
+    const [x, y] = f(endpoint.coordinate);
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    circle.setAttribute('r', 11);
+    circle.setAttribute('class', 'endpoint');
+    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label.setAttribute('x', x);
+    label.setAttribute('y', y + 5);
+    label.setAttribute('text-anchor', 'middle');
+    label.setAttribute('class', 'endpoint-label');
+    label.textContent = String(i + 1);
+    v.append(circle, label);
+  }
   $('sum').textContent =
     'Nodes: ' +
     g.nodes.length +
@@ -134,6 +151,21 @@ for (let k in D) {
 function load() {
   C = D[$('s').value];
   E = null;
+  L = null;
+  $('lift-detail').replaceChildren();
+  const select = $('lift-review');
+  select.replaceChildren(new Option('Choose a source lift', ''));
+  for (const lift of C.diagnostics?.lifts || [])
+    select.add(
+      new Option(
+        lift.name + (lift.imported_edge_ids.length ? '' : ' (not imported)'),
+        lift.source_ref,
+      ),
+    );
+  select.disabled = !C.diagnostics;
+  $('lift-summary').textContent = C.diagnostics
+    ? 'Markers 1/2 are source start/end, not verified boarding/alighting.'
+    : 'Endpoint diagnostics have not been generated for this sample.';
   $('detail').replaceChildren();
   $('status').textContent = 'Select a segment.';
   draw();
@@ -147,3 +179,40 @@ for (let x of ['l', 'p', 'd'])
     draw();
   };
 load();
+
+$('lift-review').onchange = () => {
+  L = C.diagnostics?.lifts.find((l) => l.source_ref == $('lift-review').value) || null;
+  E = L?.imported_edge_ids[0] || null;
+  $('detail').replaceChildren();
+  $('lift-detail').replaceChildren();
+  if (L) {
+    const heading = document.createElement('h3');
+    heading.textContent = L.name + ' — source endpoint evidence';
+    $('lift-detail').append(heading);
+    for (const [i, e] of L.endpoint_incidence.entries()) {
+      const section = document.createElement('div');
+      const h = document.createElement('h4');
+      h.textContent = `${i + 1}. Source ${i ? 'end' : 'start'} · node ${e.source_node}`;
+      section.append(h);
+      const p = document.createElement('p');
+      p.textContent =
+        `Exact incoming piste segments: ${e.incoming_piste_edge_ids.length}. Exact outgoing piste segments: ${e.outgoing_piste_edge_ids.length}. ` +
+        (e.station_tags === null
+          ? 'Raw station tags not recovered.'
+          : `Raw tags: ${JSON.stringify(e.station_tags)}. `) +
+        'Missing incidence is a data-review gap, not proof that access is impossible.';
+      section.append(p);
+      const a = document.createElement('a');
+      a.href = 'https://www.openstreetmap.org/node/' + e.source_node;
+      a.textContent = 'Inspect source node';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      section.append(a);
+      $('lift-detail').append(section);
+    }
+  }
+  $('status').textContent = L
+    ? 'Reviewing ' + L.name + '; routing unchanged.'
+    : 'Select a segment.';
+  draw();
+};

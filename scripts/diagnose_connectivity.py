@@ -41,7 +41,7 @@ def diagnose(folder, proximity_m=PROXIMITY_M):
             node_edges.setdefault(node, []).append(edge)
     lifts = []
     for way in ways:
-        if "aerialway" not in way["tags"] or len(way["nodes"]) < 2:
+        if "aerialway" not in way["tags"] or way["tags"]["aerialway"] in {"station", "pylon", "goods"} or len(way["nodes"]) < 2:
             continue
         imported = by_ref.get(way["source_ref"], [])
         endpoint_rows = []
@@ -60,6 +60,8 @@ def diagnose(folder, proximity_m=PROXIMITY_M):
             reason = "unknown_difficulty_excluded_by_importer"
         elif tags.get("piste:type") == "downhill":
             reason = "not_present_in_imported_graph_check_source_and_import_audit"
+        elif tags.get("aerialway") in {"station", "pylon", "goods"}:
+            reason = "non_passenger_lift_infrastructure_or_freight_not_routed"
         elif "aerialway" in tags:
             reason = "lift_not_present_in_imported_graph_check_source_and_import_audit"
         else:
@@ -76,7 +78,7 @@ def diagnose(folder, proximity_m=PROXIMITY_M):
                 best = min((distance(source_nodes[node], source_nodes[n]) for n in candidate_nodes), default=None)
                 if best is not None and best <= proximity_m:
                     candidates.append({"lift_source_ref": lift["source_ref"], "lift_endpoint_role": role, "lift_endpoint_node": node, "excluded_source_ref": candidate["source_ref"], "minimum_endpoint_distance_m": round(best, 3), "evidence_only": True, "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."})
-    return {"schema": 1, "scope": "source_linked_connectivity_review_evidence_only", "graph_sha256": hashlib.sha256(graph_path.read_bytes()).hexdigest(), "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(), "proximity_threshold_m": proximity_m, "graph_preserved": True, "automatic_connections_added": 0, "routing_enabled": False, "lift_count": len(lifts), "lifts": lifts, "excluded_source_way_count": len(excluded), "excluded_source_ways": excluded, "proximity_candidates": sorted(candidates, key=lambda item: (item["lift_source_ref"], item["excluded_source_ref"], item["lift_endpoint_role"])), "limitations": ["Exact shared source node and geometric proximity are review evidence, not verified boarding, alighting, permission, direction, grade or safety.", "The bounded extract may omit connecting ways and complete ways may extend outside its requested box.", "OSM relations, operational schedules and current closures are not resolved."]}
+    return {"schema": 2, "scope": "source_linked_connectivity_review_evidence_only", "graph_sha256": hashlib.sha256(graph_path.read_bytes()).hexdigest(), "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(), "proximity_threshold_m": proximity_m, "graph_preserved": True, "automatic_connections_added": 0, "routing_enabled": False, "lift_count": len(lifts), "excluded_non_passenger_aerialways": [{"source_ref": w["source_ref"], "aerialway": w["tags"]["aerialway"]} for w in ways if w["tags"].get("aerialway") in {"station", "pylon", "goods"}], "lifts": lifts, "excluded_source_way_count": len(excluded), "excluded_source_ways": excluded, "proximity_candidates": sorted(candidates, key=lambda item: (item["lift_source_ref"], item["excluded_source_ref"], item["lift_endpoint_role"])), "limitations": ["Exact shared source node and geometric proximity are review evidence, not verified boarding, alighting, permission, direction, grade or safety.", "The bounded extract may omit connecting ways and complete ways may extend outside its requested box.", "OSM relations, operational schedules and current closures are not resolved."]}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

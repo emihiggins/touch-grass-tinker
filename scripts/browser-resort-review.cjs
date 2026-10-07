@@ -45,6 +45,26 @@ const fs = require('fs');
       await page.uncheck('#p');
       if (await page.locator('#map .piste').count()) throw Error('Piste filter');
       await page.check('#p');
+      if (resort === 'winter-park' || resort === 'breckenridge') {
+        await page.locator('#lift-review').selectOption({ index: 1 });
+        if ((await page.locator('#map .endpoint').count()) !== 2)
+          throw Error('Missing source endpoint markers');
+        const text = await page.locator('#lift-detail').innerText();
+        if (
+          !text.includes('Exact incoming piste segments:') ||
+          !text.includes('Inspect source node')
+        )
+          throw Error('Missing endpoint evidence');
+        if (resort === 'winter-park' && text.includes('Raw station tags not recovered'))
+          throw Error('Missing raw evidence');
+        await page.screenshot({
+          path: `research/evidence/resort-review/lift-${resort}-${width}.png`,
+          fullPage: true,
+        });
+        await page.locator('#lift-review').selectOption('');
+        if (await page.locator('#map .endpoint').count()) throw Error('Stale endpoint markers');
+      } else if (!(await page.locator('#lift-review').isDisabled()))
+        throw Error('Missing diagnostics offered');
       evidence.push({ resort, width, edges: count, largest_component_edges: subset, bounds });
       if (
         (width === 390 && resort === 'winter-park') ||
