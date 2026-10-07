@@ -72,3 +72,10 @@ The hash-matched original Winter Park response was still available locally. A bo
 The review preview's lift selector shows source-start/end markers, exact incoming/outgoing piste counts and links to source nodes. These markers are not verified boarding/alighting directions. Breckenridge uses saved sanitized coordinates and explicitly reports raw station tags as not recovered. Other resorts with no endpoint diagnostic have that selector disabled. Nothing adds connectors, modifies graph bytes or enables routing.
 
 Next useful evidence is focused source review of the15 Winter Park passenger endpoints without exact piste incidence, followed by independently verified boarding/transfer/access observations. More automatic snapping would hide rather than resolve that gap.
+
+
+## Excluded source geometry review (2026-10-07)
+
+The offline browse-only research viewer now exposes excluded source geometry without promoting it into routing. Winter Park shows the closed `Dogpatch` area and station infrastructure separately; Breckenridge shows excluded expert directed lines such as `Imperial Bowl`, with native tags, importer reason, status, and source-way links. Closed areas, directed lines, and non-passenger infrastructure have distinct labels. The overlay is diagnostic evidence only: no connectors, grade changes, or routing edges are inferred.
+
+The generated artifact validates each diagnostic and station supplement against the saved source/graph hashes. Browser checks covered 390px rendering, keyboard selection, source-link rendering, overlay toggling, and zero requests outside the local viewer.
