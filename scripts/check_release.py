@@ -6,6 +6,7 @@ sys.path.insert(0,str(ROOT))
 
 def main():
     subprocess.run([sys.executable,'scripts/check_docs.py'],cwd=ROOT,check=True)
+    subprocess.run([sys.executable,'scripts/check_assets.py'],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-q'],cwd=ROOT,check=True)
     from liftlap.corpus import read
     from liftlap.evaluation_v2 import evaluate

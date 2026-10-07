@@ -31,28 +31,31 @@
     "Explicit regional importer and bounded Plose research fixture with reproducible provenance",
     "Directed connectivity audit and source-linked resort review packets; no source data promoted",
     "Expanded Plose coverage investigation identified source connection-way gap; retained evidence without enabling transfers",
-    "Bounded licensed Alpendorf elevation tile bundled for offline hillshade; attribution and failure fallback browser-checked"
+    "Bounded licensed Alpendorf elevation tile bundled for offline hillshade; attribution and failure fallback browser-checked",
+    "Billing summaries distinguish unknown/partial totals from explicit zero; budget holds unchanged",
+    "Release check enforces vendored license/library fingerprints, elevation bounds and resort source/graph manifests"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
     "Emi checks code/video signed out and publishes DEV using supplied checklist",
-    "Delayed billing reconciliation at01:00UTC",
+    "Delayed billing reconciliation attempted at01:07UTC; protected billing/storage attribution remained unavailable, so all $1.75 holds remain",
     "Qualified source/access/coverage review before additional resort adoption; Plose fixture has no directed lap",
     "Operator-authorized fresh status feed and field validation before navigation claims"
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
-  "tests_passed": 158,
+  "tests_passed": 161,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
-  "next_action": "Resolve real-resort evidence gaps using source-linked packets; publication remains Emi-owned",
+  "next_action": "Resolve real-resort evidence gaps using source-linked packets; publication remains Emi-owned; billing holds await verified project-attributed invoice usage",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {
     "job_id": "81c54b77-d335-4549-8d18-c2fb395a3709",
     "at": "2026-10-07T01:00:00Z",
     "recurring": false,
-    "timeout_seconds": 180
+    "timeout_seconds": 180,
+    "status": "attempted_not_verified_no_retry_scheduled"
   },
   "project_commitments_usd": 1.75,
   "release_authority": {

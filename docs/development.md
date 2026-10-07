@@ -23,7 +23,7 @@ python3 scripts/check_release.py
 node --check web/app.js
 ```
 
-The release check validates local documentation links and current media/source fingerprints, then runs tests, reproduces13/16 from saved base outputs, builds the demo in an isolated directory, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs158 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
+The release check validates local documentation links, current media/source fingerprints, upstream MapLibre/license hashes, terrain-tile hash and geographic coverage, and source/graph manifest hashes, then runs tests, reproduces13/16 from saved base outputs, builds the demo in an isolated directory, and checks two archive hashes for determinism. It does not invoke providers. A clean Python3.11 checkout runs161 tests with22 optional skips; the optional environment previously ran all149. The pinned public-only GitHub workflow performs offline checks without secrets.
 
 ## Browser checks
 
@@ -56,3 +56,7 @@ Map interaction checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts
 [The Plose fixture](../data/terrain/plose-research/README.md) documents a bounded second-region sample and the offline import command. Regional mapping must be explicit outside the historical Austrian default. Source/derived hashes are separate, and current terrain examples remain unreviewed. No new UI resort was added.
 
 [Source-way review packets](../research/evidence/resort-review/README.md) bind review aids to graph/source hashes. Directed-connectivity checks distinguish apparent map connectivity from possible loops; they do not certify access.
+
+## Billing summary semantics
+
+`liftlap.billing_check.summarize` reports `estimated_gross_usd: null` when events are missing or any event lacks a valid price. `priced_subtotal_usd` is only the sum of priced rows; it is not the total charge. Even fully priced event rows remain an account-window estimate, not a project-attributed invoice. This helper never releases ledger holds.

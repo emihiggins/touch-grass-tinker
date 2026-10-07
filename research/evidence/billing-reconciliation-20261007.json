@@ -1,0 +1,37 @@
+{
+  "scope": "one_time_read_only_billing_and_storage_reconciliation",
+  "run_at": "2026-10-07T01:07:00Z",
+  "authorization_cap_usd": 10,
+  "ledger": {
+    "path": "runs/project-spend.sqlite",
+    "committed_usd": 1.75,
+    "commitments": [
+      {"id": "prior", "stage": "prior", "amount_usd": 0.10, "state": "reserved"},
+      {"id": "training-smoke-live-001", "stage": "smoke", "amount_usd": 0.25, "state": "reserved"},
+      {"id": "pilot-sft-01", "stage": "experiments", "amount_usd": 1.25, "state": "reserved"},
+      {"id": "fresh-base-evaluation-01", "stage": "experiments", "amount_usd": 0.05, "state": "reserved"},
+      {"id": "app-demo-01", "stage": "experiments", "amount_usd": 0.10, "state": "reserved"}
+    ]
+  },
+  "billing_check": {
+    "attempted": true,
+    "endpoint": "/api/v1/billing/usage/events",
+    "window": ["2026-10-05T00:00:00Z", "2026-10-07T00:00:00Z"],
+    "result": "not_verified",
+    "protected_check_error": "ModuleNotFoundError",
+    "direct_endpoint_probe_http_status": 401,
+    "invoice_or_project_attribution_verified": false
+  },
+  "storage_api": {
+    "result": "not_verified",
+    "reason": "Protected provider access was unavailable; account-wide zero/lagging storage evidence is not sufficient attribution"
+  },
+  "decision": {
+    "release_reserved_funds": false,
+    "ledger_mutations": 0,
+    "provider_mutations": 0,
+    "holds_remain": true,
+    "schedule_another_loop": false
+  },
+  "note": "Prior account-window evidence reported 6 priced sampling events and estimated gross $0.004948914 with cost_data_through null; it remains provisional and is not an invoice."
+}

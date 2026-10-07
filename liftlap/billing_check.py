@@ -11,7 +11,7 @@ def summarize(data):
         if type(value) in (int,float) and math.isfinite(value) and value>=0:
             cost+=value;priced+=1
         else:unpriced+=1
-    return {"scope":"account_window_not_project_attribution_or_invoice", "event_count":len(events),"event_kinds":totals,"priced_events":priced,"unpriced_events":unpriced,"estimated_gross_usd":cost,"cost_data_through":data.get("cost_data_through"),"project_reconciled":False}
+    return {"scope":"account_window_not_project_attribution_or_invoice", "event_count":len(events),"event_kinds":totals,"priced_events":priced,"unpriced_events":unpriced,"priced_subtotal_usd":cost,"estimated_gross_usd":cost if events and not unpriced else None,"pricing_complete":bool(events) and not unpriced,"pricing_status":"complete_event_prices" if events and not unpriced else "partial_event_prices" if priced else "prices_unavailable","cost_data_through":data.get("cost_data_through"),"project_reconciled":False}
 
 from .tinker_sdk import make_client
 
