@@ -1,0 +1,140 @@
+{
+  "skipped_ways": [
+    {
+      "way_id": "127131499",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "128932120",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "128932721",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "128932722",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "128932726",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "329393801",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "329393802",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "329393803",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "329393804",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "329393956",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "685758983",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "685758984",
+      "reason": "area_or_closed_way"
+    },
+    {
+      "way_id": "685760354",
+      "reason": "area_or_closed_way"
+    },
+    {
+      "way_id": "685760355",
+      "reason": "area_or_closed_way"
+    },
+    {
+      "way_id": "685760711",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "776343584",
+      "reason": "area_or_closed_way"
+    },
+    {
+      "way_id": "776343588",
+      "reason": "area_or_closed_way"
+    },
+    {
+      "way_id": "1224657749",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285376",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285377",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285378",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285379",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285380",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285381",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285382",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285383",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285384",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285385",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285386",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1391285387",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1454050414",
+      "reason": "unknown_difficulty"
+    },
+    {
+      "way_id": "1454050415",
+      "reason": "area_or_closed_way"
+    }
+  ],
+  "node_count": 1136,
+  "edge_count": 1146,
+  "assumptions": [
+    "Way order used as directed travel; lift terminals unreviewed.",
+    "Durations assume lift 3m/s, piste 4m/s, minimum 1s; no measured timing.",
+    "All edges unreviewed; no operational route approval.",
+    "Relations and permission/time restrictions are not fully interpreted."
+  ]
+}

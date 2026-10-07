@@ -1,0 +1,151 @@
+{
+  "checks": [
+    {
+      "resort": "winter-park",
+      "width": 390,
+      "edges": 520,
+      "largest_component_edges": 428,
+      "bounds": {
+        "x": 167.5797119140625,
+        "y": 45,
+        "w": 564.840576171875,
+        "h": 470
+      }
+    },
+    {
+      "resort": "breckenridge",
+      "width": 390,
+      "edges": 1146,
+      "largest_component_edges": 647,
+      "bounds": {
+        "x": 153.14097595214844,
+        "y": 45,
+        "w": 593.718017578125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "wachusett",
+      "width": 390,
+      "edges": 520,
+      "largest_component_edges": 443,
+      "bounds": {
+        "x": 294.52044677734375,
+        "y": 45,
+        "w": 310.9591064453125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "patscherkofel",
+      "width": 390,
+      "edges": 144,
+      "largest_component_edges": 134,
+      "bounds": {
+        "x": 166.32168579101562,
+        "y": 45,
+        "w": 567.356689453125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "winter-park",
+      "width": 768,
+      "edges": 520,
+      "largest_component_edges": 428,
+      "bounds": {
+        "x": 167.5797119140625,
+        "y": 45,
+        "w": 564.840576171875,
+        "h": 470
+      }
+    },
+    {
+      "resort": "breckenridge",
+      "width": 768,
+      "edges": 1146,
+      "largest_component_edges": 647,
+      "bounds": {
+        "x": 153.14097595214844,
+        "y": 45,
+        "w": 593.718017578125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "wachusett",
+      "width": 768,
+      "edges": 520,
+      "largest_component_edges": 443,
+      "bounds": {
+        "x": 294.52044677734375,
+        "y": 45,
+        "w": 310.9591064453125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "patscherkofel",
+      "width": 768,
+      "edges": 144,
+      "largest_component_edges": 134,
+      "bounds": {
+        "x": 166.32168579101562,
+        "y": 45,
+        "w": 567.356689453125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "winter-park",
+      "width": 1440,
+      "edges": 520,
+      "largest_component_edges": 428,
+      "bounds": {
+        "x": 167.5797119140625,
+        "y": 45,
+        "w": 564.840576171875,
+        "h": 470
+      }
+    },
+    {
+      "resort": "breckenridge",
+      "width": 1440,
+      "edges": 1146,
+      "largest_component_edges": 647,
+      "bounds": {
+        "x": 153.14097595214844,
+        "y": 45,
+        "w": 593.718017578125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "wachusett",
+      "width": 1440,
+      "edges": 520,
+      "largest_component_edges": 443,
+      "bounds": {
+        "x": 294.52044677734375,
+        "y": 45,
+        "w": 310.9591064453125,
+        "h": 470
+      }
+    },
+    {
+      "resort": "patscherkofel",
+      "width": 1440,
+      "edges": 144,
+      "largest_component_edges": 134,
+      "bounds": {
+        "x": 166.32168579101562,
+        "y": 45,
+        "w": 567.356689453125,
+        "h": 470
+      }
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "scope": "browse_only_geometry_not_route_validation"
+}

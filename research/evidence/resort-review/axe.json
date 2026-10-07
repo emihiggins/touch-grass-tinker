@@ -1,0 +1,29 @@
+{
+  "note": "CSP bypass solely for axe injection; separate interaction test uses normal CSP.",
+  "results": [
+    {
+      "width": 390,
+      "selected": false,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 390,
+      "selected": true,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 1440,
+      "selected": false,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 1440,
+      "selected": true,
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}

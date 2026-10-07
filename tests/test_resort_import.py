@@ -27,7 +27,7 @@ class ResortImportTests(unittest.TestCase):
   folder=ROOT/'data/terrain/plose-expanded-research';m=json.loads((folder/'manifest.json').read_text());g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options']);self.assertEqual(g,json.loads((folder/'graph.json').read_text()));self.assertEqual(a,json.loads((folder/'import-audit.json').read_text()))
 
  def test_new_regional_snapshots_reproduce(self):
-  for name in ('wachusett','patscherkofel'):
+  for name in ('wachusett','patscherkofel','winter-park','breckenridge'):
    with self.subTest(resort=name):
     folder=ROOT/'data/terrain'/f'{name}-research';m=json.loads((folder/'manifest.json').read_text())
     g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options'])
@@ -44,3 +44,10 @@ class ResortImportTests(unittest.TestCase):
   self.assertEqual(catalog,json.loads((ROOT/'research/evidence/resort-catalog.json').read_text()))
   for row in catalog['snapshots']:
    self.assertFalse(row['app_enabled']);self.assertEqual(row['current_operational_status'],'unknown')
+
+ def test_expert_terrain_is_not_downgraded(self):
+  folder=ROOT/'data/terrain/breckenridge-research'
+  raw=(folder/'source.osm').read_bytes()
+  self.assertIn(b'expert',raw)
+  g=json.loads((folder/'graph.json').read_text())
+  self.assertFalse(any(e.get('source_difficulty')=='expert' for e in g['edges']))

@@ -34,3 +34,18 @@ Current general web-search requests timed out. No new official operator feed, re
 ## Reproduction
 
 `python3 scripts/resort_catalog.py` rebuilds the inventory offline. `python3 scripts/check_release.py` checks data fingerprints and exact import reproduction, alongside existing application tests. Original raw downloads stay outside the repository; sanitized OSM source and separate hashes are retained. No training data, model calls, paid services or app screenshots changed.
+
+## Ikon/Epic Colorado candidates — October 7 follow-up
+
+Added partial [Winter Park](../data/terrain/winter-park-research/README.md) and [Breckenridge](../data/terrain/breckenridge-research/README.md) extracts to the **browse-only** preview, not planner selection.
+
+| Sample | Nodes | Piste segments | Lifts | Weak components | Nodes on directed cycles |
+|---|---:|---:|---:|---:|---:|
+| Winter Park | 523 | 508 | 12 | 13 | 93 |
+| Breckenridge | 1,136 | 1,125 | 21 | 29 | 5 |
+
+These are graph segments, not unique trail counts. Both are incomplete, with major connectivity gaps. The first Winter Park request exceeded the 4 MB limit and was discarded; a narrower area was downloaded. No limit was bypassed. Breckenridge source contains 31 expert-tagged ways; their native evidence is retained, but expert terrain is excluded rather than collapsed to black. A future expert-grade contract must be separately designed and reviewed before routing it.
+
+The official [Winter Park Ikon page](https://www.ikonpass.com/en/destinations/winter-park-resort) identified the destination. Official Epic/Whistler page fetches were blocked; Breckenridge is retained as an Epic research candidate, not a verified current access entitlement. No blackout/day/tier/season rules or operator feed are encoded. Pass names do not license official map artwork.
+
+The four-sample review viewer now uses an external same-origin script compatible with the server CSP. Projection is centered with longitude correction, smaller-component filtering actually filters components, and changing sample/filter clears old details. Browser evidence covers all four datasets at390/768/1440px, keyboard segment selection, no body overflow, within-viewBox geometry and zero external requests. Axe's test-only script uses CSP bypass for injection; normal interaction checks do not bypass CSP. This closes the earlier unverified preview gap, not the real-world access/coverage gap.
