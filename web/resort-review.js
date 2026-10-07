@@ -134,37 +134,42 @@ function draw() {
   for (let n of cc.values()) counts.set(n, (counts.get(n) || 0) + 1);
   let largest = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
   for (const e of $('x').checked ? excluded : []) {
-    const q = document.createElementNS(
-      'http://www.w3.org/2000/svg',
-      e.classification === 'closed-area' ? 'polygon' : 'polyline',
-    );
-    q.setAttribute(
-      'points',
-      (e.geometry || [])
-        .map(f)
-        .map((x) => x.join(','))
-        .join(' '),
-    );
-    q.setAttribute(
-      'class',
-      'excluded ' + e.classification + (X === e.source_ref ? ' selected' : ''),
-    );
-    q.setAttribute('tabindex', '0');
-    q.setAttribute('role', 'button');
-    q.setAttribute(
-      'aria-label',
-      (e.name || e.source_ref) +
-        ', excluded source geometry, ' +
-        (e.reason || 'no reason recorded'),
-    );
-    q.onclick = () => excludedDetail(e);
-    q.onkeydown = (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        excludedDetail(e);
-      }
-    };
-    v.append(q);
+    const segments = e.geometry_segments || [e.geometry || []];
+    for (const segment of segments) {
+      const q = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        e.classification === 'closed-area' && e.geometry_complete !== false
+          ? 'polygon'
+          : 'polyline',
+      );
+      q.setAttribute(
+        'points',
+        segment
+          .map(f)
+          .map((x) => x.join(','))
+          .join(' '),
+      );
+      q.setAttribute(
+        'class',
+        'excluded ' + e.classification + (X === e.source_ref ? ' selected' : ''),
+      );
+      q.setAttribute('tabindex', '0');
+      q.setAttribute('role', 'button');
+      q.setAttribute(
+        'aria-label',
+        (e.name || e.source_ref) +
+          ', excluded source geometry, ' +
+          (e.reason || 'no reason recorded'),
+      );
+      q.onclick = () => excludedDetail(e);
+      q.onkeydown = (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          excludedDetail(e);
+        }
+      };
+      v.append(q);
+    }
   }
   for (let e of g.edges.filter(
     (e) =>

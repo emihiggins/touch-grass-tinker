@@ -79,3 +79,10 @@ Next useful evidence is focused source review of the15 Winter Park passenger end
 The offline browse-only research viewer now exposes excluded source geometry without promoting it into routing. Winter Park shows the closed `Dogpatch` area and station infrastructure separately; Breckenridge shows excluded expert directed lines such as `Imperial Bowl`, with native tags, importer reason, status, and source-way links. Closed areas, directed lines, and non-passenger infrastructure have distinct labels. The overlay is diagnostic evidence only: no connectors, grade changes, or routing edges are inferred.
 
 The generated artifact validates each diagnostic and station supplement against the saved source/graph hashes. Browser checks covered 390px rendering, keyboard selection, source-link rendering, overlay toggling, and zero requests outside the local viewer.
+
+## Winter Park qualification queue
+
+The [qualified review plan](winter-park-review-plan.md) prioritizes Discovery,
+Endeavor, Arrow and Prospector Express using reproducible piste-only return-path
+screening. Four of twelve imported lifts have such a structural path. No access,
+operating status or real-world direction is thereby verified; no graph is promoted.

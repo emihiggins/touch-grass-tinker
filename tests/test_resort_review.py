@@ -1,6 +1,6 @@
 import json,unittest
 from pathlib import Path
-from scripts.build_resort_review import main
+from scripts.build_resort_review import main, excluded_geometry, verify_snapshot
 R=Path(__file__).resolve().parents[1]
 class T(unittest.TestCase):
  def test_artifact(self):
@@ -26,3 +26,30 @@ class T(unittest.TestCase):
   experts=[e for e in d['breckenridge']['excluded_source'] if e.get('difficulty')=='expert']
   self.assertEqual(len(experts),31)
   self.assertTrue(all(e['status']=='excluded from sanitized graph' for e in experts))
+ def test_missing_source_node_is_a_gap_not_a_join(self):
+   shape=excluded_geometry(["a","missing","b","c"],{"a":[1.0,2.0],"b":[3.0,4.0],"c":[5.0,6.0]})
+   self.assertFalse(shape["geometry_complete"])
+   self.assertEqual(shape["geometry_segments"], [[[1.0,2.0]], [[3.0,4.0],[5.0,6.0]]])
+   self.assertNotEqual(shape["geometry_segments"][0][-1],shape["geometry_segments"][1][0])
+
+ def test_tampered_snapshot_bytes_fail_closed(self):
+   import tempfile, shutil
+   with tempfile.TemporaryDirectory() as td:
+    folder=Path(td); shutil.copy(R/'data/terrain/winter-park-research/graph.json',folder/'graph.json'); shutil.copy(R/'data/terrain/winter-park-research/source.osm',folder/'source.osm')
+    manifest=json.loads((R/'data/terrain/winter-park-research/manifest.json').read_text())
+    diagnostics=json.loads((R/'data/terrain/winter-park-research/connectivity-diagnostics.json').read_text())
+    (folder/'graph.json').write_bytes((folder/'graph.json').read_bytes()+b'\n tampered')
+    with self.assertRaisesRegex(ValueError,'Snapshot bytes'):
+     verify_snapshot(folder,manifest,diagnostics)
+
+ def test_source_tamper_without_diagnostics_fails(self):
+   import tempfile, shutil
+   with tempfile.TemporaryDirectory() as td:
+    folder=Path(td)
+    source=R/'data/terrain/wachusett-research'
+    for name in ('graph.json','source.osm'): shutil.copy(source/name,folder/name)
+    manifest=json.loads((source/'manifest.json').read_text())
+    verify_snapshot(folder,manifest)
+    (folder/'source.osm').write_bytes((folder/'source.osm').read_bytes()+b'\n')
+    with self.assertRaisesRegex(ValueError,'Snapshot bytes'):
+     verify_snapshot(folder,manifest)
