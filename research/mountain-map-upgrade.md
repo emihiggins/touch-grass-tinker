@@ -97,3 +97,7 @@ Aspect-preserving projection, zoom/fit controls, selected-route casing/arrows, f
 M1 now includes pointer/keyboard panning, known catalog station labels and grouped-itinerary-to-source-edge highlighting. Unknown station names remain unlabeled rather than invented. M2 now has an optional vendored MapLibre 5.6.2 geographic view over the same local Alpendorf data, flat by default, with renderer-failure fallback and SVG printing. Browser checks require actual rendered features and reject external network requests. No new resort import, basemap, DEM, operational feed or field validation is implied. M3/M4 remain planned.
 
 The deterministic `python3 scripts/audit_resort_snapshot.py` audit now records exact snapshot hash, components, source-reference coverage and duration assumptions in [the Alpendorf report](evidence/alpendorf-snapshot-audit.json). This advances M3 provenance checks but is not an adoption approval or a new dataset.
+
+## Second-region import checkpoint — October 7
+
+A bounded [Plose OSM fixture](../data/terrain/plose-research/README.md) now exercises explicit regional configuration, privacy sanitization, source/derived hashes and exact offline reconstruction. It retains 61 nodes/62 edges and is not enabled in the app. The importer refuses implicit non-Austrian grade mappings. Regression checks preserve the historical Alpendorf graph. This advances M3 tooling/provenance; qualified access review, live operations, elevation and a complete second-resort product integration remain open.

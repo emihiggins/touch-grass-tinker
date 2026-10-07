@@ -1,0 +1,2139 @@
+{
+  "schema_version": 1,
+  "id": "plose-bounded-osm-research",
+  "timezone": "Europe/Rome",
+  "difficulty_convention": "IT",
+  "review_status": "unreviewed",
+  "source_sha256": "aae15f00bfe9672f0781dc04f6a8707e2543e2d0ccaee1de551f66750019a3a5",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "source_license": "https://www.openstreetmap.org/copyright",
+  "nodes": [
+    {
+      "id": "11091576725",
+      "lon": 11.7239885,
+      "lat": 46.6907907
+    },
+    {
+      "id": "11230733216",
+      "lon": 11.7103926,
+      "lat": 46.6854926
+    },
+    {
+      "id": "11230733217",
+      "lon": 11.7105946,
+      "lat": 46.685383
+    },
+    {
+      "id": "11230733218",
+      "lon": 11.7128124,
+      "lat": 46.6861347
+    },
+    {
+      "id": "11275964406",
+      "lon": 11.7326162,
+      "lat": 46.6948997
+    },
+    {
+      "id": "1194283948",
+      "lon": 11.7186985,
+      "lat": 46.6875055
+    },
+    {
+      "id": "1194283950",
+      "lon": 11.7210537,
+      "lat": 46.6879546
+    },
+    {
+      "id": "1194283951",
+      "lon": 11.726321,
+      "lat": 46.6891159
+    },
+    {
+      "id": "1194283953",
+      "lon": 11.7258544,
+      "lat": 46.6888011
+    },
+    {
+      "id": "1194283955",
+      "lon": 11.7244172,
+      "lat": 46.6886772
+    },
+    {
+      "id": "1194283957",
+      "lon": 11.7230101,
+      "lat": 46.6885327
+    },
+    {
+      "id": "1194283962",
+      "lon": 11.7269982,
+      "lat": 46.6898747
+    },
+    {
+      "id": "1194283963",
+      "lon": 11.7277257,
+      "lat": 46.6906819
+    },
+    {
+      "id": "1194283964",
+      "lon": 11.7304458,
+      "lat": 46.691675
+    },
+    {
+      "id": "1194283965",
+      "lon": 11.7298225,
+      "lat": 46.6913733
+    },
+    {
+      "id": "1194283966",
+      "lon": 11.7288915,
+      "lat": 46.6909795
+    },
+    {
+      "id": "1194283968",
+      "lon": 11.7309291,
+      "lat": 46.6916696
+    },
+    {
+      "id": "1194283977",
+      "lon": 11.7332745,
+      "lat": 46.6923028
+    },
+    {
+      "id": "1194283979",
+      "lon": 11.7323908,
+      "lat": 46.6921323
+    },
+    {
+      "id": "1194283980",
+      "lon": 11.7316511,
+      "lat": 46.6919483
+    },
+    {
+      "id": "1194284057",
+      "lon": 11.7343791,
+      "lat": 46.692499
+    },
+    {
+      "id": "1194284063",
+      "lon": 11.7368636,
+      "lat": 46.6925157
+    },
+    {
+      "id": "1194284082",
+      "lon": 11.7392503,
+      "lat": 46.6922979
+    },
+    {
+      "id": "1194288461",
+      "lon": 11.7116557,
+      "lat": 46.685527
+    },
+    {
+      "id": "1194288463",
+      "lon": 11.7187273,
+      "lat": 46.6878536
+    },
+    {
+      "id": "1194288464",
+      "lon": 11.7198259,
+      "lat": 46.6889015
+    },
+    {
+      "id": "1194288465",
+      "lon": 11.7215716,
+      "lat": 46.6895415
+    },
+    {
+      "id": "1194288466",
+      "lon": 11.7230314,
+      "lat": 46.6901505
+    },
+    {
+      "id": "1194294331",
+      "lon": 11.7150017,
+      "lat": 46.6873835
+    },
+    {
+      "id": "1194294332",
+      "lon": 11.7172412,
+      "lat": 46.6885925
+    },
+    {
+      "id": "1825221752",
+      "lon": 11.7278855,
+      "lat": 46.6927679
+    },
+    {
+      "id": "3324470234",
+      "lon": 11.7335037,
+      "lat": 46.6950401
+    },
+    {
+      "id": "3747397517",
+      "lon": 11.7153475,
+      "lat": 46.6866725
+    },
+    {
+      "id": "440655822",
+      "lon": 11.7334963,
+      "lat": 46.6948886
+    },
+    {
+      "id": "4778651630",
+      "lon": 11.7140552,
+      "lat": 46.6865346
+    },
+    {
+      "id": "4778651632",
+      "lon": 11.7167727,
+      "lat": 46.688493
+    },
+    {
+      "id": "615897065",
+      "lon": 11.709442,
+      "lat": 46.6839795
+    },
+    {
+      "id": "615897076",
+      "lon": 11.7248417,
+      "lat": 46.6911855
+    },
+    {
+      "id": "615897077",
+      "lon": 11.7255358,
+      "lat": 46.6918769
+    },
+    {
+      "id": "615897078",
+      "lon": 11.7258912,
+      "lat": 46.6906456
+    },
+    {
+      "id": "615897079",
+      "lon": 11.728668,
+      "lat": 46.6903448
+    },
+    {
+      "id": "615897080",
+      "lon": 11.7301858,
+      "lat": 46.6902505
+    },
+    {
+      "id": "615897082",
+      "lon": 11.7325522,
+      "lat": 46.6892031
+    },
+    {
+      "id": "615897083",
+      "lon": 11.731143,
+      "lat": 46.6901017
+    },
+    {
+      "id": "615897084",
+      "lon": 11.732153,
+      "lat": 46.6894996
+    },
+    {
+      "id": "615897085",
+      "lon": 11.7260646,
+      "lat": 46.692149
+    },
+    {
+      "id": "615897086",
+      "lon": 11.7285435,
+      "lat": 46.6931295
+    },
+    {
+      "id": "615897087",
+      "lon": 11.7279321,
+      "lat": 46.6927838
+    },
+    {
+      "id": "615897088",
+      "lon": 11.7300536,
+      "lat": 46.6938622
+    },
+    {
+      "id": "615897090",
+      "lon": 11.730915,
+      "lat": 46.6943933
+    },
+    {
+      "id": "615897094",
+      "lon": 11.7318908,
+      "lat": 46.694785
+    },
+    {
+      "id": "617277604",
+      "lon": 11.7239885,
+      "lat": 46.6907907
+    },
+    {
+      "id": "6349606289",
+      "lon": 11.7324897,
+      "lat": 46.6946076
+    },
+    {
+      "id": "6349606290",
+      "lon": 11.7285534,
+      "lat": 46.6924531
+    },
+    {
+      "id": "6349606291",
+      "lon": 11.7271073,
+      "lat": 46.6914907
+    },
+    {
+      "id": "6349606292",
+      "lon": 11.7264219,
+      "lat": 46.691116
+    },
+    {
+      "id": "6349606293",
+      "lon": 11.7267584,
+      "lat": 46.6905517
+    },
+    {
+      "id": "6349606294",
+      "lon": 11.7272854,
+      "lat": 46.6916092
+    },
+    {
+      "id": "635778829",
+      "lon": 11.7177214,
+      "lat": 46.6875021
+    },
+    {
+      "id": "635778837",
+      "lon": 11.725794,
+      "lat": 46.6907727
+    },
+    {
+      "id": "9917170790",
+      "lon": 11.7102198,
+      "lat": 46.685811
+    }
+  ],
+  "edges": [
+    {
+      "id": "osm:way:103429371:0",
+      "from": "1194284082",
+      "to": "1194284063",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7392503,
+          46.6922979
+        ],
+        [
+          11.7368636,
+          46.6925157
+        ]
+      ],
+      "length_m": 183.638,
+      "duration_s": 45.91,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:1",
+      "from": "1194284063",
+      "to": "1194284057",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7368636,
+          46.6925157
+        ],
+        [
+          11.7343791,
+          46.692499
+        ]
+      ],
+      "length_m": 189.502,
+      "duration_s": 47.376,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:10",
+      "from": "1194283963",
+      "to": "1194283962",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7277257,
+          46.6906819
+        ],
+        [
+          11.7269982,
+          46.6898747
+        ]
+      ],
+      "length_m": 105.524,
+      "duration_s": 26.381,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:11",
+      "from": "1194283962",
+      "to": "1194283951",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7269982,
+          46.6898747
+        ],
+        [
+          11.726321,
+          46.6891159
+        ]
+      ],
+      "length_m": 98.93,
+      "duration_s": 24.732,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:12",
+      "from": "1194283951",
+      "to": "1194283953",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.726321,
+          46.6891159
+        ],
+        [
+          11.7258544,
+          46.6888011
+        ]
+      ],
+      "length_m": 49.919,
+      "duration_s": 12.48,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:13",
+      "from": "1194283953",
+      "to": "1194283955",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7258544,
+          46.6888011
+        ],
+        [
+          11.7244172,
+          46.6886772
+        ]
+      ],
+      "length_m": 110.485,
+      "duration_s": 27.621,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:14",
+      "from": "1194283955",
+      "to": "1194283957",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7244172,
+          46.6886772
+        ],
+        [
+          11.7230101,
+          46.6885327
+        ]
+      ],
+      "length_m": 108.523,
+      "duration_s": 27.131,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:15",
+      "from": "1194283957",
+      "to": "1194283950",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7230101,
+          46.6885327
+        ],
+        [
+          11.7210537,
+          46.6879546
+        ]
+      ],
+      "length_m": 162.483,
+      "duration_s": 40.621,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:16",
+      "from": "1194283950",
+      "to": "1194283948",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7210537,
+          46.6879546
+        ],
+        [
+          11.7186985,
+          46.6875055
+        ]
+      ],
+      "length_m": 186.459,
+      "duration_s": 46.615,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:17",
+      "from": "1194283948",
+      "to": "635778829",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7186985,
+          46.6875055
+        ],
+        [
+          11.7177214,
+          46.6875021
+        ]
+      ],
+      "length_m": 74.531,
+      "duration_s": 18.633,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:2",
+      "from": "1194284057",
+      "to": "1194283977",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7343791,
+          46.692499
+        ],
+        [
+          11.7332745,
+          46.6923028
+        ]
+      ],
+      "length_m": 87.027,
+      "duration_s": 21.757,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:3",
+      "from": "1194283977",
+      "to": "1194283979",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7332745,
+          46.6923028
+        ],
+        [
+          11.7323908,
+          46.6921323
+        ]
+      ],
+      "length_m": 70.016,
+      "duration_s": 17.504,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:4",
+      "from": "1194283979",
+      "to": "1194283980",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7323908,
+          46.6921323
+        ],
+        [
+          11.7316511,
+          46.6919483
+        ]
+      ],
+      "length_m": 60.013,
+      "duration_s": 15.003,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:5",
+      "from": "1194283980",
+      "to": "1194283968",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7316511,
+          46.6919483
+        ],
+        [
+          11.7309291,
+          46.6916696
+        ]
+      ],
+      "length_m": 63.189,
+      "duration_s": 15.797,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:6",
+      "from": "1194283968",
+      "to": "1194283964",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7309291,
+          46.6916696
+        ],
+        [
+          11.7304458,
+          46.691675
+        ]
+      ],
+      "length_m": 36.867,
+      "duration_s": 9.217,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:7",
+      "from": "1194283964",
+      "to": "1194283965",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7304458,
+          46.691675
+        ],
+        [
+          11.7298225,
+          46.6913733
+        ]
+      ],
+      "length_m": 58.185,
+      "duration_s": 14.546,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:8",
+      "from": "1194283965",
+      "to": "1194283966",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7298225,
+          46.6913733
+        ],
+        [
+          11.7288915,
+          46.6909795
+        ]
+      ],
+      "length_m": 83.425,
+      "duration_s": 20.856,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429371:9",
+      "from": "1194283966",
+      "to": "1194283963",
+      "kind": "piste",
+      "name": "Skiweg",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7288915,
+          46.6909795
+        ],
+        [
+          11.7277257,
+          46.6906819
+        ]
+      ],
+      "length_m": 94.876,
+      "duration_s": 23.719,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429371"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:0",
+      "from": "635778837",
+      "to": "11091576725",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.725794,
+          46.6907727
+        ],
+        [
+          11.7239885,
+          46.6907907
+        ]
+      ],
+      "length_m": 137.725,
+      "duration_s": 34.431,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:1",
+      "from": "11091576725",
+      "to": "1194288466",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7239885,
+          46.6907907
+        ],
+        [
+          11.7230314,
+          46.6901505
+        ]
+      ],
+      "length_m": 101.964,
+      "duration_s": 25.491,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:10",
+      "from": "1194288461",
+      "to": "11230733217",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7116557,
+          46.685527
+        ],
+        [
+          11.7105946,
+          46.685383
+        ]
+      ],
+      "length_m": 82.509,
+      "duration_s": 20.627,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:11",
+      "from": "11230733217",
+      "to": "11230733216",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7105946,
+          46.685383
+        ],
+        [
+          11.7103926,
+          46.6854926
+        ]
+      ],
+      "length_m": 19.646,
+      "duration_s": 4.911,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:12",
+      "from": "11230733216",
+      "to": "9917170790",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7103926,
+          46.6854926
+        ],
+        [
+          11.7102198,
+          46.685811
+        ]
+      ],
+      "length_m": 37.779,
+      "duration_s": 9.445,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:2",
+      "from": "1194288466",
+      "to": "1194288465",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7230314,
+          46.6901505
+        ],
+        [
+          11.7215716,
+          46.6895415
+        ]
+      ],
+      "length_m": 130.32,
+      "duration_s": 32.58,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:3",
+      "from": "1194288465",
+      "to": "1194288464",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7215716,
+          46.6895415
+        ],
+        [
+          11.7198259,
+          46.6889015
+        ]
+      ],
+      "length_m": 150.977,
+      "duration_s": 37.744,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:4",
+      "from": "1194288464",
+      "to": "1194288463",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7198259,
+          46.6889015
+        ],
+        [
+          11.7187273,
+          46.6878536
+        ]
+      ],
+      "length_m": 143.524,
+      "duration_s": 35.881,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:5",
+      "from": "1194288463",
+      "to": "635778829",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7187273,
+          46.6878536
+        ],
+        [
+          11.7177214,
+          46.6875021
+        ]
+      ],
+      "length_m": 86.108,
+      "duration_s": 21.527,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:6",
+      "from": "635778829",
+      "to": "3747397517",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7177214,
+          46.6875021
+        ],
+        [
+          11.7153475,
+          46.6866725
+        ]
+      ],
+      "length_m": 203.219,
+      "duration_s": 50.805,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:7",
+      "from": "3747397517",
+      "to": "4778651630",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7153475,
+          46.6866725
+        ],
+        [
+          11.7140552,
+          46.6865346
+        ]
+      ],
+      "length_m": 99.76,
+      "duration_s": 24.94,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:8",
+      "from": "4778651630",
+      "to": "11230733218",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7140552,
+          46.6865346
+        ],
+        [
+          11.7128124,
+          46.6861347
+        ]
+      ],
+      "length_m": 104.71,
+      "duration_s": 26.178,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103429722:9",
+      "from": "11230733218",
+      "to": "1194288461",
+      "kind": "piste",
+      "name": "OSM way 103429722",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7128124,
+          46.6861347
+        ],
+        [
+          11.7116557,
+          46.685527
+        ]
+      ],
+      "length_m": 111.136,
+      "duration_s": 27.784,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103429722"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103430648:0",
+      "from": "1194288464",
+      "to": "1194294332",
+      "kind": "piste",
+      "name": "Sch\u00f6nj\u00f6chel",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7198259,
+          46.6889015
+        ],
+        [
+          11.7172412,
+          46.6885925
+        ]
+      ],
+      "length_m": 200.121,
+      "duration_s": 50.03,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103430648"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103430648:1",
+      "from": "1194294332",
+      "to": "4778651632",
+      "kind": "piste",
+      "name": "Sch\u00f6nj\u00f6chel",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7172412,
+          46.6885925
+        ],
+        [
+          11.7167727,
+          46.688493
+        ]
+      ],
+      "length_m": 37.409,
+      "duration_s": 9.352,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103430648"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103430648:2",
+      "from": "4778651632",
+      "to": "1194294331",
+      "kind": "piste",
+      "name": "Sch\u00f6nj\u00f6chel",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7167727,
+          46.688493
+        ],
+        [
+          11.7150017,
+          46.6873835
+        ]
+      ],
+      "length_m": 182.944,
+      "duration_s": 45.736,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103430648"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:103430648:3",
+      "from": "1194294331",
+      "to": "4778651630",
+      "kind": "piste",
+      "name": "Sch\u00f6nj\u00f6chel",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7150017,
+          46.6873835
+        ],
+        [
+          11.7140552,
+          46.6865346
+        ]
+      ],
+      "length_m": 118.838,
+      "duration_s": 29.71,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/103430648"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:0",
+      "from": "440655822",
+      "to": "3324470234",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7334963,
+          46.6948886
+        ],
+        [
+          11.7335037,
+          46.6950401
+        ]
+      ],
+      "length_m": 16.855,
+      "duration_s": 4.214,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:1",
+      "from": "3324470234",
+      "to": "11275964406",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7335037,
+          46.6950401
+        ],
+        [
+          11.7326162,
+          46.6948997
+        ]
+      ],
+      "length_m": 69.464,
+      "duration_s": 17.366,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:10",
+      "from": "615897077",
+      "to": "615897076",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7255358,
+          46.6918769
+        ],
+        [
+          11.7248417,
+          46.6911855
+        ]
+      ],
+      "length_m": 93.345,
+      "duration_s": 23.336,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:11",
+      "from": "615897076",
+      "to": "617277604",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7248417,
+          46.6911855
+        ],
+        [
+          11.7239885,
+          46.6907907
+        ]
+      ],
+      "length_m": 78.498,
+      "duration_s": 19.625,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:2",
+      "from": "11275964406",
+      "to": "615897094",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7326162,
+          46.6948997
+        ],
+        [
+          11.7318908,
+          46.694785
+        ]
+      ],
+      "length_m": 56.775,
+      "duration_s": 14.194,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:3",
+      "from": "615897094",
+      "to": "615897090",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7318908,
+          46.694785
+        ],
+        [
+          11.730915,
+          46.6943933
+        ]
+      ],
+      "length_m": 86.23,
+      "duration_s": 21.557,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:4",
+      "from": "615897090",
+      "to": "615897088",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.730915,
+          46.6943933
+        ],
+        [
+          11.7300536,
+          46.6938622
+        ]
+      ],
+      "length_m": 88.338,
+      "duration_s": 22.085,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:5",
+      "from": "615897088",
+      "to": "615897086",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7300536,
+          46.6938622
+        ],
+        [
+          11.7285435,
+          46.6931295
+        ]
+      ],
+      "length_m": 141.077,
+      "duration_s": 35.269,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:6",
+      "from": "615897086",
+      "to": "615897087",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7285435,
+          46.6931295
+        ],
+        [
+          11.7279321,
+          46.6927838
+        ]
+      ],
+      "length_m": 60.433,
+      "duration_s": 15.108,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:7",
+      "from": "615897087",
+      "to": "1825221752",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7279321,
+          46.6927838
+        ],
+        [
+          11.7278855,
+          46.6927679
+        ]
+      ],
+      "length_m": 3.97,
+      "duration_s": 1,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:8",
+      "from": "1825221752",
+      "to": "615897085",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7278855,
+          46.6927679
+        ],
+        [
+          11.7260646,
+          46.692149
+        ]
+      ],
+      "length_m": 154.996,
+      "duration_s": 38.749,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468601:9",
+      "from": "615897085",
+      "to": "615897077",
+      "kind": "piste",
+      "name": "Plose 3",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7260646,
+          46.692149
+        ],
+        [
+          11.7255358,
+          46.6918769
+        ]
+      ],
+      "length_m": 50.419,
+      "duration_s": 12.605,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468601"
+      ],
+      "source_version": "9",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:0",
+      "from": "615897078",
+      "to": "6349606293",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7258912,
+          46.6906456
+        ],
+        [
+          11.7267584,
+          46.6905517
+        ]
+      ],
+      "length_m": 66.963,
+      "duration_s": 16.741,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:1",
+      "from": "6349606293",
+      "to": "615897079",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7267584,
+          46.6905517
+        ],
+        [
+          11.728668,
+          46.6903448
+        ]
+      ],
+      "length_m": 147.457,
+      "duration_s": 36.864,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:2",
+      "from": "615897079",
+      "to": "615897080",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.728668,
+          46.6903448
+        ],
+        [
+          11.7301858,
+          46.6902505
+        ]
+      ],
+      "length_m": 116.241,
+      "duration_s": 29.06,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:3",
+      "from": "615897080",
+      "to": "615897083",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7301858,
+          46.6902505
+        ],
+        [
+          11.731143,
+          46.6901017
+        ]
+      ],
+      "length_m": 74.86,
+      "duration_s": 18.715,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:4",
+      "from": "615897083",
+      "to": "615897084",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.731143,
+          46.6901017
+        ],
+        [
+          11.732153,
+          46.6894996
+        ]
+      ],
+      "length_m": 102.064,
+      "duration_s": 25.516,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468609:5",
+      "from": "615897084",
+      "to": "615897082",
+      "kind": "piste",
+      "name": "Querfahrt - Attraversamento",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.732153,
+          46.6894996
+        ],
+        [
+          11.7325522,
+          46.6892031
+        ]
+      ],
+      "length_m": 44.879,
+      "duration_s": 11.22,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468609"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48468610:0",
+      "from": "615897065",
+      "to": "615897078",
+      "kind": "lift",
+      "name": "Sch\u00f6nbodenbahn",
+      "difficulty": null,
+      "lift_type": "chairlift",
+      "geometry": [
+        [
+          11.709442,
+          46.6839795
+        ],
+        [
+          11.7096184,
+          46.6840512
+        ],
+        [
+          11.7096872,
+          46.6840791
+        ],
+        [
+          11.7103162,
+          46.684334
+        ],
+        [
+          11.7111804,
+          46.6846842
+        ],
+        [
+          11.7115693,
+          46.6848418
+        ],
+        [
+          11.7125674,
+          46.6852463
+        ],
+        [
+          11.7139607,
+          46.685811
+        ],
+        [
+          11.7147164,
+          46.6861172
+        ],
+        [
+          11.7156623,
+          46.6865005
+        ],
+        [
+          11.716669,
+          46.6869085
+        ],
+        [
+          11.7167332,
+          46.6869345
+        ],
+        [
+          11.717679,
+          46.6873178
+        ],
+        [
+          11.7185701,
+          46.6876789
+        ],
+        [
+          11.7199175,
+          46.6882249
+        ],
+        [
+          11.7212268,
+          46.6887555
+        ],
+        [
+          11.7217394,
+          46.6889632
+        ],
+        [
+          11.7224546,
+          46.689253
+        ],
+        [
+          11.7234868,
+          46.6896713
+        ],
+        [
+          11.7244357,
+          46.6900558
+        ],
+        [
+          11.7254774,
+          46.6904779
+        ],
+        [
+          11.7255312,
+          46.6904997
+        ],
+        [
+          11.7258912,
+          46.6906456
+        ]
+      ],
+      "length_m": 1457.296,
+      "duration_s": 485.765,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48468610"
+      ],
+      "source_version": "7",
+      "source_difficulty": null
+    },
+    {
+      "id": "osm:way:48602744:0",
+      "from": "615897078",
+      "to": "635778837",
+      "kind": "piste",
+      "name": "Sch\u00f6nboden - Giogo Bello",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7258912,
+          46.6906456
+        ],
+        [
+          11.725794,
+          46.6907727
+        ]
+      ],
+      "length_m": 15.959,
+      "duration_s": 3.99,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48602744"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:48602744:1",
+      "from": "635778837",
+      "to": "617277604",
+      "kind": "piste",
+      "name": "Sch\u00f6nboden - Giogo Bello",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.725794,
+          46.6907727
+        ],
+        [
+          11.7239885,
+          46.6907907
+        ]
+      ],
+      "length_m": 137.725,
+      "duration_s": 34.431,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/48602744"
+      ],
+      "source_version": "4",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:678145049:0",
+      "from": "6349606289",
+      "to": "615897088",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7324897,
+          46.6946076
+        ],
+        [
+          11.7300536,
+          46.6938622
+        ]
+      ],
+      "length_m": 203.445,
+      "duration_s": 50.861,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:678145049:1",
+      "from": "615897088",
+      "to": "6349606290",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7300536,
+          46.6938622
+        ],
+        [
+          11.7285534,
+          46.6924531
+        ]
+      ],
+      "length_m": 194.015,
+      "duration_s": 48.504,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:678145049:2",
+      "from": "6349606290",
+      "to": "6349606294",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7285534,
+          46.6924531
+        ],
+        [
+          11.7272854,
+          46.6916092
+        ]
+      ],
+      "length_m": 134.754,
+      "duration_s": 33.688,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:678145049:3",
+      "from": "6349606294",
+      "to": "6349606291",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7272854,
+          46.6916092
+        ],
+        [
+          11.7271073,
+          46.6914907
+        ]
+      ],
+      "length_m": 18.925,
+      "duration_s": 4.731,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:678145049:4",
+      "from": "6349606291",
+      "to": "6349606292",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7271073,
+          46.6914907
+        ],
+        [
+          11.7264219,
+          46.691116
+        ]
+      ],
+      "length_m": 66.849,
+      "duration_s": 16.712,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:678145049:5",
+      "from": "6349606292",
+      "to": "635778837",
+      "kind": "piste",
+      "name": "Plose 2",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.7264219,
+          46.691116
+        ],
+        [
+          11.725794,
+          46.6907727
+        ]
+      ],
+      "length_m": 61.244,
+      "duration_s": 15.311,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/678145049"
+      ],
+      "source_version": "2",
+      "source_difficulty": "intermediate"
+    }
+  ]
+}

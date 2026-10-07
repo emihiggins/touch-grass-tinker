@@ -11,7 +11,16 @@ def distance(a,b):
     la,lb=math.radians(a[1]),math.radians(b[1]);dl=math.radians(b[0]-a[0]);dp=lb-la
     return 12742000*math.asin(min(1,math.sqrt(math.sin(dp/2)**2+math.cos(la)*math.cos(lb)*math.sin(dl/2)**2)))
 
-def import_osm(raw):
+def import_osm(raw, *, graph_id='alpendorf-osm-lab', timezone='Europe/Vienna', difficulty_convention='AT', difficulty_mapping=None):
+    # Existing default is the historical Austrian lab. Other regions must opt in.
+    from zoneinfo import ZoneInfo
+    ZoneInfo(timezone)
+    if not graph_id or not difficulty_convention:raise ValueError('Explicit graph identity and difficulty convention required')
+    if difficulty_mapping is None:
+        if difficulty_convention!='AT':raise ValueError('Non-AT imports require an explicit difficulty mapping')
+        difficulty_mapping=DIFFICULTY
+    if not difficulty_mapping or any(v not in {'green','blue','red','black'} for v in difficulty_mapping.values()):
+        raise ValueError('Unsupported normalized difficulty mapping')
     root=ET.fromstring(raw)
     coords={n.attrib['id']:[float(n.attrib['lon']),float(n.attrib['lat'])] for n in root.findall('node')}
     edges=[];skipped=[]
@@ -24,7 +33,7 @@ def import_osm(raw):
         elif any(n not in coords for n in ns):reason='missing_node'
         elif any(t.get(k) in {'no','private'} for k in ('access','ski','aerialway:access')):reason='restricted_access'
         elif t.get('oneway')=='-1' or t.get('piste:oneway')=='-1':reason='reversed_direction_requires_review'
-        elif piste and t.get('piste:difficulty') not in DIFFICULTY:reason='unknown_difficulty'
+        elif piste and t.get('piste:difficulty') not in difficulty_mapping:reason='unknown_difficulty'
         if reason:skipped.append({'way_id':wid,'reason':reason});continue
         # Lift is one terminal-to-terminal edge; preserve whole geometry. Pistes split at every source node.
         chunks=[(0,ns)] if lift else [(i,[a,b]) for i,(a,b) in enumerate(zip(ns,ns[1:]))]
@@ -33,7 +42,7 @@ def import_osm(raw):
             if length<=0:continue
             duration=max(1,length/(3 if lift else 4))
             edges.append({'id':f'osm:way:{wid}:{index}','from':chunk[0],'to':chunk[-1],'kind':'lift' if lift else 'piste',
-              'name':t.get('name',f'OSM way {wid}'),'difficulty':DIFFICULTY.get(t.get('piste:difficulty')) if piste else None,
+              'name':t.get('name',f'OSM way {wid}'),'difficulty':difficulty_mapping.get(t.get('piste:difficulty')) if piste else None,
               'lift_type':LIFT_TYPES[t['aerialway']] if lift else None,'geometry':geometry,'length_m':round(length,3),'duration_s':round(duration,3),
               'duration_basis':'assumed','review_status':'unreviewed','source_refs':[f'way/{wid}'],
               'source_version':way.attrib.get('version'),'source_difficulty':t.get('piste:difficulty')})
@@ -51,7 +60,7 @@ def import_osm(raw):
         else:retained.append(e)
     edges=retained
     used={e[k] for e in edges for k in ('from','to')}
-    graph={'schema_version':1,'id':'alpendorf-osm-lab','timezone':'Europe/Vienna','difficulty_convention':'AT','review_status':'unreviewed',
+    graph={'schema_version':1,'id':graph_id,'timezone':timezone,'difficulty_convention':difficulty_convention,'review_status':'unreviewed',
       'source_sha256':hashlib.sha256(raw).hexdigest(),'attribution':'© OpenStreetMap contributors; ODbL 1.0',
       'source_license':'https://www.openstreetmap.org/copyright','nodes':[{'id':n,'lon':coords[n][0],'lat':coords[n][1]} for n in sorted(used)],
       'edges':sorted(edges,key=lambda e:e['id'])}

@@ -3,7 +3,7 @@
   "scope": "structural_snapshot_audit_not_access_or_safety_validation",
   "snapshot": "data/terrain/alpendorf-lab.json",
   "snapshot_sha256": "1881c4d1e28fe97f2a0894d610976362ae672f597a55eff4bfbe42c3a7683d48",
-  "original_source_sha256": "19f5e76f53e54c7c6c64f28eeed2ba1fb9c83e3fa12b53a310de706e12bb9ccd",
+  "graph_source_sha256": "19f5e76f53e54c7c6c64f28eeed2ba1fb9c83e3fa12b53a310de706e12bb9ccd",
   "license": "https://www.openstreetmap.org/copyright",
   "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
   "review_status": "unreviewed",
