@@ -23,3 +23,5 @@ The current README and guides above describe the working prototype. Evidence und
 ## Submission-specific material
 
 [Submission index](../submission/README.md). Publication checklists, project budget accounting and owner decisions are maintainer material, not instructions for ordinary users or contributors.
+
+Maintainers can use the [review-later log](../delivery/review-later.md) to distinguish external evidence/owner decisions from implementation work that can proceed independently.

@@ -64,3 +64,13 @@ Map interaction checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts
 UI accessibility checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core AXE_SCRIPT=/path/to/axe-core/axe.min.js node scripts/browser-ui.cjs`. The test uses development-only axe-core 4.11.0, injected through browser automation without weakening production CSP. It checks initial/planned states at three widths, text resizing and focus. Incomplete findings are retained for visual review; automated success is not an accessibility certification.
 
 Request recovery checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-recovery.cjs`. They inject terrain failures and hold actual API responses to verify retry recovery and stale terrain/interpretation/plan suppression. They use the offline rules adapter only.
+
+## Browser source formatting
+
+First-party browser files and the current browser regression scripts use Prettier **3.6.2** with the repository's `.prettierrc.json`. Formatting is development-only: Node and npm are not required to run the Python demo. Do not format or modify vendored MapLibre files; their upstream hashes are checked separately.
+
+```sh
+npx --yes --package prettier@3.6.2 prettier --check web/app.js web/index.html web/style.css scripts/browser-map.cjs scripts/browser-ai-demo.cjs scripts/browser-ui.cjs scripts/browser-recovery.cjs
+```
+
+Use `--write` instead of `--check` for intentional formatting changes. After any browser source change, rerun browser checks and refresh the current media evidence before updating its fingerprints.

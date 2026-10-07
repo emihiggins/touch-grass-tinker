@@ -17,23 +17,23 @@ That sounds like a simple request. It contains several different things: a hard 
 
 Lift-Lap Planner is a ski-outing planning experiment built around that distinction. The intended experience is short: express the constraints, check the interpretation, and take away a compact itinerary. Less map deliberation is the goal—not a measured screen-time saving yet.
 
-The local prototype can interpret a limited vocabulary, ask the user to confirm constraints, search a bounded graph, and produce a printable simulated itinerary. It includes fictional terrain and an explicitly unreviewed OpenStreetMap terrain lab. It is not live lift information or on-mountain navigation, and it has not been field-tested on skis.
+The local prototype can interpret a limited vocabulary, ask the user to confirm constraints, search a bounded graph, and produce a printable or downloadable simulated itinerary. It includes fictional terrain and an explicitly unreviewed OpenStreetMap terrain lab. It is not live lift information or on-mountain navigation, and it has not been field-tested on skis.
 
 The browser offers Rules, a clearly labelled recorded AI example, and opt-in live Qwen3-8B base-model interpretation. Live inference stays server-side; schema-invalid responses cannot create routes. The user sees the original request and selected settings, reviews the interpretation, and can correct hard lift exclusions locally before confirming. The printed itinerary retains the approved constraints and interpretation source. The rejected fine-tuned checkpoint is not used.
 
-The map now supports panning, known station labels and itinerary-linked highlighting. An optional MapLibre view uses local Alpendorf geometry and a bundled, attributed hillshade tile, so it works without a tile-service account. The SVG sketch remains available when WebGL fails and for printing. Elevation provides visual context only; it does not establish safe slopes or change the route calculations.
+The map-first interface separates and names fictional lift and piste lines, supports panning and known station labels, and links each itinerary visit to its map segments. Previous/Next controls distinguish repeated laps; Focus step frames the selected leg. Per-leg estimates include the scenario’s assumed queues, and the local text export keeps approved constraints and simulation warnings with the itinerary. An optional MapLibre view uses local Alpendorf geometry and a bundled, attributed hillshade tile, so it works without a tile-service account. The SVG sketch remains available when WebGL fails and for printing. Elevation provides visual context only; it does not establish safe slopes or change the route calculations.
 
 ## Demo
 <!-- Share a deployed link or a video demo. -->
 
 [Watch/download the demo](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm). The app itself runs locally; this is a recorded demonstration, not a hosted planning service. It shows an exact replay of a real Qwen3-8B app response, its incorrect softening of “no drag lifts,” a local hard-exclusion correction, confirmation and simulated planning. The recording is labelled replay—not continuous live inference. The live browser call was verified separately. [Reproduction and disclosures](https://github.com/emihiggins/touch-grass-tinker/blob/main/demo/README.md).
 
-The recording covers corrected simulated planning, closed lifts, an unsupported request, mobile layout and the offline Alpendorf geographic view. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
+The recording covers corrected simulated planning, step inspection, local text export, closed lifts, an unsupported request, mobile layout and the offline Alpendorf geographic view. [Browser and print evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/app-integration) accompanies the reproducible local demo; it is not evidence of a public deployment.
 
 ## Code
 <!-- Show us the code!  You can embed a GitHub repo directly into your post. -->
 
-[Project repository](https://github.com/emihiggins/touch-grass-tinker). Original code is MIT-licensed; OpenStreetMap terrain data remains under ODbL with attribution. Run the offline demo with Python3.11+ using the README instructions.
+[Project repository](https://github.com/emihiggins/touch-grass-tinker). Original code is MIT-licensed; OpenStreetMap terrain data remains under ODbL with attribution. Run the offline demo with Python 3.11+ using the README instructions.
 
 The dependency-free planner and saved-result scoring run on Python 3.11 or newer. The optional Tinker/Cookbook environment has separate version locks and a pinned tokenizer. Model weights are not bundled; training and baseline inference use Tinker's hosted service.
 
@@ -67,19 +67,19 @@ These are development results, not held-out accuracy. Prompt v2 improved nine ca
 
 The [raw outputs and reports](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/base-v2-development) retain the failures. Forty completed inference requests across both prompts have an estimated uncached token cost of $0.00988101; this is not a verified invoice, excludes uncertain rejected-request billing, and is not a training or cost-reduction result.
 
-All 48 AI-assisted training candidates were reviewed by the project owner. The agreed corrections are implemented in a separate v2 corpus of 47 source-reviewed, deterministically migrated rows; the overlapping case is excluded. All16 pilot cases were reviewed and frozen before predictions. They were not an untouched final benchmark. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Emi subsequently approved all 16 fresh cases, and their labels and graph bundle were frozen before evaluating the retained base candidate.
+All 48 AI-assisted training candidates were reviewed by the project owner. The agreed corrections are implemented in a separate v2 corpus of 47 source-reviewed, deterministically migrated rows; the overlapping case is excluded. All 16 pilot cases were reviewed and frozen before predictions. They were not an untouched final benchmark. Local rendering verifies that prompts receive no training loss and targets fit without truncation. Emi subsequently approved all 16 fresh cases, and their labels and graph bundle were frozen before evaluating the retained base candidate.
 
 ### What the full-data trial showed
 
-After the integration smoke, I preregistered one full-data trial:47 human-reviewed examples, rank16 LoRA, learning rate0.0001 and three full-batch training passes. On the same16-case reviewed pilot, the base model passed9 tasks and the trained model passed7. Training improved two cases and regressed on four. Schema validity was15/16 for the base and10/16 for the trained model. Valid JSON alone was not enough, and the trained model also regressed on schema compliance.
+After the integration smoke, I preregistered one full-data trial: 47 human-reviewed examples, rank 16 LoRA, learning rate 0.0001 and three full-batch training passes. On the same 16-case reviewed pilot, the base model passed 9 tasks and the trained model passed 7. Training improved two cases and regressed on four. Schema validity was 15/16 for the base and 10/16 for the trained model. Valid JSON alone was not enough, and the trained model also regressed on schema compliance.
 
 The trial failed its screening rule. I retained the base as the candidate rather than presenting the tuned checkpoint as an improvement. These pilot cases were not untouched final evidence; the separate fresh 16-case set was human-approved and frozen before its evaluation. See the [complete paired evidence](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/experiment-01).
 
 ### Fresh evaluation of the retained base model
 
-After independent owner approval, I froze a new16-case set on four fictional graph layouts and evaluated the unchanged base model once. It passed **13/16 end-to-end tasks**, with **16/16 schema-valid outputs**. Failures involved incomplete surface-lift exclusions, unnecessary duration clarification, and a retained duration where none should be set. All failures remain in the denominator. [Outputs, protocol and report](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/fresh-base-evaluation) are preserved.
+After independent owner approval, I froze a new 16-case set on four fictional graph layouts and evaluated the unchanged base model once. It passed **13/16 end-to-end tasks**, with **16/16 schema-valid outputs**. Failures involved incomplete surface-lift exclusions, unnecessary duration clarification, and a retained duration where none should be set. All failures remain in the denominator. [Outputs, protocol and report](https://github.com/emihiggins/touch-grass-tinker/tree/main/research/evidence/fresh-base-evaluation) are preserved.
 
-This is a small, same-agent-authored, human-reviewed set—not representative field validation. It is not a base-versus-trained comparison, and13/16 here must not be compared with9/16 on different pilot cases as a gain. No model or prompt was tuned using these final outputs. A later, explicitly post-hoc check of the unchanged narrow rules parser scored0/16 on this compositional wording; that comparison was not used to select a new model and does not describe performance on the parser’s supported grammar.
+This is a small, same-agent-authored, human-reviewed set—not representative field validation. It is not a base-versus-trained comparison, and 13/16 here must not be compared with 9/16 on different pilot cases as a gain. No model or prompt was tuned using these final outputs. A later, explicitly post-hoc check of the unchanged narrow rules parser scored 0/16 on this compositional wording; that comparison was not used to select a new model and does not describe performance on the parser’s supported grammar.
 
 ## Why Does Open Innovation Matter?
 <!-- Why does open innovation matter for what you built?  What did it make possible that a closed API wouldn't? -->

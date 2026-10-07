@@ -9,7 +9,7 @@ The current application uses **Python’s standard library HTTP server and graph
 3. The browser displays the original request/settings and parsed constraints. Local hard-exclusion edits remove overlapping soft preferences; they do not invoke a model.
 4. Explicit confirmation sends an intent to `POST /api/plan`. Schema/catalog/time checks run before graph planning.
 5. `compact.py` contracts eligible piste chains. `core.py` searches the compact graph within bounds; expansion and independent validation check the source-level route.
-6. The browser displays the simulated route and approved constraints. Changing inputs invalidates confirmation and rejects stale asynchronous responses. Print retains intent provenance and corrections.
+6. The browser displays the simulated route and approved constraints. Changing inputs invalidates confirmation and rejects stale asynchronous responses. Print and local text export retain intent provenance and corrections. Grouped step estimates include assumed queues and cumulative elapsed times. A route inspector selects repeated visits and focuses their exact source-edge membership in either renderer. Terrain fetch failures clear stale maps, offer retry, and keep interpretation disabled until a valid graph is available.
 
 ## Components
 
