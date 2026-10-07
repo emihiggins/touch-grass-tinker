@@ -1,0 +1,12 @@
+{
+  "draftDiscardPreservesLiftCorrections": true,
+  "durationAndDifficultyApplied": true,
+  "draftEditsInvalidateRoute": true,
+  "invalidDurationBlocksConfirmation": true,
+  "liftEditsCannotBypassDraft": true,
+  "combinedProvenanceRetained": true,
+  "correctedExportVerified": true,
+  "originalSettingsRetained": true,
+  "localEditsAddNoInterpretationCalls": true,
+  "unsupportedStillBlocked": true
+}

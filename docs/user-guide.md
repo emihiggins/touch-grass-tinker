@@ -58,3 +58,9 @@ Use **Save itinerary (.txt)** to download the confirmed constraints and all step
 If terrain loading fails, the previous map is cleared and planning remains disabled. Use **Retry terrain loading** to try again. Changing terrain while an interpretation is pending does not submit a second model request; the old result is discarded.
 
 The recorded example is available on Pine Mountain only. Switching to a terrain where the selected mode is unavailable returns the form to offline rules and explains the change. It never silently switches to paid live AI.
+
+## Correcting time and difficulty
+
+For a ready interpretation, **Correct time or difficulty** lets you edit the time budget (whole minutes, 1–1440) and maximum grade without another model call. Applying a change updates the displayed constraints and records which fields the user changed. Then confirm again to plan. Draft edits immediately hide the old route and cannot be confirmed until valid and applied. Original request/settings remain visible for comparison. Unsupported or unresolved interpretations still require editing the request; this form does not bypass those checks.
+
+**Discard time/difficulty edits** restores the currently applied values without undoing separate lift corrections. It does not revive the old route; confirm the current constraints again.

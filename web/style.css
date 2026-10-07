@@ -710,3 +710,13 @@ footer {
     display: none !important;
   }
 }
+
+#correction-form fieldset {
+  margin: 20px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+}
+#correction-form legend {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
