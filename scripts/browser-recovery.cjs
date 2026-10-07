@@ -48,6 +48,26 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright-core')
   await assert(page.locator('#retry-terrain').isHidden(), 'Retry did not recover');
   await page.locator('#terrain').selectOption('synthetic');
   await page.getByText('Fictional terrain · not to scale').waitFor();
+  await page.locator('#adapter').selectOption('replay');
+  await page.locator('#terrain').selectOption('alpendorf');
+  await page.getByText('Unreviewed OSM geometry · geographic').waitFor();
+  await assert(
+    page
+      .locator('#adapter')
+      .inputValue()
+      .then((v) => v === 'rules'),
+    'Unavailable replay mode remained selected',
+  );
+  await assert(
+    page.locator('#adapter option[value=replay]').isDisabled(),
+    'Replay offered on unsupported terrain',
+  );
+  await page.locator('#terrain').selectOption('synthetic');
+  await page.getByText('Fictional terrain · not to scale').waitFor();
+  await assert(
+    page.locator('#adapter option[value=replay]').isEnabled(),
+    'Recorded Pine mode not restored',
+  );
   const interpretation = await hold('**/api/interpret');
   await page.locator('#interpret').click();
   await interpretation.captured;
@@ -94,6 +114,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright-core')
     'research/evidence/app-integration/request-recovery.json',
     JSON.stringify(
       {
+        terrainSpecificModeAvailability: true,
         failedTerrainClearsMap: true,
         retryRecovers: true,
         oldInterpretationCannotUnlockTerrain: true,

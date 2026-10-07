@@ -91,7 +91,7 @@ class Handler(BaseHTTPRequestHandler):
         if url.path=='/api/context':
             try:
                 mode=parse_qs(url.query).get('terrain',['synthetic'])[0];g,ui,catalog=context(mode)
-                return self.send(200,{'graph':g,'ui_context':ui,'catalog':catalog,'live_model_enabled':getattr(self.server,'model',None) is not None,'recorded_model_available':(ROOT/'demo/model-replay.json').exists()})
+                return self.send(200,{'graph':g,'ui_context':ui,'catalog':catalog,'live_model_enabled':getattr(self.server,'model',None) is not None,'recorded_model_available':mode=='synthetic' and (ROOT/'demo/model-replay.json').exists()})
             except ValueError:return self.send(422,{'error':'Invalid terrain'})
         allowed={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
         for asset,mime in [('maplibre-gl-csp.js','text/javascript'),('maplibre-gl-csp-worker.js','text/javascript'),('maplibre-gl.css','text/css')]:allowed['/'+asset]=(asset,mime)

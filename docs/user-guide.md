@@ -56,3 +56,5 @@ Choose a numbered itinerary step, then use **Previous**, **Next** or **Focus ste
 Use **Save itinerary (.txt)** to download the confirmed constraints and all steps, estimates and source disclosures. The file is created locally; it does not call a model or publish your plan. Keep its simulation warning with it when sharing.
 
 If terrain loading fails, the previous map is cleared and planning remains disabled. Use **Retry terrain loading** to try again. Changing terrain while an interpretation is pending does not submit a second model request; the old result is discarded.
+
+The recorded example is available on Pine Mountain only. Switching to a terrain where the selected mode is unavailable returns the form to offline rules and explains the change. It never silently switches to paid live AI.

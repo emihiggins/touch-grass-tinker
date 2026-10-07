@@ -40,7 +40,8 @@
     "Route inspector with queue-inclusive leg timelines, Previous/Next and focus controls, repeated-visit geographic selection and invalidation checks",
     "Local plain-text itinerary export retains approved constraints, repeated steps, estimated queues and simulation/source disclosures",
     "Terrain failure recovery clears stale maps, adds retry, and guards interpretation availability against pending/out-of-order requests",
-    "Submission feature claims refreshed, browser sources formatted with pinned Prettier, and review-later boundaries consolidated"
+    "Submission feature claims refreshed, browser sources formatted with pinned Prettier, and review-later boundaries consolidated",
+    "Recorded example availability is limited to Pine Mountain; unavailable selected modes reset explicitly to offline rules on terrain change"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
@@ -51,7 +52,7 @@
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
-  "tests_passed": 140,
+  "tests_passed": 141,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
   "next_action": "Continue concrete offline improvements; external evidence and owner-only publication items are tracked in delivery/review-later.md",
@@ -71,7 +72,7 @@
     "dev_publication_actor": "Emi only",
     "source_message_id": "2437"
   },
-  "tests_run": 162,
+  "tests_run": 163,
   "optional_tests_skipped": 22,
   "review_later_log": "delivery/review-later.md"
 }

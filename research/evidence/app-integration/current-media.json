@@ -5,16 +5,16 @@
   "source": "scripts/browser-ai-demo.cjs; Chromium offline recorded mode",
   "sha256": {
     "web/index.html": "77d9c0b23cc9ddd56e648eb235f5fa39a4f99460aeb3f61aa06603441b7db383",
-    "web/app.js": "61b14d9996a362638dd63ba50e1dbddc7181f84b2256e8646b022143a4915ab2",
+    "web/app.js": "05c24f929ec3853c1b3e49556d5d988046ab7ab8dacbd488fc5a5442349a27ec",
     "web/style.css": "51c4548c0c0038418cea4de7d2371993f6e0783a3223d7972e61614eb4edece7",
-    "liftlap/server.py": "8136a5491cdca051fb919188c3f6126d7bda8a97e97a94f6e051fe9af9ea11c8",
+    "liftlap/server.py": "35cef0e2d5110a930a6419d851a75ff8be2449f85820a6681393f2544efaa37e",
     "liftlap/app_model.py": "b47c0427e43399c40fff73fa7e77fccddfa1ea74b56a44c4d674153af5bc57b5",
     "scripts/browser-ai-demo.cjs": "11c8c778a1b12f8e7710208ad49c0ef0824fa1ed17ba05027a1223f14ab2b40a",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
-    "demo/walkthrough.webm": "9f541c0049b95241aee61db85a4be4845bb592d90b631feca57e80dbaad9fa09",
+    "demo/walkthrough.webm": "bb42de23fd05e88ab2f7f235ca83b742664baba707ed9f50449e2b074c5d5587",
     "research/evidence/app-integration/recorded-corrected-desktop.png": "040c4e49107a8809c40ecdf7d88d9b4d26dd4eda862c18aed994c1dd476add44",
     "research/evidence/app-integration/mobile.png": "ae541d16df8931d314183d132e2c9ea1c308a88514695a6a997318f30fbba46e",
-    "research/evidence/app-integration/corrected-itinerary.pdf": "aadc7c23be2994f675001f13b13a5074db2086ddf026f2b4524ef90cfc4b4fa2",
+    "research/evidence/app-integration/corrected-itinerary.pdf": "7be1f9c92b1ddfd0e12e7ea7352af347f1a618556a002f82371e144d5b2bd82c",
     "research/evidence/app-integration/print-preview.png": "d9dbc1278098d32f424b8f597468117aee78446c69dbcb63cbd3e118b87b3bad",
     "scripts/browser-map.cjs": "429e43d1a393755c6516723242c842dceea19412e339cb23ad1b4a90d5a3e86c",
     "research/evidence/app-integration/geographic-desktop.png": "4f0c679d5cf107855be9d1871c47daf5c8465e388c99c861835cf9dbf41ab710",
@@ -26,8 +26,8 @@
     "web/terrain-notices.txt": "c1ae6a98a145c933f2587930c5f531e58d2e22c4d3273f9304dc915e7c9d1d34",
     "scripts/browser-ui.cjs": "203c54d5990c651818202bc4f2af887f9a8638cf24cb45e7188ba4c0c97d9bff",
     "research/evidence/app-integration/ui-accessibility.json": "efbe707b370048f429446ad940b168611bc6a3f2d40741921daaf6fc2c9841a3",
-    "scripts/browser-recovery.cjs": "682ed264555b93be7f51b91b93ca297be5406c2bcf14e0b754c34f51ea6137f2",
-    "research/evidence/app-integration/request-recovery.json": "64efb94a31c3c3ef72b85b231ffaf6b67e5ff8270504cc51ede4734b7adf8eb6"
+    "scripts/browser-recovery.cjs": "e62ed4bcf5562539c868a8dacb531d090d8c19d525118aeb0ef7e65d12c09380",
+    "research/evidence/app-integration/request-recovery.json": "d6fd8907a038eee1930ca7d2926ae4c7d6e28c9f1c16000e32248d2c843dad32"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",

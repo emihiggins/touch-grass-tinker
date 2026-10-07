@@ -49,3 +49,10 @@ class ServerTests(unittest.TestCase):
   self.assertEqual(sum(s['seconds'] for s in steps),result['route']['total_seconds'])
   for left,right in zip(steps,steps[1:]):self.assertEqual(left['end_seconds'],right['start_seconds'])
   self.assertTrue(all('assumed' in s['duration_basis'] for s in steps))
+
+ def test_recorded_mode_is_terrain_specific(self):
+  pine=json.load(urllib.request.urlopen(self.base+'/api/context?terrain=synthetic'))
+  resort=json.load(urllib.request.urlopen(self.base+'/api/context?terrain=alpendorf'))
+  self.assertTrue(pine['recorded_model_available'])
+  self.assertFalse(resort['recorded_model_available'])
+  self.assertFalse(resort['live_model_enabled'])

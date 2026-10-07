@@ -1,4 +1,5 @@
 {
+  "terrainSpecificModeAvailability": true,
   "failedTerrainClearsMap": true,
   "retryRecovers": true,
   "oldInterpretationCannotUnlockTerrain": true,
