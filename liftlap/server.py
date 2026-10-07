@@ -64,8 +64,14 @@ def handle_api(path,payload,model=None):
         for eid in expanded['edge_ids']:
             e=edges[eid];name=e.get('name',labels.get(eid,eid));key=(name,e['kind'],e.get('difficulty'))
             if r['steps'] and tuple(r['steps'][-1][k] for k in ('name','kind','difficulty'))==key:
-                r['steps'][-1]['seconds']+=e['duration_s'];r['steps'][-1]['edge_ids'].append(eid)
-            else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s'],'edge_ids':[eid]})
+                r['steps'][-1]['seconds']+=e['duration_s']+s['edges'][eid]['queue_s'];r['steps'][-1]['queue_seconds']+=s['edges'][eid]['queue_s'];r['steps'][-1]['edge_ids'].append(eid)
+            else:r['steps'].append({'name':name,'kind':e['kind'],'difficulty':e.get('difficulty'),'seconds':e['duration_s']+s['edges'][eid]['queue_s'],'queue_seconds':s['edges'][eid]['queue_s'],'edge_ids':[eid]})
+        elapsed=0
+        for step in r['steps']:
+            step['start_seconds']=elapsed
+            elapsed+=step['seconds']
+            step['end_seconds']=elapsed
+            step['duration_basis']='assumed simulation travel and queue times'
     r['terrain_review']=g['review_status'];r['disclosure']='Simulation only. No live conditions or field verification. Durations are assumptions.'
     return r
 

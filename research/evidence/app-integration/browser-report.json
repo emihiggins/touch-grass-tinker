@@ -8,6 +8,7 @@
   "staleConfirmationInvalidated": true,
   "mobile360NoOverflow": true,
   "printPdfGenerated": true,
+  "textItineraryDownloadVerified": true,
   "approvedConstraintsInPrint": true,
   "originalRequestVisible": true,
   "pageErrors": [],

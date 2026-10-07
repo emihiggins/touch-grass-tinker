@@ -10,3 +10,5 @@
 @media print{#map,.geographic-active #map{width:460px;max-width:100%;max-height:none;margin:8px auto}.map-label{font-size:24px}.trail-label{font-size:22px}.map-number{font-size:20px}}
 
 .station-marker{background:#fffef9;color:#173e40;border:1px solid #173e40;border-bottom:4px solid #173e40;padding:3px 7px;font-size:13px;font-weight:700;max-width:180px;text-align:center;pointer-events:none}.geographic-active .map-number-hint{display:none}
+
+#step-inspector{border:1px solid var(--line);background:var(--surface);padding:14px;margin:14px 0}#step-inspector #map-detail{margin:0;padding:8px 12px}.step-tools{display:flex;gap:8px;flex-wrap:wrap}.step-tools button{width:auto;flex:1;min-width:90px;margin:0}#step-timing{margin:10px 0}@media print{#step-inspector{display:none!important}}
