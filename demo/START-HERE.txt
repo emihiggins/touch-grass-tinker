@@ -9,7 +9,9 @@ Python packages, API key, model download or paid account is needed.
      python3 -m liftlap.server --port 8767
    On Windows, use this if python3 is not available:
      py -3 -m liftlap.server --port 8767
-   Or run launch-demo.sh (macOS/Linux) or launch-demo.bat (Windows) from the extracted folder. Add --port 8768 after the helper if 8767 is occupied.
+   Or run sh /path/to/launch-demo.sh (macOS/Linux) or launch-demo.bat
+   (Windows). Helpers locate the extracted app even from another folder.
+   Quote paths containing spaces. Add --port 8768 if 8767 is occupied.
 4. Open http://127.0.0.1:8767 in a browser on that same computer.
 5. Stop the server with Ctrl-C when finished.
 
