@@ -1,0 +1,1740 @@
+{
+  "schema": 1,
+  "scope": "source_linked_connectivity_review_evidence_only",
+  "graph_sha256": "6f3583cfa1187d3d7c8e38bed05d1e0d2eefa6fc39bffb80f11acce133dc93f9",
+  "source_sha256": "2e9b8d3100e81ea8afaaf66d2a1b739723b65de911be33147b9664d80c9f0ec8",
+  "proximity_threshold_m": 30.0,
+  "graph_preserved": true,
+  "automatic_connections_added": 0,
+  "routing_enabled": false,
+  "lift_count": 24,
+  "lifts": [
+    {
+      "source_ref": "way/1127989862",
+      "name": "FIVE SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:1127989862:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "10312854954",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1127989862:0",
+              "kind": "lift",
+              "from": "10312854954",
+              "to": "10312854953"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "10312854953",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1127989862:0",
+              "kind": "lift",
+              "from": "10312854954",
+              "to": "10312854953"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/129449255",
+      "name": "Rocky Mountain SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:129449255:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1850839233",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:129449255:0",
+              "kind": "lift",
+              "from": "1850839233",
+              "to": "1850838730"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1850838730",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:129449255:0",
+              "kind": "lift",
+              "from": "1850839233",
+              "to": "1850838730"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/1332924725",
+      "name": "Horseshoe Bowl T-Bar",
+      "aerialway": "t-bar",
+      "imported_edge_ids": [
+        "osm:way:1332924725:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1850856994",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1332924725:0",
+              "kind": "lift",
+              "from": "1850856994",
+              "to": "251718384"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "251718384",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1332924725:0",
+              "kind": "lift",
+              "from": "1850856994",
+              "to": "251718384"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/1524991765",
+      "name": "Horseshoe Bowl T-Bar",
+      "aerialway": "goods",
+      "imported_edge_ids": [],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "251718384",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1332924725:0",
+              "kind": "lift",
+              "from": "1850856994",
+              "to": "251718384"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "13900120173",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/1547803505",
+      "name": "Peak 8 SuperConnect Upper",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:1547803505:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1850811810",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1547803505:0",
+              "kind": "lift",
+              "from": "1850811810",
+              "to": "251717922"
+            },
+            {
+              "edge_id": "osm:way:23259946:0",
+              "kind": "lift",
+              "from": "1429443984",
+              "to": "1850811810"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "251717922",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1547803505:0",
+              "kind": "lift",
+              "from": "1850811810",
+              "to": "251717922"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/225853052",
+      "name": "Peak 8 Gondola Stop",
+      "aerialway": "station",
+      "imported_edge_ids": [],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2346581502",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2346581502",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/225853079",
+      "name": "Peak 7 Gondola Stop",
+      "aerialway": "station",
+      "imported_edge_ids": [],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2346581675",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2346581675",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259944",
+      "name": "Colorado SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259944:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1850839218",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259944:0",
+              "kind": "lift",
+              "from": "1850839218",
+              "to": "1850831814"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1850831814",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259944:0",
+              "kind": "lift",
+              "from": "1850839218",
+              "to": "1850831814"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259945",
+      "name": "Independence SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259945:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1850939999",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259945:0",
+              "kind": "lift",
+              "from": "1850939999",
+              "to": "1850939950"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1850939950",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259945:0",
+              "kind": "lift",
+              "from": "1850939999",
+              "to": "1850939950"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259946",
+      "name": "Peak 8 SuperConnect Lower",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259946:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1429443984",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259946:0",
+              "kind": "lift",
+              "from": "1429443984",
+              "to": "1850811810"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1850811810",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1547803505:0",
+              "kind": "lift",
+              "from": "1850811810",
+              "to": "251717922"
+            },
+            {
+              "edge_id": "osm:way:23259946:0",
+              "kind": "lift",
+              "from": "1429443984",
+              "to": "1850811810"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259960",
+      "name": "Mercury SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259960:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1429522408",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259960:0",
+              "kind": "lift",
+              "from": "1429522408",
+              "to": "1849835688"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1849835688",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259960:0",
+              "kind": "lift",
+              "from": "1429522408",
+              "to": "1849835688"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259987",
+      "name": "C-Chair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259987:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "251718308",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:129586771:25",
+              "kind": "piste",
+              "from": "1429444002",
+              "to": "251718308"
+            },
+            {
+              "edge_id": "osm:way:23259987:0",
+              "kind": "lift",
+              "from": "251718308",
+              "to": "1850798049"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:129586771:25"
+          ],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1850798049",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259987:0",
+              "kind": "lift",
+              "from": "251718308",
+              "to": "1850798049"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23259988",
+      "name": "Beaver Run SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23259988:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1849771387",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259988:0",
+              "kind": "lift",
+              "from": "1849771387",
+              "to": "1849771278"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1849771278",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23259988:0",
+              "kind": "lift",
+              "from": "1849771387",
+              "to": "1849771278"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23260004",
+      "name": "Imperial SuperChair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23260004:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "251718378",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260004:0",
+              "kind": "lift",
+              "from": "251718378",
+              "to": "3700786566"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "3700786566",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260004:0",
+              "kind": "lift",
+              "from": "251718378",
+              "to": "3700786566"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23260005",
+      "name": "6-Chair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23260005:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "251718380",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260005:0",
+              "kind": "lift",
+              "from": "251718380",
+              "to": "251718381"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "251718381",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260005:0",
+              "kind": "lift",
+              "from": "251718380",
+              "to": "251718381"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/23260016",
+      "name": "E-Chair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:23260016:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640141853",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260016:0",
+              "kind": "lift",
+              "from": "2640141853",
+              "to": "251718591"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "251718591",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:23260016:0",
+              "kind": "lift",
+              "from": "2640141853",
+              "to": "251718591"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258686272",
+      "name": "Admin Carpet 1",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:258686272:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640117674",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258686272:0",
+              "kind": "lift",
+              "from": "2640117674",
+              "to": "2640117675"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640117675",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258686272:0",
+              "kind": "lift",
+              "from": "2640117674",
+              "to": "2640117675"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258687189",
+      "name": "Peak 8 kids Carpet 1",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:258687189:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640126059",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687189:0",
+              "kind": "lift",
+              "from": "2640126059",
+              "to": "2640126060"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640126060",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687189:0",
+              "kind": "lift",
+              "from": "2640126059",
+              "to": "2640126060"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258687190",
+      "name": "Peak 8 kids Carpet 2",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:258687190:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640126061",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687190:0",
+              "kind": "lift",
+              "from": "2640126061",
+              "to": "2640126062"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640126062",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687190:0",
+              "kind": "lift",
+              "from": "2640126061",
+              "to": "2640126062"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258687507",
+      "name": "Trygve's Platter",
+      "aerialway": "platter",
+      "imported_edge_ids": [
+        "osm:way:258687507:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640129313",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687507:0",
+              "kind": "lift",
+              "from": "2640129313",
+              "to": "2640129315"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640129315",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258687507:0",
+              "kind": "lift",
+              "from": "2640129313",
+              "to": "2640129315"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/31535680",
+      "name": "Snowflake",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:31535680:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1849771446",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535680:0",
+              "kind": "lift",
+              "from": "1849771446",
+              "to": "352896426"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "352896426",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535680:0",
+              "kind": "lift",
+              "from": "1849771446",
+              "to": "352896426"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/31535691",
+      "name": "Rip's Ride",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:31535691:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640126065",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535691:0",
+              "kind": "lift",
+              "from": "2640126065",
+              "to": "2640126069"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640126069",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535691:0",
+              "kind": "lift",
+              "from": "2640126065",
+              "to": "2640126069"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/31535782",
+      "name": "BreckConnect Gondola",
+      "aerialway": "gondola",
+      "imported_edge_ids": [
+        "osm:way:31535782:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "352897172",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535782:0",
+              "kind": "lift",
+              "from": "352897172",
+              "to": "352897175"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "352897175",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31535782:0",
+              "kind": "lift",
+              "from": "352897172",
+              "to": "352897175"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/842876947",
+      "name": "Freedom Superchair",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:842876947:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "7863065494",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:842876947:0",
+              "kind": "lift",
+              "from": "7863065494",
+              "to": "7863065495"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "7863065495",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:776343582:0",
+              "kind": "piste",
+              "from": "4360983245",
+              "to": "7863065495"
+            },
+            {
+              "edge_id": "osm:way:776343582:1",
+              "kind": "piste",
+              "from": "7863065495",
+              "to": "7243521080"
+            },
+            {
+              "edge_id": "osm:way:842876947:0",
+              "kind": "lift",
+              "from": "7863065494",
+              "to": "7863065495"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:776343582:0"
+          ],
+          "outgoing_piste_edge_ids": [
+            "osm:way:776343582:1"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    }
+  ],
+  "excluded_source_way_count": 35,
+  "excluded_source_ways": [
+    {
+      "source_ref": "way/1224657749",
+      "name": "Imperial Bowl",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3700786238",
+        "11357243651",
+        "11357243652",
+        "11357243653",
+        "11357243654",
+        "11357243655",
+        "11357243656"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/127131499",
+      "name": "Boundary Chutes",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "1407968416",
+        "1407968404",
+        "1407968418",
+        "1407968407"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/128932120",
+      "name": "Southern Cross",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "1423434029",
+        "1423434028",
+        "1423434031",
+        "1423434055",
+        "1423434036",
+        "1423434051",
+        "1429443969",
+        "1423434049",
+        "1423434057",
+        "1423434068",
+        "1423434072",
+        "1423434037",
+        "1423438287"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/128932721",
+      "name": "Mach 1",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362696137",
+        "1423438320",
+        "1423438301",
+        "1423438303",
+        "1423438304",
+        "1423438310",
+        "251717918"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/128932722",
+      "name": "Goodbye Girl",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "1423438292",
+        "1423438319",
+        "1423438279",
+        "1423438321",
+        "1423438282",
+        "1423438293"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/128932726",
+      "name": "Tiger",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "2640135939",
+        "1423438312",
+        "1423438286",
+        "1423438318",
+        "1423438295",
+        "1423438316",
+        "8814995029",
+        "1423438302"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285376",
+      "name": "cucumber #2",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234876",
+        "12878234877",
+        "12878234878",
+        "12878234879"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285377",
+      "name": "Brill's thrill",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234880",
+        "12878234881",
+        "12878234882",
+        "12878234883",
+        "12878234884",
+        "12878234885",
+        "12878234886"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285378",
+      "name": "Eagles nest",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234887",
+        "12878234888",
+        "12878234889",
+        "12878234890"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285379",
+      "name": "lulu",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234891",
+        "12878234892",
+        "12878234893"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285380",
+      "name": "outlaw",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234894",
+        "12878234895",
+        "12878234896"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285381",
+      "name": "rustler",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234897",
+        "12878234898",
+        "12878234899"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285382",
+      "name": "mule",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878234900",
+        "12878249801",
+        "12878249802"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285383",
+      "name": "stampede",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878249803",
+        "12878249804",
+        "12878249805"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285384",
+      "name": "cucumber #1",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878249806",
+        "12878249807",
+        "12878249808"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285385",
+      "name": "king",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878249809",
+        "12878249810",
+        "12878249811"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285386",
+      "name": "queen",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878249812",
+        "12878249813",
+        "12878249814"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1391285387",
+      "name": "joker",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12878249815",
+        "12878249816",
+        "12878249817",
+        "12878249814"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1454050414",
+      "name": "needles eye",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "13335083056",
+        "13335083057",
+        "13335083058",
+        "8812109927"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1454050415",
+      "name": "needles eye",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "13335083059",
+        "13335083060",
+        "13335083061",
+        "13335083062",
+        "13335083063",
+        "13335083064",
+        "13335083065",
+        "1850811759",
+        "13335083059"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/1524991765",
+      "name": "Horseshoe Bowl T-Bar",
+      "piste_type": null,
+      "aerialway": "goods",
+      "difficulty": null,
+      "nodes": [
+        "251718384",
+        "4364213126",
+        "4364213153",
+        "4364213205",
+        "4364213263",
+        "4364213385",
+        "4364213421",
+        "12646614864",
+        "4364213450",
+        "4364213471",
+        "13900120173"
+      ],
+      "reason": "lift_not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/225853052",
+      "name": "Peak 8 Gondola Stop",
+      "piste_type": null,
+      "aerialway": "station",
+      "difficulty": null,
+      "nodes": [
+        "2346581502",
+        "2346581429",
+        "2346581427",
+        "2346581496",
+        "2346581502"
+      ],
+      "reason": "lift_not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/225853079",
+      "name": "Peak 7 Gondola Stop",
+      "piste_type": null,
+      "aerialway": "station",
+      "difficulty": null,
+      "nodes": [
+        "2346581675",
+        "2346581673",
+        "2346581672",
+        "2346581674",
+        "2346581676",
+        "2346581677",
+        "2346581678",
+        "2346581680",
+        "2346581679",
+        "2346581675"
+      ],
+      "reason": "lift_not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/329393801",
+      "name": "Tom's Mom",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362692128",
+        "3362692129",
+        "3362692130",
+        "3362692131",
+        "3362692132",
+        "13410000779",
+        "3362692133",
+        "7243549314",
+        "3362692134"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/329393802",
+      "name": "Toms Baby",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362692135",
+        "3362692136",
+        "6426984505",
+        "3362692137",
+        "3362692138",
+        "3362692139",
+        "3362692140"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/329393803",
+      "name": "Inferno",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362692141",
+        "1850811619",
+        "3362692142",
+        "3362692143",
+        "3362692144",
+        "3362692145",
+        "3362692146",
+        "3362693277",
+        "3362692147"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/329393804",
+      "name": "Devils Crotch",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362692148",
+        "3362692149",
+        "3362692150",
+        "3362692151",
+        "3362692147",
+        "3362692152"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/329393956",
+      "name": "Mine Shaft",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "3362693278",
+        "3362693279",
+        "3362693280",
+        "3362693281",
+        "6426984504"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/685758983",
+      "name": "Imperial Ridge",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "6426964639",
+        "6426964640",
+        "6426964641",
+        "6426964642",
+        "6426964643"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/685758984",
+      "name": "Horseshoe Bowl",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "6426964644",
+        "12878234877",
+        "6426964645",
+        "6426964646",
+        "12878234891",
+        "6426964647",
+        "12878234887",
+        "6426964648",
+        "6426964649",
+        "6426964650",
+        "6426964651",
+        "6426964652",
+        "6426964653",
+        "6426964654",
+        "6426964655",
+        "6426964656",
+        "6426964657",
+        "6426964658",
+        "6426964659",
+        "6426964644"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/685760354",
+      "name": "Imperial Bowl",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "6426979801",
+        "6426979802",
+        "6426979803",
+        "6426979804",
+        "6426979805",
+        "6426979806",
+        "6426979807",
+        "6426979808",
+        "6426979812",
+        "6426979809",
+        "6426979810",
+        "6426979811",
+        "6426979801"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/685760355",
+      "name": "George's Thumb",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "6426979813",
+        "6426979814",
+        "6426979815",
+        "6426979816",
+        "6426979817",
+        "6426979818",
+        "6426979813"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/685760711",
+      "name": "E Lift Line",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "12442045127",
+        "12442045126"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/776343584",
+      "name": "Art's Bowl",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "expert",
+      "nodes": [
+        "7243549225",
+        "7243549226",
+        "7243549227",
+        "7243549228",
+        "7243549229",
+        "7243549230",
+        "7243549231",
+        "7243549232",
+        "7243549233",
+        "7243549234",
+        "7243549235",
+        "11198971940",
+        "7243549236",
+        "7243549237",
+        "7243549238",
+        "6426979830",
+        "7243549225"
+      ],
+      "reason": "unknown_difficulty_excluded_by_importer",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/776343588",
+      "name": "Xanadu",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "advanced",
+      "nodes": [
+        "7243549272",
+        "7243549273",
+        "7243549274",
+        "7243549275",
+        "7243549276",
+        "7243549277",
+        "6426964475",
+        "7243549278",
+        "7243549279",
+        "7243549280",
+        "7243549281",
+        "7243549282",
+        "7243549283",
+        "7243549284",
+        "7243549285",
+        "7243549286",
+        "7243549287",
+        "7243549288",
+        "7243549289",
+        "7243549290",
+        "7243549272"
+      ],
+      "reason": "not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    }
+  ],
+  "proximity_candidates": [
+    {
+      "lift_source_ref": "way/1332924725",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "251718384",
+      "excluded_source_ref": "way/1524991765",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1332924725",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "1850856994",
+      "excluded_source_ref": "way/1524991765",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1332924725",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "251718384",
+      "excluded_source_ref": "way/685760355",
+      "minimum_endpoint_distance_m": 21.667,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1524991765",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "13900120173",
+      "excluded_source_ref": "way/1524991765",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1524991765",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "251718384",
+      "excluded_source_ref": "way/1524991765",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1524991765",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "251718384",
+      "excluded_source_ref": "way/685760355",
+      "minimum_endpoint_distance_m": 21.667,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/1547803505",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "251717922",
+      "excluded_source_ref": "way/128932726",
+      "minimum_endpoint_distance_m": 11.911,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/225853052",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "2346581502",
+      "excluded_source_ref": "way/225853052",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/225853052",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "2346581502",
+      "excluded_source_ref": "way/225853052",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/225853079",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "2346581675",
+      "excluded_source_ref": "way/225853079",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/225853079",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "2346581675",
+      "excluded_source_ref": "way/225853079",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/23259945",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "1850939950",
+      "excluded_source_ref": "way/776343584",
+      "minimum_endpoint_distance_m": 28.272,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/23260004",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "3700786566",
+      "excluded_source_ref": "way/1224657749",
+      "minimum_endpoint_distance_m": 26.92,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/23260004",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "251718378",
+      "excluded_source_ref": "way/1224657749",
+      "minimum_endpoint_distance_m": 21.986,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/23260004",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "3700786566",
+      "excluded_source_ref": "way/685760354",
+      "minimum_endpoint_distance_m": 28.815,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/23260016",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "2640141853",
+      "excluded_source_ref": "way/329393804",
+      "minimum_endpoint_distance_m": 29.333,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/31535782",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "352897175",
+      "excluded_source_ref": "way/225853052",
+      "minimum_endpoint_distance_m": 8.514,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    }
+  ],
+  "limitations": [
+    "Exact shared source node and geometric proximity are review evidence, not verified boarding, alighting, permission, direction, grade or safety.",
+    "The bounded extract may omit connecting ways and complete ways may extend outside its requested box.",
+    "OSM relations, operational schedules and current closures are not resolved."
+  ]
+}

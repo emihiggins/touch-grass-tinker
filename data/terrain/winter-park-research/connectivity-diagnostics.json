@@ -1,0 +1,673 @@
+{
+  "schema": 1,
+  "scope": "source_linked_connectivity_review_evidence_only",
+  "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+  "source_sha256": "f2a77cfbfd15cedfd1705c9d13ce0e282069ad1cc586a24aa2cc27831f031318",
+  "proximity_threshold_m": 30.0,
+  "graph_preserved": true,
+  "automatic_connections_added": 0,
+  "routing_enabled": false,
+  "lift_count": 13,
+  "lifts": [
+    {
+      "source_ref": "way/1160222337",
+      "name": "Spirit",
+      "aerialway": "t-bar",
+      "imported_edge_ids": [
+        "osm:way:1160222337:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "10790366850",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1160222337:0",
+              "kind": "lift",
+              "from": "10790366850",
+              "to": "10790366851"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "10790366851",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1160222337:0",
+              "kind": "lift",
+              "from": "10790366850",
+              "to": "10790366851"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/1214436867",
+      "name": "Tubing",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:1214436867:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "11252044150",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1214436867:0",
+              "kind": "lift",
+              "from": "11252044150",
+              "to": "11252044151"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "11252044151",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:1214436867:0",
+              "kind": "lift",
+              "from": "11252044150",
+              "to": "11252044151"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/17058553",
+      "name": "Explorer Express",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:17058553:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "177103666",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058553:0",
+              "kind": "lift",
+              "from": "177103666",
+              "to": "177057939"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "177057939",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058553:0",
+              "kind": "lift",
+              "from": "177103666",
+              "to": "177057939"
+            },
+            {
+              "edge_id": "osm:way:377599461:0",
+              "kind": "piste",
+              "from": "177057939",
+              "to": "3809780887"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": [
+            "osm:way:377599461:0"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/17058716",
+      "name": "Arrow",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:17058716:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "177105529",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058716:0",
+              "kind": "lift",
+              "from": "177105529",
+              "to": "177103630"
+            },
+            {
+              "edge_id": "osm:way:377599477:21",
+              "kind": "piste",
+              "from": "3809781271",
+              "to": "177105529"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:377599477:21"
+          ],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "177103630",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058716:0",
+              "kind": "lift",
+              "from": "177105529",
+              "to": "177103630"
+            },
+            {
+              "edge_id": "osm:way:377599453:0",
+              "kind": "piste",
+              "from": "177103630",
+              "to": "3809781115"
+            },
+            {
+              "edge_id": "osm:way:377599481:0",
+              "kind": "piste",
+              "from": "177103630",
+              "to": "3809781110"
+            },
+            {
+              "edge_id": "osm:way:377599483:13",
+              "kind": "piste",
+              "from": "11725977559",
+              "to": "177103630"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:377599483:13"
+          ],
+          "outgoing_piste_edge_ids": [
+            "osm:way:377599453:0",
+            "osm:way:377599481:0"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/17058732",
+      "name": "Prospector Express",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:17058732:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "177105782",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058732:0",
+              "kind": "lift",
+              "from": "177105782",
+              "to": "177105787"
+            },
+            {
+              "edge_id": "osm:way:377599457:16",
+              "kind": "piste",
+              "from": "3809781301",
+              "to": "177105782"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:377599457:16"
+          ],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "177105787",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:17058732:0",
+              "kind": "lift",
+              "from": "177105782",
+              "to": "177105787"
+            },
+            {
+              "edge_id": "osm:way:377599476:0",
+              "kind": "piste",
+              "from": "177105787",
+              "to": "3809781085"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": [
+            "osm:way:377599476:0"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/231269976",
+      "name": "way/231269976",
+      "aerialway": "station",
+      "imported_edge_ids": [],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2396739786",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2396739786",
+          "graph_edge_incidence": [],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258676524",
+      "name": "Gemini Express",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:258676524:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640039862",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676524:0",
+              "kind": "lift",
+              "from": "2640039862",
+              "to": "2640039863"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640039863",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676524:0",
+              "kind": "lift",
+              "from": "2640039862",
+              "to": "2640039863"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258676845",
+      "name": "Comet",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:258676845:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640041917",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676845:0",
+              "kind": "lift",
+              "from": "2640041917",
+              "to": "2640041918"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640041918",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676845:0",
+              "kind": "lift",
+              "from": "2640041917",
+              "to": "2640041918"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258676846",
+      "name": "Meteor",
+      "aerialway": "magic_carpet",
+      "imported_edge_ids": [
+        "osm:way:258676846:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640041919",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676846:0",
+              "kind": "lift",
+              "from": "2640041919",
+              "to": "2640041920"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640041920",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676846:0",
+              "kind": "lift",
+              "from": "2640041919",
+              "to": "2640041920"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/258676847",
+      "name": "Endeavor",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:258676847:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "2640041921",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676847:0",
+              "kind": "lift",
+              "from": "2640041921",
+              "to": "2640041922"
+            },
+            {
+              "edge_id": "osm:way:377599449:16",
+              "kind": "piste",
+              "from": "3809781376",
+              "to": "2640041921"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:377599449:16"
+          ],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "2640041922",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:258676847:0",
+              "kind": "lift",
+              "from": "2640041921",
+              "to": "2640041922"
+            },
+            {
+              "edge_id": "osm:way:377599449:0",
+              "kind": "piste",
+              "from": "2640041922",
+              "to": "3809781212"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": [
+            "osm:way:377599449:0"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/31145982",
+      "name": "The Gondola",
+      "aerialway": "gondola",
+      "imported_edge_ids": [
+        "osm:way:31145982:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "346447081",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31145982:0",
+              "kind": "lift",
+              "from": "346447081",
+              "to": "346447082"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "346447082",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:31145982:0",
+              "kind": "lift",
+              "from": "346447081",
+              "to": "346447082"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/72608831",
+      "name": "Village Cabriolet",
+      "aerialway": "gondola",
+      "imported_edge_ids": [
+        "osm:way:72608831:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "861735808",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:72608831:0",
+              "kind": "lift",
+              "from": "861735808",
+              "to": "861735809"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "861735809",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:72608831:0",
+              "kind": "lift",
+              "from": "861735808",
+              "to": "861735809"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": []
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    },
+    {
+      "source_ref": "way/86248729",
+      "name": "Discovery",
+      "aerialway": "chair_lift",
+      "imported_edge_ids": [
+        "osm:way:86248729:0"
+      ],
+      "endpoint_incidence": [
+        {
+          "role_if_source_direction_is_correct": "boarding_candidate",
+          "source_node": "1001081226",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:377599455:7",
+              "kind": "piste",
+              "from": "3809781335",
+              "to": "1001081226"
+            },
+            {
+              "edge_id": "osm:way:86248729:0",
+              "kind": "lift",
+              "from": "1001081226",
+              "to": "1001081228"
+            }
+          ],
+          "incoming_piste_edge_ids": [
+            "osm:way:377599455:7"
+          ],
+          "outgoing_piste_edge_ids": []
+        },
+        {
+          "role_if_source_direction_is_correct": "alighting_candidate",
+          "source_node": "1001081228",
+          "graph_edge_incidence": [
+            {
+              "edge_id": "osm:way:377599455:0",
+              "kind": "piste",
+              "from": "1001081228",
+              "to": "3809781206"
+            },
+            {
+              "edge_id": "osm:way:377599502:0",
+              "kind": "piste",
+              "from": "1001081228",
+              "to": "3809781202"
+            },
+            {
+              "edge_id": "osm:way:86248729:0",
+              "kind": "lift",
+              "from": "1001081226",
+              "to": "1001081228"
+            }
+          ],
+          "incoming_piste_edge_ids": [],
+          "outgoing_piste_edge_ids": [
+            "osm:way:377599455:0",
+            "osm:way:377599502:0"
+          ]
+        }
+      ],
+      "review_question": "Confirm boarding/alighting terminals and whether a permitted descent reaches or leaves each terminal; source direction is unverified."
+    }
+  ],
+  "excluded_source_way_count": 2,
+  "excluded_source_ways": [
+    {
+      "source_ref": "way/231269976",
+      "name": "way/231269976",
+      "piste_type": null,
+      "aerialway": "station",
+      "difficulty": null,
+      "nodes": [
+        "2396739786",
+        "2396739802",
+        "2396739818",
+        "2396739813",
+        "2396739786"
+      ],
+      "reason": "lift_not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    },
+    {
+      "source_ref": "way/778411774",
+      "name": "Dogpatch",
+      "piste_type": "downhill",
+      "aerialway": null,
+      "difficulty": "intermediate",
+      "nodes": [
+        "7264986476",
+        "7264986477",
+        "7264986478",
+        "7264986479",
+        "7264986480",
+        "7264986481",
+        "7264986482",
+        "7264986483",
+        "7264986484",
+        "7264998985",
+        "7264986476"
+      ],
+      "reason": "not_present_in_imported_graph_check_source_and_import_audit",
+      "review_question": "Decide whether this source way is in scope and what dated source evidence, access permission, grade, direction and station relation would be needed; do not infer a connector."
+    }
+  ],
+  "proximity_candidates": [
+    {
+      "lift_source_ref": "way/231269976",
+      "lift_endpoint_role": "source_end",
+      "lift_endpoint_node": "2396739786",
+      "excluded_source_ref": "way/231269976",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/231269976",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "2396739786",
+      "excluded_source_ref": "way/231269976",
+      "minimum_endpoint_distance_m": 0.0,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    },
+    {
+      "lift_source_ref": "way/31145982",
+      "lift_endpoint_role": "source_start",
+      "lift_endpoint_node": "346447081",
+      "excluded_source_ref": "way/231269976",
+      "minimum_endpoint_distance_m": 9.416,
+      "evidence_only": true,
+      "review_question": "Inspect source geometry and station/access evidence; proximity does not create incidence or a connector."
+    }
+  ],
+  "limitations": [
+    "Exact shared source node and geometric proximity are review evidence, not verified boarding, alighting, permission, direction, grade or safety.",
+    "The bounded extract may omit connecting ways and complete ways may extend outside its requested box.",
+    "OSM relations, operational schedules and current closures are not resolved."
+  ]
+}
