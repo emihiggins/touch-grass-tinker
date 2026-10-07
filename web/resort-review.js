@@ -1,6 +1,6 @@
 const D = JSON.parse(document.querySelector('#data').textContent),
   $ = (x) => document.getElementById(x);
-let C, E, L;
+let C, E, L, X;
 function comps(g) {
   let a = new Map(g.nodes.map((n) => [n.id, new Set()]));
   g.edges.forEach((e) => {
@@ -27,6 +27,18 @@ function comps(g) {
     }
   }
   return r;
+}
+function excludedDetail(e) {
+  X = e.source_ref;
+  draw();
+  const d = $('detail'); d.replaceChildren();
+  const h = document.createElement('b'); h.textContent = e.name || e.source_ref; d.append(h);
+  const dl = document.createElement('dl');
+  for (const pair of [['Status', e.status], ['Class', e.classification], ['Reason', e.reason], ['Native grade', e.difficulty || 'unknown'], ['Native tags', JSON.stringify(e.native_tags || {})], ['Source way', e.source_ref]]) {
+    const dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = pair[0]; dd.textContent = pair[1]; dl.append(dt, dd);
+  }
+  const a = document.createElement('a'); a.href = 'https://www.openstreetmap.org/' + e.source_ref; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Open source way';
+  d.append(dl, a); $('status').textContent = 'Selected excluded source geometry; routing unchanged.'; d.focus();
 }
 function detail(e) {
   E = e.id;
@@ -66,12 +78,16 @@ function draw() {
     v = $('map');
   v.replaceChildren();
   let extra = (L?.endpoint_incidence || []).map((e) => e.coordinate).filter(Boolean);
-  let X = [...g.nodes.map((n) => n.lon), ...extra.map((c) => c[0])],
-    Y = [...g.nodes.map((n) => n.lat), ...extra.map((c) => c[1])],
-    a = Math.min(...X),
-    b = Math.max(...X),
-    c = Math.min(...Y),
-    d = Math.max(...Y),
+  const excluded = C.excluded_source || [];
+  const excludedCoords = excluded.flatMap((e) => e.geometry || []);
+  let allX = [...g.nodes.map((n) => n.lon), ...extra.map((c) => c[0]), ...excludedCoords.map((c) => c[0])];
+  let allY = [...g.nodes.map((n) => n.lat), ...extra.map((c) => c[1]), ...excludedCoords.map((c) => c[1])];
+  let lonValues = allX,
+    latValues = allY,
+    a = Math.min(...lonValues),
+    b = Math.max(...lonValues),
+    c = Math.min(...latValues),
+    d = Math.max(...latValues),
     cos = Math.cos((((c + d) / 2) * Math.PI) / 180),
     z = Math.min(790 / ((b - a) * cos || 1), 470 / (d - c || 1)),
     f = ([x, y]) => [450 + (x - (a + b) / 2) * cos * z, 280 - (y - (c + d) / 2) * z],
@@ -79,6 +95,16 @@ function draw() {
   let counts = new Map();
   for (let n of cc.values()) counts.set(n, (counts.get(n) || 0) + 1);
   let largest = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
+  for (const e of $('x').checked ? excluded : []) {
+    const q = document.createElementNS('http://www.w3.org/2000/svg', e.classification === 'closed-area' ? 'polygon' : 'polyline');
+    q.setAttribute('points', (e.geometry || []).map(f).map((x) => x.join(',')).join(' '));
+    q.setAttribute('class', 'excluded ' + e.classification + (X === e.source_ref ? ' selected' : ''));
+    q.setAttribute('tabindex', '0'); q.setAttribute('role', 'button');
+    q.setAttribute('aria-label', (e.name || e.source_ref) + ', excluded source geometry, ' + (e.reason || 'no reason recorded'));
+    q.onclick = () => excludedDetail(e);
+    q.onkeydown = (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); excludedDetail(e); } };
+    v.append(q);
+  }
   for (let e of g.edges.filter(
     (e) =>
       (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
@@ -128,7 +154,7 @@ function draw() {
     v.append(circle, label);
   }
   $('sum').textContent =
-    'Nodes: ' +
+    'Excluded source shapes: ' + (excluded.length) + ' · Nodes: ' +
     g.nodes.length +
     ' · Edges: ' +
     g.edges.length +
@@ -168,12 +194,23 @@ function load() {
     : 'Endpoint diagnostics have not been generated for this sample.';
   $('detail').replaceChildren();
   $('status').textContent = 'Select a segment.';
+  renderExcludedList();
   draw();
 }
+function renderExcludedList() {
+  const list = $('excluded-list'); list.replaceChildren();
+  for (const item of C.excluded_source || []) {
+    const li = document.createElement('li'), b = document.createElement('button');
+    b.type = 'button'; b.textContent = `${item.name || item.source_ref} — ${item.classification}; ${item.reason || 'excluded'}`;
+    b.onclick = () => excludedDetail(item); li.append(b); list.append(li);
+  }
+  if (!list.children.length) { const li = document.createElement('li'); li.textContent = 'No excluded source geometry in this snapshot.'; list.append(li); }
+}
 $('s').onchange = load;
-for (let x of ['l', 'p', 'd'])
+for (let x of ['l', 'p', 'd', 'x'])
   $(x).onchange = () => {
     E = null;
+    X = null;
     $('detail').replaceChildren();
     $('status').textContent = 'Select a segment.';
     draw();
