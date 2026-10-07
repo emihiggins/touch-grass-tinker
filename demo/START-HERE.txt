@@ -9,6 +9,7 @@ Python packages, API key, model download or paid account is needed.
      python3 -m liftlap.server --port 8767
    On Windows, use this if python3 is not available:
      py -3 -m liftlap.server --port 8767
+   Or run launch-demo.sh (macOS/Linux) or launch-demo.bat (Windows) from the extracted folder. Add --port 8768 after the helper if 8767 is occupied.
 4. Open http://127.0.0.1:8767 in a browser on that same computer.
 5. Stop the server with Ctrl-C when finished.
 
@@ -26,6 +27,7 @@ All terrain remains unreviewed; the shading is not snow or slope-safety data.
 
 TROUBLESHOOTING
 If the port is in use, choose another, e.g. --port 8768, and open that port's URL.
+The server reports the exact URL and a clear occupied-port error; it never stops another process. Use python3 -m liftlap.server --version to check the demo version without starting it.
 If Python is missing or older than 3.11, install/update it first.
 If a browser cannot connect, leave the terminal running and use the URL on the
 same computer. The server intentionally binds to loopback; don't expose it as a

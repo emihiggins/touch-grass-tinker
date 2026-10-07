@@ -7,7 +7,7 @@
     "web/index.html": "3131a418f9fc56a6a9715947ca7b38d472d1065992e54743db3a212aec59587a",
     "web/app.js": "433ba318fbd99cd04e525f4aeead8d1e7010a24d708d05964e4d7139eb97b497",
     "web/style.css": "771dc911a65ce05a8d20fd9755927c068920f00956e4b592387011cb771afff1",
-    "liftlap/server.py": "35cef0e2d5110a930a6419d851a75ff8be2449f85820a6681393f2544efaa37e",
+    "liftlap/server.py": "288478e464b6a8c24b43e788f9c672b7cc3d804fd2640bf6b5d7c798fe9f301c",
     "liftlap/app_model.py": "b47c0427e43399c40fff73fa7e77fccddfa1ea74b56a44c4d674153af5bc57b5",
     "scripts/browser-ai-demo.cjs": "11c8c778a1b12f8e7710208ad49c0ef0824fa1ed17ba05027a1223f14ab2b40a",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",

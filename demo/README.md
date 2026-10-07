@@ -20,6 +20,7 @@ From the repository or unpacked demo bundle, with Python3.11+:
 ```sh
 python3 -m liftlap.server --port 8767
 ```
+The ZIP root also contains launch-demo.sh and launch-demo.bat helpers. They select a Python command but do not install anything or take over an occupied port; pass --port 8768 when needed. Use --version without starting a server.
 
 Open http://127.0.0.1:8767 on the same machine. Choose Load example request, then Recorded AI. Rules works on other supported requests. The bundle does not enable paid inference. Stop with Ctrl-C. Do not expose this local prototype publicly unchanged.
 
