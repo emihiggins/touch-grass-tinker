@@ -49,3 +49,18 @@ These are graph segments, not unique trail counts. Both are incomplete, with maj
 The official [Winter Park Ikon page](https://www.ikonpass.com/en/destinations/winter-park-resort) identified the destination. Official Epic/Whistler page fetches were blocked; Breckenridge is retained as an Epic research candidate, not a verified current access entitlement. No blackout/day/tier/season rules or operator feed are encoded. Pass names do not license official map artwork.
 
 The four-sample review viewer now uses an external same-origin script compatible with the server CSP. Projection is centered with longitude correction, smaller-component filtering actually filters components, and changing sample/filter clears old details. Browser evidence covers all four datasets at390/768/1440px, keyboard segment selection, no body overflow, within-viewBox geometry and zero external requests. Axe's test-only script uses CSP bypass for injection; normal interaction checks do not bypass CSP. This closes the earlier unverified preview gap, not the real-world access/coverage gap.
+
+## Colorado connectivity diagnostics — October 7, 2026
+
+The deterministic diagnose_connectivity.py report links source OSM ways to imported graph edges without changing either graph. It records both directed endpoint incidence and a bounded 30 m proximity search as review evidence only; it does not add connectors or enable routing.
+
+| Sample | Source aerialways | Imported aerialways | Source lift endpoints | Endpoints with no exact incoming/outgoing piste incidence | Excluded source ways | Proximity candidates |
+|---|---:|---:|---:|---:|---:|---:|
+| Winter Park | 13 | 12 | 26 | 17 | 2 | 3 |
+| Breckenridge | 24 | 21 | 48 | 46 | 35 | 17 |
+
+The source/import mismatch is itself a review item: one Winter Park aerialway and three Breckenridge aerialways are present in the retained source but not represented by imported lift edges. Breckenridge has 31 excluded unknown-difficulty ways (the source tags are expert); Winter Park has one intermediate downhill way absent from the graph. This report does not assume those are safe or usable connections.
+
+Prioritized questions are: identify each lift's actual boarding and alighting terminals; verify whether a permitted, directionally valid descent reaches each terminal; inspect the excluded source ways and any station relations; and determine whether the bounded extract omits connecting coverage. Exact shared nodes and nearby geometry are evidence for that review, not inferred incidence. The saved graph.json files remain byte-for-byte unchanged by diagnostics.
+
+The output packets are data/terrain/winter-park-research/connectivity-diagnostics.json and data/terrain/breckenridge-research/connectivity-diagnostics.json. Their limitations remain: OSM relations, current operations, access permissions, closures, safety and measured timing were not resolved.
