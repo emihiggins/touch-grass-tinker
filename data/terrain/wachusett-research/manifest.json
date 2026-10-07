@@ -1,0 +1,33 @@
+{
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-71.9,42.475,-71.865,42.51",
+  "fetched_at": "2026-10-07T17:30:01.335377+00:00",
+  "original_response_sha256": "c323e74bc1bcef7d909544b5e97bfc4c1912a378a7fc86e220dcc62cf8747645",
+  "original_bytes": 2773122,
+  "requested_bbox": [
+    -71.9,
+    42.475,
+    -71.865,
+    42.51
+  ],
+  "import_options": {
+    "graph_id": "wachusett-bounded-osm-research",
+    "timezone": "America/New_York",
+    "difficulty_convention": "US",
+    "difficulty_mapping": {
+      "novice": "green",
+      "easy": "green",
+      "intermediate": "blue",
+      "advanced": "black"
+    }
+  },
+  "mapping_status": "Provisional regional mapping; native grades retained. Expert/freeride/unknown remain excluded. Not operator-validated.",
+  "coverage_status": "Bounded research extract, not whole-resort coverage; OSM map API may include complete ways extending beyond requested bounds.",
+  "input_sha256": "c323e74bc1bcef7d909544b5e97bfc4c1912a378a7fc86e220dcc62cf8747645",
+  "sanitized_sha256": "b52a0a4791b7c2ad91feb1c7e8b9daebbd61b0baf83a3a3893abf5fe17a22e71",
+  "graph_sha256": "e10e9cf1c62b859476de5c13c741d3031901c8ad9a1ea6d35424982b402ba5a8",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "license": "https://www.openstreetmap.org/copyright",
+  "sanitization": "Contributor identity/history and relations omitted; only nodes and all piste/aerialway ways retained; unsupported piste types remain non-routable source evidence. Not original response bytes.",
+  "review_status": "unreviewed",
+  "source_hash_semantics": "Graph source_sha256 identifies sanitized importer input; original response hash is separate."
+}

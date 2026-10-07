@@ -1,0 +1,4849 @@
+{
+  "schema_version": 1,
+  "id": "patscherkofel-bounded-osm-research",
+  "timezone": "Europe/Vienna",
+  "difficulty_convention": "AT",
+  "review_status": "unreviewed",
+  "source_sha256": "38d23f10c77dbe5b4a9756ee79f9b524f6153ed5bfa8b066a3e3cd7cedfe49cc",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0",
+  "source_license": "https://www.openstreetmap.org/copyright",
+  "nodes": [
+    {
+      "id": "10175220612",
+      "lon": 11.4511355,
+      "lat": 47.2076573
+    },
+    {
+      "id": "10175220613",
+      "lon": 11.4508194,
+      "lat": 47.2077818
+    },
+    {
+      "id": "10175220614",
+      "lon": 11.4503934,
+      "lat": 47.2079009
+    },
+    {
+      "id": "10175220615",
+      "lon": 11.4495601,
+      "lat": 47.2078605
+    },
+    {
+      "id": "10175220616",
+      "lon": 11.4487706,
+      "lat": 47.207669
+    },
+    {
+      "id": "10175230317",
+      "lon": 11.4485337,
+      "lat": 47.2074354
+    },
+    {
+      "id": "10175230318",
+      "lon": 11.4485498,
+      "lat": 47.2073816
+    },
+    {
+      "id": "10175230319",
+      "lon": 11.4485732,
+      "lat": 47.2073389
+    },
+    {
+      "id": "10175230320",
+      "lon": 11.4505494,
+      "lat": 47.2078573
+    },
+    {
+      "id": "11403862329",
+      "lon": 11.441823,
+      "lat": 47.2111421
+    },
+    {
+      "id": "12279565009",
+      "lon": 11.4519811,
+      "lat": 47.2101726
+    },
+    {
+      "id": "12279565010",
+      "lon": 11.4519341,
+      "lat": 47.2100478
+    },
+    {
+      "id": "12279565011",
+      "lon": 11.4519368,
+      "lat": 47.2100323
+    },
+    {
+      "id": "1592470012",
+      "lon": 11.4267503,
+      "lat": 47.2220722
+    },
+    {
+      "id": "2975395403",
+      "lon": 11.4485076,
+      "lat": 47.2073308
+    },
+    {
+      "id": "2975395404",
+      "lon": 11.451281,
+      "lat": 47.2076754
+    },
+    {
+      "id": "3042020260",
+      "lon": 11.4511225,
+      "lat": 47.2090699
+    },
+    {
+      "id": "3042020262",
+      "lon": 11.4408764,
+      "lat": 47.2094644
+    },
+    {
+      "id": "3042020264",
+      "lon": 11.4388295,
+      "lat": 47.2091698
+    },
+    {
+      "id": "3042020270",
+      "lon": 11.4456802,
+      "lat": 47.2087333
+    },
+    {
+      "id": "3042020277",
+      "lon": 11.443366,
+      "lat": 47.2097422
+    },
+    {
+      "id": "3042020278",
+      "lon": 11.439345,
+      "lat": 47.2096718
+    },
+    {
+      "id": "3042020280",
+      "lon": 11.4452796,
+      "lat": 47.2094896
+    },
+    {
+      "id": "3042020281",
+      "lon": 11.4423747,
+      "lat": 47.2104383
+    },
+    {
+      "id": "3042020282",
+      "lon": 11.4398326,
+      "lat": 47.2099346
+    },
+    {
+      "id": "3042020283",
+      "lon": 11.4341374,
+      "lat": 47.2102378
+    },
+    {
+      "id": "3042020284",
+      "lon": 11.4419294,
+      "lat": 47.2105669
+    },
+    {
+      "id": "3042020287",
+      "lon": 11.4391057,
+      "lat": 47.2106378
+    },
+    {
+      "id": "3042020288",
+      "lon": 11.4488946,
+      "lat": 47.2114034
+    },
+    {
+      "id": "3042020289",
+      "lon": 11.43847,
+      "lat": 47.2116354
+    },
+    {
+      "id": "3042020500",
+      "lon": 11.4405898,
+      "lat": 47.2118987
+    },
+    {
+      "id": "3042020501",
+      "lon": 11.4444779,
+      "lat": 47.2120666
+    },
+    {
+      "id": "3042020502",
+      "lon": 11.4329425,
+      "lat": 47.2123252
+    },
+    {
+      "id": "3042020503",
+      "lon": 11.4527119,
+      "lat": 47.2122029
+    },
+    {
+      "id": "3042020506",
+      "lon": 11.4384934,
+      "lat": 47.2124778
+    },
+    {
+      "id": "3042024184",
+      "lon": 11.4368251,
+      "lat": 47.2073496
+    },
+    {
+      "id": "3042024185",
+      "lon": 11.4378562,
+      "lat": 47.2075763
+    },
+    {
+      "id": "3042024188",
+      "lon": 11.4505205,
+      "lat": 47.2083491
+    },
+    {
+      "id": "3042024189",
+      "lon": 11.4354615,
+      "lat": 47.2078947
+    },
+    {
+      "id": "3042024192",
+      "lon": 11.4459084,
+      "lat": 47.2084253
+    },
+    {
+      "id": "3042025243",
+      "lon": 11.4354939,
+      "lat": 47.2134241
+    },
+    {
+      "id": "3548493207",
+      "lon": 11.4521874,
+      "lat": 47.2102531
+    },
+    {
+      "id": "3548493210",
+      "lon": 11.4518281,
+      "lat": 47.2096861
+    },
+    {
+      "id": "4786450806",
+      "lon": 11.4517528,
+      "lat": 47.2100577
+    },
+    {
+      "id": "4786450807",
+      "lon": 11.4419406,
+      "lat": 47.2113127
+    },
+    {
+      "id": "5526489113",
+      "lon": 11.4504266,
+      "lat": 47.2105326
+    },
+    {
+      "id": "5526489114",
+      "lon": 11.441565,
+      "lat": 47.2101046
+    },
+    {
+      "id": "5526489116",
+      "lon": 11.4445957,
+      "lat": 47.2100908
+    },
+    {
+      "id": "5526489117",
+      "lon": 11.4483976,
+      "lat": 47.2084835
+    },
+    {
+      "id": "5526489118",
+      "lon": 11.4472965,
+      "lat": 47.2077759
+    },
+    {
+      "id": "5532253270",
+      "lon": 11.4485693,
+      "lat": 47.2075397
+    },
+    {
+      "id": "7710113606",
+      "lon": 11.4511764,
+      "lat": 47.2119746
+    },
+    {
+      "id": "7710113607",
+      "lon": 11.4526088,
+      "lat": 47.2106618
+    },
+    {
+      "id": "7710113608",
+      "lon": 11.4528796,
+      "lat": 47.2114189
+    },
+    {
+      "id": "7710113609",
+      "lon": 11.4529787,
+      "lat": 47.2119524
+    },
+    {
+      "id": "8303918236",
+      "lon": 11.4435371,
+      "lat": 47.2116891
+    },
+    {
+      "id": "8303918237",
+      "lon": 11.442859,
+      "lat": 47.2108825
+    },
+    {
+      "id": "8303918238",
+      "lon": 11.4441922,
+      "lat": 47.2095622
+    },
+    {
+      "id": "8303918239",
+      "lon": 11.4435217,
+      "lat": 47.2103805
+    },
+    {
+      "id": "8303918240",
+      "lon": 11.4409115,
+      "lat": 47.2104304
+    },
+    {
+      "id": "8303918284",
+      "lon": 11.439532,
+      "lat": 47.2114073
+    },
+    {
+      "id": "8303918285",
+      "lon": 11.4387023,
+      "lat": 47.2083881
+    },
+    {
+      "id": "8303918286",
+      "lon": 11.4411589,
+      "lat": 47.2097684
+    },
+    {
+      "id": "8303918287",
+      "lon": 11.4403847,
+      "lat": 47.2094164
+    },
+    {
+      "id": "8303918288",
+      "lon": 11.4420521,
+      "lat": 47.2102008
+    },
+    {
+      "id": "8303918290",
+      "lon": 11.440682,
+      "lat": 47.2093938
+    },
+    {
+      "id": "8303918291",
+      "lon": 11.4388405,
+      "lat": 47.2087775
+    },
+    {
+      "id": "8303918292",
+      "lon": 11.438247,
+      "lat": 47.2079847
+    },
+    {
+      "id": "8303918293",
+      "lon": 11.4401984,
+      "lat": 47.2101248
+    },
+    {
+      "id": "8303918294",
+      "lon": 11.4414153,
+      "lat": 47.2105454
+    },
+    {
+      "id": "8303918295",
+      "lon": 11.437643,
+      "lat": 47.2073954
+    },
+    {
+      "id": "8303918296",
+      "lon": 11.4362664,
+      "lat": 47.2074857
+    },
+    {
+      "id": "8303918297",
+      "lon": 11.4346936,
+      "lat": 47.2091073
+    },
+    {
+      "id": "8303918298",
+      "lon": 11.4344428,
+      "lat": 47.2097546
+    },
+    {
+      "id": "8303918299",
+      "lon": 11.4343773,
+      "lat": 47.2099735
+    },
+    {
+      "id": "8303918300",
+      "lon": 11.4336274,
+      "lat": 47.2107911
+    },
+    {
+      "id": "8303918301",
+      "lon": 11.4332016,
+      "lat": 47.2115046
+    },
+    {
+      "id": "8303918302",
+      "lon": 11.4331096,
+      "lat": 47.2118866
+    },
+    {
+      "id": "8303918303",
+      "lon": 11.4343533,
+      "lat": 47.2127673
+    },
+    {
+      "id": "8303918304",
+      "lon": 11.4337552,
+      "lat": 47.2124942
+    },
+    {
+      "id": "8303918305",
+      "lon": 11.4350159,
+      "lat": 47.2133143
+    },
+    {
+      "id": "8303918306",
+      "lon": 11.4368906,
+      "lat": 47.213018
+    },
+    {
+      "id": "8303918307",
+      "lon": 11.4363596,
+      "lat": 47.213291
+    },
+    {
+      "id": "8303918308",
+      "lon": 11.437692,
+      "lat": 47.2127479
+    },
+    {
+      "id": "8303918309",
+      "lon": 11.439529,
+      "lat": 47.2121037
+    },
+    {
+      "id": "8303918310",
+      "lon": 11.4424092,
+      "lat": 47.2119017
+    },
+    {
+      "id": "8303918311",
+      "lon": 11.4436294,
+      "lat": 47.2120295
+    },
+    {
+      "id": "8303918312",
+      "lon": 11.44403,
+      "lat": 47.2118521
+    },
+    {
+      "id": "8303918313",
+      "lon": 11.4432125,
+      "lat": 47.2113974
+    },
+    {
+      "id": "8303918314",
+      "lon": 11.4431133,
+      "lat": 47.2111277
+    },
+    {
+      "id": "8303918315",
+      "lon": 11.4392459,
+      "lat": 47.2110648
+    },
+    {
+      "id": "8303918316",
+      "lon": 11.4400094,
+      "lat": 47.211688
+    },
+    {
+      "id": "8303922717",
+      "lon": 11.4394227,
+      "lat": 47.2102519
+    },
+    {
+      "id": "8303922739",
+      "lon": 11.4523901,
+      "lat": 47.2103332
+    },
+    {
+      "id": "8303922740",
+      "lon": 11.4529318,
+      "lat": 47.2117311
+    },
+    {
+      "id": "8303922741",
+      "lon": 11.452977,
+      "lat": 47.2121052
+    },
+    {
+      "id": "8303922742",
+      "lon": 11.452886,
+      "lat": 47.2121945
+    },
+    {
+      "id": "8303922743",
+      "lon": 11.4519377,
+      "lat": 47.212064
+    },
+    {
+      "id": "8303922744",
+      "lon": 11.4505241,
+      "lat": 47.2118166
+    },
+    {
+      "id": "8303922745",
+      "lon": 11.4495683,
+      "lat": 47.2115232
+    },
+    {
+      "id": "8303922746",
+      "lon": 11.4473428,
+      "lat": 47.2114773
+    },
+    {
+      "id": "8303922747",
+      "lon": 11.4461349,
+      "lat": 47.2116194
+    },
+    {
+      "id": "8303922748",
+      "lon": 11.4453003,
+      "lat": 47.2119667
+    },
+    {
+      "id": "8303922749",
+      "lon": 11.4513517,
+      "lat": 47.2103919
+    },
+    {
+      "id": "8303922750",
+      "lon": 11.4507813,
+      "lat": 47.2104388
+    },
+    {
+      "id": "8303922751",
+      "lon": 11.4496051,
+      "lat": 47.2108302
+    },
+    {
+      "id": "8303922752",
+      "lon": 11.4492295,
+      "lat": 47.2111636
+    },
+    {
+      "id": "8303922753",
+      "lon": 11.4500056,
+      "lat": 47.2106684
+    },
+    {
+      "id": "8303922754",
+      "lon": 11.450235,
+      "lat": 47.2091459
+    },
+    {
+      "id": "8303922755",
+      "lon": 11.4492991,
+      "lat": 47.2087593
+    },
+    {
+      "id": "8303922756",
+      "lon": 11.4508189,
+      "lat": 47.2092511
+    },
+    {
+      "id": "8303922757",
+      "lon": 11.4514123,
+      "lat": 47.2094247
+    },
+    {
+      "id": "8303922758",
+      "lon": 11.4507438,
+      "lat": 47.2085799
+    },
+    {
+      "id": "8303922759",
+      "lon": 11.4515056,
+      "lat": 47.2093492
+    },
+    {
+      "id": "8303922760",
+      "lon": 11.450886,
+      "lat": 47.2088511
+    },
+    {
+      "id": "8303922761",
+      "lon": 11.4492633,
+      "lat": 47.2080264
+    },
+    {
+      "id": "8303922762",
+      "lon": 11.448354,
+      "lat": 47.2078078
+    },
+    {
+      "id": "8303922763",
+      "lon": 11.4478345,
+      "lat": 47.2077464
+    },
+    {
+      "id": "8303922764",
+      "lon": 11.4465857,
+      "lat": 47.2080315
+    },
+    {
+      "id": "8303922765",
+      "lon": 11.4472431,
+      "lat": 47.2083873
+    },
+    {
+      "id": "8303922766",
+      "lon": 11.447875,
+      "lat": 47.2084127
+    },
+    {
+      "id": "8303922767",
+      "lon": 11.444105,
+      "lat": 47.2102764
+    },
+    {
+      "id": "8303922768",
+      "lon": 11.4449923,
+      "lat": 47.2098366
+    },
+    {
+      "id": "8303922769",
+      "lon": 11.4416638,
+      "lat": 47.210581
+    },
+    {
+      "id": "8303922770",
+      "lon": 11.4421517,
+      "lat": 47.2105002
+    },
+    {
+      "id": "8303922771",
+      "lon": 11.441843,
+      "lat": 47.2101623
+    },
+    {
+      "id": "8303922772",
+      "lon": 11.4413849,
+      "lat": 47.2100111
+    },
+    {
+      "id": "8303922773",
+      "lon": 11.4514911,
+      "lat": 47.2090632
+    },
+    {
+      "id": "8303922775",
+      "lon": 11.4389976,
+      "lat": 47.2094848
+    },
+    {
+      "id": "8303922776",
+      "lon": 11.4388707,
+      "lat": 47.2093623
+    },
+    {
+      "id": "8303922777",
+      "lon": 11.4388173,
+      "lat": 47.208588
+    },
+    {
+      "id": "8303922778",
+      "lon": 11.4371332,
+      "lat": 47.2073136
+    },
+    {
+      "id": "8303922779",
+      "lon": 11.4357212,
+      "lat": 47.2077084
+    },
+    {
+      "id": "8303922780",
+      "lon": 11.4353014,
+      "lat": 47.2083506
+    },
+    {
+      "id": "8303922781",
+      "lon": 11.4350354,
+      "lat": 47.2087382
+    },
+    {
+      "id": "8303922782",
+      "lon": 11.4345722,
+      "lat": 47.2093083
+    },
+    {
+      "id": "8303922783",
+      "lon": 11.4344182,
+      "lat": 47.2098742
+    },
+    {
+      "id": "8303922784",
+      "lon": 11.4342799,
+      "lat": 47.2101075
+    },
+    {
+      "id": "8303922785",
+      "lon": 11.4338382,
+      "lat": 47.2105831
+    }
+  ],
+  "edges": [
+    {
+      "id": "osm:way:1112213818:0",
+      "from": "10175220612",
+      "to": "10175220613",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4511355,
+          47.2076573
+        ],
+        [
+          11.4508194,
+          47.2077818
+        ]
+      ],
+      "length_m": 27.601,
+      "duration_s": 6.9,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:1",
+      "from": "10175220613",
+      "to": "10175230320",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4508194,
+          47.2077818
+        ],
+        [
+          11.4505494,
+          47.2078573
+        ]
+      ],
+      "length_m": 22.056,
+      "duration_s": 5.514,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:2",
+      "from": "10175230320",
+      "to": "10175220614",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4505494,
+          47.2078573
+        ],
+        [
+          11.4503934,
+          47.2079009
+        ]
+      ],
+      "length_m": 12.742,
+      "duration_s": 3.186,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:3",
+      "from": "10175220614",
+      "to": "10175220615",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4503934,
+          47.2079009
+        ],
+        [
+          11.4495601,
+          47.2078605
+        ]
+      ],
+      "length_m": 63.107,
+      "duration_s": 15.777,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:4",
+      "from": "10175220615",
+      "to": "10175220616",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4495601,
+          47.2078605
+        ],
+        [
+          11.4487706,
+          47.207669
+        ]
+      ],
+      "length_m": 63.326,
+      "duration_s": 15.831,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:5",
+      "from": "10175220616",
+      "to": "5532253270",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4487706,
+          47.207669
+        ],
+        [
+          11.4485693,
+          47.2075397
+        ]
+      ],
+      "length_m": 20.927,
+      "duration_s": 5.232,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:6",
+      "from": "5532253270",
+      "to": "10175230317",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4485693,
+          47.2075397
+        ],
+        [
+          11.4485337,
+          47.2074354
+        ]
+      ],
+      "length_m": 11.905,
+      "duration_s": 2.976,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:7",
+      "from": "10175230317",
+      "to": "10175230318",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4485337,
+          47.2074354
+        ],
+        [
+          11.4485498,
+          47.2073816
+        ]
+      ],
+      "length_m": 6.105,
+      "duration_s": 1.526,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213818:8",
+      "from": "10175230318",
+      "to": "10175230319",
+      "kind": "piste",
+      "name": "OSM way 1112213818",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4485498,
+          47.2073816
+        ],
+        [
+          11.4485732,
+          47.2073389
+        ]
+      ],
+      "length_m": 5.066,
+      "duration_s": 1.267,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213818"
+      ],
+      "source_version": "1",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:1112213819:0",
+      "from": "3548493210",
+      "to": "8303922773",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4518281,
+          47.2096861
+        ],
+        [
+          11.4514911,
+          47.2090632
+        ]
+      ],
+      "length_m": 73.793,
+      "duration_s": 18.448,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/1112213819"
+      ],
+      "source_version": "2",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:293962729:0",
+      "from": "2975395403",
+      "to": "2975395404",
+      "kind": "lift",
+      "name": "\u00dcbungslift Patscherkofel",
+      "difficulty": null,
+      "lift_type": "t-bar",
+      "geometry": [
+        [
+          11.4485076,
+          47.2073308
+        ],
+        [
+          11.4485732,
+          47.2073389
+        ],
+        [
+          11.4491843,
+          47.2074148
+        ],
+        [
+          11.4507939,
+          47.2076149
+        ],
+        [
+          11.4511355,
+          47.2076573
+        ],
+        [
+          11.451281,
+          47.2076754
+        ]
+      ],
+      "length_m": 212.977,
+      "duration_s": 70.992,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/293962729"
+      ],
+      "source_version": "6",
+      "source_difficulty": null
+    },
+    {
+      "id": "osm:way:300095059:0",
+      "from": "4786450806",
+      "to": "12279565010",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4517528,
+          47.2100577
+        ],
+        [
+          11.4519341,
+          47.2100478
+        ]
+      ],
+      "length_m": 13.739,
+      "duration_s": 3.435,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:1",
+      "from": "12279565010",
+      "to": "12279565009",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4519341,
+          47.2100478
+        ],
+        [
+          11.4519811,
+          47.2101726
+        ]
+      ],
+      "length_m": 14.324,
+      "duration_s": 3.581,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:10",
+      "from": "8303922742",
+      "to": "3042020503",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.452886,
+          47.2121945
+        ],
+        [
+          11.4527119,
+          47.2122029
+        ]
+      ],
+      "length_m": 13.183,
+      "duration_s": 3.296,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:11",
+      "from": "3042020503",
+      "to": "8303922743",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4527119,
+          47.2122029
+        ],
+        [
+          11.4519377,
+          47.212064
+        ]
+      ],
+      "length_m": 60.483,
+      "duration_s": 15.121,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:12",
+      "from": "8303922743",
+      "to": "7710113606",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4519377,
+          47.212064
+        ],
+        [
+          11.4511764,
+          47.2119746
+        ]
+      ],
+      "length_m": 58.356,
+      "duration_s": 14.589,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:13",
+      "from": "7710113606",
+      "to": "8303922744",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4511764,
+          47.2119746
+        ],
+        [
+          11.4505241,
+          47.2118166
+        ]
+      ],
+      "length_m": 52.309,
+      "duration_s": 13.077,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:14",
+      "from": "8303922744",
+      "to": "8303922745",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4505241,
+          47.2118166
+        ],
+        [
+          11.4495683,
+          47.2115232
+        ]
+      ],
+      "length_m": 79.224,
+      "duration_s": 19.806,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:15",
+      "from": "8303922745",
+      "to": "3042020288",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4495683,
+          47.2115232
+        ],
+        [
+          11.4488946,
+          47.2114034
+        ]
+      ],
+      "length_m": 52.602,
+      "duration_s": 13.151,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:16",
+      "from": "3042020288",
+      "to": "8303922746",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4488946,
+          47.2114034
+        ],
+        [
+          11.4473428,
+          47.2114773
+        ]
+      ],
+      "length_m": 117.502,
+      "duration_s": 29.375,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:17",
+      "from": "8303922746",
+      "to": "8303922747",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4473428,
+          47.2114773
+        ],
+        [
+          11.4461349,
+          47.2116194
+        ]
+      ],
+      "length_m": 92.596,
+      "duration_s": 23.149,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:18",
+      "from": "8303922747",
+      "to": "8303922748",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4461349,
+          47.2116194
+        ],
+        [
+          11.4453003,
+          47.2119667
+        ]
+      ],
+      "length_m": 73.929,
+      "duration_s": 18.482,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:19",
+      "from": "8303922748",
+      "to": "3042020501",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4453003,
+          47.2119667
+        ],
+        [
+          11.4444779,
+          47.2120666
+        ]
+      ],
+      "length_m": 63.104,
+      "duration_s": 15.776,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:2",
+      "from": "12279565009",
+      "to": "3548493207",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4519811,
+          47.2101726
+        ],
+        [
+          11.4521874,
+          47.2102531
+        ]
+      ],
+      "length_m": 17.971,
+      "duration_s": 4.493,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:3",
+      "from": "3548493207",
+      "to": "8303922739",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4521874,
+          47.2102531
+        ],
+        [
+          11.4523901,
+          47.2103332
+        ]
+      ],
+      "length_m": 17.713,
+      "duration_s": 4.428,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:4",
+      "from": "8303922739",
+      "to": "7710113607",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4523901,
+          47.2103332
+        ],
+        [
+          11.4526088,
+          47.2106618
+        ]
+      ],
+      "length_m": 40.1,
+      "duration_s": 10.025,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:5",
+      "from": "7710113607",
+      "to": "7710113608",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4526088,
+          47.2106618
+        ],
+        [
+          11.4528796,
+          47.2114189
+        ]
+      ],
+      "length_m": 86.635,
+      "duration_s": 21.659,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:6",
+      "from": "7710113608",
+      "to": "8303922740",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4528796,
+          47.2114189
+        ],
+        [
+          11.4529318,
+          47.2117311
+        ]
+      ],
+      "length_m": 34.938,
+      "duration_s": 8.735,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:7",
+      "from": "8303922740",
+      "to": "7710113609",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4529318,
+          47.2117311
+        ],
+        [
+          11.4529787,
+          47.2119524
+        ]
+      ],
+      "length_m": 24.861,
+      "duration_s": 6.215,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:8",
+      "from": "7710113609",
+      "to": "8303922741",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4529787,
+          47.2119524
+        ],
+        [
+          11.452977,
+          47.2121052
+        ]
+      ],
+      "length_m": 16.991,
+      "duration_s": 4.248,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095059:9",
+      "from": "8303922741",
+      "to": "8303922742",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.452977,
+          47.2121052
+        ],
+        [
+          11.452886,
+          47.2121945
+        ]
+      ],
+      "length_m": 12.077,
+      "duration_s": 3.019,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095059"
+      ],
+      "source_version": "8",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:0",
+      "from": "3042020281",
+      "to": "8303922770",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4423747,
+          47.2104383
+        ],
+        [
+          11.4421517,
+          47.2105002
+        ]
+      ],
+      "length_m": 18.196,
+      "duration_s": 4.549,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:1",
+      "from": "8303922770",
+      "to": "3042020284",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4421517,
+          47.2105002
+        ],
+        [
+          11.4419294,
+          47.2105669
+        ]
+      ],
+      "length_m": 18.357,
+      "duration_s": 4.589,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:10",
+      "from": "8303922776",
+      "to": "3042020264",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4388707,
+          47.2093623
+        ],
+        [
+          11.4388295,
+          47.2091698
+        ]
+      ],
+      "length_m": 21.63,
+      "duration_s": 5.408,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:11",
+      "from": "3042020264",
+      "to": "8303918291",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4388295,
+          47.2091698
+        ],
+        [
+          11.4388405,
+          47.2087775
+        ]
+      ],
+      "length_m": 43.63,
+      "duration_s": 10.907,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:12",
+      "from": "8303918291",
+      "to": "8303922777",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4388405,
+          47.2087775
+        ],
+        [
+          11.4388173,
+          47.208588
+        ]
+      ],
+      "length_m": 21.144,
+      "duration_s": 5.286,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:13",
+      "from": "8303922777",
+      "to": "8303918285",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4388173,
+          47.208588
+        ],
+        [
+          11.4387023,
+          47.2083881
+        ]
+      ],
+      "length_m": 23.865,
+      "duration_s": 5.966,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:14",
+      "from": "8303918285",
+      "to": "8303918292",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4387023,
+          47.2083881
+        ],
+        [
+          11.438247,
+          47.2079847
+        ]
+      ],
+      "length_m": 56.524,
+      "duration_s": 14.131,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:15",
+      "from": "8303918292",
+      "to": "3042024185",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.438247,
+          47.2079847
+        ],
+        [
+          11.4378562,
+          47.2075763
+        ]
+      ],
+      "length_m": 54.164,
+      "duration_s": 13.541,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:16",
+      "from": "3042024185",
+      "to": "8303918295",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4378562,
+          47.2075763
+        ],
+        [
+          11.437643,
+          47.2073954
+        ]
+      ],
+      "length_m": 25.768,
+      "duration_s": 6.442,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:17",
+      "from": "8303918295",
+      "to": "8303922778",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.437643,
+          47.2073954
+        ],
+        [
+          11.4371332,
+          47.2073136
+        ]
+      ],
+      "length_m": 39.57,
+      "duration_s": 9.892,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:18",
+      "from": "8303922778",
+      "to": "3042024184",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4371332,
+          47.2073136
+        ],
+        [
+          11.4368251,
+          47.2073496
+        ]
+      ],
+      "length_m": 23.616,
+      "duration_s": 5.904,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:19",
+      "from": "3042024184",
+      "to": "8303918296",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4368251,
+          47.2073496
+        ],
+        [
+          11.4362664,
+          47.2074857
+        ]
+      ],
+      "length_m": 44.835,
+      "duration_s": 11.209,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:2",
+      "from": "3042020284",
+      "to": "8303922769",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4419294,
+          47.2105669
+        ],
+        [
+          11.4416638,
+          47.210581
+        ]
+      ],
+      "length_m": 20.123,
+      "duration_s": 5.031,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:20",
+      "from": "8303918296",
+      "to": "8303922779",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4362664,
+          47.2074857
+        ],
+        [
+          11.4357212,
+          47.2077084
+        ]
+      ],
+      "length_m": 48.056,
+      "duration_s": 12.014,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:21",
+      "from": "8303922779",
+      "to": "3042024189",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4357212,
+          47.2077084
+        ],
+        [
+          11.4354615,
+          47.2078947
+        ]
+      ],
+      "length_m": 28.53,
+      "duration_s": 7.133,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:22",
+      "from": "3042024189",
+      "to": "8303922780",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4354615,
+          47.2078947
+        ],
+        [
+          11.4353014,
+          47.2083506
+        ]
+      ],
+      "length_m": 52.116,
+      "duration_s": 13.029,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:23",
+      "from": "8303922780",
+      "to": "8303922781",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4353014,
+          47.2083506
+        ],
+        [
+          11.4350354,
+          47.2087382
+        ]
+      ],
+      "length_m": 47.553,
+      "duration_s": 11.888,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:24",
+      "from": "8303922781",
+      "to": "8303918297",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4350354,
+          47.2087382
+        ],
+        [
+          11.4346936,
+          47.2091073
+        ]
+      ],
+      "length_m": 48.488,
+      "duration_s": 12.122,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:25",
+      "from": "8303918297",
+      "to": "8303922782",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4346936,
+          47.2091073
+        ],
+        [
+          11.4345722,
+          47.2093083
+        ]
+      ],
+      "length_m": 24.158,
+      "duration_s": 6.04,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:26",
+      "from": "8303922782",
+      "to": "8303918298",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4345722,
+          47.2093083
+        ],
+        [
+          11.4344428,
+          47.2097546
+        ]
+      ],
+      "length_m": 50.58,
+      "duration_s": 12.645,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:27",
+      "from": "8303918298",
+      "to": "8303922783",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4344428,
+          47.2097546
+        ],
+        [
+          11.4344182,
+          47.2098742
+        ]
+      ],
+      "length_m": 13.428,
+      "duration_s": 3.357,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:28",
+      "from": "8303922783",
+      "to": "8303918299",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4344182,
+          47.2098742
+        ],
+        [
+          11.4343773,
+          47.2099735
+        ]
+      ],
+      "length_m": 11.466,
+      "duration_s": 2.866,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:29",
+      "from": "8303918299",
+      "to": "8303922784",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4343773,
+          47.2099735
+        ],
+        [
+          11.4342799,
+          47.2101075
+        ]
+      ],
+      "length_m": 16.618,
+      "duration_s": 4.154,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:3",
+      "from": "8303922769",
+      "to": "8303918294",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4416638,
+          47.210581
+        ],
+        [
+          11.4414153,
+          47.2105454
+        ]
+      ],
+      "length_m": 19.183,
+      "duration_s": 4.796,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:30",
+      "from": "8303922784",
+      "to": "3042020283",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4342799,
+          47.2101075
+        ],
+        [
+          11.4341374,
+          47.2102378
+        ]
+      ],
+      "length_m": 18.049,
+      "duration_s": 4.512,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:31",
+      "from": "3042020283",
+      "to": "8303922785",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4341374,
+          47.2102378
+        ],
+        [
+          11.4338382,
+          47.2105831
+        ]
+      ],
+      "length_m": 44.553,
+      "duration_s": 11.138,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:32",
+      "from": "8303922785",
+      "to": "8303918300",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4338382,
+          47.2105831
+        ],
+        [
+          11.4336274,
+          47.2107911
+        ]
+      ],
+      "length_m": 28.08,
+      "duration_s": 7.02,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:33",
+      "from": "8303918300",
+      "to": "8303918301",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4336274,
+          47.2107911
+        ],
+        [
+          11.4332016,
+          47.2115046
+        ]
+      ],
+      "length_m": 85.609,
+      "duration_s": 21.402,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:34",
+      "from": "8303918301",
+      "to": "8303918302",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4332016,
+          47.2115046
+        ],
+        [
+          11.4331096,
+          47.2118866
+        ]
+      ],
+      "length_m": 43.041,
+      "duration_s": 10.76,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:35",
+      "from": "8303918302",
+      "to": "3042020502",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4331096,
+          47.2118866
+        ],
+        [
+          11.4329425,
+          47.2123252
+        ]
+      ],
+      "length_m": 50.377,
+      "duration_s": 12.594,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:4",
+      "from": "8303918294",
+      "to": "8303918240",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4414153,
+          47.2105454
+        ],
+        [
+          11.4409115,
+          47.2104304
+        ]
+      ],
+      "length_m": 40.146,
+      "duration_s": 10.036,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:5",
+      "from": "8303918240",
+      "to": "8303918293",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4409115,
+          47.2104304
+        ],
+        [
+          11.4401984,
+          47.2101248
+        ]
+      ],
+      "length_m": 63.688,
+      "duration_s": 15.922,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:6",
+      "from": "8303918293",
+      "to": "3042020282",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4401984,
+          47.2101248
+        ],
+        [
+          11.4398326,
+          47.2099346
+        ]
+      ],
+      "length_m": 34.796,
+      "duration_s": 8.699,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:7",
+      "from": "3042020282",
+      "to": "3042020278",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4398326,
+          47.2099346
+        ],
+        [
+          11.439345,
+          47.2096718
+        ]
+      ],
+      "length_m": 47.016,
+      "duration_s": 11.754,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:8",
+      "from": "3042020278",
+      "to": "8303922775",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.439345,
+          47.2096718
+        ],
+        [
+          11.4389976,
+          47.2094848
+        ]
+      ],
+      "length_m": 33.481,
+      "duration_s": 8.37,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095073:9",
+      "from": "8303922775",
+      "to": "8303922776",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4389976,
+          47.2094848
+        ],
+        [
+          11.4388707,
+          47.2093623
+        ]
+      ],
+      "length_m": 16.656,
+      "duration_s": 4.164,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095073"
+      ],
+      "source_version": "5",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095076:0",
+      "from": "4786450806",
+      "to": "12279565011",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4517528,
+          47.2100577
+        ],
+        [
+          11.4519368,
+          47.2100323
+        ]
+      ],
+      "length_m": 14.183,
+      "duration_s": 3.546,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:1",
+      "from": "12279565011",
+      "to": "3548493210",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4519368,
+          47.2100323
+        ],
+        [
+          11.4518281,
+          47.2096861
+        ]
+      ],
+      "length_m": 39.362,
+      "duration_s": 9.84,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:10",
+      "from": "8303922763",
+      "to": "5526489118",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4478345,
+          47.2077464
+        ],
+        [
+          11.4472965,
+          47.2077759
+        ]
+      ],
+      "length_m": 40.772,
+      "duration_s": 10.193,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:11",
+      "from": "5526489118",
+      "to": "8303922764",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4472965,
+          47.2077759
+        ],
+        [
+          11.4465857,
+          47.2080315
+        ]
+      ],
+      "length_m": 60.751,
+      "duration_s": 15.188,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:12",
+      "from": "8303922764",
+      "to": "3042024192",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4465857,
+          47.2080315
+        ],
+        [
+          11.4459084,
+          47.2084253
+        ]
+      ],
+      "length_m": 67.343,
+      "duration_s": 16.836,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:13",
+      "from": "3042024192",
+      "to": "3042020270",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4459084,
+          47.2084253
+        ],
+        [
+          11.4456802,
+          47.2087333
+        ]
+      ],
+      "length_m": 38.341,
+      "duration_s": 9.585,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:14",
+      "from": "3042020270",
+      "to": "3042020280",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4456802,
+          47.2087333
+        ],
+        [
+          11.4452796,
+          47.2094896
+        ]
+      ],
+      "length_m": 89.375,
+      "duration_s": 22.344,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:15",
+      "from": "3042020280",
+      "to": "8303922768",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4452796,
+          47.2094896
+        ],
+        [
+          11.4449923,
+          47.2098366
+        ]
+      ],
+      "length_m": 44.269,
+      "duration_s": 11.067,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:16",
+      "from": "8303922768",
+      "to": "5526489116",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4449923,
+          47.2098366
+        ],
+        [
+          11.4445957,
+          47.2100908
+        ]
+      ],
+      "length_m": 41.188,
+      "duration_s": 10.297,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:17",
+      "from": "5526489116",
+      "to": "8303922767",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4445957,
+          47.2100908
+        ],
+        [
+          11.444105,
+          47.2102764
+        ]
+      ],
+      "length_m": 42.424,
+      "duration_s": 10.606,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:18",
+      "from": "8303922767",
+      "to": "8303918239",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.444105,
+          47.2102764
+        ],
+        [
+          11.4435217,
+          47.2103805
+        ]
+      ],
+      "length_m": 45.555,
+      "duration_s": 11.389,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:19",
+      "from": "8303918239",
+      "to": "3042020281",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4435217,
+          47.2103805
+        ],
+        [
+          11.4423747,
+          47.2104383
+        ]
+      ],
+      "length_m": 86.877,
+      "duration_s": 21.719,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:2",
+      "from": "3548493210",
+      "to": "8303922759",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4518281,
+          47.2096861
+        ],
+        [
+          11.4515056,
+          47.2093492
+        ]
+      ],
+      "length_m": 44.686,
+      "duration_s": 11.171,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:3",
+      "from": "8303922759",
+      "to": "3042020260",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4515056,
+          47.2093492
+        ],
+        [
+          11.4511225,
+          47.2090699
+        ]
+      ],
+      "length_m": 42.449,
+      "duration_s": 10.612,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:4",
+      "from": "3042020260",
+      "to": "8303922760",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4511225,
+          47.2090699
+        ],
+        [
+          11.450886,
+          47.2088511
+        ]
+      ],
+      "length_m": 30.184,
+      "duration_s": 7.546,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:5",
+      "from": "8303922760",
+      "to": "8303922758",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.450886,
+          47.2088511
+        ],
+        [
+          11.4507438,
+          47.2085799
+        ]
+      ],
+      "length_m": 32.012,
+      "duration_s": 8.003,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:6",
+      "from": "8303922758",
+      "to": "3042024188",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4507438,
+          47.2085799
+        ],
+        [
+          11.4505205,
+          47.2083491
+        ]
+      ],
+      "length_m": 30.711,
+      "duration_s": 7.678,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:7",
+      "from": "3042024188",
+      "to": "8303922761",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4505205,
+          47.2083491
+        ],
+        [
+          11.4492633,
+          47.2080264
+        ]
+      ],
+      "length_m": 101.52,
+      "duration_s": 25.38,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:8",
+      "from": "8303922761",
+      "to": "8303922762",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4492633,
+          47.2080264
+        ],
+        [
+          11.448354,
+          47.2078078
+        ]
+      ],
+      "length_m": 72.862,
+      "duration_s": 18.215,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095076:9",
+      "from": "8303922762",
+      "to": "8303922763",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.448354,
+          47.2078078
+        ],
+        [
+          11.4478345,
+          47.2077464
+        ]
+      ],
+      "length_m": 39.832,
+      "duration_s": 9.958,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095076"
+      ],
+      "source_version": "6",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:300095083:0",
+      "from": "3548493210",
+      "to": "8303922757",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4518281,
+          47.2096861
+        ],
+        [
+          11.4514123,
+          47.2094247
+        ]
+      ],
+      "length_m": 42.794,
+      "duration_s": 10.699,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:1",
+      "from": "8303922757",
+      "to": "8303922756",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4514123,
+          47.2094247
+        ],
+        [
+          11.4508189,
+          47.2092511
+        ]
+      ],
+      "length_m": 48.804,
+      "duration_s": 12.201,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:2",
+      "from": "8303922756",
+      "to": "8303922754",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4508189,
+          47.2092511
+        ],
+        [
+          11.450235,
+          47.2091459
+        ]
+      ],
+      "length_m": 45.631,
+      "duration_s": 11.408,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:3",
+      "from": "8303922754",
+      "to": "8303922755",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.450235,
+          47.2091459
+        ],
+        [
+          11.4492991,
+          47.2087593
+        ]
+      ],
+      "length_m": 82.74,
+      "duration_s": 20.685,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:4",
+      "from": "8303922755",
+      "to": "5526489117",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4492991,
+          47.2087593
+        ],
+        [
+          11.4483976,
+          47.2084835
+        ]
+      ],
+      "length_m": 74.685,
+      "duration_s": 18.671,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:5",
+      "from": "5526489117",
+      "to": "8303922766",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4483976,
+          47.2084835
+        ],
+        [
+          11.447875,
+          47.2084127
+        ]
+      ],
+      "length_m": 40.254,
+      "duration_s": 10.063,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:6",
+      "from": "8303922766",
+      "to": "8303922765",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.447875,
+          47.2084127
+        ],
+        [
+          11.4472431,
+          47.2083873
+        ]
+      ],
+      "length_m": 47.816,
+      "duration_s": 11.954,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:300095083:7",
+      "from": "8303922765",
+      "to": "3042024192",
+      "kind": "piste",
+      "name": "Rennstrecke",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4472431,
+          47.2083873
+        ],
+        [
+          11.4459084,
+          47.2084253
+        ]
+      ],
+      "length_m": 100.91,
+      "duration_s": 25.227,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/300095083"
+      ],
+      "source_version": "6",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:485884144:0",
+      "from": "1592470012",
+      "to": "4786450806",
+      "kind": "lift",
+      "name": "Patscherkofelbahn",
+      "difficulty": null,
+      "lift_type": "gondola",
+      "geometry": [
+        [
+          11.4267503,
+          47.2220722
+        ],
+        [
+          11.4270395,
+          47.2218736
+        ],
+        [
+          11.4270955,
+          47.2218352
+        ],
+        [
+          11.4275866,
+          47.2214981
+        ],
+        [
+          11.4292648,
+          47.220234
+        ],
+        [
+          11.4318812,
+          47.2184201
+        ],
+        [
+          11.4333544,
+          47.2173812
+        ],
+        [
+          11.4347528,
+          47.2163982
+        ],
+        [
+          11.4371075,
+          47.2147469
+        ],
+        [
+          11.4391333,
+          47.2132913
+        ],
+        [
+          11.4399843,
+          47.2126924
+        ],
+        [
+          11.4414454,
+          47.211663
+        ],
+        [
+          11.4414927,
+          47.2116346
+        ],
+        [
+          11.4415387,
+          47.2115987
+        ],
+        [
+          11.4419406,
+          47.2113127
+        ],
+        [
+          11.4423622,
+          47.2112588
+        ],
+        [
+          11.4424302,
+          47.2112501
+        ],
+        [
+          11.4424943,
+          47.2112419
+        ],
+        [
+          11.443848,
+          47.2110688
+        ],
+        [
+          11.4451461,
+          47.2109042
+        ],
+        [
+          11.4478663,
+          47.210557
+        ],
+        [
+          11.449163,
+          47.2103838
+        ],
+        [
+          11.451333,
+          47.2101085
+        ],
+        [
+          11.4514055,
+          47.2101
+        ],
+        [
+          11.4517528,
+          47.2100577
+        ]
+      ],
+      "length_m": 2411.937,
+      "duration_s": 803.979,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/485884144"
+      ],
+      "source_version": "13",
+      "source_difficulty": null
+    },
+    {
+      "id": "osm:way:576104697:0",
+      "from": "3548493207",
+      "to": "8303922749",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4521874,
+          47.2102531
+        ],
+        [
+          11.4513517,
+          47.2103919
+        ]
+      ],
+      "length_m": 64.985,
+      "duration_s": 16.246,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:1",
+      "from": "8303922749",
+      "to": "8303922750",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4513517,
+          47.2103919
+        ],
+        [
+          11.4507813,
+          47.2104388
+        ]
+      ],
+      "length_m": 43.4,
+      "duration_s": 10.85,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:2",
+      "from": "8303922750",
+      "to": "5526489113",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4507813,
+          47.2104388
+        ],
+        [
+          11.4504266,
+          47.2105326
+        ]
+      ],
+      "length_m": 28.751,
+      "duration_s": 7.188,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:3",
+      "from": "5526489113",
+      "to": "8303922753",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4504266,
+          47.2105326
+        ],
+        [
+          11.4500056,
+          47.2106684
+        ]
+      ],
+      "length_m": 35.203,
+      "duration_s": 8.801,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:4",
+      "from": "8303922753",
+      "to": "8303922751",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4500056,
+          47.2106684
+        ],
+        [
+          11.4496051,
+          47.2108302
+        ]
+      ],
+      "length_m": 35.197,
+      "duration_s": 8.799,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:5",
+      "from": "8303922751",
+      "to": "8303922752",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4496051,
+          47.2108302
+        ],
+        [
+          11.4492295,
+          47.2111636
+        ]
+      ],
+      "length_m": 46.683,
+      "duration_s": 11.671,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104697:6",
+      "from": "8303922752",
+      "to": "3042020288",
+      "kind": "piste",
+      "name": "Weltcuphang",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4492295,
+          47.2111636
+        ],
+        [
+          11.4488946,
+          47.2114034
+        ]
+      ],
+      "length_m": 36.755,
+      "duration_s": 9.189,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104697"
+      ],
+      "source_version": "3",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:576104699:0",
+      "from": "3042020281",
+      "to": "8303918288",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4423747,
+          47.2104383
+        ],
+        [
+          11.4420521,
+          47.2102008
+        ]
+      ],
+      "length_m": 35.933,
+      "duration_s": 8.983,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:1",
+      "from": "8303918288",
+      "to": "8303922771",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4420521,
+          47.2102008
+        ],
+        [
+          11.441843,
+          47.2101623
+        ]
+      ],
+      "length_m": 16.364,
+      "duration_s": 4.091,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:2",
+      "from": "8303922771",
+      "to": "5526489114",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.441843,
+          47.2101623
+        ],
+        [
+          11.441565,
+          47.2101046
+        ]
+      ],
+      "length_m": 21.957,
+      "duration_s": 5.489,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:3",
+      "from": "5526489114",
+      "to": "8303922772",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.441565,
+          47.2101046
+        ],
+        [
+          11.4413849,
+          47.2100111
+        ]
+      ],
+      "length_m": 17.122,
+      "duration_s": 4.28,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:4",
+      "from": "8303922772",
+      "to": "8303918286",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4413849,
+          47.2100111
+        ],
+        [
+          11.4411589,
+          47.2097684
+        ]
+      ],
+      "length_m": 31.933,
+      "duration_s": 7.983,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:5",
+      "from": "8303918286",
+      "to": "3042020262",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4411589,
+          47.2097684
+        ],
+        [
+          11.4408764,
+          47.2094644
+        ]
+      ],
+      "length_m": 39.975,
+      "duration_s": 9.994,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:6",
+      "from": "3042020262",
+      "to": "8303918290",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4408764,
+          47.2094644
+        ],
+        [
+          11.440682,
+          47.2093938
+        ]
+      ],
+      "length_m": 16.651,
+      "duration_s": 4.163,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:7",
+      "from": "8303918290",
+      "to": "8303918287",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.440682,
+          47.2093938
+        ],
+        [
+          11.4403847,
+          47.2094164
+        ]
+      ],
+      "length_m": 22.597,
+      "duration_s": 5.649,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104699:8",
+      "from": "8303918287",
+      "to": "3042020282",
+      "kind": "piste",
+      "name": "Patscher Alm Kurve",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4403847,
+          47.2094164
+        ],
+        [
+          11.4398326,
+          47.2099346
+        ]
+      ],
+      "length_m": 71.13,
+      "duration_s": 17.782,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104699"
+      ],
+      "source_version": "3",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104700:0",
+      "from": "3042020282",
+      "to": "8303922717",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4398326,
+          47.2099346
+        ],
+        [
+          11.4394227,
+          47.2102519
+        ]
+      ],
+      "length_m": 46.941,
+      "duration_s": 11.735,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104700"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104700:1",
+      "from": "8303922717",
+      "to": "3042020287",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4394227,
+          47.2102519
+        ],
+        [
+          11.4391057,
+          47.2106378
+        ]
+      ],
+      "length_m": 49.139,
+      "duration_s": 12.285,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104700"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104700:2",
+      "from": "3042020287",
+      "to": "3042020289",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4391057,
+          47.2106378
+        ],
+        [
+          11.43847,
+          47.2116354
+        ]
+      ],
+      "length_m": 120.875,
+      "duration_s": 30.219,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104700"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104700:3",
+      "from": "3042020289",
+      "to": "3042020506",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.43847,
+          47.2116354
+        ],
+        [
+          11.4384934,
+          47.2124778
+        ]
+      ],
+      "length_m": 93.687,
+      "duration_s": 23.422,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104700"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104701:0",
+      "from": "3042020500",
+      "to": "8303918316",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4405898,
+          47.2118987
+        ],
+        [
+          11.4400094,
+          47.211688
+        ]
+      ],
+      "length_m": 49.707,
+      "duration_s": 12.427,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104701"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104701:1",
+      "from": "8303918316",
+      "to": "8303918284",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4400094,
+          47.211688
+        ],
+        [
+          11.439532,
+          47.2114073
+        ]
+      ],
+      "length_m": 47.692,
+      "duration_s": 11.923,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104701"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104701:2",
+      "from": "8303918284",
+      "to": "8303918315",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.439532,
+          47.2114073
+        ],
+        [
+          11.4392459,
+          47.2110648
+        ]
+      ],
+      "length_m": 43.788,
+      "duration_s": 10.947,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104701"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:576104701:3",
+      "from": "8303918315",
+      "to": "3042020287",
+      "kind": "piste",
+      "name": "Ochsenschlagzufahrt",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4392459,
+          47.2110648
+        ],
+        [
+          11.4391057,
+          47.2106378
+        ]
+      ],
+      "length_m": 48.647,
+      "duration_s": 12.162,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/576104701"
+      ],
+      "source_version": "4",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:0",
+      "from": "3042020501",
+      "to": "8303918312",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4444779,
+          47.2120666
+        ],
+        [
+          11.44403,
+          47.2118521
+        ]
+      ],
+      "length_m": 41.394,
+      "duration_s": 10.348,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:1",
+      "from": "8303918312",
+      "to": "8303918236",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.44403,
+          47.2118521
+        ],
+        [
+          11.4435371,
+          47.2116891
+        ]
+      ],
+      "length_m": 41.408,
+      "duration_s": 10.352,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:2",
+      "from": "8303918236",
+      "to": "8303918313",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4435371,
+          47.2116891
+        ],
+        [
+          11.4432125,
+          47.2113974
+        ]
+      ],
+      "length_m": 40.66,
+      "duration_s": 10.165,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:3",
+      "from": "8303918313",
+      "to": "8303918314",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4432125,
+          47.2113974
+        ],
+        [
+          11.4431133,
+          47.2111277
+        ]
+      ],
+      "length_m": 30.911,
+      "duration_s": 7.728,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:4",
+      "from": "8303918314",
+      "to": "8303918237",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4431133,
+          47.2111277
+        ],
+        [
+          11.442859,
+          47.2108825
+        ]
+      ],
+      "length_m": 33.352,
+      "duration_s": 8.338,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446837:5",
+      "from": "8303918237",
+      "to": "3042020281",
+      "kind": "piste",
+      "name": "OSM way 893446837",
+      "difficulty": "red",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.442859,
+          47.2108825
+        ],
+        [
+          11.4423747,
+          47.2104383
+        ]
+      ],
+      "length_m": 61.464,
+      "duration_s": 15.366,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446837"
+      ],
+      "source_version": "1",
+      "source_difficulty": "intermediate"
+    },
+    {
+      "id": "osm:way:893446838:0",
+      "from": "3042020280",
+      "to": "8303918238",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4452796,
+          47.2094896
+        ],
+        [
+          11.4441922,
+          47.2095622
+        ]
+      ],
+      "length_m": 82.535,
+      "duration_s": 20.634,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446838"
+      ],
+      "source_version": "2",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:893446838:1",
+      "from": "8303918238",
+      "to": "3042020277",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4441922,
+          47.2095622
+        ],
+        [
+          11.443366,
+          47.2097422
+        ]
+      ],
+      "length_m": 65.539,
+      "duration_s": 16.385,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446838"
+      ],
+      "source_version": "2",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:893446838:2",
+      "from": "3042020277",
+      "to": "3042020281",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.443366,
+          47.2097422
+        ],
+        [
+          11.4423747,
+          47.2104383
+        ]
+      ],
+      "length_m": 107.694,
+      "duration_s": 26.924,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446838"
+      ],
+      "source_version": "2",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:893446839:0",
+      "from": "3042020281",
+      "to": "11403862329",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4423747,
+          47.2104383
+        ],
+        [
+          11.441823,
+          47.2111421
+        ]
+      ],
+      "length_m": 88.663,
+      "duration_s": 22.166,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446839"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:893446839:1",
+      "from": "11403862329",
+      "to": "4786450807",
+      "kind": "piste",
+      "name": "Familienabfahrt",
+      "difficulty": "blue",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.441823,
+          47.2111421
+        ],
+        [
+          11.4419406,
+          47.2113127
+        ]
+      ],
+      "length_m": 20.947,
+      "duration_s": 5.237,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446839"
+      ],
+      "source_version": "3",
+      "source_difficulty": "easy"
+    },
+    {
+      "id": "osm:way:893446844:0",
+      "from": "3042020501",
+      "to": "8303918311",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4444779,
+          47.2120666
+        ],
+        [
+          11.4436294,
+          47.2120295
+        ]
+      ],
+      "length_m": 64.223,
+      "duration_s": 16.056,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:1",
+      "from": "8303918311",
+      "to": "8303918310",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4436294,
+          47.2120295
+        ],
+        [
+          11.4424092,
+          47.2119017
+        ]
+      ],
+      "length_m": 93.255,
+      "duration_s": 23.314,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:10",
+      "from": "8303918305",
+      "to": "8303918303",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4350159,
+          47.2133143
+        ],
+        [
+          11.4343533,
+          47.2127673
+        ]
+      ],
+      "length_m": 78.767,
+      "duration_s": 19.692,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:11",
+      "from": "8303918303",
+      "to": "8303918304",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4343533,
+          47.2127673
+        ],
+        [
+          11.4337552,
+          47.2124942
+        ]
+      ],
+      "length_m": 54.434,
+      "duration_s": 13.608,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:12",
+      "from": "8303918304",
+      "to": "3042020502",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4337552,
+          47.2124942
+        ],
+        [
+          11.4329425,
+          47.2123252
+        ]
+      ],
+      "length_m": 64.197,
+      "duration_s": 16.049,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:2",
+      "from": "8303918310",
+      "to": "3042020500",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4424092,
+          47.2119017
+        ],
+        [
+          11.4405898,
+          47.2118987
+        ]
+      ],
+      "length_m": 137.426,
+      "duration_s": 34.357,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:3",
+      "from": "3042020500",
+      "to": "8303918309",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4405898,
+          47.2118987
+        ],
+        [
+          11.439529,
+          47.2121037
+        ]
+      ],
+      "length_m": 83.305,
+      "duration_s": 20.826,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:4",
+      "from": "8303918309",
+      "to": "3042020506",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.439529,
+          47.2121037
+        ],
+        [
+          11.4384934,
+          47.2124778
+        ]
+      ],
+      "length_m": 88.595,
+      "duration_s": 22.149,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:5",
+      "from": "3042020506",
+      "to": "8303918308",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4384934,
+          47.2124778
+        ],
+        [
+          11.437692,
+          47.2127479
+        ]
+      ],
+      "length_m": 67.573,
+      "duration_s": 16.893,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:6",
+      "from": "8303918308",
+      "to": "8303918306",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.437692,
+          47.2127479
+        ],
+        [
+          11.4368906,
+          47.213018
+        ]
+      ],
+      "length_m": 67.573,
+      "duration_s": 16.893,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:7",
+      "from": "8303918306",
+      "to": "8303918307",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4368906,
+          47.213018
+        ],
+        [
+          11.4363596,
+          47.213291
+        ]
+      ],
+      "length_m": 50.3,
+      "duration_s": 12.575,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:8",
+      "from": "8303918307",
+      "to": "3042025243",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4363596,
+          47.213291
+        ],
+        [
+          11.4354939,
+          47.2134241
+        ]
+      ],
+      "length_m": 67.042,
+      "duration_s": 16.76,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    },
+    {
+      "id": "osm:way:893446844:9",
+      "from": "3042025243",
+      "to": "8303918305",
+      "kind": "piste",
+      "name": "Olympiaabfahrt",
+      "difficulty": "black",
+      "lift_type": null,
+      "geometry": [
+        [
+          11.4354939,
+          47.2134241
+        ],
+        [
+          11.4350159,
+          47.2133143
+        ]
+      ],
+      "length_m": 38.113,
+      "duration_s": 9.528,
+      "duration_basis": "assumed",
+      "review_status": "unreviewed",
+      "source_refs": [
+        "way/893446844"
+      ],
+      "source_version": "2",
+      "source_difficulty": "advanced"
+    }
+  ]
+}

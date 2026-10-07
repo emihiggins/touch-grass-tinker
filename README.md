@@ -91,3 +91,7 @@ The offline sketch separates fictional lift and piste lines and labels each run.
 Original code is [MIT licensed](LICENSE). OpenStreetMap-derived terrain is © OpenStreetMap contributors under [ODbL](data/terrain/LICENSE-ODbL.md), not MIT. Model weights are not bundled. [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 Built for the Hacktoberfest Week1 Touch Grass challenge. [Submission materials](submission/README.md) are separate from the user/developer documentation.
+
+## Real-resort data research
+
+New bounded [Wachusett and Patscherkofel snapshots](research/real-resort-expansion.md) broaden regional data coverage. They are research-only, not selectable destinations or navigation-ready terrain. The [catalog](research/evidence/resort-catalog.json) records provenance, connectivity gaps, assumed timing and unknown operating status.

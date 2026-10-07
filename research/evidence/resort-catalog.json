@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "scope": "bounded_research_snapshots_not_complete_resort_inventory",
+  "attribution": "\u00a9 OpenStreetMap contributors; ODbL 1.0. Application code is separately MIT.",
+  "snapshots": [
+    {
+      "id": "patscherkofel-bounded-osm-research",
+      "directory": "data/terrain/patscherkofel-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.435,47.195,11.475,47.225",
+      "fetched_at": "2026-10-07T17:30:01.729758+00:00",
+      "graph_sha256": "f5eb4a8f27a5ced27e2bf5eeb04253e005af77d4c588c3287590bf9be5daba3c",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "AT",
+      "timezone": "Europe/Vienna",
+      "nodes": 139,
+      "edges": 144,
+      "edge_kinds": {
+        "lift": 2,
+        "piste": 142
+      },
+      "weak_components": 3,
+      "nodes_on_directed_cycles": 0,
+      "source_ways": 29,
+      "native_piste_grades": {
+        "advanced": 2,
+        "easy": 5,
+        "intermediate": 7
+      },
+      "ways_with_opening_hours": 0,
+      "duration_basis": {
+        "assumed": 144
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    },
+    {
+      "id": "plose-expanded-osm-research",
+      "directory": "data/terrain/plose-expanded-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.700,46.677,11.734,46.694",
+      "fetched_at": "2026-10-07T00:33:11.068891+00:00",
+      "graph_sha256": "0cebeedea82943ba89e8c498e0035e2cc815af538fb1a67aaba69ded7a182104",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "IT",
+      "timezone": "Europe/Rome",
+      "nodes": 247,
+      "edges": 251,
+      "edge_kinds": {
+        "lift": 4,
+        "piste": 247
+      },
+      "weak_components": 2,
+      "nodes_on_directed_cycles": 0,
+      "source_ways": 50,
+      "native_piste_grades": {
+        "advanced": 4,
+        "easy": 14,
+        "intermediate": 2,
+        "unknown": 1
+      },
+      "ways_with_opening_hours": 0,
+      "duration_basis": {
+        "assumed": 251
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    },
+    {
+      "id": "plose-bounded-osm-research",
+      "directory": "data/terrain/plose-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.718,46.680,11.732,46.691",
+      "fetched_at": "2026-10-07T00:06:25.015652+00:00",
+      "graph_sha256": "5bab2a57964fa42c2a1b01e59b749ae2fb5553061c7d57e537c8c66d4e2e7f17",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "IT",
+      "timezone": "Europe/Rome",
+      "nodes": 61,
+      "edges": 62,
+      "edge_kinds": {
+        "lift": 1,
+        "piste": 61
+      },
+      "weak_components": 1,
+      "nodes_on_directed_cycles": 0,
+      "source_ways": 10,
+      "native_piste_grades": {
+        "easy": 7,
+        "intermediate": 1,
+        "unknown": 1
+      },
+      "ways_with_opening_hours": 0,
+      "duration_basis": {
+        "assumed": 62
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    },
+    {
+      "id": "wachusett-bounded-osm-research",
+      "directory": "data/terrain/wachusett-research",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-71.9,42.475,-71.865,42.51",
+      "fetched_at": "2026-10-07T17:30:01.335377+00:00",
+      "graph_sha256": "e10e9cf1c62b859476de5c13c741d3031901c8ad9a1ea6d35424982b402ba5a8",
+      "license": "https://www.openstreetmap.org/copyright",
+      "region": "US",
+      "timezone": "America/New_York",
+      "nodes": 506,
+      "edges": 520,
+      "edge_kinds": {
+        "lift": 8,
+        "piste": 512
+      },
+      "weak_components": 9,
+      "nodes_on_directed_cycles": 32,
+      "source_ways": 59,
+      "native_piste_grades": {
+        "advanced": 9,
+        "easy": 7,
+        "intermediate": 27,
+        "novice": 4,
+        "unknown": 1
+      },
+      "ways_with_opening_hours": 1,
+      "duration_basis": {
+        "assumed": 520
+      },
+      "review_status": "unreviewed",
+      "current_operational_status": "unknown",
+      "app_enabled": false,
+      "next_gate": "Review real junctions, lift boarding and direction; obtain operator access/status evidence. A cycle count is not route approval."
+    }
+  ]
+}

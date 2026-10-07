@@ -1,0 +1,8 @@
+{
+  "graph_sha256": "f5eb4a8f27a5ced27e2bf5eeb04253e005af77d4c588c3287590bf9be5daba3c",
+  "source_sha256": "38d23f10c77dbe5b4a9756ee79f9b524f6153ed5bfa8b066a3e3cd7cedfe49cc",
+  "ways": 16,
+  "edges": 144,
+  "review_status": "unreviewed",
+  "warning": "Blank restrictions mean missing source tags, not unrestricted access. CSV is a review aid, not an approval ledger."
+}

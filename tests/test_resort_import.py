@@ -25,3 +25,22 @@ class ResortImportTests(unittest.TestCase):
   clean=sanitize(raw);self.assertIn(b'connection',clean);graph,_=import_osm(clean);self.assertEqual(graph['edges'],[])
  def test_expanded_plose_reproduces(self):
   folder=ROOT/'data/terrain/plose-expanded-research';m=json.loads((folder/'manifest.json').read_text());g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options']);self.assertEqual(g,json.loads((folder/'graph.json').read_text()));self.assertEqual(a,json.loads((folder/'import-audit.json').read_text()))
+
+ def test_new_regional_snapshots_reproduce(self):
+  for name in ('wachusett','patscherkofel'):
+   with self.subTest(resort=name):
+    folder=ROOT/'data/terrain'/f'{name}-research';m=json.loads((folder/'manifest.json').read_text())
+    g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options'])
+    self.assertEqual(g,json.loads((folder/'graph.json').read_text()))
+    self.assertEqual(a,json.loads((folder/'import-audit.json').read_text()))
+    self.assertTrue(g['edges']);self.assertTrue(all(e['review_status']=='unreviewed' for e in g['edges']))
+    if name=='wachusett':
+     self.assertTrue(any(e['difficulty']=='green' for e in g['edges']))
+     self.assertFalse(any(e['difficulty']=='red' for e in g['edges']))
+
+ def test_research_catalog_is_current_and_not_live(self):
+  from scripts.resort_catalog import build
+  catalog=build()
+  self.assertEqual(catalog,json.loads((ROOT/'research/evidence/resort-catalog.json').read_text()))
+  for row in catalog['snapshots']:
+   self.assertFalse(row['app_enabled']);self.assertEqual(row['current_operational_status'],'unknown')
