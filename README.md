@@ -84,7 +84,7 @@ The geographic view includes a small, locally bundled hillshade tile with visibl
 
 ### Map-first interface
 
-The offline sketch separates fictional lift and piste lines and labels each run. On phones the map appears first, with links to jump to the planning form. Alpendorf can switch between the sketch and a local geographic view with hillshade; only one canvas is shown at a time. The sketch remains available for printing and renderer failures. Fictional mountain artwork is illustrative, not elevation data.
+The offline sketch separates fictional lift and piste lines and labels each run. On phones the map appears first, with links to jump to the planning form. Alpendorf can switch between the sketch and a local geographic view with hillshade; only one canvas is shown at a time. The sketch remains available for printing and renderer failures. Fictional mountain artwork is illustrative, not elevation data. Select any itinerary step to inspect its assumed duration, move between repeated visits, or focus the map on that leg.
 
 ## License and attribution
 

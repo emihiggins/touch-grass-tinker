@@ -98,6 +98,70 @@
             ],
             [
               "text[x=\"24\"]"
+            ],
+            [
+              "li:nth-child(8) > .step-select"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "selected",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ],
+            [
+              "li:nth-child(8) > .step-select"
             ]
           ]
         }
@@ -215,6 +279,70 @@
             ],
             [
               "text[x=\"24\"]"
+            ],
+            [
+              "li:nth-child(8) > .step-select"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "state": "selected",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ],
+            [
+              "li:nth-child(8) > .step-select"
             ]
           ]
         }
@@ -282,6 +410,64 @@
     {
       "width": 1440,
       "state": "planned",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "#request"
+            ],
+            [
+              "#map-out"
+            ],
+            [
+              "text[x=\"565\"]"
+            ],
+            [
+              "text[x=\"325\"]"
+            ],
+            [
+              "text[x=\"465\"]"
+            ],
+            [
+              "text[x=\"215\"]"
+            ],
+            [
+              "text[x=\"165\"]"
+            ],
+            [
+              "text[x=\"315\"]"
+            ],
+            [
+              "text[x=\"455\"]"
+            ],
+            [
+              "text[x=\"205\"]"
+            ],
+            [
+              "text[x=\"155\"]"
+            ],
+            [
+              "text[x=\"360\"]"
+            ],
+            [
+              "text[x=\"450\"]"
+            ],
+            [
+              "text[x=\"359\"]"
+            ],
+            [
+              "text[x=\"24\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "selected",
       "violations": [],
       "incomplete": [
         {

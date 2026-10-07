@@ -25,5 +25,5 @@ A mountain field guide: a compact introduction, a prominent terrain view, an exp
 
 ## Next high-value work
 - Qualified review of real-resort access/directions remains necessary before navigation claims; visual polish does not satisfy it.
-- Add a richer route-inspection panel with time per leg only when the API supplies the corresponding trustworthy estimate and uncertainty.
+- Implemented next: [route inspection](route-inspection.md) uses queue-inclusive simulation estimates with explicit uncertainty, not real-world timing.
 - A larger independent field evaluation is preferable to tuning on the frozen 16-case result; no new model run is part of this UI change.

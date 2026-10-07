@@ -29,4 +29,23 @@ class ServerTests(unittest.TestCase):
   self.assertEqual(e.exception.code,413);e.exception.close()
  def test_security_headers(self):
   r=urllib.request.urlopen(self.base+'/');self.assertIn("default-src 'self'",r.headers['Content-Security-Policy'])
-if __name__=='__main__':unittest.main()
+
+ def test_step_timeline_includes_queue_and_repeated_visits(self):
+  from unittest.mock import patch
+  from liftlap import fixtures
+  original=fixtures.scenario
+  def queued(g):
+   scenario=original(g)
+   for edge in g['edges']:
+    if edge['kind']=='lift':scenario['edges'][edge['id']]['queue_s']=75
+   return scenario
+  i=handle_api('/api/interpret',{'text':'only blues, no drag lifts, 45 minutes'})['intent']
+  with patch('liftlap.server.fixtures.scenario',side_effect=queued):
+   result=handle_api('/api/plan',{'intent':i})
+  self.assertEqual(result['status'],'ok')
+  steps=result['steps'];self.assertGreater(sum(s['queue_seconds'] for s in steps),0)
+  self.assertEqual(steps[0]['start_seconds'],0)
+  self.assertEqual(steps[-1]['end_seconds'],result['route']['total_seconds'])
+  self.assertEqual(sum(s['seconds'] for s in steps),result['route']['total_seconds'])
+  for left,right in zip(steps,steps[1:]):self.assertEqual(left['end_seconds'],right['start_seconds'])
+  self.assertTrue(all('assumed' in s['duration_basis'] for s in steps))
