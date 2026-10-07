@@ -26,13 +26,15 @@ except ValueError:pass
 else:raise AssertionError('Live mode unexpectedly enabled')
 server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+# These URLs are exclusively the local test server, never a provider.
+local_open=urllib.request.build_opener(urllib.request.ProxyHandler({})).open
 try:
     base=f'http://127.0.0.1:{server.server_port}'
     for path,mime in [('/','text/html'),('/app.js','text/javascript'),('/style.css','text/css'),('/maplibre-gl-csp.js','text/javascript'),('/maplibre-gl-csp-worker.js','text/javascript'),('/maplibre-gl.css','text/css'),('/terrain/12/2198/1435.png','image/png'),('/terrain-notices.txt','text/plain')]:
-        with urllib.request.urlopen(base+path,timeout=5) as response:
+        with local_open(base+path,timeout=5) as response:
             assert response.status==200 and response.headers['Content-Type'].startswith(mime),(path,response.status)
             assert response.read(),path
-    with urllib.request.urlopen(base+'/api/context?terrain=alpendorf',timeout=5) as response:
+    with local_open(base+'/api/context?terrain=alpendorf',timeout=5) as response:
         context=json.load(response);assert len(context['graph']['edges'])==495
         assert context['live_model_enabled'] is False
 finally:

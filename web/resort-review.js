@@ -29,18 +29,48 @@ function comps(g) {
   return r;
 }
 function excludedDetail(e) {
+  E = null;
+  L = null;
+  $('lift-review').value = '';
+  $('lift-detail').replaceChildren();
+  $('x').checked = true;
   X = e.source_ref;
   draw();
-  const d = $('detail'); d.replaceChildren();
-  const h = document.createElement('b'); h.textContent = e.name || e.source_ref; d.append(h);
+  const d = $('detail');
+  d.replaceChildren();
+  const h = document.createElement('b');
+  h.textContent = e.name || e.source_ref;
+  d.append(h);
   const dl = document.createElement('dl');
-  for (const pair of [['Status', e.status], ['Class', e.classification], ['Reason', e.reason], ['Native grade', e.difficulty || 'unknown'], ['Native tags', JSON.stringify(e.native_tags || {})], ['Source way', e.source_ref]]) {
-    const dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = pair[0]; dd.textContent = pair[1]; dl.append(dt, dd);
+  for (const pair of [
+    ['Status', e.status],
+    ['Class', e.classification],
+    ['Reason', e.reason],
+    ['Native grade', e.difficulty || 'unknown'],
+    ['Native tags', JSON.stringify(e.native_tags || {})],
+    ['Source way', e.source_ref],
+  ]) {
+    const dt = document.createElement('dt'),
+      dd = document.createElement('dd');
+    dt.textContent = pair[0];
+    dd.textContent =
+      pair[0] === 'Reason' ? String(pair[1] || 'not recorded').replaceAll('_', ' ') : pair[1];
+    dl.append(dt, dd);
   }
-  const a = document.createElement('a'); a.href = 'https://www.openstreetmap.org/' + e.source_ref; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Open source way';
-  d.append(dl, a); $('status').textContent = 'Selected excluded source geometry; routing unchanged.'; d.focus();
+  const a = document.createElement('a');
+  a.href = 'https://www.openstreetmap.org/' + e.source_ref;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.textContent = 'Open source way';
+  d.append(dl, a);
+  $('status').textContent = 'Selected excluded source geometry; routing unchanged.';
+  d.focus();
 }
 function detail(e) {
+  X = null;
+  L = null;
+  $('lift-review').value = '';
+  $('lift-detail').replaceChildren();
   E = e.id;
   draw();
   let d = $('detail');
@@ -80,8 +110,16 @@ function draw() {
   let extra = (L?.endpoint_incidence || []).map((e) => e.coordinate).filter(Boolean);
   const excluded = C.excluded_source || [];
   const excludedCoords = excluded.flatMap((e) => e.geometry || []);
-  let allX = [...g.nodes.map((n) => n.lon), ...extra.map((c) => c[0]), ...excludedCoords.map((c) => c[0])];
-  let allY = [...g.nodes.map((n) => n.lat), ...extra.map((c) => c[1]), ...excludedCoords.map((c) => c[1])];
+  let allX = [
+    ...g.nodes.map((n) => n.lon),
+    ...extra.map((c) => c[0]),
+    ...excludedCoords.map((c) => c[0]),
+  ];
+  let allY = [
+    ...g.nodes.map((n) => n.lat),
+    ...extra.map((c) => c[1]),
+    ...excludedCoords.map((c) => c[1]),
+  ];
   let lonValues = allX,
     latValues = allY,
     a = Math.min(...lonValues),
@@ -96,13 +134,36 @@ function draw() {
   for (let n of cc.values()) counts.set(n, (counts.get(n) || 0) + 1);
   let largest = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
   for (const e of $('x').checked ? excluded : []) {
-    const q = document.createElementNS('http://www.w3.org/2000/svg', e.classification === 'closed-area' ? 'polygon' : 'polyline');
-    q.setAttribute('points', (e.geometry || []).map(f).map((x) => x.join(',')).join(' '));
-    q.setAttribute('class', 'excluded ' + e.classification + (X === e.source_ref ? ' selected' : ''));
-    q.setAttribute('tabindex', '0'); q.setAttribute('role', 'button');
-    q.setAttribute('aria-label', (e.name || e.source_ref) + ', excluded source geometry, ' + (e.reason || 'no reason recorded'));
+    const q = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      e.classification === 'closed-area' ? 'polygon' : 'polyline',
+    );
+    q.setAttribute(
+      'points',
+      (e.geometry || [])
+        .map(f)
+        .map((x) => x.join(','))
+        .join(' '),
+    );
+    q.setAttribute(
+      'class',
+      'excluded ' + e.classification + (X === e.source_ref ? ' selected' : ''),
+    );
+    q.setAttribute('tabindex', '0');
+    q.setAttribute('role', 'button');
+    q.setAttribute(
+      'aria-label',
+      (e.name || e.source_ref) +
+        ', excluded source geometry, ' +
+        (e.reason || 'no reason recorded'),
+    );
     q.onclick = () => excludedDetail(e);
-    q.onkeydown = (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); excludedDetail(e); } };
+    q.onkeydown = (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        excludedDetail(e);
+      }
+    };
     v.append(q);
   }
   for (let e of g.edges.filter(
@@ -154,7 +215,9 @@ function draw() {
     v.append(circle, label);
   }
   $('sum').textContent =
-    'Excluded source shapes: ' + (excluded.length) + ' · Nodes: ' +
+    'Excluded source shapes: ' +
+    excluded.length +
+    ' · Nodes: ' +
     g.nodes.length +
     ' · Edges: ' +
     g.edges.length +
@@ -176,6 +239,7 @@ for (let k in D) {
 }
 function load() {
   C = D[$('s').value];
+  X = null;
   E = null;
   L = null;
   $('lift-detail').replaceChildren();
@@ -198,13 +262,22 @@ function load() {
   draw();
 }
 function renderExcludedList() {
-  const list = $('excluded-list'); list.replaceChildren();
+  const list = $('excluded-list');
+  list.replaceChildren();
   for (const item of C.excluded_source || []) {
-    const li = document.createElement('li'), b = document.createElement('button');
-    b.type = 'button'; b.textContent = `${item.name || item.source_ref} — ${item.classification}; ${item.reason || 'excluded'}`;
-    b.onclick = () => excludedDetail(item); li.append(b); list.append(li);
+    const li = document.createElement('li'),
+      b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = `${item.name || item.source_ref} — ${item.classification}; ${item.reason || 'excluded'}`;
+    b.onclick = () => excludedDetail(item);
+    li.append(b);
+    list.append(li);
   }
-  if (!list.children.length) { const li = document.createElement('li'); li.textContent = 'No excluded source geometry in this snapshot.'; list.append(li); }
+  if (!list.children.length) {
+    const li = document.createElement('li');
+    li.textContent = 'No excluded source geometry in this snapshot.';
+    list.append(li);
+  }
 }
 $('s').onchange = load;
 for (let x of ['l', 'p', 'd', 'x'])
@@ -218,6 +291,7 @@ for (let x of ['l', 'p', 'd', 'x'])
 load();
 
 $('lift-review').onchange = () => {
+  X = null;
   L = C.diagnostics?.lifts.find((l) => l.source_ref == $('lift-review').value) || null;
   E = L?.imported_edge_ids[0] || null;
   $('detail').replaceChildren();
