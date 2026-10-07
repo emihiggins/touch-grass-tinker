@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "review_status": "qualification_blocked",
+  "reviewed_at": "2026-10-07T23:27:00Z",
+  "scope": "Discovery structural return; evidence packet only, not routing approval",
+  "routing_approved": false,
+  "graph_sha256": "8707dc7c820506c76be45cd2a89fc0308cc55889daba295718b607ac05c485fd",
+  "source_sha256": "f2a77cfbfd15cedfd1705c9d13ce0e282069ad1cc586a24aa2cc27831f031318",
+  "source_snapshot": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-105.777,39.878,-105.758,39.891",
+    "fetched_at": "2026-10-07T20:40:10.596653+00:00",
+    "attribution": "© OpenStreetMap contributors; ODbL 1.0",
+    "license": "https://www.openstreetmap.org/copyright",
+    "coverage": "Partial base-area extract; not complete resort coverage"
+  },
+  "topology": {
+    "lift": {
+      "source_ref": "way/86248729",
+      "edge_id": "osm:way:86248729:0",
+      "source_version": "3",
+      "source_nodes": [
+        "1001081226",
+        "8772576980",
+        "8772576979",
+        "8772576978",
+        "8772576977",
+        "8772576976",
+        "1001081228"
+      ],
+      "from_node": "1001081226",
+      "to_node": "1001081228",
+      "native_tags": {
+        "aerialway": "chair_lift",
+        "aerialway:capacity": "1200",
+        "aerialway:duration": "3.5",
+        "aerialway:occupancy": "2",
+        "name": "Discovery"
+      },
+      "native_direction_tag": null,
+      "native_access_tags": {},
+      "native_grade_tag": null,
+      "unknown_fields": [
+        "boarding_terminal",
+        "alighting_terminal",
+        "permitted skier access",
+        "operating status",
+        "closure schedule",
+        "measured timing"
+      ]
+    },
+    "return": {
+      "source_ref": "way/377599455",
+      "name": "Bill Wilson's Way",
+      "edge_ids": [
+        "osm:way:377599455:0",
+        "osm:way:377599455:1",
+        "osm:way:377599455:2",
+        "osm:way:377599455:3",
+        "osm:way:377599455:4",
+        "osm:way:377599455:5",
+        "osm:way:377599455:6",
+        "osm:way:377599455:7"
+      ],
+      "source_version": "2",
+      "source_nodes": [
+        "1001081228",
+        "3809781206",
+        "3809781229",
+        "3809781259",
+        "3809781281",
+        "3809781293",
+        "3809781319",
+        "3809781335",
+        "1001081226"
+      ],
+      "native_tags": {
+        "name": "Bill Wilson's Way",
+        "piste:difficulty": "easy",
+        "piste:type": "downhill"
+      },
+      "native_direction_tag": null,
+      "native_access_tags": {},
+      "native_grade": "easy",
+      "normalized_grade": "green",
+      "unknown_fields": [
+        "permitted skier access",
+        "operating status",
+        "closure schedule",
+        "measured timing",
+        "whether the lift/piste transfer is authorized"
+      ]
+    },
+    "finding": "The saved directed graph contains an 8-segment piste-only path from the lift's source-direction to-node back to its source-direction from-node. This establishes topology under imported direction only; it does not establish an actual accessible descent or a usable lift return."
+  },
+  "station_evidence": {
+    "source_ref": "way/86248729",
+    "endpoints": [
+      {
+        "node": "1001081226",
+        "coordinate": [
+          -105.7747227,
+          39.8879755
+        ],
+        "native_tags": {
+          "aerialway": "station"
+        }
+      },
+      {
+        "node": "1001081228",
+        "coordinate": [
+          -105.7732682,
+          39.8854182
+        ],
+        "native_tags": {
+          "aerialway": "station"
+        }
+      }
+    ],
+    "matching_relations": [],
+    "routing_enabled": false,
+    "qualification": "Station tags support endpoint identity in the saved snapshot only; they do not prove boarding direction, skier access, transfer, or current operation."
+  },
+  "official_context": [
+    {
+      "url": "https://www.winterparkresort.com/the-mountain/mountain-report",
+      "retrieved_at": "2026-10-07T23:27:00Z",
+      "result": "Public official mountain-report page was readable, but its rendered text did not expose a Discovery-specific status in this fetch.",
+      "use": "Reference for a future current lift/trail status check only; no status claim made."
+    },
+    {
+      "url": "https://www.winterparkresort.com/the-mountain/hours-of-operation",
+      "retrieved_at": "2026-10-07T23:27:00Z",
+      "result": "Official page states operating hours depend on weather and conditions and may change.",
+      "use": "Supports treating operation as time-varying unknown; does not qualify Discovery access."
+    },
+    {
+      "url": "https://www.winterparkresort.com/the-mountain/mountain-information/maps",
+      "retrieved_at": "2026-10-07T23:27:00Z",
+      "result": "Official page links to winter trail and base-area maps.",
+      "use": "Identifies an operator reference for human review; no copyrighted map artwork copied or republished."
+    }
+  ],
+  "defects_and_follow_up": {
+    "evidenced_review_ux_gap": "The importer graph retains source_version and source_difficulty but not the complete native tag set; reviewers must cross-reference source.osm to see absent access/direction tags. This packet records that distinction explicitly.",
+    "not_fixed": "No importer or graph change was made: changing graph metadata would invalidate the saved graph hash, and routing topology and visibility must remain unchanged.",
+    "required_external_qualification": [
+      "Confirm actual boarding/alighting terminals",
+      "Confirm downhill permission and lift/piste transfer",
+      "Confirm current operator status and expiry/unknown behavior",
+      "Validate timing and intended base/access journey with a qualified reviewer"
+    ]
+  },
+  "evidence_files": {
+    "source_osm": "data/terrain/winter-park-research/source.osm",
+    "manifest": "data/terrain/winter-park-research/manifest.json",
+    "import_audit": "data/terrain/winter-park-research/import-audit.json",
+    "station_evidence": "data/terrain/winter-park-research/station-evidence.json",
+    "connectivity_diagnostics": "data/terrain/winter-park-research/connectivity-diagnostics.json",
+    "saved_return_screen": "research/evidence/resort-review/winter-park-lift-returns.json"
+  }
+}
