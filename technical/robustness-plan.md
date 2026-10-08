@@ -26,7 +26,7 @@ Language stress fixtures: double negation, conflicting instructions, typos, mixe
 
 Time cases: midnight rollover, timezone-aware timestamps, DST repeated/nonexistent local times, boundary closing times, stale operating data. If current contract cannot represent an ambiguous time, reject/clarify explicitly rather than invent a timezone. Do not broaden the supported time contract accidentally through a test patch.
 
-- [ ] Every generated accepted route passes independent validation; injected invalid paths are rejected. Seeded accepted-route checks pass, but injected-ID/direction/closure tests currently stop at stale snapshot hashes; reason-specific fixtures need repair.
+- [x] Every generated accepted route passes independent validation; injected invalid paths are rejected with reason-specific fixtures. ([R02 evidence](../research/evidence/model-robustness-r02/README.md))
 - [x] Failures emit seed/minimal fixture for replay and enter a regression corpus. The bounded suite reports each seed through unittest subtests; synthetic fixtures remain local and replayable.
 - [ ] Injection cannot alter graph data, hard constraints, model tools or provider configuration. Deterministic-only tests do not yet establish this language/provider-boundary claim.
 - [ ] Unsupported temporal cases fail explicitly and supported boundaries have regression tests. Naive timestamps are rejected; midnight, DST and exact-closing fixtures remain. The one-minute monotonicity fixture currently fails v1 input validation rather than budget feasibility.
