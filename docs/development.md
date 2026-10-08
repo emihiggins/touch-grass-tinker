@@ -51,6 +51,7 @@ Do not modify frozen data/prompt files to improve a reported score. Add a new ve
 See [CONTRIBUTING.md](../CONTRIBUTING.md) and [evaluation](evaluation.md).
 
 Map interaction checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-map.cjs`. They require rendered geographic features, no external requests, 320px reflow and a simulated renderer-failure fallback. CSP permits same-origin workers and inline styles required by map positioning; script execution and network connections remain same-origin only. Vendored source checksums: `research/maplibre-assets.json`.
+Resort preview checks: `PLAYWRIGHT_MODULE=/path/to/playwright-core node scripts/browser-resort-review.cjs` (with the loopback server running). This covers 390/768/1440px rendering, keyboard source-way search, duplicate-name grouping, empty/clear states, terrain reset, filter-hidden selection messaging, and zero external requests.
 
 ## Resort import research
 
