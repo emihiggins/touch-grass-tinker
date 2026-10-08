@@ -6,6 +6,7 @@ let C,
   X,
   Q = '';
 let selectedSource = null;
+let focusSelection = false;
 function comps(g) {
   let a = new Map(g.nodes.map((n) => [n.id, new Set()]));
   g.edges.forEach((e) => {
@@ -165,6 +166,7 @@ function clearSegmentSelection() {
   E = null;
   X = null;
   selectedSource = null;
+  focusSelection = false;
   $('detail').replaceChildren();
   $('lift-detail').replaceChildren();
 }
@@ -207,37 +209,57 @@ function detail(e) {
   draw();
   d.focus();
 }
+function visibleEdge(e, cc, largest) {
+  return (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
+    ($('d').checked || cc.get(e.from) == largest);
+}
+function selectedCoordinates(g, cc, largest) {
+  if (X) {
+    if (!$('x').checked) return [];
+    const item = (C.excluded_source || []).find((e) => e.source_ref === X);
+    return item?.geometry_segments?.flat() || item?.geometry || [];
+  }
+  const edges = g.edges.filter((e) => selectedSource && (e.source_refs || []).includes(selectedSource) && visibleEdge(e, cc, largest));
+  return edges.flatMap((e) => e.geometry || []);
+}
 function draw() {
   let g = C.graph,
     m = C.manifest,
     v = $('map');
   v.replaceChildren();
-  let extra = (L?.endpoint_incidence || []).map((e) => e.coordinate).filter(Boolean);
   const excluded = C.excluded_source || [];
+  const extra = (L?.endpoint_incidence || []).map((e) => e.coordinate).filter(Boolean);
   const excludedCoords = excluded.flatMap((e) => e.geometry || []);
-  let allX = [
-    ...g.nodes.map((n) => n.lon),
-    ...extra.map((c) => c[0]),
-    ...excludedCoords.map((c) => c[0]),
-  ];
-  let allY = [
-    ...g.nodes.map((n) => n.lat),
-    ...extra.map((c) => c[1]),
-    ...excludedCoords.map((c) => c[1]),
-  ];
-  let lonValues = allX,
-    latValues = allY,
-    a = Math.min(...lonValues),
-    b = Math.max(...lonValues),
-    c = Math.min(...latValues),
-    d = Math.max(...latValues),
-    cos = Math.cos((((c + d) / 2) * Math.PI) / 180),
-    z = Math.min(790 / ((b - a) * cos || 1), 470 / (d - c || 1)),
-    f = ([x, y]) => [450 + (x - (a + b) / 2) * cos * z, 280 - (y - (c + d) / 2) * z],
-    cc = comps(g);
+  const cc = comps(g);
   let counts = new Map();
   for (let n of cc.values()) counts.set(n, (counts.get(n) || 0) + 1);
   let largest = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
+  const selected = selectedCoordinates(g, cc, largest);
+  if (focusSelection && !selected.length) focusSelection = false;
+  const allCoords = focusSelection ? selected : [
+    ...g.nodes.map((n) => [n.lon, n.lat]),
+    ...extra,
+    ...excludedCoords,
+  ];
+  let allX = allCoords.map((c) => c[0]),
+    allY = allCoords.map((c) => c[1]),
+    a = Math.min(...allX),
+    b = Math.max(...allX),
+    c = Math.min(...allY),
+    d = Math.max(...allY),
+    cos = Math.cos((((c + d) / 2) * Math.PI) / 180);
+  const minSpan = 0.0008;
+  const spanX = Math.max(b - a, minSpan / Math.max(cos, 0.01));
+  const spanY = Math.max(d - c, minSpan);
+  const padX = spanX * 0.12;
+  const padY = spanY * 0.12;
+  a = (a + b) / 2 - spanX / 2 - padX;
+  b = (a + b) / 2 + spanX / 2 + padX;
+  c = (c + d) / 2 - spanY / 2 - padY;
+  d = (c + d) / 2 + spanY / 2 + padY;
+  cos = Math.cos((((c + d) / 2) * Math.PI) / 180);
+  let z = Math.min(790 / ((b - a) * cos || 1), 470 / (d - c || 1)),
+    f = ([x, y]) => [450 + (x - (a + b) / 2) * cos * z, 280 - (y - (c + d) / 2) * z];
   for (const e of $('x').checked ? excluded : []) {
     const segments = e.geometry_segments || [e.geometry || []];
     for (const segment of segments) {
@@ -278,8 +300,7 @@ function draw() {
   }
   for (let e of g.edges.filter(
     (e) =>
-      (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
-      ($('d').checked || cc.get(e.from) == largest),
+      visibleEdge(e, cc, largest),
   )) {
     let q = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
     q.setAttribute(
@@ -314,9 +335,7 @@ function draw() {
   if (selectedSource) {
     const visible = g.edges.some(
       (e) =>
-        (e.source_refs || []).includes(selectedSource) &&
-        (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
-        ($('d').checked || cc.get(e.from) == largest),
+        (e.source_refs || []).includes(selectedSource) && visibleEdge(e, cc, largest),
     );
     if (!visible) {
       $('status').textContent =
@@ -347,6 +366,8 @@ function draw() {
     label.textContent = String(i + 1);
     v.append(circle, label);
   }
+  $('focus-selection').disabled = !selected.length;
+  $('focus-selection').setAttribute('aria-label', selected.length ? 'Focus the selected visible geometry' : 'Focus selection unavailable because no selected geometry is visible');
   $('sum').textContent =
     'Excluded source shapes: ' +
     excluded.length +
@@ -376,6 +397,7 @@ function load() {
   E = null;
   L = null;
   Q = '';
+  focusSelection = false;
   selectedSource = null;
   $('trail-search').value = '';
   $('lift-detail').replaceChildren();
@@ -418,6 +440,14 @@ function renderExcludedList() {
   }
 }
 $('s').onchange = load;
+$('focus-selection').onclick = () => {
+  focusSelection = true;
+  draw();
+};
+$('fit-all').onclick = () => {
+  focusSelection = false;
+  draw();
+};
 for (let x of ['l', 'p', 'd', 'x'])
   $(x).onchange = () => {
     $('status').textContent = selectedSource
