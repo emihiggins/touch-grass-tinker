@@ -6,6 +6,13 @@ import xml.etree.ElementTree as ET
 
 LIFT_TYPES={'chair_lift':'chairlift','gondola':'gondola','cable_car':'cable-car','t-bar':'t-bar','platter':'platter','rope_tow':'rope-tow','magic_carpet':'magic-carpet'}
 DIFFICULTY={'novice':'blue','easy':'blue','intermediate':'red','advanced':'black'}
+SUPPORTED_ONEWAY={'yes','no','1','0','true','false','-1'}
+CONDITIONAL_RESTRICTION_KEYS=('access:conditional','ski:conditional','aerialway:access:conditional')
+
+def restriction_tags(tags):
+    """Return source restriction tags that the importer deliberately does not evaluate."""
+    return {k:tags[k] for k in (*CONDITIONAL_RESTRICTION_KEYS,'access','ski','aerialway:access')
+            if k in tags and (k in CONDITIONAL_RESTRICTION_KEYS or tags[k].lower()=='conditional')}
 
 def distance(a,b):
     la,lb=math.radians(a[1]),math.radians(b[1]);dl=math.radians(b[0]-a[0]);dp=lb-la
@@ -31,10 +38,18 @@ def import_osm(raw, *, graph_id='alpendorf-osm-lab', timezone='Europe/Vienna', d
         reason=None
         if t.get('area')=='yes' or len(ns)<2 or ns[0]==ns[-1]:reason='area_or_closed_way'
         elif any(n not in coords for n in ns):reason='missing_node'
+        elif restriction_tags(t):reason='conditional_access_requires_review'
         elif any(t.get(k) in {'no','private'} for k in ('access','ski','aerialway:access')):reason='restricted_access'
+        elif any(k in t and t[k].lower() not in SUPPORTED_ONEWAY for k in ('oneway','piste:oneway')):reason='unknown_oneway_requires_review'
         elif t.get('oneway')=='-1' or t.get('piste:oneway')=='-1':reason='reversed_direction_requires_review'
         elif piste and t.get('piste:difficulty') not in difficulty_mapping:reason='unknown_difficulty'
-        if reason:skipped.append({'way_id':wid,'reason':reason});continue
+        if reason:
+            item={'way_id':wid,'reason':reason}
+            source_restrictions=restriction_tags(t)
+            source_directions={k:t[k] for k in ('oneway','piste:oneway') if k in t}
+            if source_restrictions: item['source_restriction_tags']=source_restrictions
+            if reason=='unknown_oneway_requires_review': item['source_direction_tags']=source_directions
+            skipped.append(item);continue
         # Lift is one terminal-to-terminal edge; preserve whole geometry. Pistes split at every source node.
         chunks=[(0,ns)] if lift else [(i,[a,b]) for i,(a,b) in enumerate(zip(ns,ns[1:]))]
         for index,chunk in chunks:

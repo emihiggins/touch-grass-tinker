@@ -23,6 +23,26 @@ class ResortImportTests(unittest.TestCase):
  def test_connection_evidence_preserved_but_not_routed(self):
   raw=b'<osm><node id="a" lat="0" lon="0"/><node id="b" lat="0.001" lon="0"/><way id="1"><nd ref="a"/><nd ref="b"/><tag k="piste:type" v="connection"/><tag k="piste:difficulty" v="easy"/></way></osm>'
   clean=sanitize(raw);self.assertIn(b'connection',clean);graph,_=import_osm(clean);self.assertEqual(graph['edges'],[])
+
+
+ def test_unsupported_conditional_access_is_review_excluded_and_preserved(self):
+  raw=b'''<osm><node id="a" lat="0" lon="0"/><node id="b" lat="0.001" lon="0"/>
+   <way id="1"><nd ref="a"/><nd ref="b"/><tag k="piste:type" v="downhill"/><tag k="piste:difficulty" v="easy"/>
+    <tag k="access:conditional" v="no @ (08:00-16:00)"/></way>
+   <way id="2"><nd ref="a"/><nd ref="b"/><tag k="aerialway" v="chair_lift"/><tag k="aerialway:access:conditional" v="private @ (Mo-Fr)"/></way></osm>'''
+  clean=sanitize(raw);self.assertIn(b'access:conditional',clean);self.assertIn(b'aerialway:access:conditional',clean)
+  graph,audit=import_osm(clean)
+  self.assertEqual(graph['edges'],[])
+  self.assertEqual({x['reason'] for x in audit['skipped_ways']},{'conditional_access_requires_review'})
+  self.assertEqual(audit['skipped_ways'][0]['source_restriction_tags']['access:conditional'],'no @ (08:00-16:00)')
+
+ def test_unknown_oneway_is_review_excluded_but_known_values_remain_supported(self):
+  raw=b'''<osm><node id="a" lat="0" lon="0"/><node id="b" lat="0.001" lon="0"/>
+   <way id="1"><nd ref="a"/><nd ref="b"/><tag k="piste:type" v="downhill"/><tag k="piste:difficulty" v="easy"/><tag k="oneway" v="maybe"/></way>
+   <way id="2"><nd ref="a"/><nd ref="b"/><tag k="piste:type" v="downhill"/><tag k="piste:difficulty" v="easy"/><tag k="oneway" v="yes"/></way></osm>'''
+  graph,audit=import_osm(raw)
+  self.assertEqual(len(graph['edges']),1);self.assertEqual(graph['edges'][0]['source_refs'],['way/2'])
+  self.assertEqual(audit['skipped_ways'],[{'way_id':'1','reason':'unknown_oneway_requires_review','source_direction_tags':{'oneway':'maybe'}}])
  def test_expanded_plose_reproduces(self):
   folder=ROOT/'data/terrain/plose-expanded-research';m=json.loads((folder/'manifest.json').read_text());g,a=import_osm((folder/'source.osm').read_bytes(),**m['import_options']);self.assertEqual(g,json.loads((folder/'graph.json').read_text()));self.assertEqual(a,json.loads((folder/'import-audit.json').read_text()))
 
