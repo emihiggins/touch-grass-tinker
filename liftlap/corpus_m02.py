@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 from .corpus import audit
+from .corpus import conversation
 
 PARTITIONS = {
     'train_candidate': 'training', 'training_candidate': 'training', 'train': 'training',
@@ -43,6 +44,55 @@ def row_hashes(case):
             'graph_sha256': _sha(case['graph']) if case.get('graph') else None,
             'catalog_constraints_sha256': _sha({'catalog': case.get('catalog', []), 'edge_overrides': case.get('edge_overrides', {}), 'gold_example_route': case.get('gold_example_route')}),
             'label_sha256': _sha(case['gold_intent'])}
+
+
+def source_lineage_overlaps(cases, source_cases):
+    """Report candidate rows that reuse source IDs or reviewed material."""
+    candidate_by_source = {}
+    candidate_by_key = {}
+    for case in cases:
+        source_id = case.get('provenance', {}).get('historical_source_id')
+        if source_id:
+            candidate_by_source.setdefault(source_id, []).append(case['id'])
+        candidate_by_key.setdefault(normalized_row_key(case), []).append(case['id'])
+    overlaps = []
+    for source in source_cases:
+        source_id = source.get('id')
+        if source_id in candidate_by_source:
+            overlaps.append('historical-source-id: ' + source_id + ' => ' + ', '.join(candidate_by_source[source_id]))
+        key = normalized_row_key(source)
+        if key in candidate_by_key:
+            overlaps.append('normalized-row: ' + source_id + ' => ' + ', '.join(candidate_by_key[key]))
+    return sorted(set(overlaps))
+
+
+def approved_export(cases, prompt, *, source_cases=()):
+    """Export only current, approved v2 training rows; fail closed otherwise."""
+    if not cases:
+        raise ValueError('No M02 rows supplied')
+    normalized = copy.deepcopy(cases)
+    for case in normalized:
+        if case.get('split') == 'train_candidate':
+            case['split'] = 'train'
+    report = audit(normalized)
+    errors = list(report['errors'])
+    errors.extend('source overlap: ' + item for item in source_lineage_overlaps(cases, source_cases))
+    errors.extend('near duplicate review required: ' + item for item in report['warnings'])
+    for case in cases:
+        cid = case.get('id', '<missing>')
+        if case.get('split') != 'train_candidate':
+            errors.append('M02 export requires train_candidate split: ' + cid)
+        if case.get('gold_intent', {}).get('schema_version') != 2:
+            errors.append('M02 export requires intent-v2: ' + cid)
+        if not label_approved(case):
+            errors.append('M02 approval required: ' + cid)
+        for name, value in row_hashes(case).items():
+            stored = case.get('review', {}).get(name)
+            if stored is not None and stored != value:
+                errors.append('stale ' + name + ': ' + cid)
+    if errors:
+        raise ValueError('; '.join(sorted(set(errors))))
+    return [conversation(case, prompt) for case in cases]
 
 def normalized_row_key(case):
     """Diagnostic duplicate key for request, context, catalog and edge overrides."""
