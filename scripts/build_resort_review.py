@@ -1,6 +1,11 @@
 import json,hashlib,xml.etree.ElementTree as ET
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
+REVIEW_TAGS = {"name", "piste:type", "piste:difficulty", "aerialway", "oneway", "piste:oneway", "aerialway:access", "access", "ski", "foot", "access:conditional", "ski:conditional", "opening_hours", "seasonal", "aerialway:duration"}
+
+def source_evidence(root):
+ return {f"way/{way.get('id')}": {"version":way.get('version'), "tags":{t.get('k'):t.get('v') for t in way.findall('tag') if t.get('k') in REVIEW_TAGS}} for way in root.findall('way')}
+
 def digest(path):
  return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -35,6 +40,7 @@ def main():
  for k,(label,n) in S.items():
   x=R/"data/terrain"/n;d[k]={"label":label,"graph":json.loads((x/"graph.json").read_text()),"manifest":json.loads((x/"manifest.json").read_text())}
   verify_snapshot(x,d[k]["manifest"])
+  d[k]["source_evidence"]=source_evidence(ET.parse(x/"source.osm").getroot())
   if (x/"connectivity-diagnostics.json").exists():
    diag=json.loads((x/"connectivity-diagnostics.json").read_text());m=d[k]['manifest']
    actual_graph,actual_source=verify_snapshot(x,m,diag)

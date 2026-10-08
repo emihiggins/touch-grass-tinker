@@ -25,3 +25,9 @@ All imported edge times remain estimates. A qualified resort/domain reviewer sho
 Generate a new packet offline with `python3 scripts/resort_review_packet.py --graph GRAPH.json --source SOURCE.osm --out NEW_DIRECTORY`. Existing output directories are refused so decisions cannot be overwritten by regeneration. The packet is a review aid; approval-state enforcement is not implemented.
 
 The standalone resort preview builder verifies the manifest, diagnostic, and station-evidence hashes against the current `source.osm` and `graph.json` bytes before rendering. Excluded ways with missing source nodes are rendered as separate known-node segments (or omitted when the source way itself is absent); the preview never joins across an unknown gap.
+
+The browse-only preview now displays source versions and allowlisted native access,
+direction, operating and duration tags for imported segments and selected lifts.
+Missing tags are explicitly unknown; neither a source tag nor imported edge
+orientation constitutes independent direction/access or current-status approval.
+These annotations are derived from hash-checked snapshots without modifying graphs.

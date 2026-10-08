@@ -53,3 +53,12 @@ class T(unittest.TestCase):
     (folder/'source.osm').write_bytes((folder/'source.osm').read_bytes()+b'\n')
     with self.assertRaisesRegex(ValueError,'Snapshot bytes'):
      verify_snapshot(folder,manifest)
+
+ def test_native_evidence_allowlist_and_unknowns(self):
+   import xml.etree.ElementTree as ET
+   from scripts.build_resort_review import source_evidence
+   root=ET.fromstring('<osm><way id="1" version="2" user="private"><tag k="access" v="no"/><tag k="oneway" v="-1"/><tag k="contact:email" v="private@example.invalid"/></way><way id="2"/></osm>')
+   evidence=source_evidence(root)
+   self.assertEqual(evidence['way/1'],{'version':'2','tags':{'access':'no','oneway':'-1'}})
+   self.assertEqual(evidence['way/2']['tags'],{})
+   self.assertNotIn('private',json.dumps(evidence))
