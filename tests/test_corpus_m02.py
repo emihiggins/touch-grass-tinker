@@ -5,7 +5,8 @@ from pathlib import Path
 import unittest
 
 from liftlap.corpus import read
-from liftlap.corpus_m02 import approval_hash, iteration_manifest, label_approved, row_hashes
+from liftlap.corpus_m02 import (approval_hash, approved_export, iteration_manifest,
+                                label_approved, row_hashes, source_lineage_overlaps)
 
 PACKET = 'benchmark/iterations/m02-2026-10-08/training-review-packet.jsonl'
 
@@ -64,3 +65,19 @@ class M02Tests(unittest.TestCase):
         self.assertEqual(result, json.loads(Path(PACKET).with_name('iteration-manifest-v2.json').read_text()))
         self.assertEqual(len(result['blocking_errors']), 12)
         self.assertTrue(all(r['review_state'] == 'unapproved' for r in result['rows']))
+
+    def test_full_source_overlap_is_explicit(self):
+        row = copy.deepcopy(self.cases[0])
+        self.assertTrue(source_lineage_overlaps([row], [row]))
+
+    def test_approved_export_requires_v2_and_current_approval(self):
+        row = copy.deepcopy(self.cases[0])
+        row['gold_intent'] = dict(row['gold_intent'], schema_version=2, avoided_lift_types=[])
+        row['review'] = dict(human_reviewed=True, decision='approved', reviewer='Emi Higgins',
+                             approval_version='m02-2', reviewed_content_sha256=approval_hash(row))
+        with self.assertRaisesRegex(ValueError, 'source overlap'):
+            approved_export([row], 'prompt', source_cases=[row])
+
+    def test_approved_export_rejects_unreviewed_packet(self):
+        with self.assertRaisesRegex(ValueError, 'approval required'):
+            approved_export([self.cases[0]], 'prompt')

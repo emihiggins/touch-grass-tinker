@@ -59,3 +59,15 @@ assert report == json.loads((root / "iteration-manifest-v2.json").read_text())
   fixtures pass.
 - Saved fresh-base result remains 13/16; isolated package built twice identically.
 - No model calls, training, label approvals or frozen artifact modifications.
+## Review tooling added after m02-2
+
+`scripts/m02_review.py` now produces a versioned offline report and exposes the only M02 export path. It checks candidate rows against the full source corpus for historical-source and normalized request/context/catalog overlap. Export is fail-closed: it accepts only `train_candidate` rows with intent-v2, current `m02-2` human approval, exact current hashes, no audit or near-duplicate errors, and no source overlap. It never approves rows or calls a provider.
+
+The current 12-row packet remains intentionally blocked. Reproduce its report with:
+
+```bash
+python3 scripts/m02_review.py \
+  benchmark/iterations/m02-2026-10-08/training-review-packet.jsonl
+```
+
+The command exits non-zero while review is pending; this is expected. A future reviewed packet must carry intent-v2 labels and be checked with `--source` paths for every candidate/development/final source corpus before any export.
