@@ -23,10 +23,17 @@ def main():
     cases = read(args.packet)
     sources = [row for path in args.source for row in read(path)]
     report = iteration_manifest(cases)
+    report['manifest_version'] = 'm02-cli-3'
+    report['boundaries']['export_requires'] = 'current M02 approvals, intent-v2 semantic validity and explicit source corpus audit'
+    report['training_export_supported'] = True
+    report['status'] = 'diagnostic report; use export gate for eligibility'
+    report['limitations'] = ['Supplied source files only; completeness requires review.', 'No automatic label approval or split freeze.', 'Declared families and lexical similarity do not prove semantic independence.']
     overlaps = source_lineage_overlaps(cases, sources)
     report['full_source_overlap'] = overlaps
     if overlaps:
         report['blocking_errors'] = sorted(set(report['blocking_errors'] + ['full-source overlap: ' + item for item in overlaps]))
+    report['source_sha256'] = {path: hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in args.source}
+    report['source_audit_scope'] = 'explicit supplied files only; completeness must be reviewed'
     report['packet_sha256'] = hashlib.sha256(Path(args.packet).read_bytes()).hexdigest()
     if args.export:
         payload = ''.join(json.dumps(row, sort_keys=True) + '\n' for row in approved_export(cases, Path(args.prompt).read_text(), source_cases=sources))

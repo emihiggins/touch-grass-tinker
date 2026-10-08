@@ -1,0 +1,249 @@
+{
+  "authorship": "same-agent authored; Emi review required; fictional/offline only",
+  "blocking_errors": [
+    "current M02 approval required: m02-v2-review-001",
+    "current M02 approval required: m02-v2-review-002",
+    "current M02 approval required: m02-v2-review-003",
+    "current M02 approval required: m02-v2-review-004",
+    "current M02 approval required: m02-v2-review-005",
+    "current M02 approval required: m02-v2-review-006",
+    "current M02 approval required: m02-v2-review-007",
+    "current M02 approval required: m02-v2-review-008"
+  ],
+  "boundaries": {
+    "candidate": [
+      "training_candidate"
+    ],
+    "development": [
+      "validation_candidate"
+    ],
+    "export_requires": "approved_export requires current M02 approvals, intent-v2 semantic validity and explicit source corpus audit",
+    "final": [
+      "final_candidate",
+      "final"
+    ],
+    "historical_evaluation": [
+      "evaluation_candidate",
+      "test"
+    ]
+  },
+  "candidate_count": 8,
+  "coverage": {
+    "counts": {
+      "budget:known": 7,
+      "budget:missing": 1,
+      "grade:blue": 2,
+      "grade:green": 1,
+      "grade:red": 5,
+      "review:unapproved": 8,
+      "route:negative_or_unset": 8,
+      "status:clarify": 2,
+      "status:ready": 5,
+      "status:unsupported": 1
+    },
+    "interpretation": "descriptive coverage only; no representativeness claim",
+    "sparse_or_missing": [
+      "grade:missing",
+      "route:positive"
+    ]
+  },
+  "family_count": 5,
+  "family_overlap": [],
+  "family_sizes": {
+    "m02-v2-budget-contrast": 2,
+    "m02-v2-grade-contrast": 2,
+    "m02-v2-surface-contrast": 2,
+    "m02-v2-unknown-place": 1,
+    "m02-v2-unsupported-booking": 1
+  },
+  "iteration": "m02-v2-review-2026-10-08",
+  "limitations": [
+    "Training-only packet; all rows unapproved.",
+    "One shared catalog/context family; no graph or route evidence.",
+    "Five declared semantic/template families; contrast pairs stay together.",
+    "Source hashes enumerate the audited files; no semantic independence guarantee.",
+    "Positive and negative route outcomes, closures and disconnected graphs remain uncovered."
+  ],
+  "manifest_version": "m02-review-packet-3",
+  "near_duplicate_review_flags": [],
+  "packet_limit": 12,
+  "rows": [
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-surface-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-001",
+      "label_sha256": "b7d60fa68a4c5dc0ec9200bb7b8904ac581c485cc7119a1dae6d7fd909f5b0a7",
+      "normalized_row_sha256": "0f85f0e5a2213c7ba5911c2600e202a73582ee7cf4b0835ed6dcb99c56135920",
+      "request_sha256": "df412b2ee4ad4680fb17f9f54382d8c475ad71443e54842145651d8ef69ddfdd",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-surface-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-surface-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-002",
+      "label_sha256": "9741710b65dff0c9f6d89c38f7685da7ed3f098b2df7838cb13d0aa80660fc93",
+      "normalized_row_sha256": "91cd9d72972edb742e714cd76c57526d647cae6778af8c07ea2abcc3555afd80",
+      "request_sha256": "9687ecc227f0075107af0024c82f4ff0c8e37138105c83894fd50b2f50992858",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-surface-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-budget-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-003",
+      "label_sha256": "a5c99fca9c2cce0480979dea9dda172f5bb29c2b3ff16b787e49a49e31918f7d",
+      "normalized_row_sha256": "6d6fa0b0e799a76b303c7d6c1f6f21e0319e60e6d08b3a11cfdd41f3356c2654",
+      "request_sha256": "b6d8ecddb8959a6edb9e084a83b925710b3dcc78a9e62d3ded876f3704242647",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-budget-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-budget-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-004",
+      "label_sha256": "f2e3adcf3babcc27df918593d6a688a3c6c596920bdbb73dbaa1710179dd65e7",
+      "normalized_row_sha256": "064bf0e81a251c3ba44287d2478c26f6ef101ea83cd18a5bd194af600cf3ed74",
+      "request_sha256": "42d55f09ad9cdf72cbf8325be6fdd5940657e828031045ca6adc1574fb02d835",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-budget-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-grade-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-005",
+      "label_sha256": "6eea941d2af13e3a7f2654e3b30ebb9cdd6161343553b4097855b4492d337209",
+      "normalized_row_sha256": "2735220db4cfde0079f4cc58e7b397b60db02d92450e022d65312b48dd73346d",
+      "request_sha256": "fa96101ced5c19f509f6da49c82f58141d2867df39eff5debf2c4ff1db58ecfa",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-grade-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-grade-contrast",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-006",
+      "label_sha256": "d94e807d51980bd4efe1b15faf87fd2d1b4f2ff3ef4ee7f4d5610aa21e829dba",
+      "normalized_row_sha256": "e6601fa99a532d644a0f619a8d38c06b61d393a3cc1261aadac069c86ee65f15",
+      "request_sha256": "cbffc4fa472a8df1da85790d86ea46b87ae06e1f7f467726b4dbb186ddbd4392",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-grade-contrast"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-unknown-place",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-007",
+      "label_sha256": "83f67da92b169f38ec887824f9dd8ff7a8e2d28e9fae701e205c98b27da33a4b",
+      "normalized_row_sha256": "c2a9e349bf15edb9813c7eb6f0725d1678d0617f35577e7e9be3197efb688617",
+      "request_sha256": "080bc72a748f7d8604b2bddc4affd83fbb00f7a581ade5a57eea21056d88fa28",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-unknown-place"
+    },
+    {
+      "catalog_constraints_sha256": "ec4b7aea26702181aa3b59b4e01d6f7e9d6d42a8f85bb2387f9670de7a18fc37",
+      "context_sha256": "49717ffd382379641241713ab83d5226fcf4770ff8854be5becd12f4e1a9abd8",
+      "family_id": "m02-v2-unsupported-booking",
+      "graph_family_id": "m02-v2-context-only-willow-cedar",
+      "graph_sha256": null,
+      "id": "m02-v2-review-008",
+      "label_sha256": "6f4364ec672cfd74a0d7b280c4961dd973c79bfc597098697c90df9b58d36089",
+      "normalized_row_sha256": "29e48b3ca3c7d8fa2b9cf2654c87877f573d802f55d562853c5017adeb35a6e8",
+      "request_sha256": "3dc947e62fc82400aba66a024536cf4eb4564393eb351f89cd656375598921a1",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent",
+        "created_on": "2026-10-08",
+        "lineage": "shared catalog/context; contrast pairs grouped; no graph supplied",
+        "source": "new fictional training-only wording; not independently authored holdout"
+      },
+      "split": "train_candidate",
+      "template_family_id": "m02-v2-unsupported-booking"
+    }
+  ],
+  "scope": "training-only review preparation; no export approval, split freeze or graph/route evidence",
+  "source_overlap": [],
+  "source_sha256": {
+    "benchmark/development-seed.jsonl": "eeffd7daf0dde90a2e7e70089ba12864c87b2c4a2822cf32a5481badfe65eb3e",
+    "benchmark/iterations/m02-2026-10-08/training-review-packet.jsonl": "8cd8fd7f738b1b2f5fcbb632d9243907ea76cbbad9a68452e1646b29f08a6b87",
+    "benchmark/training-candidates.jsonl": "ddb30cc1134e67039946577f3c5d7137a239f65efd2ec2f1eeba97385f18cdf4",
+    "benchmark/v2/development.jsonl": "98df94255461a3e22e14699dc4d0076e27624f898827f8d0f9497e762a0a51fa",
+    "benchmark/v2/evaluation-candidates.jsonl": "93fdcd7163e8f62a42b86ce55aff55c0ff647ba766b49d4b31a55e75610d99e6",
+    "benchmark/v2/evaluation-pilot-frozen.jsonl": "6bb96954ee52a5cf58206cf17c3828817b274e7e90bfe69b76a92e2480220fa8",
+    "benchmark/v2/final-review/cases.jsonl": "c4b840e9e6dfd0110d4061e4c5128a030d7cff2e953d1e6867d5d438cdf20ffd",
+    "benchmark/v2/training-reviewed.jsonl": "f5d5f645b2d18f60be3fbce71dc36042054a4bd56a89713a8382e36ed2f55424"
+  },
+  "split_counts": {
+    "train_candidate": 8
+  },
+  "status": "review-required; not training-ready",
+  "training_export_supported": false
+}

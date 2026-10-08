@@ -5,7 +5,8 @@ import hashlib
 import json
 import re
 from .corpus import audit
-from .corpus import conversation
+from .corpus import conversation, fingerprint
+from .semantic_contract import validate_intent_semantics
 
 PARTITIONS = {
     'train_candidate': 'training', 'training_candidate': 'training', 'train': 'training',
@@ -63,18 +64,26 @@ def source_lineage_overlaps(cases, source_cases):
         key = normalized_row_key(source)
         if key in candidate_by_key:
             overlaps.append('normalized-row: ' + source_id + ' => ' + ', '.join(candidate_by_key[key]))
+    for case in cases:
+        for source in source_cases:
+            a, b = set(fingerprint(case['request_text']).split()), set(fingerprint(source['request_text']).split())
+            if a and b and len(a & b) / len(a | b) >= .7:
+                overlaps.append('similar-request: ' + source['id'] + ' => ' + case['id'])
+            if partition(case['split']) != partition(source['split']):
+                for field in ('family_id', 'template_family_id', 'graph_family_id'):
+                    if case.get(field) and case.get(field) == source.get(field):
+                        overlaps.append('cross-partition-' + field + ': ' + source['id'] + ' => ' + case['id'])
     return sorted(set(overlaps))
 
 
-def approved_export(cases, prompt, *, source_cases=()):
+def approved_export(cases, prompt, *, source_cases=None):
     """Export only current, approved v2 training rows; fail closed otherwise."""
     if not cases:
         raise ValueError('No M02 rows supplied')
-    normalized = copy.deepcopy(cases)
-    for case in normalized:
-        if case.get('split') == 'train_candidate':
-            case['split'] = 'train'
-    report = audit(normalized)
+    if not source_cases:
+        raise ValueError('M02 export requires a nonempty source corpus audit')
+    # Keep candidates as candidates: legacy train approval uses a different hash.
+    report = audit(cases)
     errors = list(report['errors'])
     errors.extend('source overlap: ' + item for item in source_lineage_overlaps(cases, source_cases))
     errors.extend('near duplicate review required: ' + item for item in report['warnings'])
@@ -86,6 +95,8 @@ def approved_export(cases, prompt, *, source_cases=()):
             errors.append('M02 export requires intent-v2: ' + cid)
         if not label_approved(case):
             errors.append('M02 approval required: ' + cid)
+        semantic = validate_intent_semantics(case['gold_intent'], {p['id'] for p in case['catalog']})
+        errors.extend('semantic ' + issue.code + ': ' + cid for issue in semantic.issues)
         for name, value in row_hashes(case).items():
             stored = case.get('review', {}).get(name)
             if stored is not None and stored != value:
