@@ -31,3 +31,8 @@ direction, operating and duration tags for imported segments and selected lifts.
 Missing tags are explicitly unknown; neither a source tag nor imported edge
 orientation constitutes independent direction/access or current-status approval.
 These annotations are derived from hash-checked snapshots without modifying graphs.
+
+Search/selection transition checks cover selecting a filtered-out result, revealing
+it again, lift-to-search marker reset, search-to-lift highlighting and switching to
+excluded geometry. Each browser scenario restores its named sample after testing
+terrain changes; screenshots are not attributed to a previously selected resort.
