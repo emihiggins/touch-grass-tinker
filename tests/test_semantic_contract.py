@@ -53,8 +53,14 @@ class SemanticContractTests(unittest.TestCase):
         intent["clarification_fields"] = ["duration_minutes"]
         envelope, ctx = self.envelope(intent, {"duration_minutes": "context"}, context_values={"duration_minutes": 60})
         result = resolve_extraction(envelope, ctx, {"base", "summit", "mid"})
-        self.assertTrue(result.valid)
-        self.assertEqual(result.intent["duration_minutes"], 60)
+        self.assertFalse(result.valid)
+        self.assertEqual(result.issues[0].code, "clarification_retains_value")
+        # Context may fill a declared missing slot only when state is consistent.
+        envelope["intent"]["status"] = "ready"
+        envelope["intent"]["clarification_fields"] = []
+        resolved = resolve_extraction(envelope, ctx, {"base", "summit", "mid"})
+        self.assertTrue(resolved.valid)
+        self.assertEqual(resolved.intent["duration_minutes"], 60)
 
     def test_explicit_unknown_cannot_be_filled_by_context(self):
         intent = copy.deepcopy(self.base)
@@ -71,6 +77,53 @@ class SemanticContractTests(unittest.TestCase):
         result = validate_intent_semantics(self.base, {"base", "summit", "mid"})
         self.assertTrue(result.valid)
         self.assertIsNone(result.contract_version)
+
+    def test_clarification_contradictions_never_reach_planner(self):
+        from unittest.mock import patch
+        for duration in (8, 45):
+            intent = copy.deepcopy(self.base)
+            intent.update(status="clarify", duration_minutes=duration, clarification_fields=["duration_minutes"])
+            with self.subTest(duration=duration), patch("liftlap.server.plan") as planner:
+                result = validate_intent_semantics(intent, {"base", "summit"})
+                self.assertEqual(result.issues[0].path, "intent.duration_minutes")
+                with self.assertRaisesRegex(ValueError, "clarification_retains_value"):
+                    handle_api("/api/plan", {"intent": intent})
+                planner.assert_not_called()
+
+    def test_envelope_untrusted_shapes_are_typed_not_exceptions(self):
+        envelope, ctx = self.envelope()
+        for field, value in (("contract_version", True), ("provenance", {"duration_minutes": []}),
+                             ("explicit_unknown", [{}]), ("explicit_unknown", ["duration_minutes"]*2),
+                             ("explicit_unknown", ["excluded_lift_types"]), ("extra", 1)):
+            changed = copy.deepcopy(envelope); changed[field] = value
+            with self.subTest(field=field, value=value):
+                self.assertFalse(resolve_extraction(changed, ctx, {"base", "summit"}).valid)
+
+    def test_unknown_resolution_is_pure_and_prevents_context_fallback(self):
+        envelope, ctx = self.envelope(provenance={"duration_minutes":"context"},
+                                      unknown=["duration_minutes"], context_values={"duration_minutes":60})
+        before = copy.deepcopy(envelope)
+        result = resolve_extraction(envelope, ctx, {"base", "summit"})
+        self.assertEqual(envelope, before)
+        self.assertTrue(result.valid)
+        self.assertEqual(result.intent["status"], "clarify")
+        self.assertIsNone(result.intent["duration_minutes"])
+        self.assertFalse(result.plan_allowed)
+
+    def test_context_provenance_cannot_assert_a_different_value(self):
+        envelope, ctx = self.envelope(provenance={"duration_minutes":"context"},context_values={"duration_minutes":90})
+        result = resolve_extraction(envelope, ctx, {"base", "summit"})
+        self.assertEqual(result.issues[0].code,"context_value_conflict")
+
+    def test_interpretation_returns_editable_semantic_failure_without_planning(self):
+        intent = copy.deepcopy(self.base)
+        intent.update(status="clarify",clarification_fields=["duration_minutes"])
+        class Fake:
+            def interpret(self,*args): return {"intent":intent,"adapter":"synthetic-test"}
+        result = handle_api("/api/interpret",{"adapter":"live","text":"Fictional test request"},Fake())
+        self.assertFalse(result["semantic_validation"]["valid"])
+        self.assertEqual(result["intent"],intent)
+        self.assertNotIn("route",result)
 
 
 if __name__ == "__main__":

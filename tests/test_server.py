@@ -56,3 +56,14 @@ class ServerTests(unittest.TestCase):
   self.assertTrue(pine['recorded_model_available'])
   self.assertFalse(resort['recorded_model_available'])
   self.assertFalse(resort['live_model_enabled'])
+
+ def test_semantic_rejection_is_structured_over_http(self):
+  intent=handle_api('/api/interpret',{'text':'only blues'})['intent']
+  intent.update(status='clarify',clarification_fields=['duration_minutes'])
+  with self.assertRaises(urllib.error.HTTPError) as caught:
+   self.post('/api/plan',{'intent':intent})
+  self.assertEqual(caught.exception.code,422)
+  body=json.load(caught.exception);caught.exception.close()
+  self.assertFalse(body['semantic_validation']['plan_allowed'])
+  self.assertEqual(body['semantic_validation']['issues'][0]['code'],'clarification_retains_value')
+  self.assertNotIn('intent',body)

@@ -91,3 +91,6 @@ Validation also runs before sanitization so malformed input cannot become a
 plausible sanitized snapshot. Invalid input must not create an output directory.
 This does not validate real-world trail access or lift direction; those remain
 review requirements. Existing saved snapshots are not rewritten by validation.
+
+
+Semantic recovery regression: `PLAYWRIGHT_MODULE=/path/to/playwright-core AXE_SCRIPT=/path/to/axe.min.js node scripts/browser-semantic-corrections.cjs`. Optional `BASE_URL` selects a dedicated loopback test server. Covers phone/tablet/desktop clarification correction, unknown difficulty, preserved hard exclusions, exports and stale in-flight planning. Uses synthetic response injection, not live inference.
