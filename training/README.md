@@ -25,3 +25,7 @@ Saved results can be scored without provider access. Live execution requires opt
 One-hour smoke and six-hour experiment checkpoints were temporary. Do not assume old checkpoint paths remain usable. No model weights or reusable trained deployment are bundled.
 
 For ordinary development, use the offline modes and `python3 scripts/check_release.py`. Completed protocols and immutable evidence are preserved; do not interpret their original pending gates as current task assignments.
+
+## Planned next iteration
+
+[Next-iteration research plan](next-iteration-plan.md) specifies target forensics, family-based data splits, a bounded checkpoint-selection experiment and constrained-output feasibility. See the [canonical roadmap](../delivery/model-robustness-roadmap.md) for dependencies, budget limits and robustness work. No new experiment has run as part of this planning update.
