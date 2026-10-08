@@ -46,6 +46,35 @@ const fs = require('fs');
         if (await page.locator('#trail-search').inputValue())
           throw Error('Terrain switch leaked search');
       }
+      // Restore the actual sample after the terrain-switch scenario above.
+      await page.selectOption('#s', resort);
+      if (resort === 'winter-park') {
+        await page.uncheck('#l');
+        await page.locator('#trail-search').fill('Discovery');
+        await page.locator('#search-results button').first().click();
+        if (!(await page.locator('#status').innerText()).includes('hidden by'))
+          throw Error('Selecting hidden result lost warning');
+        await page.check('#l');
+        if (!(await page.locator('#status').innerText()).includes('visible on map'))
+          throw Error('Visible selection status remained stale');
+        await page.selectOption('#lift-review', 'way/86248729');
+        if ((await page.locator('#map .endpoint').count()) !== 2)
+          throw Error('Missing lift markers');
+        await page.locator('#trail-search').fill('Arrow');
+        if (await page.locator('#map .endpoint').count())
+          throw Error('Search retained old lift markers');
+        if (await page.locator('#lift-review').inputValue())
+          throw Error('Search retained lift selector');
+        await page.locator('#search-results button').first().click();
+        await page.selectOption('#lift-review', 'way/86248729');
+        const selected = await page.locator('#map .e.selected').getAttribute('aria-label');
+        if (!selected.includes('Discovery'))
+          throw Error('Lift selector retained old source highlight');
+        await page.locator('#excluded-list button').first().click();
+        if (await page.locator('#map .e.selected').count())
+          throw Error('Excluded selection retained imported highlight');
+        await page.locator('#trail-search-clear').click();
+      }
       const bounds = await page.locator('#map').evaluate((m) => {
         const b = m.getBBox();
         return { x: b.x, y: b.y, w: b.width, h: b.height };

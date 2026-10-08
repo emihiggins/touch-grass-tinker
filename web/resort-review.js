@@ -34,6 +34,7 @@ function comps(g) {
   return r;
 }
 function excludedDetail(e) {
+  selectedSource = null;
   E = null;
   L = null;
   $('lift-review').value = '';
@@ -159,6 +160,8 @@ function updateSearch() {
   }
 }
 function clearSegmentSelection() {
+  L = null;
+  $('lift-review').value = '';
   E = null;
   X = null;
   selectedSource = null;
@@ -173,7 +176,6 @@ function detail(e) {
   $('lift-detail').replaceChildren();
   E = e.id;
   selectedSource = sourceKey(e);
-  draw();
   let d = $('detail');
   d.replaceChildren();
   let b = document.createElement('b');
@@ -202,6 +204,7 @@ function detail(e) {
   d.append(dl, a);
   appendSourceEvidence(d, e.source_refs || []);
   $('status').textContent = 'Selected ' + (e.name || e.id);
+  draw();
   d.focus();
 }
 function draw() {
@@ -321,6 +324,9 @@ function draw() {
       $('status').classList.add('hidden-selection');
     } else {
       $('status').classList.remove('hidden-selection');
+      $('status').textContent = L
+        ? 'Reviewing ' + L.name + '; routing unchanged.'
+        : 'Selected source way ' + selectedSource + '; visible on map.';
     }
   } else {
     $('status').classList.remove('hidden-selection');
@@ -441,6 +447,7 @@ $('lift-review').onchange = () => {
   X = null;
   L = C.diagnostics?.lifts.find((l) => l.source_ref == $('lift-review').value) || null;
   E = L?.imported_edge_ids[0] || null;
+  selectedSource = L?.source_ref || null;
   $('detail').replaceChildren();
   $('lift-detail').replaceChildren();
   if (L) {
