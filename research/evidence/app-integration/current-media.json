@@ -7,7 +7,7 @@
     "web/index.html": "6096eaa81f99601b504756bcca0c3c6ccfd09a156627436557063b9ce6384dd1",
     "web/app.js": "2c2cbfed3ab9f110fd48b4c36fef6c606b926eab89e3f4ab131cd7b8d804bfae",
     "web/style.css": "33933385b7e48754075cd16e00ddf8ae7f9fa71d5ca7894a2ef3c695a484a958",
-    "liftlap/server.py": "1a38d9796ff5e2af36458259fa68756cab4e42fcbdc1496fed582a7ae3e39876",
+    "liftlap/server.py": "6b390a1ad22ea19e5b77b139418a1837962e97afa98ed87f070be317a12e4fb4",
     "liftlap/app_model.py": "c3c8fb84121846cc8b0c87a93f5cba3e2bfc079f0fa7d783bfe3e23136998f04",
     "scripts/browser-ai-demo.cjs": "11c8c778a1b12f8e7710208ad49c0ef0824fa1ed17ba05027a1223f14ab2b40a",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
@@ -37,7 +37,10 @@
     "research/evidence/model-robustness-r01/clarification-390.png": "7647abd3dc9d56e7b9aa62a66be34e6dd0282edc1371fd9098587feb864da802",
     "research/evidence/model-robustness-r01/recovery-390.png": "1dbc6319852f644ec3e9969d40d2f5eafb8f9602857ce7e4db6e387745d5fc68",
     "research/evidence/model-robustness-r01/recovery-768.png": "b8bb2d1b50aa8c1952ff28171d94b295f28cd9d3d71ea9d1bf69a1c61684375c",
-    "research/evidence/model-robustness-r01/recovery-1440.png": "4c27df5321e27284d152fbb5979919bc1e9a4b30e80b536a753a201703a2c1bf"
+    "research/evidence/model-robustness-r01/recovery-1440.png": "4c27df5321e27284d152fbb5979919bc1e9a4b30e80b536a753a201703a2c1bf",
+    "liftlap/http_limits.py": "4ba876b7e82d1e36c04d3110e45917154325e96527d23aaed490b6ba7f8ce7c1",
+    "research/evidence/model-robustness-r04/recovery.png": "6e75aebe295fb475292e3f8a174426b1056880b0126947c4e768d23e955341c3",
+    "research/evidence/model-robustness-r04/request-recovery.json": "d6fd8907a038eee1930ca7d2926ae4c7d6e28c9f1c16000e32248d2c843dad32"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",
@@ -45,5 +48,11 @@
     "research/evidence/app-integration/live-desktop.png",
     "research/evidence/app-integration/alpendorf-map-mobile.png"
   ],
-  "notes": "Historical media is retained as evidence and is not used by the current README. A source change requires fresh capture/review, not silently updating hashes."
+  "notes": "Historical media is retained as evidence and is not used by the current README. A source change requires fresh capture/review, not silently updating hashes.",
+  "compatibility_review_r04": {
+    "prior_server_sha256": "1a38d9796ff5e2af36458259fa68756cab4e42fcbdc1496fed582a7ae3e39876",
+    "reason": "HTTP admission/body bounds only; UI source hashes unchanged. Old screenshots retained, not recaptured.",
+    "evidence": "research/evidence/model-robustness-r04/README.md",
+    "browser": "fresh failed/delayed/out-of-order recovery run against bounded server on port8771; screenshot visually reviewed"
+  }
 }
