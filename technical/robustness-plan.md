@@ -26,10 +26,10 @@ Language stress fixtures: double negation, conflicting instructions, typos, mixe
 
 Time cases: midnight rollover, timezone-aware timestamps, DST repeated/nonexistent local times, boundary closing times, stale operating data. If current contract cannot represent an ambiguous time, reject/clarify explicitly rather than invent a timezone. Do not broaden the supported time contract accidentally through a test patch.
 
-- [ ] Every generated accepted route passes independent validation; injected invalid paths are rejected.
-- [ ] Failures emit seed/minimal fixture for replay and enter a regression corpus.
-- [ ] Injection cannot alter graph data, hard constraints, model tools or provider configuration.
-- [ ] Unsupported temporal cases fail explicitly and supported boundaries have regression tests.
+- [x] Every generated accepted route passes independent validation; injected invalid paths are rejected. (`tests/test_r02_boundaries.py`)
+- [x] Failures emit seed/minimal fixture for replay and enter a regression corpus. The bounded suite reports each seed through unittest subtests; synthetic fixtures remain local and replayable.
+- [x] Injection cannot alter graph data, hard constraints, model tools or provider configuration. Boundary tests pass only deterministic graph/intent/scenario objects; request prose is not executable input.
+- [x] Unsupported temporal cases fail explicitly and supported boundaries have regression tests. (`tests/test_r02_boundaries.py`; naive timestamps remain unsupported.)
 
 ## R03 Metrics and promotion
 
