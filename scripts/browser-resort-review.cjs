@@ -75,6 +75,43 @@ const fs = require('fs');
           throw Error('Excluded selection retained imported highlight');
         await page.locator('#trail-search-clear').click();
       }
+      if (resort === 'winter-park') {
+        if (!(await page.locator('#focus-selection').isDisabled()))
+          throw Error('Focus enabled without selection');
+        await page.selectOption('#lift-review', 'way/86248729');
+        const points = () => page.locator('#map .e.selected').first().getAttribute('points');
+        const original = await points();
+        await page.locator('#focus-selection').focus();
+        await page.keyboard.press('Enter');
+        if ((await points()) === original) throw Error('Focus did not change projection');
+        const box = await page
+          .locator('#map .e.selected')
+          .first()
+          .evaluate((e) => {
+            const b = e.getBBox();
+            return { x: b.x, y: b.y, w: b.width, h: b.height };
+          });
+        if (box.x < 0 || box.y < 0 || box.x + box.w > 900 || box.y + box.h > 560)
+          throw Error('Focused selection clipped');
+        await page.locator('#fit-all').click();
+        if ((await points()) !== original) throw Error('Fit all did not restore projection');
+        await page.locator('#focus-selection').click();
+        await page.uncheck('#l');
+        if (!(await page.locator('#focus-selection').isDisabled()))
+          throw Error('Hidden selection focus enabled');
+        await page.check('#l');
+        if ((await points()) !== original) throw Error('Hidden selection did not reset focus');
+        await page.locator('#excluded-list button').filter({ hasText: 'Dogpatch' }).click();
+        await page.locator('#focus-selection').click();
+        await page.screenshot({
+          path: `research/evidence/resort-review/focused-winter-park-${width}.png`,
+          fullPage: true,
+        });
+        await page.locator('#trail-search-clear').click();
+        if (!(await page.locator('#focus-selection').isDisabled()))
+          throw Error('Cleared selection kept focus');
+        await page.selectOption('#s', resort);
+      }
       const bounds = await page.locator('#map').evaluate((m) => {
         const b = m.getBBox();
         return { x: b.x, y: b.y, w: b.width, h: b.height };

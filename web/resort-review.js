@@ -210,8 +210,10 @@ function detail(e) {
   d.focus();
 }
 function visibleEdge(e, cc, largest) {
-  return (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
-    ($('d').checked || cc.get(e.from) == largest);
+  return (
+    (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
+    ($('d').checked || cc.get(e.from) == largest)
+  );
 }
 function selectedCoordinates(g, cc, largest) {
   if (X) {
@@ -219,7 +221,12 @@ function selectedCoordinates(g, cc, largest) {
     const item = (C.excluded_source || []).find((e) => e.source_ref === X);
     return item?.geometry_segments?.flat() || item?.geometry || [];
   }
-  const edges = g.edges.filter((e) => selectedSource && (e.source_refs || []).includes(selectedSource) && visibleEdge(e, cc, largest));
+  const edges = g.edges.filter(
+    (e) =>
+      selectedSource &&
+      (e.source_refs || []).includes(selectedSource) &&
+      visibleEdge(e, cc, largest),
+  );
   return edges.flatMap((e) => e.geometry || []);
 }
 function draw() {
@@ -236,11 +243,9 @@ function draw() {
   let largest = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
   const selected = selectedCoordinates(g, cc, largest);
   if (focusSelection && !selected.length) focusSelection = false;
-  const allCoords = focusSelection ? selected : [
-    ...g.nodes.map((n) => [n.lon, n.lat]),
-    ...extra,
-    ...excludedCoords,
-  ];
+  const allCoords = focusSelection
+    ? selected
+    : [...g.nodes.map((n) => [n.lon, n.lat]), ...extra, ...excludedCoords];
   let allX = allCoords.map((c) => c[0]),
     allY = allCoords.map((c) => c[1]),
     a = Math.min(...allX),
@@ -253,10 +258,12 @@ function draw() {
   const spanY = Math.max(d - c, minSpan);
   const padX = spanX * 0.12;
   const padY = spanY * 0.12;
-  a = (a + b) / 2 - spanX / 2 - padX;
-  b = (a + b) / 2 + spanX / 2 + padX;
-  c = (c + d) / 2 - spanY / 2 - padY;
-  d = (c + d) / 2 + spanY / 2 + padY;
+  const centerX = (a + b) / 2,
+    centerY = (c + d) / 2;
+  a = centerX - spanX / 2 - padX;
+  b = centerX + spanX / 2 + padX;
+  c = centerY - spanY / 2 - padY;
+  d = centerY + spanY / 2 + padY;
   cos = Math.cos((((c + d) / 2) * Math.PI) / 180);
   let z = Math.min(790 / ((b - a) * cos || 1), 470 / (d - c || 1)),
     f = ([x, y]) => [450 + (x - (a + b) / 2) * cos * z, 280 - (y - (c + d) / 2) * z];
@@ -298,10 +305,7 @@ function draw() {
       v.append(q);
     }
   }
-  for (let e of g.edges.filter(
-    (e) =>
-      visibleEdge(e, cc, largest),
-  )) {
+  for (let e of g.edges.filter((e) => visibleEdge(e, cc, largest))) {
     let q = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
     q.setAttribute(
       'points',
@@ -334,8 +338,7 @@ function draw() {
   }
   if (selectedSource) {
     const visible = g.edges.some(
-      (e) =>
-        (e.source_refs || []).includes(selectedSource) && visibleEdge(e, cc, largest),
+      (e) => (e.source_refs || []).includes(selectedSource) && visibleEdge(e, cc, largest),
     );
     if (!visible) {
       $('status').textContent =
@@ -367,7 +370,12 @@ function draw() {
     v.append(circle, label);
   }
   $('focus-selection').disabled = !selected.length;
-  $('focus-selection').setAttribute('aria-label', selected.length ? 'Focus the selected visible geometry' : 'Focus selection unavailable because no selected geometry is visible');
+  $('focus-selection').setAttribute(
+    'aria-label',
+    selected.length
+      ? 'Focus the selected visible geometry'
+      : 'Focus selection unavailable because no selected geometry is visible',
+  );
   $('sum').textContent =
     'Excluded source shapes: ' +
     excluded.length +

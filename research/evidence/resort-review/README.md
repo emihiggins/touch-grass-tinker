@@ -36,3 +36,8 @@ Search/selection transition checks cover selecting a filtered-out result, reveal
 it again, lift-to-search marker reset, search-to-lift highlighting and switching to
 excluded geometry. Each browser scenario restores its named sample after testing
 terrain changes; screenshots are not attributed to a previously selected resort.
+
+Focus controls are generated from the canonical template and preserved by
+regeneration tests. Browser checks exercise keyboard focus, padded selected bounds,
+Fit all restoration, hidden-selection reset and cleared-selection disabling at
+three widths. Focused-area screenshots record actual clipped-context rendering.
