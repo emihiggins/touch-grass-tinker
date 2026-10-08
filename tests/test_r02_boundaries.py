@@ -43,20 +43,32 @@ class R02BoundaryTests(unittest.TestCase):
     def test_injected_ids_connectivity_directions_and_status_are_rejected(self):
         graph = f.graph()
         intent = f.intent()
+        cases = {}
         scenario = f.scenario(graph)
         route = plan(graph, intent, scenario)["route"]
-        cases = {
-            "unknown_id": {"edge_ids": ["not-in-graph"]},
-            "reversed": {"edge_ids": ["blue", "chair"]},
-            "closed": {"edge_ids": route["edge_ids"]},
-            "wrong_hash": {"scenario_hash": "tampered"},
-        }
+        candidate = copy.deepcopy(route)
+        candidate["edge_ids"] = ["not-in-graph"]
+        cases["unknown_id"] = (scenario, candidate, "unknown_edge")
+        scenario = f.scenario(graph)
+        route = plan(graph, intent, scenario)["route"]
+        candidate = copy.deepcopy(route)
+        candidate["edge_ids"] = ["blue", "chair"]
+        cases["reversed"] = (scenario, candidate, "disconnected")
+        scenario = f.scenario(graph)
+        route = plan(graph, intent, scenario)["route"]
         scenario["edges"]["chair"]["status"] = "closed"
-        for name, edit in cases.items():
+        route["scenario_hash"] = digest(scenario)
+        cases["closed"] = (scenario, copy.deepcopy(route), "not_open")
+        scenario = f.scenario(graph)
+        route = plan(graph, intent, scenario)["route"]
+        candidate = copy.deepcopy(route)
+        candidate["scenario_hash"] = "tampered"
+        cases["wrong_hash"] = (scenario, candidate, "snapshot_mismatch")
+        for name, (scenario, candidate, reason) in cases.items():
             with self.subTest(name=name):
-                candidate = copy.deepcopy(route)
-                candidate.update(edit)
-                self.assertFalse(validate_route(graph, intent, scenario, candidate)["valid"])
+                result = validate_route(graph, intent, scenario, candidate)
+                self.assertFalse(result["valid"])
+                self.assertEqual(result["reason"], reason)
 
     def test_hard_max_and_excluded_lift_are_enforced_by_both_boundaries(self):
         graph = f.graph()
@@ -92,12 +104,12 @@ class R02BoundaryTests(unittest.TestCase):
     def test_fixed_route_budget_is_monotonic(self):
         graph = f.graph()
         scenario = f.scenario(graph)
-        route = plan(graph, f.intent(), scenario)["route"]
-        short = f.intent()
-        short["duration_minutes"] = 1
-        long = f.intent()
-        long["duration_minutes"] = 60
-        self.assertFalse(validate_route(graph, short, scenario, route)["valid"])
+        base = f.intent()
+        base.update(schema_version=2, avoided_lift_types=[], clarification_fields=[], unsupported_preferences=[])
+        route = plan(graph, base, scenario)["route"]
+        short = f.intent(); short.update(schema_version=2, avoided_lift_types=[], clarification_fields=[], unsupported_preferences=[], duration_minutes=1)
+        long = f.intent(); long.update(schema_version=2, avoided_lift_types=[], clarification_fields=[], unsupported_preferences=[], duration_minutes=15)
+        self.assertEqual(validate_route(graph, short, scenario, route)["reason"], "deadline")
         self.assertTrue(validate_route(graph, long, scenario, route)["valid"])
 
     def test_bijective_node_renaming_preserves_feasibility(self):
@@ -105,16 +117,19 @@ class R02BoundaryTests(unittest.TestCase):
         intent = f.intent()
         scenario = f.scenario(graph)
         renamed = {"base": "n0", "summit": "n1", "mid": "n2"}
+        renamed_edges = {"chair": "e0", "blue": "e1", "red": "e2", "tow": "e3", "practice": "e4"}
         graph2 = copy.deepcopy(graph)
         for node in graph2["nodes"]:
             node["id"] = renamed[node["id"]]
         for edge in graph2["edges"]:
+            edge["id"] = renamed_edges[edge["id"]]
             edge["from"] = renamed[edge["from"]]
             edge["to"] = renamed[edge["to"]]
         intent2 = copy.deepcopy(intent)
         intent2["start_place_id"] = renamed[intent["start_place_id"]]
         intent2["finish_place_id"] = renamed[intent["finish_place_id"]]
         scenario2 = copy.deepcopy(scenario)
+        scenario2["edges"] = {renamed_edges[eid]: state for eid, state in scenario2["edges"].items()}
         scenario2["graph_hash"] = digest(graph2)
         self.assertEqual(plan(graph, intent, scenario)["status"], plan(graph2, intent2, scenario2)["status"])
         renamed_route = plan(graph2, intent2, scenario2)["route"]
@@ -144,6 +159,29 @@ class R02BoundaryTests(unittest.TestCase):
         intent["start_time"] = "2027-01-15T10:00:00"
         with self.assertRaises(ValueError):
             plan(graph, intent, scenario)
+
+    def test_temporal_midnight_rollover_and_exact_closing_boundary(self):
+        graph = f.graph()
+        scenario = f.scenario(graph)
+        intent = f.intent()
+        intent["start_time"] = "2027-01-15T23:50:00+01:00"
+        for state in scenario["edges"].values():
+            state["opens_at"] = "2027-01-15T00:00:00+01:00"
+            state["closes_at"] = "2027-01-16T00:00:00+01:00"
+        self.assertEqual(plan(graph, intent, scenario)["status"], "ok")
+        intent["start_time"] = "2027-01-15T10:00:00+01:00"
+        scenario = f.scenario(graph)
+        for state in scenario["edges"].values():
+            state["closes_at"] = "2027-01-15T10:10:00+01:00"
+        self.assertEqual(plan(graph, intent, scenario)["status"], "ok")
+        scenario = f.scenario(graph)
+        route = plan(graph, intent, scenario)["route"]
+        for state in scenario["edges"].values():
+            state["closes_at"] = "2027-01-15T10:09:59+01:00"
+        route["scenario_hash"] = digest(scenario)
+        result = validate_route(graph, intent, scenario, route)
+        self.assertFalse(result["valid"])
+        self.assertEqual(result["reason"], "closed_before_completion")
 
 
 if __name__ == "__main__":
