@@ -26,3 +26,7 @@ python3 -m unittest tests.test_r02_boundaries tests.test_routing tests.test_comp
 
 The seed family and minimal fixtures are in the exact test source above. Any
 failure includes its replay seed via unittest’s subtest output.
+
+## Coverage correction identified during R01 recovery
+
+The existing injected-ID/direction/closure table mutates the shared scenario after capturing the route hash. All four rows therefore return `snapshot_mismatch`, not the intended independent failure reason. The one-minute budget test uses a v1 intent and returns `invalid_input`, not a budget rejection. These tests need reason-specific repair before claiming the corresponding R02 acceptance criteria. Language/provider-injection and midnight/DST/exact-closing coverage are also incomplete. The canonical checklist is reopened accordingly; no runtime failure or model-quality claim follows merely from these test gaps.

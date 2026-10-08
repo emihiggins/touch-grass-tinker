@@ -9,8 +9,23 @@ from .compact import compact,expand_route
 from .core import plan,validate_route,preference_tradeoffs
 from .rules import interpret
 from .semantic_contract import validate_intent_semantics
+from scripts.benchmark import validate_intent
 
 ROOT=Path(__file__).resolve().parents[1]
+
+class SemanticValidationError(ValueError):
+    def __init__(self, result):
+        self.result = result
+        super().__init__('Invalid semantic intent: '+','.join(x.code for x in result.issues))
+
+
+def review_interpretation(result, catalog):
+    # Structural errors cannot safely populate the editor. Semantic errors can
+    # be shown for correction but never become permission to plan.
+    ids = {p['id'] for p in catalog}
+    validate_intent(result['intent'], ids)
+    semantic = validate_intent_semantics(result['intent'], ids)
+    return {**result, 'semantic_validation': semantic.as_dict()}
 
 def context(mode,minutes=60,difficulty='blue'):
     if mode not in {'synthetic','alpendorf'}:raise ValueError('Unknown terrain')
@@ -36,15 +51,15 @@ def handle_api(path,payload,model=None):
         adapter=payload.get('adapter','rules')
         if adapter=='live':
             if model is None:raise ValueError('Live model disabled. Choose Rules or Recorded example.')
-            return model.interpret(text,ui,catalog)
+            return review_interpretation(model.interpret(text,ui,catalog),catalog)
         if adapter=='replay':
             from .app_model import replay
-            return replay(ROOT,text,ui,catalog)
+            return review_interpretation(replay(ROOT,text,ui,catalog),catalog)
         if adapter!='rules':raise ValueError('Unknown interpreter')
-        return {**interpret(text,ui,catalog,schema_version=2),'adapter':'rules-v2','notice':'Deterministic rules interpretation; not a model response.'}
+        return review_interpretation({**interpret(text,ui,catalog,schema_version=2),'adapter':'rules-v2','notice':'Deterministic rules interpretation; not a model response.'},catalog)
     if path!='/api/plan':raise ValueError('Unknown endpoint')
     i=payload['intent'];semantic=validate_intent_semantics(i,{p['id'] for p in catalog})
-    if not semantic.valid: raise ValueError('Invalid semantic intent: '+','.join(x.code for x in semantic.issues))
+    if not semantic.valid: raise SemanticValidationError(semantic)
     i=semantic.intent
     if i['status']!='ready':return {'status':i['status'],'route':None}
     # This fixed-date demo does not accept arbitrary clocks/scenarios.
@@ -113,6 +128,8 @@ class Handler(BaseHTTPRequestHandler):
             payload=json.loads(self.rfile.read(size))
             if not isinstance(payload,dict):raise ValueError('Expected JSON object')
             result=handle_api(self.path,payload,getattr(self.server,'model',None));self.send(200,result)
+        except SemanticValidationError as e:
+            self.send(422,{'error':'Review the constraints before planning.','semantic_validation':e.result.as_dict()})
         except (ValueError,KeyError,TypeError) as e:
             from .app_model import ModelUnavailable
             self.send(422,{'error':str(e) if isinstance(e,ModelUnavailable) else 'Invalid request; check fields and interpreter availability.'})

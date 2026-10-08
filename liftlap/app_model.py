@@ -42,6 +42,11 @@ class LiveModel:
             if row['status'] in ('transport_or_provider_failure','not_attempted_after_transport_failure'):
                 self.halted=True
                 raise ModelUnavailable('Provider result is uncertain; session paused without retry. Use Rules.')
+            if row['status']=='invalid_semantic':
+                # The sampler has already strictly parsed and structurally validated
+                # this exact raw JSON. Return it for review, never for planning.
+                return {'intent':json.loads(row['raw_output']),'adapter':'qwen3-8b-base-live',
+                        'notice':'Live Qwen3-8B output needs constraint correction before planning.','unparsed':''}
             if row['status']!='valid':raise ModelUnavailable('Model response failed validation. No route created. Edit your request or use Rules.')
             return {'intent':row['intent'],'adapter':'qwen3-8b-base-live','notice':'Live Qwen3-8B base model via Tinker. Review every constraint; the model can make mistakes.','unparsed':''}
         finally:self.lock.release()

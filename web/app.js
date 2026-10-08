@@ -22,6 +22,17 @@ function invalidate() {
   $('step-inspector').hidden = true;
   draw();
 }
+function canCorrectIntent() {
+  return (
+    intent &&
+    ['ready', 'clarify'].includes(intent.status) &&
+    !intent.unsupported_preferences.length &&
+    intent.clarification_fields.every((field) =>
+      ['duration_minutes', 'hard_max_difficulty'].includes(field),
+    ) &&
+    ['start_place_id', 'finish_place_id', 'start_time'].every((field) => intent[field] != null)
+  );
+}
 async function api(path, body) {
   const r = await fetch(
     path,
@@ -499,8 +510,15 @@ $('request-form').addEventListener('submit', async (e) => {
     $('discard-corrections').disabled = true;
     $('correct-minutes').value = intent.duration_minutes ?? '';
     $('correct-difficulty').value = intent.hard_max_difficulty ?? '';
+    for (const [id, field] of [
+      ['correct-minutes', 'duration_minutes'],
+      ['correct-difficulty', 'hard_max_difficulty'],
+    ]) {
+      $(id).setAttribute('aria-invalid', String(intent.clarification_fields.includes(field)));
+      $(id).setAttribute('aria-describedby', 'parser-note');
+    }
     for (const id of ['correct-minutes', 'correct-difficulty', 'apply-corrections'])
-      $(id).disabled = intent.status !== 'ready';
+      $(id).disabled = !canCorrectIntent();
     $('model-note').textContent = interpretationSource;
     $('constraints').replaceChildren();
     for (const [label, value] of [
@@ -537,10 +555,10 @@ $('request-form').addEventListener('submit', async (e) => {
       check.type = 'checkbox';
       check.value = type;
       check.checked = intent.excluded_lift_types.includes(type);
-      check.disabled = intent.status !== 'ready';
+      check.disabled = !canCorrectIntent();
       check.addEventListener('change', () => {
         generation++;
-        $('make-plan').disabled = reviewEditsPending;
+        $('make-plan').disabled = reviewEditsPending || intent.status !== 'ready';
         intent.excluded_lift_types = [...$('lift-checks').querySelectorAll('input:checked')]
           .map((x) => x.value)
           .sort();
@@ -565,11 +583,12 @@ $('request-form').addEventListener('submit', async (e) => {
       $('lift-checks').append(label);
     }
     $('review').hidden = false;
-    $('make-plan').disabled = intent.status !== 'ready';
+    $('make-plan').disabled =
+      intent.status !== 'ready' || data.semantic_validation?.valid === false;
     $('parser-note').textContent =
       intent.status === 'ready'
         ? 'Check these values before confirming.'
-        : `Needs review: ${[...intent.clarification_fields, ...intent.unsupported_preferences].join(', ')}. Unparsed: ${data.unparsed || 'none'}. Edit the request or use the form.`;
+        : `Needs review: ${[...intent.clarification_fields.map((field) => ({ duration_minutes: 'time budget', hard_max_difficulty: 'maximum difficulty', start_place_id: 'start place', finish_place_id: 'finish place', start_time: 'start time' })[field] || field), ...intent.unsupported_preferences].join(', ')}. Unparsed: ${data.unparsed || 'none'}. ${canCorrectIntent() ? 'Use the correction fields below, then confirm.' : 'Edit the request or use the form.'}`;
     $('status').textContent =
       intent.status === 'ready'
         ? 'Ready for your confirmation.'
@@ -591,7 +610,7 @@ function recordCorrection(kind) {
 }
 for (const id of ['correct-minutes', 'correct-difficulty'])
   $(id).addEventListener('input', () => {
-    if (!intent || intent.status !== 'ready') return;
+    if (!canCorrectIntent()) return;
     generation++;
     reviewEditsPending = true;
     $('discard-corrections').disabled = false;
@@ -602,27 +621,45 @@ for (const id of ['correct-minutes', 'correct-difficulty'])
       'Time/difficulty edits are not applied yet. Apply them before confirming.';
   });
 $('discard-corrections').addEventListener('click', () => {
-  if (!intent || intent.status !== 'ready') return;
+  if (!canCorrectIntent()) return;
   generation++;
   $('correct-minutes').value = intent.duration_minutes ?? '';
   $('correct-difficulty').value = intent.hard_max_difficulty ?? '';
   reviewEditsPending = false;
   $('discard-corrections').disabled = true;
-  $('make-plan').disabled = false;
+  $('make-plan').disabled = intent.status !== 'ready';
   $('status').textContent =
     'Draft time/difficulty edits discarded. Confirm the current constraints again.';
 });
 $('correction-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  if (!intent || intent.status !== 'ready' || !$('correction-form').reportValidity()) return;
+  if (!canCorrectIntent() || !$('correction-form').reportValidity()) return;
   const minutes = Number($('correct-minutes').value);
   if (!Number.isInteger(minutes) || minutes < 1 || minutes > 1440) return;
   generation++;
   const difficulty = $('correct-difficulty').value || null;
-  if (intent.duration_minutes !== minutes) recordCorrection('time budget');
-  if (intent.hard_max_difficulty !== difficulty) recordCorrection('maximum difficulty');
+  if (
+    intent.duration_minutes !== minutes ||
+    intent.clarification_fields.includes('duration_minutes')
+  )
+    recordCorrection('time budget');
+  if (
+    intent.hard_max_difficulty !== difficulty ||
+    intent.clarification_fields.includes('hard_max_difficulty')
+  )
+    recordCorrection('maximum difficulty');
   intent.duration_minutes = minutes;
   intent.hard_max_difficulty = difficulty;
+  intent.clarification_fields = intent.clarification_fields.filter(
+    (field) => !['duration_minutes', 'hard_max_difficulty'].includes(field),
+  );
+  intent.status = difficulty ? 'ready' : 'clarify';
+  if (!difficulty) intent.clarification_fields.push('hard_max_difficulty');
+  $('correct-minutes').setAttribute('aria-invalid', 'false');
+  $('correct-difficulty').setAttribute('aria-invalid', String(!difficulty));
+  $('parser-note').textContent = difficulty
+    ? 'Check these corrected values before confirming.'
+    : 'Choose a maximum difficulty before planning. Unknown is not an unrestricted maximum.';
   reviewEditsPending = false;
   $('discard-corrections').disabled = true;
   const terms = [...$('constraints').querySelectorAll('dt')];
@@ -631,11 +668,14 @@ $('correction-form').addEventListener('submit', (e) => {
     intent.hard_max_difficulty || 'No stated maximum';
   $('itinerary').hidden = true;
   draw();
-  $('make-plan').disabled = false;
-  $('status').textContent = 'Correction applied locally. Confirm the updated constraints.';
+  $('make-plan').disabled = intent.status !== 'ready';
+  $('status').textContent =
+    intent.status === 'ready'
+      ? 'Correction applied locally. Confirm the updated constraints.'
+      : 'No route requested until the interpretation is resolved.';
 });
 $('make-plan').addEventListener('click', async () => {
-  if (!intent || reviewEditsPending) return;
+  if (!intent || intent.status !== 'ready' || reviewEditsPending) return;
   const gen = generation,
     restoreFocus = document.activeElement === $('make-plan');
   $('make-plan').disabled = true;

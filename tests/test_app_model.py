@@ -28,3 +28,20 @@ class AppModelTests(unittest.TestCase):
    def interpret(self,*args):return {'intent':i,'adapter':'test'}
   r=handle_api('/api/interpret',{'adapter':'live'},Fake())
   self.assertEqual(r['intent'],i);self.assertNotIn('route',r)
+
+ def test_semantic_failure_remains_editable_without_retry(self):
+  from unittest.mock import AsyncMock, Mock
+  _,ui,cat=context('synthetic')
+  intent=handle_api('/api/interpret',{'text':'only blues'})['intent']
+  intent.update(status='clarify',clarification_fields=['duration_minutes'])
+  with tempfile.TemporaryDirectory() as directory:
+   model=LiveModel.__new__(LiveModel)
+   model.lock=threading.Lock();model.halted=False;model.attempts=0;model.directory=Path(directory)
+   model.prompt='fixture';model.renderer=Mock()
+   model.renderer.build_generation_prompt.return_value.to_ints.return_value=[1,2]
+   model._run=AsyncMock(return_value={'status':'invalid_semantic','intent':None,'raw_output':json.dumps(intent)})
+   result=handle_api('/api/interpret',{'adapter':'live'},model)
+   self.assertEqual(result['intent'],intent)
+   self.assertFalse(result['semantic_validation']['plan_allowed'])
+   self.assertFalse(result['semantic_validation']['valid'])
+   self.assertEqual(model.attempts,1);model._run.assert_awaited_once()

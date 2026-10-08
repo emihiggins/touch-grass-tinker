@@ -1,0 +1,44 @@
+{
+  "scope": "synthetic_semantic_recovery_not_model_accuracy",
+  "results": [
+    {
+      "width": 390,
+      "noStaleRoute": true,
+      "correctedExport": true,
+      "exclusionsPreserved": true,
+      "shortBudgetReachesNoRoute": true,
+      "unknownMaximumBlocked": true,
+      "extraInterpreterCalls": 0,
+      "axeViolations": 0,
+      "axeIncomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 768,
+      "noStaleRoute": true,
+      "correctedExport": true,
+      "exclusionsPreserved": true,
+      "shortBudgetReachesNoRoute": true,
+      "unknownMaximumBlocked": true,
+      "extraInterpreterCalls": 0,
+      "axeViolations": 0,
+      "axeIncomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 1440,
+      "noStaleRoute": true,
+      "correctedExport": true,
+      "exclusionsPreserved": true,
+      "shortBudgetReachesNoRoute": true,
+      "unknownMaximumBlocked": true,
+      "extraInterpreterCalls": 0,
+      "axeViolations": 0,
+      "axeIncomplete": [
+        "color-contrast"
+      ]
+    }
+  ]
+}
