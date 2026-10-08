@@ -1,0 +1,19 @@
+{
+  "report_version": "m01-reconstruction-provenance-v1",
+  "provider_calls": 0,
+  "historical_input_matches": {
+    "training/experiment-01.json": true,
+    "benchmark/v2/training-reviewed.jsonl": true,
+    "benchmark/v2/baseline-prompt.txt": true,
+    "training/tokenizer-manifest.json": true,
+    "training/render-requirements.lock": true
+  },
+  "historical_wire_capture_available": false,
+  "scope": "Reconstruction with pinned local SDK, not proof of historical remote receipt",
+  "code_sha256": {
+    "liftlap/render_audit.py": "673bfdc96c555762867bd04155ff3b453a7f77ce3d7a34f68073d7ce44b73c73",
+    "liftlap/output_forensics.py": "3545b657c4e875ae290a4fae28675cc616b35f49539bf268a1c63fd8d01964ca",
+    "tests/test_render_audit.py": "8d651058fc204036f39a2cf60bdca4600235626e34c1b8935ac51db87296f273",
+    "tests/test_output_forensics.py": "7e3f8c4b2b71b1c5c1f8ddee7407c76998176b565a7034e797684bec2e1edd62"
+  }
+}

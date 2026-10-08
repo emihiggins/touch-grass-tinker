@@ -4,6 +4,8 @@ Status: **planned; no new run authorized by this document alone**. Queue, sequen
 
 ## M01 Target audit
 
+Implemented offline 2026-10-08: [findings, limitations and reproduction](../research/evidence/model-robustness-m01/README.md).
+
 **Hypothesis, not diagnosis:** malformed tuned completions may reflect target serialization, terminal handling or insufficient learning. The first run used three epochs of one 47-row batch: only three optimizer updates. That does not establish either overfitting or underfitting.
 
 Saved tuned predictions contain five JSON objects followed by an extra quote (pilot004/009/010/013/016), and another schema failure (015). Their saved stop reasons are `stop`, with roughly 100–105 output tokens, below the 512 cap. Do not describe these as demonstrated truncation. Fresh-base errors include incomplete surface-lift expansion (005), unnecessary clarification despite an explicit eight-minute duration (010), and retaining a 45-minute UI default when the user declines to provide a budget (012).
@@ -12,10 +14,10 @@ Saved tuned predictions contain five JSON objects followed by an extra quote (pi
 
 Do not strip arbitrary trailing punctuation to pass evaluation. A recognized transport/model terminal token may be removed only by a documented, tested decoding rule; keep strict historical scores unchanged. Any exploratory repair score must be separately named and never substituted for task success.
 
-- [ ] Every eligible training row round-trips; prompt loss is zero and intended assistant tokens carry loss.
-- [ ] SDK-bound inputs/targets match audited hashes; malformed fixtures fail before submission.
-- [ ] Report accounts for all six tuned schema failures and three fresh-base failures, separating observation from causal hypotheses.
-- [ ] No frozen dataset, raw prediction or old score is rewritten.
+- [x] Every eligible training row round-trips; prompt loss is zero and intended assistant tokens carry loss.
+- [x] SDK-bound inputs/targets match audited hashes; malformed fixtures fail before submission.
+- [x] Report accounts for all six tuned schema failures and three fresh-base failures, separating observation from causal hypotheses.
+- [x] No frozen dataset, raw prediction or old score is rewritten.
 
 ## M02 Data and splits
 

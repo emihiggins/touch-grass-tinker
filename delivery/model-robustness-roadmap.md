@@ -1,6 +1,6 @@
 # Model quality and robustness roadmap
 
-Status: **proposed, not implemented** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
+Status: **in progress — M01 implemented offline** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
 
 ## Outcome and evidence
 
@@ -10,7 +10,7 @@ The next work starts with observed failure classes: malformed tuned output, inco
 
 ## Canonical work queue
 
-Each ID below has exactly one detailed specification in the linked domain plan. All acceptance boxes are intentionally unchecked. A coding agent owns implementation/evidence; Emi reviews new labels; qualified resort reviewers own external operational evidence.
+Each ID below has exactly one detailed specification in the linked domain plan. Package acceptance boxes are updated only with linked implementation evidence. A coding agent owns implementation/evidence; Emi reviews new labels; qualified resort reviewers own external operational evidence.
 
 | ID | Priority | Work package | Dependencies | Specification |
 | --- | --- | --- | --- | --- |
@@ -23,6 +23,10 @@ Each ID below has exactly one detailed specification in the linked domain plan. 
 | R03 | P0 | Versioned granular scoring and promotion gates | None | [Robustness](../technical/robustness-plan.md#r03-metrics-and-promotion) |
 | R04 | P1 | Bounded runtime failure handling and observability | R01, R02 | [Robustness](../technical/robustness-plan.md#r04-runtime-reliability) |
 | D01 | P1 | Qualified real-resort operational data pilot | R02; external evidence for activation | [Robustness](../technical/robustness-plan.md#d01-resort-qualification) |
+
+## Current checkpoint
+
+M01 is implemented: [47-row target audit, SDK wire checks and saved-failure inventory](../research/evidence/model-robustness-m01/README.md). No paid calls or model/runtime changes. R03 is next; remaining packages are not yet implemented. Historical raw outputs and scores are unchanged.
 
 ## Execution and delivery
 

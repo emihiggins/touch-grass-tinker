@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import importlib.metadata
 import json
+import math
 from pathlib import Path
 from .corpus import read,conversation,audit
 
@@ -10,6 +11,28 @@ RENDERER='qwen3_disable_thinking'
 COOKBOOK_COMMIT='1c03a20fdda98156ccbec15728c0e2764b5a0bc3'
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def value_sha(value):
+    """Canonical JSON hash, distinct from exact file/text byte hashes."""
+    return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',', ':'),allow_nan=False).encode()).hexdigest()
+
+def datum_payload(datum):
+    return {'input_tokens':datum.model_input.to_ints(),
+            'target_tokens':datum.loss_fn_inputs['target_tokens'].to_torch().tolist(),
+            'weights':datum.loss_fn_inputs['weights'].to_torch().tolist()}
+
+def verify_datum(datum,tokens,prefix_length):
+    payload=datum_payload(datum)
+    if payload['input_tokens']!=tokens[:-1] or payload['target_tokens']!=tokens[1:]:
+        raise ValueError('Next-token alignment mismatch')
+    weights=payload['weights'];count=len(tokens)-prefix_length
+    if count<=0 or prefix_length<1 or len(weights)!=len(tokens)-1:
+        raise ValueError('Invalid shifted mask dimensions')
+    expected=[0.]*(prefix_length-1)+[1./count]*count
+    if any(not math.isfinite(v) or not math.isclose(v,e,rel_tol=1e-5,abs_tol=1e-8)
+           for v,e in zip(weights,expected)):
+        raise ValueError('Shifted assistant-only loss weights mismatch')
+    return payload
 
 def load_renderer(directory,manifest_path):
     from transformers import AutoTokenizer
@@ -41,15 +64,18 @@ def render_case(case,prompt,tokenizer,renderer,max_length=2048,max_output=512):
     expected=messages[-1]['content']+tokenizer.decode(renderer.get_stop_sequences())
     if tokenizer.decode(answer_tokens)!=expected:raise ValueError('Assistant target round trip mismatch')
     datum=datum_from_model_input_weights(model_input,weights,max_length=None,reduction='mean')
-    targets=datum.loss_fn_inputs['target_tokens'].to_torch().tolist()
-    shifted_weights=datum.loss_fn_inputs['weights'].to_torch().tolist()
-    if datum.model_input.to_ints()!=tokens[:-1] or targets!=tokens[1:]:raise ValueError('Next-token alignment mismatch')
-    if abs(sum(shifted_weights)-1)>1e-5:raise ValueError('Loss weights not normalized')
-    first=next(i for i,v in enumerate(shifted_weights) if v>0)
-    if first!=len(prefix)-1:raise ValueError('Shifted mask boundary mismatch')
+    payload=verify_datum(datum,tokens,len(prefix))
+    shifted_weights=payload['weights']
     return {'id':case['id'],'split':case['split'],'total_tokens':len(tokens),'prompt_tokens':len(prefix),
             'answer_tokens':len(answer_tokens),'prompt_loss_tokens':0,'target_round_trip':True,
-            'next_token_alignment':True,'loss_weight_sum':sum(shifted_weights)},datum
+            'next_token_alignment':True,'loss_weight_sum':sum(shifted_weights),
+            'source_sha256':value_sha({k:case[k] for k in ('request_text','ui_context','catalog')}),
+            'target_text_sha256':hashlib.sha256(messages[-1]['content'].encode()).hexdigest(),
+            'sequence_sha256':value_sha(tokens),'sdk_datum_sha256':value_sha(payload),
+            'assistant_prefix_length':len(prefix),
+            'weighted_target_range':{'start_inclusive':len(prefix)-1,'end_exclusive':len(tokens)-1},
+            'final_token_ids':answer_tokens[-8:], 'stop_sequence':renderer.get_stop_sequences(),
+            'decoded_target_suffix':tokenizer.decode(answer_tokens)[-96:]},datum
 
 def prepare(cases,prompt,tokenizer,renderer,config):
     result=audit(cases)
@@ -59,7 +85,7 @@ def prepare(cases,prompt,tokenizer,renderer,config):
         r,d=render_case(c,prompt,tokenizer,renderer,config['max_length'],config['sampling']['max_tokens'])
         reports.append(r);datums.append(d)
     if not reports:raise ValueError('No cases')
-    return {'scope':'local_rendering_only_not_training_approval','renderer':RENDERER,
+    return {'report_version':'target-audit-v1','environment':{name:importlib.metadata.version(name) for name in ('tinker','tinker-cookbook','transformers','tokenizers','torch')},'scope':'local_rendering_only_not_training_approval','renderer':RENDERER,
             'train_on_what':'last_assistant_message','count':len(reports),
             'max_total_tokens':max(r['total_tokens'] for r in reports),
             'max_answer_tokens':max(r['answer_tokens'] for r in reports),
