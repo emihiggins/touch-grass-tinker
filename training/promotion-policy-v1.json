@@ -1,0 +1,12 @@
+{
+  "policy_version": "model-promotion-v1",
+  "scorer_version": "granular-evaluation-v1",
+  "validation_minimum_additional_successes": 2,
+  "validation_allow_lower_schema_rate": false,
+  "final_minimum_additional_successes": 1,
+  "allow_new_critical_extraction_failures": false,
+  "allow_accepted_route_violations": false,
+  "tie_selection": "base",
+  "final_failure_action": "reject_candidate_no_retuning_on_final",
+  "statistical_significance_claim": false
+}
