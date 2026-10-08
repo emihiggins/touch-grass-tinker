@@ -3,12 +3,12 @@ import argparse,json,errno,sys
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
-from scripts.benchmark import validate_intent
 from . import fixtures
 from . import __version__
 from .compact import compact,expand_route
 from .core import plan,validate_route,preference_tradeoffs
 from .rules import interpret
+from .semantic_contract import validate_intent_semantics
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -43,7 +43,9 @@ def handle_api(path,payload,model=None):
         if adapter!='rules':raise ValueError('Unknown interpreter')
         return {**interpret(text,ui,catalog,schema_version=2),'adapter':'rules-v2','notice':'Deterministic rules interpretation; not a model response.'}
     if path!='/api/plan':raise ValueError('Unknown endpoint')
-    i=payload['intent'];validate_intent(i,{p['id'] for p in catalog})
+    i=payload['intent'];semantic=validate_intent_semantics(i,{p['id'] for p in catalog})
+    if not semantic.valid: raise ValueError('Invalid semantic intent: '+','.join(x.code for x in semantic.issues))
+    i=semantic.intent
     if i['status']!='ready':return {'status':i['status'],'route':None}
     # This fixed-date demo does not accept arbitrary clocks/scenarios.
     if i['start_time']!=ui['start_time']:raise ValueError('Demo start is fixed at 10:00 local, January 15, 2027')

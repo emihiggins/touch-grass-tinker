@@ -1,6 +1,6 @@
 # Robustness implementation plan
 
-Status: **in progress; R03 implemented offline**. Work IDs, sequencing and budget: [roadmap](../delivery/model-robustness-roadmap.md). This plan extends existing validation, recovery and transport behavior rather than asserting those systems are absent. Preserve [intent v2](intent-v2.md) and historical evaluation semantics; version any changed contract/scorer.
+Status: **in progress; R01 and R03 implemented offline**. Work IDs, sequencing and budget: [roadmap](../delivery/model-robustness-roadmap.md). This plan extends existing validation, recovery and transport behavior rather than asserting those systems are absent. Preserve [intent v2](intent-v2.md) and historical evaluation semantics; version any changed contract/scorer.
 
 ## R01 Semantic contract
 
@@ -10,11 +10,11 @@ Cases: clarification of an unknown budget must not silently retain a UI duration
 
 Separate three phases: structural parsing; semantic consistency; route feasibility. A valid short budget can yield no route, not a parser error. Unknown maximum grade remains unknown, not the hardest resort grade. Never infer lift comfort from grade. Semantic failure prevents planning and presents editable fields while retaining the original request. Hard exclusions cannot be weakened by recovery buttons without an explicit user edit.
 
-- [ ] Regression fixtures cover historical failure classes with synthetic variants, explicit overrides and ambiguous language.
-- [ ] Ready/clarify state, required values and provenance cannot contradict each other without a typed issue.
-- [ ] Valid-but-infeasible intent reaches feasibility handling; invalid intent never reaches route generation.
-- [ ] UI/export agree on corrected constraints; editing invalidates stale routes before replanning.
-- [ ] Contract migration is opt-in/versioned; old frozen outputs retain old scores.
+- [x] Regression fixtures cover historical failure classes with synthetic variants, explicit overrides and ambiguous language. ([R01 evidence](../research/evidence/model-robustness-r01/README.md))
+- [x] Ready/clarify state, required values and provenance cannot contradict each other without a typed issue.
+- [x] Valid-but-infeasible intent reaches feasibility handling; invalid intent never reaches route generation.
+- [ ] UI/export agree on corrected constraints; editing invalidates stale routes before replanning. (No UI change in this checkpoint.)
+- [x] Contract migration is opt-in/versioned; old frozen outputs retain old scores.
 
 ## R02 Planner boundary and adversarial tests
 

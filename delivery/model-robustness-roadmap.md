@@ -1,6 +1,6 @@
 # Model quality and robustness roadmap
 
-Status: **in progress — M01 and R03 implemented offline** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
+Status: **in progress — M01, R01 and R03 implemented offline** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
 
 ## Outcome and evidence
 
@@ -26,7 +26,7 @@ Each ID below has exactly one detailed specification in the linked domain plan. 
 
 ## Current checkpoint
 
-M01 is implemented: [47-row target audit, SDK wire checks and saved-failure inventory](../research/evidence/model-robustness-m01/README.md). No paid calls or model/runtime changes. R03 is also implemented: [versioned metrics, all-attempt accounting and promotion gates](../research/evidence/model-robustness-r03/README.md). R01 is next, then R02; remaining packages are not yet implemented. Historical raw outputs and scores are unchanged.
+M01 is implemented: [47-row target audit, SDK wire checks and saved-failure inventory](../research/evidence/model-robustness-m01/README.md). No paid calls or model/runtime changes. R03 is also implemented: [versioned metrics, all-attempt accounting and promotion gates](../research/evidence/model-robustness-r03/README.md). R01 is implemented offline: [typed semantic-contract checkpoint](../research/evidence/model-robustness-r01/README.md). R02 is next; remaining packages are not yet implemented. Historical raw outputs and scores are unchanged.
 
 ## Execution and delivery
 

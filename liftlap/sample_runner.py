@@ -13,7 +13,7 @@ import time
 import uuid
 from .corpus import read,conversation,audit
 from .render_audit import load_renderer,sha
-from scripts.benchmark import validate_intent
+from .semantic_contract import validate_intent_semantics
 
 def decode_sample(tokenizer,ids,stop):
     """Remove only a terminal renderer stop token, never arbitrary response text."""
@@ -29,8 +29,9 @@ def parse_output(text,stop_reason,catalog):
                 obj[k]=v
             return obj
         intent=json.loads(text,object_pairs_hook=unique,parse_constant=lambda _: (_ for _ in ()).throw(ValueError()))
-        validate_intent(intent,{p['id'] for p in catalog})
-        return intent,'valid'
+        semantic=validate_intent_semantics(intent,{p['id'] for p in catalog})
+        if not semantic.valid:return None,'invalid_semantic'
+        return semantic.intent,'valid'
     except (ValueError,TypeError,KeyError):return None,'invalid_json_or_schema'
 
 def estimate(prompts,max_output,input_rate,output_rate):
