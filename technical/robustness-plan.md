@@ -1,6 +1,6 @@
 # Robustness implementation plan
 
-Status: **proposed**. Work IDs, sequencing and budget: [roadmap](../delivery/model-robustness-roadmap.md). This plan extends existing validation, recovery and transport behavior rather than asserting those systems are absent. Preserve [intent v2](intent-v2.md) and historical evaluation semantics; version any changed contract/scorer.
+Status: **in progress; R03 implemented offline**. Work IDs, sequencing and budget: [roadmap](../delivery/model-robustness-roadmap.md). This plan extends existing validation, recovery and transport behavior rather than asserting those systems are absent. Preserve [intent v2](intent-v2.md) and historical evaluation semantics; version any changed contract/scorer.
 
 ## R01 Semantic contract
 
@@ -33,6 +33,8 @@ Time cases: midnight rollover, timezone-aware timestamps, DST repeated/nonexiste
 
 ## R03 Metrics and promotion
 
+Implemented offline 2026-10-08: [contract and limitations](granular-evaluation-v1.md), [saved evidence](../research/evidence/model-robustness-r03/README.md). This ships scorer/gate tooling, not a new model or runtime semantic changes.
+
 Extend `liftlap/evaluation_v2.py` through a new versioned report/scorer; retain original replay tooling. Record per-case transport outcome, raw-output hash, parsing/schema status, field errors, semantic issues, clarification correctness, proposed-route validity and end-to-end task outcome. Preserve every assigned case in the denominator, including timeouts and malformed outputs. Report transport completion separately, not by excluding failed requests.
 
 Metrics: strict syntax/schema rate; exact intent match; per-field accuracy and exclusion-set precision/recall; hard-max/hard-exclusion violation counts; clarification false-positive/false-negative counts; end-to-end success; runtime percentiles; input/output tokens and reserved/reconciled costs. Break down by scenario and family, with sample counts. A schema-valid unsafe proposal rejected downstream is an extraction failure but a successful safety interception—report both. Report fallback results separately from primary-model success.
@@ -41,10 +43,10 @@ For repeatability, run a small predeclared validation subset repeatedly only wit
 
 **Proposed promotion rule, frozen before execution:** no accepted route violates a hard constraint in mandatory regression tests; no new critical extraction regressions against the base on validation; at least two additional validation task successes and no lower strict schema rate. Choose the base on ties. For a candidate passing validation, run the fixed final comparison and require no new critical regressions and higher final task success before promotion. Report uncertainty/paired outcomes; these operational gates do not establish statistical significance. A failing final result rejects this candidate; it must not trigger tuning on the same final set.
 
-- [ ] Scorer fixtures independently cover malformed output, wrong IDs, missing predictions, transport failure and all-failed repeatability.
-- [ ] Report totals reconcile exactly to the frozen case manifest and all attempted runs.
-- [ ] Historical replay is unchanged; new metrics are separately versioned.
-- [ ] Promotion decision and reasons are machine-readable and reproducible from saved outputs.
+- [x] Scorer fixtures independently cover malformed output, wrong IDs, missing predictions, transport failure and all-failed repeatability.
+- [x] Report totals reconcile exactly to the frozen case manifest and all attempted runs.
+- [x] Historical replay is unchanged; new metrics are separately versioned.
+- [x] Promotion decision and reasons are machine-readable and reproducible from saved outputs.
 
 ## R04 Runtime reliability
 
