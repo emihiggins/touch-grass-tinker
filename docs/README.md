@@ -12,6 +12,8 @@
 
 ## Proposed upgrades
 
+[Model quality and robustness roadmap](../delivery/model-robustness-roadmap.md): planned target audits, reviewed data expansion, bounded fine-tuning, semantic/adversarial checks, metrics, runtime reliability and resort qualification. These are proposed work packages, not shipped capabilities.
+
 [Mountain map and real-resort research](../research/mountain-map-upgrade.md): source/licensing checks, renderer recommendation and staged acceptance criteria. The offline sketch, local geographic view and attributed hillshade are implemented; the document also identifies later data-review work.
 
 ## Historical planning and evidence
