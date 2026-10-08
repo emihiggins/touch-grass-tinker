@@ -49,7 +49,8 @@
     "Winter Park original-response station evidence recovered; source-linked lift endpoint map inspection added; diagnostics corrected to exclude station outlines and freight aerialways from passenger counts",
     "Offline server/package checks isolated from inherited proxies; excluded-source selection, fill/area semantics, actual exclusion reasons and mobile wrapping regression-tested",
     "Standalone preview verifies all snapshot bytes; missing-node geometry stays segmented; hash-bound Winter Park piste-only structural return report and qualification queue added without routing promotion",
-    "Research preview exposes allowlisted native access/direction/operating tags and source versions with explicit unknown states; graph metadata and routing unchanged"
+    "Research preview exposes allowlisted native access/direction/operating tags and source versions with explicit unknown states; graph metadata and routing unchanged",
+    "Malformed OSM coordinates and duplicate identities rejected before sanitization/import; CLI proves no output on invalid input and all saved resort snapshots still reproduce"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
@@ -60,7 +61,7 @@
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
-  "tests_passed": 162,
+  "tests_passed": 168,
   "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
   "background_worker_active": false,
   "next_action": "Continue concrete offline improvements; external evidence and owner-only publication items are tracked in delivery/review-later.md",
@@ -80,7 +81,7 @@
     "dev_publication_actor": "Emi only",
     "source_message_id": "2437"
   },
-  "tests_run": 184,
+  "tests_run": 190,
   "optional_tests_skipped": 22,
   "review_later_log": "delivery/review-later.md"
 }

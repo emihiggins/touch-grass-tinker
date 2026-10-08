@@ -81,3 +81,12 @@ Local-correction regression: `PLAYWRIGHT_MODULE=/path/to/playwright-core node sc
 ### Proxy-independent offline checks
 
 Server tests and extracted-package HTTP checks use explicit direct urllib openers only for their loopback test URLs. They do not depend on NO_PROXY and do not modify machine proxy settings or provider clients. To verify isolation, run the offline release suite with HTTP_PROXY/http_proxy set to an unreachable local endpoint and NO_PROXY/no_proxy empty; all offline checks should still pass.
+
+### Malformed resort input
+
+The offline importer rejects non-finite/out-of-range coordinates, missing numeric
+coordinates, duplicate or missing node/way identities and non-snapshot XML roots.
+Validation also runs before sanitization so malformed input cannot become a
+plausible sanitized snapshot. Invalid input must not create an output directory.
+This does not validate real-world trail access or lift direction; those remain
+review requirements. Existing saved snapshots are not rewritten by validation.
