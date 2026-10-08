@@ -1,6 +1,6 @@
 {
   "scope": "current_offline_replay_UI_capture_provenance",
-  "captured_on": "2026-10-07",
+  "captured_on": "2026-10-08",
   "live_calls_for_refresh": 0,
   "source": "scripts/browser-ai-demo.cjs; Chromium offline recorded mode",
   "sha256": {
@@ -30,7 +30,7 @@
     "research/evidence/app-integration/request-recovery.json": "d6fd8907a038eee1930ca7d2926ae4c7d6e28c9f1c16000e32248d2c843dad32",
     "scripts/browser-corrections.cjs": "b090771740846b33389cec40317dbde7317f809fb440ebc115e9aabbdd04265b",
     "research/evidence/app-integration/local-corrections.json": "3ae095f807be06eb1b936f3847d864a41c4f3e6da4eefa086fbed4575c75d604",
-    "research/evidence/app-integration/local-corrections-mobile.png": "2b5758e6ee8455cd43fe5e4f0e93b6e128f0fccef7626ccd08756efc704a4207"
+    "research/evidence/app-integration/local-corrections-mobile.png": "f77b8266607d6b8cc0810a0dd26208e8478880afe4c84501a463b27fdfbfc8e8"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",
