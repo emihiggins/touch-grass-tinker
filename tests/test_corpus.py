@@ -1,6 +1,7 @@
 import copy
 import unittest
-from liftlap.corpus import audit, export, read, conversation, iteration_manifest, row_hashes
+from liftlap.corpus import audit, export, read, conversation
+from liftlap.corpus_m02 import iteration_manifest, row_hashes
 from liftlap.compare import compare
 
 class CorpusTests(unittest.TestCase):
@@ -38,7 +39,7 @@ class CorpusTests(unittest.TestCase):
         self.assertEqual(manifest['candidate_count'], 12)
         self.assertEqual(manifest['split_counts'], {'training_candidate': 12})
         self.assertTrue(all(row['review_state'] == 'unapproved' for row in manifest['rows']))
-        self.assertEqual(set(row_hashes(cases[0])), {'request_sha256', 'context_sha256', 'graph_sha256', 'label_sha256'})
+        self.assertEqual(set(row_hashes(cases[0])), {'request_sha256', 'context_sha256', 'catalog_constraints_sha256', 'graph_sha256', 'label_sha256'})
         self.assertIn('sparse_or_missing', manifest['coverage'])
 
     def test_paired_missing_output_is_failure(self):
