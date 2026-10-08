@@ -22,6 +22,30 @@ const fs = require('fs');
     ]) {
       await page.selectOption('#s', resort);
       await page.waitForFunction((n) => document.querySelectorAll('#map .e').length === n, count);
+      if (width === 390 && resort === 'wachusett') {
+        await page.locator('#trail-search').fill('Frannie');
+        if ((await page.locator('#search-results button').count()) < 2)
+          throw Error('Search did not group multiple source ways');
+        await page.locator('#search-results button').first().click();
+        if ((await page.locator('#map .selected').count()) < 2)
+          throw Error('Search did not highlight source segments');
+        await page.locator('#trail-search').fill('95438172');
+        if ((await page.locator('#search-results button').count()) !== 1)
+          throw Error('Source way search');
+        await page.locator('#trail-search').fill('no-such-terrain-feature');
+        if (!(await page.locator('#search-status').innerText()).includes('No trails'))
+          throw Error('Search empty state');
+        await page.locator('#trail-search-clear').click();
+        if (await page.locator('#detail').innerText()) throw Error('Search clear leaked selection');
+        await page.locator('#trail-search').fill('Frannie');
+        await page.locator('#search-results button').first().click();
+        await page.uncheck('#p');
+        if (!(await page.locator('#status').innerText()).includes('hidden by'))
+          throw Error('Hidden selection status');
+        await page.selectOption('#s', 'patscherkofel');
+        if (await page.locator('#trail-search').inputValue())
+          throw Error('Terrain switch leaked search');
+      }
       const bounds = await page.locator('#map').evaluate((m) => {
         const b = m.getBBox();
         return { x: b.x, y: b.y, w: b.width, h: b.height };
@@ -44,7 +68,8 @@ const fs = require('fs');
       await page.uncheck('#d');
       const subset = await page.locator('#map .e').count();
       if (subset >= count) throw Error('Component filter ineffective');
-      if (await page.locator('#detail').innerText()) throw Error('Stale detail after filtering');
+      if (!(await page.locator('#detail').innerText()).includes('Source way'))
+        throw Error('Selection detail was lost while filtering');
       await page.check('#d');
       await page.uncheck('#p');
       if (await page.locator('#map .piste').count()) throw Error('Piste filter');

@@ -1,6 +1,11 @@
 const D = JSON.parse(document.querySelector('#data').textContent),
   $ = (x) => document.getElementById(x);
-let C, E, L, X;
+let C,
+  E,
+  L,
+  X,
+  Q = '';
+let selectedSource = null;
 function comps(g) {
   let a = new Map(g.nodes.map((n) => [n.id, new Set()]));
   g.edges.forEach((e) => {
@@ -103,12 +108,71 @@ function appendSourceEvidence(container, refs) {
   }
 }
 
+function sourceKey(e) {
+  return e.source_refs?.[0] || '';
+}
+function sourceGroups() {
+  const groups = new Map();
+  for (const e of C.graph.edges) {
+    for (const ref of e.source_refs || []) {
+      if (!groups.has(ref)) groups.set(ref, { ref, name: e.name || ref, kind: e.kind, edges: [] });
+      const group = groups.get(ref);
+      group.edges.push(e);
+      if (!group.name && e.name) group.name = e.name;
+    }
+  }
+  return [...groups.values()].sort(
+    (a, b) => a.name.localeCompare(b.name) || a.ref.localeCompare(b.ref),
+  );
+}
+function updateSearch() {
+  const list = $('search-results');
+  list.replaceChildren();
+  const query = Q.trim().toLocaleLowerCase();
+  const matches = sourceGroups().filter((group) => {
+    if (!query) return false;
+    return [group.name, group.ref, ...group.edges.map((e) => e.id)].some((value) =>
+      String(value || '')
+        .toLocaleLowerCase()
+        .includes(query),
+    );
+  });
+  $('search-status').textContent = query
+    ? matches.length
+      ? `${matches.length} source way${matches.length === 1 ? '' : 's'} found.`
+      : 'No trails or lifts match that search.'
+    : 'Search by a trail or lift name, or a source way ID.';
+  for (const group of matches) {
+    const item = document.createElement('li');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = `${group.name} — ${group.kind}; ${group.ref}`;
+    button.setAttribute('aria-label', `${group.name}, ${group.kind}, source way ${group.ref}`);
+    button.onclick = () => {
+      selectedSource = group.ref;
+      const representative = group.edges[0];
+      detail(representative);
+      $('trail-search').focus();
+    };
+    item.append(button);
+    list.append(item);
+  }
+}
+function clearSegmentSelection() {
+  E = null;
+  X = null;
+  selectedSource = null;
+  $('detail').replaceChildren();
+  $('lift-detail').replaceChildren();
+}
+
 function detail(e) {
   X = null;
   L = null;
   $('lift-review').value = '';
   $('lift-detail').replaceChildren();
   E = e.id;
+  selectedSource = sourceKey(e);
   draw();
   let d = $('detail');
   d.replaceChildren();
@@ -224,7 +288,10 @@ function draw() {
     );
     q.setAttribute(
       'class',
-      'e ' + e.kind + (E == e.id ? ' selected' : '') + (cc.get(e.from) != largest ? ' dis' : ''),
+      'e ' +
+        e.kind +
+        (selectedSource && (e.source_refs || []).includes(selectedSource) ? ' selected' : '') +
+        (cc.get(e.from) != largest ? ' dis' : ''),
     );
     q.setAttribute('tabindex', '0');
     q.setAttribute('role', 'button');
@@ -240,6 +307,23 @@ function draw() {
       }
     };
     v.append(q);
+  }
+  if (selectedSource) {
+    const visible = g.edges.some(
+      (e) =>
+        (e.source_refs || []).includes(selectedSource) &&
+        (e.kind == 'lift' ? $('l').checked : $('p').checked) &&
+        ($('d').checked || cc.get(e.from) == largest),
+    );
+    if (!visible) {
+      $('status').textContent =
+        'Selected source way ' + selectedSource + ' is hidden by the current map filters.';
+      $('status').classList.add('hidden-selection');
+    } else {
+      $('status').classList.remove('hidden-selection');
+    }
+  } else {
+    $('status').classList.remove('hidden-selection');
   }
   for (const [i, endpoint] of (L?.endpoint_incidence || []).entries()) {
     if (!endpoint.coordinate) continue;
@@ -285,6 +369,9 @@ function load() {
   X = null;
   E = null;
   L = null;
+  Q = '';
+  selectedSource = null;
+  $('trail-search').value = '';
   $('lift-detail').replaceChildren();
   const select = $('lift-review');
   select.replaceChildren(new Option('Choose a source lift', ''));
@@ -301,6 +388,8 @@ function load() {
     : 'Endpoint diagnostics have not been generated for this sample.';
   $('detail').replaceChildren();
   $('status').textContent = 'Select a segment.';
+  $('status').classList.remove('hidden-selection');
+  updateSearch();
   renderExcludedList();
   draw();
 }
@@ -325,12 +414,27 @@ function renderExcludedList() {
 $('s').onchange = load;
 for (let x of ['l', 'p', 'd', 'x'])
   $(x).onchange = () => {
-    E = null;
-    X = null;
-    $('detail').replaceChildren();
-    $('status').textContent = 'Select a segment.';
+    $('status').textContent = selectedSource
+      ? 'Selection retained; checking whether the source way is visible with these filters.'
+      : 'Select a segment.';
     draw();
   };
+$('trail-search').oninput = () => {
+  Q = $('trail-search').value;
+  clearSegmentSelection();
+  $('status').textContent = Q.trim() ? 'Select a search result.' : 'Select a segment.';
+  updateSearch();
+  draw();
+};
+$('trail-search-clear').onclick = () => {
+  $('trail-search').value = '';
+  Q = '';
+  clearSegmentSelection();
+  $('status').textContent = 'Select a segment.';
+  updateSearch();
+  draw();
+  $('trail-search').focus();
+};
 load();
 
 $('lift-review').onchange = () => {
