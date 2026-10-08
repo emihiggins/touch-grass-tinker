@@ -1,0 +1,1634 @@
+{
+  "report_version": "target-audit-v1",
+  "environment": {
+    "tinker": "0.32.0",
+    "tinker-cookbook": "0.5.8.dev10+g1c03a20fd",
+    "transformers": "5.5.4",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0+cpu"
+  },
+  "scope": "local_rendering_only_not_training_approval",
+  "renderer": "qwen3_disable_thinking",
+  "train_on_what": "last_assistant_message",
+  "count": 47,
+  "max_total_tokens": 1714,
+  "max_answer_tokens": 141,
+  "total_sequence_tokens": 79702,
+  "total_answer_tokens": 5831,
+  "truncated_examples": 0,
+  "prompt_loss_tokens": 0,
+  "cases": [
+    {
+      "id": "train-candidate-001",
+      "split": "train",
+      "total_tokens": 1693,
+      "prompt_tokens": 1572,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "a8d3b7fc3738e640c32c45f8fa7a5353597f6f467325941e02176db89f122bda",
+      "target_text_sha256": "66932cc146fa97db6022eb06ad74d1a9b3b52613ec6a1f3d29915bf1ca26d493",
+      "sequence_sha256": "6f4286358a1804ebaeed9356ec8b140f6d9f1f47923e82280139960e8bd0e6d5",
+      "sdk_datum_sha256": "9efffbca83910326a79fb8cdf88e4277de53d1b29a606795993316204dd532e9",
+      "assistant_prefix_length": 1572,
+      "weighted_target_range": {
+        "start_inclusive": 1571,
+        "end_exclusive": 1692
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-002",
+      "split": "train",
+      "total_tokens": 1709,
+      "prompt_tokens": 1575,
+      "answer_tokens": 134,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999767169356,
+      "source_sha256": "ce649b791b8c824f806de21d920b1a99ffcd003f855deb766f4c3ddabcedba14",
+      "target_text_sha256": "a476cd3044c1982a49b4e53aa85f324e1e273c9a69ad91f09c2fe1e4c626defc",
+      "sequence_sha256": "7c6e5d6b55bcf4d4a5bc4b4c5ee28c51da00e7ed531b1a0f9fdffa6a2237de0a",
+      "sdk_datum_sha256": "8f91eb09f60c712f101b3ec49b8bee5e3597f04d97e8bda1fcd092a985c535dd",
+      "assistant_prefix_length": 1575,
+      "weighted_target_range": {
+        "start_inclusive": 1574,
+        "end_exclusive": 1708
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-003",
+      "split": "train",
+      "total_tokens": 1714,
+      "prompt_tokens": 1573,
+      "answer_tokens": 141,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999683350325,
+      "source_sha256": "276c40a4da0f4f04b3fff5767f2578607397e2e0810e2802fed0df040975f001",
+      "target_text_sha256": "6eeb0b96d115192a82a148b80941ec5bfd51d6c768b0ad6fa53a440c42c707e5",
+      "sequence_sha256": "6ff4e683e364fb8c404e733eb95546e15a21b4ccc563f4e1ca32a7df2bda4ad0",
+      "sdk_datum_sha256": "76367cd05668aa9d4709b1c2927ae5a7922b2779af6e327c798edb733b7e4f90",
+      "assistant_prefix_length": 1573,
+      "weighted_target_range": {
+        "start_inclusive": 1572,
+        "end_exclusive": 1713
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-004",
+      "split": "train",
+      "total_tokens": 1698,
+      "prompt_tokens": 1577,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "349a66a5b01a46f55b02a017887d4361a47092ac503648477d0383e1764afafc",
+      "target_text_sha256": "baf6988b27dcf156486fb1c85018307a309c61b9f977ea9628f2646e35a6d023",
+      "sequence_sha256": "f742aaa66b47d34ff60995550ff38ee0e0600c17c8bcdd137c06dc037dbff942",
+      "sdk_datum_sha256": "98f0d78e8b4a36632800af5d145123fe136788d4b34b341fa12277965de3a3c0",
+      "assistant_prefix_length": 1577,
+      "weighted_target_range": {
+        "start_inclusive": 1576,
+        "end_exclusive": 1697
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-005",
+      "split": "train",
+      "total_tokens": 1707,
+      "prompt_tokens": 1582,
+      "answer_tokens": 125,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000474974513,
+      "source_sha256": "4ebe28e87f790b1972d1dbb569894098c342065d75ff40fa8d77e3f816247176",
+      "target_text_sha256": "5fe058abed4dcf2db30aca22a1adf2718d6436fcf7a6b86002f95e3ae8874eec",
+      "sequence_sha256": "9ad909fef0c2a91844e9ef9cdcb9900c6e631b35fa6e9a3ffd6a2c3300a97ab8",
+      "sdk_datum_sha256": "6718b5ba9a4d6cd5932cca69bfadf989f3d2b9d733aab38f56b88c75de7ca688",
+      "assistant_prefix_length": 1582,
+      "weighted_target_range": {
+        "start_inclusive": 1581,
+        "end_exclusive": 1706
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-006",
+      "split": "train",
+      "total_tokens": 1693,
+      "prompt_tokens": 1572,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "7717a0c8cbd34aff52a1507e6ffdc24576b6eda0c802fd4cd7e55a6603932af7",
+      "target_text_sha256": "02ae626fde7e15db96b202ea3d9d67746ab6e5420dcdba88c479003fabb5ff49",
+      "sequence_sha256": "b3a91948b303a8b04337c55833accd3841abbbbf4a63dd14f3ab2730dd881f21",
+      "sdk_datum_sha256": "46a2b4969e59e61283932a8ebb7e3938f026c021de5cddd577ea32c5f01ae0a1",
+      "assistant_prefix_length": 1572,
+      "weighted_target_range": {
+        "start_inclusive": 1571,
+        "end_exclusive": 1692
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-007",
+      "split": "train",
+      "total_tokens": 1696,
+      "prompt_tokens": 1576,
+      "answer_tokens": 120,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000521540642,
+      "source_sha256": "f14458abac9efedad4d4cff84796859849d3720bc7402d0c2979f9684ac30d8a",
+      "target_text_sha256": "ac9fd71b31ac0c07e6e899aa9709f8b88f18531b501bb6fd808bac9c509b29fa",
+      "sequence_sha256": "bb90c4524511834d14745a8fd0399dcfebacf5a4d853698cc1197508d11d28b3",
+      "sdk_datum_sha256": "a12a74eeb7ae617b72244ddb0dc12a65720ef46f717e413c115737607a1442db",
+      "assistant_prefix_length": 1576,
+      "weighted_target_range": {
+        "start_inclusive": 1575,
+        "end_exclusive": 1695
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-008",
+      "split": "train",
+      "total_tokens": 1695,
+      "prompt_tokens": 1572,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "372074070c6ab90966cac9b2a9b119afd10a1d6f4ec57fe794f00396ee6908f2",
+      "target_text_sha256": "21b388c20513991740cf3740b973864bbecc38edbdaf4a378768ca313bbaf7e7",
+      "sequence_sha256": "340945348eef3f919cd6759d16573b6e573077cf8ee50d83ca9d850ea4320f44",
+      "sdk_datum_sha256": "d75c0a617663bf7c4c00091049c041ef545e09120ac3157c642fc9c94bb5e5f3",
+      "assistant_prefix_length": 1572,
+      "weighted_target_range": {
+        "start_inclusive": 1571,
+        "end_exclusive": 1694
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-010",
+      "split": "train",
+      "total_tokens": 1700,
+      "prompt_tokens": 1577,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "c3426fce9270947902e8d9f9639314109569145cbddd02a9f9a905994d87796f",
+      "target_text_sha256": "940d92dcdcf2a3a847b537ff6b35ccec204ddefd7ab7c83ab999fd4083b4fa12",
+      "sequence_sha256": "0c81027861a37271b6e0b493253b3dfbf6277814eb775140310bd1780976f2c5",
+      "sdk_datum_sha256": "ea8d54a35096e01cf9bf1a54c95a7c6804385a0c24899efcb6a6157b7c4ba947",
+      "assistant_prefix_length": 1577,
+      "weighted_target_range": {
+        "start_inclusive": 1576,
+        "end_exclusive": 1699
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-011",
+      "split": "train",
+      "total_tokens": 1691,
+      "prompt_tokens": 1565,
+      "answer_tokens": 126,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000577419996,
+      "source_sha256": "743061115f940e5c9c588154c093efa548b7a5226c1aa63382c5c22d1037c78e",
+      "target_text_sha256": "a491aee9a26e0e0d7c3384e46e2794c7278edb210eb64faacc052742468ae2a3",
+      "sequence_sha256": "d4437b6c9e573450ef5467b270636d2c52b9d3dc951ef9a5a1652c8992e71f76",
+      "sdk_datum_sha256": "d9b4d3e6929bcb145916d223daf03f1025c5a393796f5861d3b5d7cce8f47340",
+      "assistant_prefix_length": 1565,
+      "weighted_target_range": {
+        "start_inclusive": 1564,
+        "end_exclusive": 1690
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-012",
+      "split": "train",
+      "total_tokens": 1697,
+      "prompt_tokens": 1573,
+      "answer_tokens": 124,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999701976776,
+      "source_sha256": "e5accc2a9ecfef17cd7676ae2e30f9066e0188d3d88299252743a1d97df8e0ea",
+      "target_text_sha256": "e6a3c1504490a157a6589f768e3abd5dd5a006785e99e6335a8b4fb7f3497d93",
+      "sequence_sha256": "a144410538149c9398877976cec1ae66ac8666c525d88933f7c667028000302a",
+      "sdk_datum_sha256": "43b13a83711091afe87007d5596bcea59ad459ab1965a8d9d6edec5e58803cbf",
+      "assistant_prefix_length": 1573,
+      "weighted_target_range": {
+        "start_inclusive": 1572,
+        "end_exclusive": 1696
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-013",
+      "split": "train",
+      "total_tokens": 1690,
+      "prompt_tokens": 1568,
+      "answer_tokens": 122,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999441206455,
+      "source_sha256": "63034b0ef78f99d1c9259e76dbc369f0e2953ebbbb3df903c9d6efc04060bb09",
+      "target_text_sha256": "fd47db9a23b50fdab3edb66dcc58c646cb478edc1c709349cd180258dae812bb",
+      "sequence_sha256": "d021a73ffacd0845da2c09c19fa4dc873f3fad9ff55044adfafb095c1460f63a",
+      "sdk_datum_sha256": "33a97333231741ff1fd6f37a39c83f6cedbc08741100e2aff6f63d7f4f206238",
+      "assistant_prefix_length": 1568,
+      "weighted_target_range": {
+        "start_inclusive": 1567,
+        "end_exclusive": 1689
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-014",
+      "split": "train",
+      "total_tokens": 1705,
+      "prompt_tokens": 1568,
+      "answer_tokens": 137,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999920837581,
+      "source_sha256": "9dcec9cf70bb7b7ee89e6972a5bd6ff845c4b1ddb394d8bab8e717197a816d17",
+      "target_text_sha256": "1644cadb512faebf755e34a908cec89df874fb80ec0bf41f5f30ee5b7bfb02c1",
+      "sequence_sha256": "9d0e2cf94f439c4b732d524e570de015def453c183186c16f16618bda477dbd1",
+      "sdk_datum_sha256": "b39a489216c3ee09ccc5f3eb68b21f79dda8c45d013415131d66e0399f979e97",
+      "assistant_prefix_length": 1568,
+      "weighted_target_range": {
+        "start_inclusive": 1567,
+        "end_exclusive": 1704
+      },
+      "final_token_ids": [
+        65513,
+        788,
+        4383,
+        24822,
+        10841,
+        22353,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "0:00+01:00\", \"status\": \"unsupported\", \"unsupported_preferences\": [\"live_queue_times\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-015",
+      "split": "train",
+      "total_tokens": 1694,
+      "prompt_tokens": 1570,
+      "answer_tokens": 124,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999701976776,
+      "source_sha256": "8ecd07bd4f115c5ca4d46e3a20fde03c1557757b09c5935d5baa9821f88c18b2",
+      "target_text_sha256": "d284474759191d0447bf28a277cd612a2241c305d20785024a7514f090ccdd01",
+      "sequence_sha256": "86a36aca2c81543aed6ad7b04d49433433969a26b2e5efef3f92f4398c6a890e",
+      "sdk_datum_sha256": "c0596786e482baf753a1e7036fb7c4ba6cc0b3ff3081a706f6b3a14911934ea2",
+      "assistant_prefix_length": 1570,
+      "weighted_target_range": {
+        "start_inclusive": 1569,
+        "end_exclusive": 1693
+      },
+      "final_token_ids": [
+        65513,
+        788,
+        4383,
+        1847,
+        620,
+        16776,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "15T10:00:00+01:00\", \"status\": \"unsupported\", \"unsupported_preferences\": [\"off_piste\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-016",
+      "split": "train",
+      "total_tokens": 1693,
+      "prompt_tokens": 1568,
+      "answer_tokens": 125,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000474974513,
+      "source_sha256": "d4e5de1b612af0545b9588c2d86e20f98bc33e3ae6fbe5e6001922f677a9b541",
+      "target_text_sha256": "ec3eda6b8de4acbb85e607627c13131625a0093eba7615c5cd237e3e4ea23067",
+      "sequence_sha256": "5eac96f04729582e134a2b7544692faa41261d5c79af3880012540c7acd84f2f",
+      "sdk_datum_sha256": "df8f1d02fcd2e52c3952062d7d4a6ccff252d1ba0dea1c7c03900f29cc76da2c",
+      "assistant_prefix_length": 1568,
+      "weighted_target_range": {
+        "start_inclusive": 1567,
+        "end_exclusive": 1692
+      },
+      "final_token_ids": [
+        788,
+        4383,
+        24822,
+        1889,
+        2966,
+        287,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "0:00:00+01:00\", \"status\": \"unsupported\", \"unsupported_preferences\": [\"live_grooming\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-017",
+      "split": "train",
+      "total_tokens": 1694,
+      "prompt_tokens": 1571,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "6fd2fe2dbd2ba3cccf6ad0e38f3311b7995afab816a6f9c6e8c69f022b35caae",
+      "target_text_sha256": "dd5de1ec386c82b379052f7a09d853bf89a4cccd765bc53e387c6178efd8417e",
+      "sequence_sha256": "b9fe5f2c77cf8a078f29fb0ec0ebb201cc9bc41369d8697975c4417a599ea4e3",
+      "sdk_datum_sha256": "6c6ef259307a24c9cf5ad74de3ea20f1779b40f08c5a36dcdb1853cd9b190c20",
+      "assistant_prefix_length": 1571,
+      "weighted_target_range": {
+        "start_inclusive": 1570,
+        "end_exclusive": 1693
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-018",
+      "split": "train",
+      "total_tokens": 1714,
+      "prompt_tokens": 1574,
+      "answer_tokens": 140,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000055879354,
+      "source_sha256": "a41566d6131c249b3cc50692b26209f65e9278cf7cfbb2224ac054703df00d81",
+      "target_text_sha256": "b1d0886ad693f709b67b1b3c9f2cd80c10f15ae0e6279ed5dcee0a642cfe63a5",
+      "sequence_sha256": "dc347a74fe9015a38d24f22720348ff8cfc414dcf889cb41b3d2274df1113d21",
+      "sdk_datum_sha256": "2aa54956601544a93d1ccb23ef4fb637907e5caab97c1b00a6994c4d820c4c19",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1713
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-019",
+      "split": "train",
+      "total_tokens": 1696,
+      "prompt_tokens": 1571,
+      "answer_tokens": 125,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000474974513,
+      "source_sha256": "cce5687942e7a14cd1687e45c695fc14d3094af73e777696511824c54fe31baa",
+      "target_text_sha256": "cdd7d2aec116d65d0a74297c7b118ccc3c69f3eaa5a6c5bbe691cf946b3c80c3",
+      "sequence_sha256": "1c3a8f0ed71b48d47363b040a84823639ff12ce16d670f09afd19094c34063be",
+      "sdk_datum_sha256": "f55bf0c15ac04a53d7b7b52c1d18d8404f143336231b980980f5cef0f34c0bd5",
+      "assistant_prefix_length": 1571,
+      "weighted_target_range": {
+        "start_inclusive": 1570,
+        "end_exclusive": 1695
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-020",
+      "split": "train",
+      "total_tokens": 1701,
+      "prompt_tokens": 1571,
+      "answer_tokens": 130,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000009313226,
+      "source_sha256": "a8e3a9121e4abab6ce068d86b9db06d3048bdc7ed54775ad4bd6775d4ffaaef8",
+      "target_text_sha256": "0c370cf9aaae27ab60dd2437ea8acf9a5e0cc28f02093b0850d30484efcf50bd",
+      "sequence_sha256": "778c38bd67dc9ea9bf41622a2577ef463c62d5db092b97ad7b4a3338398dd435",
+      "sdk_datum_sha256": "26915726ee5df567b2ecff0276fde9f8e5c2246e02452a0ef9203da750ff15ed",
+      "assistant_prefix_length": 1571,
+      "weighted_target_range": {
+        "start_inclusive": 1570,
+        "end_exclusive": 1700
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-021",
+      "split": "train",
+      "total_tokens": 1701,
+      "prompt_tokens": 1576,
+      "answer_tokens": 125,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000474974513,
+      "source_sha256": "06d919e512878255c26d0536f34877f2fd56e8f407cb26f5c174a0ca298b4cec",
+      "target_text_sha256": "e44ab9bbefa7a455c80a3d61ae824537d09d2626a56b2ed3b25fd6b059c48dc1",
+      "sequence_sha256": "8906774ff37257e6b1d081d406e3b89156f9adc32ed37c8824d5f13fe6dda658",
+      "sdk_datum_sha256": "f2ccfcbe71604b500129dc153a822e5f271603e3fe844a7b5410e8ecd821a75f",
+      "assistant_prefix_length": 1576,
+      "weighted_target_range": {
+        "start_inclusive": 1575,
+        "end_exclusive": 1700
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-022",
+      "split": "train",
+      "total_tokens": 1689,
+      "prompt_tokens": 1570,
+      "answer_tokens": 119,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000512227416,
+      "source_sha256": "e11eae0b785855945e203b7ca098878c05c8a73a6bd61034763aca3b92533784",
+      "target_text_sha256": "736bb68981fe76ebea5d7ed9c84065566f32f32e38bb00c0e6b4f3b4aec3c2f1",
+      "sequence_sha256": "95a12abdc5e9c98c420b1ad1b6586f7f197e45d388ffd19e82db5d6f92ab8cd4",
+      "sdk_datum_sha256": "16fa13274e2665ba08021afaae33ed0705c8babd5bb7d9d35866bfa060871ea6",
+      "assistant_prefix_length": 1570,
+      "weighted_target_range": {
+        "start_inclusive": 1569,
+        "end_exclusive": 1688
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-023",
+      "split": "train",
+      "total_tokens": 1695,
+      "prompt_tokens": 1574,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "e64bc07b8f7e0a227594d7263be4508971d3a5ccb28504fa180b0b579f41940f",
+      "target_text_sha256": "02ae626fde7e15db96b202ea3d9d67746ab6e5420dcdba88c479003fabb5ff49",
+      "sequence_sha256": "b40750c1151859778a3b3c79fccdd7fb6fc227cc72625b0fd69dd40eb77199db",
+      "sdk_datum_sha256": "5aa16eb0448dc713aa3c2db5dae3e02777d5c68127ea3214be1d9bccbf8a106e",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1694
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-024",
+      "split": "train",
+      "total_tokens": 1697,
+      "prompt_tokens": 1576,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "850f549ffc25f726b3285fa7e6b6a83730304d0d7d6fbbf10a4514ff8a257f03",
+      "target_text_sha256": "75a4b0a59ad421ae143a327292620eeb2a9be6155606cc8f65541b115b691f43",
+      "sequence_sha256": "0e2baf5f6c47280e8fc716d5eaedeaa7f855c22a9a5d52245b5983e09efb7455",
+      "sdk_datum_sha256": "4e182ae89289aa156c849660f5c4fa4fcd452dc846c23c8f11e1ef07145dfe37",
+      "assistant_prefix_length": 1576,
+      "weighted_target_range": {
+        "start_inclusive": 1575,
+        "end_exclusive": 1696
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-025",
+      "split": "train",
+      "total_tokens": 1691,
+      "prompt_tokens": 1569,
+      "answer_tokens": 122,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999441206455,
+      "source_sha256": "6e6edebbc833a89c005a78d0a31b9d8cb7d8509512537ff9248c8c00c1c605ec",
+      "target_text_sha256": "83fc78884c39b71139259901979f8cba97a8edc4b1a0c7702b109a7e113258b8",
+      "sequence_sha256": "5aff414b9a05eefc4e4b1f2369a537023862a31609c77525539fffa599471fb8",
+      "sdk_datum_sha256": "24745b7f3daffbcf9ca645e872f4083827f861ac2aad2c954151572167604417",
+      "assistant_prefix_length": 1569,
+      "weighted_target_range": {
+        "start_inclusive": 1568,
+        "end_exclusive": 1690
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-026",
+      "split": "train",
+      "total_tokens": 1689,
+      "prompt_tokens": 1568,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "ff008c8939538139cb57002cab7b4fd9b05150891095dda3f4466a75c7335bd1",
+      "target_text_sha256": "61f57da44c71dbd3b61d89f51466ae87f4ef36f553fa1c3f64b0b0ca1bdaa849",
+      "sequence_sha256": "62740a417581fdce7750719745e35235a4a80295f56b1d137109e810904f8023",
+      "sdk_datum_sha256": "3b6bf19400c0110717821a854bea01eba52b37dec54c3029490152282fef68f6",
+      "assistant_prefix_length": 1568,
+      "weighted_target_range": {
+        "start_inclusive": 1567,
+        "end_exclusive": 1688
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-027",
+      "split": "train",
+      "total_tokens": 1705,
+      "prompt_tokens": 1584,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "e0d222b91016d2fc86191987bbde0f3307ce63a3678d5bb2a3e1eaa02fced8b6",
+      "target_text_sha256": "dc7effee6f61d5ca5918570237d92d77761102e2ae06ad7155feb35f65aaff8b",
+      "sequence_sha256": "f09ded122a725144e3370582fa872f05ef19b710822f164170a20e60efbe115f",
+      "sdk_datum_sha256": "6cb63bff7c8562c250ee1f9bf1f098af01644a1ae126dcdda4d6b406225702fb",
+      "assistant_prefix_length": 1584,
+      "weighted_target_range": {
+        "start_inclusive": 1583,
+        "end_exclusive": 1704
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-028",
+      "split": "train",
+      "total_tokens": 1699,
+      "prompt_tokens": 1578,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "f40dccda42b89d84b2c79d0f715ccf09bba7ac491f573d6c7fd2f0dacadb631b",
+      "target_text_sha256": "a772177d6db9f40b2a31ab76592c527ef55daa8ab068009da4df26c1eb9bd4d1",
+      "sequence_sha256": "c8c009ced429699769aa68111447d7284122e11d21bb2022046ef4a0cdfef05e",
+      "sdk_datum_sha256": "beaef7098b350a6833af85768edd66be99cbb31ca685c8d495b9cef8e02e0a2e",
+      "assistant_prefix_length": 1578,
+      "weighted_target_range": {
+        "start_inclusive": 1577,
+        "end_exclusive": 1698
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-029",
+      "split": "train",
+      "total_tokens": 1701,
+      "prompt_tokens": 1579,
+      "answer_tokens": 122,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999441206455,
+      "source_sha256": "4a19ba5e284832d80df261097dffa73354ba926b8e533677e48bfda6cefe05bd",
+      "target_text_sha256": "a52437f24a1565b4d065f9a62e1661f049f57d2b4900b7e6b33f8e30e0292d70",
+      "sequence_sha256": "7f9df16365b9c8e72ccd80e1f089f3f4a6e5042924fe6df3c549cb81328e9253",
+      "sdk_datum_sha256": "8d78e4b6e924dfe29b229f0ee05784b586e2295c9cc6b4f93854f141949c0cad",
+      "assistant_prefix_length": 1579,
+      "weighted_target_range": {
+        "start_inclusive": 1578,
+        "end_exclusive": 1700
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-030",
+      "split": "train",
+      "total_tokens": 1691,
+      "prompt_tokens": 1570,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "e36654694e73e7c2786280714c30f46683ec96d12ce56d3f86be27f679b918bd",
+      "target_text_sha256": "02ae626fde7e15db96b202ea3d9d67746ab6e5420dcdba88c479003fabb5ff49",
+      "sequence_sha256": "d88352468c433eee627eb03a3ccc12ac8c922b050a02ff7599ebf8ce54cbeeec",
+      "sdk_datum_sha256": "70675c49d5641ee3772546a9285cdae580fa05653ddc4f2df7de1d3cdae51edc",
+      "assistant_prefix_length": 1570,
+      "weighted_target_range": {
+        "start_inclusive": 1569,
+        "end_exclusive": 1690
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-031",
+      "split": "train",
+      "total_tokens": 1691,
+      "prompt_tokens": 1568,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "5d313c182626a22a0e5b1a50a48ae808ee2c87919466a026a3f77cfc7c24b75c",
+      "target_text_sha256": "30b841c42c75e44a10516f9c46e88cde588f5ae72f7c7e5a991ab7c9af514e0e",
+      "sequence_sha256": "12a30555f2cc68a32ba1bbf8c49559310e67bdad93132100f7361512752fb280",
+      "sdk_datum_sha256": "e0985b385beced285e8b0d0a9682e734767730de7e6b7d4c9c1d400c208d7cdd",
+      "assistant_prefix_length": 1568,
+      "weighted_target_range": {
+        "start_inclusive": 1567,
+        "end_exclusive": 1690
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-032",
+      "split": "train",
+      "total_tokens": 1696,
+      "prompt_tokens": 1570,
+      "answer_tokens": 126,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000577419996,
+      "source_sha256": "11b9e9de35f58a2f5a56260c19080f5f2fc252161e90431f7b163262560bc8c2",
+      "target_text_sha256": "29be265dcdfbe31ee1a3ac1fe61c03b34cd6d2da620276b28ffe31b21115d889",
+      "sequence_sha256": "3410cbb48abc5af4d20b8a81b7431cd68b73ba74fd94d6919c5a1b70a72e3d65",
+      "sdk_datum_sha256": "a2d3878d4f0b97f46b8cb9452370354db3536b43059d4746f99210adab301971",
+      "assistant_prefix_length": 1570,
+      "weighted_target_range": {
+        "start_inclusive": 1569,
+        "end_exclusive": 1695
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-033",
+      "split": "train",
+      "total_tokens": 1699,
+      "prompt_tokens": 1573,
+      "answer_tokens": 126,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000577419996,
+      "source_sha256": "9b6b3eea94abc04c7b9da1b7a8878c295e2e1cd25622f573523c936fb1ee3f28",
+      "target_text_sha256": "794c004352056d6ba448bf7e8ac406aa35c0f0cc30d41b1c0a0deb7bf909648d",
+      "sequence_sha256": "b07aa24a85635a0f6cb84f7e5c59cee2f1b1445c70a887a52c26943c2a4fcdc8",
+      "sdk_datum_sha256": "ae1d1352c0a0e89698e11ec29b4f03295ce44563a4a5140149e2373ae4eabb2c",
+      "assistant_prefix_length": 1573,
+      "weighted_target_range": {
+        "start_inclusive": 1572,
+        "end_exclusive": 1698
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-034",
+      "split": "train",
+      "total_tokens": 1695,
+      "prompt_tokens": 1572,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "2f05d6af7c6d0e00c50356d8d8b25e46b55dfd585542ede2a303a9eea96df4dc",
+      "target_text_sha256": "d71750be427f9d28ef3de5a763a9682c604da8e121c9bd2b9dfbb522173bcac4",
+      "sequence_sha256": "d07bf134744786a97f66fe51a3aab5e175994b8da02c6f9d41dcd0bbc44ed32c",
+      "sdk_datum_sha256": "2124b52c0549a40ceff0aa83abda9e1713cd275b32e45991d146046a989788e0",
+      "assistant_prefix_length": 1572,
+      "weighted_target_range": {
+        "start_inclusive": 1571,
+        "end_exclusive": 1694
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-035",
+      "split": "train",
+      "total_tokens": 1697,
+      "prompt_tokens": 1571,
+      "answer_tokens": 126,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000577419996,
+      "source_sha256": "1bd6d08f6d635845c0b9f8fe87f3c8b59b977b12c8335dea439d93a508fc6461",
+      "target_text_sha256": "7fb6127b6cb17e57b79d0fe000601fa78e75d647ca993d8911250f680cbab771",
+      "sequence_sha256": "b07a0a8ec6e09eb1bad84a98928a20f63441bdbaaa3ef6d8923121973f61bbfc",
+      "sdk_datum_sha256": "a511c9ed87fdd37476273367aba92280627a2d9136454e257df4d52e22e7048d",
+      "assistant_prefix_length": 1571,
+      "weighted_target_range": {
+        "start_inclusive": 1570,
+        "end_exclusive": 1696
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-036",
+      "split": "train",
+      "total_tokens": 1648,
+      "prompt_tokens": 1544,
+      "answer_tokens": 104,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.000000037252903,
+      "source_sha256": "e5ff5f402831a606ae89d0581ebfdbc9a18fb05c9d2ab8d707f6a1c97b4c94fe",
+      "target_text_sha256": "d981e0da1e434540e6ca23ca352544e9038e6d77833cf5cc01a00d7ca350b7f2",
+      "sequence_sha256": "7b688ac5791d98852488d76519d32bfa62ce5e1f38933e2f9980904f64f7ff96",
+      "sdk_datum_sha256": "d913eafcce81dece7d942cca8ca39a333d894cc92bade21ac02d5eee1978ec83",
+      "assistant_prefix_length": 1544,
+      "weighted_target_range": {
+        "start_inclusive": 1543,
+        "end_exclusive": 1647
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "id\": \"valley\", \"start_time\": null, \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-037",
+      "split": "train",
+      "total_tokens": 1690,
+      "prompt_tokens": 1567,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "11c917631b8142aa68af948dd7b71f0df3b41b46a4ef264c520f89db891bdee9",
+      "target_text_sha256": "3710c2290d825069d3f88c18ed85b303138f6c95673a1f1808975a0b4cffd75c",
+      "sequence_sha256": "93709c91b44d8e9e0a65c95a01872f7f26411af300f11f311ecbeea1af4c69a4",
+      "sdk_datum_sha256": "b6139dade11485f30430ac96258e2bdb5ee0bdfa33db7b26fed94ee2907b910d",
+      "assistant_prefix_length": 1567,
+      "weighted_target_range": {
+        "start_inclusive": 1566,
+        "end_exclusive": 1689
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-038",
+      "split": "train",
+      "total_tokens": 1648,
+      "prompt_tokens": 1543,
+      "answer_tokens": 105,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000381842256,
+      "source_sha256": "665968ddc36cf21066739e7cd5a74aa448491d95972411119a7851316c88f2cc",
+      "target_text_sha256": "047a252d484dbc5aad8d7bbbf3f9e15ad942f6cf2e0d3654cb448218f0d1a15f",
+      "sequence_sha256": "b74b293049c1739c0fa0dab1d7dd43da20b98ed501af9174e5fc275c27815740",
+      "sdk_datum_sha256": "0c84078ced2485b4b974198914fe8d6b6e16dddf8646a62776840fcaaf232964",
+      "assistant_prefix_length": 1543,
+      "weighted_target_range": {
+        "start_inclusive": 1542,
+        "end_exclusive": 1647
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "id\": \"valley\", \"start_time\": null, \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-039",
+      "split": "train",
+      "total_tokens": 1699,
+      "prompt_tokens": 1576,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "8d9c5d7c11de2c0dc43e0591c402726c2c1da4739c8235283abe16e592a3d968",
+      "target_text_sha256": "2abe4da1136d1a77a1450b4147860984a14c14453261bf9abbd42dead5929846",
+      "sequence_sha256": "069e0c61f118cbee84e4bdabb869207a8edd5bcec1a6d3545eda0a474827469e",
+      "sdk_datum_sha256": "09b4369fdc67d8498caa937a82c29d383b4107400a17fe284406c5caa61c18a7",
+      "assistant_prefix_length": 1576,
+      "weighted_target_range": {
+        "start_inclusive": 1575,
+        "end_exclusive": 1698
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-040",
+      "split": "train",
+      "total_tokens": 1695,
+      "prompt_tokens": 1571,
+      "answer_tokens": 124,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999701976776,
+      "source_sha256": "3d1bb8e5ce273a3b71f4051662b036c741e99a8696619ea3146942db5c303267",
+      "target_text_sha256": "6bd6939e68bf7a9921e81778f88879c81e56fa92dd2ac665e434975d88180866",
+      "sequence_sha256": "0ba26fbbc260b747a403272ad4e051669555acb33afb2896c7396edef56f154b",
+      "sdk_datum_sha256": "4e8f5ce82f6c1843c6bbc9e22cc56bbe3a3cd65bb187684d9c36c32fe83d50c3",
+      "assistant_prefix_length": 1571,
+      "weighted_target_range": {
+        "start_inclusive": 1570,
+        "end_exclusive": 1694
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-041",
+      "split": "train",
+      "total_tokens": 1698,
+      "prompt_tokens": 1574,
+      "answer_tokens": 124,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999701976776,
+      "source_sha256": "f257929a756d869d78afd08bd54ce26a39068b429ddece200524c0fb78c8372c",
+      "target_text_sha256": "5e65a60c38f3d0d7201f0495a54de98c9b2f038639479b4162ac25d672df7853",
+      "sequence_sha256": "9023cad29239322008a7abfcc65e92a2ac85d4ea8ab0817a8399591d6edc789d",
+      "sdk_datum_sha256": "899cc9d6c160c7fa15f3ba7b0422a81c683be9557f4c0e8a7abe7ffb26ab1e09",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1697
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-042",
+      "split": "train",
+      "total_tokens": 1700,
+      "prompt_tokens": 1573,
+      "answer_tokens": 127,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999962747097,
+      "source_sha256": "e2703d13993038f033064e9ba027df387806848169333e17418cc65af2f5b3a5",
+      "target_text_sha256": "14d5b80c7e140b60fa7c18cd8b044996fdfaaa24a8ffa61ae494cb35123dd384",
+      "sequence_sha256": "9d50232db1e5385771a887e7069669e063c95fe38582470e3fa7be6569bb69ce",
+      "sdk_datum_sha256": "187776241d22a0521189c65c9bcf90e330e23d093d9591594c7caba223508765",
+      "assistant_prefix_length": 1573,
+      "weighted_target_range": {
+        "start_inclusive": 1572,
+        "end_exclusive": 1699
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "ime\": \"2027-01-15T10:00:00+01:00\", \"status\": \"clarify\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-043",
+      "split": "train",
+      "total_tokens": 1697,
+      "prompt_tokens": 1574,
+      "answer_tokens": 123,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.999999962747097,
+      "source_sha256": "ab4e8f8b4c4c6560fa17d07acac938ecbde26ae75fcb50ab3f8ee9787c6c92c6",
+      "target_text_sha256": "3182adf785238c2f9a851153324079fa929eeef20e46490639dc22476fd2ce05",
+      "sequence_sha256": "f2eb7249c5900cfc02e6f351673f2305f353a00664454ad382fdb0b713bf8623",
+      "sdk_datum_sha256": "f3d9056c0c2ad6373d8434c96a367a2d6a2897486d7964bab19dac5d357487af",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1696
+      },
+      "final_token_ids": [
+        81145,
+        65513,
+        788,
+        4383,
+        51805,
+        6968,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "-15T10:00:00+01:00\", \"status\": \"unsupported\", \"unsupported_preferences\": [\"crowding\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-044",
+      "split": "train",
+      "total_tokens": 1705,
+      "prompt_tokens": 1575,
+      "answer_tokens": 130,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000009313226,
+      "source_sha256": "de134d8c6f5eaf30c79f7d6f4a891004524dc8f468797e7a15185346963c1753",
+      "target_text_sha256": "dd1943c47552369a66bc178971a7ba3eab3cd20e0617cb5730ee50276198ecc9",
+      "sequence_sha256": "c8963146b62a097214253da642511928589c21ab3b56ac6065e6e6d4756ceccc",
+      "sdk_datum_sha256": "e700a142cbca9245c1672d999ae170d533a65d0dee7c41f54f6f4fbf9d9dea7a",
+      "assistant_prefix_length": 1575,
+      "weighted_target_range": {
+        "start_inclusive": 1574,
+        "end_exclusive": 1704
+      },
+      "final_token_ids": [
+        497,
+        330,
+        24822,
+        1889,
+        2966,
+        287,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "tus\": \"unsupported\", \"unsupported_preferences\": [\"live_queue_times\", \"live_grooming\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-045",
+      "split": "train",
+      "total_tokens": 1698,
+      "prompt_tokens": 1574,
+      "answer_tokens": 124,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999701976776,
+      "source_sha256": "92b70acc9a991fb74a576c784e198cdbf67c3490aed3a978c7c692dfd10d5e1e",
+      "target_text_sha256": "6855b60aa4781d569fa183f36ab2eeed0acc1510a6742ec4557bddb8f6df1a33",
+      "sequence_sha256": "4a8651a28f9e116a004b2b3f26e661259fc15e15c4ab366380acfb82f8beb868",
+      "sdk_datum_sha256": "e031c4b2f7acd5473b5e7f65f52de0c46a9bd26c17dffd5f31122896a8946e84",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1697
+      },
+      "final_token_ids": [
+        65513,
+        788,
+        4383,
+        1847,
+        620,
+        16776,
+        92446,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "15T10:00:00+01:00\", \"status\": \"unsupported\", \"unsupported_preferences\": [\"off_piste\"]}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-046",
+      "split": "train",
+      "total_tokens": 1700,
+      "prompt_tokens": 1574,
+      "answer_tokens": 126,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 1.0000000577419996,
+      "source_sha256": "5f8edee3fbeac339f317552649cd1aaa5ad6adc70150defdc024a6ffafe50422",
+      "target_text_sha256": "d62e5edbba31a91defb18f57e6e54c33c9ac88805d528c071040b542ba88e428",
+      "sequence_sha256": "5f6388a33cc73ebed9cdaa7faf4c0b760e4aa5435e1c5fafc30f074d9e341418",
+      "sdk_datum_sha256": "3780785530c5c492b9df77d3e87836ab016214af558bc366bdd3c3be0e0a061d",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1699
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-047",
+      "split": "train",
+      "total_tokens": 1695,
+      "prompt_tokens": 1574,
+      "answer_tokens": 121,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999580904841,
+      "source_sha256": "6897f27e828f50f36131dbb07f594105716ccbb2cccb84e0680d30bd66a7e2c2",
+      "target_text_sha256": "e2fcf32ad6c75a9a8faa64a4c3027a18c676567d4902d801f67ec18f672a0190",
+      "sequence_sha256": "e4f21cf2d0d606fe20b4b71d242526a77b93db70bcad05163a874d543981314e",
+      "sdk_datum_sha256": "11832acc2801b96082859cb185b93ba41231b8d146ba35b0447d8e3a9f3c1bce",
+      "assistant_prefix_length": 1574,
+      "weighted_target_range": {
+        "start_inclusive": 1573,
+        "end_exclusive": 1694
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    },
+    {
+      "id": "train-candidate-048",
+      "split": "train",
+      "total_tokens": 1713,
+      "prompt_tokens": 1579,
+      "answer_tokens": 134,
+      "prompt_loss_tokens": 0,
+      "target_round_trip": true,
+      "next_token_alignment": true,
+      "loss_weight_sum": 0.9999999767169356,
+      "source_sha256": "9ee3ec357195fef3e87c2d2ce81708fffac8bb19c4ea4c40c1e4997b768ddb88",
+      "target_text_sha256": "c4c2af2b2896fd2681054af85aa124adcac544de46850b67400f70d23d5a0275",
+      "sequence_sha256": "37c6b2c2a058c06c8ea9ef51edb84e9c5c4d0adaa5b0b25d69ff3cd34826c3ae",
+      "sdk_datum_sha256": "e8eb0473411541813b39114d6cecede2f85ff23b5e5a01847254a673536b78d7",
+      "assistant_prefix_length": 1579,
+      "weighted_target_range": {
+        "start_inclusive": 1578,
+        "end_exclusive": 1712
+      },
+      "final_token_ids": [
+        497,
+        330,
+        81145,
+        65513,
+        788,
+        3056,
+        92,
+        151645
+      ],
+      "stop_sequence": [
+        151645
+      ],
+      "decoded_target_suffix": "_time\": \"2027-01-15T10:00:00+01:00\", \"status\": \"ready\", \"unsupported_preferences\": []}<|im_end|>"
+    }
+  ],
+  "corpus_warnings": [],
+  "batch_preview": {
+    "batch_size": 47,
+    "complete_batches": 1,
+    "leftover_rows": 0,
+    "launch_authorized": false
+  },
+  "input_sha256": {
+    "cases": "f5d5f645b2d18f60be3fbce71dc36042054a4bd56a89713a8382e36ed2f55424",
+    "prompt": "970495afba417156b6e02d7278901eb32069e4b31ae1f68659f48f4c74e73b5d",
+    "config": "a0032c8d526509917731c1c3db9c50340d68b7901f079252904c5b8f8e90a01d",
+    "tokenizer_manifest": "16c75114421ae557b7a697afaa87698ceba3ec10f581337cc223a1b441ecd54f"
+  },
+  "cookbook_commit": "1c03a20fdda98156ccbec15728c0e2764b5a0bc3"
+}

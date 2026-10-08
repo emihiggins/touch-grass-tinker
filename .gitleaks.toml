@@ -19,6 +19,6 @@ regexes = ['''request_key"\s*:\s*"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4
 [[allowlists]]
 description = "Exact mock-only protected-egress placeholder"
 condition = "AND"
-paths = ['''^tests/test_(?:training_transport|sample_runner|tinker_sdk)\.py$''']
+paths = ['''^tests/test_(?:training_transport|sample_runner|tinker_sdk|render_audit)\.py$''']
 regexTarget = "match"
 regexes = ['''TINKER_API_KEY'\s*:\s*'oc-sent-v2\.fixture\.end'''']
