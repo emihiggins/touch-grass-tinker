@@ -1,6 +1,6 @@
 # Model quality and robustness roadmap
 
-Status: **in progress — M01, R01 and R03 implemented offline** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
+Status: **in progress — M01, R01, R02 and R03 implemented offline** · 2026-10-08. This is the canonical execution queue for the next model/robustness iteration, not a replacement for frozen protocols or the as-built architecture.
 
 ## Outcome and evidence
 
