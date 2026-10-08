@@ -7,7 +7,8 @@ from pathlib import Path
 import re
 from scripts.benchmark import validate_intent
 
-SPLITS = {'train_candidate', 'train', 'development', 'development_seed', 'evaluation_candidate', 'test'}
+SPLITS = {'train_candidate', 'train', 'development', 'development_seed', 'evaluation_candidate', 'test',
+          'training_candidate', 'validation_candidate', 'final_candidate', 'final'}
 
 def read(path):
     return [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
@@ -18,6 +19,51 @@ def fingerprint(text):
 def review_hash(case):
     payload = {key: case[key] for key in ('id', 'request_text', 'ui_context', 'catalog', 'gold_intent')}
     return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+def _sha(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+def row_hashes(case):
+    """Hashes used by the review gate; each binds the current material independently."""
+    return {'request_sha256': hashlib.sha256(case['request_text'].encode()).hexdigest(),
+            'context_sha256': _sha(case.get('ui_context', {})),
+            'graph_sha256': _sha({'catalog': case.get('catalog', []), 'edge_overrides': case.get('edge_overrides', {}), 'gold_example_route': case.get('gold_example_route')}),
+            'label_sha256': _sha(case['gold_intent'])}
+
+def normalized_row_key(case):
+    """Context-aware duplicate key including graph/context."""
+    text = re.sub(r'\s+', ' ', case['request_text'].casefold()).strip()
+    return _sha({'request': text, 'context': case.get('ui_context', {}), 'catalog': case.get('catalog', []), 'edge_overrides': case.get('edge_overrides', {})})
+
+def _family_overlaps(cases):
+    locations = {}
+    for case in cases:
+        for field in ('family_id', 'template_family_id', 'graph_family_id'):
+            value = case.get(field)
+            if value: locations.setdefault((field, value), set()).add(case.get('split'))
+    return [f'{field}:{value} => {sorted(splits)}' for (field, value), splits in locations.items() if len(splits) > 1]
+
+def coverage_report(cases):
+    tags = Counter()
+    for case in cases:
+        intent = case.get('gold_intent', {})
+        tags[f"status:{intent.get('status')}"] += 1
+        tags[f"grade:{intent.get('hard_max_difficulty') or 'missing'}"] += 1
+        tags[f"budget:{'known' if intent.get('duration_minutes') is not None else 'missing'}"] += 1
+        tags[f"route:{'positive' if case.get('gold_example_route') else 'negative_or_unset'}"] += 1
+        tags[f"review:{'approved' if label_approved(case) else 'unapproved'}"] += 1
+    expected = ['status:ready', 'status:clarify', 'status:unsupported', 'grade:missing', 'budget:known', 'budget:missing', 'route:positive', 'route:negative_or_unset']
+    return {'counts': dict(tags), 'sparse_or_missing': [key for key in expected if not tags[key]], 'interpretation': 'descriptive coverage only; no representativeness claim'}
+
+def iteration_manifest(cases, *, iteration='m02-2026-10-08', packet_size=12):
+    """Build a review manifest without approving or assigning rows to a final split."""
+    report = audit(cases)
+    families = {}
+    for case in cases: families.setdefault(case.get('family_id') or case.get('template_family_id'), []).append(case['id'])
+    rows = []
+    for case in cases:
+        rows.append({'id': case['id'], 'family_id': case.get('family_id'), 'template_family_id': case.get('template_family_id'), 'graph_family_id': case.get('graph_family_id'), 'source': case.get('provenance', {}), 'split': case.get('split'), 'review_state': 'unapproved' if not label_approved(case) else 'approved-source', **row_hashes(case), 'normalized_row_sha256': normalized_row_key(case)})
+    return {'manifest_version': 'm02-1', 'iteration': iteration, 'authorship': 'same-agent authored; Emi review required; fictional/offline only', 'boundaries': {'candidate': ['training_candidate'], 'development': ['validation_candidate'], 'final': ['final_candidate', 'final'], 'historical_evaluation': ['evaluation_candidate', 'test'], 'export_requires': 'human_reviewed approval and exact current hashes'}, 'packet_limit': packet_size, 'candidate_count': len(cases), 'family_count': len(families), 'family_sizes': {k: len(v) for k, v in families.items()}, 'split_counts': dict(Counter(c.get('split') for c in cases)), 'family_overlap': sorted(_family_overlaps(cases)), 'near_duplicate_review_flags': report['warnings'], 'coverage': coverage_report(cases), 'rows': rows, 'status': 'review-required; not training-ready'}
 
 def label_approved(case):
     """Approval binds to the request, context, catalog and exact reviewed label."""

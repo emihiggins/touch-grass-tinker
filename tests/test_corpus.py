@@ -1,6 +1,6 @@
 import copy
 import unittest
-from liftlap.corpus import audit, export, read, conversation
+from liftlap.corpus import audit, export, read, conversation, iteration_manifest, row_hashes
 from liftlap.compare import compare
 
 class CorpusTests(unittest.TestCase):
@@ -31,6 +31,16 @@ class CorpusTests(unittest.TestCase):
         self.assertEqual([m['role'] for m in rows[0]['messages']],['system','user','assistant'])
         self.assertNotIn('gold_intent',rows[0]['messages'][1]['content'])
         self.assertEqual(len(conversation(self.cases[0],'prompt',target=False)['messages']),2)
+    def test_iteration_manifest_is_review_only_and_hashes_material(self):
+        cases = read('benchmark/iterations/m02-2026-10-08/training-review-packet.jsonl')
+        manifest = iteration_manifest(cases)
+        self.assertEqual(manifest['status'], 'review-required; not training-ready')
+        self.assertEqual(manifest['candidate_count'], 12)
+        self.assertEqual(manifest['split_counts'], {'training_candidate': 12})
+        self.assertTrue(all(row['review_state'] == 'unapproved' for row in manifest['rows']))
+        self.assertEqual(set(row_hashes(cases[0])), {'request_sha256', 'context_sha256', 'graph_sha256', 'label_sha256'})
+        self.assertIn('sparse_or_missing', manifest['coverage'])
+
     def test_paired_missing_output_is_failure(self):
         c=self.cases[:2];pred=[{'id':x['id'],'intent':x['gold_intent']} for x in c]
         r=compare(c,pred,pred[:1],draws=100)

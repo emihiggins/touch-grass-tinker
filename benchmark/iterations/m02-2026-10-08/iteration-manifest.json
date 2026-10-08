@@ -1,0 +1,293 @@
+{
+  "authorship": "same-agent authored; Emi review required; fictional/offline only",
+  "boundaries": {
+    "candidate": [
+      "training_candidate"
+    ],
+    "development": [
+      "validation_candidate"
+    ],
+    "export_requires": "human_reviewed approval and exact current hashes",
+    "final": [
+      "final_candidate",
+      "final"
+    ],
+    "historical_evaluation": [
+      "evaluation_candidate",
+      "test"
+    ]
+  },
+  "candidate_count": 12,
+  "coverage": {
+    "counts": {
+      "budget:known": 12,
+      "grade:blue": 5,
+      "grade:missing": 1,
+      "grade:red": 6,
+      "review:unapproved": 12,
+      "route:negative_or_unset": 12,
+      "status:clarify": 2,
+      "status:ready": 10
+    },
+    "interpretation": "descriptive coverage only; no representativeness claim",
+    "sparse_or_missing": [
+      "status:unsupported",
+      "budget:missing",
+      "route:positive"
+    ]
+  },
+  "family_count": 12,
+  "family_overlap": [],
+  "family_sizes": {
+    "m02-family-001": 1,
+    "m02-family-002": 1,
+    "m02-family-003": 1,
+    "m02-family-004": 1,
+    "m02-family-005": 1,
+    "m02-family-006": 1,
+    "m02-family-007": 1,
+    "m02-family-008": 1,
+    "m02-family-009": 1,
+    "m02-family-010": 1,
+    "m02-family-011": 1,
+    "m02-family-012": 1
+  },
+  "iteration": "m02-2026-10-08",
+  "manifest_version": "m02-1",
+  "near_duplicate_review_flags": [],
+  "packet_limit": 12,
+  "rows": [
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-001",
+      "graph_family_id": "m02-graph-001",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-001",
+      "label_sha256": "568abc02aa4a4f9370a310e03136906a996a014fcc9123ce1a368ad3e5599e28",
+      "normalized_row_sha256": "e9d62b762cd87d056119923bd6480c47f731f3bea8fd031f1d6188f30b28f1f3",
+      "request_sha256": "0249ceb3922c9cee8db70ad9b173e57e02558809f68707bcb1b6e0f0455ba131",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-001",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-001"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-002",
+      "graph_family_id": "m02-graph-002",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-002",
+      "label_sha256": "8a551bfaf2f515cfb21043c4024ad6da20be26bc3a93391984096bbf8370a6c8",
+      "normalized_row_sha256": "c594ddd536670d8c4d5213eed58313a94bacddd9bace4952a3ef19867a458c13",
+      "request_sha256": "7da655c12999ebfcd6c5eced4ec7c7a6a6f0151b01b8db4cbea5451af91a8fc8",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-002",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-002"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-003",
+      "graph_family_id": "m02-graph-003",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-003",
+      "label_sha256": "6e1cb5470bdaed74e5cb3b4cca7f6cf2fabdd0147b3b48a42402f1558dbc3332",
+      "normalized_row_sha256": "078c5d9c5093a37bb2033b02c25138baf7bb0962e39c177d4a3aef36b13802fb",
+      "request_sha256": "7c36d9c97d593f81d2f29a69e19e0729bee6050f228bb7d10d31e68677f731a0",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-003",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-003"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-004",
+      "graph_family_id": "m02-graph-004",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-004",
+      "label_sha256": "458adcafae14d3ea55e34af27658269a95cda8e3cda4948833b2ca819825a353",
+      "normalized_row_sha256": "24511f40604ee5e7485a65228005b284274e290f51d738aa8607145a94655adc",
+      "request_sha256": "cdb4a5264044b47a3dd907dab6b2c06969f3ccb1bb9fd2d8099f812722f3d033",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-004",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-004"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-005",
+      "graph_family_id": "m02-graph-005",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-005",
+      "label_sha256": "cf8cefccd9b7a40d67521d60c1a0d91040415a69c44c87d62ba713083898d022",
+      "normalized_row_sha256": "8b484dbd5cca0cae3dcf44caf82ca54dc847f6c1c423333c31a3716507ae9f16",
+      "request_sha256": "3f171a57a4a0de7d30791e25f838be47bb17734b101653ac2d9e5bcb4df0b05d",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-005",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-005"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-006",
+      "graph_family_id": "m02-graph-006",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-006",
+      "label_sha256": "049034cb50e42d30831b1e08c47e9a460a96b0c580f351292ae902c476705d6b",
+      "normalized_row_sha256": "16687544fb8514409cf1011181e70f4a38d4db9f5427afd8b747eb6dbda36180",
+      "request_sha256": "07a8e697557fe2a37ded9071a884ce0862d99a33367aa1409022f68cdd4239ca",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-006",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-006"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-007",
+      "graph_family_id": "m02-graph-007",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-007",
+      "label_sha256": "7056a41c86fe9ea9ace6e32e09652a6b0b9383ffb19a0341f002e548ebad2b5f",
+      "normalized_row_sha256": "91c1383fafdca9f62f1d90c8952ba0eb315f893a198eff30cad11fccd849e4f0",
+      "request_sha256": "0703c1f65e0e4a1bdf5e6c702fc0578408c1b68e87587cad21ec8fa62a318bff",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-007",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-007"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-008",
+      "graph_family_id": "m02-graph-008",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-008",
+      "label_sha256": "93e2f83b759f90ad7e547c869496cd5fc9ce7156ff0324c88926f600cd024d8f",
+      "normalized_row_sha256": "e9296baefb47a0f865fd2c9dcf85fb4697684df67e593b8bd3408e70a8a15943",
+      "request_sha256": "94c9f8a2a5e79f81ec898834005d29cae02e1788a6f60727aaae122af7e7fd1b",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-008",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-008"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-009",
+      "graph_family_id": "m02-graph-009",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-009",
+      "label_sha256": "6e6db0c33177de872990b72179861619045bfb2b5b728072383f1796cd0206eb",
+      "normalized_row_sha256": "46c6798568cc2d151a0f49b64c3007ca8aa7c70aa643c84354775bb61c96116a",
+      "request_sha256": "41dafccd4e7366177358a87c8bba7a85194168b8e7218eaf3643446e90945543",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-009",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-009"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-010",
+      "graph_family_id": "m02-graph-010",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-010",
+      "label_sha256": "befcb3d6cbac97992279143e2b6c2f80d1fea4777a2e8f6db07f134cbbc5f91c",
+      "normalized_row_sha256": "8da54806830636c7877f8396e09b0c612019a9f85101616b29cca282f88df096",
+      "request_sha256": "1b8d12950e1e8e20083567248eab8191799a43b339bf6b95d74078372f57769f",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-010",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-010"
+    },
+    {
+      "context_sha256": "249fa9522eb188058c42856824ad310df82c6d8b620f8da4ae867ac222a3738e",
+      "family_id": "m02-family-011",
+      "graph_family_id": "m02-graph-011",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-011",
+      "label_sha256": "6c95fa6a002cd730ec989b33076aaf0b62a11aa5ebf6063d9dc06efa9061fdd3",
+      "normalized_row_sha256": "4c2d5bda673991e6d191b9784c2627e2986ca76afe9166761847fd7e141f9644",
+      "request_sha256": "b11fad91e7ff2809dd72f88c1e3c43d338363bc546b5bdec3ef86f7ec0cc144f",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-011",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-011"
+    },
+    {
+      "context_sha256": "60bed3cbfa3ca72e69e8a73abada1fcc3a041f98e75c4eede07f28f750159ea8",
+      "family_id": "m02-family-012",
+      "graph_family_id": "m02-graph-012",
+      "graph_sha256": "b7eb3b0a4ed09a63ee0bbd9ad71b2e4c97408b474501536dadb18b4228746256",
+      "id": "m02-draft-012",
+      "label_sha256": "a30f43f12681c3362cd7533583f27ef9c808554ff4214c0a9317bfe8e2bc9210",
+      "normalized_row_sha256": "ba33c8294c72e2bf987f019b3e94e45a7524273346ae0cbed9304f2994499a47",
+      "request_sha256": "f91efd43ead95d1e93ebfe4295fc0cc439cce1c740132f75226e5cdc4f63d9e8",
+      "review_state": "unapproved",
+      "source": {
+        "author": "same-agent M02 draft",
+        "created_on": "2026-10-08",
+        "historical_source_id": "train-candidate-012",
+        "source": "offline fictional seed-derived paraphrase; requires independent human review"
+      },
+      "split": "training_candidate",
+      "template_family_id": "m02-template-012"
+    }
+  ],
+  "split_counts": {
+    "training_candidate": 12
+  },
+  "status": "review-required; not training-ready"
+}
