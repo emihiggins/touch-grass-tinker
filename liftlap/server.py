@@ -1,8 +1,9 @@
 """Loopback-only simulation with opt-in, budgeted model interpretation."""
-import argparse,json,errno,sys
+import argparse,json,errno,sys,time
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
+from .http_limits import BoundedHTTPServer, HTTPLimits
 from . import fixtures
 from . import __version__
 from .compact import compact,expand_route
@@ -123,11 +124,31 @@ class Handler(BaseHTTPRequestHandler):
         if origin and origin not in {f'http://127.0.0.1:{self.server.server_port}',f'http://localhost:{self.server.server_port}'}:return self.send(403,{'error':'Cross-origin requests refused'})
         if self.path not in {'/api/interpret','/api/plan'}:return self.send(404,{'error':'Not found'})
         try:
-            size=int(self.headers.get('Content-Length','0'))
-            if not 0<size<=16384:return self.send(413,{'error':'Request too large or empty'})
-            payload=json.loads(self.rfile.read(size))
+            limits = getattr(self.server, 'limits', HTTPLimits())
+            lengths = self.headers.get_all('Content-Length', [])
+            if self.headers.get('Transfer-Encoding') or len(lengths) != 1 or not lengths[0].isascii() or not lengths[0].isdecimal():
+                return self.send(400, {'error':'Invalid request framing', 'code':'invalid_framing'})
+            size=int(lengths[0])
+            if not 0<size<=limits.max_body_bytes:return self.send(413,{'error':'Request too large or empty', 'code':'body_limit'})
+            deadline = time.monotonic() + limits.read_timeout_seconds
+            chunks = []
+            remaining = size
+            while remaining:
+                budget = deadline - time.monotonic()
+                if budget <= 0: raise TimeoutError()
+                self.connection.settimeout(budget)
+                chunk = self.rfile.read1(remaining)
+                if not chunk:
+                    return self.send(400, {'error':'Incomplete request body', 'code':'incomplete_body'})
+                chunks.append(chunk)
+                remaining -= len(chunk)
+            self.connection.settimeout(limits.read_timeout_seconds)
+            payload=json.loads(b''.join(chunks))
             if not isinstance(payload,dict):raise ValueError('Expected JSON object')
             result=handle_api(self.path,payload,getattr(self.server,'model',None));self.send(200,result)
+        except TimeoutError:
+            self.close_connection = True
+            self.send(408, {'error':'Request body deadline exceeded', 'code':'body_timeout'})
         except SemanticValidationError as e:
             self.send(422,{'error':'Review the constraints before planning.','semantic_validation':e.result.as_dict()})
         except (ValueError,KeyError,TypeError) as e:
@@ -146,7 +167,7 @@ def main():
     p.add_argument("--version",action="version",version=f"%(prog)s {__version__} (offline demo)")
     p.add_argument("--port",type=port_number,default=8767,metavar="PORT",help="loopback port (default: 8767)")
     p.add_argument("--live-model",action="store_true",help=argparse.SUPPRESS);a=p.parse_args()
-    try: server=ThreadingHTTPServer(("127.0.0.1",a.port),Handler)
+    try: server=BoundedHTTPServer(("127.0.0.1",a.port),Handler)
     except OSError as error:
         if error.errno==errno.EADDRINUSE: print(f"Cannot start Lift-Lap: port {a.port} is already in use. Choose another port, for example --port {a.port + 1}.",file=sys.stderr)
         else: print(f"Cannot start Lift-Lap on 127.0.0.1:{a.port}: {error}",file=sys.stderr)

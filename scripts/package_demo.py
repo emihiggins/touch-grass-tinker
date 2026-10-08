@@ -14,7 +14,7 @@ def main():
             target=d/p.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
         (d/'START-HERE.txt').write_bytes((ROOT/'demo/START-HERE.txt').read_bytes())
         check='''import json,threading,urllib.request
-from http.server import ThreadingHTTPServer
+from liftlap.http_limits import BoundedHTTPServer
 from liftlap.server import handle_api,Handler
 payload={'adapter':'replay','text':'Only blues, no drag lifts, 45 minutes','minutes':60,'difficulty':'blue'}
 r=handle_api('/api/interpret',payload);assert r['adapter']=='qwen3-8b-base-recorded'
@@ -24,7 +24,7 @@ assert handle_api('/api/plan',{'intent':i,'closures':'all_lifts'})['status']=='n
 try:handle_api('/api/interpret',{'adapter':'live'})
 except ValueError:pass
 else:raise AssertionError('Live mode unexpectedly enabled')
-server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
+server=BoundedHTTPServer(('127.0.0.1',0),Handler)
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
 # These URLs are exclusively the local test server, never a provider.
 local_open=urllib.request.build_opener(urllib.request.ProxyHandler({})).open
