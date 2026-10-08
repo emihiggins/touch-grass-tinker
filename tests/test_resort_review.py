@@ -62,3 +62,11 @@ class T(unittest.TestCase):
    self.assertEqual(evidence['way/1'],{'version':'2','tags':{'access':'no','oneway':'-1'}})
    self.assertEqual(evidence['way/2']['tags'],{})
    self.assertNotIn('private',json.dumps(evidence))
+
+ def test_regeneration_preserves_focus_controls(self):
+   main()
+   html=(R/'web/resort-review.html').read_text()
+   self.assertIn('id="focus-selection"',html)
+   self.assertIn('id="fit-all"',html)
+   main()
+   self.assertEqual(html,(R/'web/resort-review.html').read_text())
