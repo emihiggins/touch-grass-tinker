@@ -71,3 +71,35 @@ class ResortImportTests(unittest.TestCase):
   self.assertIn(b'expert',raw)
   g=json.loads((folder/'graph.json').read_text())
   self.assertFalse(any(e.get('source_difficulty')=='expert' for e in g['edges']))
+
+ def test_invalid_coordinates_rejected_before_geometry(self):
+  for lon,lat in [('0','nan'),('inf','0'),('0','-inf'),('181','0'),('0','91'),('-181','0'),('0','-91'),('bad','0')]:
+   with self.subTest(lon=lon,lat=lat):
+    with self.assertRaises(ValueError):
+     import_osm(f'<osm><node id="1" lon="{lon}" lat="{lat}"/></osm>'.encode())
+  with self.assertRaisesRegex(ValueError,'numeric'):
+   import_osm(b'<osm><node id="1" lat="0"/></osm>')
+
+ def test_duplicate_identities_and_wrong_root_rejected(self):
+  for raw in [b'<osm><node id="1" lat="0" lon="0"/><node id="1" lat="1" lon="1"/></osm>',
+              b'<osm><way id="1"/><way id="1"/></osm>', b'<osmChange/>', b'<osm><way/></osm>']:
+   with self.subTest(raw=raw):
+    with self.assertRaises(ValueError):import_osm(raw)
+
+ def test_geographic_boundary_coordinates_are_valid(self):
+  from liftlap.import_osm import source_coordinates
+  result=source_coordinates(ET.fromstring('<osm><node id="1" lat="90" lon="180"/><node id="2" lat="-90" lon="-180"/></osm>'))
+  self.assertEqual(result,{'1':[180,90],'2':[-180,-90]})
+
+ def test_snapshot_cli_rejects_bad_input_without_output(self):
+  import hashlib, subprocess, sys, tempfile
+  with tempfile.TemporaryDirectory() as td:
+   folder=Path(td);source=folder/'source.osm';config=folder/'config.json';out=folder/'out'
+   raw=b'<osm><node id="1" lat="nan" lon="0"/></osm>';source.write_bytes(raw)
+   config.write_text(json.dumps({'source_url':'https://example.invalid/source','fetched_at':'2026-10-08T00:00:00Z','original_response_sha256':hashlib.sha256(raw).hexdigest(),'import_options':{}}))
+   result=subprocess.run([sys.executable,str(ROOT/'scripts/import_resort_snapshot.py'),'--source',str(source),'--config',str(config),'--out',str(out)],capture_output=True,text=True)
+   self.assertNotEqual(result.returncode,0)
+   self.assertIn('finite',result.stderr)
+   self.assertFalse(out.exists())
+  with self.assertRaisesRegex(ValueError,'snapshot root'):
+   sanitize(b'<osmChange/>')

@@ -14,6 +14,30 @@ def restriction_tags(tags):
     return {k:tags[k] for k in (*CONDITIONAL_RESTRICTION_KEYS,'access','ski','aerialway:access')
             if k in tags and (k in CONDITIONAL_RESTRICTION_KEYS or tags[k].lower()=='conditional')}
 
+def source_coordinates(root):
+    """Reject ambiguous identities and invalid geometry before any graph is built."""
+    if root.tag != 'osm':
+        raise ValueError('Expected an OSM snapshot root')
+    coords = {}
+    for node in root.findall('node'):
+        ident = node.get('id')
+        if not ident or ident in coords:
+            raise ValueError('Missing or duplicate OSM node ID')
+        try:
+            lon, lat = float(node.attrib['lon']), float(node.attrib['lat'])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError('OSM node requires numeric longitude and latitude') from exc
+        if not math.isfinite(lon) or not math.isfinite(lat) or not -180 <= lon <= 180 or not -90 <= lat <= 90:
+            raise ValueError('OSM coordinates must be finite and within geographic bounds')
+        coords[ident] = [lon, lat]
+    way_ids = set()
+    for way in root.findall('way'):
+        ident = way.get('id')
+        if not ident or ident in way_ids:
+            raise ValueError('Missing or duplicate OSM way ID')
+        way_ids.add(ident)
+    return coords
+
 def distance(a,b):
     la,lb=math.radians(a[1]),math.radians(b[1]);dl=math.radians(b[0]-a[0]);dp=lb-la
     return 12742000*math.asin(min(1,math.sqrt(math.sin(dp/2)**2+math.cos(la)*math.cos(lb)*math.sin(dl/2)**2)))
@@ -29,7 +53,7 @@ def import_osm(raw, *, graph_id='alpendorf-osm-lab', timezone='Europe/Vienna', d
     if not difficulty_mapping or any(v not in {'green','blue','red','black'} for v in difficulty_mapping.values()):
         raise ValueError('Unsupported normalized difficulty mapping')
     root=ET.fromstring(raw)
-    coords={n.attrib['id']:[float(n.attrib['lon']),float(n.attrib['lat'])] for n in root.findall('node')}
+    coords=source_coordinates(root)
     edges=[];skipped=[]
     for way in root.findall('way'):
         wid=way.attrib['id'];t={x.attrib['k']:x.attrib['v'] for x in way.findall('tag')};ns=[n.attrib['ref'] for n in way.findall('nd')]

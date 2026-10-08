@@ -2,10 +2,12 @@
 import argparse,hashlib,json,sys,xml.etree.ElementTree as ET
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from liftlap.import_osm import import_osm
+from liftlap.import_osm import import_osm, source_coordinates
 
 def sanitize(raw):
- source=ET.fromstring(raw);root=ET.Element('osm',{'version':'0.6','generator':'LiftLap sanitized research snapshot'})
+ source=ET.fromstring(raw)
+ source_coordinates(source)
+ root=ET.Element('osm',{'version':'0.6','generator':'LiftLap sanitized research snapshot'})
  for n in source.findall('node'):
   ET.SubElement(root,'node',{k:n.attrib[k] for k in ('id','lat','lon')})
  for way in source.findall('way'):
