@@ -34,6 +34,13 @@ const fs = require('fs');
       await page.keyboard.press('Enter');
       if (!(await page.locator('#detail').innerText()).includes('Source way'))
         throw Error('Missing details');
+      const sourceText = await page.locator('#detail').innerText();
+      if (
+        !sourceText.includes('Native source evidence') ||
+        !sourceText.includes('Missing tags mean unknown, not allowed') ||
+        !sourceText.includes('Imported direction (unverified)')
+      )
+        throw Error('Missing source provenance or unknown-state disclosure');
       await page.uncheck('#d');
       const subset = await page.locator('#map .e').count();
       if (subset >= count) throw Error('Component filter ineffective');

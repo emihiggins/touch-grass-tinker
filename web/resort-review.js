@@ -66,6 +66,43 @@ function excludedDetail(e) {
   $('status').textContent = 'Selected excluded source geometry; routing unchanged.';
   d.focus();
 }
+function appendSourceEvidence(container, refs) {
+  for (const ref of refs) {
+    const evidence = C.source_evidence?.[ref];
+    const heading = document.createElement('h3');
+    heading.textContent = 'Native source evidence · ' + ref;
+    const note = document.createElement('p');
+    note.textContent =
+      'Snapshot tags are not current operating status or permission. Missing tags mean unknown, not allowed. Imported direction is not independently verified.';
+    container.append(heading, note);
+    const dl = document.createElement('dl');
+    const tags = evidence?.tags || {};
+    const groups = [
+      ['Source version', evidence?.version || 'Not recorded'],
+      [
+        'Access tags',
+        ['access', 'ski', 'foot', 'aerialway:access', 'access:conditional', 'ski:conditional'],
+      ],
+      ['Direction tags', ['oneway', 'piste:oneway']],
+      ['Operating tags', ['opening_hours', 'seasonal']],
+      ['Source duration (not measured)', ['aerialway:duration']],
+    ];
+    for (const [label, keys] of groups) {
+      const dt = document.createElement('dt'),
+        dd = document.createElement('dd');
+      dt.textContent = label;
+      dd.textContent = Array.isArray(keys)
+        ? keys
+            .filter((k) => Object.hasOwn(tags, k))
+            .map((k) => k + '=' + tags[k])
+            .join('; ') || 'Not recorded — unknown'
+        : keys;
+      dl.append(dt, dd);
+    }
+    container.append(dl);
+  }
+}
+
 function detail(e) {
   X = null;
   L = null;
@@ -85,7 +122,7 @@ function detail(e) {
     ['Normalized grade', e.difficulty || 'unknown'],
     ['Source way', e.source_refs?.[0] || 'unknown'],
     ['Review status', e.review_status || C.graph.review_status],
-    ['Direction', e.from + ' → ' + e.to],
+    ['Imported direction (unverified)', e.from + ' → ' + e.to],
   ]) {
     let a = document.createElement('dt'),
       b = document.createElement('dd');
@@ -99,6 +136,7 @@ function detail(e) {
   a.rel = 'noopener noreferrer';
   a.textContent = 'Open source way';
   d.append(dl, a);
+  appendSourceEvidence(d, e.source_refs || []);
   $('status').textContent = 'Selected ' + (e.name || e.id);
   d.focus();
 }
@@ -305,6 +343,7 @@ $('lift-review').onchange = () => {
     const heading = document.createElement('h3');
     heading.textContent = L.name + ' — source endpoint evidence';
     $('lift-detail').append(heading);
+    appendSourceEvidence($('lift-detail'), [L.source_ref]);
     for (const [i, e] of L.endpoint_incidence.entries()) {
       const section = document.createElement('div');
       const h = document.createElement('h4');
