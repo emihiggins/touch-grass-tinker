@@ -1,0 +1,38 @@
+{
+  "experiment_id": "exploratory-sft-02",
+  "scope": "owner_authorized_exploratory_retraining_on_historical_pilot_not_promotion",
+  "model_name": "Qwen/Qwen3-8B",
+  "renderer_name": "qwen3_disable_thinking",
+  "lora_rank": 16,
+  "batch_size": 16,
+  "epochs": 3,
+  "learning_rate": 3e-05,
+  "max_length": 4096,
+  "train_on_what": "last_assistant_message",
+  "test_size": 0,
+  "sampling": {
+    "temperature": 0,
+    "seed": 20261006,
+    "max_tokens": 512
+  },
+  "checkpoint_ttl_seconds": 21600,
+  "checkpoint_count": 2,
+  "checkpoint_upper_gb_each": 512,
+  "reservation_usd": 1.25,
+  "max_model_configurations": 1,
+  "selection": "Fixed final epoch only; diagnostic comparison; retain base regardless of result.",
+  "training_cases": "benchmark/v2/training-reviewed.jsonl",
+  "evaluation_cases": "benchmark/v2/evaluation-pilot-frozen.jsonl",
+  "evaluation_freeze": "benchmark/v2/evaluation-pilot-freeze.json",
+  "graph_bundle": "benchmark/v2/evaluation-graphs.json",
+  "prompt": "benchmark/v2/baseline-prompt.txt",
+  "metrics": [
+    "paired intent exact match",
+    "paired route/task success",
+    "invalid schema and transport failures"
+  ],
+  "retain_trained_candidate_rule": "At least two additional pilot task successes and no regression in gold-constrained route validity. This is exploratory screening, not final superiority evidence.",
+  "failure_policy": "Keep every case in denominator. Stop subsequent mutations on transport failure; inspect recorded future before any continuation. Never retry a training configuration to obtain a better headline.",
+  "rationale": "Owner explicitly selected exploratory retraining on 2026-10-09, Telegram2692. Three epochs, smaller batches including final15 and lower LR; combined recipe not isolated causal LR claim.",
+  "shuffle_policy": "Python random.Random(epoch).shuffle over case indices; recorded exact batch IDs"
+}

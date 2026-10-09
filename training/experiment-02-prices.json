@@ -1,0 +1,14 @@
+{
+  "verified_on": "2026-10-09",
+  "source": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+  "model": "Qwen/Qwen3-8B",
+  "usd_per_million": {
+    "input": 0.195,
+    "output": 0.6,
+    "train": 0.44
+  },
+  "storage_usd_gb_month": 0.1,
+  "protected_capabilities_verified": true,
+  "billing_balance_api_verified": false,
+  "credit_evidence": "Emi Oct6 reported $10; no topup authorized"
+}

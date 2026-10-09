@@ -1,0 +1,18 @@
+{
+  "scope": "owner_authorized_exploratory_retraining_on_historical_pilot_not_promotion",
+  "count": 16,
+  "base_successes": 10,
+  "trained_successes": 10,
+  "paired_wins": [
+    "eval-review-011"
+  ],
+  "paired_losses": [
+    "eval-review-005"
+  ],
+  "gold_route_validity_regressions": [],
+  "screening_pass": false,
+  "statistical_superiority_claim": false,
+  "selection_rule": "At least2 additional successes and no gold-route validity regression",
+  "promotion_decision": "retain_base",
+  "screening_is_diagnostic_only": true
+}
