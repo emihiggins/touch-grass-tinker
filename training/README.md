@@ -29,3 +29,7 @@ For ordinary development, use the offline modes and `python3 scripts/check_relea
 ## Planned next iteration
 
 [Next-iteration research plan](next-iteration-plan.md) specifies target forensics, family-based data splits, a bounded checkpoint-selection experiment and constrained-output feasibility. See the [canonical roadmap](../delivery/model-robustness-roadmap.md) for dependencies, budget limits and robustness work. No new experiment has run as part of this planning update.
+
+## Latest exploratory result
+
+[Exploratory SFT02](../research/evidence/experiment-02/README.md) completed2026-10-09 after explicit owner selection: approved47 rows, three epochs, batches16/16/15, LR3e-5. Paired exposed-pilot result base10/16 vs tuned10/16; no improvement and no promotion. Two planned configurations are now consumed; no automatic third run.

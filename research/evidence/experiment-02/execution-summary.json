@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "sampling_requests": 32,
+  "training_completed_operations": {
+    "create_model": 1,
+    "forward_backward": 9,
+    "optim_step": 9,
+    "save_state": 1,
+    "save_sampler": 1
+  },
+  "training_journal_sha256": "493038c3f0af196ffab2482630c5d90c9240b466a16e96f0fbac0ea362f256e3",
+  "last_training_progress": {
+    "stage": "training",
+    "completed_steps": 9,
+    "batch_count": 15,
+    "metrics": {
+      "clock_cycle:unique": 4487455.0,
+      "loss:sum": 5.767428666353226
+    }
+  },
+  "preregistration_commit": "d593f4b",
+  "billing_verified": false,
+  "project_commitments_usd": 3.0,
+  "new_reservation_usd": 1.25,
+  "raw_prediction_text_preserved": true,
+  "private_provider_ids_fingerprinted": true
+}
