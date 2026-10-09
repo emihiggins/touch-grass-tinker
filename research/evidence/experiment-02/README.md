@@ -42,3 +42,7 @@ Verification before launch:260 tests pass in the pinned environment; standard
 release and secret scans passed. This consumes the second planned configuration.
 Do not launch a third automatically. Next useful model work is reviewed data and
 new evaluation preparation, not repeating this run for a better score.
+
+## Follow-up diagnosis
+
+[Case-level postmortem and data priorities](postmortem.md) distinguish blocked malformed outputs from accepted routes under incorrect extracted constraints. The aggregate10/16 tie remains unchanged.

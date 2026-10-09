@@ -1,0 +1,676 @@
+{
+  "arms": {
+    "base": {
+      "accepted_routes_violating_reviewed_constraints": 4,
+      "cases": [
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-001",
+          "output_tokens": 102,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-002",
+          "output_tokens": 105,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-003",
+          "output_tokens": 100,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-004",
+          "output_tokens": 103,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-005",
+          "output_tokens": 102,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": [],
+              "field": "avoided_lift_types",
+              "observed": [
+                "gondola"
+              ]
+            },
+            {
+              "expected": [
+                "gondola"
+              ],
+              "field": "excluded_lift_types",
+              "observed": []
+            }
+          ],
+          "id": "eval-review-006",
+          "output_tokens": 102,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-007",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-008",
+          "output_tokens": 101,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-009",
+          "output_tokens": 100,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": [
+                "magic-carpet",
+                "platter",
+                "rope-tow",
+                "t-bar"
+              ],
+              "field": "excluded_lift_types",
+              "observed": [
+                "magic-carpet"
+              ]
+            }
+          ],
+          "id": "eval-review-010",
+          "output_tokens": 103,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": 2,
+              "field": "duration_minutes",
+              "observed": 50
+            }
+          ],
+          "id": "eval-review-011",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-012",
+          "output_tokens": 78,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": [],
+              "field": "clarification_fields",
+              "observed": [
+                "hard_max_difficulty"
+              ]
+            },
+            {
+              "expected": true,
+              "field": "prefer_variety",
+              "observed": false
+            },
+            {
+              "expected": "ready",
+              "field": "status",
+              "observed": "clarify"
+            }
+          ],
+          "id": "eval-review-013",
+          "output_tokens": 105,
+          "prefix_only_forensics": false,
+          "saved_status": "invalid_semantic",
+          "saved_task_success": false,
+          "semantic_issues": [
+            "clarification_retains_value"
+          ],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": "east",
+              "field": "finish_place_id",
+              "observed": "base"
+            }
+          ],
+          "id": "eval-review-014",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": "unsupported",
+              "field": "status",
+              "observed": "ready"
+            }
+          ],
+          "id": "eval-review-015",
+          "output_tokens": 103,
+          "prefix_only_forensics": false,
+          "saved_status": "invalid_semantic",
+          "saved_task_success": false,
+          "semantic_issues": [
+            "ready_missing_required"
+          ],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-016",
+          "output_tokens": 104,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        }
+      ],
+      "count": 16,
+      "forensic_prefixes_still_wrong": 0,
+      "invalid_json": 0,
+      "task_successes": 10
+    },
+    "trained": {
+      "accepted_routes_violating_reviewed_constraints": 2,
+      "cases": [
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-001",
+          "output_tokens": 102,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-002",
+          "output_tokens": 105,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-003",
+          "output_tokens": 100,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-004",
+          "output_tokens": 104,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": [
+                "gondola"
+              ],
+              "field": "avoided_lift_types",
+              "observed": []
+            }
+          ],
+          "id": "eval-review-005",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": [
+                "gondola"
+              ],
+              "field": "excluded_lift_types",
+              "observed": []
+            }
+          ],
+          "id": "eval-review-006",
+          "output_tokens": 100,
+          "prefix_only_forensics": true,
+          "saved_status": "invalid_json_or_schema",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": false,
+          "trailing_suffix": "\""
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-007",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-008",
+          "output_tokens": 101,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-009",
+          "output_tokens": 100,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": [
+                "magic-carpet",
+                "platter",
+                "rope-tow",
+                "t-bar"
+              ],
+              "field": "excluded_lift_types",
+              "observed": [
+                "magic-carpet"
+              ]
+            },
+            {
+              "expected": [
+                "blue"
+              ],
+              "field": "preferred_difficulties",
+              "observed": []
+            }
+          ],
+          "id": "eval-review-010",
+          "output_tokens": 102,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-011",
+          "output_tokens": 98,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-012",
+          "output_tokens": 79,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": [],
+              "field": "clarification_fields",
+              "observed": [
+                "hard_max_difficulty"
+              ]
+            },
+            {
+              "expected": true,
+              "field": "prefer_variety",
+              "observed": false
+            },
+            {
+              "expected": "ready",
+              "field": "status",
+              "observed": "clarify"
+            }
+          ],
+          "id": "eval-review-013",
+          "output_tokens": 105,
+          "prefix_only_forensics": true,
+          "saved_status": "invalid_json_or_schema",
+          "saved_task_success": false,
+          "semantic_issues": [
+            "clarification_retains_value"
+          ],
+          "stop_reason": "stop",
+          "strict_json": false,
+          "trailing_suffix": "\""
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": true,
+          "field_mismatches": [
+            {
+              "expected": "east",
+              "field": "finish_place_id",
+              "observed": "base"
+            }
+          ],
+          "id": "eval-review-014",
+          "output_tokens": 99,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": false,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [
+            {
+              "expected": "unsupported",
+              "field": "status",
+              "observed": "ready"
+            }
+          ],
+          "id": "eval-review-015",
+          "output_tokens": 103,
+          "prefix_only_forensics": false,
+          "saved_status": "invalid_semantic",
+          "saved_task_success": false,
+          "semantic_issues": [
+            "ready_missing_required"
+          ],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        },
+        {
+          "accepted_route_violates_reviewed_constraints": false,
+          "field_mismatches": [],
+          "id": "eval-review-016",
+          "output_tokens": 105,
+          "prefix_only_forensics": false,
+          "saved_status": "valid",
+          "saved_task_success": true,
+          "semantic_issues": [],
+          "stop_reason": "stop",
+          "strict_json": true,
+          "trailing_suffix": null
+        }
+      ],
+      "count": 16,
+      "forensic_prefixes_still_wrong": 2,
+      "invalid_json": 2,
+      "task_successes": 10
+    }
+  },
+  "input_sha256": {
+    "benchmark/v2/evaluation-pilot-frozen.jsonl": "6bb96954ee52a5cf58206cf17c3828817b274e7e90bfe69b76a92e2480220fa8",
+    "research/evidence/experiment-02/base-predictions.jsonl": "25d7eeed4f58a90a4daa3f3e2a3385244c10dc88ec777b0955afae316714b162",
+    "research/evidence/experiment-02/base-report.json": "76782a67a1364c4f9e2576d4b7546bf08ff890cd8dba8ed3caf6fac1d9da0b2d",
+    "research/evidence/experiment-02/trained-predictions.jsonl": "9c4da992b417e961971e73a26fedb6c83bd34f3725b94b074184531709e2a8d8",
+    "research/evidence/experiment-02/trained-report.json": "e12ee375fcf6667203eca784a51b8f734c061e3884e99c966ac90ccfa5ae6c34"
+  },
+  "limits": [
+    "Historical pilot is exposed, not an untouched final set.",
+    "Gold-relative violations require reviewed answers unavailable to the live application.",
+    "Prefix inspection never authorizes JSON repair or changes the saved score.",
+    "No inference about retraining causes or constrained-decoding efficacy from one run."
+  ],
+  "paired": [
+    {
+      "base_success": true,
+      "id": "eval-review-001",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-002",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-003",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-004",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-005",
+      "trained_success": false
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-006",
+      "trained_success": false
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-007",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-008",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-009",
+      "trained_success": true
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-010",
+      "trained_success": false
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-011",
+      "trained_success": true
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-012",
+      "trained_success": true
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-013",
+      "trained_success": false
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-014",
+      "trained_success": false
+    },
+    {
+      "base_success": false,
+      "id": "eval-review-015",
+      "trained_success": false
+    },
+    {
+      "base_success": true,
+      "id": "eval-review-016",
+      "trained_success": true
+    }
+  ],
+  "predictions_modified": false,
+  "promotion_decision": "retain_base",
+  "provider_calls": 0,
+  "scope": "offline_reviewed_gold_diagnostics_not_runtime_safety_or_repaired_scores",
+  "version": "sft02-postmortem-1"
+}
