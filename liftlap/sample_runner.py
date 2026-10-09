@@ -81,9 +81,23 @@ class SDKSampler:
             if iteration+1<self.polls:await asyncio.sleep(self.poll_interval)
         raise TimeoutError('Future polling bound reached')
 
-async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
+def failure_outcome(error):
+    code = getattr(error, 'status_code', None)
+    if code == 429: return 'rate_limited'
+    if type(code) is int and 500 <= code < 600: return 'provider_5xx'
+    if type(code) is int and 400 <= code < 500: return 'provider_4xx'
+    if isinstance(error, TimeoutError) or type(error).__name__ == 'APITimeoutError': return 'timeout'
+    return 'transport_or_response_failure'
+
+
+async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id,*,timeout_seconds=90):
+    if not math.isfinite(timeout_seconds) or timeout_seconds <= 0:
+        raise ValueError('Sampling deadline must be positive and finite')
     rows=[];halt=False
     for index,(case,prompt) in enumerate(zip(cases,prompts,strict=True)):
+        diagnostic={'version':1,'run_sha256':hashlib.sha256(run_id.encode()).hexdigest(),
+                    'attempt_index':index,'accepted_future_observed':False,'automatic_retry':False,
+                    'reservation_action':'none; runner never settles holds'}
         row={'id':case['id'],'intent':None,'input_tokens':len(prompt),'billable_usage_verified':False}
         if halt:
             row['status']='not_attempted_after_transport_failure'
@@ -92,8 +106,10 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
             append(directory/'events.jsonl',{'id':case['id'],'event':'submission_start','request_key':request_key})
             started=time.monotonic()
             try:
-                def submitted(request_id):append(directory/'events.jsonl',{'id':case['id'],'event':'submitted','request_id':request_id})
-                result=await asyncio.wait_for(sampler.sample(prompt,request_key,submitted),timeout=90)
+                def submitted(request_id):
+                    diagnostic['accepted_future_observed']=True
+                    append(directory/'events.jsonl',{'id':case['id'],'event':'submitted','request_id':request_id})
+                result=await asyncio.wait_for(sampler.sample(prompt,request_key,submitted),timeout=timeout_seconds)
                 ids=result['tokens']
                 text=decode_sample(tokenizer,ids,stop)
                 intent,status=parse_output(text,result['stop_reason'],case['catalog'])
@@ -101,6 +117,7 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
                            stop_reason=result['stop_reason'],request_id=result['request_id'],
                            prompt_cache_hit_tokens=result.get('prompt_cache_hit_tokens'),polls=result.get('polls'))
             except Exception as error:
+                diagnostic['failure_category']=failure_outcome(error)
                 code=getattr(error,'status_code',None)
                 row.update(status='transport_or_provider_failure',http_status=code if type(code) is int else None)
                 response=getattr(error,'response',None)
@@ -108,6 +125,8 @@ async def run_cases(cases,prompts,tokenizer,stop,sampler,directory,run_id):
                 if isinstance(sampler,SDKSampler):row['sampling_session_id']=sampler.sampling_session_id
                 halt=True
             row['elapsed_seconds']=time.monotonic()-started
+        diagnostic.update(outcome=row['status'],elapsed_ms=round(row.get('elapsed_seconds',0)*1000))
+        append(directory/'diagnostics.jsonl',diagnostic)
         append(directory/'predictions.jsonl',row);rows.append(row)
     return rows
 

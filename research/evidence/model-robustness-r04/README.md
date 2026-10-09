@@ -52,3 +52,7 @@ model configuration, training or real-terrain activation changed.
 saved base 13/16 remain unchanged. The isolated archive reproduced identically;
 its packaged HTTP asset probe now uses `BoundedHTTPServer` too. Fresh browser
 recovery reported zero page errors and zero provider calls. Screenshot inspected.
+
+## Follow-up: provider faults and local recovery
+
+[Offline fault matrix, redacted diagnostics and process-level budget evidence](provider-faults.md) now cover bounded no-resubmission and manual offline recovery. The original ingress checkpoint limitations above describe its original scope; provider cancellation and full deployed rollback remain unproven.
