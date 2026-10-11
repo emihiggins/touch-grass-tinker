@@ -88,7 +88,7 @@
     "markdown_local_links": "passed; external public access remains owner check",
     "article_body_matches_canonical": true
   },
-  "article_body_sha256": "44f0854c13d8ed99e150c39f05997eeedc6dd2fdcfcc0d82572a7fb38cec21a1",
+  "article_body_sha256": "91f1b814d607a81ca80177da2f3472888b17f467461ae12a45cdea596652181f",
   "video_refresh": {
     "date": "2026-10-11",
     "evidence": "research/evidence/app-integration/fixed-frame-video.json",
@@ -98,5 +98,12 @@
     "release_checks_passed": true,
     "current_archive_sha256": "77dc8aeed7463c54aa2780ebb522378f6d0f55dc2c8300a222ccbaccc488be2e",
     "archive_note": "Earlier cross-Python archive hash above is retained as historical evidence; media refresh produced this new deterministic archive."
+  },
+  "partner_category": {
+    "requested": "Best Use of Tinker",
+    "qualification_confirmed": false,
+    "improvement_claimed": false,
+    "rules_rechecked_on": "2026-10-11",
+    "note": "Meaningful technology use supports consideration; specific clear-improvement criterion remains unproven."
   }
 }

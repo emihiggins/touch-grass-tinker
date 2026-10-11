@@ -99,4 +99,8 @@ I used an AI coding agent to build and test the project. I am not sharing a sess
 
 ## Prize Categories
 
-This entry is for the overall Touch Grass challenge. I used Tinker for real fine-tuning, but neither trial demonstrated the improvement required for **Best Use of Tinker**, so I am not claiming that category. No other partner category is claimed.
+**Best Use of Tinker — submitted for consideration**, alongside the overall Touch Grass challenge.
+
+I used Tinker to fine-tune Qwen3-8B for structured ski-outing intent extraction, with reviewed training examples, audited loss masks, checkpoint/restore handling and paired baseline evaluation. The experiments are reproducible, including their negative results: task success changed from **9/16 to 7/16** in the first trial and **10/16 to 10/16** in the follow-up. Neither trial established an aggregate task-success improvement, and I have not established a latency or cost improvement; the base remains selected.
+
+The category description asks for a clear improvement over a baseline. I am submitting the implementation and evidence for the judges’ consideration, not claiming that these results demonstrate that improvement. No other partner category is claimed.

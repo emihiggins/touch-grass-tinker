@@ -27,7 +27,7 @@ are required to submit the completed project.
 - Paste [dev-post-body.md](dev-post-body.md) into the body editor. It has no YAML or internal comments. The canonical [dev-post.md](dev-post.md) includes `published: false` as repository metadata, not text to paste into the body.
 - Preview the seven sections, image, video link, code links and results table. Do not replace the video label with “live demo.”
 - Confirm eligibility under the official rules. If you had human teammates, add their DEV handles; one post per team. AI coding assistance is already disclosed.
-- No partner category is claimed. Tinker usage alone does not meet its required demonstrated improvement; both trial results are included honestly.
+- Best Use of Tinker is listed for consideration. Keep the explicit results and the caveat: no demonstrated aggregate task-success, latency or cost improvement. Category qualification and judging are the organizers’ decision.
 
 ## 3. Publish and record the entry
 
