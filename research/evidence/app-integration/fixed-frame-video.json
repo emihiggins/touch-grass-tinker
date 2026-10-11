@@ -1,0 +1,75 @@
+{
+  "scope": "continuous_fixed_frame_real_app_with_presentation_only_DOM_reflow",
+  "viewport": {
+    "width": 2560,
+    "height": 1440
+  },
+  "preview": false,
+  "chapters": [
+    {
+      "seconds": 0,
+      "title": "A short outing starts with your limits\u2014not a route invented by a model."
+    },
+    {
+      "seconds": 9.2,
+      "title": "\u201cOnly blues, no drag lifts, 45 minutes.\u201d This replays one real Qwen3-8B response."
+    },
+    {
+      "seconds": 16.7,
+      "title": "The mistake is visible: \u201cno drag lifts\u201d became a preference, not a hard exclusion."
+    },
+    {
+      "seconds": 23.9,
+      "title": "Correct the hard exclusions locally. The model is not called again."
+    },
+    {
+      "seconds": 33.1,
+      "title": "T-bar, platter and rope-tow are now prohibited. Confirm before planning."
+    },
+    {
+      "seconds": 40.6,
+      "title": "The planner finds a 20-minute simulated outing. Approved constraints stay beside it."
+    },
+    {
+      "seconds": 52.7,
+      "title": "Inspect each leg on the same map. Times include assumed queues\u2014not live conditions."
+    },
+    {
+      "seconds": 61.1,
+      "title": "Save the itinerary locally. Its restrictions and simulation warning travel with it."
+    },
+    {
+      "seconds": 66.2,
+      "title": "Inspect the AI. Correct the constraints. Take away a plan you can examine."
+    }
+  ],
+  "pageErrors": [],
+  "windowScrollEvents": 0,
+  "viewportChanges": 0,
+  "hardExclusionsVerified": true,
+  "correctionExtraInterpretationCalls": 0,
+  "textExportVerified": true,
+  "liveProviderCalls": 0,
+  "captured_on": "2026-10-11",
+  "playback": {
+    "width": 2560,
+    "height": 1440,
+    "durationSeconds": 75.96,
+    "error": null,
+    "playbackAdvanced": true,
+    "playbackQuality": {
+      "totalVideoFrames": 580,
+      "droppedVideoFrames": 0,
+      "corruptedVideoFrames": 0
+    }
+  },
+  "playback_scope": "Local Chromium playback and seeks; representative frames visually inspected. Quality counters cover sampled playback, not every viewer/device.",
+  "video_sha256": "4bdba364c19550718e399f7ed82aaf119774356f151260dada3569f89118d8c7",
+  "release_checks": {
+    "tests_run": 263,
+    "optional_skips": 27,
+    "passed": true,
+    "provider_calls": 0,
+    "archive_sha256": "77dc8aeed7463c54aa2780ebb522378f6d0f55dc2c8300a222ccbaccc488be2e"
+  }
+}

@@ -22,7 +22,7 @@ The screen is meant to be the short part: review, confirm, print or download the
 
 The silent recording uses an exact replay of a real Qwen3-8B app response. It deliberately preserves the “no drag lifts” mistake. I correct the hard exclusions locally, confirm the constraints, and inspect the simulated route. The interface labels the response as **recorded AI**, not fresh inference.
 
-The walkthrough also shows itinerary-step inspection, local text export, closed lifts, an unsupported request, mobile layout and the geographic terrain lab. There is no hosted public inference service. Anyone can run the default app without credentials using Rules mode or that exact-input recorded example; arbitrary live AI requests require the separately configured research environment.
+The walkthrough keeps the request, review, map and itinerary in one fixed desktop frame, with captions and pauses instead of scrolling. A recording-only presentation layout puts the real app panels side by side without changing behavior. It shows itinerary-step inspection and local text export; mobile, closure and geographic-lab checks are separate evidence. There is no hosted public inference service. Anyone can run the default app without credentials using Rules mode or that exact-input recorded example; arbitrary live AI requests require the separately configured research environment.
 
 ## Code
 
