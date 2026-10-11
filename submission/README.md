@@ -1,19 +1,42 @@
-# Touch Grass submission materials
+# Submission handoff — October 11, 2026
 
-This directory is for the challenge submission and maintainer handoff. Users and developers should start with the [project README](../README.md) and [documentation](../docs/README.md).
+**Deadline: October 11 at 11:59 PM PDT / October 12 at 06:59 UTC.**
+The official challenge and contest rules were rechecked on October11. The repo
+remains private and the article unpublished; Emi controls both publication actions.
 
-## Current package
+## Ready-to-use materials
 
-- [DEV article](dev-post.md): the supplied seven-section template, current results and limitations; not automatically published.
-- [Posting checklist](dev-posting-checklist.md): Emi controls repository visibility and posts to DEV herself.
-- [Recorded demo and reproduction guide](../demo/README.md), [video](../demo/walkthrough.webm), [current captures](../research/evidence/app-integration/recorded-corrected-desktop.png).
-- [MIT license](../LICENSE) and [separate notices](../THIRD_PARTY_NOTICES.md).
-- [Verified release followups](../delivery/high-value-followups.md) and [fresh-checkout evidence](../research/evidence/app-integration/fresh-checkout.json).
+1. **[Final article](dev-post.md)** — title/tags plus the official seven-section structure.
+2. **[Copy-ready article body](dev-post-body.md)** — paste this into DEV's body editor, without YAML.
+3. **[Final posting checklist](dev-posting-checklist.md)** — visibility, signed-out checks, preview and publish.
+4. **[Demo video](../demo/walkthrough.webm)** and [reproduction guide](../demo/README.md) — credential-free recorded/rules flow, not a hosted service.
+5. **[Repository README](../README.md)**, [user guide](../docs/user-guide.md), [developer guide](../docs/development.md), [evaluation](../docs/evaluation.md), [licenses](../THIRD_PARTY_NOTICES.md).
+6. **[Dated verification record](verification.json)** — actual checks and remaining owner actions, not a claim of DEV publication.
 
-## Claims and remaining actions
+## Requirement-to-artifact checklist
 
-The app, recording, offline package and local verification are complete. The matched fine-tuning trial regressed, so no Best Use of Tinker improvement claim is made. The separate fresh base-model result is13/16, not field validation. The video visibly replays a real model mistake and local correction; it is not continuous live inference.
+| Official requirement | Prepared artifact / evidence | Status |
+| --- | --- | --- |
+| New project and repository within entry window | First commit705672c: October5 20:10:56 UTC, after the16:00 UTC opening; current work predates deadline | Verified local Git history; no post-deadline changes yet |
+| Open-source AI at core, Touch Grass theme | Article explains Qwen3-8B intent extraction, deterministic planning and compact outdoor itinerary goal | Implemented prototype; no field-use claim |
+| Published DEV post, template and tags | Final article; tags `devchallenge`, `hf26challenge` | Prepared; Emi must publish |
+| Demo and code link | Recorded video, repository link, local quick start | Files verified locally; signed-out access awaits visibility switch |
+| Why open innovation matters | Article's dedicated section and upstream credits | Prepared |
+| Credit nontrivial foundations | Article, MIT license, ODbL and third-party notices | Prepared; licenses remain separate |
+| Agent session | Explicitly omitted; optional under current rules | No transcript or private context exported |
+| Partner category claims | No partner category claimed; both fine-tuning trials failed to improve aggregate success | No unsupported Tinker prize claim |
+| Entrant eligibility / team credit | Official rules and posting checklist | Emi verifies personal eligibility and any teammates |
 
-Public accessibility requires Emi's visibility switch and signed-out link checks; DEV publication is also hers. Billing reconciliation is separate. No new label review or automatic training run is pending.
+## Submission claims
 
-[Challenge requirements](../research/challenge.md) were recorded on October6; verify the official challenge page's current deadline/eligibility before posting. The [original storyboard](demo-storyboard.md) is historical planning, superseded by the recorded demo.
+- Trial01: paired base9/16 → tuned7/16. Trial02: paired base10/16 → tuned10/16.
+- Separate fresh set: base13/16; not a gain over either pilot and not field validation.
+- Live inference is optional research setup, not available through the default clone-and-run path.
+- Video is exact replay of one real model response and its local correction, not continuous live inference.
+- Both temporary trained checkpoints were configured to expire after six hours; no current hosted tuned model is promised.
+- Existing eight-label review is for future research and does not block submission. No labels are silently approved.
+
+No new training, paid calls, visibility changes, DEV publication or public release
+uploads are part of this preparation. Billing remains unreconciled: $3.00 total local
+commitments are reservations, not actual charged cost. That does not block publishing
+the honest completed-results article.

@@ -1,5 +1,5 @@
 {
-  "status": "public_release_files_ready_emi_controls_visibility_and_dev",
+  "status": "ready_for_owner_submission",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -51,21 +51,24 @@
     "Standalone preview verifies all snapshot bytes; missing-node geometry stays segmented; hash-bound Winter Park piste-only structural return report and qualification queue added without routing promotion",
     "Research preview exposes allowlisted native access/direction/operating tags and source versions with explicit unknown states; graph metadata and routing unchanged",
     "Malformed OSM coordinates and duplicate identities rejected before sanitization/import; CLI proves no output on invalid input and all saved resort snapshots still reproduce",
-    "Focus controls preserved by canonical generator; symmetric projection padding fixed; keyboard/hidden/clear/fit browser regressions and refreshed focus screenshots verified"
+    "Focus controls preserved by canonical generator; symmetric projection padding fixed; keyboard/hidden/clear/fit browser regressions and refreshed focus screenshots verified",
+    "R01 semantic/correction recovery, R02 deterministic boundary evidence and partial R04 admission/provider-fault diagnostics verified",
+    "Exploratory SFT02 completed on approved47: base10/16 vs trained10/16; retain base; second planned configuration consumed",
+    "Read-only SFT02 postmortem and eight unapproved intent-v2 review candidates prepared"
   ],
   "remaining": [
     "Emi changes GitHub repository visibility when ready",
     "Emi checks code/video signed out and publishes DEV using supplied checklist",
-    "Delayed billing reconciliation attempted at01:07UTC; protected billing/storage attribution remained unavailable, so all $1.75 holds remain",
+    "Delayed billing reconciliation attempted at01:07UTC; protected billing/storage attribution remained unavailable, so all $3.00 commitments remain",
     "Qualified source/access/coverage review before additional resort adoption; Plose fixture has no directed lap",
     "Operator-authorized fresh status feed and field validation before navigation claims"
   ],
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
-  "tests_passed": 169,
-  "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
+  "tests_passed": 263,
+  "browser_verification": "October11 local Chromium routing/closure/unsupported/mobile/print generation and keyboard checks passed; video playback verified. Earlier live/recovery evidence retained; no fresh live calls.",
   "background_worker_active": false,
-  "next_action": "Continue concrete offline improvements; external evidence and owner-only publication items are tracked in delivery/review-later.md",
+  "next_action": "Emi makes repository public, verifies signed-out links, and publishes DEV before 2026-10-12T06:59:00Z.",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
   "human_account_input_needed": [],
   "scheduled_reconciliation": {
@@ -75,14 +78,22 @@
     "timeout_seconds": 180,
     "status": "attempted_not_verified_no_retry_scheduled"
   },
-  "project_commitments_usd": 1.75,
+  "project_commitments_usd": 3.0,
   "release_authority": {
     "mit_approved": true,
     "github_visibility_actor": "Emi only",
     "dev_publication_actor": "Emi only",
     "source_message_id": "2437"
   },
-  "tests_run": 191,
-  "optional_tests_skipped": 22,
-  "review_later_log": "delivery/review-later.md"
+  "tests_run": 263,
+  "optional_tests_skipped": 0,
+  "review_later_log": "delivery/review-later.md",
+  "updated_on": "2026-10-11",
+  "human_label_scope": "No label review required for submission; eight M02 candidates remain unapproved for future research.",
+  "standard_library_suite": {
+    "tests_run": 263,
+    "passed": 236,
+    "skipped_optional": 27
+  },
+  "submission_verification": "submission/verification.json"
 }

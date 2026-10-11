@@ -12,7 +12,7 @@
 
 ## Proposed upgrades
 
-[Model quality and robustness roadmap](../delivery/model-robustness-roadmap.md): planned target audits, reviewed data expansion, bounded fine-tuning, semantic/adversarial checks, metrics, runtime reliability and resort qualification. These are proposed work packages, not shipped capabilities.
+[Model quality and robustness roadmap](../delivery/model-robustness-roadmap.md): planned target audits, reviewed data expansion, bounded fine-tuning, semantic/adversarial checks, metrics, runtime reliability and resort qualification. The roadmap distinguishes implemented checkpoints from pending packages; it is not a claim that every planned capability shipped.
 
 [Mountain map and real-resort research](../research/mountain-map-upgrade.md): source/licensing checks, renderer recommendation and staged acceptance criteria. The offline sketch, local geographic view and attributed hillshade are implemented; the document also identifies later data-review work.
 

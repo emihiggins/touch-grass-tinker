@@ -10,6 +10,17 @@ Lift-Lap explores a simple division of responsibility: a language model interpre
 
 ![Lift-Lap desktop: recorded interpretation, corrected hard exclusions, schematic mountain and confirmed itinerary](research/evidence/app-integration/recorded-corrected-desktop.png)
 
+## Submission quick tour
+
+Built during October 5–11, 2026 for the Touch Grass challenge.
+
+- **See it:** [recorded walkthrough](demo/walkthrough.webm) and [demo guide](demo/README.md).
+- **Try it:** the credential-free commands below; recorded AI is explicitly replay, not new inference.
+- **Inspect the approach:** [architecture](technical/architecture.md) and [evaluation with both training trials](docs/evaluation.md).
+- **Read the entry:** [submission article](submission/dev-post.md), with limitations and open-source attribution.
+
+Any changes made after **October 12, 2026 at 06:59 UTC** must be identified here as post-deadline changes. The submission handoff records the verified revision; later edits must not silently replace contest-time evidence.
+
 ## Try it locally
 
 Requires **Python 3.11+**. The default app needs no package installation, API key, model download or paid service.
@@ -45,11 +56,12 @@ The recorded mode replays one real model output only when the text and selected 
 
 | Evaluation | Result | Interpretation |
 |---|---:|---|
-| Matched 16-case pilot: base → fine-tuned | 9/16 → 7/16 | The fine-tuned checkpoint was rejected |
+| First matched 16-case pilot: base → fine-tuned | 9/16 → 7/16 | The fine-tuned checkpoint was rejected |
+| Second paired run on the exposed pilot: base → fine-tuned | 10/16 → 10/16 | No aggregate improvement; retain base |
 | Separate frozen, human-reviewed set: base | 13/16 | 16/16 schema-valid outputs; three semantic/task failures |
 | Later unchanged-rules comparator on that fresh set | 0/16 | Post-hoc; the wording exceeded the parser’s narrow grammar |
 
-These small, fictional sets are not statistically representative or field validation. The 9/16 and 13/16 results use **different cases**, not a measured improvement. No fine-tuning gain is claimed. [Protocols, outputs and limitations](docs/evaluation.md).
+These small, fictional sets are not statistically representative or field validation. Each paired trial has its own contemporaneous baseline. The 13/16 result uses **different cases**, not a measured improvement over either pilot run. No fine-tuning gain is claimed. [Protocols, outputs and limitations](docs/evaluation.md).
 
 ## For developers
 
