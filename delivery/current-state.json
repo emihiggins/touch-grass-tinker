@@ -1,5 +1,5 @@
 {
-  "status": "submission_preparation_in_progress",
+  "status": "ready_for_owner_submission",
   "completed": [
     "Human review corrections applied; 16 pilot labels resolved",
     "Green-grade v2 support and blue-target interpretation tested",
@@ -66,7 +66,7 @@
   "human_label_input_needed": false,
   "paid_calls_this_checkpoint": "None",
   "tests_passed": 263,
-  "browser_verification": "Live connection previously verified; latest recorded flow,320px keyboard/reflow,stale response rejection and one-page A4 raster verified",
+  "browser_verification": "October11 local Chromium routing/closure/unsupported/mobile/print generation and keyboard checks passed; video playback verified. Earlier live/recovery evidence retained; no fresh live calls.",
   "background_worker_active": false,
   "next_action": "Emi makes repository public, verifies signed-out links, and publishes DEV before 2026-10-12T06:59:00Z.",
   "scope_boundary": "Do not treat pilot freeze or local ledger as proof of final benchmark independence or provider-enforced billing cap",
@@ -94,5 +94,6 @@
     "tests_run": 263,
     "passed": 236,
     "skipped_optional": 27
-  }
+  },
+  "submission_verification": "submission/verification.json"
 }

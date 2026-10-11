@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-10-11",
-  "status": "verification_in_progress",
+  "status": "ready_for_owner_publication",
   "publication": {
     "repository_visibility": "PRIVATE",
     "dev_post_published": false,
@@ -8,7 +8,9 @@
       "make repository public",
       "verify signed-out demo/code/image",
       "publish DEV post"
-    ]
+    ],
+    "public_access_verified": false,
+    "hosted_ci": "not_verified_private_repository"
   },
   "official_deadline": "2026-10-12T06:59:00Z",
   "deadline_local": "2026-10-11 23:59 PDT",
@@ -21,11 +23,70 @@
     "date": "2026-10-05T20:10:56Z"
   },
   "provider_calls": 0,
-  "pending_checks": [
-    "full release",
-    "pinned optional tests",
-    "clean Python3.11 checkout",
-    "browser/media smoke",
-    "history secret scan"
-  ]
+  "pending_checks": [],
+  "verified_source_commit": "b48b5c8957baf96120cf8c4afbdd1d491a7f633c",
+  "verification_scope": "Source commit checked; subsequent handoff changes are documentation/verification metadata only. Not a published submission.",
+  "repository_created_at": "2026-10-05T20:10:57Z",
+  "checks": {
+    "release_python_3_14_4": {
+      "passed": true,
+      "tests_run": 263,
+      "tests_passed": 236,
+      "optional_skips": 27
+    },
+    "pinned_optional_python_3_14_4": {
+      "passed": true,
+      "tests_run": 263,
+      "tests_passed": 263,
+      "skipped": 0
+    },
+    "clean_detached_python_3_11_17": {
+      "passed": true,
+      "tests_run": 263,
+      "tests_passed": 236,
+      "optional_skips": 27,
+      "provider_sdk_installed": false
+    },
+    "saved_base_reproduced": "13/16",
+    "deterministic_package": {
+      "passed": true,
+      "sha256": "2c819b871d008f633be1ea8f251801c130f2515dfddf01a78120476c88969563",
+      "matched_across_python_versions": true,
+      "isolated_extracted_http_assets": true
+    },
+    "browser": {
+      "desktop": 1280,
+      "mobile": 360,
+      "syntheticRoute": true,
+      "closedNoRoute": true,
+      "unsupportedBlocked": true,
+      "realLabRoute": true,
+      "mobileOverflow": false,
+      "printPdf": true,
+      "pageErrors": []
+    },
+    "keyboard": {
+      "keyboardActivate": true,
+      "keyboardToggle": true,
+      "focusVisible": true,
+      "reflow320": true,
+      "scope": "targeted_keyboard_checks_not_full_accessibility_audit"
+    },
+    "video_local_chromium": {
+      "width": 1280,
+      "height": 960,
+      "currentTime": 1.023955,
+      "durationSeconds": 56.44,
+      "error": null,
+      "readyState": 4
+    },
+    "secret_scan": {
+      "tool": "gitleaks",
+      "scope": "all Git refs before submission documentation commits; 125 commits",
+      "leaks": 0
+    },
+    "markdown_local_links": "passed; external public access remains owner check",
+    "article_body_matches_canonical": true
+  },
+  "article_body_sha256": "bcbaa288356068de5fd933e6cc8c29e82f73f87bf4ea872448778a694e0cf7bd"
 }
