@@ -24,7 +24,7 @@ remains private and the article unpublished; Emi controls both publication actio
 | Why open innovation matters | Article's dedicated section and upstream credits | Prepared |
 | Credit nontrivial foundations | Article, MIT license, ODbL and third-party notices | Prepared; licenses remain separate |
 | Agent session | Explicitly omitted; optional under current rules | No transcript or private context exported |
-| Partner category claims | No partner category claimed; both fine-tuning trials failed to improve aggregate success | No unsupported Tinker prize claim |
+| Partner category request | Best Use of Tinker requested; actual fine-tuning and both trial results disclosed | Clear-improvement criterion remains unproven; organizers decide |
 | Entrant eligibility / team credit | Official rules and posting checklist | Emi verifies personal eligibility and any teammates |
 
 ## Submission claims
@@ -40,3 +40,7 @@ No new training, paid calls, visibility changes, DEV publication or public relea
 uploads are part of this preparation. Billing remains unreconciled: $3.00 total local
 commitments are reservations, not actual charged cost. That does not block publishing
 the honest completed-results article.
+
+## Tinker category interpretation — October 11 update
+
+The [contest rules](https://dev.to/page/hacktoberfest-week1-2026-10-05-contest-rules) say entries are automatically eligible for partner categories whose technology they meaningfully use. The [category description](https://dev.to/challenges/hacktoberfest-week1-2026-10-05) specifically asks for fine-tuning and a clear improvement in performance, latency or cost over a baseline. The earlier blanket recommendation not to enter was too categorical: the article now requests consideration based on genuine Tinker use, while explicitly stating that the improvement criterion has not been demonstrated. This is not an organizer ruling or a new experimental result.
