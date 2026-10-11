@@ -11,7 +11,7 @@
     "liftlap/app_model.py": "c3c8fb84121846cc8b0c87a93f5cba3e2bfc079f0fa7d783bfe3e23136998f04",
     "scripts/browser-ai-demo.cjs": "11c8c778a1b12f8e7710208ad49c0ef0824fa1ed17ba05027a1223f14ab2b40a",
     "demo/model-replay.json": "a091ab2f815a188be445ca8554e372eca9cd04e70bd1a7b7b03194b7f0ec3a3e",
-    "demo/walkthrough.webm": "9c89138aadf27ade32c4bd2ba9833df66b8ad6294605ad3e77441efb878bd13e",
+    "demo/walkthrough.webm": "4bdba364c19550718e399f7ed82aaf119774356f151260dada3569f89118d8c7",
     "research/evidence/app-integration/recorded-corrected-desktop.png": "c6b0afd25a81c0e6eafe1adfb901eac48d488dce13b7b10ffbaf53243a03b82d",
     "research/evidence/app-integration/mobile.png": "47d4551d7f42c99c90103a5267bf2f1daaa824dc45b803e5eb88bdcbd1315439",
     "research/evidence/app-integration/corrected-itinerary.pdf": "7115328669f0ea2a3584b9a06dc5caebc241337ab71c07a01105b064149ed733",
@@ -40,7 +40,8 @@
     "research/evidence/model-robustness-r01/recovery-1440.png": "4c27df5321e27284d152fbb5979919bc1e9a4b30e80b536a753a201703a2c1bf",
     "liftlap/http_limits.py": "4ba876b7e82d1e36c04d3110e45917154325e96527d23aaed490b6ba7f8ce7c1",
     "research/evidence/model-robustness-r04/recovery.png": "6e75aebe295fb475292e3f8a174426b1056880b0126947c4e768d23e955341c3",
-    "research/evidence/model-robustness-r04/request-recovery.json": "d6fd8907a038eee1930ca7d2926ae4c7d6e28c9f1c16000e32248d2c843dad32"
+    "research/evidence/model-robustness-r04/request-recovery.json": "d6fd8907a038eee1930ca7d2926ae4c7d6e28c9f1c16000e32248d2c843dad32",
+    "scripts/record-walkthrough.cjs": "7aaf6239b4b8f424b1ee933777c6a7b25388930f647af7d6f155f68525881ea3"
   },
   "historical_media": [
     "research/evidence/ui-desktop.png",
@@ -54,5 +55,11 @@
     "reason": "HTTP admission/body bounds only; UI source hashes unchanged. Old screenshots retained, not recaptured.",
     "evidence": "research/evidence/model-robustness-r04/README.md",
     "browser": "fresh failed/delayed/out-of-order recovery run against bounded server on port8771; screenshot visually reviewed"
+  },
+  "video_refresh": {
+    "captured_on": "2026-10-11",
+    "source": "scripts/record-walkthrough.cjs",
+    "evidence": "research/evidence/app-integration/fixed-frame-video.json",
+    "scope": "Only video replaced; prior app screenshots and UI source files unchanged. Recording-only four-column presentation reflow, captions, visible pointer. No page scrolling or viewport changes."
   }
 }

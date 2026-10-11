@@ -9,7 +9,7 @@ remains private and the article unpublished; Emi controls both publication actio
 1. **[Final article](dev-post.md)** — title/tags plus the official seven-section structure.
 2. **[Copy-ready article body](dev-post-body.md)** — paste this into DEV's body editor, without YAML.
 3. **[Final posting checklist](dev-posting-checklist.md)** — visibility, signed-out checks, preview and publish.
-4. **[Demo video](../demo/walkthrough.webm)** and [reproduction guide](../demo/README.md) — credential-free recorded/rules flow, not a hosted service.
+4. **[Demo video](../demo/walkthrough.webm)** and [reproduction guide](../demo/README.md) — credential-free fixed-frame recorded-AI/correction flow, not a hosted service.
 5. **[Repository README](../README.md)**, [user guide](../docs/user-guide.md), [developer guide](../docs/development.md), [evaluation](../docs/evaluation.md), [licenses](../THIRD_PARTY_NOTICES.md).
 6. **[Dated verification record](verification.json)** — actual checks and remaining owner actions, not a claim of DEV publication.
 
