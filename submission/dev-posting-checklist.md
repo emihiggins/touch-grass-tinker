@@ -1,23 +1,45 @@
-# Emi's final publication steps
+# Final posting checklist — Emi
 
-Implementation and release preparation are complete locally. **The agent will not change repository visibility or publish to DEV.** MIT was approved in message2437 and is applied in `LICENSE`. No additional model training or label review is required.
+**Submit by October11, 2026 at11:59 PM PDT (October12 at06:59 UTC).**
+Verified against the [official contest rules](https://dev.to/page/hacktoberfest-week1-2026-10-05-contest-rules)
+and [challenge/template page](https://dev.to/challenges/hacktoberfest-week1-2026-10-05) on October11.
 
-1. Review the [article](dev-post.md), [demo guide](../demo/README.md), [recorded video](../demo/walkthrough.webm), and [license/notices](../THIRD_PARTY_NOTICES.md).
-2. When ready, change **emihiggins/touch-grass-tinker** to public yourself in GitHub Settings → General → Danger Zone → Change repository visibility. No command or automated release hook performs this switch.
-3. Open a signed-out/incognito window and verify:
-   - https://github.com/emihiggins/touch-grass-tinker
-   - https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm
-   - The README local-demo instructions and MIT/ODbL notices.
-4. The public-only offline GitHub workflow skips while private. After switching public, run **Actions → Offline checks → Run workflow**, or let a subsequent public commit trigger it. Local checks are already verified; hosted CI is not yet claimed.
-5. Open the challenge submission template in your own DEV account. Copy the body of `dev-post.md` from the italic challenge line onward. The file's YAML front matter (`title`, `published:false`, `tags`) is repository metadata, not text to paste into DEV's rich editor. Use its title and tags in DEV's fields. Remove the internal publishing comment if it appears in the editor.
-6. Preview all seven requested sections. Confirm the video link works signed out. A download link is intentional; if you prefer an embedded player, upload the video yourself to a supported host and replace that link. Do not imply this is a live hosted app or a fine-tuned success.
-7. The challenge page was rechecked October 7: deadline October 11, 2026 at 11:59 PM PDT (October 12 at 06:59 UTC). Check current challenge eligibility/deadline in the linked official challenge page, add teammate credits if applicable, and publish yourself. No DEV username, credentials or account connection needs to be sent to the agent.
+The agent has prepared files only. Per [release ownership](release-decision.md),
+repository visibility and DEV publication remain yours. No new labels or training
+are required to submit the completed project.
 
-## Honest claims retained
+## 1. Make the code and demo accessible
 
-- Matched pilot: base9/16, fine-tuned7/16. No fine-tuning gain or Best Use of Tinker claim.
-- Different fresh frozen set: base13/16; small fictional set, not statistical/field validation.
-- Video is an exact replay of one real app response, including an interpretation error and manual correction. It is not continuous live inference.
-- OpenStreetMap lab is unreviewed. No live lift/weather/avalanche information or on-mountain navigation claim.
+- Review [the article](dev-post.md) and [dated verification](verification.json).
+- Change **emihiggins/touch-grass-tinker** to public in GitHub → Settings → General → Danger Zone → Change repository visibility.
+- In a signed-out/incognito window, check all three:
+  - [Repository](https://github.com/emihiggins/touch-grass-tinker)
+  - [Demo WebM](https://github.com/emihiggins/touch-grass-tinker/raw/refs/heads/main/demo/walkthrough.webm)
+  - [Article screenshot](https://raw.githubusercontent.com/emihiggins/touch-grass-tinker/main/research/evidence/app-integration/recorded-corrected-desktop.png)
+- Play the video, not just its GitHub file page. It is a silent download/playback link, not an embedded hosted app. If DEV does not display the screenshot reliably, upload that image using DEV's editor and replace its URL.
+- Public-only CI has intentionally skipped while private. After changing visibility, use **Actions → Offline checks → Run workflow**. Do not claim hosted Linux/Windows CI passed until its runs actually finish.
 
-Billing reconciliation was attempted at01:07UTC but charges remain unverified; this is independent of editorial review. Current$1.75 holds are budget reservations, not a bill. No top-up is enabled by this project.
+## 2. Prepare the DEV post
+
+- Open the submission template from the challenge page while signed into your DEV account.
+- Title: **Lift-Lap Planner: let the model read the request, not invent the mountain**
+- Tags: **devchallenge**, **hf26challenge**
+- Paste [dev-post-body.md](dev-post-body.md) into the body editor. It has no YAML or internal comments. The canonical [dev-post.md](dev-post.md) includes `published: false` as repository metadata, not text to paste into the body.
+- Preview the seven sections, image, video link, code links and results table. Do not replace the video label with “live demo.”
+- Confirm eligibility under the official rules. If you had human teammates, add their DEV handles; one post per team. AI coding assistance is already disclosed.
+- No partner category is claimed. Tinker usage alone does not meet its required demonstrated improvement; both trial results are included honestly.
+
+## 3. Publish and record the entry
+
+- Publish before the deadline. Confirm the article is publicly readable while signed out and has both required tags.
+- Keep the published URL for your records. Publication status in this repository remains pending until actually verified.
+- Record the submitted commit and article URL. Any later code changes must be identified in the root README as post-deadline changes; retain the contest-time evidence.
+
+## Optional, not blocking today's entry
+
+The local `dist/liftlap-local-demo.zip` is generated and verified. The GitHub source
+ZIP and documented Python quick start are sufficient to obtain the app after public
+access is enabled; no release-asset upload or hosted deployment is required here.
+The agent session is optional and intentionally not shared. Future dataset review
+and billing reconciliation remain research/maintenance tasks, not reasons to delay
+an otherwise accurate submission.

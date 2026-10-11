@@ -1,6 +1,6 @@
 # Verified challenge research
 
-Initial research: October 5, 2026. Challenge landing page rechecked October 7, 2026 at 02:50 UTC: same deadline, required tags, seven-section template, writing-first criteria and new-project requirement. General entrant eligibility remains unverified. Historical environment notes below describe the initial research, not current implementation.
+Initial research: October 5, 2026. Challenge landing page and contest-specific official rules rechecked October 11, 2026 at 10:03 UTC: same deadline, required tags, seven-section template, writing-first criteria and new-project requirement. General entrant eligibility remains unverified. Historical environment notes below describe the initial research, not current implementation.
 
 ## Contest
 
